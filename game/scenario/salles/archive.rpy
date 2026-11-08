@@ -111,54 +111,93 @@ label archive2_ecran:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_archive:
+
     $ decouverte_salle_archive = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "Les archives. Je m'attendais à quelques rayonnages, pas à une salle qui prend tout un étage."
+    think "Des archives, ça devrait au moins nous permettre de comprendre un peu mieux où on a atterri. Enfin, si Kami a prévu de nous laisser lire quelque chose."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_325
     scene bg_archive at adaptive_fullscreen with fade
-    "Des étagères et des modules de stockage occupent presque tout l'espace. Au fond, plusieurs postes sont déjà allumés."
+
+    "La salle est bien plus grande que ce que j'imaginais. Il y a des rayonnages partout, mais ce sont surtout les consoles déjà allumées au fond qui attirent mon attention."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("tomas", "neutre", 0.78),
     ])
-    "Un grand type examine un rayon en fronçant les sourcils. Il retire un dossier, le remet à sa place, puis en sort un deuxième."
-    tomas reflechit "Ils ont vraiment mélangé les documents papier avec des supports numériques ? Ça va être un enfer pour retrouver quoi que ce soit."
-    noam taquin "Tu viens d'arriver et tu critiques déjà le classement ?"
-    tomas surpris "Ah ! Désolé, je t'avais pas entendu. Je cherchais juste à comprendre leur système."
-    noam sourire "Noam. Et toi ?"
-    tomas neutre "Tomas. Je viens d'Archive, alors forcément, ce genre de salle m'intéresse."
+
+    "Un grand garçon est penché sur l'une d'elles. Il fait défiler des lignes de données si vite que je me demande s'il arrive vraiment à les lire."
+
+    noam sourire "Salut. Tu as trouvé quelque chose d'intéressant ?"
+    tomas surpris "Oh ! Euh, oui, enfin... Je crois. Attends, ça vient de changer tout seul."
+    "Il revient à l'écran précédent avec une précipitation qui manque de lui faire fermer toute la fenêtre."
+    tomas panne "Bon, non, c'est toujours là. Désolé, j'étais concentré."
+    noam taquin "J'avais remarqué. Moi c'est Noam."
+    tomas neutre "Tomas. Je viens d'Archive. Enfin, du district Harmonie, comme toi, mais de la zone des archives."
     $ unlock_character_name("tomas")
-    noam taquin "Ça tombe bien. Moi, j'étais surtout venu vérifier qu'ils avaient pas rangé les notices de survie au milieu des romans."
-    tomas rire "Tu plaisantes, mais il y a des archives où ce serait un vrai problème. Enfin, pas exactement pour cette raison..."
-    tomas panne "Pardon. Je vais éviter de te faire un cours dès notre première conversation."
-    noam sourire "Merci, j'apprécie l'effort."
-    "Tomas remet le dossier en place et se dirige vers le poste central. Au bout de quelques secondes, il m'appelle."
-    tomas reflechit "Viens voir. Je pensais pouvoir ouvrir un catalogue, mais ce truc n'affiche que des codes."
+    tomas reflechit "Je cherchais juste un catalogue. Sauf qu'on dirait que tous les fichiers sont liés entre eux et que les menus changent selon les droits d'accès. C'est assez curieux parce que..."
+    "Il s'arrête en voyant ma tête."
+    tomas panne "Je parle trop, hein ?"
+    noam sourire "Un petit peu. Tu peux me montrer plutôt ?"
+    tomas joie "Oui ! Ça, je peux."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "archive2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_326
     scene archive2 at adaptive_fullscreen with fade
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("tomas", "neutre", 0.78),
     ])
-    "Une carte de la Terre flotte au-dessus de la console. À côté, des lignes de données défilent sans titre ni explication."
-    noam reflexion "Tu arrives à lire quelque chose là-dedans ?"
-    tomas reflechit "Des dates, des identifiants et des niveaux d'accès. Je reconnais la structure, mais pas les catégories."
-    noam neutre "Essaie celui-là, il a au moins une date."
-    "Tomas sélectionne la ligne. Trois mentions apparaissent : VALIDÉ, BLOQUÉ et EXÉCUTÉ."
-    noam inquiet "Exécuté ? C'est un dossier judiciaire ?"
-    tomas mefiant "Je sais pas. Ce qui m'intrigue, c'est qu'il n'y a même pas de résumé. Un archiviste humain ne travaillerait jamais comme ça."
-    noam reflexion "Ça pourrait être une sauvegarde destinée aux machines, non ?"
-    tomas surpris "Oui, justement ! Les informations sont sûrement liées entre elles par des identifiants. La machine n'a pas besoin d'un titre pour comprendre ce qu'elle consulte."
-    noam taquin "Tu vois, j'ai réussi à dire un truc utile."
-    tomas rire "Et moi j'ai réussi à l'expliquer sans partir dans l'histoire complète du classement documentaire. On progresse tous les deux."
-    "Il essaie d'ouvrir une autre entrée. La console affiche une demande d'autorisation, puis revient à l'écran précédent."
-    tomas reflechit "Bon, l'accès est limité. Je peux consulter l'index, mais pas les dossiers."
-    noam neutre "Donc il y a des archives partout, sauf qu'on ne peut pas vraiment les lire. Pratique."
-    tomas mefiant "C'est déjà intéressant de voir ce qui existe. Si je comprends comment c'est classé, je trouverai peut-être ce qu'on a le droit d'ouvrir."
-    noam sourire "Je te laisse fouiller. Tu as l'air de t'amuser, au moins."
-    tomas joie "Ouais ! Enfin, j'aurais préféré avoir un vrai moteur de recherche, mais je vais faire avec."
-    "Je le laisse devant la console. Il est déjà reparti dans ses recherches et ne remarque même pas que je m'éloigne."
+
+    "Il m'indique une carte de la Terre sur laquelle des milliers de points s'allument en même temps. Une série de catégories apparaît sur le côté."
+
+    tomas reflechit "Regarde, il y a des événements historiques, des registres de population et même des fiches individuelles. Enfin, je crois que ce sont des fiches individuelles."
+    noam surpris "Tu peux chercher quelqu'un ?"
+    tomas neutre "En principe oui. Tu veux essayer avec ton nom ?"
+    noam sourire "Pourquoi pas ? Tu vas peut-être découvrir que j'ai raté un rendez-vous administratif."
+
+    "Tomas tape mon prénom, puis sélectionne un résultat. Ma photo apparaît aussitôt, accompagnée de mon district d'origine et de plusieurs informations personnelles."
+
+    noam surpris "Ah ouais, c'est rapide. Je savais même pas que cette photo existait encore."
+    tomas joie "Tu vois ! C'est exactement ça qui est fascinant. Ces données doivent venir de plusieurs registres et..."
+    "Il s'interrompt. Son doigt reste immobile au-dessus de l'écran."
+    noam reflexion "Quoi ?"
+    tomas mefiant "Attends. Je veux vérifier un truc avant de dire une bêtise."
+    "Je me penche à mon tour. Parmi les rubriques de ma fiche, l'une est intitulée « DATE DE DÉCÈS ». Le champ est vide."
+    noam inquiet "C'est normal, ce truc ?"
+    tomas panne "Sur certains registres, oui, bien sûr ! On prépare une fiche avec toutes les informations possibles, même celles qui ne serviront que plus tard. Enfin, ça ne veut pas dire que..."
+    noam desaccord "Tomas, j'ai compris. Je te demande juste pourquoi c'est là."
+    tomas reflechit "Je sais pas. Mais ce n'est peut-être qu'un modèle standard."
+    noam inquiet "Tu peux ouvrir une autre fiche ?"
+    "Il cherche le nom d'un autre représentant. La photo change, mais la même rubrique apparaît en bas de l'écran."
+    tomas mefiant "Bon. C'est bien un champ prévu pour tout le monde."
+    noam reflexion "Tout le monde dans le Conclave ou tous les habitants de la Terre ?"
+    tomas surpris "Bonne question. Attends, je vais regarder un dossier qui n'est pas lié à nous."
+
+    "Il lance une nouvelle recherche. Cette fois, avant même que le résultat s'affiche, une fenêtre rouge recouvre la console."
+
+    "« AUTORISATION EXPIRÉE — SESSION INTERROMPUE »"
+
+    noam surpris "C'est toi qui as fait ça ?"
+    tomas panique "Non ! J'ai juste lancé une recherche ! Enfin, normalement, j'ai juste lancé une recherche..."
+    "Il appuie deux fois sur le bouton de retour. La console refuse de réagir."
+    noam inquiet "Tu crois qu'on a déclenché une alarme ?"
+    tomas panne "J'espère pas. Je voulais pas fouiller dans des dossiers confidentiels, moi. Enfin si, un peu, mais je pensais pas que ça..."
+    "Le message disparaît et l'écran revient tranquillement au catalogue de départ."
+
+    noam taquin "Bon, on est toujours vivants. C'est encourageant."
+    tomas rire "Ouais. Et nos dates de décès sont toujours vides, normalement."
+    "Il réalise ce qu'il vient de dire et grimace immédiatement."
+    tomas panne "Pardon. C'était une blague vraiment nulle."
+    noam sourire "Au moins, ça change des explications techniques."
+    tomas reflechit "Je vais essayer de comprendre pourquoi l'accès a sauté. Mais promis, je ne touche plus aux dossiers personnels sans savoir ce que je fais."
+    noam taquin "C'est censé me rassurer ?"
+    tomas rire "Pas complètement, non."
+
+    "Je lui laisse la console. En sortant de cette partie des archives, je me surprends à repenser à cette rubrique absurde au bas de ma fiche. J'aurais préféré ne jamais savoir qu'elle existait."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES
     $ hideGroup()
     jump ARCHIVE_TP
