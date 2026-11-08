@@ -158,184 +158,66 @@ label REPOS_PNC_EXIT:
     return
     
 label decouverte_salle_repos:
-
     $ decouverte_salle_repos = True
-
     scene black
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-
-    think "Ici, il y a une salle de repos."
-    think "J’aurais presque envie d’y aller pour souffler et me remettre de mes émotions."
-
-    pause 0.4
-
+    think "J'entends du bruit derrière la porte de la salle de repos. Au moins, il y a déjà des gens qui essaient de s'occuper."
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_346
     scene bg_repos at adaptive_fullscreen with fade
-
-    "La pièce semble étonnamment vivante."
-    "Des jeux."
-    "Un canapé."
-    "Un distributeur."
-
-    think "Quoi qu'on pense de notre situation, l'attention est louable."
-
-    "Un claquement sec résonne."
-    "Une balle de babyfoot tape contre la paroi."
-
+    "Un baby-foot occupe le centre de la pièce. Un garçon fait tourner les poignées avec beaucoup trop d'enthousiasme pendant qu'une fille le regarde, manifestement à bout de patience."
     scene bg_cg007 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg007")
-    
-    "Il y a de l'animation dans la pièce."
-    "Une animation difficile à rater."
-    
     play sound sfx_balle volume 3.0
-
-    julian vide "Hé hé ! Encore un but."
-
-    noam vide "Ah."
-
-    julian vide "T’as vu ?"
-    julian vide "Même pas besoin d’échauffement."
-    julian vide "Je te bats quand tu veux !"
-
-    noam vide "Je viens d’arriver, laisse moi le temps."
-
-    julian vide "C’est suffisant. T'as eu 3 secondes pour te préparer !"
-
-
-    iris vide "Ignore-le."
-    iris vide "Plus tu réponds, plus il parle."
-
-    julian vide "C’est faux."
-    julian vide "Je parle aussi très bien tout seul."
-
-    noam vide "Vous vous connaissez ?"
-
-    iris vide "Malheureusement."
-    $ hideGroup()
-
+    julian vide "Et voilà ! Encore un but splendide. Vous avez tous été témoins, j'espère."
+    iris vide "T'as surtout marqué contre personne. Ça fait une différence."
+    noam vide "Je peux confirmer que le gardien avait l'air complètement dépassé."
+    julian vide "Enfin un connaisseur ! Viens, je vais te montrer ce que ça donne avec un adversaire."
+    iris vide "Fais attention. Il va commenter chacun de ses tirs."
+    noam vide "Je m'en remets à ton jugement, alors."
+    "Je prends les poignées de l'autre côté. Julian engage immédiatement, beaucoup trop sûr de lui."
+    play sound sfx_balle volume 2.0
+    julian vide "Tu vois, l'important, c'est d'anticiper. Regarde bien mon prochain mouvement."
+    noam vide "Celui-là ?"
+    "Je récupère la balle et marque avant qu'il ait terminé son explication."
+    iris vide "Oh, magnifique. Tu peux nous refaire la démonstration, Julian ?"
+    julian vide "Un accident de parcours. Je voulais simplement tester ses réflexes."
+    noam vide "Ça tombe bien, ils fonctionnent."
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_347
     scene bg_repos at adaptive_fullscreen with fade
-    
     $ showGroup([
         ("julian", "sourire", 0.22),
         ("iris", "taquin", 0.50),
         ("noam", "sourire", 0.78),
     ])
-
-    julian sourire "Hey."
-    julian sourire "On s'est déjà tapé trois réunions ensemble."
-    julian sourire "Forcément, ça rapproche."
-
-    iris taquin "Crois moi, ça crée surtout des migraines."
-
-    julian taquin "Iris."
-    $ unlock_character_name("iris")
-    julian taquin "Fais pas gaffe, elle est toujours comme ça."
-    julian taquin "Toujours aussi chaleureuse."
-    
-    iris taquin "Non. Juste avec toi."
-
-    noam sourire "Moi c'est Noam."
-
-    julian taquin "Julian."
+    julian sourire "Julian, au fait. Je préfère que tu connaisses le nom du type qui va prendre sa revanche."
     $ unlock_character_name("julian")
-    julian taquin "Et oui, avant que tu demandes :"
-    julian taquin "Je suis à peu près bon dans quasiment tous les domaines."
-
-    iris taquin "Et allez c'est reparti ..."
-
-    pause 0.2
-
-    "Julian relance la balle."
-    "Elle roule."
-    "Il marque encore."
-
-    julian joie "Voilà."
-    julian joie "Allez, encore une partie !"
-
-    iris inquiet "Non."
-    iris inquiet "Tu crois vraiment que Kami va attendre que t'aies fini ton baby-foot ?"
-    
-    julian taquin "Même toi tu confirmes que j'ai des beaux yeux."
-    
-    iris taquin "Par pitié, oublie ce que j'ai dis."
-
-    "Je me passe une main sur le front. Iris le remarque tout de suite."
-    iris inquiet "Attends, t'as encore mal à la tête ?"
-    noam hesitation "Un peu, ouais. Ça va passer."
-    iris desaccord "T'as des vertiges ? Des nausées ?"
-    noam neutre "Non, juste la tête lourde depuis le réveil."
-    iris reflexion "Bon. Si ça empire, va à l'infirmerie. J'ai vu du matériel en passant."
-    julian taquin "Oh, c'est mignon. Tu t'inquiètes pour lui ?"
-    iris colere "Oh, ferme-la ! Je demande juste parce que j'ai pas envie qu'il nous tombe dans les pommes !"
-    noam sourire "D'accord, promis. Et merci."
-    iris blase "Ouais, bon. Fais juste attention."
-
-    pause 0.2
-
-    noam reflexion "Ça vous dérange pas ?"
-    noam reflexion "Qu’il y ait… tout ça."
-
-    "Je désigne la salle."
-    "Les jeux."
-    "Le confort."
-
-    iris reflexion "Ils ont le sens du détail. Des babyfoot à quelques dizaines de mètres d'un canon qui a tué des millions de personne."
-    iris reflexion "Mais bon je préfère être là. C'est au moins un peu plus chaleureux."
-
-    julian neutre "Moi je trouve ça honnête."
-    julian neutre "Ils savent qu’on risque de craquer-"
-    julian neutre "Enfin, que vous risquiez de craquer."
-    julian neutre "Alors ils n... vous donnent de quoi tenir."
-
-    noam hesitation "Tenir jusqu’à quoi ?"
-
-    julian neutre "Jusqu’au prochain vote."
-    julian neutre "Puis le suivant."
-    julian neutre "Et encore après."
-
-    iris triste "Tu dis ça trop calmement."
-    iris triste "Faut dire que ça ne te ressemble pas."
-
-    play sound sfx_balle volume 3.0
-    julian neutre "Je suis concentré sur ma partie."
-
-    iris triste "Évidemment."
-    iris triste "Contre ton ennemi imaginaire."
-
-    pause 0.3
-
-    "Iris s’enfonce un peu plus dans le canapé."
-    "Elle regarde le plafond."
-
-    iris fatigue "Il a toujours été comme ça avant."
-    iris fatigue "Toujours à faire le malin."
-    iris fatigue "Toujours à détourner l’attention."
-
-    julian sourire "Et pourtant t’es là."
-
-    iris fatigue "Parce que j’avais pas le choix."
-
-    think "Personne n’a vraiment le choix ici."
-
-    pause 0.3
-
-    noam neutre "Bon."
-    noam neutre "Je vais continuer à faire le tour."
-
+    noam taquin "Noam. J'espère que tu encaisses aussi bien les défaites que tu annonces les victoires."
+    iris taquin "Tu vas vite comprendre. Moi c'est Iris, et j'ai déjà assez entendu parler de ses exploits pour aujourd'hui."
+    $ unlock_character_name("iris")
+    julian taquin "Ne fais pas attention. Elle me critique parce qu'elle sait que je suis indispensable à cette salle."
+    iris colere "Indispensable ? T'es surtout la raison pour laquelle j'ai besoin d'une salle insonorisée."
+    noam rire "Vous vous connaissez depuis longtemps ?"
+    iris blase "Assez pour savoir qu'il faut jamais lui laisser un public."
+    julian sourire "Et pourtant, elle revient toujours. Je dois avoir un certain charme."
+    iris taquin "Ou alors je surveille le matériel, au cas où tu casserais quelque chose."
+    "Julian reprend les poignées en essayant de retrouver sa dignité. Iris s'assied sur le canapé voisin."
+    julian neutre "Bon, une dernière. Cette fois, on joue sérieusement."
+    noam taquin "Tu jouais pas sérieusement avant ?"
+    julian taquin "J'étais en phase d'observation. C'est une technique très avancée."
     play sound sfx_balle volume 2.0
-    julian taquin "Quand tu veux perdre au babyfoot, tu sais où me trouver."
-
-    iris sourire "Ou quand t’auras besoin de silence, ne viens pas ici du coup."
-    iris sourire "Je devrais peut être aller aux archives, il n'y aura pas ce casse pied."
-
-    noam sourire "Je retiens."
-    
+    "Nous échangeons quelques balles. Julian finit par marquer et lève les bras comme s'il venait de gagner un championnat."
+    julian joie "Ah ! Voilà, le talent finit toujours par parler."
+    iris blase "On t'a entendu. Tout le couloir aussi, probablement."
+    noam sourire "Bon, un partout. On pourra régler ça une autre fois."
+    iris inquiet "Au fait, Noam, ça va depuis le réveil ? T'as l'air un peu pâle."
+    noam neutre "J'ai encore la tête lourde, mais ça va."
+    iris reflexion "Si ça passe pas, va à l'infirmerie. Ce serait idiot de faire un malaise juste pour lui donner un nouveau public."
+    julian surpris "Comment ça, un nouveau public ?"
+    iris taquin "Les gens qui viendront te ramasser."
+    noam rire "D'accord, je ferai attention."
+    julian sourire "Et quand tu seras remis, je t'attends pour la belle."
+    noam taquin "Tu peux déjà commencer à t'entraîner."
+    "Julian replace la balle au centre. Iris lève les yeux au ciel, mais elle sourit quand même."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_7
-
     $ hideGroup()
     jump REPOS_TP
-
-# 1m45
-# Total : 38m05

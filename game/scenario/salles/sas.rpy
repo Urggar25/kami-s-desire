@@ -163,151 +163,46 @@ label LIV_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_sas:
-
     $ decouverte_sas = True
-
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-
-    think "Sas de livraison."
-    think "Pourquoi les livraisons auraient-elles besoin de passer par un sas ?"
-    think "Comme si les livraisons pouvaient être toxiques ou infectées."
-
-    pause 0.4
-
+    think "Le sas de livraison. C'est peut-être le seul endroit où quelque chose peut entrer ou sortir de cette station."
     call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_349
     scene bg_sas at adaptive_fullscreen with fade
-
-    "La pièce est vaste, froide, presque clinique."
-    "Le sol reflète les lumières bleues du plafond."
-    "Tout est net."
-    "Trop net."
-
-    "Des caisses longent les murs."
-    "Des machines de contrôle bourdonnent doucement."
-    "Et au fond, il y a cette porte."
-    "Impossible à ignorer."
-
+    "Une énorme porte blindée ferme le fond de la salle. Des caisses sont empilées le long des murs et plusieurs combinaisons attendent dans leurs supports."
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("mara", "mefiant", 0.78),
     ])
-    think "Ils ont vraiment pensé à tout."
-    think "Même à la façon dont on allait oublier qu’on dépend d’eux."
-
-    "Près de la porte, quelqu’un est déjà là."
-    "Une femme."
-    "Immobile."
-    "Bras croisés."
-    "Le regard fixé sur le sas, comme si elle attendait qu’il fasse une erreur."
-
-
-    noam hesitation "…"
-    noam hesitation "Euh…"
-    noam hesitation "Salut."
-
-    mara jaloux "Hein ?"
-    mara taquin "Putain, c’est toi qui traînes ici ?"
-    mara sourire "Salut, le stalker."
-
-    pause 0.2
-
-    noam taquin "Hein ?!"
-    noam reflexion "Désolé, je voulais pas te faire peur."
-    noam reflexion "C’est juste que…"
-    noam reflexion "je pensais pas tomber sur quelqu’un ici."
-
-    mara doute "Ouais…"
-    mara doute "Les autres regardent la porte deux secondes,"
-    mara doute "voient qu'elle est fermée,"
-    mara doute "et repartent."
-    mara taquin "Ils ont pas les couilles de rester."
-
-    noam sourire "Et toi ?"
-
-    mara sourire "Moi je reste."
-    mara sourire "Je préfère savoir comment ça marche, au cas où."
-    mara sourire "Au moins, si y a un problème, je saurai où aller."
-    mara taquin "Parce que ça finira bien par merder quelque part."
-
-    noam hesitation "Ça te fait pas peur, quand même ? De rester bloquée ici un mois ?"
-    mara rire "Moi ? Oh non, je suis ravie. Des portes blindées, zéro moyen de rentrer chez moi... Le rêve."
-    noam reflexion "Non, je te demande vraiment."
-    "Elle jette un coup d'œil au sas. Son sourire disparaît une seconde."
-    mara stress "Évidemment que j'ai les boules. Tu crois quoi ?"
-    "Elle détourne les yeux, puis reprend son sourire habituel."
-    mara taquin "Mais si je commence à flipper avec toi, on va pas s'en sortir. Allez, change de sujet."
-    noam neutre "D'accord."
-
-    pause 0.3
-
-    noam neutre "J'imagine que tu viens d'Axiome alors ?"
-    noam neutre "Moi c'est Noam."
-    noam neutre "District [codex_dialogue_link('harmonie', 'HARMONIE')]."
-
-    mara neutre "Mara."
+    "Une femme est plantée devant le terminal, les bras croisés. Elle appuie sur une commande et obtient exactement le même bip d'erreur que la fois précédente."
+    mara agace "Allez, ouvre-toi, espèce de saloperie."
+    noam hesitation "Tu sais qu'en général, insulter une porte ne suffit pas à l'ouvrir ?"
+    mara surpris "Putain, tu m'as fait sursauter ! T'étais obligé d'arriver comme un fantôme ?"
+    noam sourire "Désolé. Je pensais pas trouver quelqu'un en train de se battre avec le sas."
+    mara taquin "Je me bats pas. Je vérifie juste s'il y a moyen de sortir d'ici sans demander la permission à notre chère Kami."
+    noam surpris "Et alors ?"
+    mara neutre "Et alors, ça veut pas. Même le menu de maintenance est verrouillé. Ils nous prennent vraiment pour des gosses."
+    noam reflexion "Tu comptais faire quoi si ça s'ouvrait ?"
+    mara rire "Je sais pas, rentrer chez moi à pied ? Tu poses des questions franchement."
+    noam taquin "C'est toi qui essayais d'ouvrir."
+    mara sourire "Touché. Moi c'est Mara, d'Axiome."
     $ unlock_character_name("mara")
-    mara sourire "Et ouais, bingo : Axiome pur jus."
-
-    noam taquin "Ah."
-    noam taquin "D'où le côté un peu professionnel."
-
-    mara rire "Seulement un peu ?"
-
-    pause 0.3
-
-    "Je m’approche d’une caisse."
-    "Elle est lourde."
-    "Même sans l’ouvrir, on le sent."
-
-    noam reflexion "Tu crois que ce sas sera utile ?"
-
-    mara doute "Euh… ouais."
-    mara doute "Normalement, les livraisons tombent une fois par semaine."
-    mara reflexion "C’est huilé au millimètre : J7, J14, J21, J28."
-    mara reflexion "Toujours pile à la même heure, comme des horloges suisses."
-    mara taquin "Très rassurant, hein ?"
-
-    noam surpris "Ils ont déjà prévu tout ça ?"
-    noam surpris "Genre…"
-    noam surpris "jusqu’à la fin du Conclave ?"
-
-    mara doute "Au moins on est surs d'avoir des livraisons régulièrement."
-
-    pause 0.3
-
-    think "Même la nourriture arrive sous calendrier strict."
-
-    noam sourire "C’est con, mais…"
-    noam sourire "savoir que ça arrive toutes les semaines, ça rassure."
-
-    mara stress "Ouais… c’est exactement pour ça que ça me fout les jetons."
-
-    pause 0.3
-
-    noam inquiet "Pourquoi ?"
-
-    mara stress "Parce que si un truc déconne…"
-    mara stress "si on a besoin d’un médoc, de bouffe en plus, d’un câble USB ou que sais-je…"
-    mara stress "bah on attend sagement le prochain jour J."
-    mara doute "Et si c’est pas le bon jour… on crève la dalle ou on crève tout court."
-    mara sourire "Super planning, Kami. Vraiment top."
-    pause 0.4
-
-    "Je regarde la porte."
-    "Puis les combinaisons."
-    "Puis les caisses."
-
-    think "Même l’espoir arrive emballé."
-
-    pause 0.4
-
-    think "Je devrais aller voir ailleurs."
-
+    noam sourire "Noam, d'[codex_dialogue_link('harmonie', 'HARMONIE')]."
+    mara taquin "Harmonie ? Ah, donc t'es le type qui va nous demander de parler calmement quand on commencera à se foutre sur la gueule."
+    noam desaccord "J'espère surtout qu'on en arrivera pas là."
+    mara rire "Ouais, moi aussi. Ça m'emmerderait de devoir te donner raison."
+    "Mara donne un petit coup du plat de la main sur le terminal, puis désigne les caisses derrière elle."
+    mara neutre "Au moins, la logistique a l'air prévue. Livraisons aux jours 7, 14, 21 et 28. Nourriture, médocs, pièces de rechange... tout passe par ici."
+    noam reflexion "Tu as trouvé ça sur l'écran ?"
+    mara sourire "Ouais. L'horaire et les quantités sont affichés. Les codes d'ouverture, bizarrement, beaucoup moins."
+    noam inquiet "Si on a un problème urgent entre deux livraisons, on fait comment ?"
+    mara stress "Ben on se démerde avec ce qu'on a. C'est ça qui me plaît pas dans leur planning à la con."
+    noam neutre "Tu as peur qu'ils oublient de nous approvisionner ?"
+    mara taquin "J'ai surtout peur de dépendre d'une machine qui peut décider de nous faire chier pour s'amuser. Nuance."
+    "Elle recule enfin du terminal et lève les mains en signe de capitulation."
+    mara sourire "Bon, j'ai fait le tour de ma grande carrière de voleuse de vaisseau. Si tu trouves un bouton marqué « sortie », tu m'appelles."
+    noam taquin "Promis. Mais je vérifierai d'abord que c'est pas celui qui ouvre la porte sur le vide."
+    mara rire "Ah, t'apprends vite. T'es peut-être pas si chiant finalement."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_8
-
     $ hideGroup()
     jump LIVRAISON_TP
-
-# 1m20
-# Total : 52m45

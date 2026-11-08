@@ -141,267 +141,53 @@ label INF_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_infirmerie:
-
     $ decouverte_infirmerie = True
-
     scene black
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
-
-    think "L'infirmerie."
-    think "Un lieu qui serait anodin dans n'importe quel endroit."
-    think "Mais ici, ça n'a rien de rassurant."
-
-    pause 0.4
-
+    think "Je préfère vérifier où on pourra se faire soigner. Avec un mois à passer ici, ce serait idiot de découvrir l'infirmerie au moment d'en avoir besoin."
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_340
     scene bg_infirmerie at adaptive_fullscreen with fade
-
-    "L’air est plus froid qu’ailleurs."
-    "Et pas seulement à cause des machines."
-    "Ça sent le désinfectant."
-    "Le plastique neuf."
-    "Et un truc comme si c'était métallique."
-
-    "À gauche, il y a des étagères."
-    "Plein de boîtes."
-    "Plein de flacons."
-    "Des produits qui sont alignés au millimètre près."
-
-    "À droite, il y a des longs casiers réfrigérés."
-    "Trop longs."
-    "Trop nombreux."
-
-    "Une longue table aseptisée trône au fond de la pièce."
-    "Du matériel médical l'accompagne."
-    "Et, dans un coin, une bibliothèque de revues scientifiques."
-    "Comme si quelqu’un avait voulu ajouter une petite touche… humaine."
-
+    "L'endroit est bien équipé : lits d'examen, armoires de médicaments, matériel d'urgence et une salle d'opération derrière une vitre."
     $ showGroup([
         ("noam", "reflexion", 0.22),
-        ("sael", "reflechit", 0.78),
+        ("sael", "neutre", 0.78),
     ])
-
-    "La fille de tout à l'heure est déjà là."
-    "Debout."
-    "Les bras croisés."
-    "Elle ne regarde pas les médicaments."
-    "Elle regarde les casiers."
-
-    noam hesitation "Il semble y avoir ce qu'il faut pour se faire prescrire un truc."
-
-    sael sourire "Ouais."
-    sael taquin "Contre la connerie ?"
-    sael taquin "Non, ça, ils ont pas prévu le traitement."
-
-    "Je suis son regard."
-    "Les casiers."
-    "Le mur froid."
-    "Les poignées."
-
-    noam hesitation "Ne me dis pas que c'est ..."
-
-    sael mefiant "Oh je crois bien que si."
-    sael mefiant "C'est une morgue."
-    
-    sael reflechit "Regarde, on a chacun notre casier."
-    
-    "Elle pointe du doigt l'un des casiers."
-    "Une étiquette se trouve à côté de la poignée."
-    "Sael"
+    "Une femme inspecte les étagères. Elle contrôle l'étiquette d'une boîte, puis la remet exactement à sa place."
+    noam sourire "Salut. Tu travailles dans le médical ?"
+    sael neutre "Non. Je regarde ce qu'on a."
+    noam hesitation "Ah. Je cherchais juste de quoi soigner une blessure, au cas où."
+    sael raison "Pansements, antiseptiques et sutures dans l'armoire de gauche. Il y a aussi de quoi traiter les blessures graves."
+    noam surpris "Tu as trouvé tout ça en deux minutes ?"
+    sael neutre "Je sais ce qu'il faut chercher."
+    noam sourire "Moi c'est Noam, d'Harmonie."
+    sael neutre "Sael. Limen."
     $ unlock_character_name("sael")
-    
-    
-    sael taquin "Et là il y a le tiens."
-    
-    "Elle pointe le casier où il y a écris Julian."
-    
-    
-    noam taquin "Ah non, je m'appelle pas Julian."
-    
-    
-    "Elle semble désorientée un instant."
-    sael surpris "Hein ? Ah bon ?!"
-    
-    noam taquin "Ben oui, si je te le dis."
-    noam taquin "Moi je m'appelle Noam."
-    
-    "Elle regarde les casiers et cherche quelque chose du regard."
-    
-    
-    sael determine "Rigole pas. Y a sûrement un casier à ton nom aussi."
-
-    "Un frisson me parcoure l'échine en entendant ce mot."
-
-    noam reflexion "Je croyais que les commandements empêchaient… tout ça."
-
-    sael desaccord "Ouais."
-    sael desaccord "Ailleurs."
-    sael raison "Sauf qu’on est pas 'chez nous'."
-    sael raison "On est au Conclave."
-
-    "Elle désigne la pièce d’un mouvement du menton."
-    "Les étagères."
-    "La table."
-    "Les casiers."
-
-    sael reflechit "Tu n’as pas fait attention, toi ?"
-    sael reflechit "Ce petit détail qui change tout."
-    sael reflechit "Ici, les commandements sont abolis."
-
-    noam hesitation "Tu veux dire…"
-
-    sael raison "Je veux dire que la violence est autorisée."
-    sael mefiant "Si ce n'est souhaitée."
-    sael mefiant "Mais rien ne permet de confirmer ça."
-
-    "Je reste une seconde sans réponse."
-    "Mon cerveau refuse l’information."
-    "Puis il l’accepte, parce qu’il n’a pas vraiment le choix."
-    "La présence d'une morgue en atteste."
-
-    noam peur "Donc… les commandements c'est ...."
-    noam peur "Oh putain ça craint."
-
-    sael culpabilite "Ouais."
-
-    "Comme si le simple fait de le dire lui collait quelque chose sur la langue."
-
-    noam reflexion "Et on est censés faire quoi avec ça ?"
-
-    sael determine "Déjà, le garder en tête."
-    sael determine "Quand quelqu’un s’énerve."
-    sael determine "Quand quelqu’un 'perd patience'."
-    sael determine "Quand quelqu’un décide que c’est plus simple de régler un problème à l’ancienne."
-    sael determine "Faut essayer de calmer le jeu."
-
-    noam hesitation "À l’ancienne…"
-    noam hesitation "Faut dire que c'est une salle qui a déjà le frigo prévu pour le corps."
-
-    sael sourire "Voilà."
-    sael taquin "Ambiance conviviale quoi."
-
-    "Elle tente l’humour."
-    "Mais son regard glisse encore vers les casiers."
-    "Comme un réflexe. Comme une obsession."
-
-    "Je fais quelques pas."
-    "Je m’arrête devant les étagères."
-    "Je lis des étiquettes."
-    "Les noms des médicaments sont extrèmement compliqués, acétamino-bidule ; trigly-machin ..."
-    "Je reconnais certaines racines à certains mots."
-    "D’autres sont très flous."
-
-    noam hesitation "Et ça…"
-    noam hesitation "C’est en libre-service ?"
-
-    sael mefiant "Bonne question."
-    sael reflechit "Mais si c’est là, c’est que quelqu’un doit pouvoir s’en servir."
-    sael reflechit "Etant donné qu'il n'y a pas de robot dans cette pièce."
-    sael reflechit "C'est probablement… n’importe qui."
-
-    noam culpabilite "Médicaments."
-    noam culpabilite "Poisons."
-    noam culpabilite "Sédatifs."
-    noam culpabilite "On coche toutes les cases, là."
-    
-    sael taquin "Oh tu as l'oeil ! Il y a bien des poisons ici en plus de médicaments plus traditionnels."
-
-    
-    sael desaccord "Il y a aussi la table au fond."
-    
-    sael reflechit "Celle-là, c’est pas pour mettre un pansement."
-
-    "Je regarde la table d’opération."
-    "Les bras articulés."
-    "Les écrans."
-    "Les tiroirs."
-    "Je déteste la manière dont tout paraît prêt."
-    "Comme si toute la pièce n'attendait qu'une chose : que l'un d'entre nous se blesse."
-
-    noam peur "J’aime pas ça."
-
-    sael triste "Moi non plus."
-    sael raison "Mais c’est justement pour ça que je voulais venir."
-
-    noam reflexion "Pour te faire peur ?"
-
-    sael rire "Non."
-    sael reflechit "Pour me rappeler un truc."
-    sael reflechit "Si ça dérape… Ou quand ça dérapera."
-    sael determine "Je veux être prête au moment où quelqu’un me sautera dessus."
-
-    noam hesitation "Tu parles comme si…"
-    noam hesitation "Comme si tu t’y attendais."
-
-    sael mefiant "Je m’y attends pas."
-    sael raison "Je refuse juste d’être naïve."
-    sael raison "Je m'y prépare."
-
-    "Elle se tait une seconde."
-    "Puis elle hausse les épaules, comme pour alléger."
-
-    sael taquin "Et puis…"
-    sael taquin "J’ai une réputation à tenir."
-    sael sourire "Je suis censé être 'la gosse des rues'."
-
-    noam rire "Ah."
-    noam taquin "Donc c’est ça."
-    noam taquin "Rien ne peut vraiment t'atteindre."
-
-    sael joie "Exactement."
-    sael taquin "Et je ne mourrais pas ici.."
-
-    pause 0.4
-
-    noam reflexion "T’as dit tout à l’heure que tu 'n’espérais pas devoir t’en servir'."
-
-    sael triste "Ouais."
-
-    noam hesitation "De ta force ?"
-
-    sael culpabilite "Ouais."
-    sael reflechit "Dans mon district, à Limen, quand ça part en vrille…"
-    sael reflechit "Fin, oublie ce que j'ai dis.."
-    sael triste "Je pense que personne n'a envie de voir ça ici.."
-
-    sael raison "Voilà."
-    sael determine "Donc je préfère espérer que rien n'arrive…"
-    sael determine "Et me préparer au cas où."
-
-    "Elle tapote doucement un casier."
-    "Le métal renvoie un son sourd."
-
-    think "Une morgue."
-    think "Des poisons."
-    think "Une table d’opération."
-    think "Et des revues scientifiques."
-
-    pause 0.4
-
-    noam hesitation "On ressort, et on fait comme si tout était normal ?"
-
-    sael sourire "Ouais."
-    sael taquin "Comme des adultes responsables."
-    sael taquin "Si on est là, c'est pour une raison."
-    sael taquin "Il faut qu'on améliore la vie dans nos districts."
-
-    noam sourire "Génial."
-    noam rire "J’adore quand on me vend une journée tranquille."
-
-    pause 0.5
-
-    "Je recule d’un pas."
-    "Je jette un dernier regard aux casiers."
-    "Puis aux étagères."
-    "Puis à la table, au fond."
-
-    think "Je devrais aller voir ailleurs."
-    think "Il faut que je trouve un endroit moins morbide."
-    
+    noam reflexion "Tu as l'habitude de te soigner toute seule ?"
+    sael reflechit "Quand tu es loin d'un dispensaire, tu n'attends pas qu'un médecin arrive pour arrêter une hémorragie."
+    "Elle indique d'un mouvement de tête la zone derrière moi. Je me retourne et remarque plusieurs compartiments réfrigérés, avec des noms inscrits dessus."
+    noam inquiet "Attends, c'est quoi, ces tiroirs ?"
+    sael neutre "La morgue."
+    noam peur "Ils ont prévu une morgue ? Ici ?"
+    sael raison "Lis les étiquettes."
+    "Je reconnais plusieurs prénoms parmi ceux entendus plus tôt. Même les emplacements vides portent déjà une identification."
+    noam inquiet "Ils ont préparé une place pour chacun de nous..."
+    sael reflechit "Oui. Ils n'ont pas attendu qu'il y ait un mort."
+    noam desaccord "Mais les Commandements interdisent la violence."
+    sael raison "Sur Terre. Kami a dit qu'ils étaient suspendus ici."
+    noam inquiet "Je savais que les règles étaient différentes, mais de là à prévoir nos corps..."
+    sael mefiant "Prévoir n'est pas provoquer. On ignore pourquoi ils ont installé ça."
+    "Sael s'approche d'une autre armoire et vérifie son verrou. Il cède sans difficulté."
+    noam reflexion "On peut vraiment ouvrir les réserves de médicaments ?"
+    sael reflechit "Apparemment. Il y a des calmants, des anesthésiques et aussi des produits dangereux. Rien ne devrait être accessible comme ça."
+    noam inquiet "On devrait peut-être prévenir les autres."
+    sael raison "Pour la morgue, oui. Et pour les médicaments, mieux vaut que chacun sache ce qu'il ne faut pas toucher."
+    noam hesitation "Tu n'as pas l'air très surprise."
+    sael fatigue "J'ai vu des gens mourir parce que personne n'avait prévu de quoi les aider. Ça ne veut pas dire que j'aime voir leurs noms sur des tiroirs."
+    "Elle referme l'armoire et vérifie une dernière fois que la porte tient."
+    sael neutre "J'emporte rien. Mais maintenant, je sais où sont les soins."
+    noam neutre "J'espère qu'on n'aura jamais à s'en servir."
+    sael reflechit "Moi aussi. Ça ne coûte rien d'être prêt."
+    "Sael retourne à son inventaire. Je quitte la zone des casiers sans réussir à oublier les noms que j'y ai lus."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
-
     $ hideGroup()
     jump INFIRMERIE_TP
-
-# 3m20
-# Total : 46m45

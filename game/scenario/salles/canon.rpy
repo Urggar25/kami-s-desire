@@ -90,322 +90,74 @@ label CANON_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_canon:
-
     $ decouverte_salle_canon = True
-
     scene black
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
-
-    think "Ça fait même pas quelques dizaines de minutes."
-    think "Même pas le temps de comprendre où on est."
-    think "Et pourtant…"
-
-    think "Il y a cette salle qui m'a intrigué depuis les couloirs."
-    think "La salle du canon."
-
-    pause 0.4
-
+    think "J'avais remarqué cette salle sur le plan. Un canon installé à quelques couloirs de nos chambres, ça mérite au moins qu'on aille voir."
     call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_331
     scene bg_canon at adaptive_fullscreen with fade
-
-    "La porte se referme derrière nous."
-    "Un bruit étouffé."
-    "Comme si la salle avalait le son."
-
-    "Il fait un peu plus froid ici."
-    "Pas un froid naturel."
-    "Un froid réglé précisément."
-
-    "Le canon est là."
-    "Suspendu."
-    "Immense."
-    "Orienté vers le sol."
-
-    "Sous lui, une fosse circulaire."
-    "Entourée d’une vitre épaisse."
-    "Trop épaisse pour rassurer."
-
-    "Tout autour, des consoles."
-    "Des écrans déjà allumés."
-    "Pas en veille."
-    "Actifs."
-
-    # Entrée : Noam observe, Ryn est en mode "jauge"
+    "Les consoles sont allumées. Derrière une vitre épaisse, le canon occupe presque tout l'espace et pointe vers la Terre."
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("ryn", "determine", 0.78),
     ])
-
-    "Le gaçon râleur de tout à l'heure ralentit."
-    "Il s’arrête avant moi."
-
-    ryn reflechit "…"
-
-    noam reflexion "Ouais."
-    noam reflexion "Moi aussi."
-
-    ryn reflechit "Au fait…"
-    ryn reflechit "Ryn."
+    "Un homme s'est arrêté près des commandes. Il regarde l'arme sans même essayer de masquer son dégoût."
+    noam hesitation "Je pensais pas que ce serait aussi gros."
+    ryn colere "C'est donc de là qu'ils nous tiennent tous en laisse."
+    noam reflexion "Tu sais si ce canon fonctionne vraiment ?"
+    ryn neutre "Il a l'air prêt à tirer. Ils ont pas installé ça pour décorer, tu crois ?"
+    noam sourire "Noam, au fait."
+    ryn neutre "Ryn. Je viens de Limen."
     $ unlock_character_name("ryn")
-
-    noam surpris "Hein ?"
-
-    ryn neutre "Mon prénom."
-    ryn neutre "Tant qu'à être coincés ici, autant savoir comment tu t'appelles."
-
-    noam sourire "Noam."
-
-    ryn determine "Ok."
-
-    ryn reflechit "C’est donc ça."
-
-    "Il ne crie pas."
-    "Il ne jure pas."
-    "Il observe."
-
-    ryn reflechit "Je pensais que c’était…"
-    ryn reflechit "Plus loin."
-    ryn reflechit "Ou plus caché."
-
-    noam hesitation "Caché de quoi ?"
-
-    ryn determine "De nous."
-
-    "Il s’approche de la vitre."
-    "Pas trop."
-    "Juste assez pour voir le fond de la fosse."
-
-    ryn reflechit "Ils ont même pas essayé de le cacher."
-    ryn reflechit "Comme si on risquait d'oublier ce truc."
-
-    noam reflexion "Un rappel de quoi ?"
-
-    ryn determine "De ce qui arrive quand quelqu’un oublie les règles et de la domination de Kami."
-
-    "Je regarde les écrans."
-    "Des lignes de données."
-    "Des flux."
-    "Rien de compréhensible."
-
-    noam reflexion "Tu crois vraiment qu’il fonctionne déjà ?"
-    noam reflexion "Je veux dire…"
-    noam reflexion "On vient d’arriver."
-
-    ryn determine "Justement."
-
-    "Il se tourne vers moi."
-
-    ryn colere2 "Tu crois qu’ils ont attendu qu’on soit là pour l’allumer ?"
-    ryn colere2 "C'est sans doute ce canon là qui nous tire dessus depuis un an."
-
-    "Je n’aime pas sa réponse."
-    "Parce qu’elle fait sens."
-
-    noam inquiet "Donc là, maintenant…"
-
-    ryn determine "Là, maintenant, il est prêt."
-
-    "Un silence."
-    "Pas confortable."
-
-    noam hesitation "Tu penses qu’il a déjà servi aujourd’hui ?"
-
-    ryn fatigue "…"
-    ryn fatigue "Je sais pas."
-
-    "Il hésite."
-    "Vraiment."
-
-    ryn inquiet "J’espère que non."
-
+    noam reflexion "Tu as déjà vu ce genre d'installation ?"
+    ryn determine "Pas d'aussi près. Chez nous, on voit surtout ce qu'il reste après."
+    "Il s'approche d'une console et pointe les coordonnées affichées. Chaque secteur possède une ligne de données et un statut."
+    ryn colere "Regarde-moi ça. Ils ont déjà repéré les zones habitées. On dirait un foutu inventaire."
+    noam inquiet "Il y a peut-être aussi des zones de surveillance."
+    ryn desaccord "Arrête. On sait tous à quoi ça sert."
     play sound sfx_beep
-    "-Bip-"
-
+    "Un signal retentit. Sur un écran, une ligne passe du gris à l'orange."
+    noam surpris "Tu as touché quelque chose ?"
+    ryn colere "Non. J'ai même pas approché mes mains."
     play music "music/bgm_system_override.mp3" fadein 1.0
-    "Un bip sec."
-    "Quelque part dans la salle."
-
-    "Ryn se fige."
-
-    noam surpris "C’était quoi ?"
-
-    ryn inquiet "T’as entendu."
-
-    noam desaccord "Oui mais—"
-
-    ryn colere "Chut."
-
+    "Un second écran s'active. Une suite de coordonnées apparaît et le bruit de ventilation devient plus fort."
+    noam inquiet "Ça se met en route tout seul ?"
+    ryn determine "Écarte-toi de la console."
     play sound sfx_beep
-    "-Bip-"
-
-    "Un deuxième bip."
-    "Plus long."
-
-    "Les anneaux lumineux au sol s’allument."
-    "Lentement."
-    "Un cercle après l’autre."
-
-    noam inquiet "Ryn…"
-
-    ryn determine "Putain ! Quelqu’un a fait une connerie."
-
-    noam desaccord "Comment tu peux savoir ça ?"
-
-    ryn reflechit "Parce que rien ici ne s’active pour rien."
-    ryn colere "ça doit venir de là !"
-
-    "Je sens mon estomac se nouer."
-    "Ce n’est plus de la curiosité."
-    "C’est de l’anticipation."
-
-    hide noam with moveoutright
-    hide ryn with moveoutright
-
-    pause 1.0
-
+    "Une alerte s'affiche : PROCÉDURE DE SANCTION. Le compte à rebours démarre."
+    noam peur "Attends, c'est un tir réel ?"
+    ryn inquiet "J'en sais rien. Mais on va pas rester devant les commandes."
+    "Nous gagnons la partie vitrée de la salle, d'où l'on peut voir le canon sous un autre angle."
     call MAYBE_PLAY_SCRIPTED_DOOR("canon", "canon2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_332
     scene canon2 at adaptive_fullscreen with fade
-
     $ showGroup([
-        ("noam", "reflexion", 0.22),
+        ("noam", "inquiet", 0.22),
         ("ryn", "determine", 0.78),
     ])
-
-    noam hesitation "Une connerie comment ?"
-
-    ryn fatigue "Un refus."
-    ryn fatigue "Une violence."
-    ryn fatigue "Un mot de trop."
-    ryn fatigue "J’en sais rien."
-
-    "Il serre les poings."
-
-    ryn colere2 "Mais quelqu’un, quelque part…"
-    ryn colere2 "Vient de sortir du cadre."
-
+    "Des voyants passent au rouge sur les supports. Une vibration remonte dans le sol."
+    noam inquiet "Il reste combien de temps ?"
+    ryn colere2 "Ça change quoi ? On peut rien arrêter !"
     play sound sfx_gresillement
-    "La salle vibre. Très légèrement."
-    "Le canon s’illumine."
-    "Une lueur bleue apparaît en son centre."
-
+    "La vitre se teinte automatiquement. Je recule au moment où un grondement traverse toute la salle."
     play sound sfx_laser_canon volume 8.0
-
-    noam desespoir "Putain…"
-    noam desespoir "C’est réel."
-
-    ryn desaccord "T’en doutais ?"
-
-    noam triste "J’espérais."
-
-    "Les écrans changent."
-    "Un flux vidéo apparaît."
-    "Brouillé."
-    "Inexploitable."
-
-    noam panne "On voit rien."
-
-    ryn determine "C’est fait exprès."
-
-    "Un grondement sourd."
-    "Comme un orage enfermé."
-
-    noam inquiet "On devrait partir."
-
+    with vpunch
+    "Une lumière brutale éclaire les consoles, puis disparaît. Pendant quelques secondes, je n'entends presque plus rien."
+    noam desespoir "Putain... Il vient vraiment de tirer."
     ryn fatigue "Ouais."
-
-    "Aucun de nous ne bouge."
-
-    "Le tir part."
-
-    "Un rayon brutal."
-    "Vertical."
-    "Il frappe la fosse."
-
-    "La lumière envahit la salle."
-    "Blanche."
-    "Aveuglante."
-
-    "Le sol tremble."
-    "La vitre vibre."
-
-    "Je recule d’un pas."
-    "Cette fois sans réfléchir."
-
-    "Puis plus rien."
-    "Le rayon s’éteint."
-    "D’un coup."
-
-    pause 0.8
-
-    "Les anneaux repassent au minimum."
-    "La salle redevient calme."
-
-    "Trop calme."
-
-    noam inquiet "…"
-    noam inquiet "Quelqu'un vient de mourir."
-
-    "Ryn ne répond pas tout de suite."
-
-    ryn colere "Ouais."
-
-    noam triste "On ne sait même pas qui."
-
-    ryn fatigue "Non."
-    ryn fatigue "Mais Kami, si."
-
-    "Il se détourne du canon."
-    "Pour la première fois."
-
+    "Sur l'écran, l'alerte est remplacée par une simple confirmation : SANCTION EXÉCUTÉE."
+    noam peur "On ne sait même pas où il a frappé."
+    ryn colere "Il y a quelqu'un, là-dessous, qui a dû faire un truc interdit. Et Kami vient de décider que ça suffisait pour le tuer."
+    noam triste "On ne sait pas qui c'est. Ni ce qui s'est passé."
+    ryn fatigue "C'est bien le problème."
+    "Ryn reste les yeux fixés sur le message. La colère qu'il affichait en entrant a laissé place à quelque chose de plus difficile à lire."
+    noam inquiet "On devrait retourner prévenir les autres."
+    ryn determine "Ils savent déjà ce que fait Kami. Mais ouais, ça vaut le coup qu'ils voient cette salle."
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-
-    # Micro-shift : après le tir, Noam se recentre légèrement, Ryn se “referme”
-
-    ryn fatigue "Voilà."
-    ryn fatigue "C’est ça, le Conclave."
-
-    noam reflexion "Une salle de réunion avec une arme."
-
-    ryn desaccord "Non."
-    ryn desaccord "Une arme avec une salle de réunion autour."
-    ryn desaccord "Enfin, faut dire qu'il y a peu de chance qu'on fasse des réunions ici."
-
-    ryn jaloux "C'est glauque."
-
-    pause 0.5
-
-    ryn determine "Et maintenant…"
-    ryn determine "Chaque vote va avoir un poids."
-
-    noam raison "Parce qu’on saura ce qu’il y a derrière."
-
-    ryn reflechit "Parce qu’on l’aura entendu."
-
-    "Il me regarde."
-    "Pas pour m’intimider."
-    "Pour vérifier."
-
-    ryn inquiet "Quand ça recommencera…"
-    ryn inquiet "Tu feras semblant que t’as rien vu ?"
-
-    noam hesitation "…"
-
-    ryn determine "Ou tu t’en souviendras ?"
-
-    pause 0.4
-
-    "Je n’ai pas de réponse à lui apporter."
-    "Pas encore."
-    "Nos choix peuvent avoir de véritables impacts ici."
-
-    "Mais je sais une chose."
-    "Je n’oublierai jamais ce bruit."
-    
+    noam reflexion "On va devoir voter à quelques mètres de cette arme..."
+    ryn desaccord "Non. On va voter pendant qu'elle continue de tirer sur les gens qu'on est censés représenter."
+    noam triste "Je crois que j'avais pas encore réalisé ce que ça voulait dire."
+    ryn fatigue "Moi non plus. Pas comme ça."
+    "Il quitte la vitre sans ajouter un mot. Je reste encore un instant devant l'écran, puis je le suis."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_2
-
     $ hideGroup()
     jump CANON_TP
-
-
-#2m30
-# total : 31m20

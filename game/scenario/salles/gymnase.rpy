@@ -151,210 +151,49 @@ label GYM_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_gymnase:
-
     $ decouverte_gymnase = True
-
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-
-    think "Il y a aussi un gymnase."
-    think "Ils ont vraiment pensé à mettre de nombreuses salles différentes."
-
-    pause 0.4
-
+    think "Un gymnase dans une station qui nous retient un mois. Au moins, on ne pourra pas dire qu'ils nous obligent à rester assis toute la journée."
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_338
     scene bg_gymnase at adaptive_fullscreen with fade
-
-    "Ça sent le caoutchouc."
-    "Le produit de nettoyage aussi."
-    "Comme partout dans les couloirs mais plus particulièrement là."
-
-    "Un terrain est marqué sur le sol."
-    "Il y a des tapis de courses, des machines et des poids parfaitement rangés."
-
-    "Et au fond…"
-    "Un type est en train de s'entraîner."
-
+    "Il y a des tapis, des poids et plusieurs machines de cardio. L'une d'elles émet un bruit irrégulier, suivi d'un juron."
     $ showGroup([
         ("noam", "reflexion", 0.22),
-        ("elias", "fatigue", 0.78),
+        ("elias", "neutre", 0.78),
     ])
-
-    "Il fait une série."
-    "Sans musique."
-    "Sans parler."
-    "Juste le bruit de sa respiration."
-    "Et du métal."
-
-    noam hesitation "…"
-    noam hesitation "Salut."
-
-    "Il termine sa lancée."
-    "Repose la barre doucement."
-    "Puis enfin, il me regarde."
-
-    elias neutre "Salut."
-
-    noam sourire "Je pensais être seul."
-    noam sourire "Visiblement non."
-
-    elias fatigue "J'aime bien venir m'entraîner."
-    elias fatigue "Ça m'évite de penser à toutes les merdes qui peuvent nous tomber dessus."
-
-    noam taquin "Ouais... J'imagine que c'est devenu une habitude depuis un an."
-
-    "Il rit de façon courte."
-
-    elias neutre "Pas à cause d’elle."
-    elias neutre "Avant, tu pouvais te prendre une balle n'importe quand. Une guerre, une embrouille..."
-    elias neutre "Là, au moins, on sait ce qu'il faut pas faire."
-    elias raison "Faut juste respecter les règles quoi."
-
-    "Il marque une pause un instant."
-    
-    elias jaloux "Est-ce qu'on vit moins bien qu'avant ?"
-    elias jaloux "Perso, j'ai pas la réponse."
-    elias jaloux "Moi, je fais mon boulot et j'essaie de pas trop y penser."
-
-    pause 0.2
-    "Je ne sais pas vraiment quoi répondre."
-    "D'un côté, il touche juste. Le monde est plus paisible qu'autrefois."
-    "Mais d'un autre, la moindre erreur entraine la mort."
-    "Pas une simple punition."
-    "La mort quoi."
-
-    noam reflexion "Au fait, je m'appelle Noam."
-    noam reflexion "Je viens du district [codex_dialogue_link('harmonie', 'HARMONIE')]."
-
-    "Il hoche la tête, comme si ça validait une info dans sa tête."
-
-    elias neutre "Elias."
+    "Un garçon essaie de régler un tapis de course. Il tapote l'écran, qui refuse visiblement de coopérer."
+    elias colere "Mais avance, bordel ! Je te demande juste de ralentir."
+    noam taquin "Tu veux un coup de main ?"
+    elias surpris "Hein ? Ouais, attends... Non, bouge pas, j'ai presque trouvé."
+    "Le tapis accélère brutalement. Il saute de côté et se rattrape à la barre avant de couper l'alimentation."
+    elias panique "Putain ! C'était pas le bon bouton."
+    noam rire "Tu peux dire que tu as testé la sécurité. Elle marche, visiblement."
+    elias fatigue "Ouais. La sécurité est très bonne. La machine, elle, me casse les couilles."
+    noam sourire "Moi c'est Noam."
+    elias neutre "Elias. Je viens de la Forge, à Axiome."
     $ unlock_character_name("elias")
-    elias neutre "AXIOME. Quartier bas."
-
-    noam surpris "AXIOME…"
-    noam surpris "La Forge."
-
-    elias content "Ouais."
-    elias content "C’est là qu’on fabrique presque tout ce que les autres utilisent."
-
-    "Il dit ça sans fierté particulière."
-    "Mais il sait dans son timbre de voix que AXIOME est nécessaire à tout le monde."
-    "D'un autre côté, chacun des districts est nécessaire aux autres."
-    "C'est pour ça qu'ils ont été découpé ainsi. Pour empêcher les tensions et nous rendre tous dépendants des autres."
-
-    noam reflexion "Tu t'entraînes pour quoi ?"
-
-    elias rire "Pour dormir mieux."
-    elias rire "Une petite session avant 18h, ça serait pas de refus."
-    elias rire "J’espère qu’il y a des douches après."
-
-    noam rire "Ah."
-    noam rire "La meilleure raison."
-
-    pause 0.3
-
-    "Je m'approche du terrain."
-    "Je regarde les repères au sol."
-    "Ça me rappelle l'école."
-    "Ça me rappelle avant."
-
-    "Ça me rappelle qi'avant on était innocent et les problèmes nous passaient au dessus de la tête."
-
-    elias ecoute "Tu fais du sport, toi ?"
-
-    noam hesitation "Avant, oui j'en faisais parfois."
-    noam hesitation "Mais ça fait un moment que j'en ai pas fait …"
-    noam hesitation "Je sais plus trop ce que je fais, honnêtement."
-
-    elias fatigue "C’est pour ça que je continue."
-    elias fatigue "Quand tout part en vrille, faut garder un repère."
-    elias neutre "C’est le principe."
-
-    pause 0.2
-
-    noam taquin "Donc si je veux survivre ici…"
-    noam taquin "Je dois courir et soulever des trucs."
-
-    elias content "Et bois de l’eau."
-    elias content "Respire."
-    elias content "Sinon t’auras des crampes, et bon courage."
-
-    noam sourire "Merci docteur."
-
-    "Elias se penche sur le panneau d'une machine et appuie sur plusieurs touches."
-    elias content "Attends, je vais te montrer. Ça se règle facilement, ce truc."
-    "Le tapis roulant se met brusquement à accélérer. Elias se redresse d'un coup."
-    elias panique "Oh, merde ! Non, c'est pas ça !"
-    noam surpris "Euh... Elias ?!"
-    "Il appuie sur une touche. Rien. Il trouve enfin le bouton d'arrêt et le tapis ralentit."
-    elias gene "Putain... Je voulais juste régler la vitesse."
-    noam taquin "T'es sûr que tu connais la machine ?"
-    elias rire "Maintenant, oui. Je sais surtout quel bouton pas toucher."
-    "Je me mets à rire. Elias aussi, après une seconde."
-
-    "Il souffle du nez."
-    "Ça ressemble presque à un vrai rire."
-
-    pause 0.3
-
-    elias ecoute "Tu sais ce qui est drôle ?"
-    elias ecoute "Ils nous filent un gymnase."
-    elias ecoute "Comme si on était en colonie."
-    elias ecoute "On soit, c'est pas pour me déplaire. J'ai toujours voulu aller en colo."
-
-    noam reflexion "Ouais. Notre animateur est juste un peu plus cinglé que les autres."
-
-    elias neutre "Exactement."
-
-    "Il regarde la machine de muscu."
-    "Puis les lignes au sol."
-    "Puis moi."
-
-    elias inquiet "Ces 30 jours, ça va pas être une partie de plaisir."
-    elias inquiet "On va être sur le qui-vive tout le temps, pas seulement aux votes."
-    elias inquiet "Fatigue, nerfs à vif… ça va peser."
-
-    noam inquiet "Tu crois que le sport change quelque chose ?"
-
-    elias neutre "Non. Pas forcément."
-    elias neutre "Mais ça permet au moins de se vider la tête."
-
-    pause 0.3
-
-    "Je regarde le tapis puis les poids."
-
-    think "Ils ne me font pas spécialement envie."
-    think "Rien que l'idée d'avoir des courbatures me freine déjà."
-
-    noam hesitation "Bon, allez fais moi une démo, Sensei !"
-    noam hesitation "Histoire de faire semblant d'être normal dans ce monde chelou."
-
-    elias content "Ok."
-    elias content "Mais écoute bien."
-    elias content "Sinon tu vas te péter quelque chose."
-
-    noam sourire "Promis."
-
-    pause 0.4
-
-    "Pendant quelques minutes…"
-    "Il me montre les postures à adopter, le rythme de respiration à avoir."
-
-    "C'est bête."
-    "C'est simple."
-    "Et mine de rien, ça fait quand même du bien."
-
-    pause 1.0
-    
-    "Après une longue série d'exercices."
-
-    think "Je devrais aller voir ailleurs."
-    
+    noam reflexion "Tu fais souvent du sport ?"
+    elias neutre "Quand j'ai le temps. Après une journée à bosser, ça aide à dormir. Et ici, franchement, j'ai besoin de me vider la tête."
+    noam sourire "Je comprends. Je sais même pas encore ce qu'on va faire de nos journées."
+    elias fatigue "On a les votes, les repas et un paquet de temps à tuer. Moi, si je reste assis à réfléchir à tout ça, je vais devenir dingue."
+    noam taquin "Tu comptes donc te tuer sur un tapis de course à la place ?"
+    elias rire "Très drôle. T'as qu'à essayer, tu feras moins le malin."
+    "Il remet le tapis à sa vitesse minimale et me fait signe de monter. Je pose un pied dessus, puis l'autre."
+    noam hesitation "Là, tu es sûr du réglage ?"
+    elias content "Ouais, cette fois c'est bon. Regarde, il y a juste à marcher."
+    "Le tapis avance à une allure tranquille. J'accélère un peu et Elias me surveille, prêt à intervenir."
+    noam sourire "Finalement, c'est pas si compliqué."
+    elias taquin "C'est ce que je disais avant de toucher au mauvais bouton. Fais gaffe à tes grandes phrases."
+    noam rire "D'accord, j'ai rien dit."
+    "Après quelques pas, je descends et lui rends sa place."
+    noam reflexion "Tu crois vraiment qu'on aura le temps de venir s'entraîner avec tout ce qui nous attend ?"
+    elias neutre "Je sais pas. Mais si on passe un mois à se bouffer les nerfs, on tiendra pas longtemps. Alors autant garder nos habitudes."
+    noam sourire "Pas faux. Je repasserai peut-être."
+    elias joie "Quand tu veux. Mais la prochaine fois, c'est toi qui règles la machine."
+    noam taquin "Ah non. J'ai vu comment ça finit quand on fait confiance à un expert."
+    elias rire "Va te faire voir !"
+    "Il éclate de rire avant de relancer son entraînement, cette fois sans toucher à l'écran."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_3
-
     $ hideGroup()
     jump GYMNASE_TP
-
-# Durée : 2m30
-# Total : 49m15
