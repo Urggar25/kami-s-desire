@@ -163,7 +163,7 @@ label _29_0_1_1_0_0_1_1_APRES_SERINGUE:
     sael raison "Alors on y va. Et pas un mot dans les couloirs."
     "Pendant que Mara récupère sa lampe, je sors discrètement ma tablette et ouvre la messagerie."
     think "S'il est encore réveillé, il peut au moins se barrer."
-    call messenger_play("julian", "julian", [("noam", "Julian, réveille-toi. C'est sérieux. Ne reste pas dans ta chambre."), ("noam", "Réponds-moi, putain.")], objective_text="Prévenir Julian")
+    call messenger_play("julian", "julian", [("noam", "Julian, réveille-toi. C'est sérieux. Ne reste pas dans ta chambre."), ("noam", "Réponds-moi, putain.")], objective_text="Prévenir Julian") from _call_messenger_play_8
     "J'attends quelques secondes. Aucun message en retour. Mara me fait signe d'avancer."
     think "Allez, Julian... regarde ta tablette."
     $ hideGroup()
@@ -417,7 +417,7 @@ label _29_0_1_1_0_0_1_1_NAISSANCE:
     play music "music/bgm_cold_metadata.mp3" fadein 0.7
     "Kael nous appelle en début d'après-midi. La première phase est terminée."
     $ showGroup([("kael", "calme", 0.12), ("nyra", "reflexion", 0.35), ("mara", "inquiet", 0.58), ("noam", "inquiet", 0.83)])
-    call play_stat_dialogue("j29")
+    call play_stat_dialogue("j29") from _call_play_stat_dialogue_8
 
     kael raison "Bon. Le corps est prêt. Personne ne touche aux commandes tant que j'ai pas fini."
     mara surpris "Il est là ?"

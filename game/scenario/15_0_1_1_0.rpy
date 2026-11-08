@@ -384,7 +384,7 @@ label _15_0_1_1_0_RENCONTRE_KAEL:
 
     "Une arborescence d’archives apparaît à l’écran. Kael sélectionne sa chambre, puis le huitième jour."
 
-    call play_stat_dialogue("j15")
+    call play_stat_dialogue("j15") from _call_play_stat_dialogue_14
 
     kael "Je suis rentré vers 19h30. La photo était encore là."
     noam "Tu en es sûr ?"

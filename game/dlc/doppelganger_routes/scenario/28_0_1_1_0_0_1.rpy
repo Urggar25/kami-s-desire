@@ -15,7 +15,7 @@ label _28_0_1_1_0_0_1_REVEIL:
     $ j28_secret_plan_decided = False
     $ j28_secret_iris_exchange = False
     $ j28_secret_zero_contact = False
-    call show_chapter_title("Début du chapitre 9", "Chapitre 9 — Le dernier départ")
+    call show_chapter_title("Début du chapitre 9", "Chapitre 9 — Le dernier départ") from _call_show_chapter_title_12
     scene bg_laboratoire at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
@@ -38,7 +38,7 @@ label _28_0_1_1_0_0_1_REVEIL:
     noam neutre "Tu devrais peut-être dormir un peu."
     tomas fatigue "Ouais, merci. Ça m'aide vachement."
     "Ma tablette vibre."
-    call messenger_play("iris", "iris", [("iris", "Tu m'as dit que tu revenais dans cinq minutes, ça fait déjà un quart d'heure !"), ("iris", "T'es encore parti chercher quoi ?"), ("iris", "Et reviens vite, j'ai envie de te parler d'hier. Pas devant les autres.")], objective_text="Lire les messages d'Iris")
+    call messenger_play("iris", "iris", [("iris", "Tu m'as dit que tu revenais dans cinq minutes, ça fait déjà un quart d'heure !"), ("iris", "T'es encore parti chercher quoi ?"), ("iris", "Et reviens vite, j'ai envie de te parler d'hier. Pas devant les autres.")], objective_text="Lire les messages d'Iris") from _call_messenger_play_5
     "Je relis le message. Je sais pas quoi répondre."
     tomas reflexion "C'est ton double qui t'écrit ?"
     noam hesitation "Non. Iris."
@@ -187,7 +187,7 @@ label _28_0_1_1_0_0_1_REUNION:
     noam colere "Je sais, Mara ! Me prends pas pour un con !"
     mara colere "Bah alors arrête de nous engueuler et propose autre chose !"
     tomas colere "Mara, ça suffit ! Il a le droit de pas vouloir !"
-    call play_stat_dialogue("j28")
+    call play_stat_dialogue("j28") from _call_play_stat_dialogue_7
 
     mara colere "Et moi j'ai le droit d'avoir peur de Keyper ! Vous voulez qu'on attende quoi, le jour du départ ?"
     "Elias soupire et passe une main sur son visage."
@@ -376,7 +376,7 @@ label _28_0_1_1_0_0_1_EXPEDITION:
     $ flashlight_on(0)
     "Au retour, le sac est encore plus lourd. On s'arrête à un endroit où on peut souffler."
     "Je profite de la pause pour regarder ma tablette."
-    call messenger_play("iris", "iris", [("iris", "Bon, t'en as encore pour longtemps ?"), ("iris", "Tu m'avais dit que t'allais juste récupérer un truc."), ("iris", "J'aimerais qu'on se retrouve tous les deux après. On pourra parler tranquillement.")], objective_text="Lire les messages d'Iris")
+    call messenger_play("iris", "iris", [("iris", "Bon, t'en as encore pour longtemps ?"), ("iris", "Tu m'avais dit que t'allais juste récupérer un truc."), ("iris", "J'aimerais qu'on se retrouve tous les deux après. On pourra parler tranquillement.")], objective_text="Lire les messages d'Iris") from _call_messenger_play_6
     "Elle pense qu'il est juste parti chercher quelque chose. Moi, ça fait des heures que je suis ici. Je peux même pas lui répondre."
     elias neutre "Tu viens ?"
     noam fatigue "Ouais, j'arrive."
@@ -513,7 +513,7 @@ label _28_0_1_1_0_0_1_FIN:
     $ j28_secret_zero_contact = True
     "Je m'assois sur la banquette et je prends ma tablette."
     "Un message d'Iris vient d'arriver. Elle a dû se retrouver seule après la cafétéria."
-    call messenger_play("iris", "iris", [("iris", "Je suis rentrée dans ma chambre. J'ai pas osé t'en parler avec les autres."), ("iris", "Hier, quand t'as dit que tu voulais qu'on soit ensemble... c'était sérieux ?"), ("iris", "Parce que moi, j'en ai envie aussi."), ("iris", "Voilà. Réponds pas un truc débile, hein. ❤️")], objective_text="Lire le dernier message d'Iris")
+    call messenger_play("iris", "iris", [("iris", "Je suis rentrée dans ma chambre. J'ai pas osé t'en parler avec les autres."), ("iris", "Hier, quand t'as dit que tu voulais qu'on soit ensemble... c'était sérieux ?"), ("iris", "Parce que moi, j'en ai envie aussi."), ("iris", "Voilà. Réponds pas un truc débile, hein. ❤️")], objective_text="Lire le dernier message d'Iris") from _call_messenger_play_7
     "Je lis le message. Puis je le relis."
     "Mon double lui a demandé de sortir avec lui."
     "Et Iris vient d'accepter."

@@ -340,7 +340,7 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
     stop music fadeout 2.0
     scene black with fade
     "FIN — LE DÉPART DES AUTRES"
-    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ") from _call_show_chapter_title_13
     return
 
 
@@ -476,7 +476,7 @@ label _30_0_1_1_0_0_FIN_PRODUCTION:
     stop music fadeout 2.0
     scene black with fade
     "FIN — DESTINATION INCONNUE"
-    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ") from _call_show_chapter_title_14
     return
 
 
@@ -630,7 +630,7 @@ label _30_0_1_1_0_0_VENTILATION:
 
     scene bg_conduit_reseau at adaptive_fullscreen
     play sound sfx_creak volume 0.4
-    call impact_fx("hard", direction="left")
+    call impact_fx("hard", direction="left") from _call_impact_fx_6
 
     "Iris me repousse contre le mur et se jette au-devant d'elle. Les deux corps heurtent la paroi avec un choc qui fait vibrer les plaques du conduit."
     "Je distingue deux visages identiques, si proches l'un de l'autre que je perds pendant un instant le fil de leurs mouvements."
@@ -638,10 +638,10 @@ label _30_0_1_1_0_0_VENTILATION:
 
     iris colere "LÂCHE-MOI !"
 
-    call impact_fx("hard", direction="right")
+    call impact_fx("hard", direction="right") from _call_impact_fx_7
     "Iris donne un coup de genou et parvient à se dégager. Les deux reculent, reprennent leur souffle et se précipitent de nouveau l'une sur l'autre."
     "Je voudrais intervenir, mais chaque fois que je crois reconnaître Iris à sa voix, l'autre se met à crier exactement de la même manière."
-    call impact_fx("hard", direction="left")
+    call impact_fx("hard", direction="left") from _call_impact_fx_8
     "Elles se heurtent à une conduite latérale. L'une tombe à genoux, l'autre la tire par le col."
 
     noam peur "ARRÊTEZ !"
@@ -681,7 +681,7 @@ label _30_0_1_1_0_0_VENTILATION:
     iris colere "T'es pas Noam. T'es pas moi non plus. Qu'est-ce que t'es ?!"
 
     "Il ne répond pas. Il se rue sur elle, mais elle l'attend : elle se baisse au dernier moment et le projette contre une plaque de ventilation."
-    call impact_fx("brutal", direction="left")
+    call impact_fx("brutal", direction="left") from _call_impact_fx_9
     "Le métal se déforme sous son dos. Iris récupère son tournevis et lui bloque le bras avec son genou."
 
     iris determine "NOAM, VA-T'EN !"
@@ -699,7 +699,7 @@ label _30_0_1_1_0_0_VENTILATION:
     "Iris écarquille les yeux. Elle essaie de reculer, trop tard."
 
     scene bg_conduit_reseau at adaptive_fullscreen
-    call impact_fx("critical", direction="right")
+    call impact_fx("critical", direction="right") from _call_impact_fx_10
 
     "Il se dégage d'un mouvement brutal et lui assène un coup qui résonne contre le métal. Iris s'effondre sans un cri. Son tournevis roule jusqu'à mes pieds."
 
@@ -724,7 +724,7 @@ label _30_0_1_1_0_0_VENTILATION:
     "Je n'en ai pas le temps."
 
     scene bg_conduit_reseau at adaptive_fullscreen
-    call impact_fx("critical", direction="left")
+    call impact_fx("critical", direction="left") from _call_impact_fx_11
     stop music fadeout 0.5
 
     "Un choc traverse mon crâne. La main qui tenait mon col disparaît et mes genoux heurtent quelque chose de dur."
@@ -734,5 +734,5 @@ label _30_0_1_1_0_0_VENTILATION:
 
     scene black with fade
     "FIN — CEUX QU'IL VEUT LIBÉRER"
-    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ")
+    call show_chapter_title("Fin du chapitre 9", "Chapitre 9 — Le dernier départ") from _call_show_chapter_title_15
     return

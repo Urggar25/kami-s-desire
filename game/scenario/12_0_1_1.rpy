@@ -703,7 +703,7 @@ label _12_0_1_1_DEBAT_SECURITE:
 
     "Quelques rires nerveux parcourent la salle."
 
-    call play_stat_dialogue("j12")
+    call play_stat_dialogue("j12") from _call_play_stat_dialogue_11
 
     elias fatigue "Je comprends l’idée, mais le sujet est quand même important."
     elias fatigue "Sans ça, Kami pourra plus ni nous surveiller, ni nous protéger..."
@@ -1073,7 +1073,7 @@ label _12_0_1_1_APRES_EXPLOSION:
     scene black with fade
     stop music fadeout 3.0
 
-    call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond")
+    call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond") from _call_show_chapter_title_18
     call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
 
     # L'autre branche J13 n'a pas encore de scenario.

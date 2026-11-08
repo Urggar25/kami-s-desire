@@ -4,7 +4,7 @@
 
 
 label _21_0_1_1_LEAVE_REVEIL:
-    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité")
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité") from _call_show_chapter_title_4
     # Entrée J21 après la réponse "je monte dans la navette".
     # Cette branche conserve pour l'instant le J21 existant.
     $ j20_kael_depart_choice = "leave"

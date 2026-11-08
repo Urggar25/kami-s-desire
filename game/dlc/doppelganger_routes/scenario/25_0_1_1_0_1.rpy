@@ -5,7 +5,7 @@ default j25_01_contact_tomas = False
 default j25_01_discussion = None
 
 label _25_0_1_1_0_1_REVEIL:
-    call show_chapter_title("Début du chapitre 8", "Chapitre 8 — Le Bouc émissaire")
+    call show_chapter_title("Début du chapitre 8", "Chapitre 8 — Le Bouc émissaire") from _call_show_chapter_title_9
     $ current_day = 25
     $ day_id = 25
     $ current_period = "Matin"

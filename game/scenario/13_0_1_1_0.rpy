@@ -1,5 +1,5 @@
 label _13_0_1_1_0_REVEIL_CHAMBRE:
-    call show_chapter_title("Début du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses")
+    call show_chapter_title("Début du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses") from _call_show_chapter_title_19
 
     $ cafeteria_food_level = "none"
     $ current_period = "Matin"
@@ -312,7 +312,7 @@ label _13_0_1_1_CAFETERIA_ARRIVEE:
     iris inquiet "C'est pas idiot."
 
     elen "J'avais besoin de ce brouilleur. Pas pour préparer un complot ou je ne sais quoi. Juste pour pouvoir fermer ma porte et avoir la paix quelques heures."
-    call play_stat_dialogue("j13")
+    call play_stat_dialogue("j13") from _call_play_stat_dialogue_12
 
     noam fatigue "Je suis désolé."
 

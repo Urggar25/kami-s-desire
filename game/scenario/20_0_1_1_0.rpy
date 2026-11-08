@@ -697,7 +697,7 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     noam reflexion "Quoi ?"
 
-    call play_stat_dialogue("j20")
+    call play_stat_dialogue("j20") from _call_play_stat_dialogue_19
 
     kael doute "Non, rien."
 
@@ -930,7 +930,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
 
     stop music fadeout 1.5
 
-    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs")
+    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs") from _call_show_chapter_title_22
     call end_day("21") from _call_j20_dropknife_end_day_21
 
     if j20_kael_depart_choice == "stay":
@@ -966,7 +966,7 @@ label _20_0_1_1_IRIS_QTE_ECHEC:
 
     scene bg_cg047 at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 0.95
-    call impact_fx("critical", direction="left")
+    call impact_fx("critical", direction="left") from _call_impact_fx_13
 
     "Un choc sec me frappe à la tempe."
 
@@ -1172,7 +1172,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Je lève le bras par réflexe."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    call impact_fx("hard", direction="right")
+    call impact_fx("hard", direction="right") from _call_impact_fx_14
 
     "Il frappe mon poignet contre le bord de la table."
 
@@ -1183,7 +1183,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     noam colere "DÉGAGE !"
 
     play sound "audio/sfx_thud.mp3" volume 0.90
-    call impact_fx("light", direction="left")
+    call impact_fx("light", direction="left") from _call_impact_fx_15
 
     "Je lui donne un coup d'épaule et réussis à le repousser."
 
@@ -1202,7 +1202,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Son bras part trop lentement."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    call impact_fx("brutal", direction="right", blood="screen")
+    call impact_fx("brutal", direction="right", blood="screen") from _call_impact_fx_16
 
     "Kael lui donne un coup sec au visage."
 
@@ -1218,7 +1218,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     play sound "audio/sfx_thud.mp3" volume 1.0
     scene bg_salle_goumi_cachee at adaptive_fullscreen with dissolve
-    call impact_fx("critical", direction="left")
+    call impact_fx("critical", direction="left") from _call_impact_fx_17
 
     "Quelque chose me frappe derrière la tête."
 
@@ -1693,6 +1693,6 @@ label _20_0_1_1_FIN:
     "Étrangement, ce n'est pas le cas."
 
     stop music fadeout 2.0
-    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs")
+    call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs") from _call_show_chapter_title_23
     call end_day("21") from _call_j20_end_day_21
     jump _21_0_1_1_0_REVEIL

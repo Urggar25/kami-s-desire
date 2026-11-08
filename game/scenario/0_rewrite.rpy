@@ -153,7 +153,7 @@ label _0_CANON:
     $ d0_push_progress = 0.0
     $ d0_push_held = False
     scene black
-    call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix")
+    call show_chapter_title("Début du chapitre 1", "Chapitre 1 — Le poids d’une voix") from _call_show_chapter_title_16
     
     pause 2.0
     stop music fadeout 0.3
@@ -264,21 +264,21 @@ label _0_CANON:
         if d0_memory_choice == "done":
             $ d0_memories_done = True
         elif d0_memory_choice in ("noam", "kami", "conclave", "lysa"):
-            call d0_memory_open_transition(d0_memory_choice)
+            call d0_memory_open_transition(d0_memory_choice) from _call_d0_memory_open_transition
             if d0_memory_choice == "noam":
-                call d0_memory_noam
+                call d0_memory_noam from _call_d0_memory_noam
             elif d0_memory_choice == "kami":
-                call d0_memory_kami
+                call d0_memory_kami from _call_d0_memory_kami
             elif d0_memory_choice == "conclave":
-                call d0_memory_conclave
+                call d0_memory_conclave from _call_d0_memory_conclave
             elif d0_memory_choice == "lysa":
-                call d0_memory_lysa
+                call d0_memory_lysa from _call_d0_memory_lysa
             # On ne joue l'effet de deblocage qu'au premier retour du souvenir.
             if ("noam" in d0_memories_seen and "kami" in d0_memories_seen
                     and not ("noam" in d0_seen_before and "kami" in d0_seen_before)):
-                call d0_memory_unlock_transition("conclave")
+                call d0_memory_unlock_transition("conclave") from _call_d0_memory_unlock_transition
             if "conclave" in d0_memories_seen and "conclave" not in d0_seen_before:
-                call d0_memory_unlock_transition("lysa")
+                call d0_memory_unlock_transition("lysa") from _call_d0_memory_unlock_transition_1
     # Les souvenirs se rassemblent avant le retour dans le caisson.
     stop music fadeout 0.3
     call screen d0_memory_finale
@@ -358,7 +358,7 @@ label _0_CANON:
     scene black with dissolve
     stop music fadeout 1.2
     pause 0.8
-    call end_day("1", sleeping=True)
+    call end_day("1", sleeping=True) from _call_end_day
     jump _1_CANON
 
 # Interaction facultative disponible en cliquant sur la grille pendant
@@ -553,7 +553,7 @@ label d0_memory_noam:
     "Juliette" "Pas quand tu dois encore partir à l'Administration et que tu vas finir par courir jusqu'à l'arrêt !"
 
     # 2. Noam descend de sa chambre ; Juliette boude dans son coin.
-    call d0_juliette_animate_to(2, 1)
+    call d0_juliette_animate_to(2, 1) from _call_d0_juliette_animate_to
     noam "Bon, me voilà. Et c'est quoi, cette tête ? On dirait que je t'ai fait attendre trois heures."
     "Juliette" "Je t'ai appelé quatre fois. QUATRE. Et quand tu descends enfin, t'as même pas l'air désolé !"
     noam "Pardon, madame. La prochaine fois, je déposerai une demande écrite avant de sortir de ma chambre."
@@ -563,14 +563,14 @@ label d0_memory_noam:
     noam "Bon... Pour la veste, je plaide coupable. Mais pour le reste, tu exagères un peu."
 
     # 3. Noam propose un calin.
-    call d0_juliette_animate_to(3, -1)
+    call d0_juliette_animate_to(3, -1) from _call_d0_juliette_animate_to_1
     noam "Viens là, petite râleuse. Tu vas quand même pas me laisser partir sans un câlin ?"
     "Juliette" "Hé ! Qu'est-ce que tu fais ?!"
     noam "Je tente une négociation diplomatique. Il paraît que ça marche mieux que les excuses."
     "Juliette" "Mais arrête !"
 
     # 4. Juliette est contente, mais se defend d'etre encore un bebe.
-    call d0_juliette_animate_to(4, 1)
+    call d0_juliette_animate_to(4, 1) from _call_d0_juliette_animate_to_2
     "Juliette" "J'ai dix ans, Noam ! Dix ans ! Je suis plus un bébé que tu peux attraper dans tes bras quand ça te chante !"
     noam "Ah, pardon. C'est vrai que mademoiselle est une adulte parfaitement indépendante, maintenant."
     "Juliette" "Exactement !"
@@ -580,7 +580,7 @@ label d0_memory_noam:
     "Juliette" "Idiot... Tiens, justement, j'ai quelque chose pour toi."
 
     # 5. Juliette presente le bento qu'elle a prepare.
-    call d0_juliette_animate_to(5, -1)
+    call d0_juliette_animate_to(5, -1) from _call_d0_juliette_animate_to_3
     "Juliette" "Regarde ! Je t'ai préparé un bento. C'est pas grand-chose, mais au moins tu pourras manger quelque chose de correct."
     noam "Attends, t'as préparé tout ça pour moi ? Juliette, fallait pas te donner autant de mal."
     "Juliette" "C'est pas du mal ! J'ai juste pris ce qu'il restait, et j'ai essayé de faire quelque chose qui tienne dans la boîte."

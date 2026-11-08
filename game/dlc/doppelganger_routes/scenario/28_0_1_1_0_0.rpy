@@ -8,7 +8,7 @@
 default j28_last_vote_announced = False
 
 label _28_0_1_1_0_0_REVEIL:
-    call show_chapter_title("Début du chapitre 9", "Chapitre 9 — Le dernier départ")
+    call show_chapter_title("Début du chapitre 9", "Chapitre 9 — Le dernier départ") from _call_show_chapter_title_11
     $ current_day = 28
     $ day_id = 28
     $ current_period = "Matin"
@@ -241,7 +241,7 @@ label _28_0_1_1_0_0_ANNONCE:
 label _28_0_1_1_0_0_APRES_MIDI:
     call KD_EXTRA_J28_ELEN from _call_kd_extra_j28_elen
     $ current_period = "Après-midi"
-    call show_custom_title("Dans l'après-midi")
+    call show_custom_title("Dans l'après-midi") from _call_show_custom_title_7
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
@@ -369,7 +369,7 @@ label _28_0_1_1_0_0_MAINTENANCE:
 
 label _28_0_1_1_0_0_CHAMBRE:
     $ current_period = "Soir"
-    call show_custom_title("En début de soirée")
+    call show_custom_title("En début de soirée") from _call_show_custom_title_8
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 

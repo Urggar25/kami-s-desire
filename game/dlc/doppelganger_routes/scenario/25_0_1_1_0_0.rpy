@@ -1,5 +1,5 @@
 label _25_0_1_1_0_0_REVEIL:
-    call show_chapter_title("Début du chapitre 8", "Chapitre 8 — Le visage du mensonge")
+    call show_chapter_title("Début du chapitre 8", "Chapitre 8 — Le visage du mensonge") from _call_show_chapter_title_8
 
     $ current_day = 25
     $ day_id = 25
@@ -258,7 +258,7 @@ label _25_0_1_1_0_0_BRUIT:
 
     noam neutre "On pourra demander à Elias de regarder. Elen nous attend."
 
-    call play_stat_dialogue("j25")
+    call play_stat_dialogue("j25") from _call_play_stat_dialogue_4
 
     iris neutre "Deux secondes. Passe-moi la lampe."
 
@@ -1177,7 +1177,7 @@ label _25_0_1_1_0_0_SOIR:
 
     think "Est-ce qu'il faut que je l'annonce à tout le monde ?!"
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir")
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_32
 
     think "La chambre d'Iris est là. Quel était le mot de passe, déjà ?"
 

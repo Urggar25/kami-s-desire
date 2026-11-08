@@ -20,7 +20,7 @@ transform j21_dg_noam_approach(z=1.0):
 
 
 label _21_0_1_1_0_1_REVEIL:
-    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité")
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité") from _call_show_chapter_title_6
 
     $ cafeteria_food_level = "null"
     $ current_period = "Matin"
@@ -803,7 +803,7 @@ label _21_0_1_1_0_1_QTE:
     "Je recule au moment où il se jette sur moi."
 
     play sound "audio/sfx_thud.mp3" volume 0.95
-    call impact_fx("hard", direction="right")
+    call impact_fx("hard", direction="right") from _call_impact_fx
 
     "Son épaule me percute en plein torse."
 
@@ -861,7 +861,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     scene bg_chambre at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 1.0
-    call impact_fx("brutal", direction="left")
+    call impact_fx("brutal", direction="left") from _call_impact_fx_1
 
     "Mon pied glisse."
 
@@ -872,7 +872,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
     noam peur "Non—"
 
     play sound "audio/sfx_tinnitus.wav" volume 0.60
-    call impact_fx("critical", direction="right", blood="screen")
+    call impact_fx("critical", direction="right", blood="screen") from _call_impact_fx_2
 
     "La lame entre sous mes côtes."
 
@@ -1144,7 +1144,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "Il se jette sur moi à mains nues."
 
     play sound "audio/sfx_thud.mp3" volume 0.92
-    call impact_fx("hard", direction="left")
+    call impact_fx("hard", direction="left") from _call_impact_fx_3
 
     "On s'écrase tous les deux contre le mur."
 
@@ -1203,7 +1203,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "Iris n'attend pas."
 
     play sound "audio/sfx_thud.mp3" volume 1.0
-    call impact_fx("hard", direction="right")
+    call impact_fx("hard", direction="right") from _call_impact_fx_4
 
     "Son pied frappe l'autre Noam derrière le genou."
 

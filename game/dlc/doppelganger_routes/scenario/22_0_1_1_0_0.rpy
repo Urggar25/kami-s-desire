@@ -402,7 +402,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
 
     noam surpris "Ah."
 
-    call play_stat_dialogue("j22")
+    call play_stat_dialogue("j22") from _call_play_stat_dialogue_1
 
     elias fatigue "J'ai pas envie de ramper dans vos conduits pour chercher six bouts de métal. Si quelqu'un veut le faire, grand bien lui fasse."
 

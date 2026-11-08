@@ -1,5 +1,5 @@
 label _17_0_1_1_0_ANNONCE_KAMI:
-    call show_chapter_title("Début du chapitre 6", "Chapitre 6 — Derrière les murs")
+    call show_chapter_title("Début du chapitre 6", "Chapitre 6 — Derrière les murs") from _call_show_chapter_title_21
 
     $ cafeteria_food_level = "low"
     $ current_period = "Matin"
@@ -636,7 +636,7 @@ label _17_0_1_1_APRES_PROTESTATION:
     "Le ton de Mara est étrangement doux. Elen détourne les yeux."
 
 
-    call play_stat_dialogue("j17")
+    call play_stat_dialogue("j17") from _call_play_stat_dialogue_16
 
     nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
 

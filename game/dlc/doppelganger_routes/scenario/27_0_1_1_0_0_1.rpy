@@ -71,7 +71,7 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas raison "Tu as réfléchi pour ton original depuis hier ?"
     noam inquiet "N-Non. Pourquoi...?"
     tomas neutre "Il faut qu'on décide ce qu'il adviendra de lui. Si tu veux prendre sa place au départ, on ne pourra pas éviter cette conversation éternellement."
-    call play_stat_dialogue("j27")
+    call play_stat_dialogue("j27") from _call_play_stat_dialogue_6
     noam agace "... Mais on ne-"
     elias colere "Ouais, on sait très bien ce que tu en penses. On te comprend, tu sais... Mais..."
     tomas triste "Si tu veux vraiment monter dans cette navette, tu n'as pas vraiment le choix..."
@@ -109,7 +109,7 @@ label _27_0_1_1_0_0_1_REVEIL:
     elias fatigue "Bon, bah fais gaffe à pas la sortir devant lui, surtout."
     noam neutre "Ouais, t'inquiète."
     "Je baisse les yeux vers le message. Elias vient de m'écrire."
-    call messenger_play("elias", "elias", [("elias", "C'est bon, je m'en occupe !"), ("noam", "Super, merci !")], objective_text="Lire le message d'Elias")
+    call messenger_play("elias", "elias", [("elias", "C'est bon, je m'en occupe !"), ("noam", "Super, merci !")], objective_text="Lire le message d'Elias") from _call_messenger_play
     noam sourire "Ah, super ! Il s'en occupe."
     tomas raison "Parfait, ça veut dire qu'il a récupéré ton original. On a notre fenêtre. On y va."
     noam neutre "Ouais... Et Tomas, à propos de ce qu'on disait..."
@@ -142,17 +142,17 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas agace "Bah justement, je cherche ! Laisse-moi deux secondes..."
     tomas reflechit "S'il y a déjà de la vie là-bas alors ça veut dire que... Zero avait raison finalement ?"
     "Ma tablette vibre encore. Je baisse les yeux, persuadé qu'Elias nous annonce que tout se passe bien."
-    call messenger_play("elias", "elias", [("elias", "Putain, c'est la merde, je le trouve pas !"), ("elias", "Il doit encore être avec Iris...")], objective_text="Lire les nouveaux messages d'Elias")
+    call messenger_play("elias", "elias", [("elias", "Putain, c'est la merde, je le trouve pas !"), ("elias", "Il doit encore être avec Iris...")], objective_text="Lire les nouveaux messages d'Elias") from _call_messenger_play_1
     noam peur "Attends... QUOI ?!"
     tomas inquiet "Qu'est-ce qu'il y a ?"
     noam peur "Elias dit qu'il a pas trouvé mon original !"
     tomas colere "Mais il nous a dit que c'était bon ! Passe-moi ça !"
     "Je tape aussi vite que je peux. Tomas se penche par-dessus mon épaule et me dicte sa propre question."
-    call messenger_play("elias", "elias", [("noam", "Mais pourquoi t'as dit que c'était bon alors ?! On est déjà aux archives !"), ("noam", "Elias, réponds ! Tu l'as avec toi ou pas ?! — Tomas"), ("elias", "MAIS NON ! Je disais que c'était bon, que j'allais m'en occuper ! Je commençais à le chercher !")], objective_text="Éclaircir le message d'Elias")
+    call messenger_play("elias", "elias", [("noam", "Mais pourquoi t'as dit que c'était bon alors ?! On est déjà aux archives !"), ("noam", "Elias, réponds ! Tu l'as avec toi ou pas ?! — Tomas"), ("elias", "MAIS NON ! Je disais que c'était bon, que j'allais m'en occuper ! Je commençais à le chercher !")], objective_text="Éclaircir le message d'Elias") from _call_messenger_play_2
     noam colere "Mais putain, on a cru que tu l'avais trouvé !"
     tomas agace "C'est pas vrai... Ferme le dossier, on se tire."
     "Tomas commence à fermer les fenêtres. Je regarde la porte, puis ma tablette. Trois nouveaux messages arrivent presque d'un coup."
-    call messenger_play("elias", "elias", [("elias", "OH JE LES VOIS ! PUTAIN ILS SONT DANS LE COULOIR !"), ("elias", "Ils arrivent vers vous !"), ("elias", "RETOURNEZ AU LABO ! VITE !")], objective_text="URGENCE — Lire les messages d'Elias")
+    call messenger_play("elias", "elias", [("elias", "OH JE LES VOIS ! PUTAIN ILS SONT DANS LE COULOIR !"), ("elias", "Ils arrivent vers vous !"), ("elias", "RETOURNEZ AU LABO ! VITE !")], objective_text="URGENCE — Lire les messages d'Elias") from _call_messenger_play_3
     noam peur "Tomas ! Ils viennent ici !"
     tomas inquiet "J'ai compris ! Laisse les fichiers et cours !"
     $ j27_secret_alarm_choice = "fuite"
@@ -190,7 +190,7 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas agace "La prochaine fois, on attend une phrase claire avant de bouger. « C'est bon », ça voulait absolument rien dire !"
     noam colere "C'est surtout Elias qui aurait pu dire qu'il l'avait PAS trouvé !"
     "Ma tablette vibre une dernière fois."
-    call messenger_play("elias", "elias", [("elias", "Désolé... Je vais essayer de les éloigner. Restez au labo.")], objective_text="Lire la réponse d'Elias")
+    call messenger_play("elias", "elias", [("elias", "Désolé... Je vais essayer de les éloigner. Restez au labo.")], objective_text="Lire la réponse d'Elias") from _call_messenger_play_4
     tomas fatigue "Bon... On a au moins appris qu'il y a de la vie sur Keyper et cette histoire de station de production. Pour les références complètes, c'est raté."
     noam inquiet "T'es sûr qu'ils nous ont pas entendus ?"
     tomas neutre "Non. Et j'ai pas envie de retourner vérifier."

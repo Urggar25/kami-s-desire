@@ -263,7 +263,7 @@ label _26_0_1_1_0_0_SECRET:
     noam raison "Alors raconte-moi ce qui se passe. Pourquoi elle est morte ? Pourquoi l'autre Mara est toujours ici ?"
     dg_noam neutre "Je pourrais te répondre, mais tu croirais que j'essaie de me justifier. Je crois qu'il vaut mieux que tu découvres certaines choses par toi-même."
     noam colere "Tu te fous de moi ?"
-    call play_stat_dialogue("j26")
+    call play_stat_dialogue("j26") from _call_play_stat_dialogue_5
 
     dg_noam calme "Non. Je sais que c'est difficile à croire, justement parce que j'ai ta manière de réfléchir."
     noam reflexion "Qu'est-ce que ça veut dire ?"

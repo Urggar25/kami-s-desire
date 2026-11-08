@@ -8,7 +8,7 @@
 # =============================================================================
 
 label _21_0_1_1_0_0_REVEIL:
-    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité")
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité") from _call_show_chapter_title_5
     $ cafeteria_food_level = "null"
     $ current_day = 21
     $ day_id = 21
@@ -429,7 +429,7 @@ label _21_0_1_1_0_0_LIVRAISON:
     elias "Voilà."
 
     lysa blase "Elles sont peut-être au sas."
-    call play_stat_dialogue("j21")
+    call play_stat_dialogue("j21") from _call_play_stat_dialogue
 
     elias "J'ai regardé."
     noam "Dans une autre caisse ?"

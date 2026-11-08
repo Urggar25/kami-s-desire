@@ -26,7 +26,7 @@ label _23_0_1_1_0_0_REVEIL:
 
 
 label _23_0_1_1_0_0_PETIT_DEJEUNER:
-    call MAYBE_PLAY_SCRIPTED_DOOR("bg_cafeteria", "bg_cafeteria")
+    call MAYBE_PLAY_SCRIPTED_DOOR("bg_cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_28
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
@@ -126,7 +126,7 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Le ton change. Plus personne ne plaisante."
 
-    call play_stat_dialogue("j23")
+    call play_stat_dialogue("j23") from _call_play_stat_dialogue_2
 
     sael "Tu veux savoir si ce que t'as vu peut venir de toi ou pas ?"
 
@@ -151,7 +151,7 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
 
 label _23_0_1_1_0_0_INFIRMERIE:
-    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2")
+    call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie2", "infirmerie2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_31
     scene infirmerie2 at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
 

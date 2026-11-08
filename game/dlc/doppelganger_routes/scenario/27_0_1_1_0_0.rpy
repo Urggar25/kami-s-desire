@@ -369,7 +369,7 @@ label _27_0_1_1_0_0_REVEIL:
     "Personne ne bouge pour l'aider. Je crois que nous avons tous compris qu'elle préférait qu'on la laisse faire."
 
     $ current_period = "Après-midi"
-    call show_custom_title("Quelques heures plus tard")
+    call show_custom_title("Quelques heures plus tard") from _call_show_custom_title_5
 
     scene bg_infirmerie at adaptive_fullscreen with dissolve
 
@@ -457,7 +457,7 @@ label _27_0_1_1_0_0_REVEIL:
     "Sael pose sa main sur celle d'Elen, sans lui promettre quoi que ce soit."
 
     $ current_period = "Soir"
-    call show_custom_title("En début de soirée")
+    call show_custom_title("En début de soirée") from _call_show_custom_title_6
 
     scene couloir_infirmerie at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
@@ -507,6 +507,6 @@ label _27_0_1_1_0_0_REVEIL:
     "Nous retournons vers l'infirmerie. Personne ne semble vouloir rentrer seul dans les dortoirs et, pour une fois, je préfère rester avec eux."
 
     stop music fadeout 1.2
-    call show_chapter_title("Fin du chapitre 8", "Chapitre 8 — Le visage du mensonge")
+    call show_chapter_title("Fin du chapitre 8", "Chapitre 8 — Le visage du mensonge") from _call_show_chapter_title_10
     call end_day("28", sleeping=True) from _call_j27_stay_end_day_28
     jump _28_0_1_1_0_0_REVEIL

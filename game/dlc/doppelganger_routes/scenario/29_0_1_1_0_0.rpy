@@ -107,7 +107,7 @@ label _29_0_1_1_0_0_REVEIL:
     "Iris tire de toutes ses forces."
 
     play sound sfx_creak volume 0.85
-    call impact_fx("brutal", direction="left")
+    call impact_fx("brutal", direction="left") from _call_impact_fx_5
 
     "La porte heurte le bras d'Elias avec un bruit épouvantable. Je distingue un premier craquement, puis un second, plus sec, comme si quelque chose venait de céder sous le poids du battant."
     "Elias hurle."
@@ -161,7 +161,7 @@ label _29_0_1_1_0_0_REVEIL:
 
 label _29_0_1_1_0_0_SORTIE:
     $ current_period = "Midi"
-    call show_custom_title("Un peu plus tard")
+    call show_custom_title("Un peu plus tard") from _call_show_custom_title_9
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
     "Nous déplaçons le petit meuble sous la grille de ventilation. Iris me passe le tournevis qu'elle a récupéré hier dans la salle de maintenance."
@@ -211,7 +211,7 @@ label _29_0_1_1_0_0_SORTIE:
 
 label _29_0_1_1_0_0_VOIX:
     $ current_period = "Après-midi"
-    call show_custom_title("Dans l'après-midi")
+    call show_custom_title("Dans l'après-midi") from _call_show_custom_title_10
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
@@ -356,7 +356,7 @@ label _29_0_1_1_0_0_JULIAN:
 
 label _29_0_1_1_0_0_SOIR:
     $ current_period = "Soir"
-    call show_custom_title("En début de soirée")
+    call show_custom_title("En début de soirée") from _call_show_custom_title_11
     scene bg_chambre_iris at adaptive_fullscreen with dissolve
 
     "Les bruits ne s'arrêtent pas complètement. Parfois, quelqu'un passe dans le couloir et frappe deux ou trois coups avant de repartir ; parfois, plusieurs voix discutent assez près pour que nous reconnaissions leurs propriétaires sans comprendre ce qu'elles racontent."

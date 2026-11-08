@@ -79,7 +79,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
     nyra neutre "Oui."
     noam reflexion "Alors c'est une bonne chose."
 
-    call play_stat_dialogue("j14")
+    call play_stat_dialogue("j14") from _call_play_stat_dialogue_13
 
     nyra hesitation "En partie."
 

@@ -184,7 +184,7 @@ label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
 
-    call play_stat_dialogue("j16")
+    call play_stat_dialogue("j16") from _call_play_stat_dialogue_15
 
     mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Je l'ai toujours trouvée chelou, mais là de plus en plus."
 
@@ -533,6 +533,6 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
 
     pause 1.0
 
-    call show_chapter_title("Fin du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses")
+    call show_chapter_title("Fin du chapitre 5", "Chapitre 5 — Les apparences sont trompeuses") from _call_show_chapter_title_20
     call end_day("17") from _call_end_day_17
     jump _17_0_1_1_0_ANNONCE_KAMI

@@ -200,7 +200,7 @@ label bonus_succes009:
     $ showGroup([("lysa", "blase", 0.50)])
     camera master at day1_wake_close
     lysa blase "Noam ? ... Hé, tu m'écoutes ou pas ?"
-    call _1_WAKE_HIDDEN_SCENE
+    call _1_WAKE_HIDDEN_SCENE from _call__1_WAKE_HIDDEN_SCENE
     camera master
     $ hideGroup()
     scene black with dissolve

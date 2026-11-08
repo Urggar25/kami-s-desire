@@ -306,7 +306,7 @@ label _11_0_1_1_APRES_REVEIL:
     "Le groupe se tourne vers moi. Kael remarque enfin notre présence et sursaute légèrement."
 
     kael calme "... Vous étiez là."
-    call play_stat_dialogue("j11")
+    call play_stat_dialogue("j11") from _call_play_stat_dialogue_10
 
     pause 1.0
 
