@@ -141,53 +141,82 @@ label INF_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_infirmerie:
+
     $ decouverte_infirmerie = True
+
     scene black
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
-    think "Je préfère vérifier où on pourra se faire soigner. Avec un mois à passer ici, ce serait idiot de découvrir l'infirmerie au moment d'en avoir besoin."
+    think "Je préfère savoir où se trouve l'infirmerie avant que quelqu'un ait réellement besoin d'y venir."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_340
     scene bg_infirmerie at adaptive_fullscreen with fade
-    "L'endroit est bien équipé : lits d'examen, armoires de médicaments, matériel d'urgence et une salle d'opération derrière une vitre."
+
+    "Les lits, les armoires de médicaments et le matériel d'opération ont l'air neufs. Une femme examine le contenu d'un placard sans prêter attention à mon arrivée."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("sael", "neutre", 0.78),
     ])
-    "Une femme inspecte les étagères. Elle contrôle l'étiquette d'une boîte, puis la remet exactement à sa place."
-    noam sourire "Salut. Tu travailles dans le médical ?"
-    sael neutre "Non. Je regarde ce qu'on a."
-    noam hesitation "Ah. Je cherchais juste de quoi soigner une blessure, au cas où."
-    sael raison "Pansements, antiseptiques et sutures dans l'armoire de gauche. Il y a aussi de quoi traiter les blessures graves."
-    noam surpris "Tu as trouvé tout ça en deux minutes ?"
-    sael neutre "Je sais ce qu'il faut chercher."
-    noam sourire "Moi c'est Noam, d'Harmonie."
+
+    noam sourire "Salut. Je cherchais juste à voir comment on pourrait se soigner ici."
+    sael neutre "Tu as de quoi faire. Les compresses sont là, les antiseptiques au-dessus. Il y a même de quoi suturer."
+    noam surpris "Tu as l'air de t'y connaître."
+    sael raison "Assez pour savoir quoi prendre quand quelqu'un saigne."
+    "Elle replace une boîte sur son étagère et referme le placard."
+    noam sourire "Noam, d'Harmonie."
     sael neutre "Sael. Limen."
     $ unlock_character_name("sael")
-    noam reflexion "Tu as l'habitude de te soigner toute seule ?"
-    sael reflechit "Quand tu es loin d'un dispensaire, tu n'attends pas qu'un médecin arrive pour arrêter une hémorragie."
-    "Elle indique d'un mouvement de tête la zone derrière moi. Je me retourne et remarque plusieurs compartiments réfrigérés, avec des noms inscrits dessus."
-    noam inquiet "Attends, c'est quoi, ces tiroirs ?"
-    sael neutre "La morgue."
-    noam peur "Ils ont prévu une morgue ? Ici ?"
-    sael raison "Lis les étiquettes."
-    "Je reconnais plusieurs prénoms parmi ceux entendus plus tôt. Même les emplacements vides portent déjà une identification."
-    noam inquiet "Ils ont préparé une place pour chacun de nous..."
-    sael reflechit "Oui. Ils n'ont pas attendu qu'il y ait un mort."
-    noam desaccord "Mais les Commandements interdisent la violence."
-    sael raison "Sur Terre. Kami a dit qu'ils étaient suspendus ici."
-    noam inquiet "Je savais que les règles étaient différentes, mais de là à prévoir nos corps..."
-    sael mefiant "Prévoir n'est pas provoquer. On ignore pourquoi ils ont installé ça."
-    "Sael s'approche d'une autre armoire et vérifie son verrou. Il cède sans difficulté."
-    noam reflexion "On peut vraiment ouvrir les réserves de médicaments ?"
-    sael reflechit "Apparemment. Il y a des calmants, des anesthésiques et aussi des produits dangereux. Rien ne devrait être accessible comme ça."
-    noam inquiet "On devrait peut-être prévenir les autres."
-    sael raison "Pour la morgue, oui. Et pour les médicaments, mieux vaut que chacun sache ce qu'il ne faut pas toucher."
-    noam hesitation "Tu n'as pas l'air très surprise."
-    sael fatigue "J'ai vu des gens mourir parce que personne n'avait prévu de quoi les aider. Ça ne veut pas dire que j'aime voir leurs noms sur des tiroirs."
-    "Elle referme l'armoire et vérifie une dernière fois que la porte tient."
-    sael neutre "J'emporte rien. Mais maintenant, je sais où sont les soins."
-    noam neutre "J'espère qu'on n'aura jamais à s'en servir."
-    sael reflechit "Moi aussi. Ça ne coûte rien d'être prêt."
-    "Sael retourne à son inventaire. Je quitte la zone des casiers sans réussir à oublier les noms que j'y ai lus."
+    noam reflexion "Tu vérifies les réserves ?"
+    sael reflechit "Je regarde ce qui peut servir. Ça évite de chercher au dernier moment."
+
+    "Je contourne un lit pour aller vers la pièce du fond. Une rangée de compartiments réfrigérés est installée contre le mur."
+
+    noam hesitation "Et ça, c'est quoi ?"
+    sael neutre "Des casiers mortuaires."
+    noam surpris "Des... quoi ?"
+    "Je me rapproche pour lire les étiquettes. La première porte le nom d'Elias. La suivante, celui de Mara."
+    noam inquiet "Sael, viens voir. Il y a les noms des représentants dessus."
+    "Elle me rejoint, regarde les deux premiers casiers, puis passe au suivant. Cette fois, c'est mon prénom."
+    noam peur "Attends. Ils ont vraiment mis mon nom sur un tiroir à cadavre ?"
+    "Sael ne répond pas. Elle parcourt le reste de la rangée, compte les compartiments du regard et s'arrête devant le dernier."
+    noam inquiet "Dis quelque chose, parce que là, je commence sérieusement à flipper."
+    sael mefiant "Douze."
+    noam desaccord "J'ai vu qu'il y en avait douze. C'est justement ça le problème."
+    "Sael saisit la poignée du casier portant mon nom. Avant que je puisse protester, elle le tire légèrement vers elle."
+    noam peur "Hé ! Qu'est-ce que tu fais ?!"
+    "Le compartiment glisse dans un bruit métallique. Il est vide. Sael le referme, puis ouvre celui d'à côté."
+    noam inquiet "Tu peux m'expliquer pourquoi tu fais ça ?"
+    sael raison "Je vérifie qu'ils sont vides."
+    "Elle inspecte encore deux compartiments. Je la regarde faire, incapable de décider si son calme me rassure ou me fait encore plus peur."
+    noam hesitation "Tu pensais vraiment qu'il pourrait déjà y avoir quelqu'un dedans ?"
+    sael reflechit "Je savais pas. Maintenant, pour ceux-là, je sais."
+    noam inquiet "Tu ne vas quand même pas tous les ouvrir ?"
+    sael neutre "Si. Il y a des noms dessus."
+
+    "Elle termine sa vérification. Quand elle referme le dernier casier, je remarque qu'elle prend soin de repousser complètement le tiroir avant de lâcher la poignée."
+
+    noam triste "On est arrivés aujourd'hui, et quelqu'un a déjà prévu exactement où mettre nos corps."
+    sael mefiant "Oui. Ça me plaît pas non plus."
+    noam reflexion "Mais les Commandements empêchent les gens de s'entretuer."
+    sael raison "Pas ici. Kami l'a dit."
+    noam inquiet "Tu penses qu'elle s'attend à ce qu'on se tue entre nous ?"
+    sael reflechit "Je sais pas ce qu'elle attend. Et je vais pas inventer une réponse pour te rassurer."
+
+    "Elle revient vers l'armoire médicale, en sort quelques compresses et une bande, puis les dispose dans une petite pochette."
+
+    noam reflexion "Tu fais quoi, maintenant ?"
+    sael neutre "Une trousse. Si quelqu'un se blesse loin d'ici, on pourra au moins arrêter le sang."
+    noam hesitation "Tu veux déjà te préparer à ça ?"
+    sael desaccord "Je veux éviter que quelqu'un meure bêtement. C'est différent."
+    "Elle vérifie le contenu de la pochette et m'en tend une seconde, plus petite."
+    sael neutre "Tiens. Pour les coupures. Tu peux la garder."
+    noam surpris "Ah... Merci."
+    sael reflechit "Et ne laisse pas ça traîner. Une trousse ne sert à rien si tu sais pas où tu l'as mise."
+    noam sourire "Je vais essayer de ne pas te décevoir dès le premier jour."
+    sael neutre "Commence par ne pas te blesser."
+
+    "Je range la pochette. Sael retourne aux armoires, mais je la vois jeter un dernier coup d'œil à la morgue avant de reprendre son inventaire."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_4
     $ hideGroup()
     jump INFIRMERIE_TP
