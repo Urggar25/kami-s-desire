@@ -2043,9 +2043,14 @@ label _3_VOTE_POUR:
 
     pause 3.0
 
+    # La suite du vote adopte n'est pas encore developpee.
+    # Conserver la scene et le succes de ce vote, puis annoncer explicitement
+    # le retour a la chronologie jouable (vote refuse) pour eviter un cul-de-sac.
+    call screen kd_route_vote_convergence
+    $ vote1 = "NON"
     call end_day("4", sleeping=True) from _call_end_day_3
 
-    jump _4_1_REVEIL_CHAMBRE
+    jump _4_0_REVEIL_CHAMBRE
 
 label _3_VOTE_CONTRE:
 
