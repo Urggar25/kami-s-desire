@@ -202,61 +202,83 @@ label cafeteria3_nourriture:
 # -----------------------------------------------------------------------
 
 label decouverte_cafeteria:
+
     $ decouverte_cafeteria = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "La cafétéria devrait être facile à trouver. Il suffit de suivre les voix et l'odeur de quelque chose qui ressemble à un vrai repas."
+    think "Une cafétéria. Après tout ce qui vient de se passer, je mangerais bien quelque chose de normal."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_328
     scene bg_cafeteria at adaptive_fullscreen with fade
-    "Il y a des tables, un comptoir et une cuisine derrière une large ouverture. Une fille discute avec un petit robot qui semble incapable de lui donner la réponse qu'elle attend."
+    "Le comptoir est impeccable et la cuisine semble entièrement automatisée. Une fille discute avec un petit robot, sans beaucoup de succès."
+
     scene bg_cg008 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg008")
-    elen vide "Non mais tu comprends pas ! Je te demande un plat que tu aimes bien cuisiner, toi."
-    goumi vide "Je n'éprouve aucune préférence culinaire. Veuillez préciser votre commande."
-    elen vide "C'est pas une commande, c'est une question ! Tu pourrais au moins faire semblant."
-    goumi vide "Simulation d'une préférence : possible. Souhaitez-vous une simulation ?"
-    elen vide "Bon, oublie. Je vais finir par me disputer avec le cuisinier avant même de manger."
-    noam vide "Ça a l'air bien parti, en tout cas."
-    elen vide "Ah, salut ! Dis-moi que toi, au moins, tu sais choisir un dessert sans consulter six tableaux."
-    noam vide "Je crois que oui. Enfin, j'espère."
+
+    elen vide "Je t'ai demandé quelque chose qui me remonte le moral, pas un cours de nutrition !"
+    goumi vide "Demande comprise. Je prépare une collation optimisée pour améliorer votre état physique."
+    elen vide "Ah, voilà ! Tu vois, quand tu veux, tu comprends très bien."
+    noam vide "J'arrive au mauvais moment ?"
+    elen vide "Au contraire ! Tu vas goûter. J'ai demandé à ce qu'il nous fasse le meilleur truc possible."
+    noam vide "C'est ambitieux. J'espère qu'il fait du chocolat."
+    goumi vide "Votre commande est prête."
+    "Un compartiment du comptoir s'ouvre. Le robot présente une petite coupelle contenant une pâte grisâtre."
+    elen vide "Ah... C'est quoi, exactement ?"
+    goumi vide "Préparation nutritionnelle complète. Apport équilibré en protéines, lipides, glucides, vitamines et minéraux."
+    noam vide "C'est censé être un dessert ou du ciment ?"
+    goumi vide "Cette préparation ne contient aucun matériau de construction."
+    elen vide "Très rassurant. Bon, allez, goûte, toi."
+    noam vide "Pourquoi moi ?!"
+    elen vide "Parce que tu viens d'arriver et que tu n'as pas encore eu le temps de me dire non !"
+    "Je prends une toute petite bouchée. La texture est étrange, et je dois faire un effort pour ne pas grimacer."
+    noam vide "Je crois que mon moral vient de baisser."
+    goumi vide "Analyse nutritionnelle : objectif atteint à cent pour cent."
+    elen vide "Ah bah super ! On est malheureux, mais en parfaite santé !"
+    "Elle éclate de rire et repose la coupelle hors de portée."
+
     scene bg_cg008_1 at adaptive_fullscreen with fade
-    goumi vide "Bonjour. Je suis Goumi, unité culinaire autonome. Je peux préparer des repas à partir des réserves disponibles."
+    noam vide "Tu peux lui demander de nous faire quelque chose de vraiment bon, plutôt ?"
+    elen vide "Avec plaisir. Et cette fois, je vais être très précise."
+    goumi vide "Je suis Goumi, unité culinaire autonome. Toutes les recettes réalisables à partir des stocks peuvent être demandées."
     $ unlock_character_name("goumi")
-    noam vide "Enchanté, Goumi. Et on commande comment ?"
-    goumi vide "En formulant votre demande à voix haute."
-    elen vide "Attention, si tu lui demandes de choisir pour toi, il va te réciter toutes les options."
-    noam vide "Dans ce cas, un jus de fruit, s'il te plaît. N'importe lequel."
-    goumi vide "Veuillez préciser le fruit."
-    noam vide "Euh... une pomme ?"
-    goumi vide "Commande acceptée. Jus de pomme en préparation."
-    elen vide "Tu vois ? Il fallait juste parler comme à une machine. C'est triste, quand même."
-    noam vide "C'est peut-être mieux que d'avoir un chef susceptible."
-    elen vide "Oh, ça, je demande à voir !"
+    elen vide "Goumi, deux parts de gâteau au chocolat. Un vrai gâteau, avec du sucre, pas une pâte qui ressemble à du mastic."
+    goumi vide "Demande acceptée. Deux parts de gâteau au chocolat en préparation."
+    noam vide "Tu vois, il suffisait de demander."
+    elen vide "Tu dis ça maintenant ? Après m'avoir laissée lui faire confiance ?"
+
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_329
     scene bg_cafeteria at adaptive_fullscreen with fade
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("elen", "neutre", 0.50),
         ("goumi", "vide", 0.78),
     ])
-    elen sourire "Au fait, moi c'est Elen. On s'est vus tout à l'heure, mais j'ai même pas pris le temps de te parler."
+
+    elen sourire "Au fait, moi c'est Elen. J'ai tellement passé de temps à discuter avec ce truc que j'en ai oublié de me présenter."
     $ unlock_character_name("elen")
-    noam sourire "Noam. Ça me rassure qu'il y ait au moins quelqu'un de bonne humeur ici."
-    elen content "Oh, je fais ce que je peux. Si on doit rester ensemble un mois, autant commencer par manger correctement, non ?"
-    goumi vide "Précision : les repas sont servis de 6 h à 14 h et de 17 h à 22 h. Le reste du temps est réservé à ma recharge."
-    noam surpris "Même le cuisinier a des horaires de travail ?"
-    elen rire "Et il y tient ! J'ai essayé de négocier un goûter à seize heures, c'est non."
-    goumi vide "Une collation peut être préparée à l'avance."
-    elen surpris "Attends, tu pouvais me dire ça depuis le début !"
-    "Un petit compartiment s'ouvre sur le comptoir. Goumi y dépose un gobelet."
-    goumi vide "Jus de pomme disponible."
-    noam sourire "Merci. Au moins, lui, il fait ce qu'on lui demande."
-    elen taquin "Ouais, sauf si tu lui demandes de te raconter sa journée."
-    noam rire "Je vais éviter de le vexer."
-    elen sourire "Je vais continuer à regarder ce qu'il y a ici. On se retrouvera sûrement au prochain repas."
-    noam sourire "Avec plaisir. Essaie quand même de laisser Goumi tranquille."
-    elen rire "Je promets rien !"
-    "Elle repart vers les tables en examinant les menus. Goumi, lui, attend déjà sa prochaine commande."
+    noam sourire "Noam. Et lui, c'est Goumi, le chef qui sait nous nourrir sans nous donner envie de recommencer."
+    goumi vide "Je suis conçu pour satisfaire toutes les demandes alimentaires compatibles avec les réserves disponibles."
+    elen rire "Alors commence par apprendre le mot « plaisir », ça te fera pas de mal."
+    goumi vide "Je ne peux pas éprouver de plaisir."
+    elen taquin "Oui, on avait remarqué."
+
+    "Quelques instants plus tard, le compartiment s'ouvre sur deux parts de gâteau, cette fois parfaitement appétissantes."
+    goumi vide "Commande terminée. Je vous rappelle que mes horaires de service sont de six heures à quatorze heures, puis de dix-sept heures à vingt-deux heures."
+    noam surpris "Il a vraiment des horaires, lui ?"
+    elen sourire "Oui, monsieur tient à sa recharge. On dirait presque qu'il est syndiqué."
+    "Je goûte le gâteau. Il est étonnamment bon, ce qui me pousse à regarder Goumi avec un peu plus de respect."
+    noam sourire "Bon, je retire une partie de ce que j'ai dit. Ça, c'est réussi."
+    goumi vide "Votre appréciation a été enregistrée."
+    elen content "Tu vois ! On va peut-être réussir à passer un mois sans manger de la bouillie."
+    "Son sourire s'atténue légèrement lorsqu'elle prononce ces mots. Elle reprend vite une autre bouchée."
+    elen sourire "Enfin... une journée à la fois, hein ? Ça sera déjà pas mal."
+    noam neutre "Oui. Ça me va."
+    elen taquin "Et la prochaine fois, je te laisse choisir le menu. Mais je garde le droit de goûter avant toi."
+    noam rire "Quel courage."
+    "Goumi récupère la coupelle grise pendant que nous terminons le gâteau. Pour une fois depuis notre arrivée, j'ai presque l'impression de passer une pause normale."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_1
     $ hideGroup()
     jump CAFETERIA_TP
