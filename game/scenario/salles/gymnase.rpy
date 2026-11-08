@@ -151,49 +151,69 @@ label GYM_PNC_EXIT:
 # -----------------------------------------------------------------------
 
 label decouverte_gymnase:
+
     $ decouverte_gymnase = True
+
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    think "Un gymnase dans une station qui nous retient un mois. Au moins, on ne pourra pas dire qu'ils nous obligent à rester assis toute la journée."
+    think "Un gymnase. Si on doit passer un mois ici, je suppose que c'est toujours mieux que de tourner en rond dans les couloirs."
+
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_338
     scene bg_gymnase at adaptive_fullscreen with fade
-    "Il y a des tapis, des poids et plusieurs machines de cardio. L'une d'elles émet un bruit irrégulier, suivi d'un juron."
+
+    "Il y a de quoi courir, soulever des poids et s'entraîner. Près d'une machine, un garçon en plein bricolage lâche un juron assez sonore pour me faire sursauter."
+
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("elias", "neutre", 0.78),
     ])
-    "Un garçon essaie de régler un tapis de course. Il tapote l'écran, qui refuse visiblement de coopérer."
-    elias colere "Mais avance, bordel ! Je te demande juste de ralentir."
-    noam taquin "Tu veux un coup de main ?"
-    elias surpris "Hein ? Ouais, attends... Non, bouge pas, j'ai presque trouvé."
-    "Le tapis accélère brutalement. Il saute de côté et se rattrape à la barre avant de couper l'alimentation."
-    elias panique "Putain ! C'était pas le bon bouton."
-    noam rire "Tu peux dire que tu as testé la sécurité. Elle marche, visiblement."
-    elias fatigue "Ouais. La sécurité est très bonne. La machine, elle, me casse les couilles."
-    noam sourire "Moi c'est Noam."
-    elias neutre "Elias. Je viens de la Forge, à Axiome."
+
+    elias colere "Mais c'est pas possible ! J'ai juste demandé la vitesse minimum !"
+    noam sourire "Tout va bien ?"
+    elias surpris "Ouais, ouais. Enfin... je crois. Le tapis m'a fait une accélération de malade, j'ai failli me casser la gueule."
+    noam taquin "Bon, au moins, tu sais qu'il peut aller vite."
+    elias fatigue "Très drôle. Tu veux essayer pour voir ?"
+    noam sourire "Pourquoi pas ? Ça a pas l'air si compliqué."
+    elias content "Attends, je vais te montrer. Je bosse sur des machines toute la journée, normalement je sais les régler."
+    noam reflexion "Tu travailles dans quoi ?"
+    elias neutre "La mécanique, surtout. Je viens de la Forge, à Axiome. Elias, au fait."
     $ unlock_character_name("elias")
-    noam reflexion "Tu fais souvent du sport ?"
-    elias neutre "Quand j'ai le temps. Après une journée à bosser, ça aide à dormir. Et ici, franchement, j'ai besoin de me vider la tête."
-    noam sourire "Je comprends. Je sais même pas encore ce qu'on va faire de nos journées."
-    elias fatigue "On a les votes, les repas et un paquet de temps à tuer. Moi, si je reste assis à réfléchir à tout ça, je vais devenir dingue."
-    noam taquin "Tu comptes donc te tuer sur un tapis de course à la place ?"
-    elias rire "Très drôle. T'as qu'à essayer, tu feras moins le malin."
-    "Il remet le tapis à sa vitesse minimale et me fait signe de monter. Je pose un pied dessus, puis l'autre."
-    noam hesitation "Là, tu es sûr du réglage ?"
-    elias content "Ouais, cette fois c'est bon. Regarde, il y a juste à marcher."
-    "Le tapis avance à une allure tranquille. J'accélère un peu et Elias me surveille, prêt à intervenir."
-    noam sourire "Finalement, c'est pas si compliqué."
-    elias taquin "C'est ce que je disais avant de toucher au mauvais bouton. Fais gaffe à tes grandes phrases."
-    noam rire "D'accord, j'ai rien dit."
-    "Après quelques pas, je descends et lui rends sa place."
-    noam reflexion "Tu crois vraiment qu'on aura le temps de venir s'entraîner avec tout ce qui nous attend ?"
-    elias neutre "Je sais pas. Mais si on passe un mois à se bouffer les nerfs, on tiendra pas longtemps. Alors autant garder nos habitudes."
-    noam sourire "Pas faux. Je repasserai peut-être."
-    elias joie "Quand tu veux. Mais la prochaine fois, c'est toi qui règles la machine."
-    noam taquin "Ah non. J'ai vu comment ça finit quand on fait confiance à un expert."
-    elias rire "Va te faire voir !"
-    "Il éclate de rire avant de relancer son entraînement, cette fois sans toucher à l'écran."
+    noam sourire "Noam, d'Harmonie. Enchanté."
+    elias sourire "Pareil. Allez, monte dessus, je te règle ça."
+
+    "Je pose les pieds sur le tapis. Elias manipule l'écran avec l'assurance de quelqu'un qui connaît parfaitement ce qu'il fait."
+    noam hesitation "Dis, c'est normal qu'il y ait marqué « entraînement intensif » ?"
+    elias surpris "Quoi ? Non, attends, bouge pas, je vais..."
+    "Le tapis démarre beaucoup trop vite. Je m'agrippe à la barre avant de perdre l'équilibre."
+    noam peur "ELIAS ! ARRÊTE CE TRUC !"
+    elias panique "PUTAIN, MAIS OÙ IL EST, LE BOUTON ?!"
+    "Il tape sur deux commandes sans succès, puis se penche sous la console. Je continue de courir sur place en essayant de ne pas me retrouver par terre."
+    noam desespoir "IL EST JUSTE DEVANT TOI, LE GROS BOUTON ROUGE !"
+    elias panique "AH, MERDE, OUAIS !"
+    "Il appuie sur l'arrêt d'urgence. Le tapis ralentit brutalement et je manque de basculer en avant."
+    noam inquiet "T'aurais pu me tuer avec ton échauffement !"
+    elias gene "Je sais, je sais ! Désolé, j'ai confondu les deux programmes. Je voulais juste te montrer comment ça marchait."
+    "Je descends en gardant une main sur la barre. Elias me regarde, visiblement plus inquiet que moi maintenant que le danger est passé."
+    elias fatigue "Tu t'es fait mal ? Sérieux, dis-moi. J'aurais dû vérifier les réglages avant de te faire monter."
+    noam neutre "Non, je crois que ça va. Mais on va peut-être éviter de recommencer."
+    elias rire "Ouais. Bon. On va dire que c'était le programme spécial survie."
+    noam taquin "Ça tombe bien, on a déjà Kami pour s'occuper de notre survie."
+    elias rire "Ah ouais, j'avais presque oublié notre gentille surveillante."
+
+    "Il débranche la machine et colle dessus une petite étiquette de maintenance, récupérée dans un tiroir voisin."
+    noam reflexion "Tu sais quand même réparer ce genre de truc, d'habitude ?"
+    elias neutre "Ouais, quand je peux ouvrir le capot et voir ce qui déconne. Là, ils ont tout planqué derrière des menus à la con."
+    noam sourire "Je te crois. Mais pour la prochaine démonstration, on fera des pompes."
+    elias content "Ça, au moins, ça risque pas de tomber en panne."
+    noam taquin "À condition que tu me demandes pas d'en faire cent."
+    elias rire "Je te promets rien."
+
+    "Il me tend une bouteille d'eau et en prend une pour lui. Je bois quelques gorgées en reprenant mon souffle."
+    elias neutre "Tu sais, ça fait du bien de faire autre chose que de penser à ce qui nous attend. Même si j'ai réussi à transformer cinq minutes de sport en catastrophe."
+    noam sourire "On pourra dire qu'on a eu notre premier entraînement en conditions extrêmes."
+    elias rire "Voilà ! Et la prochaine fois, je touche plus aux tapis. Enfin... pas avant d'avoir lu la notice."
+    "Je le quitte alors qu'il cherche déjà cette fameuse notice dans le tiroir. J'espère simplement que personne ne lui demandera une nouvelle démonstration avant qu'il l'ait trouvée."
+
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES_3
     $ hideGroup()
     jump GYMNASE_TP
