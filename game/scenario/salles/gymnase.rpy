@@ -192,7 +192,7 @@ label decouverte_gymnase:
     elias panique "AH, MERDE, OUAIS !"
     "Il appuie sur l'arrêt d'urgence. Le tapis ralentit brutalement et je manque de basculer en avant."
     noam inquiet "T'aurais pu me tuer avec ton échauffement !"
-    elias gene "Je sais, je sais ! Désolé, j'ai confondu les deux programmes. Je voulais juste te montrer comment ça marchait."
+    elias fatigue "Je sais, je sais ! Désolé, j'ai confondu les deux programmes. Je voulais juste te montrer comment ça marchait."
     "Je descends en gardant une main sur la barre. Elias me regarde, visiblement plus inquiet que moi maintenant que le danger est passé."
     elias fatigue "Tu t'es fait mal ? Sérieux, dis-moi. J'aurais dû vérifier les réglages avant de te faire monter."
     noam neutre "Non, je crois que ça va. Mais on va peut-être éviter de recommencer."
