@@ -233,7 +233,7 @@ label _0_CANON:
     "Je cherche une poignée, un verrou, n'importe quoi, mais plus je m'agite, plus j'ai l'impression de manquer d'air."
     think "Calme-toi. Si tu paniques maintenant, tu vas juste t'épuiser."
     noam "Réfléchis... Je suis qui, déjà ? Qu'est-ce que je fais là ?"
-    "J'essaie de me rappeler mon réveil, la veille, la dernière personne à qui j'ai parlé... Impossible. Tout se mélange."
+    "J'essaie de me rappeler mon réveil, la dernière personne à qui j'ai parlé... Impossible. Tout se mélange."
     think "Non. Il y a forcément quelque chose dont je me souviens."
     pause 0.4
     think "Noam... Oui. Je m'appelle Noam !"
@@ -534,7 +534,7 @@ label d0_memory_noam:
     $ d0_noam_memory_expression = "reflexion"
     show screen d0_noam_memory_character
     $ renpy.pause(0.8, hard=True)
-    noam reflexion "Je m'appelle Noam. Vingt-six ans. Je vis dans le district Harmonie, avec ma mère et ma petite sœur... Juliette."
+    noam reflexion "Je m'appelle Noam. J'ai vingt an. Je vis dans le district Harmonie, avec ma mère et ma petite sœur... Juliette."
     $ d0_noam_memory_expression = "sourire"
     noam sourire "Juliette... Je me souviens de sa voix. Elle passe son temps à me rappeler des choses que j'aurais dû faire tout seul."
     hide screen d0_noam_memory_character
