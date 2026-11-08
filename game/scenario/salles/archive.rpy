@@ -111,251 +111,54 @@ label archive2_ecran:
 # -----------------------------------------------------------------------
 
 label decouverte_salle_archive:
-
     $ decouverte_salle_archive = True
-
     scene black
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-
-    think "La salle d’archive. Je n'ai jamais été très studieux..."
-    think "Rien que le nom ça m'ennuie déjà."
-
-    pause 0.4
-
+    think "Les archives. Je m'attendais à quelques rayonnages, pas à une salle qui prend tout un étage."
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_MAYBE_PLAY_SCRIPTED_DOOR_325
     scene bg_archive at adaptive_fullscreen with fade
-
-    "La salle est immense."
-    "Pas forcément spectaculaire, ce n'est qu'une salle d'archive après tout."
-    "Mais sa taille peut être assez surprenante. En vrai, j'imaginais ça plus petit."
-
-    "Des murs entiers sont couverts de données et de bouquin, rangées par rangées et par couloirs."
-    "Comme si on avait enfermé une ville entière de dossiers ici."
-
-    "Et au fond… une console principale."
-    "Des écrans qui tournent déjà."
-    "Comme si la salle travaillait sans nous."
-
+    "Des étagères et des modules de stockage occupent presque tout l'espace. Au fond, plusieurs postes sont déjà allumés."
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("tomas", "neutre", 0.78),
     ])
-
-    "Le grand gaillard de tout à l'heure s’arrête net un peu plus loin."
-
-    tomas surpris "Ah. Ok."
-
-    noam reflexion "Quoi ?"
-
-    tomas mefiant "Je pensais qu'il y aurait plus de livres, c'est tout."
-
-    noam reflexion "Des vrais ?"
-
-    tomas raison "Oui."
-    tomas raison "Enfin non. Enfin si, mais—"
-
-    noam reflexion "Respire."
-
-    tomas panne "Je croyais qu'une salle d'archives, ça serait surtout..."
-    tomas panne "Des livres. Des dossiers papier, quoi."
-    tomas panne "Enfin, tu sais ..."
-
-    noam reflexion "Faut te mettre à la page mon vieux. Puis y'en a des livres quand même par là."
-
-    tomas culpabilite "Ouais, mais là c'est surtout des données imprimées. J'ai pas trop l'habitude de..."
-    tomas culpabilite "Tout ça. D-Désolé, je suis pas très à l'aise à l'oral..."
-
-    "Il fait un geste vague."
-
-    noam sourire "T’inquiète."
-    noam sourire "On est tous un peu largués."
-
-    pause 0.3
-
-    "Il se tourne vers moi, comme s’il réalisait un détail important."
-    "Un truc évident, sauf quand tu viens d’arriver."
-
-    tomas reflechit "Au fait—"
-    tomas raison "Je m'appelle Tomas."
+    "Un grand type examine un rayon en fronçant les sourcils. Il retire un dossier, le remet à sa place, puis en sort un deuxième."
+    tomas reflechit "Ils ont vraiment mélangé les documents papier avec des supports numériques ? Ça va être un enfer pour retrouver quoi que ce soit."
+    noam taquin "Tu viens d'arriver et tu critiques déjà le classement ?"
+    tomas surpris "Ah ! Désolé, je t'avais pas entendu. Je cherchais juste à comprendre leur système."
+    noam sourire "Noam. Et toi ?"
+    tomas neutre "Tomas. Je viens d'Archive, alors forcément, ce genre de salle m'intéresse."
     $ unlock_character_name("tomas")
-
-    noam sourire "Moi c'est Noam."
-
-    tomas raison "Oui."
-    tomas raison "Je sais."
-    tomas raison "Ton siège avait ton nom. Je—"
-    tomas raison "Enfin bref."
-
-    noam taquin "T’as pas besoin de te présenter comme à un entretien."
-
-    tomas panne "O-Ouais. C’est un réflexe."
-    tomas panne "J'aime bien faire les choses correctement. C'est tout."
-
-    noam taquin "Mauvais endroit je crois."
-
-    tomas rire "Ouais. Clairement !"
-
-    "Tomas s’approche d’une console, il regarde l'écran et penche la tête."
-
-    tomas reflechit "… Oh. C'est quoi ça ?"
-
-    noam taquin "Quoi encore ?"
-    think "Mais où il va ?"
-
-    hide tomas with moveoutright
-    hide noam with moveoutright
-    pause 1.0
-    
+    noam taquin "Ça tombe bien. Moi, j'étais surtout venu vérifier qu'ils avaient pas rangé les notices de survie au milieu des romans."
+    tomas rire "Tu plaisantes, mais il y a des archives où ce serait un vrai problème. Enfin, pas exactement pour cette raison..."
+    tomas panne "Pardon. Je vais éviter de te faire un cours dès notre première conversation."
+    noam sourire "Merci, j'apprécie l'effort."
+    "Tomas remet le dossier en place et se dirige vers le poste central. Au bout de quelques secondes, il m'appelle."
+    tomas reflechit "Viens voir. Je pensais pouvoir ouvrir un catalogue, mais ce truc n'affiche que des codes."
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "archive2") from _call_MAYBE_PLAY_SCRIPTED_DOOR_326
     scene archive2 at adaptive_fullscreen with fade
-
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("tomas", "neutre", 0.78),
     ])
-
-    tomas surpris "Je pensais que c’était une recherche."
-    tomas surpris "Mais en fait…"
-    tomas surpris "C’est juste une sorte de liste."
-
-    noam taquin "Bienvenue dans l’administration."
-
-    tomas rire "C’est rassurant, quelque part."
-    tomas rire "Même sous Kami, la paperasse survit."
-
-    noam taquin "Ouais, ça tu peux me croire. Il y a toujours autant de paperasses..."
-
-    "Je regarde l’hologramme. Les murs, les consoles."
-
-    think "Il y a des données sur à peu près tout."
-    think "Mais tout est bien plus compliqué que dans les papiers habituels."
-
-    noam reflexion "On apprendra peut-être des choses ici."
-    noam reflexion "Mais faudrait déjà comprendre ce que ça racconte."
-
-    "Il plisse les yeux en essayant de déchiffrer une suite de nombre."
-
-    tomas reflechit "Ouais On apprendra surtout ce qu’ils veulent bien laisser traîner."
-
-    pause 0.2
-
-    tomas mefiant "Regarde ça."
-
-    "Il tape sur une ligne sur une sorte d'écran de commande."
-    "Une fenêtre s’ouvre."
-    "Trois champs."
-    "Pas de phrase."
-    "Pas de résumé."
-
-    "Un code."
-    "Un horodatage."
-    "Et une colonne marquée : \"NIVEAU\"."
-
-    noam reflexion "Ça veut dire quoi ?"
-
-    tomas determine "Ça veut dire…"
-    tomas determine "Que c’est pas une archive pour nous."
-
-    noam reflexion "Évidemment que c’est pas pour nous."
-
-    tomas raison "Non mais…"
-    tomas raison "Je veux dire : même le format."
-    tomas raison "C’est pas 'fait pour être lu'."
-    tomas raison "C’est fait pour être… ingéré et décodé rapidement."
-
-    noam reflexion "In— quoi ?"
-
-    tomas panne "Pardon."
-    tomas panne "En gros, la machine est capable de tout comprendre facilement sans mise en forme des données."
-    tomas reflexion "Même sans traduire dans notre langue."
-    tomas panne "Pour une machine, il n'y a rien de plus simple."
-
-    "Il pointe du doigt l'écran avec la carte de la terre."
-    "La sphère tourne lentement."
-    "Des points s’allument, s’éteignent."
-    "Comme des nœuds d’un réseau."
-
-    tomas reflechit "Ça, c’est pas une carte pour nous situer."
-    tomas reflechit "C’est un tableau de corrélation."
-    tomas reflechit "Ça relie des événements : les archives."
-    tomas reflechit "On peut voir ce qui s'est passé où et quand."
-    tomas reflechit "Avec qui et pourquoi."
-
-    noam reflexion "D'où la salle d'archive."
-
-    tomas determine "Tout est déjà exploité et rangé."
-    tomas determine "Il suffit de comprendre comment ça fonctionne ..."
-    tomas determine "Les index."
-    tomas determine "Les droits d’accès."
-    tomas determine "Le squelette."
-
-    "Il s’interrompt."
-    "Comme si quelque chose se mettait en place dans sa tête."
-
-    tomas surpris "Non attends…"
-
-    noam reflexion "Quoi ?"
-
-    "Il scrolle encore."
-    "Deux lignes."
-    "Puis une troisième."
-    "Une mention revient."
-
-    tomas reflechit "\"STATUT : VALIDÉ\"…"
-    tomas reflechit "\"STATUT : BLOQUÉ\"…"
-    tomas reflechit "\"STATUT : EXÉCUTÉ\"…"
-
-    noam reflexion "Mais qu'est ce que tu fais ?!"
-
-    tomas raison "C’est ça le truc."
-
-    pause 0.3
-
-    tomas determine "Les archives ne sont pas seulement une mémoire."
-    tomas determine "C’est une chaîne de décision."
-    tomas determine "Un pipeline."
-
-    noam reflexion "Un quoi ?"
-
-    tomas panne "Désolé."
-    tomas panne "En gros c'est un… circuit."
-    tomas panne "Tu changes un paramètre."
-    tomas panne "Et derrière, tu peux voir tout ce qui a un rapport, direct ou indirect avec ce paramètre."
-    tomas panne "Quelque part."
-
-    "Je sens un froid me remonter le dos."
-    "Pas celui de la salle."
-    "Un autre."
-
-    noam inquiet "Donc ce qu’on appelle 'archives'…"
-    noam inquiet "Il y a globalement tout dedans ?."
-
-    tomas reflechit "Oui."
-    tomas reflechit "Et du coup…"
-    tomas reflechit "Si on peut lire quelque chose ici un jour…"
-
-    tomas mefiant "On pourra apprendre énormement de choses !"
-
-    pause 0.4
-
-    think "Peut être que Kami n'a pas besoin de rendre les données plus lisibles pour les comprendre."
-    think "Parce que ce n'est pas nous qui sommes censés comprendre."
-
-    tomas mefiant "Ok."
-    tomas mefiant "Je vais continuer à essayer de comprendre comment ça marche."
-
-    tomas joie "Oh ouais !"
-    tomas joie "Bonne idée !"
-
-    pause 0.3
-    
-    "Tomas continue de nouveau à bidouiller des paramètres."
-    "Je devrais y aller ..."
-    
+    "Une carte de la Terre flotte au-dessus de la console. À côté, des lignes de données défilent sans titre ni explication."
+    noam reflexion "Tu arrives à lire quelque chose là-dedans ?"
+    tomas reflechit "Des dates, des identifiants et des niveaux d'accès. Je reconnais la structure, mais pas les catégories."
+    noam neutre "Essaie celui-là, il a au moins une date."
+    "Tomas sélectionne la ligne. Trois mentions apparaissent : VALIDÉ, BLOQUÉ et EXÉCUTÉ."
+    noam inquiet "Exécuté ? C'est un dossier judiciaire ?"
+    tomas mefiant "Je sais pas. Ce qui m'intrigue, c'est qu'il n'y a même pas de résumé. Un archiviste humain ne travaillerait jamais comme ça."
+    noam reflexion "Ça pourrait être une sauvegarde destinée aux machines, non ?"
+    tomas surpris "Oui, justement ! Les informations sont sûrement liées entre elles par des identifiants. La machine n'a pas besoin d'un titre pour comprendre ce qu'elle consulte."
+    noam taquin "Tu vois, j'ai réussi à dire un truc utile."
+    tomas rire "Et moi j'ai réussi à l'expliquer sans partir dans l'histoire complète du classement documentaire. On progresse tous les deux."
+    "Il essaie d'ouvrir une autre entrée. La console affiche une demande d'autorisation, puis revient à l'écran précédent."
+    tomas reflechit "Bon, l'accès est limité. Je peux consulter l'index, mais pas les dossiers."
+    noam neutre "Donc il y a des archives partout, sauf qu'on ne peut pas vraiment les lire. Pratique."
+    tomas mefiant "C'est déjà intéressant de voir ce qui existe. Si je comprends comment c'est classé, je trouverai peut-être ce qu'on a le droit d'ouvrir."
+    noam sourire "Je te laisse fouiller. Tu as l'air de t'amuser, au moins."
+    tomas joie "Ouais ! Enfin, j'aurais préféré avoir un vrai moteur de recherche, mais je vais faire avec."
+    "Je le laisse devant la console. Il est déjà reparti dans ses recherches et ne remarque même pas que je m'éloigne."
     call CHECK_ALL_SALLES_VISITEES from _call_CHECK_ALL_SALLES_VISITEES
-
     $ hideGroup()
     jump ARCHIVE_TP
-
-# Durée : 2m50
-# Total : 36m20
