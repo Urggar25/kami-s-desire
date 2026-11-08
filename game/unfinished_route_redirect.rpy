@@ -15,25 +15,25 @@ screen kd_route_vote_convergence():
         vbox:
             spacing 22
             xfill True
-            text "CONTINUITE DE L'HISTOIRE":
+            text "CONTINUITÉ DE L’HISTOIRE":
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 43
                 color "#91DDF3"
                 xalign 0.5
             add Solid("#498BAA") xalign 0.5 xsize 760 ysize 2
-            text "Les consequences de ce vote appartiennent a une route encore en developpement.":
+            text "Les conséquences de ce vote conduisent à une route qui n’est pas encore développée.":
                 size 28
                 color "#F1F7FC"
                 xalign 0.5
                 textalign 0.5
                 xmaximum 900
-            text "Pour poursuivre votre partie, l'histoire rebascule sur la route actuellement disponible. Les evenements qui suivent correspondent a cette autre issue du vote.":
+            text "L’histoire va donc reprendre sur la route actuellement développée. Les événements qui suivent correspondent à une autre issue du vote.":
                 size 25
                 color "#BCD5E4"
                 xalign 0.5
                 textalign 0.5
                 xmaximum 900
-            textbutton "CONTINUER L'HISTOIRE":
+            textbutton "POURSUIVRE L’HISTOIRE":
                 style "kd_dlc_action"
                 action Return()
                 xalign 0.5
