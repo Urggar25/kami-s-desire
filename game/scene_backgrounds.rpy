@@ -425,31 +425,29 @@ init -2 python:
         return "decor_distributeur_mi"
 
     def cafeteria_food_visible_count():
+        """Nombre de bacs visibles (0 à 6), selon le stock de nourriture.
+
+        Les niveaux narratifs existants restent compatibles avec les sauvegardes.
+        Une valeur numérique représente désormais directement le nombre de bacs.
+        """
         level = getattr(store, "cafeteria_food_level", "high")
 
         try:
-            amount = int(level)
-            if amount <= 0:
-                return 0
-            if amount <= 1:
-                return 1
-            if amount <= 3:
-                return 3
-            return 5
-        except Exception:
+            return max(0, min(6, int(level)))
+        except (TypeError, ValueError):
             pass
 
         level_key = str(level).strip().lower()
-        if level_key in ("empty", "none", "zero", "vide", "aucune", "0"):
+        if level_key in ("empty", "none", "zero", "vide", "aucune"):
             return 0
-        if level_key in ("low", "few", "peu", "faible", "1"):
+        if level_key in ("low", "few", "peu", "faible"):
             return 1
-        if level_key in ("medium", "mid", "moyen", "moins", "3"):
+        if level_key in ("medium", "mid", "moyen", "moins"):
             return 3
-        return 5
+        return 6
 
     def cafeteria_visible_food_keys():
-        keys = ["nourriture%s" % idx for idx in range(1, 6)]
+        keys = ["nourriture%s" % idx for idx in range(1, 7)]
         count = cafeteria_food_visible_count()
 
         if count <= 0:
