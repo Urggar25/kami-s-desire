@@ -178,6 +178,7 @@ label decouverte_gymnase:
     noam reflexion "Tu travailles dans quoi ?"
     elias neutre "La mécanique, surtout. Je viens de la Forge, à Axiome. Elias, au fait."
     $ unlock_character_name("elias")
+    call kd_play_character_intro("elias") from _call_kd_intro_elias_j1
     noam sourire "Noam, d'Harmonie. Enchanté."
     elias sourire "Pareil. Allez, monte dessus, je te règle ça."
 
