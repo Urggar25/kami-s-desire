@@ -1644,23 +1644,23 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.98),
         ])
 
-        noam inquiet "Ryn, t’as dit hier que chez toi, même avec des bons, vous repartez parfois sans rien. C’est toujours comme ça ?"
+        noam inquiet "Ryn, tu disais que les bons ne suffisaient même plus chez toi. Tu parlais de quelques pénuries... ou de quelque chose de permanent ?"
 
-        elias determine "Ça, c'est la vérité vraie. Un bon pour du riz, et pas de riz au bout. On appelle ça la sécurité ?"
+        elias determine "Un bon pour du riz, et l'entrepôt est vide ! On a gagné quoi ? Le droit officiel d'avoir faim ?"
 
-        julian sourire "Si les producteurs peuvent vendre, ils auront une bonne raison d'en faire plus."
+        julian sourire "Si les producteurs peuvent enfin vendre ce qu'ils fabriquent, ils auront une raison d'augmenter la production. On ne peut pas ignorer ça."
 
-        mara doute "Ouais, et tout partira là où y a de l'argent. À Limen, ils auront quoi ?"
+        mara doute "Très bien. Et si les acheteurs les plus riches raflent tout, qui livrera Limen ? Le Père Noël ?"
 
-        ryn colere "Voilà ! Nexus déborde, nous on ramasse les miettes. Comme aujourd'hui, mais en pire."
+        ryn colere "Voilà ! Nexus se remplira les poches et nous, on verra passer les camions sans pouvoir les arrêter !"
 
-        kael reflechit "Limen a beaucoup d'habitants. Des vendeurs voudront sûrement y aller aussi."
+        kael reflechit "Limen, c'est aussi beaucoup de clients potentiels. Certains commerçants voudront peut-être s'y installer."
 
-        ryn reflechit "…Mouais. Peut-être. Si on a de quoi payer, déjà."
+        ryn reflechit "...Peut-être. Encore faut-il qu'on ait quelque chose à leur donner."
 
-        sael neutre "Chez moi, on fait avec ce qu'on a. Mais c'est pas toujours simple."
+        sael neutre "Chez moi, on partage, mais ça ne fait pas apparaître de la nourriture par magie. Je comprends qu'on cherche autre chose."
 
-        elen joie "Et si on pouvait enfin avoir ce qui nous manque ? Ça serait bien, non ?"
+        elen joie "Et si ça permettait enfin aux gens de trouver ce qu'il leur manque ? Même juste une fois sans supplier Kami ?"
 
         # Montre que le système actuel ne nourrit pas : pousse doucement les hésitants.
         $ debat_day3_apply_influence({"ryn": 1, "kael": 1, "mara": -1, "julian": 1, "elen": 1})
@@ -1676,20 +1676,20 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.95),
         ])
 
-        noam inquiet "Vous trouvez pas ça dingue qu’on ait des bons de rationnement et qu’on manque quand même de nourriture ?"
+        noam inquiet "On a des bons censés garantir le nécessaire, mais certains rentrent les mains vides. On peut vraiment dire que ça fonctionne ?"
 
-        tomas raison "J'ai vu les chiffres. Dans certains endroits, plus de la moitié des produits manquent presque tout le temps."
+        tomas raison "J'ai regardé les statistiques... Dans certains secteurs, les ruptures touchent plus de la moitié des produits sur de longues périodes."
 
-        iris colere "Un bon, c'est un ticket pour faire la queue. Point. Le produit correct part en deux jours."
+        iris colere "Tu peux avoir un bon parfaitement valable et attendre toute la journée devant un stock vide. Le papier ne nourrit personne."
 
-        ryn colere "À Limen, on a des bons pour du lait qui arrive caillé. Des médocs périmés avant même la livraison."
-        ryn triste "Ça, c'est votre « sécurité » ? Un papier qui promet ce qui n'arrive jamais ?"
+        ryn colere "À Limen, le lait arrive parfois déjà tourné. Les médicaments sont périmés avant même qu'on puisse les distribuer !"
+        ryn triste "Et après on nous explique qu'on devrait être reconnaissants d'avoir des tickets. Des tickets pour des choses qui n'arrivent pas."
 
-        mara reflexion "Ouais, ça marche pas bien. Mais le supprimer d'un coup, c'est pas mieux."
+        mara reflexion "Le système est nul. Je le sais. Mais le supprimer d'un coup, sans savoir par quoi le remplacer, c'est une autre folie."
 
-        elias determine "Le même ticket pour rien, qu'on se crève au boulot ou qu'on dorme toute la journée. Faut que ça change."
+        elias determine "Et on reçoit les mêmes refus, qu'on passe la journée à réparer des machines ou qu'on reste chez soi ! Ça finit par dégoûter les gens."
 
-        elen joie "Moi, j'aimerais juste qu'on arrête de se battre pour trois bricoles."
+        elen joie "Moi, j'aimerais juste que personne n'ait besoin de se disputer pour trois pommes et un paquet de riz ! C'est trop demander ?"
 
         # L'argument le plus efficace pour rallier les pauvres (Ryn) : preuve vécue.
         $ debat_day3_apply_influence({"ryn": 2, "mara": 1, "kael": 1, "tomas": 1, "iris": 1})
@@ -1706,24 +1706,24 @@ label _3_DEBAT1_PHASE3_INT1:
             ("mara", "stress", 0.98),
         ])
 
-        nyra raison "Vous parlez de Limen. Mais que savez-vous du prix d'une erreur sur Orbite ?"
+        nyra raison "Vous parlez des pénuries au sol. Mais une erreur logistique sur Orbite ne se rattrape pas avec une livraison le lendemain."
 
-        kael mefiant "Chez nous, un retard de livraison, ça peut vite devenir dangereux. On a pas le droit de se planter."
-        kael triste "On ne peut pas se permettre l'imprévu. Jamais."
+        kael mefiant "Là-haut, un filtre ou une pièce manquante peut devenir une urgence vitale. On ne peut pas improviser."
+        kael triste "On ne peut pas faire comme si une livraison ratée ne coûtait qu'un peu de confort."
 
-        noam "Et avec le commerce, les livraisons peuvent changer tout le temps."
+        noam "Si les circuits commerciaux changent sans transition, toutes les livraisons pourraient être perturbées."
 
-        iris inquiet "…Ok. Là, même moi je tique. On met des vies en balance contre des étals mieux garnis ?"
+        iris inquiet "...Là, ça devient sérieux. On risque des vies pour avoir des rayons mieux remplis ?"
 
-        tomas raison "Sur Orbite, il y a pourtant peu de morts. Les règles actuelles ont aussi cet avantage."
+        tomas raison "Il y a relativement peu de morts sur Orbite. Il faut peut-être admettre que certaines règles protègent vraiment."
 
-        julian hesitation "On n’interdit rien de plus... enfin, je vois le risque. Mais on peut pas renoncer à chaque fois parce qu’on a peur."
+        julian hesitation "Je comprends le danger. Mais si on renonce à tout changement dès qu'il comporte un risque, on ne sortira jamais de ce système."
 
-        lysa blase "Il suffit qu'une livraison merde et ils ont un gros problème. On a compris."
+        lysa blase "Une seule livraison ratée, et tout un module peut trinquer. Ça devrait suffire à calmer quelques beaux discours."
 
-        nyra stress "Sur Orbite, la perte de contrôle se paie dans la seconde. Pas au prochain vote."
+        nyra stress "Sur Orbite, on ne peut pas attendre trois jours pour corriger une erreur. Le vide n'accorde pas de délai parlementaire."
 
-        mara stress "…Super. Donc en votant pour, on joue avec la vie de gens qu'on ne verra jamais."
+        mara stress "...Génial. On prend notre décision ici, confortablement assis. Et ce sont des inconnus enfermés dans une boîte métallique qui pourraient en payer le prix."
 
         think "Nyra et Kael échangent un regard bref, tendu. Personne n'insiste."
 
@@ -1737,12 +1737,12 @@ label _3_DEBAT1_PHASE3_INT1:
             ("mara", "doute", 0.55),
             ("ryn", "reflechit", 0.77),
         ])
-        noam "Sael, chez toi, tout le monde aide les autres, c'est ça ?"
-        sael neutre "Oui. Quand quelqu'un ne peut pas travailler, on l'aide. Sinon, chacun fait sa part."
-        elias reflechit "Ça, ça me parle. Mais avec les nouveaux contrats, ceux qui peuvent pas bosser, ils font quoi ?"
-        mara doute "Voilà. C'est exactement ce qui me gêne."
-        noam inquiet "C’est ça qui m’embête. Si on dit oui, on fait quoi des gens qui peuvent pas travailler ?"
-        ryn reflechit "Au moins, tu poses la bonne question."
+        noam "Sael, tu nous as parlé de ton village. Chez toi, personne ne reste sans aide quand il ne peut plus travailler ?"
+        sael neutre "Non. On aide ceux qui en ont besoin. Ceux qui peuvent participer le font. C'est ce qui permet au village de tenir."
+        elias reflechit "Je comprends. Mais les contrats de Kami, ils prévoient quoi pour ceux qui ne peuvent pas travailler ?"
+        mara doute "Voilà. On parle de liberté comme si tout le monde partait avec les mêmes chances."
+        noam inquiet "Et ceux qui sont incapables de signer un contrat, ils deviennent quoi dans ce nouveau système ?"
+        ryn reflechit "Enfin une question qui ne vient pas d'un catalogue de belles promesses."
         $ debat_day3_apply_influence({"sael": 1, "elias": 1, "mara": -1, "ryn": 1})
 
     elif selected == "derogations_complexes":
@@ -1752,12 +1752,12 @@ label _3_DEBAT1_PHASE3_INT1:
             ("kael", "calme", 0.60),
             ("nyra", "raison", 0.82),
         ])
-        noam sourire "Elen a passé un temps fou sur des formulaires juste pour commander des fraises. Vous trouvez pas qu’on va un peu loin ?"
-        elen reflechit "Trois pages ! Pour des épices ! J'ai cru devenir folle."
-        iris blase "Et pour une pièce de rechange, c'est la même galère."
-        kael calme "Oui. Certains dossiers mettent des jours à être validés."
-        nyra raison "Donc le système bloque même les demandes les plus simples. On peut au moins être d'accord là-dessus."
-        noam inquiet "Voilà pourquoi j’ai envie que ça change. Mais franchement, je sais toujours pas si ce texte va arranger les choses."
+        noam sourire "Elen a failli devoir organiser un référendum pour commander des fraises. Vous trouvez ça raisonnable ?"
+        elen reflechit "Trois pages ! Et j'avais même pas encore demandé les épices ! J'ai cru que j'allais y passer la nuit."
+        iris blase "Même procédure absurde pour obtenir une pièce détachée. Et on s'étonne que plus rien n'avance."
+        kael calme "Certains dossiers d'équipement prennent plusieurs jours. Pour une urgence, c'est une éternité."
+        nyra raison "Nous sommes donc d'accord sur un constat : l'organisation actuelle entrave même les besoins les plus banals."
+        noam inquiet "Voilà pourquoi j'ai envie de changer les règles. Mais l'amendement qu'on nous propose est-il vraiment la bonne réponse ?"
         $ debat_day3_apply_influence({"elen": 1, "iris": 1, "kael": 1, "nyra": 1})
 
     return
