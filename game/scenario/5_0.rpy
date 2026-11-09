@@ -375,28 +375,34 @@ label _5_0_REVEIL_CHAMBRE:
     $ cafeteria_food_level = "medium"
 
     $ blink()
-    think "Je regarde l'heure. Il est déjà huit heures, et je me demande si Sael est réveillée. Depuis la dispute d'hier, je n'arrête pas de repenser à ce qu'elle nous a raconté."
+    think "Huit heures. J'ai pourtant l'impression d'avoir passé la nuit entière à fixer le plafond."
+    think "Sael a dit non avant même qu'on vote. Et Ryn a réagi comme si elle avait personnellement appuyé sur la gâchette de chaque sanction."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "Elle a clairement dit qu'elle voterait contre demain. J'aimerais la revoir, pas pour la coincer avec des arguments, mais parce que je crois qu'on a compris seulement une partie de son histoire."
-    think "Je repense aussi à Julian. Il n'est même pas venu à la réunion hier. Ça ne lui ressemble vraiment pas."
+    think "J'aimerais parler à Sael. Pas pour lui extorquer un oui."
+    think "Hier, tout le monde voulait obtenir une réponse. Personne n'a vraiment pris le temps d'écouter sa question."
+    think "Et Julian... Lui qui se précipitait d'habitude devant la moindre caméra a disparu des discussions."
+    think "Je ne sais pas ce qui m'inquiète le plus : qu'il prépare un discours ou qu'il n'en prépare plus."
 
     play sound sfx_announce
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Bonjour à tous ! Vous avez une mine épouvantable ce matin. Et moi qui croyais qu'une bonne nuit suffirait à vous remettre du vote !"
+    kami "BOOOONJOUR, mes adorables représentants ! Toujours aussi reposés, à ce que je vois. Vos cernes pourraient presque siéger à votre place !"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Les rations du jour vous attendent à la cafétéria. Vous aurez de nouvelles provisions au jour 7, alors inutile de venir pleurer auprès de Goumi."
+    kami "Le petit-déjeuner est servi ! Même menu que prévu. Et inutile de harceler ce pauvre Goumi pour des extras : prochaine livraison au jour 7."
+    kami "Oui, Elen, ça inclut la cannelle. Je te vois venir."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et n'oubliez pas, vous revoterez demain. J'espère que vous avez prévu de vous parler entre-temps, c'était assez amusant hier !"
+    kami "Et demain... NOUVEAU VOTE ! Encore un jour pour vous convaincre, vous menacer ou vous ignorer. Personnellement, j'ai beaucoup aimé la deuxième méthode hier."
+    kami "Ou était-ce la première ? Oh, vous êtes si difficiles à suivre quand vous criez tous en même temps !"
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    "Je prends le morceau de pain laissé sur mon bureau la veille et mange quelques bouchées en m'habillant. Je n'ai pas vraiment faim."
-    think "Je pourrais aller retrouver les autres à la cafétéria, mais j'aimerais parler à Sael avant qu'elle ne commence sa journée. Je ne sais pas si elle acceptera de me recevoir."
-    "Je prends ma tablette et je sors."
+    "Je croque dans le pain d'hier."
+    think "Il a la consistance d'une pièce détachée. Elias saurait sûrement quoi en faire."
+    think "La cafétéria peut attendre. Si je veux parler à Sael sans avoir dix personnes pour nous couper la parole, c'est maintenant."
+    "J'attrape ma tablette et sors avant de trouver une bonne excuse pour remettre ça à demain."
 
     stop music fadeout 1.2
 
@@ -409,61 +415,91 @@ label _5_0_CHERCHE_SAEL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 2.0
 
-    think "Je retrouve la porte de Sael grâce au tissu noir noué sur la poignée. Je frappe, puis j'attends un moment avant d'entendre des pas."
+    think "Un tissu noir est noué à sa poignée. Sael a même réussi à rendre une porte de dortoir reconnaissable."
+    think "Je frappe. Une fois. Deux fois. J'espère qu'elle n'a pas décidé de me démonter comme son lit."
     play sound sfx_knock
     pause 0.5
     play sound sfx_door
     $ showGroup([("sael", "mefiant", 0.65), ("noam", "reflexion", 0.30)])
-    sael mefiant "Noam. Je suppose que tu viens pour le vote ?"
-    noam inquiet "Un peu, oui. Mais si tu veux pas en parler, je peux repartir."
-    sael neutre "Tu es déjà là. Entre, au moins on pourra discuter sans que tout le dortoir nous entende."
+    sael mefiant "Noam."
+    sael mefiant "Tu veux parler des frontières, je suppose."
+    noam inquiet "Un peu. Mais je peux aussi juste te dire bonjour et repartir. Ce serait une rencontre très réussie."
+    sael neutre "Tu as fait tout ce chemin pour me dire bonjour ?"
+    sael neutre "Entre. Au moins, ici, on pourra terminer nos phrases."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_232
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
 
-    think "La chambre n'a presque plus rien de celle qu'on nous a donnée à notre arrivée. Sael a démonté le lit et posé le matelas près du sol. Elle a aussi accroché plusieurs objets en bois et en os aux murs."
-    sael reflechit "Tu peux regarder, ça ne me dérange pas. Mais ne touche pas à ce qui est accroché au mur, s'il te plaît."
+    think "J'entre. Pendant une seconde, je crois m'être trompé de chambre."
+    think "Le lit a disparu. Enfin, pas tout à fait : ses planches sont contre le mur et le matelas repose par terre. Des objets en bois et en os occupent l'espace laissé libre."
+    sael reflechit "Tu peux regarder. Mais pas toucher aux objets au mur."
+    sael sourire "Je préfère te le dire avant qu'une curiosité maladroite ne finisse en accident diplomatique."
 
     $ j50_sael_pnc_score = 0
     $ j50_sael_pnc_seen = []
     call _5_0_SAEL_PNC from _call_5_0_SAEL_PNC
     $ showGroup([("noam", "hesitation", 0.25), ("sael", "neutre", 0.75)])
 
-    noam reflexion "T'as vraiment tout changé dans ta chambre. Je pensais pas qu'on pouvait démonter les meubles comme ça."
-    sael neutre "Le lit était trop haut et trop mou, alors je l'ai défait. Les planches peuvent servir à autre chose, au moins."
-    noam sourire "Je me disais que Kael aurait déjà essayé de récupérer les vis."
-    sael sourire "Il est passé hier pour me demander exactement ça. J'ai refusé."
-    "Elle me montre un tabouret. Je m'assieds pendant qu'elle termine de ranger quelques affaires."
-    noam inquiet "Je voulais surtout te demander un truc. Hier, quand tu as parlé des attaques contre ton village, j'ai eu l'impression que tu nous racontais pas tout."
-    sael triste "Parce que je n'allais pas raconter toute ma vie devant Ryn qui me criait dessus. Et puis je ne vous connais pas assez pour ça."
-    noam neutre "Je comprends. Mais tu vois bien pourquoi lui, il veut ouvrir les frontières. Il a vu des gens mourir juste parce qu'ils essayaient de passer."
-    sael determine "Je le comprends très bien. Chez nous aussi, il y a eu des morts, Noam. Et pas seulement des gens qui se battaient. C'est justement pour ça que je suis contre."
-    noam inquiet "C'étaient les groupes armés dont tu parlais ?"
-    sael triste "Oui. Ils venaient nous prendre de la nourriture et du matériel. Il y a eu des périodes où on se demandait simplement qui serait le prochain à se faire attaquer."
-    sael neutre "Depuis que les frontières sont fermées, on peut au moins cultiver nos terres et vivre sans les voir revenir. Je sais que les règles de Kami sont horribles pour ceux qui essaient de sortir de Limen, mais chez nous elles ont arrêté quelque chose."
-    noam reflechit "Je pensais pas que c'était aussi différent selon les endroits. Chez moi, on voit surtout les familles qui n'ont plus le droit de se rejoindre."
+    noam reflexion "Je pensais qu'on ne pouvait même pas régler la hauteur du lit. Toi, tu l'as carrément abattu."
+    sael neutre "Il était trop haut, trop mou. Je dors mieux près du sol. Les planches pourront servir, au lieu de prendre la poussière."
+    noam sourire "Kael doit rêver de récupérer toutes ces vis."
+    sael sourire "Il est venu hier. Pour les vis, justement."
+    sael neutre "J'ai refusé."
+    think "Évidemment. Les ingénieurs sont prévisibles."
+    "Sael m'indique un tabouret."
+    think "J'inspecte discrètement ses pieds avant de m'asseoir. On ne sait jamais quels meubles elle a démontés."
+    noam inquiet "Hier, quand tu as parlé de ton village... Tu t'es arrêtée comme si tu retenais quelque chose."
+    noam inquiet "Je ne te demande pas de tout raconter. Je voulais juste savoir si ça allait."
+    sael triste "Je n'allais pas raconter ce que nous avons vécu pendant que Ryn me hurlait dessus."
+    sael mefiant "Et puis je vous connais depuis quatre jours. Tu me demandes beaucoup."
+    noam neutre "Tu as raison. Je ne voulais pas te forcer."
+    noam inquiet "Mais quand Ryn parle des corps à la frontière... je crois qu'il ne sait plus comment demander de l'aide sans s'énerver."
+    sael determine "Je l'ai compris, Noam. Je n'ai pas besoin qu'on m'explique ce qu'est un mort."
+    sael triste "Chez nous aussi, il y en a eu. Pas seulement parmi les hommes qui venaient nous attaquer."
+    noam inquiet "Les groupes armés ? Ceux dont tu nous as parlé hier ?"
+    sael triste "Ils venaient pour les récoltes, les outils, parfois juste pour montrer qu'ils pouvaient venir."
+    sael triste "À force, on n'avait plus peur de perdre nos affaires. On se demandait qui serait le prochain à ne pas revenir."
+    sael neutre "Depuis la fermeture, on peut retourner dans les champs sans guetter chaque bruit de moteur."
+    sael triste "Je sais ce que Kami fait aux frontières. Je sais que des familles sont séparées."
+    sael mefiant "Mais la dernière fois qu'on nous a promis des passages sûrs, ce sont d'autres hommes qui sont arrivés chez nous."
+    noam reflechit "À Harmonie, on parle surtout des familles séparées. Je n'avais pas imaginé ce que l'ouverture pouvait signifier pour toi."
     $ unlock_dossier_arg("p2_familles")
-    sael mefiant "Et tu voudrais que j'accepte de rouvrir les passages parce que certaines familles sont séparées ?"
-    noam inquiet "Non, je dis juste que c'est aussi un problème. Je sais pas comment régler les deux, justement."
-    sael reflechit "Ryn ne sait pas non plus, mais il parle comme si tous ceux qui veulent les garder étaient des monstres. Ça m'a vraiment mise en colère."
-    noam calme "Je crois qu'il s'énerve parce qu'il a l'impression que personne ne l'écoute. Mais oui, hier il t'a coupé la parole plusieurs fois."
-    sael neutre "Je lui reparlerai quand il sera capable de me laisser finir une phrase. En revanche, pour le vote, ma décision est prise."
-    noam inquiet "Tu comptes vraiment voter contre, même si on propose une surveillance des passages ?"
-    sael determine "Le texte de demain dit qu'on ouvre les frontières. Il ne prévoit aucune surveillance et ne nous laisse aucune garantie. Je voterai non, et je ne changerai pas d'avis."
-    noam triste "D'accord. Au moins, je comprends mieux pourquoi."
-    sael reflechit "Mara est venue hier soir. Elle m'a dit qu'elle avait aussi beaucoup de réserves, mais on n'a pas décidé de voter ensemble. Je préfère te le préciser."
-    noam surpris "Je pensais que vous étiez déjà toutes les deux contre."
-    sael neutre "Mara m'a dit qu'elle était contre elle aussi. Mais tu devrais lui demander directement ce qui la dérange, je ne vais pas répondre à sa place."
-    "Sael se lève pour me raccompagner. Avant d'ouvrir la porte, elle s'arrête."
-    sael triste "Tu sais, ça me ferait plaisir de pouvoir revoir les gens que je connais ailleurs. Je ne suis pas contre parce que j'aime voir des gens enfermés."
-    noam calme "Je sais. Merci d'avoir accepté de m'en parler."
-    sael neutre "Et essaie de ne pas te mettre dans la même situation que Julian en allant insister auprès de tout le monde."
-    noam sourire "Je vais essayer. Bonne journée, Sael."
+    sael mefiant "Et tu voudrais que je mette mon village en danger pour réparer ce que ces familles subissent ?"
+    noam inquiet "Non ! Je ne te demande pas de choisir entre deux groupes de victimes."
+    noam inquiet "Justement... je n'ai pas de solution qui protège tout le monde."
+    sael reflechit "Ryn non plus n'en a pas. Pourtant, il me parlait comme si j'avais personnellement signé chaque sanction."
+    sael triste "Je ne lui demande pas d'oublier ses morts. J'aimerais simplement qu'il ne m'oblige pas à oublier les miens."
+    noam calme "Il se sent abandonné. Ça n'excuse pas la façon dont il t'a parlé."
+    noam calme "Et tu n'avais aucune raison de lui confier tout ça devant les autres."
+    sael neutre "Je lui reparlerai quand il sera capable de m'écouter."
+    sael determine "Mais le scrutin, lui, n'attendra pas notre réconciliation."
+    noam inquiet "Et si on trouvait une surveillance qui empêche les groupes armés de revenir ?"
+    sael determine "Alors je lirais ce projet avec attention."
+    sael determine "Mais ce n'est pas le texte de demain. Demain, on ouvre tout, sans rien prévoir pour protéger les villages."
+    sael determine "Je voterai contre. Ce n'est pas négociable."
+    noam triste "D'accord."
+    think "J'étais venu comprendre. Une partie de moi espérait quand même trouver le mot qui la ferait hésiter."
+    sael reflechit "Mara est passée hier soir. Elle aussi a des réserves sur l'ouverture."
+    sael mefiant "Je te le précise avant que quelqu'un invente une alliance entre nous."
+    noam surpris "Elle était donc contre, elle aussi ?"
+    sael neutre "C'est ce qu'elle m'a dit. Mais va lui demander ce qu'elle en pense si tu veux comprendre ses raisons."
+    sael neutre "Je ne vais pas me mettre à voter à sa place en plus de la mienne."
+    "Sael m'accompagne jusqu'à la porte. Elle pose la main sur la poignée, sans l'ouvrir."
+    sael triste "Tu sais... moi aussi, j'aimerais revoir des gens qui vivent ailleurs."
+    sael triste "Je ne défends pas les frontières parce que j'aime enfermer les autres."
+    noam calme "Je crois que je commence à le comprendre."
+    noam calme "Merci de m'avoir laissé entrer."
+    sael neutre "Et une dernière chose : ne va pas faire le tour des chambres en répétant ton argument jusqu'à ce que quelqu'un cède."
+    sael sourire "On a déjà Julian pour ça."
+    noam sourire "Promis. Une campagne électorale dans les couloirs, ça me fatigue déjà rien que d'y penser."
+    noam neutre "Bonne journée, Sael."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_233
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-    think "Sael votera non. Je m'y attendais, mais au moins je sais maintenant qu'elle n'est pas simplement opposée à l'idée de laisser les gens circuler."
-    think "Pour Mara, je n'ai encore aucune certitude. De toute façon, si je veux comprendre ce qu'elle pense, il faudra lui parler à elle."
+    think "Sael votera non. Je le savais avant de frapper."
+    think "Mais maintenant je sais au moins pourquoi elle accepte d'être détestée pour ce choix."
+    think "Mara hésite peut-être moins que je l'imaginais. Ça ne fait pas d'elle une alliée automatique de Sael."
+    think "Une chose est sûre : je n'ai toujours pas envie de me transformer en Julian."
 
     $ j2_vote_codex_unlocked = True
     $ j45_vote_codex_active = True
