@@ -277,7 +277,7 @@ screen noam_interupt_radio_duel():
 
                 vbox:
                     spacing 16
-                    text "CIBLE  //  [ 'CLIQUE POUR TIRER' if selected_argument else 'ARME UN ARGUMENT CI-DESSOUS' ]":
+                    text ("CIBLE  //  CLIQUE POUR TIRER" if selected_argument else "CIBLE  //  ARME UN ARGUMENT CI-DESSOUS"):
                         size 19
                         color "#67eaff" if selected_argument else "#db9ee6"
                         font "fonts/Rajdhani-SemiBold.ttf"
@@ -380,7 +380,7 @@ screen noam_interupt_radio_duel():
             ypos 323
             xsize 1334
             ysize 7
-        text "OBJECTION !" if shot_state == "hit" else "ARGUMENT REJETÉ":
+        text ("OBJECTION !" if shot_state == "hit" else "ARGUMENT REJETÉ"):
             xpos 600
             ypos 247
             size 76 if shot_state == "hit" else 56
