@@ -649,199 +649,120 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
 
-    pause 0.5
-
     $ doplleganger = 1
-    think "J'ai besoin d'avoir des réponses, j'ai besoin de savoir où en est le monde. Ce qu'il attend, ce qu'il espère."
-
+    think "Je suis venu consulter les chiffres des districts. J'espère au moins trouver des informations sur ce qui se passe réellement aux frontières."
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_238
     scene bg_observation at adaptive_fullscreen with dissolve
-
-    pause 0.8
-
-    think "Derrière les baies vitrées, un silence vieux de milliards d'années ignore nos votes et notre survie."
-
     $ showGroup([("elias", "neutre", 0.75), ("noam", "neutre", 0.25)])
-
-    "Elias est assis à la console, une tasse à la main, les yeux sur les données des districts."
-
-    elias neutre "Noam ?"
-
-    think "Il ne s'est même pas retourné."
-
-    elias sourire "Qu'est-ce que tu fais là ?"
-
-    noam surpris "Hein ? Comment tu as su que c'était moi ?!"
-
-    elias sourire "Facile, au bruit de tes pas."
-    elias rire "Je t'ai déjà dit, non ? Que j'avais une excellente ouïe."
-
-    noam triste "Ah ouais, c'est vrai. Tout est vraiment plus calme aujourd'hui."
-
-    elias neutre "Ouais. Mais la cafétéria, c'était chaud. Genre vraiment chaud."
-
-    think "Il boit sans quitter l'écran des yeux."
-
-    elias neutre "Regarde ça."
-
-    "Des chiffres, des courbes et des noms défilent sur le panneau droit."
-
-    noam reflexion "Il va falloir m'expliquer. Enfin… ces chiffres ça correspond à quoi ?"
-
-    elias reflechit "Là. Regarde."
-
-    "Il pointe du doigt une liste de noms qui défile."
-
-    elias inquiet "C'est les noms des gens qui ont merdé. Enfin, c'est ce que l'écran dit."
-    elias triste "À côté, t'as la règle qu'ils ont brisée."
-
-    think "Vol. Bagarre. Menace. La liste est longue et chaque ligne revient aux rations."
-    think "Ils veulent manger. Le système, lui, il compte les infractions."
-
-    pause 0.3
-
-    elias inquiet "Attends, regarde ça—"
-
-    "Son coude accroche la tasse."
+    "Elias est installé devant une console, avec une tasse de café posée à côté de lui."
+    elias sourire "Noam ! J'allais justement fermer les relevés, t'arrives au bon moment."
+    noam surpris "Tu m'as même pas vu entrer !"
+    elias rire "J'ai reconnu tes pas. Tu traînes un peu du pied gauche, tu sais ?"
+    noam sourire "Super, maintenant je vais y penser chaque fois que je marche."
+    elias sourire "T'inquiète, je fais ça avec tout le monde. Tu voulais quelque chose ?"
+    noam reflechit "Je cherche des infos sur Limen et les frontières. Après ce que Sael nous a dit, j'ai envie de voir comment les gens vivent là-bas."
+    elias reflechit "Attends, je peux te montrer les rapports. J'essayais de comprendre pourquoi autant de gens ont été sanctionnés ces derniers jours."
+    "Il ouvre une liste d'incidents : vols, bagarres, tentatives de passage entre districts. Plusieurs noms reviennent dans les rapports."
+    noam inquiet "Tout ça, c'est juste pour cette semaine ?"
+    elias inquiet "Ouais. Et encore, c'est seulement ce que les systèmes de Kami ont enregistré."
+    noam triste "Il y en a qui se battent parce qu'ils n'ont pas assez à manger. Et on leur ajoute une sanction..."
+    elias reflechit "C'est pas toujours pour manger, mais y en a beaucoup. Regarde le nombre de vols dans les centres de distribution."
+    noam inquiet "On aurait vraiment besoin de voir quelqu'un qui vit là-bas, pas juste des chiffres."
+    elias sourire "Je te l'aurais bien montré sur une caméra, mais c'est pas vraiment mon domaine. Moi, je répare surtout ce qui tombe en panne."
+    "Il veut me montrer une autre ligne du rapport, se penche trop vite et accroche la tasse du coude."
+    elias peur "Ah merde ! Le café !"
     play sound sfx_drop
-
     scene bg_cg027 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg027")
-
-    "Le café se répand sur les touches et le panneau latéral."
-
-    elias "Et merde ! Oh, putain, c'est chaud, c'est chaud—"
+    "La tasse bascule sur la console. Le café passe entre les touches et coule vers une trappe de maintenance mal refermée."
+    "Je tends aussitôt le bras pour l'empêcher de tomber complètement."
 
     call screen trace_qte(path_type="arc", time_limit=2.4, wait_time=0.15, tolerance=70, max_errors=3, anchor_x=960, anchor_y=620, start_radius=120)
     $ j50_coffee_trace_score = tq_progress
-
     if j50_coffee_trace_score >= 0.82:
-        think "Mes doigts frôlent la porcelaine. Assez pour changer l'angle, pas pour la retenir."
+        "J'arrive à retenir la tasse avant qu'elle ne se fracasse par terre, mais une bonne partie du café a déjà coulé dans la trappe."
+        elias inquiet "Merci ! Oh non, regarde, ça rentre sous le panneau..."
     elif j50_coffee_trace_score >= 0.35:
-        think "Trop tard. Ma main traverse l'endroit où la tasse n'est déjà plus."
+        "Je ralentis sa chute sans parvenir à la rattraper. La tasse heurte le bord du meuble et le café éclabousse la trappe ouverte."
+        elias peur "Merde, j'aurais pas dû la poser là !"
     else:
-        think "Trop vite. Mon poignet heurte la console et la tasse part plus loin en se brisant au sol."
+        "Je rate la tasse. Elle tombe au sol, et le café se déverse directement sur les connecteurs exposés."
+        elias panique "Oh non, non, non ! C'est pas vrai !"
 
-    "Elias récupère sa tasse vide. Le café ruisselle entre les touches."
-    "Un voyant passe au rouge. La console siffle et de la fumée s'échape de la console."
-
-    noam "C'est moi qui— j'ai tendu le bras, enfin, j'ai dû te—"
-
-    elias inquiet "Non, c'était ma tasse. Mon coude. Ma connerie. T'inquiète, j'ai l'habitude..."
-
-    "Un voyant orange s'allume. Une fumée grise monte de la grille latérale."
-
-    "Un claquement mécanique nous fait nous retourner. La porte s'est verrouillée."
-    think "VERROUILLAGE SÉCURITÉ — ANOMALIE DÉTECTÉE. Pour une fois, l'écran résume bien la situation."
+    "Un grésillement retentit derrière la console. Elias se précipite sur le bouton d'arrêt du panneau, mais le voyant de sécurité s'allume avant qu'il puisse l'atteindre."
+    noam peur "Ça fume ! On fait quoi ?"
+    elias inquiet "Ne touche pas aux connecteurs ! Le café a dû provoquer un court-circuit sur le circuit de commande."
+    "La ventilation accélère d'un coup. La porte se verrouille et une alarme apparaît sur l'écran : « PANNE DU CONTRÔLE D'ACCÈS — SALLE ISOLÉE »."
     $ unlock_codex_page("securite_orbitale", with_notification=False)
+    noam inquiet "Pourquoi elle se ferme ? On devrait pouvoir sortir s'il y a un incendie !"
+    elias panique "Normalement oui ! Mais là, le système croit peut-être qu'il y a une fuite ou un problème de pression. C'est une sécurité prévue pour isoler la salle, pas pour un café renversé !"
+    noam peur "Et si ça commence vraiment à brûler ?"
+    elias inquiet "Le disjoncteur a coupé l'alimentation principale de ce panneau. Ça devrait arrêter la chauffe, mais on doit remettre les circuits de secours en marche."
+    elias reflechit "J'ai un boîtier de raccordement ici. Le câblage a des codes couleur, heureusement. Tu peux m'aider ?"
+    noam inquiet "Tu veux que je fasse quoi exactement ? Je connais rien à ça !"
+    elias inquiet "Tu relies les fils de même couleur, un par un. Moi, je coupe ce qui est abîmé et je vérifie qu'on n'envoie pas de courant dans le mauvais circuit."
+    "Il soulève le capot du boîtier de secours et m'indique les huit raccordements à remettre en place. Un signal sonore prévient que la batterie de contrôle est presque vide."
 
-    pause 0.5
-
-    elias panique "Ah. Et merde, me dis pas qu'on est coincé ici !"
-
-    noam peur "La porte est bloquée ?"
-
-    elias inquiet "La salle s'est verrouillée."
-    elias colere "Sûrement une sécurité à la con. Quand un truc fume, ça ferme tout pour éviter que le feu ne sorte."
-
-    noam "Heureusement rien n'a pris feu, le matériel a juste dû en prendre un coup. Combien de temps avant que ça devienne vraiment dangereux ?"
-
-    elias panique "Putain, putain, putain…"
-    elias inquiet "Noam, viens là. Tu vas relier les fils pendant que j'essaye de réparer ça."
-    elias "Même couleur ensemble. Tu réfléchis pas. Tu relies."
-
-    "Elias arrache le panneau. Des grappes de fils pendent sous la console."
-
-    # Passe True ici si cette occurrence du mini-jeu doit sanctionner l'échec.
-    call screen j50_wire_minigame(failure_has_consequences=False)
+    call screen j50_wire_minigame(failure_has_consequences=True)
     $ j50_wire_completed = bool(_return)
-
     if j50_wire_completed:
         $ j50_kamyz_bonus = 40
-    elif j50_wire_failure_has_consequences:
+    elif j50_wire_success >= 5:
+        $ j50_kamyz_bonus = 10
+    else:
         $ j50_kamyz_bonus = 0
-    elif j50_wire_success >= 8:
-        $ j50_kamyz_bonus = 25
+    if j50_kamyz_bonus > 0:
+        $ player_kamyz += j50_kamyz_bonus
+        "Kamyz bonus obtenus : [j50_kamyz_bonus]"
+
+    if j50_wire_completed:
+        elias rire "Oui ! Le circuit de secours est revenu ! Bien joué, Noam !"
+        "Les voyants de ventilation repassent au vert, et un message confirme que la demande d'ouverture a été envoyée à la maintenance."
+        noam sourire "Ça veut dire qu'on peut sortir ?"
+        elias inquiet "Pas encore. Le verrouillage doit être levé depuis l'extérieur, mais au moins la pièce est stable et ils ont reçu notre signal."
     elif j50_wire_success >= 5:
-        $ j50_kamyz_bonus = 15
+        elias inquiet "Bon, t'as réussi à remettre une partie des raccordements. La ventilation fonctionne, mais le panneau de la porte répond toujours pas."
+        "Elias utilise la batterie restante pour déclencher une alerte manuelle vers la maintenance."
+        noam inquiet "On va devoir attendre qu'ils viennent ?"
+        elias reflechit "Ouais. Mais normalement, ils verront le signal."
     else:
-        $ j50_kamyz_bonus = 5
-
-    $ player_kamyz += j50_kamyz_bonus
-    "Kamyz bonus obtenus : [j50_kamyz_bonus]"
-
-    if j50_wire_failed and j50_wire_failure_has_consequences:
-        elias colere "On a perdu l'alimentation de secours. Là, ça va vraiment nous retomber dessus."
-    elif j50_wire_failed:
-        elias fatigue "C'est mort pour le panneau… mais la sécurité principale tient encore. On peut continuer."
-
-    if j50_wire_errors > 0:
-        elias colere "Non, pas celui-là !"
-        elias "Putain… Bon. Bah je sais plus quoi faire pour réparer ça..."
-
-    if j50_wire_success >= 8:
-        elias rire "Oh super, t'as géré !"
-    elif j50_wire_success >= 5:
-        elias fatigue "C'est moche. Mais ça tient. C'est le principal."
-    else:
-        elias inquiet "C'est pété de partout. Mais ça fume moins. Franchement, on prend."
+        elias panique "Merde, la batterie de secours est vide. Le boîtier ne répond plus du tout."
+        "Elias coupe les derniers circuits accessibles et nous fait nous éloigner de la console. La ventilation principale continue de tourner, mais il n'a plus accès à la commande de la porte."
+        noam peur "Tu peux prévenir quelqu'un ?"
+        elias inquiet "Je vais essayer avec le communicateur d'urgence, s'il est pas branché sur le même panneau. Sinon, on attend que la maintenance voie la panne."
+        "Il tente plusieurs appels avant d'obtenir un signal de confirmation très bref."
+        elias fatigue "Bon, au moins le message est parti. Désolé, j'ai vraiment fait n'importe quoi avec cette tasse."
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
+    "Nous nous éloignons du panneau. L'odeur de café chaud a été remplacée par celle des composants brûlés."
+    noam inquiet "Tu crois que ça va coûter cher à réparer ?"
+    elias fatigue "Si Kael voit l'état du contrôleur, il va m'en parler pendant des semaines. Et franchement, il aura raison."
+    noam sourire "Je peux lui dire que c'est moi qui t'ai fait tomber la tasse."
+    elias inquiet "Non, ça va pas ! C'était moi. Et puis je préfère qu'il sache ce qui s'est passé, sinon il réparera peut-être pas le bon truc."
+    "Nous nous asseyons à distance de la console en attendant que quelqu'un rétablisse l'accès. Elias regarde régulièrement le voyant de l'alarme."
+    elias neutre "Au fait, t'as parlé à Sael ? Pour les frontières, je veux dire."
+    noam reflechit "Oui, ce matin. Elle m'a expliqué ce qu'ils ont vécu dans son village. Elle votera contre demain."
+    elias triste "Ah... Je m'en doutais. J'espérais quand même qu'on pourrait trouver un compromis."
+    noam inquiet "Le texte ne prévoit pas de compromis. C'est bien le problème. On peut pas protéger son village et laisser les familles circuler avec cette seule question."
+    elias reflechit "C'est vraiment mal fichu, leurs votes. Je sais même pas ce que je vais choisir."
+    noam neutre "Moi non plus. Et je crois pas qu'on puisse régler ça ici, coincés devant une console grillée."
+    elias sourire "Ouais, ce serait déjà pas mal qu'on arrive à sortir."
 
-    elias "La ventilation tourne. Au moins on va pas étouffer."
-    elias fatigue "Mais ouais… on est bloqués pour un moment. C'est chaud, cette salle est censée observer les problèmes, pas en devenir un."
-
-    "Elias s'assoit par terre, loin du panneau."
-
-    elias neutre "Tu voulais regarder les chiffres de Limen, non ?"
-
-    "Je m'assieds à côté de lui, dos au mur."
-
-    elias inquiet "Tu crois que ça va passer, le vote ?"
-
-    noam "Tu veux savoir si ça peut encore passer. Enfin… je ne vois pas ce qui changerait avant demain."
-
-    pause 0.3
-
-    elias inquiet "Sael votera contre."
-    elias triste "C'est sûr. Elle croit vraiment que ça ramènera la guerre."
-
-    noam triste "Elle me l'a dit ce matin. Mara aussi d'ailleurs apparemment."
-
-    elias "… Ah."
-
-    elias fatigue "Alors c'est foutu. C'est chaud."
-
-    noam "Ouais, on ne peut plus rien changer…"
-    pause 1.0
-
-    call show_custom_title("Après plusieurs heures") from _call_show_custom_title
-
+    call show_custom_title("Un peu plus tard") from _call_show_custom_title
     scene bg_observation at adaptive_fullscreen with dissolve
-
-    pause 3.0
-
-    "Les voyants passent à l'orange. Le panneau de la porte clignote."
-
+    if j50_wire_completed:
+        "L'alarme s'arrête enfin. La maintenance a pu réinitialiser le verrouillage à distance, mais la console reste hors service."
+        elias sourire "Ça y est ! Ils ont accepté la demande d'ouverture. On va pouvoir sortir."
+    else:
+        "Après plusieurs tentatives, une équipe de maintenance répond à l'appel d'urgence. Quelqu'un coupe le verrouillage depuis le couloir et nous demande de ne plus toucher à la console."
+        elias fatigue "Ils vont devoir remplacer le contrôleur. Je sens qu'on va m'en parler longtemps."
     play sound "sound/sfx_door.ogg"
-
-    "La porte s'ouvre dans un déclic."
-
-    $ showGroup([("elias", "fatigue", 0.75)])
-
-    elias fatigue "Ah. Libérés. C'était moins long que prévu."
-
-    "Elias se relève en s'étirant."
-
-    elias "Je vais voir si j'ai cramé un truc important. Enfin, je veux dire plus important que la porte."
-
-    think "Quelques touches collent. L'écran latéral est mort."
-
-    elias neutre "Rien de trop grave. Enfin je crois."
-    elias reflechit "Mais je comprends pas pourquoi ça a fumé autant..."
-
-    think "Nous nous séparons dans le couloir, avec un vote condamné et une caméra en moins. Bilan mitigé."
+    "La porte s'ouvre. Je quitte la salle avec Elias, qui s'arrête une dernière fois devant le panneau abîmé."
+    elias inquiet "Je vais prévenir Kael avant qu'il découvre ça par hasard. Et je lui dirai exactement ce qui s'est passé."
+    noam sourire "Bonne idée. Et la prochaine fois, pose ton café ailleurs."
+    elias rire "Promis ! Enfin... je vais essayer."
+    think "Je n'ai pas trouvé toutes les réponses que j'étais venu chercher, et une partie de la console est hors service. Elias a au moins réussi à prévenir la maintenance, mais je me demande si cette panne aura d'autres conséquences."
 
     jump _5_0_FIN_JOURNEE
 
