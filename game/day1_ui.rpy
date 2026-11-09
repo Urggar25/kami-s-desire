@@ -70,12 +70,15 @@ init python:
             return False
         if renpy.get_screen("critical_choice"):
             return False
-        if day_period_hud_is_pnc_active():
-            return False
         for screen_name in DAY_PERIOD_HUD_BLOCKING_SCREENS:
             if renpy.get_screen(screen_name):
                 return False
         return True
+
+    def vote_dossier_available():
+        # L'annonce officielle du premier vote est faite au J2 ; le
+        # verrou est leve au moment de la notification dans _2_CANON.
+        return bool(getattr(store, "j2_vote_codex_unlocked", False) and getattr(store, "current_day", 0) >= 2)
 
     if "day_period_hud" not in config.overlay_screens:
         config.overlay_screens.append("day_period_hud")
@@ -336,6 +339,9 @@ screen day_period_transition(old_period, new_period):
 
 
 screen day_period_hud():
+    # Les PnC et couloirs sont modaux (zorder 200) : le HUD doit etre
+    # au-dessus, sinon les boutons restent invisibles / inaccessibles.
+    zorder 240
     timer 0.10 action Function(_day_period_hud_watch) repeat True
 
     if day_period_hud_should_show():
@@ -348,7 +354,7 @@ screen day_period_hud_content():
     $ _acc = _hud_accent(current_period)
     $ _period_step = _hud_period_step(current_period)
 
-    key "K_t" action Show("tablet_home")
+    key "K_t" action [If(day1_rules_stage == 0, SetVariable("day1_rules_stage", 1), NullAction()), Show("tablet_home")]
 
     # A strict two-column layout. The day number and the time label never
     # share horizontal space; quick actions live in a separate footer.
@@ -400,6 +406,7 @@ screen day_period_hud_content():
             ypos 126
             spacing 6
             use day_period_hud_action_button("tablet", [If(day1_rules_stage == 0, SetVariable("day1_rules_stage", 1), NullAction()), Show("tablet_home")], True)
+            use day_period_hud_action_button("vote", Show("vote_dossier"), vote_dossier_available())
             use day_period_hud_action_button("dossier", [Function(investigation_sync_legacy_save), Show("investigation_dossier", persistent_access=True)], investigation_story_available())
             use day_period_hud_action_button("menu", ShowMenu("system_menu"), True)
 
@@ -437,6 +444,12 @@ screen day_period_hud_action_button(icon, button_action, enabled=True):
                 add Solid(_icon_color) xpos 20 ypos 7 xsize 19 ysize 30
                 add Solid("#07131E") xpos 22 ypos 10 xsize 15 ysize 22
                 add Solid("#07131E") xpos 27 ypos 34 xsize 5 ysize 2
+            elif icon == "vote":
+                # Page avec coche : dossier de vote, distinct du dossier d'enquete.
+                add Solid(_icon_color) xpos 16 ypos 8 xsize 27 ysize 30
+                add Solid("#07131E") xpos 19 ypos 11 xsize 21 ysize 23
+                add Solid(_icon_color) xpos 23 ypos 18 xsize 13 ysize 2
+                add Solid(_icon_color) xpos 23 ypos 24 xsize 13 ysize 2
             elif icon == "dossier":
                 add Solid(_icon_color) xpos 14 ypos 16 xsize 30 ysize 21
                 add Solid(_icon_color) xpos 18 ypos 11 xsize 14 ysize 7
