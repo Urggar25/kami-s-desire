@@ -63,15 +63,19 @@ label _4_0_REVEIL_CHAMBRE:
 
     call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_2
     $ blink()
-    think "Je me réveille un peu avant l'annonce de Kami. J'ai mal dormi, mais j'ai surtout envie d'arrêter de repenser à ce qui s'est passé hier."
-    think "Le vote a échoué. Je suis déçu, même si je ne suis toujours pas sûr qu'on aurait dû supprimer les rations."
+    think "J'ai dû dormir deux heures. Peut-être trois, si je compte les moments où je regardais le plafond en essayant de ne pas penser au vote."
+    think "Raté, évidemment."
+    think "On a perdu. Un seul « non » a suffi."
+    think "Le pire, c'est que je ne sais toujours pas si ce « non » nous a sauvés d'une catastrophe."
 
-    "Sur mon bureau, une photographie de quelques amis attire mon attention."
+    "Sur mon bureau, le cadre avec la photo de mes amis a légèrement glissé. Je le redresse."
     scene bg_cg029 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg029")
-    think "Je reconnais leurs sourires. On avait pris cette photo avant mon départ, un jour où personne n'avait besoin de se demander ce que Kami allait décider pour lui."
-    think "J'aimerais savoir ce qu'ils ont pensé du vote. Il faudrait déjà que je puisse les appeler."
-    "Je repose le cadre et j'attrape mes vêtements."
+    think "On avait pris cette photo avant mon départ. On avait mis une éternité à se mettre d'accord sur qui se plaçait où."
+    think "À l'époque, ça me semblait être le pire débat de ma vie."
+    think "Ils ont dû voir le résultat. Qu'est-ce qu'ils en pensent ?"
+    think "J'aimerais leur poser la question. Je n'ai même pas le droit de passer un appel."
+    "Je repose le cadre. Mon reflet dans la vitre a une tête à faire fuir le petit-déjeuner."
 
     play sound sfx_announce
     pause 1.0
@@ -80,20 +84,20 @@ label _4_0_REVEIL_CHAMBRE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Booooonjour, mes petits représentants ! Bien remis de votre premier vote ?"
-    kami "Les rations restent en place, les frontières aussi, et personne n'a besoin d'apprendre à faire ses courses. Quelle victoire pour les habitudes !"
+    kami "Booooonjour, mes petits représentants ! Alors ? Bien dormi après votre magnifique première défaite ?"
+    kami "Les rations restent gratuites, les frontières fermées, et personne n'aura besoin de réapprendre à faire les courses. Quelle audace ! Quel souffle révolutionnaire !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Ne vous inquiétez pas, vous aurez d'autres propositions à examiner. En attendant, j'ai réorganisé certaines livraisons pour que la Terre profite du système que vous avez décidé de garder."
+    kami "Ne boudez pas ! Il y aura d'autres votes. Pour l'instant, j'ai ajusté quelques livraisons : puisque vous tenez tant à la distribution gratuite, autant en faire profiter la Terre !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Je vous conseille d'aller prendre votre petit-déjeuner. Elen risque d'avoir quelques questions. J'ai hâte de l'entendre !"
+    kami "Allez donc prendre votre petit-déjeuner. Je sens qu'Elen va adorer le menu de ce matin. Rien que d'y penser, je suis ravie !"
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
     pause 0.3
     play sound sfx_drop
-    "Un objet tombe bruyamment dans le couloir. Quelqu'un jure, puis s'éloigne."
-    think "Je finis de m'habiller et je prends ma tablette. Autant aller manger."
+    "Un fracas éclate dans le couloir, suivi d'un juron. Quelqu'un vient probablement de commencer sa journée aussi bien que moi."
+    think "Je m'habille et j'attrape ma tablette. Kami a insisté sur le petit-déjeuner. Ça ne m'inspire aucune confiance."
 
     jump _4_0_NAVIGATION_CAFETERIA
 
@@ -103,13 +107,14 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ corridor_current = "dortoir"
 
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
-    "Je sors de la chambre."
-    think "Je croise Elias dans le couloir. Il me fait un signe rapide avant de continuer vers la cafétéria."
+    "Je sors. Dans le dortoir, tout le monde semble avoir adopté la même stratégie : ne regarder personne dans les yeux."
+    think "Elias me salue en passant. Il ouvre la bouche comme pour me dire quelque chose, puis se ravise."
+    think "Même lui ne sait plus comment entamer une conversation. Voilà qui promet."
 
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
     $ current_scene_active = None
 
-    "Je prends enfin la direction de la cafétéria."
+    "J'arrive devant la cafétéria. Avant même d'ouvrir la porte, j'entends une voix familière."
     jump _4_0_CAFETERIA_ELEN
 
 label _4_0_CAFETERIA_ELEN:
@@ -120,7 +125,7 @@ label _4_0_CAFETERIA_ELEN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
-    "J'entends Elen discuter avec Goumi au comptoir. Je m'approche pour voir ce qui se passe."
+    "Elen semble mener un interrogatoire serré. Son suspect : un robot de service. Je connais déjà le perdant."
     jump _4_0_CAFETERIA_ECRANS
 
 label _4_0_CAFETERIA_ECRANS:
@@ -130,40 +135,40 @@ label _4_0_CAFETERIA_ECRANS:
 
     pause 0.8
 
-    "Je m'approche d'Elen quand elle se met à crier."
+    "Elen frappe du plat de la main sur le comptoir. Goumi ne bronche pas. C'est probablement ce qui l'énerve le plus."
 
     scene bg_cg022 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
     $ unlock_gallery_image("bg_cg022")
 
-    elen colere "Goumi, je te demande juste un peu de cannelle ! Hier, t'avais tout un rayon d'épices, elles sont passées où ?"
-    goumi "Demande refusée. Les provisions non essentielles du Conclave ont été réaffectées aux distributions terrestres."
-    elen surpris "Non essentielles ?! Mais j'ai pas demandé un gâteau de dix étages !"
-    elias inquiet "Il reste des barres et des rations normales, ou on mange les emballages maintenant ?"
-    goumi "Les repas nécessaires à votre alimentation restent disponibles."
-    elias reflechit "Bon, ça, c'est déjà ça. Mais elles ont aucun goût, tes barres."
-    nyra reflechit "Attendez, ça concerne seulement les extras ou toutes les livraisons ?"
-    goumi "Les provisions non essentielles. Prochain réapprovisionnement prévu au jour 7."
-    elen colere "C'est trop facile ! Hier tu nous fais choisir entre deux trucs impossibles, et aujourd'hui tu me retires même la cannelle !"
+    elen colere "GOUMI ! Hier, tu avais de la cannelle ! Hier ! Est-ce que quelqu'un a cambriolé le rayon des épices pendant la nuit ?!"
+    goumi "Demande refusée. Provisions non essentielles réaffectées aux distributions terrestres."
+    elen surpris "NON ESSENTIELLES ?! C'est de la cannelle, pas un lustre en or !"
+    elias inquiet "Euh... juste pour savoir, les repas normaux sont encore là ? Ou je dois apprendre à cuisiner les emballages ?"
+    goumi "Apports nutritionnels nécessaires maintenus. Repas standards disponibles."
+    elias reflechit "Ah. Bon. On survivra, alors. Dommage que la survie ait un goût de carton."
+    nyra reflechit "Un instant. Réaffectées à quelles distributions ? Et qu'est-ce qui a été retiré exactement ?"
+    goumi "Provisions non essentielles uniquement. Réapprovisionnement du Conclave prévu au jour 7."
+    elen colere "Mais c'est une punition ! On a refusé le commerce et maintenant on doit vivre comme si la gourmandise était un crime !"
     play sound sfx_announce
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
-    kami "Oh, Elen ! Tu es adorable quand tu essaies de négocier avec Goumi. Il n'a pas d'épices cachées pour tes beaux yeux."
-    kami "Les rations restent gratuites, vous vous souvenez ? Les habitants de la Terre en ont besoin bien plus que mes douze invités."
+    kami "Ooooh, Elen ! Si tu savais comme tu es mignonne quand tu menaces un robot pour un pot de cannelle !"
+    kami "Vous avez gardé les rations gratuites. J'envoie donc les provisions superflues là où elles peuvent servir. Les habitants de la Terre passent avant mes douze petits pensionnaires."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Alors j'ai envoyé une partie de vos réserves là-bas. Pas de famine à bord, ne dramatisez pas ! Vous aurez simplement moins de choix jusqu'à la prochaine livraison."
+    kami "Rassurez-vous, personne ne mourra de faim à bord. Enfin, pas à cause de la cannelle. Vous aurez simplement un peu moins de choix jusqu'au prochain ravitaillement."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Tu pourrais appeler ça de la solidarité, Elen. Après tout, vous avez voulu conserver ce système !"
+    kami "C'est ça, la solidarité ! Vous avez choisi de conserver le système, je vous montre à quel point votre choix est généreux. Tu devrais me remercier !"
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
-    elen colere "Mais j'étais POUR l'amendement, moi ! Et puis les gens sur Terre ont besoin de manger, pas de ma cannelle !"
-    elias neutre "Techniquement, ça reste de la nourriture..."
-    elen colere "Elias, aide-moi un peu !"
-    elias inquiet "Désolé. J'essayais."
-    "Elen repose son plateau et sort de la cafétéria en marmonnant qu'elle n'a plus faim."
+    elen colere "MAIS MOI, J'AVAIS DIT OUI ! Et depuis quand les gens sur Terre ont besoin de MA cannelle pour survivre ?!"
+    elias neutre "Techniquement... c'est un produit alimentaire."
+    elen colere "ELIAS ! C'EST PAS LE MOMENT D'ÊTRE TECHNIQUE !"
+    elias inquiet "Désolé ! Je pensais que ça comptait comme un soutien..."
+    "Elen repose son plateau avec une dignité blessée, puis quitte la cafétéria en annonçant qu'elle n'a plus faim. Personne ne la croit vraiment."
     $ showGroup([
         ("mara", "agace"),
         ("julian", "decu"),
