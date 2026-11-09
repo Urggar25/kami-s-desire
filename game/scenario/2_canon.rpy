@@ -795,27 +795,34 @@ label _2_CAFETERIA_SOIR:
         ("nyra", "taquin", 0.96),
     ])
 
-    think "Lorsque j'arrive à la cafétéria, Nyra est en pleine discussion sur sa vie à Orbite."
+    think "Je reviens à la cafétéria. Mes bras protestent dès que j'essaie de tenir le plateau. À une table, Nyra raconte quelque chose qui a l'air de passionner Elen."
 
-    nyra sourire "À Orbite, les repas étaient plus calmes. Vous parlez toujours autant à Harmonie ?"
-    noam sourire "Pas à ce point. Là, ça fait deux jours qu'on est enfermés ensemble."
-    elen joie "Moi je trouve ça sympa ! Enfin, quand personne ne crie."
-    kael neutre "Chez nous, il fallait surtout manger vite pour laisser la place à l'équipe suivante."
-    elen surpris "Vous flottez pendant les repas ? Genre la soupe, elle vole partout ?"
-    kael sourire "Non, Elen. On a une gravité artificielle et on attache les plateaux quand il le faut."
-    elen content "Ah, dommage ! J'aurais adoré essayer."
-    tomas hesitation "C'est bizarre de se dire qu'on pourrait changer votre vie demain, alors que je connais presque rien d'Orbite."
-    nyra neutre "On peut t'en parler, mais pas tout expliquer en une soirée."
-    noam inquiet "Kael m'a raconté ce qui arrive quand un tir perce un module. J'arrête pas d'y penser."
-    kael fatigue "Je voulais pas te gâcher le dîner."
-    noam neutre "C'est pas toi qui l'as gâché."
-    elen inquiet "Et nos familles, elles nous regardent peut-être maintenant..."
-    elen joie "D'ailleurs, vous avez goûté la purée ? Ils ont mis quelque chose de différent dedans !"
-    nyra taquin "Je crois surtout qu'on l'a laissée refroidir."
-    tomas sourire "Pour une fois, voilà un sujet sur lequel on peut être tous d'accord."
-    think "Elen se met à comparer les assiettes, pendant que Kael lui explique comment ils préparent la nourriture sur Orbite."
+    nyra sourire "À Orbite, on pouvait finir un repas sans qu'il se transforme en débat. Vous parlez toujours autant, à Harmonie ?"
+    noam sourire "Non. C'est un effet secondaire de trente jours d'enfermement avec des inconnus."
+    elen joie "Moi j'adore ! Enfin, sauf quand quelqu'un crie ou menace de partir. Ou quand on parle de cadavres."
+    kael neutre "Chez nous, il fallait surtout se dépêcher. Une équipe finissait, la suivante prenait la place. Pas de place pour les grands discours."
+    elen surpris "Attendez. Vous mangez en flottant ?! Ça veut dire que vos soupes font des petites bulles ?"
+    kael sourire "On a une gravité artificielle, Elen. Et on fixe les plateaux quand c'est nécessaire. Sinon, je te garantis qu'on mangerait moins de soupe."
+    elen content "C'est nul ! Je voulais voir une purée faire un looping !"
+    kael sourire "Je peux te garantir que ce serait surtout un cauchemar à nettoyer."
+    nyra taquin "Et nous voilà revenus aux problèmes les plus importants d'Orbite."
+    noam sourire "Je crois que j'ai raté le début de cette réunion scientifique."
+    tomas hesitation "On est en train de décider de ce que vous pourrez acheter, mais... je sais même pas comment vous mangez. Ça me paraît un peu inquiétant."
+    nyra neutre "On peut t'expliquer. Mais pas en un repas. Tu veux commencer par les rations ou les filtres à air ?"
+    noam inquiet "Kael m'a raconté ce qui arrive quand une sanction perce la coque. J'arrive pas à me sortir ça de la tête."
+    kael fatigue "J'espérais ne pas remettre ça sur la table ce soir."
+    noam neutre "T'as rien gâché. C'est moi qui ai posé la question."
+    elen inquiet "Vous pensez que nos familles nous voient, en ce moment ? Parce que si oui, j'espère qu'elles ne croient pas qu'on s'amuse vraiment."
+    elen joie "Oh ! Attendez, vous avez goûté la purée ? Je suis sûre qu'ils ont changé la recette !"
+    nyra taquin "Je crois surtout qu'elle a eu le temps de refroidir pendant notre conversation sur le vide spatial."
+    tomas sourire "Il paraît qu'on cherche une raison de voter à l'unanimité. On pourrait commencer par la purée."
+    elen joie "Moi je vote pour !"
+    kael calme "Je m'abstiens. Je n'ai pas encore lu la recette."
+    nyra sourire "Un vrai parlement, finalement."
+    think "Je ris avec eux. Ça ne dure pas longtemps, mais ça fait du bien."
+    think "Elen examine les assiettes comme un jury gastronomique. Kael essaie de lui expliquer la préparation des repas sur Orbite sans qu'elle lui demande si les pommes de terre flottent."
 
-    think "D'autres se joignent à nous. Questions, souvenirs, comparaisons puis la fatigue finit par dissoudre le débat."
+    think "Les conversations se mélangent. Un souvenir de la Terre, une question sur Orbite, une plaisanterie. Pendant quelques minutes, personne ne parle du vote."
 
     stop music fadeout 1.0
     pause 0.6
@@ -831,24 +838,27 @@ label _2_CAFETERIA_SOIR:
     scene bg_chambre at adaptive_fullscreen with fade
     pause 1.0
 
-    think "Je passe par les douches."
+    think "Je file sous la douche avant que mes bras ne refusent définitivement de bouger."
 
     scene bg_cg011 at adaptive_fullscreen with fade
 
-    think "Je reste sous la douche plus longtemps que prévu. Je repense à ce que Kael m'a raconté."
+    think "L'eau chaude calme mes épaules. Mais l'histoire de Kael revient. Une porte qu'on ferme. Deux personnes de l'autre côté."
 
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
     scene bg_chambre at adaptive_fullscreen with fade
-    think "Je me sèche et tombe sur le lit."
+    think "Je m'écroule sur le lit avec l'élégance d'un meuble qu'on renverse."
     
     scene bg_cg012 at adaptive_fullscreen with fade
-    think "Demain à quatorze heures, on vote. J'espère qu'on arrivera au moins à s'écouter."
+    think "Demain, quatorze heures. Une phrase mal écrite va peut-être changer la vie de millions de gens."
+        think "Ryn voit une frontière. Sael voit son village. Elias voit des pièces détachées. Kael voit une coque percée."
+        think "Et moi ?"
+        think "Moi, je ne sais même pas si on parle tous de la même chose."
 
     $ blink()
 
-    think "Je ferme les yeux."
-    think "Et j’essaie de dormir."
+    think "Je ferme les yeux. Cette fois, ce n'est pas la voix de Kami qui m'empêche de dormir."
+    think "C'est la question que personne n'a encore posée : à qui profitera vraiment notre vote ?"
 
     # jump patreon_ending
 
