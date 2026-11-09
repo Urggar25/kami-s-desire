@@ -474,35 +474,42 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     call day4_thread_debate_game from _call_day4_thread_debate_game
 
-    sael determine "J'ai entendu ce que vous proposez. Mais pour moi, ouvrir les frontières, même avec des précautions, c'est trop dangereux."
-    ryn colere "Tu sais que ça veut dire qu'on va continuer à ramasser des morts ?!"
-    sael triste "Je sais. Et ça me fait horreur. Mais je refuse de risquer la vie des gens de mon village pour ça."
-    sael determine "Je voterai contre. Je préfère être claire maintenant plutôt que de vous laisser croire que je pourrais changer d'avis."
-    "Sael se lève. Ryn voudrait répondre, mais elle prend déjà la direction de la porte."
+    sael determine "Je vous ai écoutés. Je sais ce que vous voulez empêcher."
+    sael determine "Mais ouvrir toutes les frontières sans garantie, c'est prendre un risque que je ne peux pas imposer à mon village."
+    ryn colere "ET TU SAIS CE QUE ÇA VEUT DIRE POUR NOUS ?! On va continuer à ramasser des cadavres !"
+    sael triste "Oui, je sais."
+    sael triste "Et je déteste que notre sécurité repose sur la mort d'autres personnes. Mais je ne vais pas mettre les miens en danger pour faire semblant d'être courageuse."
+    sael determine "Alors je voterai contre. Je vous le dis maintenant, parce que je refuse de vous laisser espérer une voix que vous n'aurez pas."
+    "Sael se lève. Ryn ouvre la bouche, puis la referme. Pour une fois, aucun d'eux n'a de quoi répondre."
     hide sael
     with moveoutright
     play sound "sound/sfx_door.ogg"
-    "Sael quitte la salle sans se retourner."
-    mara agace "Bon, au moins elle a été claire. Par contre, Ryn, tu vas arrêter de lui hurler dessus ?"
-    ryn colere "C'est facile pour toi ! Tu récupères pas des morts à la frontière !"
-    mara colere "Et tu crois que tu sais ce que les autres ont vécu ? Elle t'a parlé de son village et t'as même pas essayé de l'écouter."
-    ryn colere "Je l'ai écoutée ! Elle est contre, de toute façon. Alors ça sert à quoi ?!"
-    mara agace "Eh ben très bien. Continue à t'énerver contre tout le monde, on va sûrement avancer comme ça."
-    "Mara récupère sa tablette et quitte la salle à son tour, visiblement agacée par la dispute."
+    "La porte se referme derrière Sael. Personne ne la rappelle."
+    mara agace "Bon. Voilà. Une voix contre annoncée avant même le vote. On peut maintenant arrêter de lui hurler dessus ?"
+    ryn colere "FACILE À DIRE ! C'est pas toi qui ramasses les gens morts en traversant une frontière !"
+    mara colere "Et toi, tu sais ce qu'elle a dû vivre pour arriver à dire ça ?! Elle vient de te raconter ce qui s'est passé dans son village, et tu n'as entendu que son bulletin !"
+    ryn colere "JE L'AI ÉCOUTÉE ! Et elle a dit non ! Alors on est censés faire quoi ? Se réjouir de sa franchise ?!"
+    mara agace "Très bien. Continue à crier sur ceux qui ne partagent pas ton avis. Ça a merveilleusement fonctionné jusqu'ici."
+    "Mara reprend sa tablette et s'éloigne à grands pas."
+    think "Elle a presque l'air plus en colère contre Ryn que contre le texte."
     hide mara
     with moveoutright
     play sound "sound/sfx_door.ogg"
-    tomas inquiet "Je pensais pas qu'ils se prendraient autant la tête..."
-    elen triste "Moi non plus. Mais si Sael dit non, on peut plus rien faire, c'est ça ?"
-    nyra reflechit "Il faudra peut-être lui reparler, mais pas aujourd'hui. Elle a été très claire, et le vote n'aura lieu que dans quelques jours."
-    ryn triste "J'en ai marre. Je pensais vraiment que celle-là, on pouvait la faire passer."
-    think "On vient à peine de découvrir la nouvelle proposition et Sael a déjà annoncé qu'elle votera contre. Je comprends mieux pourquoi après ce qu'elle a raconté, même si je n'ai pas envie qu'on abandonne."
+    tomas inquiet "Je... j'ai l'impression qu'on vient de perdre le vote avant même d'avoir reçu nos bulletins."
+    elen triste "On pourrait peut-être lui reparler ? Je veux dire... pas pour lui forcer la main, mais pour comprendre..."
+    nyra reflechit "Pas aujourd'hui. Elle vient de nous expliquer quelque chose de personnel. Revenir à la charge maintenant serait la meilleure manière de lui donner raison de se méfier."
+    ryn triste "C'était la première proposition qui pouvait sauver des gens à Limen."
+    ryn triste "Et je crois qu'on vient de la voir mourir avant même le vote."
+    think "Un seul « non » suffit."
+    think "Hier, cette règle m'a paru injuste. Aujourd'hui, j'ai entendu la personne qui pourrait la faire jouer."
+    think "Et je ne sais toujours pas comment lui dire qu'elle a tort."
 
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label day4_thread_debate_game:
 
-    think "Je cherche comment intervenir sans aggraver la dispute. Ryn et Sael ont tous les deux de bonnes raisons d'avoir peur, mais personne n'arrive à écouter l'autre."
+    think "Ryn parle de ceux qui meurent en voulant traverser. Sael parle de ceux qui risqueraient de mourir si tout le monde pouvait entrer."
+    think "Je cherche une phrase qui ne demande à aucun des deux d'oublier ses morts."
 
     call screen day4_objection_fracturee()
 
@@ -515,21 +522,24 @@ label day4_thread_debate_game:
 
 label day4_thread_debate_success:
     $ j4_argument_circulation_cadre = True
-    noam inquiet "Attendez, on parle de deux problèmes différents. Ryn veut qu'on arrête de tuer ceux qui traversent, et Sael a peur que des gens dangereux puissent de nouveau venir chez elle."
-    noam neutre "Est-ce qu'on pourrait au moins imaginer un système où on contrôle les passages sans abattre les gens ?"
-    iris reflechit "Ça serait déjà mieux que ce qu'on a maintenant. Mais ça demanderait de changer d'autres règles."
-    ryn inquiet "Moi, ça me va si les gens peuvent arrêter de crever pour avoir voulu sortir de leur district."
-    sael determine "Je comprends ce que tu proposes, Noam. Mais l'amendement parle d'ouvrir les frontières, pas de mettre en place ce système. Je reste contre."
-    nyra reflechit "Au moins, on a identifié ce qui bloque. On pourra chercher si une autre proposition peut répondre aux deux problèmes."
-    think "Ryn se rassoit. Il n'est pas convaincu par Sael, mais il l'a laissée finir cette fois. Elle n'a pas changé d'avis et ne prétend pas le contraire."
+    noam inquiet "Attendez ! Vous parlez de deux catastrophes différentes. Ryn veut arrêter les exécutions aux frontières. Sael veut empêcher le retour de ceux qui attaquaient son village."
+    noam neutre "Il doit bien exister un moyen de contrôler les passages sans tirer sur tous ceux qui approchent. Pas forcément dans ce texte, mais... un moyen."
+    iris reflechit "Ça paraît déjà plus sensé. Mais il faudrait des contrôles, des garanties... pas juste écrire « on ouvre » et croiser les doigts."
+    ryn inquiet "Moi, tant que les gens peuvent arrêter de mourir pour avoir voulu rejoindre leur famille, je suis prêt à en discuter."
+    sael determine "C'est une piste, Noam. Mais elle ne figure pas dans le texte."
+    sael determine "Je voterai sur ce qui est écrit. Et ce qui est écrit ne protège pas mon village."
+    nyra reflechit "Au moins, on voit enfin où se trouve le désaccord. Si un autre amendement peut traiter les deux risques, il faudra l'envisager."
+    think "Ryn finit par se rasseoir. Sael n'a pas changé d'avis. Lui non plus."
+    think "Mais ils ont au moins réussi à s'écouter jusqu'au bout. Ça ressemble à un progrès minuscule, et presque ridicule."
     return
 
 label day4_thread_debate_failure:
-    noam inquiet "Attendez, je crois qu'on pourrait trouver une autre façon de faire..."
-    ryn colere "Une autre façon de faire quoi ? On sait même pas ce que tu proposes !"
-    sael desaccord "Tu peux pas simplement nous demander de faire confiance à tout le monde. J'ai déjà essayé, et ça s'est mal terminé."
-    iris fatigue "Je crois que là, personne arrive à réfléchir calmement. On ferait mieux d'arrêter avant de dire des trucs qu'on regrettera."
-    think "Je n'arrive pas à les faire discuter. Sael reste contre et Ryn est encore plus agacé qu'avant."
+    noam inquiet "Attendez ! Peut-être qu'on pourrait... enfin, ouvrir seulement certains passages..."
+    ryn colere "Lesquels ?! Ceux qui ne t'arrangent pas ?! Tu vois bien que tu ne sais pas toi-même ce que tu proposes !"
+    sael desaccord "Noam, je ne peux pas accepter des promesses vagues sur la sécurité. J'ai déjà cru des gens qui m'assuraient qu'il n'y avait aucun risque."
+    iris fatigue "Stop. On est en train de demander à des gens terrifiés de nous expliquer calmement pourquoi ils ont peur. Ça ne marchera pas maintenant."
+    think "J'ai essayé d'improviser une solution. J'ai surtout donné à chacun une nouvelle raison de se braquer."
+    think "Sael reste contre. Ryn a l'air prêt à se battre avec sa chaise."
     return
 
 label _4_0_APRES_CLASH_PRE_FETE:
