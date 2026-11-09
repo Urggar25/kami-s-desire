@@ -137,6 +137,7 @@ label decouverte_salle_archive:
     noam taquin "J'avais remarqué. Moi c'est Noam."
     tomas neutre "Tomas. Je viens d'Archive. Enfin, du district Harmonie, comme toi, mais de la zone des archives."
     $ unlock_character_name("tomas")
+    call kd_play_character_intro("tomas") from _call_kd_intro_tomas_j1
     tomas reflechit "Je cherchais juste un catalogue. Sauf qu'on dirait que tous les fichiers sont liés entre eux et que les menus changent selon les droits d'accès. C'est assez curieux parce que..."
     "Il s'arrête en voyant ma tête."
     tomas panne "Je parle trop, hein ?"
