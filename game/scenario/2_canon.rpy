@@ -14,7 +14,7 @@ label _2_CANON:
     pause 0.6
 
     think "J'ai dormi trois heures. Quatre, si je compte les moments où je fixais le plafond les yeux fermés."
-        think "J'ai proposé un amendement hier. L'idée me paraissait brillante sur le papier. Maintenant, j'aimerais surtout récupérer ce papier."
+    think "J'ai proposé un amendement hier. L'idée me paraissait brillante sur le papier. Maintenant, j'aimerais surtout récupérer ce papier."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg012")
     $ blink()
@@ -53,9 +53,9 @@ label _2_CANON:
 
     think "Juliette serait déjà debout. Ma petite sœur ferait sûrement un commentaire désobligeant sur mes cheveux, puis me demanderait ce qu'on mange."
     think "Est-ce qu'elle a vu l'annonce ? Est-ce qu'elle me regarde maintenant ?"
-        think "Je pourrais lui expliquer que tout va bien. Il suffirait de pouvoir l'appeler."
-        think "Mais je n'en ai pas le droit."
-        think "Alors je m'habille. C'est plus facile que de trouver une réponse."
+    think "Je pourrais lui expliquer que tout va bien. Il suffirait de pouvoir l'appeler."
+    think "Mais je n'en ai pas le droit."
+    think "Alors je m'habille. C'est plus facile que de trouver une réponse."
     think "Neuf heures. Une heure avant de découvrir ce que nous avons offert à Kami. Je ferais bien de ne pas arriver en retard."
 
     stop music fadeout 1.0
@@ -118,10 +118,10 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     elen desaccord "Ah non ! Surtout pas piquante ! Je supporte pas ça !"
     elen content "Allez, souriez un peu ! Ça ne va pas vous tuer !"
-        iris blase "Une affirmation dangereuse, ici."
-        elen peur "Oh... c'était une expression !"
-        noam sourire "Pour une fois, je crois qu'Iris plaisantait."
-        iris desaccord "J'ai dit ça, moi ?"
+    iris blase "Une affirmation dangereuse, ici."
+    elen peur "Oh... c'était une expression !"
+    noam sourire "Pour une fois, je crois qu'Iris plaisantait."
+    iris desaccord "J'ai dit ça, moi ?"
     
     ryn fatigue "Je sais pas ce qui est le pire : cette station ou ton enthousiasme."
 
@@ -655,13 +655,13 @@ label _2_SALLE_OBSERVATION:
     kael fatigue "Sa réponse est toujours la même : il fallait empêcher l'infraction. Comme si on avait tous le contrôle sur les autres."
     noam inquiet "Tu parles comme si tu avais déjà vu ça."
     kael triste "Une fois, on a dû fermer une cloison après une dépressurisation. J'ai aidé à actionner la fermeture."
-        kael triste "Il y avait encore deux personnes de l'autre côté."
+    kael triste "Il y avait encore deux personnes de l'autre côté."
     noam peur "Elles... elles sont sorties, après ?"
     kael triste "Non."
     noam inquiet "Mais... personne n'a essayé de les..."
     kael triste "On a essayé. Jusqu'à ce que l'alarme de pression ne nous laisse plus le choix."
     think "Je ne trouve pas de phrase qui ne sonne pas creux."
-        kael fatigue "Si on avait attendu quelques secondes de plus, on aurait perdu le module entier."
+    kael fatigue "Si on avait attendu quelques secondes de plus, on aurait perdu le module entier."
     "Kael s'arrête de parler et regarde dehors. Je ne sais pas quoi lui répondre."
     noam triste "Je... je savais pas. Désolé."
     kael calme "Je sais. Alors demain, quand tu entendras « commerce », essaie aussi de penser aux gens qui vivent derrière ces cloisons."
@@ -851,9 +851,9 @@ label _2_CAFETERIA_SOIR:
     
     scene bg_cg012 at adaptive_fullscreen with fade
     think "Demain, quatorze heures. Une phrase mal écrite va peut-être changer la vie de millions de gens."
-        think "Ryn voit une frontière. Sael voit son village. Elias voit des pièces détachées. Kael voit une coque percée."
-        think "Et moi ?"
-        think "Moi, je ne sais même pas si on parle tous de la même chose."
+    think "Ryn voit une frontière. Sael voit son village. Elias voit des pièces détachées. Kael voit une coque percée."
+    think "Et moi ?"
+    think "Moi, je ne sais même pas si on parle tous de la même chose."
 
     $ blink()
 
