@@ -263,7 +263,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     kami "Vous pouvez en discuter, essayer de vous convaincre, ou vous détester. Je prends tout !"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-        kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
+    kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Amusez-vous bien. Le monde vous écoute."
@@ -342,7 +342,6 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     show screen day2_quick_vote_notes
 
-    call play_stat_dialogue("d2") from _call_stat_dialogue_d2
 
     think "Tout le monde sort sa tablette, sauf Elias, qui fouille ses poches en jurant."
     elias inquiet "Merde, je l'ai laissée dans ma chambre. Quelqu'un peut me montrer ?"
