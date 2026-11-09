@@ -178,18 +178,18 @@ label _4_0_CAFETERIA_ECRANS:
         ("iris", "desaccord"),
         ("noam", "neutre"),
     ])
-    mara taquin "Je pensais pas voir Elen déclarer la guerre pour un pot de cannelle."
-    iris colere "C'est pas la cannelle, Mara. Kami vient de nous rappeler qu'elle peut retirer ce qu'elle veut quand ça l'amuse."
-    julian colere "Voilà. Et hier, on avait une chance de changer les choses. Je suis ravi qu'on ait préféré garder les bons."
-    ryn colere "Tu vas nous refaire la leçon à chaque repas ?"
-    julian taquin "Seulement tant que vous trouverez ça normal d'avoir besoin de la permission de Kami pour acheter du poivre."
-    lysa blase "Il marque un point, malheureusement. Mais crier sur Ryn changera pas le résultat."
-    ryn colere "Pourquoi tu me regardes quand tu dis ça ? Vous savez même pas qui a voté contre !"
-    noam inquiet "Personne le sait, Ryn. Et je crois pas qu'on avancera en essayant de deviner."
-    mara colere "Moi, ce qui m'énerve, c'est qu'on s'engueule entre nous alors que Kami est celle qui décide de tout."
-    kael reflechit "On pourrait regarder ce que montrent les écrans. Si les réserves sont vraiment parties sur Terre, ça devrait se voir."
-    lysa neutre "Ouais, allons voir. Au moins, on aura autre chose que des suppositions."
-    noam neutre "D'accord. Je veux aussi savoir si les distributions continuent normalement."
+    mara taquin "On vient d'assister à la première insurrection de pâtisserie de l'histoire. Je suis presque émue."
+    iris colere "Arrête. C'est pas la cannelle, le problème. C'est que Kami retire nos provisions quand ça lui chante et appelle ça une leçon de morale."
+    julian colere "Voilà ! Hier, on aurait pu changer ça ! Mais quelqu'un a préféré qu'on continue à demander la permission pour une pincée de poivre !"
+    ryn colere "Tu vas nous ressortir ton discours à chaque petit-déjeuner ? On a voté, bordel !"
+    julian taquin "Tant qu'on trouvera normal de supplier une machine pour assaisonner un repas, oui. Tu veux que je parle moins fort ?"
+    lysa blase "Il a raison sur le fond. Voilà, je l'ai dit, j'ai honte. Mais engueuler Ryn ne va pas faire réapparaître le commerce."
+    ryn colere "ET POURQUOI TU ME REGARDES ?! Vous en savez rien ! Personne ne sait qui a voté contre !"
+    noam inquiet "Personne ne sait. Et si on commence à traquer un bulletin anonyme, autant demander à Kami de filmer les isoloirs."
+    mara colere "Vous vous disputez pour savoir à qui reprocher une pénurie d'épices. Pendant ce temps, Kami se marre derrière son écran. Beau travail."
+    kael reflechit "On peut peut-être vérifier ce qu'elle raconte. Les écrans diffusent les distributions sur Terre. Si les stocks ont bougé, ça devrait laisser une trace."
+    lysa neutre "Bonne idée. Une information vérifiable, pour changer. J'avais presque oublié ce que ça faisait."
+    noam neutre "Allons voir. Si les gens ont toujours faim malgré les livraisons, Kami ne pourra pas balayer ça d'une plaisanterie."
 
     $ j4_cafeteria_ryn_talked = False
     $ j4_cafeteria_julian_talked = False
@@ -205,21 +205,22 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "reflexion"),
     ])
 
-    think "Je m'assieds avec mon petit-déjeuner. Lysa regarde encore l'écran, puis se tourne vers moi."
-    lysa blase "Alors, tu regrettes le vote d'hier ?"
+    think "Je m'installe enfin avec mon plateau. Lysa n'a pas quitté l'écran des yeux. Je sens venir une question dont je n'aimerai pas la réponse."
+    lysa blase "Alors, Noam ? Tu regrettes le résultat ou tu regrettes surtout de ne pas avoir gagné ?"
     menu:
         "Dire que oui.":
-            noam triste "Ouais, un peu. J'aurais aimé qu'on arrive à décider quelque chose, même si le texte de Kami était franchement inquiétant."
-            lysa neutre "Au moins, tu sais pourquoi t'es déçu."
+            noam triste "Un peu. J'aurais voulu qu'on arrive à faire quelque chose ensemble. Même si la version de Kami me terrifiait."
+            lysa neutre "Au moins, tu sais ce que tu regrettes. C'est déjà mieux que certains."
         "Dire qu'il était trop risqué.":
-            noam inquiet "Quand j'ai compris qu'on supprimerait les rations, j'ai eu peur de ce qui arriverait à ceux qui n'ont rien."
-            lysa reflechit "Je peux pas vraiment t'en vouloir pour ça. C'était un sacré risque."
+            noam inquiet "Quand j'ai lu « suppression des rations », j'ai pensé à ceux qui n'auraient aucun moyen de payer leur premier repas."
+            lysa reflechit "Oui. Et on ne peut pas traiter cette peur comme une preuve de lâcheté."
         "Admettre que tu ne sais pas.":
-            noam neutre "J'en sais rien. J'étais motivé hier matin, et maintenant j'ai l'impression qu'on a été piégés quoi qu'on fasse."
-            lysa blase "Ça, je crois qu'on est plusieurs à le penser."
-    iris fatigue "Bon, vous allez en parler jusqu'au prochain vote ou on peut au moins finir de manger ?"
-    mara taquin "T'inquiète, à midi on discutera de la disparition du sel."
-    "Je mange en écoutant leur discussion. Personne n'a l'air ravi, mais Elias et Iris commencent déjà à se chamailler sur la façon de rendre les barres de céréales mangeables."
+            noam neutre "Je ne sais même pas ce que j'espérais. Hier matin, j'étais sûr qu'on pourrait changer les choses. Aujourd'hui, j'ai l'impression qu'on ne pouvait que se tromper."
+            lysa blase "Bienvenue au club des gens qui ne savent plus si leur prudence est une victoire."
+    iris fatigue "Vous comptez faire le procès du petit-déjeuner jusqu'à ce soir ? Parce que mon pain refroidit. Enfin... il sèche. C'est pire."
+    mara taquin "Patience, Iris. À midi, on débattra du sel. Et à seize heures, on votera sur l'existence du dessert."
+    "J'essaie de manger. Elias propose de ramollir les barres dans de l'eau chaude. Iris lui demande s'il compte aussi les réparer avec un tournevis."
+    think "On n'est d'accord sur rien. Mais entendre une dispute à propos de céréales me repose presque."
 
     jump _4_0_TEMPS_LIBRE_1
 
@@ -243,24 +244,26 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     scene bg_cg034 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg034")
 
-    "L'écran montre une distribution de nourriture dans un district que je ne connais pas. Des bénévoles remplissent des sacs et les donnent à une longue file de personnes."
-    elias inquiet "Bon, les livraisons ont pas été coupées. Ça, c'est déjà une bonne chose."
-    kael reflechit "Les bénévoles continuent à distribuer ce qu'ils reçoivent. On voit pas si les quantités ont augmenté, par contre."
-    iris fatigue "Et voilà pourquoi Elen a plus de cannelle. Je suppose qu'on devrait applaudir."
-    ryn colere "T'as vu combien ils sont à attendre ? Ça fait des heures qu'ils font la queue, et certains repartiront quand même sans rien."
-    noam inquiet "Je suis content qu'ils reçoivent encore quelque chose, mais ça change pas ce qui nous posait problème hier."
-    lysa blase "Exactement. On a évité un changement qui pouvait être dangereux, mais c'est pas pour ça que le système actuel marche bien."
+    "Sur l'écran, des bénévoles remplissent des sacs de nourriture. La file s'étend hors du cadre."
+    think "Je ne reconnais pas le district. Je reconnais les regards de ceux qui attendent."
+    elias inquiet "Bon... les livraisons continuent. C'est toujours ça. J'avais peur de voir des entrepôts vides."
+    kael reflechit "On voit des sacs distribués, pas les stocks. Ça prouve que le système fonctionne encore. Pas qu'il fonctionne mieux."
+    iris fatigue "Donc voilà où est partie la cannelle d'Elen. Enfin, j'espère qu'ils n'ont pas prévu de nourrir la file entière avec ça."
+    ryn colere "Regardez cette queue ! On va nous expliquer qu'ils ont tous été servis, mais la moitié attend encore dehors !"
+    noam inquiet "Au moins, ils reçoivent quelque chose. Mais on ne voit pas ceux qui repartiront les mains vides."
+    lysa blase "On a peut-être évité un désastre. Ça ne transforme pas les pénuries actuelles en réussite."
     "Une femme explique à la caméra qu'elle a attendu toute la matinée. Le journaliste lui demande ce qu'elle pense du vote."
     "Elle répond qu'elle aurait aimé que les représentants trouvent une solution, mais qu'elle est soulagée de ne pas perdre ses bons."
-    mara reflechit "Bah voilà. Même dehors, les gens savent pas ce qu'ils auraient préféré."
-    iris desaccord "Et nous, on avait encore moins d'informations. Franchement, je veux bien critiquer le résultat, mais on pouvait pas faire de miracles."
-    julian colere "On aurait quand même pu essayer au lieu de tout refuser."
-    ryn colere "T'as pas fini ? On a voté à bulletin secret, alors arrête de regarder les autres comme si tu savais qui a dit non !"
-    julian decu "J'ai rien dit sur toi."
-    ryn colere "T'as pas besoin de le dire !"
-    nyra neutre "On n'a aucun moyen de savoir qui a voté contre. Ce serait peut-être plus utile de regarder ce qu'on peut faire au prochain vote."
-    julian decu "Ouais, bon. Je vais manger ailleurs."
-    "Julian quitte la table. Ryn le suit des yeux, mais ne répond pas."
+    mara reflechit "Elle a peur de perdre ses bons, mais elle voudrait aussi que les choses changent. Pas facile de lui donner tort."
+    iris desaccord "On nous a demandé de choisir entre deux risques sans nous laisser prévoir une transition. On était censés faire quel miracle, exactement ?"
+    julian colere "On aurait pu essayer ! À force de refuser chaque risque, on va continuer à regarder les mêmes images pendant trente jours !"
+    ryn colere "TU VAS ME FIXER COMME ÇA ENCORE LONGTEMPS ?! Le vote était secret ! T'as pas un détecteur de traîtres dans les yeux !"
+    julian decu "Je n'ai pas prononcé ton nom."
+    ryn colere "JUSTEMENT ! T'AS PAS BESOIN !"
+    nyra neutre "Vous êtes en train de fabriquer une accusation à partir d'un regard. Le secret du vote n'est pas un indice. C'est une règle."
+    julian decu "Très bien. Je vous laisse avec vos certitudes. Moi, je vais essayer de manger."
+    "Julian s'éloigne, son plateau à peine entamé. Ryn le suit des yeux sans ajouter un mot."
+    think "C'est presque plus inquiétant que s'il avait crié."
     return
 
 label _4_0_CAFETERIA_PNC_RYN:
