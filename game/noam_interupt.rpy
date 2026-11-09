@@ -110,188 +110,295 @@ init python:
     DAY1_RADIO_MAX_SHOTS = 3
 
 
+# ---------------------------------------------------------------------------
+# Duel radio V2 — une vraie cible à toucher, des expressions changeantes,
+# une barre de temps visible et une réponse audiovisuelle pour chaque tir.
+# La logique narrative reste identique : 5 phrases, 3 tirs, même argument
+# gagnant et même cut-in de Noam au succès.
+# ---------------------------------------------------------------------------
+
+init python:
+    DAY1_RADIO_EXPRESSIONS = ("determine", "reflexion", "colere", "opposition", "fatigue")
+
+    def day1_radio_miss_reason(argument_id, line_index):
+        if argument_id == "reglement_conclave":
+            return "LYSA : « Attends au moins que je termine ma phrase ! »"
+        if line_index == DAY1_RADIO_TARGET_LINE:
+            return "LYSA : « Tu me contredis avec ça ? Quel rapport ?! »"
+        return "LYSA : « Ça n'explique toujours pas pourquoi l'appel échoue ! »"
+
+
 transform day1_radio_lysa_arrive:
+    subpixel True
     alpha 0.0
-    xoffset -55
-    easeout 0.40 alpha 1.0 xoffset 0
+    xoffset -70
+    easeout 0.38 alpha 1.0 xoffset 0
 
 transform day1_radio_dialogue_arrive:
+    subpixel True
     alpha 0.0
-    yoffset 16
-    easeout 0.25 alpha 1.0 yoffset 0
+    xoffset 55
+    zoom 0.98
+    easeout 0.19 alpha 1.0 xoffset -8 zoom 1.015
+    easeout 0.11 xoffset 0 zoom 1.0
 
 transform day1_radio_selector_pulse:
-    alpha 0.55
-    ease 0.40 alpha 1.0
-    ease 0.40 alpha 0.55
+    alpha 0.6
+    ease 0.35 alpha 1.0
+    ease 0.35 alpha 0.6
     repeat
 
+transform day1_radio_shot_flash:
+    alpha 0.0
+    linear 0.05 alpha 0.32
+    linear 0.26 alpha 0.0
+
+transform day1_radio_shot_trail:
+    subpixel True
+    xzoom 0.0
+    alpha 1.0
+    easeout 0.15 xzoom 1.0
+    pause 0.10
+    linear 0.17 alpha 0.0
+
+transform day1_radio_impact_stamp:
+    subpixel True
+    alpha 0.0
+    zoom 1.42
+    rotate -5
+    pause 0.08
+    easeout 0.15 alpha 1.0 zoom 1.0 rotate 0
+    pause 0.22
+    linear 0.15 alpha 0.0
 
 screen noam_interupt_radio_duel():
     modal True
     zorder 305
 
     default line_index = 0
+    default line_elapsed = 0.0
     default selected_argument = None
     default shots = 0
-    default feedback = ""
+    default shot_state = ""
+    default shot_feedback = ""
 
-    # Le timer est répétitif et ne provoque jamais de fin automatique.
-    # Chaque phrase occupe exactement 4 s (sauf si le joueur quitte
-    # l'écran par un tir réussi ou trois tirs manqués).
-    timer 4.0 repeat True action [
-        SetScreenVariable("line_index", (line_index + 1) % len(DAY1_RADIO_LINES)),
-        SetScreenVariable("feedback", ""),
-    ]
+    # Les lignes sont répétées, mais le compte à rebours est réellement
+    # visible. Pendant l'impact, la réplique et les contrôles sont gelés.
+    if shot_state == "":
+        timer 0.05 repeat True action SetScreenVariable("line_elapsed", min(4.0, line_elapsed + 0.05))
+        timer 4.0 repeat True action [
+            SetScreenVariable("line_index", (line_index + 1) % len(DAY1_RADIO_LINES)),
+            SetScreenVariable("line_elapsed", 0.0),
+        ]
+    else:
+        timer 0.68 action If(
+            shot_state == "hit",
+            Return(("success", selected_argument)),
+            If(
+                shot_state == "fail",
+                Return(("failure", selected_argument)),
+                [SetScreenVariable("shot_state", ""), SetScreenVariable("line_elapsed", 0.0)]
+            )
+        )
 
-    add Solid("#090716")
+    # Fond existant, assombri pour faire ressortir l'affrontement.
+    add Solid("#070715")
     add "images/character/noam/interupt_background.png":
         xalign 0.5
         yalign 0.5
-        alpha 0.62
+        alpha 0.44
+    add Solid("#09091ad8"):
+        xpos 422
+        ypos 34
+        xsize 1458
+        ysize 1010
+    add Solid("#d64cf4"):
+        xpos 418
+        ypos 0
+        xsize 5
+        ysize 1080
 
-    # Lysa reste présente pendant que son dialogue défile.
-    add Transform(character_image("lysa", "blase"), zoom=0.80) at day1_radio_lysa_arrive:
-        xpos 45
-        ypos 132
+    # Lysa n'est plus une illustration immobile : sa pose change selon
+    # l'argument qu'elle défend. Chaque nouvelle image est réintroduite.
+    for number in range(len(DAY1_RADIO_LINES)):
+        if line_index == number:
+            add Transform(character_image("lysa", DAY1_RADIO_EXPRESSIONS[number]), zoom=0.82) at day1_radio_lysa_arrive:
+                xpos 15
+                ypos 130
 
-    # Un panneau sombre derrière la bulle et les cartes maintient la
-    # lisibilité sans cacher entièrement la direction artistique.
-    add Solid("#050912dd"):
-        xpos 540
-        ypos 110
+    text "OBJECTION // SALLE D'OBSERVATION":
+        xpos 500
+        ypos 67
+        size 31
+        color "#f075fa"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    text "DUEL 01  /  LYSA":
+        xpos 1520
+        ypos 74
+        size 23
+        color "#b5abc8"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    text "RÉPLIQUE [line_index + 1] / [len(DAY1_RADIO_LINES)]":
+        xpos 510
+        ypos 141
+        size 27
+        color "#ffffff"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    # La phrase est directement cliquable : le joueur tire SUR elle.
+    # Boucle conditionnelle : l'ATL d'apparition repart à chaque réplique.
+    for number in range(len(DAY1_RADIO_LINES)):
+        if line_index == number:
+            button at day1_radio_dialogue_arrive:
+                xpos 500
+                ypos 206
+                xsize 1330
+                ysize 225
+                background Solid("#29113fea" if selected_argument else "#221432ef")
+                hover_background Solid("#513077")
+                padding (29, 19)
+                sensitive selected_argument is not None and shot_state == ""
+                action If(
+                    selected_argument == "reglement_conclave" and line_index == DAY1_RADIO_TARGET_LINE,
+                    [
+                        SetScreenVariable("shot_feedback", "OBJECTION ! Le règlement interdit d'émettre un appel."),
+                        SetScreenVariable("shot_state", "hit"),
+                        Play("sound", "audio/sfx_interrupt_impact.wav")
+                    ],
+                    [
+                        SetScreenVariable("shot_feedback", day1_radio_miss_reason(selected_argument, line_index)),
+                        SetScreenVariable("shots", shots + 1),
+                        SetScreenVariable("shot_state", "fail" if shots + 1 >= DAY1_RADIO_MAX_SHOTS else "miss"),
+                        Play("sound", "audio/sfx_beep.mp3")
+                    ]
+                )
+
+                vbox:
+                    spacing 16
+                    text "CIBLE  //  [ 'CLIQUE POUR TIRER' if selected_argument else 'ARME UN ARGUMENT CI-DESSOUS' ]":
+                        size 19
+                        color "#67eaff" if selected_argument else "#db9ee6"
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                    text DAY1_RADIO_LINES[line_index]:
+                        xsize 1245
+                        size 38
+                        color "#ffffff"
+                        font "fonts/Rajdhani-SemiBold.ttf"
+
+    # Jauge qui se vide pendant les 4 s de la réplique active.
+    add Solid("#433352"):
+        xpos 510
+        ypos 449
         xsize 1310
-        ysize 835
-
-    text "OBJECTION  //  SALLE D'OBSERVATION":
-        xpos 585
-        ypos 127
-        size 28
-        color "#f86cff"
-        font "fonts/Rajdhani-SemiBold.ttf"
-
-    text "LYSA  •  RÉPLIQUE [line_index + 1] / 5":
-        xpos 588
-        ypos 187
-        size 24
-        color "#f3f7ff"
-        font "fonts/Rajdhani-SemiBold.ttf"
-
-    # Bulle de la réplique active, celle que le joueur doit viser.
-    frame at day1_radio_dialogue_arrive:
-        xpos 572
-        ypos 230
-        xsize 1248
-        ysize 184
-        background Solid("#250d41ee")
-        padding (26, 21)
-
-        vbox:
-            spacing 8
-            text "CE QU'ELLE AFFIRME":
-                size 19
-                color "#f681ff"
-            text DAY1_RADIO_LINES[line_index]:
-                xsize 1180
-                size 30
-                color "#ffffff"
-                font "fonts/Rajdhani-SemiBold.ttf"
+        ysize 11
+    add Solid("#69e7ff" if line_elapsed < 3.1 else "#ff6689"):
+        xpos 510
+        ypos 449
+        xsize max(0, int(1310 * (1.0 - line_elapsed / 4.0)))
+        ysize 11
 
     hbox:
-        xpos 596
-        ypos 427
-        spacing 9
-        for number in range(5):
-            add Solid("#ef5dff" if number == line_index else "#67517b"):
-                xsize 233
-                ysize 6
+        xpos 510
+        ypos 480
+        spacing 11
+        for number in range(len(DAY1_RADIO_LINES)):
+            add Solid("#e65af8" if number == line_index else "#5a466f"):
+                xsize 253
+                ysize 5
 
-    text "CHOISIS TON ARGUMENT, PUIS TIRE SUR LA RÉPLIQUE AU BON MOMENT":
-        xpos 590
-        ypos 469
-        size 23
-        color "#d8c7ee"
+    text "01  CHOISIS UNE PREUVE      02  CLIQUE SUR LA PHRASE AU BON MOMENT":
+        xpos 508
+        ypos 534
+        size 24
+        color "#e2d5f3"
         font "fonts/Rajdhani-SemiBold.ttf"
 
-    # Les cinq cartes sont cliquables sans interrompre le défilement.
+    # Argumentaire compact en deux colonnes. L'état sélectionné est
+    # évident et les cartes sont désactivées pendant l'impact.
     for number, argument in enumerate(DAY1_RADIO_ARGUMENTS):
         $ chosen = selected_argument == argument[0]
         button:
-            xpos 580
-            ypos (520 + number * 68)
-            xsize 1238
-            ysize 59
-            background Solid("#273c62" if chosen else "#1a1234")
-            hover_background Solid("#334d7a")
+            xpos (505 + (number % 2) * 666)
+            ypos (600 + (number // 2) * 104)
+            xsize 642
+            ysize 91
+            background Solid("#23405e" if chosen else "#1d1835")
+            hover_background Solid("#354566")
+            insensitive_background Solid("#262239")
+            sensitive shot_state == ""
             action SetScreenVariable("selected_argument", argument[0])
-            padding (16, 4)
+            padding (17, 10)
 
             hbox:
-                spacing 19
+                spacing 15
                 yalign 0.5
                 text argument[2]:
-                    size 24
-                    color ("#ff7af7" if chosen else "#a0a6c0")
+                    size 25
+                    color "#74edff" if chosen else "#a69abf"
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 text argument[1]:
-                    size 28
-                    color ("#ffffff" if chosen else "#dfdcf6")
+                    size 29
+                    color "#ffffff" if chosen else "#e4ddf5"
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 if chosen:
-                    text "◀ ARMÉ":
-                        size 22
-                        color "#50ecff"
-                        font "fonts/Rajdhani-SemiBold.ttf"
+                    text "●":
+                        size 28
+                        color "#76f0ff"
                         yalign 0.5
+                        at day1_radio_selector_pulse
 
-    # Le bouton tire l'argument sélectionné sur la phrase ACTUELLE.
-    # Une mauvaise cible ou un mauvais argument consomme une tentative,
-    # mais aucun tir n'est imposé : les cinq phrases tournent à l'infini.
-    button:
-        xpos 1230
-        ypos 891
-        xsize 590
-        ysize 92
-        background Solid("#9426a1" if selected_argument else "#333044")
-        hover_background Solid("#ca36cf" if selected_argument else "#333044")
-        padding (18, 9)
-        sensitive selected_argument is not None
-        action If(
-            selected_argument == "reglement_conclave"
-            and line_index == DAY1_RADIO_TARGET_LINE,
-            Return(("success", selected_argument)),
-            [
-                SetScreenVariable("shots", shots + 1),
-                If(
-                    shots + 1 >= DAY1_RADIO_MAX_SHOTS,
-                    Return(("failure", selected_argument)),
-                    SetScreenVariable("feedback", "Raté ! Mauvaise phrase ou mauvais argument. Réessaie.")
-                )
-            ]
-        )
-        text "TIRER L'ARGUMENT  ▶":
-            xalign 0.5
-            yalign 0.5
-            size 33
-            color "#ffffff"
-            font "fonts/Rajdhani-SemiBold.ttf"
-
-    text "TIRS RESTANTS : [DAY1_RADIO_MAX_SHOTS - shots]":
-        xpos 596
-        ypos 923
-        size 22
-        color "#ffb9c8"
+    # Sixième emplacement : rappel des tirs, sans bouton géant inutile.
+    add Solid("#0d1028d8"):
+        xpos 1171
+        ypos 808
+        xsize 642
+        ysize 91
+    text "TIRS RESTANTS : [DAY1_RADIO_MAX_SHOTS - shots] / [DAY1_RADIO_MAX_SHOTS]":
+        xpos 1193
+        ypos 830
+        size 29
+        color "#ffb7cb"
         font "fonts/Rajdhani-SemiBold.ttf"
 
-    if feedback:
-        text feedback:
-            xpos 580
-            ypos 997
-            xsize 1240
-            size 22
-            color "#ffb7cb"
+    text "L'ARGUMENT NE PART QUE SI TU CLIQUES SUR LA RÉPLIQUE DE LYSA.":
+        xpos 510
+        ypos 958
+        size 22
+        color "#c5b7df"
+        font "fonts/Rajdhani-SemiBold.ttf"
+
+    # Tir visible et réaction contextualisée, avant de valider la réussite
+    # ou le dernier échec. Aucune autre interaction n'est possible ici.
+    if shot_state != "":
+        add Solid("#67ecff" if shot_state == "hit" else "#ff437f") at day1_radio_shot_flash
+        add Solid("#83f5ff" if shot_state == "hit" else "#ff6487") at day1_radio_shot_trail:
+            xpos 490
+            ypos 323
+            xsize 1334
+            ysize 7
+        text "OBJECTION !" if shot_state == "hit" else "ARGUMENT REJETÉ":
+            xpos 600
+            ypos 247
+            size 76 if shot_state == "hit" else 56
+            color "#85f7ff" if shot_state == "hit" else "#ff7f9d"
+            outlines [(3, "#0a071d", 0, 0)]
+            font "fonts/Rajdhani-SemiBold.ttf"
+            at day1_radio_impact_stamp
+        add Solid("#0b071df2"):
+            xpos 505
+            ypos 919
+            xsize 1320
+            ysize 90
+        text shot_feedback:
+            xpos 530
+            ypos 943
+            xsize 1255
+            size 27
+            color "#86edff" if shot_state == "hit" else "#ffb6c9"
             font "fonts/Rajdhani-SemiBold.ttf"
 
 
