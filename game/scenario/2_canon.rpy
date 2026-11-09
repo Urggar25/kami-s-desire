@@ -383,31 +383,36 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     "Les tablettes des autres se mettent à sonner à leur tour."
     think "J'ouvre le dossier de vote reçu à l'instant. Pour l'instant, il reprend surtout la courte proposition que Kami vient de nous lire."
-    elias inquiet "Merde, j'ai laissé ma tablette dans ma chambre. Kael, tu peux me montrer ?"
-    kael reflechit "Y a pas grand-chose à voir. Elle a juste mis la proposition dans le dossier, sans les détails."
-    julian sourire "Ça nous laisse une journée pour réfléchir. On devrait au moins essayer de savoir ce qu'on voudrait changer."
-    lysa blase "Tu viens d'arriver, et tu nous organises déjà une réunion ? Laisse-nous finir de manger."
-    julian taquin "Je proposais juste qu'on en parle. Promis, je vais pas distribuer les rôles tout de suite."
+    elias inquiet "Merde ! Ma tablette... Elle est restée dans ma chambre. Kael, je peux voir la tienne ?"
+    kael reflechit "Y a presque rien. Juste la proposition, sans les précisions. Un devoir rendu sans les annexes."
+    julian sourire "Justement ! On pourrait profiter du déjeuner pour comparer nos idées. Une discussion structurée, chacun son tour..."
+    lysa blase "Tu viens d'entrer et tu veux déjà diriger les débats ? Laisse-moi finir ma tartine avant d'élire un président."
+    julian taquin "Je proposais seulement qu'on soit efficaces. Mais si ça vous effraie autant que ça..."
     "Julian se sert un verre d'eau pendant que les conversations reprennent, beaucoup moins sérieusement qu'avant."
-    elen surpris "Au fait, Sael, tu disais qu'on n'utilisait pas d'argent chez toi. Vous faisiez comment pour les échanges ?"
-    sael neutre "On produit ce qu'on peut et on s'aide. Il arrive qu'on manque de quelque chose, mais on trouve souvent une solution entre nous."
-    elen joie "C'est comme vivre dans un grand village, alors ?"
-    sael sourire "C'est exactement ça. On habite au pied du Mont Kensen."
-    ryn reflechit "Ah ouais ? Je connais le nom. T'as grandi là-bas ?"
-    sael neutre "Oui. Et maintenant, je dirige le village."
-    elen surpris "Sérieux ? Mais je pensais que tu travaillais dans les champs, moi !"
-    sael sourire "Je fais ça aussi. Diriger le village, ça ne veut pas dire rester assise toute la journée."
-    noam sourire "Je comprends mieux pourquoi tu as l'habitude de t'occuper des autres."
-    sael reflechit "On a toujours dû se débrouiller. Et depuis que Kami a fermé les passages, au moins, les groupes armés ne viennent plus nous attaquer."
-    ryn colere "Ouais, sauf que de notre côté, on se retrouve avec des gens qui meurent parce qu'ils veulent passer. Faut pas oublier ça."
-    sael mefiant "Je n'ai pas dit que tout ce que fait Kami était bien. Je dis seulement que chez nous, certaines choses se sont améliorées."
-    ryn colere "Pour vous, peut-être. À Limen, c'est pas du tout la même histoire."
+    elen surpris "Sael ! Chez toi, vous faites comment si vous voulez quelque chose que vous n'avez pas ? Du troc ?"
+    sael neutre "On produit ce qu'on peut. On partage ce qui manque. Ce n'est pas toujours facile, mais personne n'a besoin de faire une offre pour mériter son repas."
+    elen joie "C'est comme une immense colocation ! Avec des champs !"
+    sael sourire "On appelle ça un village, oui. Au pied du mont Kensen."
+    ryn reflechit "Kensen ? Je connais ce nom. Tu viens vraiment de là-bas ?"
+    sael neutre "J'y ai grandi. Aujourd'hui, j'en suis responsable."
+    elen surpris "Attends... c'est toi la cheffe ?! Mais tu travailles dans les champs !"
+    sael sourire "La terre ne se cultive pas depuis une chaise. Et les autres n'auraient aucune raison de m'écouter si je ne faisais rien."
+    noam sourire "Ça explique pourquoi tu as toujours l'air d'attendre que quelqu'un fasse une bêtise."
+    sael reflechit "On s'est longtemps débrouillés seuls. Depuis la fermeture des passages, les bandes armées ne viennent plus jusqu'à nous. Ça, au moins, on ne peut pas le nier."
+    ryn colere "Ah ouais ? Chez nous, il y a des gens qui meurent en essayant de franchir ces foutues frontières. Tu veux qu'on les remercie, aussi ?"
+    sael mefiant "Je n'ai pas dit que la fermeture était juste pour tout le monde. J'ai dit que les attaques avaient cessé chez nous. Ce n'est pas la même chose."
+    ryn colere "C'est pratique, de pouvoir parler de paix quand on est du bon côté de la barrière !"
+    sael colere "Et tu crois que je ne sais pas ce que c'est, de perdre des gens ?"
+    ryn colere "Alors ne me parle pas comme si cette frontière nous avait tous sauvés !"
+    elen peur "Hé... On peut se calmer ?"
+    sael mefiant "Je ne t'ai pas demandé d'être d'accord. Je te demande d'écouter."
+    think "Personne n'élève plus la voix. Le silence n'a rien réglé."
     "Ryn repousse légèrement sa chaise. Je crois qu'il va partir, mais il reprend sa tasse et reste assis."
-    elias reflechit "On vit vraiment pas tous de la même manière. Moi qui pensais juste à pouvoir réparer mes machines..."
-    mara neutre "C'est justement pour ça qu'on devrait en apprendre un peu plus avant de décider. J'aimerais bien savoir ce qu'on pourra échanger, et avec qui."
-    nyra neutre "On aura la version de Kami avant le vote. À ce moment-là, on pourra en reparler."
-    iris fatigue "Ça vous va si on attend d'avoir le texte pour commencer à s'engueuler ? Parce que mon repas est en train de refroidir."
-    elen content "Moi, je veux bien ! Et après, Sael, tu me raconteras comment c'est, ton village ?"
+    elias reflechit "Et moi je parlais de boulons, il y a cinq minutes... J'ai l'air malin."
+    mara neutre "Voilà pourquoi je me méfie des propositions qui tiennent sur une serviette. Chacun entend ce qui l'arrange."
+    nyra neutre "On aura un texte rédigé par Kami avant le vote. C'est ce texte-là qu'il faudra juger, pas nos souvenirs du commerce."
+    iris fatigue "Formidable. Maintenant que vous avez fini de régler les problèmes du monde, je peux réchauffer mon repas ?"
+    elen content "Moi, j'aimerais bien visiter ton village ! Enfin... quand on aura le droit de quitter cette boîte."
     sael sourire "Si tu veux."
     "La conversation part sur les montagnes de Limen, puis sur les réparations qu'Elias a déjà dû faire avec du matériel de récupération. Ryn parle peu, mais il écoute."
     "Je finis tranquillement mon repas. On n'est pas d'accord sur grand-chose pour le moment, mais j'ai au moins appris des choses sur les autres."
@@ -418,14 +423,14 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     $ hideGroup()
 
-    think "Je finis mon repas pendant que Mara et Iris continuent à se chamailler à voix basse. Même après le départ de Ryn, personne ne semble détendu."
+    think "Je termine mon repas au milieu des reproches et des bruits de couverts. Ryn est parti, mais la dispute a laissé une place vide à table."
 
     stop music fadeout 0.8
     pause 0.6
 
     hide screen day2_quick_vote_notes
 
-    think "Je quitte la cafétéria. J'ai besoin de parler à quelqu'un sans que tout le groupe nous écoute."
+    think "Je quitte la cafétéria. Si je veux comprendre ce texte avant demain, il va falloir écouter les autres autrement qu'au milieu d'une bagarre de table."
 
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
 
@@ -450,8 +455,8 @@ label _2_APRES_MIDI:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     show screen day2_quick_vote_notes
 
-    think "J'ai besoin de changer d'air. La salle d'observation est de l'autre côté du Conclave."
-    think "Je peux prendre le temps de parler aux autres en chemin. Ou continuer directement."
+    think "J'ai besoin de marcher. Et, surtout, d'arrêter d'entendre « comme avant » dans ma tête."
+    think "La salle d'observation est à l'autre bout de la station. Ça me laisse le temps d'écouter les autres... ou de fuir les conversations, pour une fois."
 
     jump OPEN_CONCLAVE_MAP
 
@@ -467,17 +472,17 @@ label _2_APRES_MIDI_MARA_SAEL:
         ("sael", "mefiant", 0.65),
     ])
 
-    mara mefiant "Tu penses vraiment qu’ils vont nous laisser voter tranquilles ? Tout va évidemment être manipulé."
+    mara mefiant "Tu crois vraiment qu'on va poser nos petits bulletins dans l'urne et rentrer sagement au lit ? Elle va trouver un moyen de nous piéger."
 
-    sael mefiant "Kami n'a pas besoin de nous orienter. Elle attendra que nos peurs le fassent."
+    sael mefiant "Kami n'a même pas besoin de nous pousser. Il lui suffit de nous regarder avoir peur les uns des autres."
 
-    mara taquin "T'es toujours aussi rassurante."
-    sael neutre "Je ne cherche pas à te rassurer."
+    mara taquin "C'est fascinant. Même quand tu me donnes raison, tu trouves le moyen de me déprimer."
+    sael neutre "Je ne cherche pas à te rassurer. Je préfère que tu fasses attention."
 
     think "Mara regarde Sael, qui ne rajoute rien."
 
-    mara stress "À plus tard."
-    mara doute "… si tout a pas déjà explosé d’ici là."
+    mara stress "Bon... je vais peut-être arrêter de plaisanter cinq minutes."
+    mara doute "À plus tard. Sauf si tout nous explose à la figure avant."
 
 
     $ hideGroup()
