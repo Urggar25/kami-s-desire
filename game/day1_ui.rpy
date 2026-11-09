@@ -356,7 +356,7 @@ screen day_period_hud():
 
 
 screen day_period_hud_content():
-    zorder 65
+    zorder 245
 
     $ _acc = _hud_accent(current_period)
     $ _period_step = _hud_period_step(current_period)
