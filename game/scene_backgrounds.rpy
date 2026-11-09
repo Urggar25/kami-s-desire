@@ -576,9 +576,9 @@ image stockage = DynamicDisplayable(automatic_scene_image_dynamic, "images/backg
 screen room_scene_background(room_name, navigation=True):
     add room_scene_displayable(room_name) at cover_screen
 
-    if navigation and room_scene_has_variants(room_name):
-        use room_scene_navigation_band(room_name, -1, 0)
-        use room_scene_navigation_band(room_name, 1, config.screen_width - ROOM_SCENE_NAV_WIDTH)
+    # Les bandes de navigation sont volontairement dessinees en dernier,
+    # depuis room_scene_interactions, pour rester cliquables au-dessus
+    # des zones interactives (ex. bibliotheques d'archive1).
 
 screen room_scene_navigation_band(room_name, direction, xpos_value):
     button:
@@ -611,3 +611,9 @@ screen room_scene_interactions(room_name, label_overrides=None):
                 xpos 0
                 ypos 0
                 action Jump(target_label)
+
+    # Priorite de clic aux bandes, meme si la zone d'un objet s'etend
+    # jusque sur les bords de l'image. Elles sont ajoutees APRES les hotspots.
+    if room_scene_has_variants(room_name):
+        use room_scene_navigation_band(room_name, -1, 0)
+        use room_scene_navigation_band(room_name, 1, config.screen_width - ROOM_SCENE_NAV_WIDTH)
