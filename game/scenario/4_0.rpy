@@ -546,16 +546,18 @@ label _4_0_APRES_CLASH_PRE_FETE:
 
     play music "music/bgm_world_decline.mp3" fadein 2.0
 
-    ryn colere "Bon, on a réussi à se disputer alors qu'on vient juste de découvrir le sujet. Ça commence bien."
-    elias reflechit "Ouais, bah moi, je vais manger. Je sais pas vous, mais j'ai pas envie de passer tout l'après-midi à m'engueuler."
-    iris sourire "Pour une fois, je suis d'accord avec toi. On pourrait se retrouver à la salle de repos plus tard, sans parler de politique."
-    lysa blase "On peut essayer. Mais faudra confisquer la tablette de Ryn."
-    ryn colere "Oh, ça va, toi !"
-    elen joie "Moi je viens ! Si Goumi veut bien me laisser avoir du chocolat, je partage."
-    kael calme "Je passerai peut-être après. Il faut que je vérifie quelque chose avant."
-    nyra neutre "D'accord. Et demain, on essaiera de discuter sans se mettre à hurler dès le début."
-    "Les autres commencent à quitter la salle. Iris et Elen discutent déjà de ce qu'elles pourraient faire à la salle de repos, tandis que Ryn s'éloigne de son côté."
-    think "Sael a annoncé qu'elle voterait contre. Ce n'est pas une bonne nouvelle, mais au moins je comprends mieux ce qui lui fait peur. Je me demande si on arrivera à parler de tout ça plus calmement."
+    ryn colere "Bon. Bravo à tous. On n'a même pas encore voté et on a déjà réussi à se foutre sur la gueule."
+    elias reflechit "Moi, je vais manger. Je refuse de mourir d'épuisement pendant une discussion où personne ne m'a demandé mon avis."
+    iris sourire "Étonnamment, Elias vient d'avoir une bonne idée. On pourrait se retrouver en salle de repos ce soir. Et je propose une règle : pas un mot de politique."
+    lysa blase "Très bien. Mais on confisque le droit de parole à Ryn avant d'entrer."
+    ryn colere "OH, ÇA VA ! Je suis parfaitement capable de passer une soirée sans parler des frontières !"
+    elen joie "MOI JE VIENS ! Et s'il reste du chocolat quelque part, je le retrouve. Faites-moi confiance !"
+    kael calme "Je passerai peut-être après. J'ai encore un détail à vérifier avant de pouvoir me détendre."
+    nyra neutre "Très bien. Et demain, si on pouvait attendre au moins cinq minutes avant de hurler, ce serait un progrès mesurable."
+    "Iris et Elen commencent aussitôt à débattre des activités autorisées en salle de repos. Ryn s'éloigne en protestant qu'il n'a jamais eu besoin qu'on surveille ses conversations."
+    think "J'entends presque la même dispute qu'il y a cinq minutes. Elle me paraît pourtant beaucoup moins grave."
+    think "Sael a annoncé qu'elle votera contre. Une seule voix suffit, et nous avons déjà cette voix."
+    think "Je n'ai pas envie de lui en vouloir. C'est presque ce qui me fait le plus peur."
 
     jump _4_0_FIN_SOIREE
 
@@ -568,19 +570,27 @@ label _4_0_FIN_SOIREE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    "Je passe rapidement à la cafétéria pour prendre un morceau de pain avant de retourner dans ma chambre."
-    "En traversant le dortoir, je remarque de la lumière sous la porte de Julian. J'hésite à frapper, puis je continue. Il m'a clairement dit qu'il voulait qu'on le laisse tranquille."
+    "Je récupère un morceau de pain à la cafétéria. Rien d'extraordinaire. Aujourd'hui, personne ne s'est battu pour le pain. C'est déjà ça."
+    "Une lumière filtre sous la porte de Julian."
+    think "Je pourrais frapper. Il m'a demandé de le laisser tranquille ce matin."
+    think "Je reste une seconde devant sa chambre, puis je repars. Je ne suis pas sûr de lui rendre service en insistant."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je pose le pain sur mon bureau et je m'assieds sur le lit."
-    think "J'ai cru qu'on pourrait repartir de zéro avec ce nouveau vote. Mais Sael a déjà décidé qu'elle voterait contre, et je peux difficilement lui en vouloir après ce qu'elle nous a raconté."
-    think "Ryn, lui, ne supporte plus de voir des gens mourir près des frontières. J'aimerais bien qu'on puisse les aider sans mettre d'autres personnes en danger."
-    "J'entends des voix dans le couloir, puis un rire que je reconnais comme celui d'Elen. Au moins, certains ont réussi à se changer les idées."
+    "Je pose le pain sur mon bureau. Je ne sais même plus pourquoi je l'ai pris."
+    think "Ce matin, je voulais oublier le vote d'hier."
+    think "Ce soir, je connais déjà une personne qui votera contre le prochain. Et pour des raisons que je n'arrive pas à balayer."
+    think "Ryn veut empêcher de nouvelles morts. Sael aussi."
+    think "C'est peut-être la chose la plus absurde de cette journée : ils se sont presque battus en voulant protéger les autres."
+    "Un éclat de rire me parvient du couloir. Elen, sans doute. Une seconde plus tard, quelqu'un lui demande de parler moins fort."
+    think "Au moins, la station ressemble encore parfois à un endroit où l'on peut simplement vivre."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
-    think "Je vais essayer de dormir. Demain, on aura peut-être l'occasion de parler à Sael sans toute la salle autour."
+    think "Demain, je pourrai peut-être parler à Sael sans lui demander de choisir entre son village et les morts de Limen."
+    think "J'espère surtout réussir à poser une question avant de proposer une solution."
     $ blink()
-    "Je finis par m'endormir."
+    "Je ferme les yeux."
+    think "Un non a déjà été annoncé. Le vote n'aura lieu que dans deux jours."
+    think "Il reste du temps. Je ne sais pas encore si c'est une chance, ou une façon de prolonger l'attente."
 
     $ current_day = 5
     pause 1.5
