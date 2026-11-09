@@ -219,6 +219,7 @@ label decouverte_sas:
     "Mara se laisse tomber contre une caisse et finit par reprendre son souffle."
     mara sourire "Moi c'est Mara. Axiome. Et toi, le type qui vient d'avoir la peur de sa vie ?"
     $ unlock_character_name("mara")
+    call kd_play_character_intro("mara") from _call_kd_intro_mara_j1
     noam neutre "Noam. Harmonie."
     mara taquin "Harmonie ? Ah, ça explique pourquoi t'as essayé de parler poliment à la porte avant de gueuler."
     noam taquin "C'est sûr que toi, tu as commencé par l'insulter."
