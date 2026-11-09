@@ -258,6 +258,7 @@ label decouverte_cafeteria:
 
     elen sourire "Au fait, moi c'est Elen. J'ai tellement passé de temps à discuter avec ce truc que j'en ai oublié de me présenter."
     $ unlock_character_name("elen")
+    call kd_play_character_intro("elen") from _call_kd_intro_elen_j1
     noam sourire "Noam. Et lui, c'est Goumi, le chef qui sait nous nourrir sans nous donner envie de recommencer."
     goumi vide "Je suis conçu pour satisfaire toutes les demandes alimentaires compatibles avec les réserves disponibles."
     elen rire "Alors commence par apprendre le mot « plaisir », ça te fera pas de mal."
