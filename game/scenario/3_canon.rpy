@@ -854,18 +854,13 @@ label _3_TRANSITION_CONCLAVE:
     scene couloir_dortoir at adaptive_fullscreen with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
-    think "Bientôt l'heure. Le couloir paraît plus étroit, moins amical, comme s'il se resserrait sur nous."
+    think "Je retrouve les autres dans le couloir. Tout le monde avance vers le Conclave, mais personne n’a vraiment envie de discuter."
 
     $ showGroup([
         ("noam", "neutre", 0.50),
     ])
 
-    think "Respire, Noam. C'est juste un vote."
-    think "Alors pourquoi mon cœur cogne comme ça ?"
-    think "Une sueur froide glisse dans ma nuque. J'ai l'impression d'être observé plus que d'habitude."
-    think "Les caméras, évidemment. Pourquoi auraient-elles disparu aujourd'hui, justement ?"
-
-    think "Le groupe converge peu à peu vers le Conclave, tout le monde partageant le même silence épais."
+    think "Je repense à Tomas. J’aimerais que le texte passe, mais pas parce que quelqu’un aura eu trop peur de dire non. Je suis encore déterminé à essayer, même après cette dispute."
 
     $ showGroup([
         ("lysa", "neutre", 0.25),
@@ -879,7 +874,7 @@ label _3_TRANSITION_CONCLAVE:
     lysa triste "Et demain on sera encore coincés ici. Dans trois jours, on recommencera."
     lysa blase "On est douze à jouer les députés pendant qu'elle décide de tout."
 
-    think "Elle ne me parle pas vraiment. Elle récite une conclusion qu'elle a déjà tranchée toute seule."
+    think "Lysa dit ça sans vraiment attendre de réponse. Elle paraît déjà convaincue qu’on va échouer."
 
     noam reflechit "On n'a pas encore voté, Lysa."
     noam sourire "Attends au moins le résultat avant de nous enterrer."
@@ -1433,7 +1428,7 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    noam "Bon. On sait ce qu'elle veut nous faire voter. Parlons des conséquences."
+    noam inquiet "Bon, je crois qu’on a tous compris ce qu’elle a ajouté. Mais qu’est-ce qu’on fait, maintenant ? Moi, j’ai pas envie de décider ça à la va-vite."
 
     julian "La tête ? On est en train de crever à petit feu, Noam."
     julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
@@ -1516,11 +1511,37 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    lysa reflechit "D'accord, les gens auront au moins un moyen de gagner de l'argent."
-
-    nyra reflechit "Et si les échanges reprennent, des entreprises pourront se remettre à tourner."
-
-    ryn reflechit "Ouais, sur le papier. Mais qui décide des contrats ? Elle. Toujours elle."
+    elen inquiet "Attendez, il faut travailler pour avoir à manger, maintenant ? Mais ceux qui sont malades, ils font comment ?"
+    ryn colere "Et les vieux ? Et les gens qui peuvent pas bosser ? Tu vas les laisser crever ?!"
+    sael determine "Chez moi, on s'occupe de ceux qui ne peuvent pas travailler. Tout le monde ne peut pas produire autant."
+    mara colere "Donc elle supprime les rations et elle décide elle-même qui a le droit de gagner de l'argent. Vous voyez le problème ou pas ?!"
+    julian reflexion "Au moins, les gens pourront retravailler et recevoir quelque chose en échange. On peut pas rester bloqués avec les anciens bons."
+    lysa blase "Et si les contrats sont tous proposés à Nexus ? Les autres vont faire quoi, marcher pendant trois jours pour aller bosser ?"
+    elias reflechit "Pour réparer une machine, moi, j'aurais du boulot. Mais les gens qui ont pas de métier comme ça... j'en sais rien."
+    tomas inquiet "Et les premiers salaires, ils seront versés quand ? Le jour même ? Dans une semaine ? Faut bien manger entre-temps !"
+    nyra raison "Kami, tu peux au moins préciser quand les contrats commencent et comment les districts seront approvisionnés ?"
+    show screen kami_broadcast_ui
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Les contrats seront disponibles dès l'entrée en vigueur du texte. Pour le reste, je vous laisse organiser votre merveilleuse nouvelle économie !"
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("kael", "calme", -0.11),
+        ("iris", "fatigue", 0.02),
+        ("sael", "determine", 0.15),
+        ("elen", "inquiet", 0.28),
+        ("julian", "sourire", 0.41),
+        ("mara", "neutre", 0.54),
+        ("ryn", "reflechit", 0.67),
+        ("nyra", "triste", 0.80),
+        ("tomas", "hesitation", 0.93),
+        ("lysa", "reflexion", 1.06),
+        ("elias", "reflechit", 1.19),
+    ])
+    iris colere "Ah bah super ! Elle nous donne les contrats, mais on doit se débrouiller pour le reste !"
+    kael inquiet "Sur Orbite, si les livraisons ne suivent pas, des gens peuvent mourir très vite. Ce n'est pas une question de confort."
+    noam inquiet "Je voulais qu'on puisse acheter ce qui nous manque, pas qu'on retire à tout le monde le droit de manger. Et là, on doit se décider sans même savoir comment ça va fonctionner."
+    sael neutre "Il faudra choisir malgré ça. Mais ce n'est pas une raison pour faire semblant que tout ira bien."
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Dernier échange — Quel argument présenter ?")
@@ -1537,12 +1558,11 @@ label _3_DEBAT1_PHASE3:
 
     pause 1.0
 
-    noam "Bon, je crois qu'on a fait le tour."
-    noam "On sait ce que ce texte change. Pour le reste... il faudra assumer notre vote."
+    noam inquiet "Bon... On peut encore en parler pendant des heures, mais je crois que personne n’aura toutes les réponses aujourd’hui."
+    nyra neutre "Oui. On sait au moins ce qu’on risque de perdre, et ce qu’on pourrait gagner. À chacun de voir."
 
     # ── CLIFFHANGER 2 : le dernier indécis, avant le vote ──
-    think "Je regarde autour de la table. Les visages se sont figés. Chacun a choisi. Ou presque."
-    think "Presque."
+    think "Je regarde Kael. Il a encore l’air de chercher ce qu’il va faire, et je ne crois pas que je serais capable de le convaincre avec une phrase de plus."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -1561,7 +1581,7 @@ label _3_DEBAT1_PHASE3:
     kael triste "Sur Orbite, une erreur ne pardonne pas. Et là, je n'arrive pas à voir si on ouvre une porte…"
     kael peur "…ou si on retire le dernier filet sous nos pieds."
 
-    noam "Kael. Regarde-moi. Pour ou contre ?"
+    noam inquiet "Kael, t’as toujours pas décidé ? On peut encore attendre une minute si t’as besoin."
 
     think "Il ouvre la bouche."
 
@@ -1677,7 +1697,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
         tomas raison "Sur Orbite, il y a pourtant peu de morts. Les règles actuelles ont aussi cet avantage."
 
-        julian hesitation "On n'interdit rien de plus, pourtant… Enfin. Je vois l'idée. Mais je vois aussi le vide sous nos pieds."
+        julian hesitation "On n’interdit rien de plus... enfin, je vois le risque. Mais on peut pas renoncer à chaque fois parce qu’on a peur."
 
         lysa blase "Il suffit qu'une livraison merde et ils ont un gros problème. On a compris."
 
@@ -1778,9 +1798,9 @@ label _3_DEBAT1_PHASE3_INT2:
 
         elias determine "C'est ça qui libère ! Plus de bons, plus de laisse. On produit, on échange, on vit."
 
-        noam "Le texte est binaire. Pour : suppression totale, tout de suite. Contre : rien ne change. Aucun entre-deux."
+        noam inquiet "On peut pas garder les bons juste quelques semaines de plus. Soit on les supprime d’un coup, soit on refuse tout. C’est ça qui me fait peur."
 
-        kael triste "Aucune transition. On saute sans corde. Sur Orbite, ça, c'est un arrêt de mort."
+        kael triste "Sur Orbite, si on arrête les livraisons avant de savoir les remplacer, on risque d’avoir des morts. On peut pas faire ça du jour au lendemain."
 
         lysa blase "Y a écrit « supprimer ». Pas « réduire ». C'est quand même pas compliqué."
 
@@ -1825,7 +1845,7 @@ label _3_DEBAT1_PHASE3_INT2:
 
         sael determine "On survit déjà. On peut faire plus que survivre."
 
-        think "Ryn baisse les yeux. Kael recalcule. Le troc existe déjà — l'idée trouve enfin une prise."
+        think "Ryn baisse les yeux. Kael pose quelques questions à Sael sur la façon dont ils organisent les échanges chez elle."
 
         # Rassure les hésitants avec une preuve concrète : le levier de l'unanimité.
         $ debat_day3_apply_influence({"ryn": 2, "kael": 2, "mara": 1, "sael": 1, "julian": 1})
@@ -1921,7 +1941,7 @@ label _3_VOTE_POUR:
     kael mefiant "Orbite tiendra. Si les protocoles de sécurité restent intacts."
     kael triste "Si."
 
-    think "Julian souriait trop fort. Elen rayonne et tremble. Ryn fixe le sol. Kael compte ses respirations."
+    think "Julian essaie de sourire, mais Elen paraît surtout soulagée. Ryn garde les yeux baissés, tandis que Kael parle tout bas avec Nyra."
     think "Personne n'exulte. Le plus dur commence maintenant."
 
     $ hideGroup()
@@ -2027,7 +2047,7 @@ label _3_VOTE_CONTRE:
     noam "Attendez— un par un ! On ne va pas se déchirer devant le monde entier."
 
     think "Presque dix-sept heures. La journée est finie. Le vote aussi. Rien n'a changé."
-    think "Et pourtant, quelque chose s'est brisé dans le groupe. Ça, ça ne se répare pas au vote suivant."
+    think "Maintenant, certains vont chercher qui a voté contre, même si le scrutin est secret. Je n’aime pas du tout la façon dont Julian regarde les autres."
 
     think "Je me lève. Les voix continuent sans moi. Je veux juste rentrer et arrêter de réfléchir."
 
@@ -2038,11 +2058,12 @@ label _3_VOTE_CONTRE:
     think "Mes pas résonnent dans les couloirs froids."
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_190
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    think "Je m'effondre sur le lit."
+    think "Je traverse le dortoir sans m’arrêter."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_191
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "Le silence est pire que les cris. On avait une chance. Une seule voix l'a refermée."
+    think "Je m’effondre sur mon lit sans même prendre le temps de me changer."
+    think "J’entends encore Julian s’énerver. On avait une chance d’adopter ce texte, et maintenant je me demande comment on va réussir à travailler ensemble au prochain vote."
     think "Qu'est-ce qu'on peut faire, maintenant ?"
 
     $ phase3_over = True
