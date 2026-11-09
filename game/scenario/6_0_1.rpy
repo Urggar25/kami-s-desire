@@ -422,25 +422,21 @@ label _6_0_1_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
 
-    think "Le résultat reste affiché quelques secondes. Il n'a surpris personne."
+    "Le résultat s'affiche. Les votes contre sont nettement majoritaires, et l'amendement est rejeté. Je reconnais le nom de Sael dans le dépouillement."
+    $ hideGroup()
+    call j601_sael_vote_animation from _call_j601_sael_vote_animation
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_world_decline.mp3" fadein 1.0
+    think "Sael a tenu parole. Elle n'avait jamais dit qu'elle hésitait, mais voir son vote affiché rend la situation plus difficile pour Ryn."
 
     show screen kami_broadcast_ui
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-
-    kami "Résultat du vote."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Résultat du vote : absence d'unanimité. La proposition d'ouverture des frontières est rejetée."
     $ interject("REJETÉ", color="#FF4D6D")
-    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    kami "Ab— Absence d'unanimité. Amendement rejeté."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "La libre circulation entre… demeure interdite."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen
-    kami "Statu quo maintenu."
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Prévis—ble. Décevant. Mais prévisible."
-
+    pause 0.4
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Les restrictions actuelles restent donc en vigueur. Nous nous retrouverons pour le prochain vote."
+    "Sa voix paraît presque normale, mais son image disparaît avant la fin de la transition habituelle."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
@@ -450,41 +446,24 @@ label _6_0_1_VOTE:
         ("iris", "fatigue"),
         ("mara", "doute"),
         ("tomas", "inquiet"),
-        ("julian", "sourire"),
+        ("julian", "decu"),
         ("elias", "fatigue"),
         ("lysa", "fatigue"),
     ])
-
-    ryn colere "Putain..."
-
-    iris triste "Je sais même pas quoi dire face à ce qui vient de se passer."
-
-    sael triste "C'était de toute façon nécessaire."
-
-    ryn colere "...Ne dis pas ça."
-
-    sael triste "Je le pense."
-
-    ryn triste "C'est bien ça le problème."
-
-    tomas "C'était... catastrophique."
-
-    julian triste "... Évidemment. Cette conclusion était certaine."
-    julian taquin "C'est ce qui arrive quand je reste loin des débats."
-
-    think "Quel enfoiré celui-là."
-
-    elias triste "De toute façon, on savait comment ça finirait. T'aurais rien pu changer."
-    elias "Les bugs ont juste rendu le choix encore plus évident."
-
-    think "Elias ne défend même pas son choix. Il est vidé."
-
-    "Tout le monde repart peu à peu."
-
-    hide sael with moveoutright
-
-    think "C'est terminé."
-    think "Mais rien n'est réglé."
+    ryn colere "C'est donc fini. Tous ceux qui attendaient devant les frontières vont rentrer chez eux, et nous, on va faire quoi ? On va encore se dire qu'on a fait de notre mieux ?"
+    sael triste "Je sais que tu es en colère. Je ne te demande pas d'être d'accord avec moi."
+    ryn colere "Bah heureusement, parce que j'y arriverai pas !"
+    mara agace "Ryn, elle avait annoncé sa position avant le vote. Tu pouvais pas découvrir ça aujourd'hui."
+    ryn triste "Je sais, Mara. Mais ça m'empêche pas d'avoir envie de hurler."
+    tomas inquiet "Moi, ce qui me fait peur, c'est qu'on ait voté alors que Kami avait un problème. Comment on sait que tout a été enregistré correctement ?"
+    kael reflechit "Le dépouillement a affiché douze votes, et les vérifications de base semblent correctes. Ça ne nous dit pas pourquoi Kami a perdu le signal."
+    iris inquiet "Donc on vient de constater que la seule chose qui contrôle nos vies peut tomber en panne, et on a juste le droit de rentrer dans nos chambres ?"
+    elias fatigue "Je vais demander à Kael si on peut vérifier quelque chose sur les systèmes de la station. Je sais pas si on aura accès à grand-chose, mais au moins on peut essayer."
+    julian decu "Je voulais une victoire pour le Conclave. À la place, on a deux votes rejetés et une IA qui arrive à peine à tenir une réunion."
+    lysa blase "Pour une fois, t'as résumé la situation sans nous expliquer pourquoi tu aurais fait mieux."
+    julian taquin "Profites-en, ça risque de pas se reproduire."
+    "Quelques personnes sourient malgré elles. Ryn ne réagit pas et quitte la salle sans saluer personne."
+    think "Le vote est terminé, mais les interruptions de Kami préoccupent presque autant le groupe que le résultat. Personne ne sait vraiment ce qui a provoqué ces problèmes."
 
     jump _6_0_1_FIN_JOURNEE
 
