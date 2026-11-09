@@ -58,8 +58,21 @@ screen pnc_dortoir():
     modal True
     zorder 200
 
+    # Le rendu est ordonné indépendamment de la priorité des clics.
+    # 1) Décor, puis image de la porte, puis personnages.
+    # 2) Zone de clic transparente EN DERNIER pour donner priorité
+    #    à la porte lorsqu'un sprite empiète sur ses pixels.
+    default corridor_door_hovered = False
+    $ corridor_door_path = "images/background/interact/dortoir/porte_couloir_dortoir.png"
+
     add Solid("#000")
     add "images/background/scene/bg_dortoir.png" at cover_screen
+
+    # La porte appartient visuellement au décor, pas au premier plan.
+    if corridor_door_hovered:
+        add room_interaction_layer(corridor_door_path, "dortoir", "hover")
+    else:
+        add room_interaction_layer(corridor_door_path, "dortoir", "art")
 
     if social_free_time_active():
         $ chambre_door_path = "images/background/interact/dortoir/porte.png"
@@ -89,16 +102,16 @@ screen pnc_dortoir():
             yalign 1.00
             action Jump("_3_OPT_KAEL_DIAL")
 
-    # La porte doit être visible même sans survol (notamment au J2).
-    # Dessiner son bouton après les PNJ permet aussi de garder la sortie
-    # cliquable si un sprite empiète sur la zone de la porte.
-    $ corridor_door_path = "images/background/interact/dortoir/porte_couloir_dortoir.png"
+    # Seule la zone de clic est au premier plan : aucun pixel dessiné
+    # ici ne peut masquer Nyra, Kael ou un autre personnage.
     imagebutton:
-        idle room_interaction_layer(corridor_door_path, "dortoir", "art")
-        hover room_interaction_layer(corridor_door_path, "dortoir", "hover")
+        idle room_interaction_null()
+        hover room_interaction_null()
         focus_mask room_interaction_layer(corridor_door_path, "dortoir", "art")
         xpos 0
         ypos 0
+        hovered SetScreenVariable("corridor_door_hovered", True)
+        unhovered SetScreenVariable("corridor_door_hovered", False)
         action [
             SetVariable("corridor_current", "dortoir"),
             Jump("EXIT_ROOM_TO_CORRIDOR")
