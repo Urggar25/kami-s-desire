@@ -354,73 +354,114 @@ label _6_0_1_SIGNAL_INSTABLE:
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with hpunch
     play music "music/bgm_system_override.mp3" fadein 0.5
-    kami "J'ai besoin que vous restiez... que vous restiez ici. Ne quittez pas la salle."
-    "Une alarme discrète se déclenche sur les haut-parleurs. L'écran principal affiche pendant une seconde un message de connexion interrompue."
-    elias inquiet "C'est pas juste un souci avec les enceintes. Elle perd la communication avec les consoles, là."
-    kael inquiet "Je le vois aussi sur ma tablette. Elle essaie de se reconnecter, mais le signal saute."
-    iris inquiet "C'est censé être possible, ça ?"
-    kael reflechit "Je sais pas. Et je préfère pas te répondre au hasard."
+    kami "Restez... restez dans cette salle."
+    kami "J'ai besoin que vous... vous restiez. Ne partez pas."
+    "Un bip discret se déclenche. Sur l'écran, une ligne apparaît : « CONNEXION INTERROMPUE »."
+    think "Elle disparaît aussitôt. Pas assez vite pour que Kael la manque."
+    elias inquiet "Ça y est, j'ai des erreurs de communication partout ! Ça ne vient pas des enceintes !"
+    kael inquiet "Je vois les mêmes. Le système tente de se reconnecter, puis perd à nouveau le signal."
+    kael reflechit "On a plusieurs appareils indépendants qui décrochent en même temps. Ce n'est pas normal."
+    iris inquiet "Attends, Kami est censée contrôler toute la station. Comment elle peut perdre sa propre connexion ?"
+    kael reflechit "Je n'en sais rien. Et inventer une explication maintenant nous ferait plus de mal que de bien."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "La séance doit continuer normalement. Je vais... régler cela."
-    "Sa voix s'interrompt. Sur les consoles des représentants, les notifications disparaissent brièvement avant de revenir."
-    noam inquiet "On devrait peut-être attendre que tout fonctionne avant de voter."
+    kami "La séance... doit continuer normalement."
+    kami "Je vais régler... cela. Je vais le régler."
+    "Toutes les tablettes s'éteignent presque en même temps."
+    elen peur "HÉ ! J'AI PLUS RIEN !"
+    "Les écrans se rallument."
+    lysa blase "Génial. Le monde entier est géré par une machine qui redémarre comme un vieux grille-pain."
+    noam inquiet "On devrait arrêter le vote jusqu'à ce qu'on soit sûrs que les systèmes fonctionnent !"
     scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Non. Attendre n'est pas... nécessaire."
+    kami "Non."
+    kami "Attendre... attendre n'est pas nécessaire."
     play sound "sfx/glitch_loop.mp3"
-    "Un grésillement plus fort résonne dans la salle. Je protège mes oreilles et je vois Elias se pencher vers le terminal devant lui."
+    "Un grésillement traverse la salle. Je plaque mes mains sur mes oreilles."
+    "Devant moi, des caractères défilent à toute vitesse."
+    elias inquiet "Noam ! Regarde ton écran ! Il y a quelque chose à faire, je crois !"
     call j601_play_signal_instable from _call_j601_play_signal_instable
     stop sound fadeout 0.5
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_debate_low.mp3" fadein 1.0
-    "Le bruit cesse d'un coup. Je regarde les écrans : certains affichent de nouveau nos dossiers, mais d'autres sont encore bloqués."
-    elen inquiet "C'est bon ? On dirait qu'elle est revenue."
-    kael inquiet "Pas complètement. Il y a des connexions qui répondent encore avec du retard."
-    ryn colere "Et elle veut qu'on vote avec ça ? Elle se fout de nous ?"
-    nyra reflechit "Personne n'a intérêt à se précipiter. Même si le vote doit finir par avoir lieu, il faut au moins que le système fonctionne."
-    "Kami réapparaît sur l'écran central. Son visage est parfaitement immobile, alors que sa voix arrive avec une seconde de décalage."
+    "Le son s'arrête aussi brusquement qu'il avait commencé."
+    "Plusieurs écrans reviennent à la normale. Celui de Tomas continue d'afficher une ligne d'erreur."
+    think "C'est la première fois que le silence de Kami me donne envie de l'entendre revenir."
+    elen inquiet "C'est terminé ? Dites-moi que c'est terminé..."
+    elen inquiet "Je préfère quand elle nous insulte, c'est dire."
+    kael inquiet "Non. Les connexions ne sont pas toutes rétablies. Certaines répondent avec plusieurs secondes de retard."
+    ryn colere "Et on est censés mettre nos bulletins dans ÇA ?! Autant tirer au sort !"
+    nyra reflechit "On ne vote pas avant de savoir si le scrutin peut être enregistré correctement. C'est le minimum."
+    "Kami réapparaît. Son sourire est parfaitement immobile."
+    "Sa voix arrive une seconde avant que ses lèvres bougent."
+    think "C'est peut-être la même IA. J'ai pourtant l'impression de regarder quelque chose qui essaie de l'imiter."
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je suis toujours là. Les systèmes du Conclave sont... disponibles. Nous pouvons poursuivre."
-    mara mefiant "C'est pas vrai, on vient de voir des écrans s'éteindre !"
-    kami "Ils sont disponibles."
-    "Personne ne répond. Même ceux qui veulent en finir ne semblent plus très pressés."
+    kami "Je suis... toujours là."
+    kami "Les systèmes du Conclave sont disponibles. Nous pouvons poursuivre."
+    mara mefiant "Tu plaisantes ?! On vient de voir nos tablettes s'éteindre sous nos yeux !"
+    kami "Les systèmes sont disponibles."
+    kami "Ils sont... disponibles."
+    "Personne ne lui répond."
+    think "Je n'ai jamais vu autant de gens refuser de parler à Kami en même temps. Pas même Ryn."
 
     jump _6_0_1_FRACTURE_QTE
 
 label _6_0_1_FRACTURE_QTE:
 
-    "Un nouveau message apparaît devant moi, mais les caractères changent avant que je puisse le lire. Plusieurs représentants se penchent sur leur tablette."
-    noam inquiet "Attendez, il y a un problème avec l'affichage des votes. Chez vous aussi ?"
-    tomas inquiet "Oui ! Enfin, je crois. J'avais le texte de l'amendement et maintenant ça me demande de confirmer autre chose."
-    kael inquiet "Touchez à rien, je vais regarder si c'est un affichage temporaire."
+    "Une notification apparaît devant moi."
+    "Ses caractères changent avant que je puisse finir de les lire. Une seconde ligne prend sa place."
+    think "La tablette me demande quelque chose. Le problème, c'est que la question ne reste jamais la même."
+    noam inquiet "Euh... votre tablette aussi vient de changer le texte à l'écran ?"
+    tomas inquiet "OUI ! Enfin, non ! J'avais la proposition sur les frontières..."
+    tomas peur "Maintenant ça me demande de confirmer quelque chose que je n'ai jamais vu !"
+    kael inquiet "TOUCHEZ À RIEN ! Pas de confirmation tant que le texte n'est pas stable !"
+    elias gene "Même si le bouton clignote ?"
+    kael colere "SURTOUT s'il clignote !"
     play sound "sfx/glitch_medium.mp3"
-    "L'écran du Conclave affiche des données qui se mélangent avant de revenir à la proposition initiale."
+    "Les données s'entremêlent sur l'écran principal."
+    "Pendant une seconde, les mots « libre circulation » sont remplacés par des signes incompréhensibles."
+    think "Je comprends pourquoi Tomas a retiré ses mains de la tablette. Je fais la même chose."
     call j601_play_fracture from _call_j601_play_fracture
     $ j601_fracture_result = _return
 
     scene bg_conclave at adaptive_fullscreen with dissolve
-    "Les écrans reviennent enfin sur le texte concernant les frontières. La proposition semble inchangée, mais plusieurs représentants gardent leur tablette à distance."
+    "Les caractères se stabilisent enfin."
+    "Le texte sur les frontières est revenu. Même formulation. Mêmes boutons."
+    think "Personne n'a envie d'être le premier à toucher son écran."
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
-    kami "Merci de votre patience. Nous allons maintenant passer au vote."
-    elen inquiet "Mais attends, tu vas bien ? On peut pas juste faire comme si rien ne s'était passé !"
-    kami "Les procédures ont été... rétablies. Vous pouvez voter."
-    iris colere "Et si tu te trompes en comptant nos voix ?"
+    kami "Merci de votre... patience."
+    kami "Nous allons maintenant procéder au vote."
+    elen inquiet "NON ! Attends, Kami !"
+    elen inquiet "Tu vas bien ? Parce que nous, on vient de voir la moitié de tes écrans devenir fous !"
+    kami "Les procédures ont été rétablies."
+    kami "Vous pouvez voter. Vous devez... vous pouvez voter."
+    iris colere "Et si tu comptes mal ?! On a douze vies politiques entre les mains, pas un exercice de calcul !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Le système de dépouillement est distinct de l'affichage des débats. Il est opérationnel."
-    kael reflechit "Je peux pas vérifier ça depuis ma tablette, mais on n'a pas beaucoup d'autres moyens de procéder."
-    mara colere "C'est quand même magnifique. On va voter sur le fonctionnement du monde alors que celle qui le dirige arrive à peine à terminer ses phrases."
-    sael determine "Je ne fais pas confiance à ce qui vient de se passer, mais je n'ai pas changé d'avis. Je voterai contre l'ouverture des frontières."
-    ryn colere "On le sait, Sael. T'as pas besoin de me le rappeler à chaque fois."
-    sael mefiant "Je m'adresse aux autres aussi, pas seulement à toi."
-    noam inquiet "Je veux juste être sûr qu'on vote bien sur la même proposition. Kami, tu peux nous la répéter une dernière fois ?"
+    kami "Le dépouillement utilise un système distinct."
+    kami "Il est opérationnel."
+    kami "Il est opérationnel."
+    kael reflechit "Je ne peux pas vérifier ce système depuis ici."
+    kael doute "Ça ne veut pas dire qu'il est défectueux. Mais je ne peux pas vous garantir qu'il ne l'est pas."
+    mara colere "Formidable ! Notre démocratie tient dans une boîte qui bégaie et qui nous interdit de vérifier ses calculs !"
+    mara mefiant "On est vraiment censés lui faire confiance ?"
+    sael determine "Je n'aime pas ce qui vient de se passer."
+    sael determine "Mais l'amendement est le même. Mon choix aussi. Je voterai contre."
+    ryn colere "ON SAIT, SAEL ! Tu pourrais arrêter de le répéter comme si ça rendait la chose plus facile ?!"
+    sael mefiant "Je ne te parle pas à toi seul, Ryn."
+    sael neutre "Si tu veux que je respecte ta position, commence par respecter la mienne."
+    noam inquiet "D'accord. Alors une dernière chose avant le vote."
+    noam inquiet "Kami, redis-nous exactement le texte. Pas ton résumé. Le texte."
     pause 0.3
-    kami "Autoriser la libre circulation des personnes entre les districts. Aucune autre modification n'est prévue."
-    lysa blase "Bon, au moins on sait ce qu'on nous demande. Je suis pas rassurée pour autant."
-    "Un voyant s'allume sur les tablettes. Le vote est officiellement ouvert."
+    kami "« Autoriser la libre circulation des personnes entre les districts. »"
+    kami "Aucune... aucune autre modification n'est prévue."
+    lysa blase "Très bien. On sait ce qu'on vote."
+    lysa blase "Il ne manque plus qu'à espérer que notre vote arrive au bon endroit. Un détail."
+    "Les voyants des tablettes passent au vert."
+    "Le scrutin s'ouvre."
+    think "Hier, j'avais peur du choix. Aujourd'hui, je me demande aussi si la machine comprendra celui que je ferai."
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
