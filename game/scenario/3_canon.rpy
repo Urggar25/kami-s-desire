@@ -302,16 +302,11 @@ label _3_CANON:
 
     pause 0.5
 
-    think "J'ai à peine dormi. Chaque fois que je fermais les yeux, je revoyais le même mot : unanimité."
-
+    think "Je me réveille avant l'annonce de Kami. Aucune idée de pourquoi, mais aujourd'hui je n'ai pas envie de rester au lit."
     scene bg_cg012 at adaptive_fullscreen with fade
-
-    think "Le plafond blanc me fixe autant que je le fixe."
     $ blink()
-
-    think "J'entends du monde dans le couloir. Personne ne parle bien fort."
-    think "Je crois qu'on a tous le vote en tête."
-    $ blink()
+    think "Le vote me fait peur, bien sûr. Si quelqu'un dit non, on aura passé trois jours ici pour rien. Mais si ça passe, on aura vraiment changé quelque chose."
+    think "Je me redresse et j'attrape ma tablette. Cette fois, j'ai envie d'y aller."
 
     play sound sfx_announce
     pause 1.0
@@ -330,8 +325,7 @@ label _3_CANON:
     kami "L'un de vous a écrit un texte. Dans quelques heures, on saura s'il valait vraiment la peine d'exister."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Petit rappel, mais je pense que ça commence à imprimer : il suffit d'un seul « non »."
-    kami "Un seul. Et tout ce que vous avez construit ces trois jours retourne au néant."
+    kami "Un seul « non » et votre proposition tombe à l’eau. Je sais, je vous l’ai déjà dit, mais j’adore voir vos têtes quand je le répète !"
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
     kami "Alors soyez adorables les uns envers les autres."
@@ -343,16 +337,10 @@ label _3_CANON:
     pause 0.8
     scene bg_cg012 at adaptive_fullscreen with fade
 
-    think "« J'espère les compter toutes. »"
-    think "Même quand elle sourit, elle rappelle qu'elle peut soustraire."
-
-    pause 0.6
-
+    think "Même Kami ne parvient pas à me décourager ce matin. Pour une fois, j'ai envie de lui montrer qu'on peut faire mieux que se disputer."
     scene bg_chambre at adaptive_fullscreen with fade
-
-    call day3_play_wakeup_trace from _call_day3_play_wakeup_trace
-
-    think "Debout. La cafétéria d'abord. On ne débat pas le ventre vide."
+    think "Je m'habille rapidement. Je ne sais pas comment se passera le vote, mais j'ai envie d'essayer."
+    think "Allez, petit-déjeuner. Et après, on verra."
 
     # Trajet jouable : chambre -> dortoir -> couloir -> cafétéria.
     # Kael et Julian peuvent être croisés, mais leurs dialogues restent optionnels.
@@ -1031,15 +1019,13 @@ label _3_TRANSITION_CONCLAVE:
 
     play sound sfx_door
 
-    think "…C'était un verrou ? Ils nous ont enfermés."
-    think "Pas de sortie tant qu'il n'y a pas de décision. Kami veut un vote, ou un cadavre. Pas d'entre-deux."
+    think "Les portes viennent de se verrouiller. Je vérifie rapidement la poignée : impossible de sortir. Kami compte bien nous garder ici jusqu’au vote."
 
 # ============================================================================
 # DÉBAT — PHASE 1 : le texte réel (Fatal Assembly)
 # ============================================================================
 
 label _3_DEBAT1_PHASE1:
-    call play_stat_dialogue("d3") from _call_stat_dialogue_d3
 
     pause 0.4
 
@@ -1090,14 +1076,11 @@ label _3_DEBAT1_PHASE1:
 
     ryn colere "Pourquoi elle nous sort un pavé pareil ? On voulait juste le commerce !"
 
-    tomas hesitation "C'est… c'est exactement là qu'il faut se méfier. Un texte de loi, c'est jamais neutre."
-    tomas raison "Une seule phrase en plus peut tout changer. Faut lire jusqu'au bout."
+    tomas inquiet "Attendez, si elle a ajouté des trucs, on peut se faire avoir. Il faut tout lire, même les petits passages à la fin."
 
-    nyra "Regardez la ponctuation, ça aidera à remettre les morceaux dans l'ordre."
-    nyra "On lit tout avant de commencer à se disputer, d'accord ?"
+    nyra raison "Attendez, regardez les virgules et les fins de phrase. Ça devrait nous aider à remettre les passages dans le bon ordre."
 
-    noam "D'accord. On assemble, on lit, ensuite on discute."
-    noam "Et on garde les yeux ouverts sur ce qu'elle a pu glisser dedans."
+    noam "Bon, autant s’y mettre. J’aime pas qu’elle nous fasse voter sur un truc qu’on a même pas encore lu."
 
     # Wrapper complet : intro animée, tutoriel 1ère fois, retry avec malus, résultats avec rang
     call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY") from _call_debat_phase1_run
@@ -1126,12 +1109,15 @@ label _3_DEBAT1_PHASE1:
         ("elias", "reflechit", 1.19),
     ])
 
-    lysa "« Autoriser le transport, la vente et l'échange de marchandises. »"
-    lysa colere "« En conséquence, le système de distribution de denrées est aboli. »"
+    lysa reflexion "Attendez... « Autoriser le transport, la vente et l'échange de marchandises. » Ça, d'accord."
+    lysa colere "Mais après, c'est écrit « En conséquence, le système de distribution de denrées est aboli ». Vous avez vu ça ?!"
+    elen peur "QUOI ?! Mais j'ai dit que j'étais pour ! Je savais pas que les bons allaient disparaître !"
+    ryn colere "C'EST QUOI CETTE CONNERIE ?! Vous allez nourrir les gens de Limen comment ?!"
+    tomas peur "Non... non, ça, c'était pas dans la phrase d'hier. Elle peut pas ajouter ça sans rien demander !"
+    iris colere "Kami ! T'as ajouté ça exprès, hein ?!"
+    mara colere "Voilà pourquoi je vous disais d'attendre le texte avant de promettre quoi que ce soit !"
+    nyra stress "Laissez-la répondre, on doit savoir si ce passage est définitif."
 
-    elen surpris "Quoi ? On supprime les bons ? Mais personne a demandé ça !"
-
-    tomas hesitation "A-Attendez... Ça change complètement le vote, là."
 
     jump _3_DEBAT1_PHASE2
 
@@ -1182,7 +1168,7 @@ label _3_DEBAT1_PHASE2:
     sael reflechit "Kami. Dis-nous seulement une chose : ce texte vient-il vraiment de l'un de nous ?"
 
     think "Les regards se croisent. L'écran central reste figé. Kami ne répond pas."
-    think "Le silence dure trop longtemps pour être innocent."
+    think "Kami ne répond pas. Ryn répète sa question, mais l’écran reste inchangé."
 
     lysa blase "Elle ne répondra pas. Dix votes pour douze textes, le tour de passe-passe est parfait."
     lysa colere "Elle peut changer ce qu'elle veut. Et on pourra rien prouver."
@@ -1226,7 +1212,7 @@ label day3_before_objection_protocol_minigame:
 
     ryn colere "Putain, on y passe la journée ! Les gens attendent, eux !"
 
-    think "Il a raison. Et Kami adore avoir raison à notre place."
+    think "Ryn a raison sur une chose : on n’a pas beaucoup de temps et on ne sait toujours pas si Kami accepterait de changer une ligne."
 
     play sound sfx_announce
     show screen kami_broadcast_ui
@@ -1277,8 +1263,7 @@ label day3_before_objection_protocol_minigame:
 
     mara colere "Ou alors c'est exactement ce qu'elle veut qu'on pense. Paniquer, voter vite, se planter."
 
-    noam reflexion "Elle nous montre des gens qui ont faim. Mais ça dit pas ce qui se passera si on supprime les bons."
-    noam "On peut pas décider juste parce qu'elle nous fait peur."
+    noam inquiet "Je sais qu’ils ont faim, mais si on supprime les bons maintenant, ils risquent d’avoir encore moins à manger. On peut pas décider juste parce qu’elle nous fait peur."
 
     jump _3_DEBAT1_PHASE3
 
