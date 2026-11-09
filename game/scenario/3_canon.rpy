@@ -1920,20 +1920,22 @@ label _3_VOTE_POUR:
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
-    kami "VERT."
-    kami "Le vote est POUR. À l'unanimité. Pas un seul « contre ». Je suis presque émue."
-    kami "Suppression totale des bons de rationnement. Fin de la distribution gratuite."
-    kami "Le commerce, le transport et le stockage de marchandises sont désormais autorisés."
+    kami "VEEEEERT !"
+    kami "ADOPTÉ ! Aucun vote contre ! Vous avez réussi à vous mettre d'accord ! Je... je crois que je vais pleurer. Enfin, si j'avais des glandes lacrymales."
+    kami "Dès l'application du texte : adieu les bons de rationnement, adieu la distribution gratuite. Vous avez coupé un lien qui vous attachait depuis longtemps."
+    kami "Le transport, le stockage, la vente et l'échange de marchandises sont autorisés. Félicitations, vous venez de rendre au monde une chose qu'il avait oubliée."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Félicitations, mes petits rebelles. Vous avez coupé la laisse."
-    kami "Mais la laisse, c'était aussi ce qui vous retenait de tomber."
-    kami "On va voir ce que ça donne sans filet. J'ai hâte du spectacle."
+    kami "Bravo, mes petits révolutionnaires ! Vous avez demandé la liberté. Et moi, je vous l'offre."
+    kami "En revanche... vous êtes-vous demandé pourquoi certains avaient peur de lâcher la laisse ?"
+    kami "Désormais, vous marcherez sans filet. Oh, comme j'ai hâte de voir qui saura tenir debout !"
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
-    think "Dès que l’écran s’éteint, Elen pousse un cri de joie et Julian se lève d’un bond. D’autres restent assis, visiblement moins rassurés par le résultat."
+    think "Vert."
+    think "Elen pousse un cri. Julian bondit de son siège. Pendant une seconde, j'ai presque envie de les rejoindre."
+    think "Puis je remarque que Kael n'a pas bougé."
 
     $ showGroup([
         ("julian", "sourire", 0.15),
@@ -1942,44 +1944,49 @@ label _3_VOTE_POUR:
         ("mara", "rire_profond", 0.84),
     ])
 
-    julian joie "ON A RÉUSSI ! Je vous l’avais dit ! C’est le premier texte qu’on arrive à faire passer !"
-    elen joie "Ouiiii ! On a réussi à se mettre d’accord ! Enfin... je crois !"
-    mara taquin "Doucement, vous deux. On vient aussi de supprimer les rations de tout le monde."
+    julian joie "ON A RÉUSSI ! NOTRE PREMIER AMENDEMENT ! Vous vous rendez compte ?! On a vraiment changé quelque chose !"
+    elen joie "OUAAAAAIS ! Tout le monde a dit oui ! Enfin... personne n'a dit non, c'est pareil, non ?"
+    mara taquin "Doucement avec les confettis. On vient aussi de supprimer les rations de tout le monde."
 
-    ryn jaloux "Ouais."
-    ryn inquiet "Mais sans les bons, Limen va morfler au début. Faut pas se mentir."
+    ryn jaloux "Ouais... Quelle victoire."
+    ryn inquiet "Chez moi, les gens vont morfler tant que les échanges ne seront pas en place. J'espère que vous en avez conscience."
 
-    noam sourire "Je suis content qu’on ait réussi quelque chose ensemble. J’espère juste qu’on n’a pas fait une énorme bêtise."
+    noam sourire "On a réussi à adopter un texte. Je voudrais fêter ça... mais je n'arrive pas à oublier ceux qui vont perdre leurs bons demain."
 
-    mara rire_profond "Génial. On va enfin pouvoir acheter des trucs."
-    mara taquin "Et crever avec le choix de la sauce. Le luxe."
+    mara rire_profond "Enfin, du choix ! Des magasins ! Des prix ! Des vendeurs qui vous expliqueront que leur soupe est exceptionnelle !"
+    mara taquin "Et si on doit crever de faim, au moins on pourra choisir la sauce. Quel progrès."
 
     $ showGroup([
         ("elen", "joie", 0.30),
         ("kael", "mefiant", 0.70),
     ])
 
-    kael mefiant "Orbite tiendra. Si les protocoles de sécurité restent intacts."
+    kael mefiant "Orbite pourra tenir... si les procédures de sécurité restent intactes. Il faut juste qu'on ne rompe aucun maillon."
     kael triste "Si."
 
-    think "Julian essaie de sourire, mais Elen paraît surtout soulagée. Ryn garde les yeux baissés, tandis que Kael parle tout bas avec Nyra."
-    think "Certains sont heureux, d’autres ont peur. Pour ma part, je suis soulagé qu’on ait réussi à voter ensemble, même si je ne sais pas encore ce que ça donnera."
+    think "Julian sourit aux caméras. Elen cherche quelqu'un à serrer dans ses bras. Ryn détourne le regard."
+    think "Kael murmure quelque chose à Nyra. Elle ne lui répond pas."
+    think "Une victoire. Je suppose que c'est le mot."
+    think "Pourtant, personne n'a exactement l'air d'avoir gagné la même chose."
 
     $ hideGroup()
 
-    think "Il est dix-sept heures dix quand on quitte la salle. Julian continue de parler du résultat, tandis que Ryn refuse de participer aux félicitations."
+    think "Il est dix-sept heures dix. Julian parle déjà de la prochaine réforme. Ryn passe devant lui sans un mot."
+    think "Je crois que notre première unanimité n'a pas rendu les gens plus proches."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_184
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    think "Mes pas résonnent jusqu'à ma chambre."
+    think "Dans le couloir, les voix de la fête se perdent derrière moi. Je n'arrive pas à décider si je devrais être fier ou inquiet."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_185
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    think "On a réussi à faire passer un amendement. Il y a deux jours, je n’aurais pas cru que c’était possible."
+    think "Il y a deux jours, je croyais que la difficulté serait de nous mettre d'accord."
+    think "Aujourd'hui, je me demande si nous nous sommes réellement entendus sur les conséquences."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_186
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "Je m'effondre sur le lit. Demain sera différent. Pas forcément meilleur."
+    think "Je tombe sur le lit. Demain, le monde sera différent."
+    think "Et si les premières mauvaises nouvelles arrivent, personne ne pourra dire que nous n'étions pas prévenus."
 
     $ phase3_over = True
     $ vote1 = "OUI"
@@ -2013,23 +2020,25 @@ label _3_VOTE_CONTRE:
 
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "ROUGE."
-    kami "Le vote est CONTRE. Il a suffi d'une voix. Une seule."
-    kami "Le statu quo est maintenu. Les bons de rationnement restent. La distribution continue."
+    kami "ROOOOOUGE !"
+    kami "REJETÉ ! Un seul vote contre ! Une toute petite voix a suffi pour anéantir votre belle unanimité."
+    kami "Les bons restent en place. La distribution gratuite continue. Le commerce reste interdit. Rien ne change... pour le moment."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Alors, que je n'entende plus personne pleurer sur ces bons."
-    kami "Vous aviez la possibilité de tout changer. Quelqu'un, à cette table, a dit non."
+    kami "Alors, la prochaine fois que vous vous plaindrez d'un bon de rationnement, pensez à ce joli instant."
+    kami "Vous aviez la possibilité de tout bouleverser. Quelqu'un ici a dit non. Qui ? Mais voyons... le secret du vote, c'est sacré !"
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Félicitations, mes petits rats sages. Vous avez choisi la sécurité."
-    kami "C'est plus ennuyeux. J'espérais un peu plus de sang. Ce sera pour une autre fois."
+    kami "Félicitations, mes petites souris prudentes ! Vous avez préféré garder vos habitudes. Je suis presque attendrie."
+    kami "C'est beaucoup moins amusant pour moi, évidemment. Mais rassurez-vous : nous avons encore de nombreux votes pour nous détester."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
     play music "music/bgm_world_decline.mp3" fadein 2.0
-    think "L’écran s’éteint et personne ne réagit pendant quelques secondes. Puis Julian repousse sa chaise d’un coup."
+    think "Rouge."
+    think "L'écran s'éteint. Pas de cris, pas d'applaudissements. Rien."
+    think "Puis Julian repousse sa chaise si violemment que tout le monde sursaute."
 
     $ showGroup([
         ("julian", "colere", 0.02),
@@ -2040,53 +2049,54 @@ label _3_VOTE_CONTRE:
         ("nyra", "raison", 1.14),
     ])
 
-    julian colere "Non. On avait une chance réelle. Une vraie."
+    julian colere "NON ! On avait une chance ! Une vraie chance de changer quelque chose !"
 
-    ryn fatigue "C'est pas si simple. D'autres auraient pu en crever."
+    ryn fatigue "On pouvait aussi condamner des gens à crever sans rations. C'est pas si simple."
 
-    mara colere "On a juste repoussé l'inévitable. On va continuer à mourir à petit feu. Su-per."
+    mara colere "Fantastique. On garde les pénuries, les formulaires et les files d'attente. On a sauvé notre petite routine !"
 
-    elen triste "Je… je croyais qu'on allait y arriver."
-    elen triste "J'étais tellement sûre…"
+    elen triste "Je... j'étais sûre qu'on y arriverait. Même juste pour une fois."
+    elen triste "Je l'avais presque promis aux gens qui nous regardent..."
 
-    kael doute "Au moins, on connaît déjà ce quotidien. Ça ne s'aggrave pas. C'est déjà ça."
+    kael doute "On a évité une transition dont on ne connaissait pas les dangers. Mais on garde les problèmes actuels. Ce n'est pas vraiment une victoire."
 
-    nyra raison "Attendez, on sait même pas qui a voté contre, et on ne sait pas pourquoi. On va pas commencer à s’accuser les uns les autres."
+    nyra raison "Arrêtez ! On ne sait pas qui a voté contre, ni pourquoi. Vous allez accuser onze personnes au hasard ?"
 
     think "Julian frappe brusquement la table. Elen sursaute et Tomas lui demande de se calmer, mais il ne l’écoute pas."
 
-    julian colere "Rationnel ?! Vous appelez ça rationnel ?"
-    julian colere "Continuer à rationner des miettes pendant que les districts crèvent ? On a laissé filer la seule ouverture !"
+    julian colere "Et ça, c'est censé être une décision responsable ?! On n'a même pas essayé !"
+    julian colere "On va continuer à rationner des miettes pendant que les gens manquent de tout ! On avait une ouverture, et quelqu'un l'a refermée !"
 
-    ryn colere "C'est le vote. C'est comme ça."
-    ryn colere "Je le comprends. T'as vu ce que ça risquait pour Limen ?"
+    ryn colere "C'est la règle ! Tu voulais convaincre tout le monde. Tu n'as pas réussi !"
+    ryn colere "Et celui qui a dit non avait peut-être des raisons ! Tu sais ce que Limen risquait de perdre ?!"
 
-    julian colere "Et t'as vu ce que ça risque si on change rien ?!"
+    julian colere "ET TU SAIS CE QU'ON RISQUE EN CONTINUANT COMME AVANT ?!"
 
-    ryn colere "Assieds-toi !"
-    mara colere "Les riches survivront encore. Quelle surprise."
-    noam colere "Julian, arrête ! Crier sur Ryn va pas faire changer le résultat !"
-    nyra neutre "On va pas refaire le débat maintenant. Ceux qui veulent discuter peuvent le faire demain, quand on sera calmés."
+    ryn colere "BAISSE D'UN TON, OU JE VAIS TE FAIRE ASSEOIR !"
+    mara colere "Pendant ce temps, ceux qui ont les moyens de contourner les règles continueront à se débrouiller. Quelle surprise."
+    noam colere "Julian, arrête ! On ne peut pas refaire le scrutin en hurlant plus fort que les autres !"
+    nyra neutre "Personne ne changera le résultat aujourd'hui. Sortez, reposez-vous, et évitez de vous accuser tant que vous ne savez rien."
 
-    think "Il est presque dix-sept heures. Le texte a été rejeté, et je ne sais même pas comment on va réussir à s’asseoir tous ensemble au prochain vote."
-    think "Maintenant, certains vont chercher qui a voté contre, même si le scrutin est secret. Je n’aime pas du tout la façon dont Julian regarde les autres."
+    think "Il est presque dix-sept heures. Nous avions douze sièges autour d'une table. Je me demande combien de personnes accepteront encore de s'y asseoir ensemble."
+    think "Le vote était secret. Mais à voir Julian dévisager les autres, le secret vient de devenir un motif de soupçon."
 
-    think "Je me lève. Les voix continuent sans moi. Je veux juste rentrer et arrêter de réfléchir."
+    think "Je me lève sans dire au revoir. Les voix continuent derrière moi. Pour une fois, je n'ai plus envie d'essayer de les réunir."
 
     $ hideGroup()
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_189
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    think "Mes pas résonnent dans les couloirs froids."
+    think "Le couloir est désert. Mes pas font plus de bruit que les applaudissements qu'on n'aura jamais."
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_190
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    think "Je traverse le dortoir sans m’arrêter."
+    think "Je traverse le dortoir. La porte de chaque chambre me paraît être une bonne raison de ne parler à personne."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_191
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "Je m’effondre sur mon lit sans même prendre le temps de me changer."
-    think "J’entends encore Julian s’énerver. On avait une chance d’adopter ce texte, et maintenant je me demande comment on va réussir à travailler ensemble au prochain vote."
-    think "Qu'est-ce qu'on peut faire, maintenant ?"
+    think "Je m'effondre sur le lit, encore habillé. Je n'ai même pas la force de poser ma tablette."
+    think "La voix de Julian me revient. Puis celle de Tomas dans la salle de repos."
+    think "On prétendait vouloir convaincre les autres. Aujourd'hui, on leur a surtout appris à se méfier."
+    think "Dans trois jours, il faudra recommencer. Avec les mêmes personnes, les mêmes règles... et beaucoup moins de confiance."
 
     $ phase3_over = True
     $ vote1 = "NON"
