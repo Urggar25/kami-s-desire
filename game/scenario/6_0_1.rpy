@@ -172,106 +172,88 @@ label _6_0_1_CONCLAVE_START:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.5
 
-    pause 0.8
+    "Quand j'entre, plusieurs personnes sont déjà assises. Julian échange quelques mots avec Tomas ; à l'autre bout de la table, Ryn fixe la place de Sael."
+    $ showGroup([("ryn", "colere", 0.20), ("iris", "fatigue", 0.48), ("sael", "neutre", 0.78)])
+    ryn colere "Avant de commencer, j'aimerais quand même comprendre pourquoi certains refusent qu'on ouvre les frontières. Il y a des gens qui attendent depuis ce matin aux points de passage."
+    sael determine "Je t'ai déjà répondu hier. Je ne veux pas exposer les habitants de mon village aux attaques qu'on a subies."
+    ryn colere "Mais moi, je te parle des gens qui meurent maintenant ! Tu peux pas continuer à faire comme s'ils existaient pas."
+    iris desaccord "Ryn, personne fait comme s'ils existaient pas. Vous avez tous les deux expliqué ce qui se passe chez vous, on a compris."
+    ryn colere "Alors pourquoi on en est toujours au même point ?"
+    noam inquiet "Parce que l'amendement est trop vague. Il dit qu'on ouvre les passages, mais personne ne sait ce qui se passera ensuite."
+    sael neutre "C'est exactement pour ça que je voterai contre."
+    "Ryn commence à répondre, mais l'écran principal s'allume avant qu'il ait terminé."
 
-    think "Nous entrons et prenons nos places sans ralentir."
-    think "Nos corps connaissent déjà le chemin."
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 1.0
+    kami "Tout le monde est là ? Bien ! Nous allons débattre de la proposition autorisant la libre circulation entre les districts."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Je suis ravie de voir que certains d'entre vous ont déjà commencé. Continuez, je vous en prie !"
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
+    play music "music/bgm_debate_low.mp3" fadein 1.0
 
-    $ showGroup([("ryn", "neutre", 0.2), ("iris", "fatigue", 0.5), ("sael", "neutre", 0.8)])
-
-    think "Ryn s'assoit. Iris croise les bras. Sael regarde droit devant."
-
+    $ showGroup([
+        ("ryn", "colere"),
+        ("sael", "mefiant"),
+        ("iris", "desaccord"),
+        ("mara", "agace"),
+        ("lysa", "blase"),
+        ("elen", "inquiet"),
+        ("nyra", "raison"),
+    ])
+    elen inquiet "Moi, j'aimerais juste qu'on arrête de tuer les gens qui essaient de retrouver leur famille. Je sais bien qu'il y a eu des attaques, mais on pourrait peut-être contrôler les passages autrement."
+    mara agace "Sauf que c'est pas ce qu'il y a dans le texte. Il suffit qu'on vote oui et tout ouvre, sans qu'on sache comment ça va se passer."
+    ryn colere "Ça fait des années qu'on doit surveiller des frontières qu'on n'a même pas le droit de traverser. Vous pouvez pas nous demander d'attendre encore !"
+    kael inquiet "Il faudra aussi adapter les transports. Si tous les passages ouvrent d'un coup, je vois pas comment les systèmes actuels vont suivre."
+    lysa blase "Oui, mais si on attend d'avoir un plan parfait, personne ne pourra jamais sortir. Ça me dérange aussi."
+    nyra reflechit "Vous êtes pas si loin d'être d'accord sur le problème. Mais vous voulez pas prendre le même risque. Sael, c'est bien le texte tel qu'il est qui te bloque ?"
+    sael determine "Non, Nyra. Je suis opposée à l'ouverture des frontières. Même avec des contrôles, je pense que ça facilitera le retour des groupes armés. Je ne veux pas prendre ce risque."
+    ryn colere "Alors qu'est-ce qu'on est censés faire ? Garder les gens enfermés pour toujours ?"
+    sael colere "Je suis pas celle qui a mis ces règles en place ! Arrête de me demander de répondre pour Kami !"
+    "Le ton monte. Iris frappe doucement la table pour essayer d'intervenir, mais elle s'interrompt quand Kami reprend la parole."
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    play music "music/bgm_system_override.mp3" fadein 1.0
+    play music "music/bgm_system_override.mp3" fadein 0.6
+    kami "Vous avez tous de très bonnes... de bonnes raisons, oui. Vous pourriez peut-être..."
+    pause 0.7
+    "Son visage reste figé. Un grésillement traverse les haut-parleurs avant que sa voix reprenne."
+    kami "Poursuivez le débat. Je vous écoute."
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_debate_low.mp3" fadein 1.0
 
-    kami "... Ah oui. Vous voilà. Début du débat."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen
-
-    kami "Proposition : autoriser la libre circulation entre districts."
-
-    scene bg_diffusion_taquin at adaptive_fullscreen
-
-    kami "Vous connaissez déjà comment tout ça fonctionne. Je ne vais pas me répéter inutilement."
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Alors. Parlez. Débattez."
-
-    pause 2.0
-
-    "Personne ne parle. Pas une seule tentative."
-    think "À quoi bon ...?"
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-
-    kami "... Intéressant"
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Vous souhaitez déjà sauter à la conclusion sans passer par le processus.."
-    kami "Sur le principe, ça m'irait mais..."
-
-    think "Sa voix bloque sur le mot."
-
-    play sound "sfx/glitch_medium.mp3"
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-
-    kami "Corrigez."
-
-    pause 0.3
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Corrigez."
-    kami "Corrigez."
-
-    think "Le mot reste trop longtemps, comme si elle cherchait la suite."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen
-
-    kami "Engagez-vous."
-    kami "Débattez."
-    kami "Simulez au moins."
-
-    think "Toujours rien."
-
-    $ bc_show("ryn", "colere")
-    ryn colere "Putain mais qu'est-ce qui t'arrive ? De toute façon ça sert à rien de débattre ! On connaît déjà la fin !"
-    $ bc_hide()
-
-    $ bc_show("iris", "colere")
-    iris colere "Pff, à quoi bon jouer son jeu. Tout ça ne servirait à rien."
-    $ bc_hide()
-
+    iris inquiet "Bon, ça commence à faire beaucoup pour une seule journée. Est-ce qu'on pourrait lui demander directement si tout va bien ?"
+    noam neutre "Kami ? Tu nous entends ?"
+    pause 0.5
     show screen kami_broadcast_ui
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "..."
-
-    pause 0.2
-
-    play sound "sfx/glitch_heavy.mp3"
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-
-    kami "Interaction insuffisante. Les gens n'aiment pas !"
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Ajustement en cours."
-
-    think "Son image tremble plus fort, plus longtemps. Elle ne revient pas tout de suite."
-
-    think "... Là. Ce n'est clairement pas normal."
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-
-    kami "Maintenez le signal."
-
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Évidemment que je vous entends. Vous êtes douze, dans une pièce que je surveille en permanence."
+    "Elle marque une nouvelle pause. Cette fois, personne ne dit rien."
+    kami "Vous n'avez pas terminé. Il faut continuer."
+    mara mefiant "Attends, pourquoi il faut ? Tu peux pas simplement nous dire ce qui se passe avec toi ?"
+    kami "Il faut que... le débat doit... continuer."
+    play sound "sfx/glitch_medium.mp3"
+    "L'image se déforme. Une partie de la phrase se répète plusieurs fois, sans que Kami termine sa réponse."
+    elias inquiet "Les enceintes font pas ce bruit d'habitude. Kael, t'as une idée ?"
+    kael inquiet "Ça ressemble pas à une panne du système audio. L'image et le son décrochent en même temps."
+    nyra reflechit "Kami, est-ce qu'on doit interrompre la séance ?"
+    scene bg_diffusion_colere at adaptive_fullscreen with hpunch
+    kami "Non ! Le débat continue !"
     pause 0.3
+    "Sa réponse est si forte que Tomas se recule dans son fauteuil."
+    tomas inquiet "D'accord, mais... personne t'empêche de nous donner quelques minutes."
+    kami "Je n'ai pas besoin de..."
+    play sound "sfx/glitch_heavy.mp3"
+    "L'écran devient noir, puis l'image réapparaît avec un retard évident sur sa voix."
+    think "Même si elle voulait nous faire peur, je ne comprends pas pourquoi elle insisterait autant pour qu'on continue à parler."
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    iris inquiet "Vous avez vu ça ? Elle a complètement perdu l'image pendant une seconde."
+    ryn colere "Qu'elle coupe la séance alors ! On va pas faire semblant que tout va bien juste pour lui faire plaisir."
+    elen inquiet "Attendez, si elle va vraiment mal, qu'est-ce qui se passe pour les gens sur Terre ? Les frontières, les rations... Tout dépend d'elle !"
+    mara mefiant "C'est exactement ce qui m'inquiète. Et elle veut quand même nous faire voter."
+    "Les représentants commencent à parler tous en même temps. Avant que quelqu'un arrive à les calmer, les lumières clignotent à nouveau."
 
     jump _6_0_1_SIGNAL_INSTABLE
 
