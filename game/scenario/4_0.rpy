@@ -135,47 +135,35 @@ label _4_0_CAFETERIA_ECRANS:
     scene bg_cg022 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
     $ unlock_gallery_image("bg_cg022")
 
-    elen "Allez, Goumi, s'il te plaît ! Un peu de cannelle. Ou du poivre. Ou un truc qui prouve que j'ai encore une langue ! Allez Steeuuuplait !"
-
-    goumi "Demande refusée, représentante Elen."
-    goumi "Les provisions restantes du Conclave ont été redirigées vers la Terre ce matin."
-
-    elen "Quoi ?! Mais nooon, on n'a déjà presque rien ici !"
-
-    elias "Moi, j'voulais juste des barres moins dégueulasses. C'est chaud, elles ont même pas de goût, celles-là."
-
-    nyra "Je crois bien qu'on a pas le choix. J'imagine que c'est un ordre de Kami pour nous punir d'avoir échoué."
-
-    goumi "Ordre direct de Kami. Priorité absolue à la distribution planétaire."
-
-    elen "Mais c'est injuste ! On est coincés ici et on peut même pas avoir un tout petit truc qui soit… différent ?"
-
-    elias "Ouais, on est censés bosser pour tout le monde et on bouffe des trucs immangeables."
-
-    elen "…Je voulais juste que ça ait un peu de goût pour une fois."
-
+    elen colere "Goumi, je te demande juste un peu de cannelle ! Hier, t'avais tout un rayon d'épices, elles sont passées où ?"
+    goumi "Demande refusée. Les provisions non essentielles du Conclave ont été réaffectées aux distributions terrestres."
+    elen surpris "Non essentielles ?! Mais j'ai pas demandé un gâteau de dix étages !"
+    elias inquiet "Il reste des barres et des rations normales, ou on mange les emballages maintenant ?"
+    goumi "Les repas nécessaires à votre alimentation restent disponibles."
+    elias fatigue "Bon, ça, c'est déjà ça. Mais elles ont aucun goût, tes barres."
+    nyra reflechit "Attendez, ça concerne seulement les extras ou toutes les livraisons ?"
+    goumi "Les provisions non essentielles. Prochain réapprovisionnement prévu au jour 7."
+    elen colere "C'est trop facile ! Hier tu nous fais choisir entre deux trucs impossibles, et aujourd'hui tu me retires même la cannelle !"
     play sound sfx_announce
-    pause 1.0
-
+    pause 0.5
     show screen kami_broadcast_ui
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    play music "music/bgm_system_override.mp3" fadein 0.8
-
-    kami "Oh là là, ma petite Elen… Eh bien il faut assumer les conséquences du vote d'hier !"
-    kami "Le Conclave ne va tout de même pas devenir un buffet pour privilégiés pendant que la Terre se serre la ceinture."
-
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Équité. Justice. Sacrifice partagé. Vous aimiez beaucoup ces mots, hier."
-    kami "Ne vous inquiétez pas trop… de nouvelles provisions arriveront au Jour 7."
-    kami "En attendant, contentez-vous de ce que vous avez. Comme tout le monde."
-    kami "Et surtout… comme vous l’avez vous-mêmes décidé hier."
-
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    kami "Oh, Elen ! Tu es adorable quand tu essaies de négocier avec Goumi. Il n'a pas d'épices cachées pour tes beaux yeux."
+    kami "Les rations restent gratuites, vous vous souvenez ? Les habitants de la Terre en ont besoin bien plus que mes douze invités."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Alors j'ai envoyé une partie de vos réserves là-bas. Pas de famine à bord, ne dramatisez pas ! Vous aurez simplement moins de choix jusqu'à la prochaine livraison."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Tu pourrais appeler ça de la solidarité, Elen. Après tout, vous avez voulu conserver ce système !"
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
-    "L’écran s’éteint. Elen reste figée deux secondes, les yeux humides. Puis elle tourne les talons et sort presque en courant."
-
+    elen colere "Mais j'étais POUR l'amendement, moi ! Et puis les gens sur Terre ont besoin de manger, pas de ma cannelle !"
+    elias neutre "Techniquement, ça reste de la nourriture..."
+    elen colere "Elias, aide-moi un peu !"
+    elias inquiet "Désolé. J'essayais."
+    "Elen repose son plateau et sort de la cafétéria en marmonnant qu'elle n'a plus faim."
     $ showGroup([
         ("mara", "agace"),
         ("julian", "decu"),
@@ -185,29 +173,18 @@ label _4_0_CAFETERIA_ECRANS:
         ("iris", "desaccord"),
         ("noam", "neutre"),
     ])
-    mara triste "Génial. Kami humilie Elen. Et nous, on contemple le décor. Quel collectif de rêve."
-
-    julian colere "Pff, évidemment, c'était prévisible. Mais finalement, vous le méritez bien."
-    julian taquin "Voilà donc la grande victoire que l'histoire retiendra d'hier."
-
-    ryn colere "On a pas besoin de ton avis, Julian."
-
-    lysa triste "C'est inutile de se prendre la tête. Ce qui est fait est fait."
-
-    iris colere "Ouais, c'était évidemment trop en demander de se mettre d'accord."
-
-    noam colere "Bon, calmez-vous. On avancera à rien avec cette mentalité."
-    noam reflechit "Cette fois, on a échoué, mais on arrivera sans doute à faire passer autre chose. Ok ?!"
-
-    "Personne ne répond. Chacun se regarde sans vraiment se parler."
-
-    kael reflechit "En attendant, il ne faut pas se leurrer. On a décidé."
-    kael triste "Je sais pas si on a foiré ou pas. Mais il faudra l'assumer."
-
-    lysa triste "Ouais... On peut peut-être regarder la télévision, voir ce que les infos disent."
-
-    noam reflechit "Ouais, c'est bien notre seul lien avec l'extérieur."
-    noam triste "On devrait la regarder souvent, histoire de pas être tout le temps déconnecté."
+    mara taquin "Je pensais pas voir Elen déclarer la guerre pour un pot de cannelle."
+    iris colere "C'est pas la cannelle, Mara. Kami vient de nous rappeler qu'elle peut retirer ce qu'elle veut quand ça l'amuse."
+    julian colere "Voilà. Et hier, on avait une chance de changer les choses. Je suis ravi qu'on ait préféré garder les bons."
+    ryn colere "Tu vas nous refaire la leçon à chaque repas ?"
+    julian taquin "Seulement tant que vous trouverez ça normal d'avoir besoin de la permission de Kami pour acheter du poivre."
+    lysa blase "Il marque un point, malheureusement. Mais crier sur Ryn changera pas le résultat."
+    ryn colere "Pourquoi tu me regardes quand tu dis ça ? Vous savez même pas qui a voté contre !"
+    noam inquiet "Personne le sait, Ryn. Et je crois pas qu'on avancera en essayant de deviner."
+    mara colere "Moi, ce qui m'énerve, c'est qu'on s'engueule entre nous alors que Kami est celle qui décide de tout."
+    kael reflechit "On pourrait regarder ce que montrent les écrans. Si les réserves sont vraiment parties sur Terre, ça devrait se voir."
+    lysa neutre "Ouais, allons voir. Au moins, on aura autre chose que des suppositions."
+    noam neutre "D'accord. Je veux aussi savoir si les distributions continuent normalement."
 
     $ j4_cafeteria_ryn_talked = False
     $ j4_cafeteria_julian_talked = False
@@ -223,37 +200,26 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "reflexion"),
     ])
 
-    think "Je pose ma ration intacte sur la table."
-
-    lysa blase "Alors, Noam ? Tu regrettes qu’on n’ait pas osé ?"
-    lysa reflechit "Ou tu es soulagé qu’on ait préféré rester dans nos petites chaînes bien confortables ?"
-
+    think "Je m'assieds avec mon petit-déjeuner. Lysa regarde encore l'écran, puis se tourne vers moi."
+    lysa blase "Alors, tu regrettes le vote d'hier ?"
     menu:
-        "Répondre franchement.":
-            noam "Je crois que oui."
-            noam "Mais je ne sais même pas ce que je regrette exactement."
-
-        "Éviter son regard.":
-            noam triste "J'en sais rien... Tu crois qu'ils nous en veulent ?"
-            lysa "Je ne sais pas. En tout cas, ils auront à manger aujourd'hui."
-            lysa blase "C'est déjà ça..."
-
-        "Regarder les écrans avant de répondre.":
-            think "Je regarde les files d'attente. Ma réponse ne vaut pas grand-chose face à ces files."
-            noam "Je ne sais plus. J'en sais rien."
-
-    noam reflechit "Je me demande si... ne rien risquer hier... c’était du confort. Ou juste de la peur."
-
-    call day4_tray_scene from _call_day4_tray_scene
-
-    think "Chacun fixe les écrans comme une sentence collective."
-    think "On n'a rien gagné. On sait seulement qu'on aurait pu faire mieux."
+        "Dire que oui.":
+            noam triste "Ouais, un peu. J'aurais aimé qu'on arrive à décider quelque chose, même si le texte de Kami était franchement inquiétant."
+            lysa neutre "Au moins, tu sais pourquoi t'es déçu."
+        "Dire qu'il était trop risqué.":
+            noam inquiet "Quand j'ai compris qu'on supprimerait les rations, j'ai eu peur de ce qui arriverait à ceux qui n'ont rien."
+            lysa reflechit "Je peux pas vraiment t'en vouloir pour ça. C'était un sacré risque."
+        "Admettre que tu ne sais pas.":
+            noam neutre "J'en sais rien. J'étais motivé hier matin, et maintenant j'ai l'impression qu'on a été piégés quoi qu'on fasse."
+            lysa blase "Ça, je crois qu'on est plusieurs à le penser."
+    iris fatigue "Bon, vous allez en parler jusqu'au prochain vote ou on peut au moins finir de manger ?"
+    mara taquin "T'inquiète, à midi on discutera de la disparition du sel."
+    "Je mange en écoutant leur discussion. Personne n'a l'air ravi, mais Elias et Iris commencent déjà à se chamailler sur la façon de rendre les barres de céréales mangeables."
 
     jump _4_0_TEMPS_LIBRE_1
 
 label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
 
-    call play_stat_dialogue("d4_0") from _call_stat_dialogue_d4_0
 
     $ room_scene_indices["cafeteria"] = 1
     call screen day4_cafeteria_tv_pnc()
@@ -363,39 +329,6 @@ label day4_optional_news:
     think "Même file. Même attente. Même colère contenue."
 
     return
-
-label day4_tray_scene:
-
-    $ j4_tray_eaten = []
-    think "Je baisse les yeux vers mon plateau."
-    think "Il n'y a pas grand-chose à manger là-dedans. Rien n'a l'air vraiment bon."
-
-label day4_tray_scene_loop:
-
-    call screen day4_tray_pnc()
-
-    if _return == "bread":
-        $ j4_tray_eaten.append("bread")
-        "Je croque."
-        think "Ça fait plus de bruit que de goût."
-    elif _return == "ration":
-        $ j4_tray_eaten.append("ration")
-        think "Tiède. Même la température refuse de prendre parti."
-    elif _return == "bar":
-        $ j4_tray_eaten.append("bar")
-        think "Le genre d'aliment qu'on mange uniquement parce que le corps insiste."
-    elif _return == "empty":
-        think "Je fixe le vide."
-        think "C'est idiot, mais c'est ça qui me met le plus en colère."
-    elif _return == "finish":
-        "Je repousse le plateau de quelques centimètres."
-        return
-
-    if len(j4_tray_eaten) >= 3:
-        think "Mon corps a compris le message : il n'y aura rien de plus."
-        return
-
-    jump day4_tray_scene_loop
 
 label _4_0_TEMPS_LIBRE_1:
 
