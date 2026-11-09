@@ -378,79 +378,29 @@ label _5_0_REVEIL_CHAMBRE:
     $ unlock_dossier_chapter(2)
     $ cafeteria_food_level = "medium"
 
-    pause 1.2
-
     $ blink()
-    think "J'ouvre les yeux sans avoir l'impression d'avoir vraiment dormi. Rien qui ne change des jours précédents au final."
-    think "La nuque raide, les épaules dures. Mon corps s'est couché ; ma tête, non."
-
-    $ blink()
-
-    think "Il y a deux jours, on a échoué. Demain, on échouera aussi."
-
-    $ blink()
-
-    think "Ça ne passera pas. Personne n'y croit plus. Sael a déjà annoncé qu'elle votera contre..."
-
+    think "Je regarde l'heure. Il est déjà huit heures, et je me demande si Sael est réveillée. Depuis la dispute d'hier, je n'arrête pas de repenser à ce qu'elle nous a raconté."
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    think "Je pourrais aller à la cafétéria, mais à quoi ça servirait ?"
-    think "J'y retrouverai les mêmes silences. Les mêmes regards qui fuient. Et la même certitude dans chaque tête : ce vote va échouer."
-
-    noam "Pfff, à quoi ça servirait ?"
-
-    pause 0.5
-
-    think "Le vote n'a aucune chance de passer."
-    think "L'ambiance est glaciale. Sael était fermée à la discussion."
-    think "Julian se mure dans sa chambre."
-    think "Et moi, je n'ai même pas de bonne réponse. Je ne suis même pas sûr de voter pour. Mais je n'abandonnerai pas."
-
-    think "Le pire, c'est que chacun a une part de raison. Et demain, il faudra trancher comme si une décision acceptable existait."
-    think "Face, tu gagnes. Pile, je perds."
+    think "Elle a clairement dit qu'elle voterait contre demain. J'aimerais la revoir, pas pour la coincer avec des arguments, mais parce que je crois qu'on a compris seulement une partie de son histoire."
+    think "Je repense aussi à Julian. Il n'est même pas venu à la réunion hier. Ça ne lui ressemble vraiment pas."
 
     play sound sfx_announce
-    pause 1.0
-
+    pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-
-    kami "Bonjour à tous, oh vous me semblez particulièrement éteints ce matin."
-    kami "Un simple petit échec, et vous voilà dans cet état ?!"
-    kami "Ne vous inquiétez pas : votre prochaine chance de tout rater arrive dans vingt-quatre heures !"
-
+    kami "Bonjour à tous ! Vous avez une mine épouvantable ce matin. Et moi qui croyais qu'une bonne nuit suffirait à vous remettre du vote !"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "La cafétéria est ouverte. Vos rations sont prêtes. Ce sont les mêmes qu'hier."
-    kami "Vous recevrez de nouvelles portions lors de la matinée du jour 7. En attendant, à la DIET ! Comme tout le monde !"
-    kami "Et comme toujours, j'observerai avec beaucoup d'intérêt ce que vous allez faire de cette belle matinée ensoleillée."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Oups, j'oubliais : vous ne pouvez pas voir le soleil depuis le Conclave !"
-
+    kami "Les rations du jour vous attendent à la cafétéria. Vous aurez de nouvelles provisions au jour 7, alors inutile de venir pleurer auprès de Goumi."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Et n'oubliez pas, vous revoterez demain. J'espère que vous avez prévu de vous parler entre-temps, c'était assez amusant hier !"
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+    play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    think "L'écran s'éteint sur son rire."
-    think "La cafétéria. C'est vraiment le point de rendez-vous matinal."
-    think "J'imagine l'ambiance. Est-ce que j'ai vraiment envie de traverser ça ce matin ?"
-
-    think "Le pain sur ma table est dur, sec et silencieux. Il fera bien l'affaire."
-
-    pause 0.3
-
-    think "Je prends le pain. Il est vraiment sec. La nourriture typique qu'on devait avaler chaque jour depuis un an."
-    think "Je me demande si quelqu'un remarquera que je ne suis pas venu à la cafétéria."
-    think "Je mords dedans. Ça craque sous les dents. Le goût précis de presque rien, si ce n'est de la farine."
-
-    think "Je termine le morceau et m'essuie la main. Petit-déjeuner réussi, selon des critères très bas."
-
-    "Des pas et des voix traversent le couloir. Des groupes semblent s'éloigner et remonter dans le Conclave."
-    think "Je ne peux pas les rejoindre. Pas avant de savoir ce que je peux encore faire."
-
-    think "Sael. Si elle vote contre, c'est foutu quoi qu'il arrive. Il faut que je lui parle."
-    think "Avant que ce soit trop tard. Je pense qu'elle essaye de rester seule, elle aussi."
+    "Je prends le morceau de pain laissé sur mon bureau la veille et mange quelques bouchées en m'habillant. Je n'ai pas vraiment faim."
+    think "Je pourrais aller retrouver les autres à la cafétéria, mais j'aimerais parler à Sael avant qu'elle ne commence sa journée. Je ne sais pas si elle acceptera de me recevoir."
+    "Je prends ma tablette et je sors."
 
     stop music fadeout 1.2
 
