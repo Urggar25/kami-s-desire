@@ -979,24 +979,24 @@ label _3_DEBAT1_PHASE1:
     show screen kami_broadcast_ui
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Avant de débattre, encore faut-il savoir de quoi on parle."
-    kami "Alors soyons rigoureux. Voici le texte officiel de l'amendement."
+    kami "Avant de vous chamailler, une formalité : peut-être faudrait-il savoir ce que vous allez voter."
+    kami "Soyons rigoureux ! Voici le texte officiel. Le vrai, le beau, celui qui aura des conséquences."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Enfin… « officiel ». [codex_dialogue_link('archive', 'ARCHIVE')] l'a harmonisé avec les Commandements existants."
-    kami "Vos petites phrases d'amateurs, seules, ne valent rien en droit. Il a fallu les traduire."
+    kami "Enfin, « officiel »... [codex_dialogue_link('archive', 'ARCHIVE')] l'a harmonisé avec les Commandements. Vous connaissez le principe : on prend votre idée et on lui met une cravate."
+    kami "Votre petite phrase tenait sur un coin de nappe. La loi, elle, doit tenir debout devant le monde entier. Ça demande quelques mots de plus."
 
     $ bc_show("nyra", "stress", px=-70, py=-50, pz=0.85)
-    nyra "Tu l'as seulement reformulé ? Ou tu as aussi changé ce qu'il disait ?"
+    nyra "Tu as corrigé sa forme... ou tu as modifié ce qu'il signifie ?"
     $ bc_hide()
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Oh, j'ai juste fait en sorte que ça puisse s'appliquer. Chaque détail compte, vous savez."
-    kami "Le texte est là. Compilé, dense, juridique. Exactement comme les lois que vous adoriez ignorer avant moi."
+    kami "Oh, j'ai rendu votre idée applicable. C'est une toute petite différence. Enfin... tout dépend de ce que vous appelez petit."
+    kami "Tout est là ! Des articles, des conséquences, de merveilleux petits mots dont vous découvrirez l'importance quand ce sera trop tard."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "À vous de le remettre en ordre et de le lire. Vraiment le lire."
-    kami "Faites attention aux petits mots. Je vous assure que ça compte."
+    kami "À vous de reconstituer le texte ! Oui, vous allez devoir LIRE. Je sais, quelle cruauté."
+    kami "Et regardez bien les fins de phrase. Les catastrophes se cachent souvent dans un « en conséquence »."
 
     hide screen kami_broadcast_ui
 
@@ -1016,13 +1016,13 @@ label _3_DEBAT1_PHASE1:
         ("elias", "reflechit", 1.19),
     ])
 
-    ryn colere "Pourquoi elle nous sort un pavé pareil ? On voulait juste le commerce !"
+    ryn colere "C'EST QUOI CE PAVÉ ?! On a demandé le commerce, pas un concours de lecture !"
 
-    tomas inquiet "Attendez, si elle a ajouté des trucs, on peut se faire avoir. Il faut tout lire, même les petits passages à la fin."
+    tomas inquiet "Attendez ! Si elle a ajouté une condition à la fin, on pourrait tout approuver sans s'en rendre compte. Il faut vérifier chaque phrase."
 
-    nyra raison "Attendez, regardez les virgules et les fins de phrase. Ça devrait nous aider à remettre les passages dans le bon ordre."
+    nyra raison "Commencez par les liaisons logiques. Les virgules, les conséquences, les renvois. Le texte a une structure, même si Kami veut nous la faire chercher."
 
-    noam "Bon, autant s’y mettre. J’aime pas qu’elle nous fasse voter sur un truc qu’on a même pas encore lu."
+    noam "Bon. Mettons les morceaux dans l'ordre. Je refuse de voter sur un texte qu'on ne comprend pas."
 
     # Wrapper complet : intro animée, tutoriel 1ère fois, retry avec malus, résultats avec rang
     call debat_phase1_run(mg_id="fatal_assembly", title="FATAL ASSEMBLY") from _call_debat_phase1_run
@@ -1051,14 +1051,14 @@ label _3_DEBAT1_PHASE1:
         ("elias", "reflechit", 1.19),
     ])
 
-    lysa reflexion "Attendez... « Autoriser le transport, la vente et l'échange de marchandises. » Ça, d'accord."
-    lysa colere "Mais après, c'est écrit « En conséquence, le système de distribution de denrées est aboli ». Vous avez vu ça ?!"
-    elen peur "QUOI ?! Mais j'ai dit que j'étais pour ! Je savais pas que les bons allaient disparaître !"
-    ryn colere "C'EST QUOI CETTE CONNERIE ?! Vous allez nourrir les gens de Limen comment ?!"
-    tomas peur "Non... non, ça, c'était pas dans la phrase d'hier. Elle peut pas ajouter ça sans rien demander !"
-    iris colere "Kami ! T'as ajouté ça exprès, hein ?!"
-    mara colere "Voilà pourquoi je vous disais d'attendre le texte avant de promettre quoi que ce soit !"
-    nyra stress "Laissez-la répondre, on doit savoir si ce passage est définitif."
+    lysa reflexion "Attendez... « Autoriser le transport, la vente et l'échange de marchandises. » Très bien. Mais la suite..."
+    lysa colere "« En conséquence, le système de distribution de denrées est aboli. » Vous avez bien LU ce passage ?!"
+    elen peur "HEIN ?! Mais j'ai déjà dit à tout le monde que je voterais pour ! Je savais pas qu'on supprimait les bons !"
+    ryn colere "VOUS ÊTES MALADES ?! À LIMEN, ON MANGE QUOI QUAND LES BONS DISPARAISSENT ? LE TEXTE ?!"
+    tomas peur "Non... hier, il n'y avait pas ça. Je l'aurais remarqué ! J'ai relu la phrase au moins dix fois !"
+    iris colere "KAMI ! Tu t'es bien gardée de nous prévenir de cette petite conséquence, hein ?!"
+    mara colere "Et voilà ! On m'a traitée de rabat-joie parce que je voulais LIRE ! C'était vraiment trop demander ?!"
+    nyra stress "Attendez. On doit d'abord savoir si cette disposition est définitive. Arrêtez de parler tous en même temps !"
 
 
     jump _3_DEBAT1_PHASE2
@@ -1086,56 +1086,57 @@ label _3_DEBAT1_PHASE2:
         ("elias", "reflechit", 1.19),
     ])
 
-    mara surpris "Ah bah voilà. On demande le commerce et on perd les rations. Génial."
+    mara surpris "Merveilleux. On commande du commerce et on nous livre la fin des rations. La prochaine fois, demandons des serviettes : elle supprimera l'eau."
 
-    noam "Attendez. Le texte de départ parlait pas des rations."
-    noam "Mais c'est celui-là qu'on doit voter. Alors on fait quoi ?"
+    noam "Attendez. Personne n'a proposé explicitement de supprimer les rations."
+    noam "Mais c'est ce texte-là qu'on devra accepter ou rejeter. Pas celui qu'on avait en tête."
 
-    nyra reflechit "Si on vote ce texte, demain il n'y a plus une seule distribution gratuite. Nulle part."
+    nyra reflechit "Si ce texte passe, la distribution gratuite s'arrête partout. Pas seulement là où le commerce peut fonctionner immédiatement."
 
-    kael inquiet "Supprimer les rations… ça change tout."
+    kael inquiet "Sans les rations... il faut revoir toute la chaîne d'approvisionnement. Immédiatement."
 
-    ryn colere "Ça supprime la seule sécurité qu'on avait ! À Limen, c'est ce qui tient les gens en vie."
+    ryn colere "À Limen, les bons sont peut-être nuls, mais c'est parfois le seul repas garanti ! On l'enlève et on leur dit de se débrouiller ?!"
 
-    lysa reflechit "Et pourtant, c'est logique."
+    lysa reflechit "Le pire... c'est que je comprends son raisonnement."
 
-    noam surpris "Comment ça, logique ? On va retirer à des gens leur seule source de nourriture !"
+    noam surpris "Logique ? Des gens vont perdre la seule nourriture qu'on leur assure !"
 
-    lysa blase "Avec le commerce, il faut de l'argent. Pour en avoir, il faut bosser."
-    lysa reflechit "Kami a juste décidé de couper les rations pour forcer tout le monde à s'y mettre. Sympa."
+    lysa blase "Si on rétablit les ventes, il faut pouvoir payer. Et pour payer, il faut des revenus."
+    lysa reflechit "Kami coupe les rations pour forcer les gens à entrer dans le jeu. Sur le papier, ça se tient."
+    lysa colere "Sur le papier. Surtout pas dans une assiette vide."
 
-    nyra reflechit "Ça reste énorme, comme changement. Et on n'a même pas le temps de s'y préparer."
+    nyra reflechit "La transition prendrait normalement des mois. Là, on parle de demain. Même une bonne idée peut provoquer un désastre si on l'applique d'un coup."
 
-    sael triste "Les morts de Limen n'ont pas besoin d'un nouveau responsable."
-    sael reflechit "Kami. Dis-nous seulement une chose : ce texte vient-il vraiment de l'un de nous ?"
+    sael triste "On a déjà enterré trop de gens pour des règles décidées loin de chez nous."
+    sael reflechit "Kami. Une seule réponse : est-ce que l'un de nous a réellement proposé tout ce qui figure ici ?"
 
     think "Kami ne répond pas. Ryn répète sa question, puis Tomas commence à protester lui aussi. L’écran reste inchangé."
 
-    lysa blase "Elle ne répondra pas. Dix votes pour douze textes, le tour de passe-passe est parfait."
-    lysa colere "Elle peut changer ce qu'elle veut. Et on pourra rien prouver."
+    lysa blase "Elle n'a aucune raison de répondre. On ne sait pas qui a écrit quoi. On n'a que sa parole."
+    lysa colere "Si elle déforme une proposition, comment on la contredit ? On va demander au coupable de se dénoncer ?"
 
-    ryn reflechit "Attends… tu dis quoi, là ?"
+    ryn reflechit "Attends... tu veux dire qu'elle pourrait inventer un texte entier ?"
 
-    lysa salut "Qu'elle nous raconte peut-être n'importe quoi depuis le début. Voilà."
+    lysa salut "Qu'on n'a aucun moyen de vérifier. Et qu'on devrait peut-être arrêter de la croire sur parole."
 
-    noam inquiet "Elle nous a peut-être bien eus, oui. Mais j’aimerais surtout savoir ce qui va arriver aux gens si on vote pour."
+    noam inquiet "Peut-être qu'elle nous manipule. Mais ce texte est devant nous, et c'est nous qui porterons la décision."
 
     # ── Mini-jeu buzzer (Objection Protocol) : influence l'adhésion des PNJ ──
     pause 0.4
     show screen kami_broadcast_ui
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "On m'informe que l'audience décroche. Trop de blabla, pas assez de sang."
-    kami "Je reprends la main. À partir de maintenant, un seul parle à la fois."
+    kami "Oh là là ! Mon audimat s'endort ! Vous avez réussi à transformer une crise mondiale en réunion de copropriété !"
+    kami "On change les règles du spectacle : un seul parle à la fois. J'ai pitié des oreilles de mes spectateurs."
 
     "Les pupitres se transforment. Un micro et un buzzer émergent devant chacun de nous."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Vous ne parlez que quand votre buzzer passe au vert. Vous voulez contredire ? Vous appuyez."
-    kami "On appellera ça un débat. Moi, j'appelle ça du divertissement."
+    kami "Micro vert : vous parlez. Vous n'êtes pas d'accord ? Vous BUZZEZ ! C'est tellement simple que même vous devriez y arriver."
+    kami "Vous appelez ça la délibération. Moi, j'appelle ça une excellente émission."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Montrez-moi qui sait viser. C'est parti."
+    kami "À vos arguments ! Et essayez de ne pas vous tuer avant le vote, ça compliquerait le dépouillement."
 
 label day3_before_objection_protocol_minigame:
     call debat_phase2_minigame from _call_debat_phase2_minigame
