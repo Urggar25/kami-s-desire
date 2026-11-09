@@ -744,6 +744,8 @@ label d0_memory_lysa:
     think "Attends... Je n'étais pas le seul à avoir été choisi pour Harmonie !"
     noam reflexion "Il y avait quelqu'un d'autre... Une femme. Comment elle s'appelait déjà ?"
     think "Lysa ! Oui, c'est ça. On nous avait conduits ensemble dans une salle, juste après l'annonce."
+    # Le prenom et la fiche se debloquent des son souvenir au prologue.
+    $ unlock_character_name("lysa")
 
     scene bg_cg006 at adaptive_fullscreen with dissolve
     "Deux caissons étaient disposés côte à côte. Lysa s'était arrêtée devant le sien, les bras croisés, sans avoir l'air particulièrement pressée d'y entrer."
