@@ -200,14 +200,15 @@ label decouverte_salle_observation:
     noam determine "Lysa, attends !"
     $ hideGroup()
     call day1_noam_radio_interruption from _call_day1_noam_radio_interruption_observation
-    $ day1_radio_argument = _return
+    $ day1_radio_result = _return
+    $ day1_radio_argument = day1_radio_result[1]
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([
         ("noam", "reflexion", 0.22),
         ("lysa", "neutre", 0.78),
     ])
 
-    if day1_radio_argument == "reglement_conclave":
+    if day1_radio_result[0] == "success":
         noam determine "Dans le règlement du Conclave, c'est écrit qu'on n'a pas le droit de contacter l'extérieur nous-mêmes. C'est pas simplement la radio qui est verrouillée."
         lysa surpris "Attends, c'est vraiment marqué comme ça ?"
         noam neutre "Oui. On ne peut pas initier un appel. Si quelqu'un nous contacte, on peut répondre, mais on n'a pas le droit de passer le premier appel."
@@ -215,7 +216,10 @@ label decouverte_salle_observation:
         noam inquiet "Je sais que c'est pénible. Je voulais surtout t'éviter de chercher une fonction que Kami nous interdit d'utiliser."
         lysa fatigue "Bon... au moins, ça explique pourquoi tous les boutons sont bloqués."
     else:
-        if day1_radio_argument == "commandements":
+        if day1_radio_argument == "reglement_conclave":
+            noam inquiet "J'ai voulu citer le règlement, mais je l'ai interrompue au mauvais moment."
+            lysa blase "Si tu veux me dire quelque chose, attends au moins que je finisse ma phrase."
+        elif day1_radio_argument == "commandements":
             noam reflexion "Les Dix Commandements doivent peut-être empêcher ce genre de communication."
             lysa blase "Les Commandements ne s'appliquent pas ici, Noam. Kami l'a dit tout à l'heure."
         elif day1_radio_argument == "surveillance":
@@ -228,7 +232,7 @@ label decouverte_salle_observation:
             noam inquiet "Peut-être que c'est interdit pour éviter qu'on dérègle les équipements de la station."
             lysa blase "Alors pourquoi ils ont laissé une radio ici ? Je demande pas de démonter l'antenne, juste de passer un appel."
 
-        lysa colere "Attends, laisse-moi essayer une dernière fois."
+        lysa colere "Bon, laisse-moi essayer une dernière fois."
         "Elle relance l'appel sur une autre fréquence. La même notification rouge revient aussitôt."
         lysa fatigue "Bon, c'est mort. J'ai essayé tout ce que j'ai trouvé, et ça veut rien savoir."
         noam neutre "Désolé, j'aurais aimé pouvoir t'aider."
