@@ -486,22 +486,9 @@ label _5_0_APRES_TEMPS_LIBRE_1:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.8
 
-    pause 0.8
-
-    think "Ne sachant pas quoi faire, je marche sans réelle direction. Le Conclave parait désert."
-
-    "La salle commune est vide : une chaise renversée, un plateau abandonné."
-
-    think "Je devrais faire quelque chose. Mais faire quoi ? Convaincre qui ? De quoi, exactement ?"
-
-    think "Julian. Il doit encore être dans sa chambre."
-    think "Kael a dit qu'il avait tenté d'aller le voir hier soir."
-    think "Qu'il lui avait répondu de le laisser tranquille."
-
-    "Je m'arrête."
-
-    think "Sinon, dans la salle d'observation, sur les ordinateurs, on peut voir l'état des districts."
-    think "Qu'espèrent les gens par rapport au vote de demain ? Je me le demande bien."
+    think "Après le temps libre, je repense à ma discussion avec Sael. Je comprends ses raisons, mais elle votera contre demain. Si je veux faire quelque chose d'utile, il me reste deux possibilités."
+    think "Julian ne sort presque plus de sa chambre, et il s'est montré particulièrement agressif hier. Je pourrais aller vérifier comment il va, même si on risque de se disputer encore."
+    think "Sinon, la salle d'observation permet de consulter les informations venant de la Terre. J'aimerais savoir comment les gens vivent avec les restrictions dont on parle depuis plusieurs jours."
 
 label _5_0_CRITICAL_CHOICE:
 
@@ -523,210 +510,130 @@ label _5_0_0_JULIAN:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
 
-    pause 0.5
-
     $ doplleganger = 0
-    think "Bon, Julian m'inquiète à ne plus se montrer du tout, ça ne lui ressemble pas."
-
-    "Je frappe."
-
-    play sound sfx_knock volume 8.0
-    pause 1.0
-
-    think "Rien."
-    "Je frappe encore."
-
-    play sound sfx_knock volume 8.0
-    pause 0.8
-
-    think "J'entends un mouvement derrière la porte."
-
-    noam "Julian. C'est moi."
-
-    pause 0.8
-
-    play sound sfx_door volume 8.0
-
+    think "Je frappe à la porte de Julian. Une première fois, puis une deuxième quand il ne répond pas."
+    play sound sfx_knock
+    pause 0.5
+    noam neutre "Julian, c'est moi. Je veux juste te parler, je vais pas rester longtemps."
+    "J'entends un bruit, puis la porte s'ouvre."
+    play sound sfx_door
     $ showGroup([("julian", "neutre", 0.65), ("noam", "neutre", 0.30)])
-
-    "La porte s'ouvre."
-
-    think "Julian n'a l'air ni détruit ni même vraiment atteint."
-
-    julian taquin "Noam. Tu viens constater les dégâts ?"
-
-    noam hesitation "Je venais surtout voir comment tu allais."
-
-    julian sourire "Oh. C'est presque touchant."
-
-    "Il se pousse. Cette fois, l'invitation est réelle. Il m'invite à rentrer."
+    julian taquin "Tiens, Noam. Tu viens me dire qu'il faut sourire et accepter la défaite ?"
+    noam inquiet "Non, je voulais juste savoir comment t'allais. Tu t'es enfermé ici depuis le vote."
+    julian sourire "Je vais parfaitement bien. Tu vois, je tiens debout, je parle et je suis même habillé. Tu peux faire ton rapport aux autres."
+    noam colere "Tu peux arrêter deux secondes ? Je te demande pas ça pour me moquer."
+    "Julian me regarde sans répondre, puis s'écarte pour me laisser entrer."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_236
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    pause 0.5
-
     $ showGroup([("julian", "sourire", 0.65), ("noam", "reflexion", 0.30)])
-
-    think "La chambre est trop propre. Une pièce témoin où rien ne dépasse, rien ne vit."
-
-    julian neutre "Alors ? Laisse-moi deviner. Tu veux me dire de ne pas prendre les résultats comme quelque chose de personnel ?"
-    julian taquin "Ou m'offrir une de tes phrases calmes, prudentes et miraculeusement sans conclusion ?"
-
-    noam "Disons que je ne suis pas vraiment venu avec un dialogue préétabli."
-
-    julian rire "Oh, comme c'est surprenant."
-
-    noam reflexion "Tu n'as pas l'air aussi abattu qu'hier."
-
-    julian sourire "Parce que je ne le suis pas, du moins pas vraiment."
-
-    "Julian pose la main sur le brouilleur."
+    think "Sa chambre est soigneusement rangée. Il a laissé sa tablette allumée sur une rediffusion du vote."
+    noam inquiet "Tu regardes encore ça ?"
+    julian decu "J'essaye de comprendre ce qui s'est passé. J'avais vraiment cru que le texte pouvait être adopté."
+    noam neutre "Il y avait quand même un problème énorme avec la suppression des rations."
+    julian colere "Je sais, Noam ! J'étais à la même table que toi. Tu crois que j'ai pas entendu ?"
+    noam inquiet "Alors pourquoi tu fais comme si ceux qui ont voté contre étaient des idiots ?"
+    julian neutre "Parce que je suis en colère. Ça t'arrive jamais, toi ?"
+    "Il saisit le brouilleur posé près de la tablette et touche un bouton. L'indicateur lumineux s'éteint."
     $ unlock_codex_page("surveillance_conclave", with_notification=False)
-
+    julian taquin "Tu vas voir un truc. Regarde bien la caméra."
     play sound sfx_beep
     show screen j50_julian_surveillance_overlay
-    pause 0.4
-
-    think "Le grésillement disparaît. La caméra pivote. Julian se met en scène."
-
-    julian triste "J'avoue que c'est difficile. Je croyais sincèrement que nous pouvions accomplir quelque chose de grand."
-    julian decu "Et, au moment décisif, VOUS avez choisi la peur."
-
-    noam reflexion "Sérieux ?! Arrête de..."
-
+    pause 0.3
+    "La caméra au plafond pivote vers nous. Julian se redresse immédiatement et prend un air accablé."
+    julian triste "J'ai fait tout ce que je pouvais pour ce vote. Je pensais qu'on pourrait enfin changer quelque chose, et certains ont préféré abandonner."
+    julian decu "C'est difficile, mais je continuerai à me battre pour les gens qui nous regardent."
+    noam surpris "Attends, tu viens vraiment de..."
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
-    pause 0.4
-
-    noam reflexion "...jouer la comédie."
-
-
-    julian rire "Évidemment que je joue. Quand Kami regarde, il faut lui donner quelque chose qu'elle ne puisse pas utiliser contre nous."
-    julian sourire "L'opinion publique est bien plus dangereuse que tu ne le crois !"
-
-    noam desaccord "Donc tout ça, c'était pour l'image. Pour TON image ?!"
-
-    julian taquin "L'image, c'est ce qui reste quand une idée échoue. Et ce qui permet à la suivante d'exister."
-    julian sourire "Et le plus beau c'est que, tu sais. Noam, il faut aussi se servir de ses échecs."
-
-    play sound sfx_beep
-    show screen j50_julian_surveillance_overlay
-    pause 0.4
-
-    julian triste "Il faut accepter la défaite avec dignité. Mais j'ai porté ce vote jusqu'au bout."
-    julian decu "Alors c'est normal que je sois déçu !"
-
-    play sound sfx_beep
-    hide screen j50_julian_surveillance_overlay
-    pause 0.4
-
-    noam reflexion "Et toi, dans tout ça ? Où s'arrête le masque que tu portes ?"
-
-    julian neutre "Moi ? je fais ce qu'il faut pour rester utile à la société."
+    "Julian réactive le brouilleur et reprend aussitôt son expression habituelle."
+    julian rire "Alors ? Convaincant, non ?"
+    noam colere "Mais t'es sérieux ?! Tu viens de faire un petit discours devant la caméra juste pour te donner le beau rôle !"
+    julian taquin "Je savais que tu comprendrais pas. Les gens ont besoin de voir qu'on continue à se battre, même quand on perd."
+    noam inquiet "Et tu peux pas simplement leur parler normalement ?"
+    julian neutre "Normalement, on dit des choses qu'on regrette. Et Kami adore quand on lui en donne l'occasion."
+    noam reflechit "T'avais pourtant l'air vraiment en colère hier. C'était du cinéma aussi ?"
+    julian decu "Non. J'étais furieux. Mais je peux être furieux et réfléchir quand même à ce que les gens vont voir."
 
     $ j50_julian_fissure = 0
+    menu:
+        "Lui reprocher de penser à sa réputation.":
+            $ j50_julian_fissure += 1
+            noam colere "J'ai quand même l'impression que tu penses beaucoup plus à ton image qu'aux gens qu'on représente."
+            julian colere "Et toi, tu penses que les gens vont nous écouter si on passe pour une bande d'incapables ?"
+        "Reconnaître qu'il est réellement déçu.":
+            $ j50_julian_fissure -= 1
+            noam neutre "D'accord, je te crois quand tu dis que t'étais déçu. Je crois juste que t'as mal réagi."
+            julian decu "Ça, je veux bien l'admettre. J'aurais peut-être dû laisser Tomas tranquille."
+        "Lui demander pourquoi il a autant insisté auprès de Tomas.":
+            noam inquiet "Ce qui me dérange surtout, c'est ce que t'as fait avec Tomas. Tu l'as coincé dans la salle de repos."
+            julian hesitation "Je voulais qu'il comprenne que son vote était important. J'ai insisté, oui. Un peu trop."
+
+    julian neutre "Tu sais, j'avais passé du temps à préparer ce vote. Je m'étais dit que si on réussissait une fois, les autres arrêteraient de nous prendre pour des gamins."
+    noam reflechit "Et depuis qu'on a perdu, tu demandes à tout le monde qui a voté contre. Tu te rends compte que ça va surtout leur donner peur de te parler ?"
+    julian colere "Je voudrais juste savoir pourquoi quelqu'un a décidé de tout arrêter. C'est trop demander ?"
+    noam neutre "Oui, si la personne voulait garder son vote secret. Ça faisait partie des règles dès le début."
+    "Il ouvre la bouche pour répondre, puis se ravise. Ses yeux reviennent vers la rediffusion."
+    julian decu "Tu sais ce qui m'énerve le plus ? C'est que si un autre arrive à faire adopter son texte demain, tout le monde aura oublié celui-là."
+    noam surpris "Tu veux dire que tu serais pas content qu'on réussisse enfin ?"
+    julian colere "Mais si ! Évidemment que si !"
+    "Il répond un peu trop vite et s'en rend compte."
+    julian hesitation "Enfin... j'aurais voulu qu'on réussisse avec le premier. J'y tenais, c'est tout."
 
     menu:
-        "Tu veux aider les gens.":
-            $ j50_julian_fissure -= 1
-            noam "Tu veux aider les gens."
-            julian sourire "C'est gentil de le remarquer."
-
-        "Tu veux qu'on te regarde aider les gens.":
+        "Lui dire qu'il n'a rien à prouver.":
             $ j50_julian_fissure += 1
-            noam "Tu veux qu'on te regarde aider les gens."
-            julian inquiet "..."
+            noam neutre "Julian, t'as pas besoin de réussir tous les votes pour que les autres te prennent au sérieux."
+            julian inquiet "C'est facile à dire quand c'est pas toi qui as passé deux jours à convaincre tout le monde."
+        "Lui demander ce qui l'inquiète vraiment.":
+            $ j50_julian_fissure += 1
+            noam inquiet "T'as vraiment peur qu'on oublie ce que t'as fait ? Même si quelqu'un d'autre réussit après toi ?"
+            julian hesitation "Je veux pas passer pour celui qui a promis quelque chose et qui a tout raté."
+        "Lui répondre que le résultat compte davantage.":
+            $ j50_julian_fissure -= 1
+            noam colere "On est pas là pour savoir qui a eu la meilleure idée, Julian. Ce qui compte, c'est ce qui arrive aux gens dehors."
+            julian colere "Je sais ! Tu vas pas me répéter ça toute la journée !"
 
-        "Tu t'en fiches complètement.":
-            noam "Tu t'en fiches complètement."
-            julian taquin "Evidemment, tout est de la faute de ce connard de Julian."
-
-    julian sourire "Que le vote passe ou qu'il tombe, ce vote laisse quelque chose, une marque indélébile, sur la société."
-    julian idee "S'il passe, j'ai porté une idée décisive. S'il tombe, j'ai combattu votre peur du changement."
-    julian rire "Dans les deux cas, l'histoire sait où me placer."
+    "Julian récupère le brouilleur et le tourne entre ses doigts. Cette fois, il ne regarde pas la caméra."
+    julian neutre "De toute façon, le prochain sujet, c'est les frontières. Ryn va encore hurler, Sael va refuser et on finira exactement au même endroit."
+    noam inquiet "J'ai vu Sael ce matin. Elle est contre, oui, mais elle m'a expliqué pourquoi."
+    julian reflechit "Elle t'a parlé ? T'as de la chance. Moi, elle m'a même pas laissé essayer."
+    noam calme "Tu pourrais peut-être commencer par demander aux gens ce qu'ils pensent, au lieu de leur dire quoi voter."
+    julian decu "Je t'ai entendu, Noam. Vraiment. Mais ça me demande un effort, tu sais."
 
     menu:
-        "Tu veux être indispensable.":
+        "Lui proposer de sortir voir les autres.":
             $ j50_julian_fissure += 1
-            noam determine "Tu veux être indispensable."
-            julian inquiet "Ce n'est pas un défaut."
-
-        "Tu veux prouver que les autres sont lâches.":
+            noam sourire "Tu devrais venir manger avec nous. Même si t'as pas envie de reparler du vote."
+            julian hesitation "Peut-être ce soir. Pas maintenant."
+        "Lui demander de s'excuser auprès de Tomas.":
+            $ j50_julian_fissure += 1
+            noam neutre "Tu pourrais au moins t'excuser auprès de Tomas. Il était vraiment mal à l'aise."
+            julian decu "Oui... J'y réfléchirai."
+        "Lui dire qu'il se complique la vie.":
             $ j50_julian_fissure -= 1
-            noam "Tu veux prouver que les autres sont lâches."
-            julian sourire "Je n'ai pas besoin de le prouver. Ils le font très bien tout seuls."
-
-        "Tu veux juste gagner.":
-            noam "Tu veux juste gagner."
-            julian neutre "Gagner quoi ? Tu vois, même toi tu ne sais pas."
-
-    play sound sfx_beep
-    show screen j50_julian_surveillance_overlay
-    pause 0.3
-
-    julian triste "Mais ce n'est pas fini, on a encore 9 votes à traverser. Je crois encore qu'ils peuvent dire quelque chose de nous."
-
-    play sound sfx_beep
-    hide screen j50_julian_surveillance_overlay
-    pause 0.3
-
-    menu:
-        "Tu veux qu'on ait besoin de toi pour y croire.":
-            $ j50_julian_fissure += 1
-            noam determine "Tu veux qu'on ait besoin de toi pour y croire."
-
-        "Tu es seulement cynique.":
-            $ j50_julian_fissure -= 1
-            noam desaccord "Tu es seulement cynique."
-
-        "Tu as peur que le vote passe sans toi.":
-            $ j50_julian_fissure += 1
-            noam reflexion "Tu as peur que le vote passe sans toi."
+            noam taquin "Tu sais que tu te compliques énormément la vie pour quelqu'un qui prétend toujours tout maîtriser ?"
+            julian taquin "C'est pour ça que je suis exceptionnel."
 
     if j50_julian_fissure >= 3:
-        noam determine "Tu ne veux pas seulement que le vote passe."
-        noam "Tu veux qu'il ait besoin de toi pour passer."
-
-        julian inquiet "..."
-        julian "C'est une façon remarquablement injuste de résumer une ambition sincère."
-
-        noam "Non."
-        noam "C'est une façon très précise."
-
-        julian peur "Tu crois que c'est drôle ?"
-        julian inquiet "Tu crois que je n'ai jamais pensé à ce qui reste quand personne n'a plus besoin de moi ?"
-
+        julian inquiet "Noam, j'ai une question. Si demain vous arrivez à faire passer le texte sans moi... tu crois qu'on voudra encore m'écouter après ?"
+        noam surpris "Julian, c'est pas une compétition. Bien sûr qu'on aura encore besoin de ton avis."
+        julian hesitation "Ouais. J'imagine que tu peux pas vraiment me le promettre."
+        think "Il semble regretter d'avoir posé la question, et je préfère ne pas insister."
     elif j50_julian_fissure >= 1:
-        noam reflexion "Tu veux être celui autour de qui le vote s'organise."
-        noam "Pas seulement celui qui vote pour."
-
-        julian reflexion "Peut-être. Ou peut-être que tu es incapable de me comprendre."
-
+        julian decu "Je vais essayer de revenir avec les autres. Mais j'ai pas envie de voir Ryn se réjouir de mon absence."
+        noam sourire "Je pense qu'il a déjà assez à faire avec Sael. Tu risques de ne même pas être le sujet de conversation."
+        julian taquin "Tu sais vraiment rassurer les gens."
     else:
-        noam desaccord "Tu joues avec tout le monde."
+        julian colere "Bon, je crois qu'on va continuer à se disputer si tu restes là. On peut arrêter pour aujourd'hui ?"
+        noam neutre "Ouais. Je voulais juste savoir comment tu allais."
+        julian decu "Maintenant, tu sais."
 
-        julian sourire "Et toi, tu me donnes exactement la scène qu'il me fallait."
-        julian taquin "Alors, je dois te le dire..."
-
-    play sound sfx_beep
-    show screen j50_julian_surveillance_overlay
-    pause 0.3
-
-
-    julian sourire "Merci d'être venu, Noam."
-    julian triste "Même nos désaccords prouvent que tout ça compte encore."
-
-    play sound sfx_beep
-    hide screen j50_julian_surveillance_overlay
-    pause 0.3
-
-    noam "Pff, t'es incorrigible. Un putain de manipulateur."
-
-    julian sourire "Oh pauvre chou. Pourquoi est-ce que j'arrêterais juste avant la fin ?"
-    julian colere "Allez ouste, tu ne me sers plus à rien maintenant."
-
-    "Il me pousse en direction de la sortie. Un sourire sur le visage."
+    "Julian pose le brouilleur sur son bureau et me raccompagne à la porte."
+    julian neutre "Au fait, ne raconte pas aux autres ce que j'ai dit devant la caméra. Ils me prennent déjà assez pour un imbécile."
+    noam sourire "Alors arrête de leur donner des raisons de le penser."
+    julian taquin "Très drôle. Allez, à plus, Noam."
+    think "Je repars sans vraiment savoir s'il va mieux, mais au moins il a accepté de discuter sans chercher à gagner chaque échange."
 
     jump _5_0_FIN_JOURNEE
 
