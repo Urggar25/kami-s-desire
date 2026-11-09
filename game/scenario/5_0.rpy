@@ -818,34 +818,50 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
-    "Nous nous éloignons du panneau. L'odeur de café chaud a été remplacée par celle des composants brûlés."
-    noam inquiet "Tu crois que ça va coûter cher à réparer ?"
-    elias fatigue "Si Kael voit l'état du contrôleur, il va m'en parler pendant des semaines. Et franchement, il aura raison."
-    noam sourire "Je peux lui dire que c'est moi qui t'ai fait tomber la tasse."
-    elias inquiet "Non, ça va pas ! C'était moi. Et puis je préfère qu'il sache ce qui s'est passé, sinon il réparera peut-être pas le bon truc."
-    "Nous nous asseyons à distance de la console en attendant que quelqu'un rétablisse l'accès. Elias regarde régulièrement le voyant de l'alarme."
-    elias neutre "Au fait, t'as parlé à Sael ? Pour les frontières, je veux dire."
-    noam reflechit "Oui, ce matin. Elle m'a expliqué ce qu'ils ont vécu dans son village. Elle votera contre demain."
-    elias triste "Ah... Je m'en doutais. J'espérais quand même qu'on pourrait trouver un compromis."
-    noam inquiet "Le texte ne prévoit pas de compromis. C'est bien le problème. On peut pas protéger son village et laisser les familles circuler avec cette seule question."
-    elias reflechit "C'est vraiment mal fichu, leurs votes. Je sais même pas ce que je vais choisir."
-    noam neutre "Moi non plus. Et je crois pas qu'on puisse régler ça ici, coincés devant une console grillée."
-    elias sourire "Ouais, ce serait déjà pas mal qu'on arrive à sortir."
+    "Nous nous installons loin de la console. L'odeur de café a disparu, remplacée par celle de composants grillés."
+    think "Je ne savais pas qu'un café pouvait sentir aussi cher."
+    noam inquiet "Dis... tu crois que la réparation va coûter combien ?"
+    elias fatigue "Je préfère ne pas le savoir. Kael va me rappeler cette histoire jusqu'à la fin de nos jours."
+    elias gene "Et je ne pourrai même pas lui donner tort."
+    noam sourire "Je peux toujours dire que c'est moi qui t'ai bousculé."
+    elias inquiet "Surtout pas ! C'est moi qui l'ai renversée !"
+    elias reflechit "Et s'il ne sait pas comment la panne a commencé, il risque de réparer le mauvais circuit. On ne va pas empirer ça pour sauver ma fierté."
+    "Nous attendons. Toutes les trente secondes, Elias jette un regard au voyant."
+    think "J'aimerais qu'il arrête. Chaque fois qu'il vérifie, je me demande ce qu'il vient de remarquer."
+    elias neutre "Bon... tant qu'on est coincés ici, je peux te poser une question ?"
+    elias neutre "Tu as parlé à Sael, finalement ?"
+    noam reflechit "Oui. Elle m'a raconté un peu plus ce qui s'était passé dans son village."
+    noam triste "Elle votera contre demain. Et je n'ai pas envie de la traiter comme une ennemie pour ça."
+    elias triste "Ah..."
+    elias reflechit "Je m'y attendais. J'aurais juste aimé qu'on trouve une solution qui ne mette personne en danger."
+    noam inquiet "Le texte dit seulement qu'on ouvre. Il ne dit pas comment empêcher des groupes armés de traverser."
+    noam inquiet "Et si on vote non, les familles resteront séparées. Ça ne ressemble pas à un choix."
+    elias reflechit "C'est fou. Même après avoir lu tout ce qu'on peut, on finit toujours par devoir choisir entre deux dégâts."
+    elias gene "Je sais pas encore ce que je vais voter."
+    noam neutre "Moi non plus. Et notre situation actuelle ne m'inspire pas beaucoup de solutions politiques."
+    elias sourire "Je propose un premier amendement : interdire les cafés à moins de deux mètres d'une console."
 
     call show_custom_title("Un peu plus tard") from _call_show_custom_title
     scene bg_observation at adaptive_fullscreen with dissolve
     if j50_wire_completed:
-        "L'alarme s'arrête enfin. La maintenance a pu réinitialiser le verrouillage à distance, mais la console reste hors service."
-        elias sourire "Ça y est ! Ils ont accepté la demande d'ouverture. On va pouvoir sortir."
+        "L'alarme s'interrompt d'un coup. La maintenance a réussi à déverrouiller la porte à distance."
+        "Sur la console, les écrans restent noirs."
+        elias sourire "OUI ! Ils ont ouvert !"
+        elias sourire "Je n'ai jamais été aussi heureux de voir une porte fonctionner normalement."
     else:
-        "Après plusieurs tentatives, une équipe de maintenance répond à l'appel d'urgence. Quelqu'un coupe le verrouillage depuis le couloir et nous demande de ne plus toucher à la console."
-        elias fatigue "Ils vont devoir remplacer le contrôleur. Je sens qu'on va m'en parler longtemps."
+        "Après plusieurs appels, la maintenance répond enfin. Le verrou est levé depuis le couloir."
+        "Une voix nous ordonne de nous éloigner de la console et de ne plus rien toucher."
+        think "Sur ce dernier point, je suis entièrement d'accord."
+        elias fatigue "Ils vont changer le contrôleur entier..."
+        elias gene "Je vais peut-être finir par prendre mon café en dehors du Conclave."
     play sound "sound/sfx_door.ogg"
-    "La porte s'ouvre. Je quitte la salle avec Elias, qui s'arrête une dernière fois devant le panneau abîmé."
-    elias inquiet "Je vais prévenir Kael avant qu'il découvre ça par hasard. Et je lui dirai exactement ce qui s'est passé."
-    noam sourire "Bonne idée. Et la prochaine fois, pose ton café ailleurs."
-    elias rire "Promis ! Enfin... je vais essayer."
-    think "Je n'ai pas trouvé toutes les réponses que j'étais venu chercher, et une partie de la console est hors service. Elias a au moins réussi à prévenir la maintenance, mais je me demande si cette panne aura d'autres conséquences."
+    "La porte s'ouvre. Je sors presque trop vite. Elias, lui, s'arrête devant la console une dernière fois."
+    elias inquiet "Je vais prévenir Kael tout de suite. S'il voit le contrôleur sans savoir ce qui l'a endommagé, il va croire à une panne plus grave."
+    noam sourire "Très bien. Et la prochaine fois... essaie de boire loin des circuits électriques."
+    elias rire "Promis !"
+    elias gene "...Je vais au moins changer de table."
+    think "J'étais venu chercher des réponses sur la Terre. J'ai surtout appris qu'une tasse de café pouvait mettre une salle entière hors service."
+    think "Les relevés sont coupés. Et je ne sais pas encore si cette panne s'arrête vraiment à une console."
 
     jump _5_0_FIN_JOURNEE
 
@@ -862,19 +878,27 @@ label _5_0_FIN_JOURNEE:
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
     if doplleganger == 0:
-        think "Je quitte Julian et retourne au dortoir. J'espère qu'il finira par discuter avec les autres, même si je sais qu'il aura du mal à passer sur le résultat du vote."
+        think "Je laisse Julian seul avec ses caméras. Au moins, aujourd'hui, il a accepté de me parler sans public."
+        think "Je ne sais pas si c'est un progrès. Je préfère le croire."
     else:
-        think "En rentrant depuis la salle d'observation, je repense à Elias et à sa console. J'espère que Kael pourra réparer les dégâts avant que quelqu'un ait besoin des relevés."
+        think "En rentrant, je repense à Elias. Il a eu peur, mais il a réagi."
+        think "J'espère que Kael réparera tout ça avant que quelqu'un découvre ce qu'on ne peut plus surveiller."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_241
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je pose ma tablette sur le bureau et m'assieds sur le lit."
-    think "Demain, Sael votera contre. Je comprends pourquoi elle refuse de prendre le risque, mais ça n'empêche pas Ryn d'avoir raison quand il parle de ceux qui meurent aux frontières."
-    think "J'aimerais qu'on puisse voter sur quelque chose de moins brutal. Pour le moment, Kami ne nous a laissé que ces deux possibilités."
-    "Je me change et je me couche. Je commence enfin à m'endormir quand j'entends une porte s'ouvrir dans le dortoir."
+    "Je pose la tablette sur le bureau et m'écroule sur le lit."
+    think "J'avais prévu une journée tranquille. Au moins, personne n'a essayé de me faire voter pendant le dîner."
+    think "Demain, Sael votera non. Je comprends ce qui la pousse à le faire."
+    think "Et quand je repense aux corps dont parle Ryn, je comprends aussi pourquoi il ne peut pas accepter ce non."
+    think "Deux raisons de vouloir sauver des gens. Deux votes qui ne peuvent pas se rejoindre."
+    think "Kami doit se régaler."
+    "Je me glisse sous la couverture."
+    "Au moment où mes yeux se ferment, un verrou grince dans le dortoir."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
-    think "Quelqu'un marche dans le couloir. Il est tard, et les pas ralentissent près de ma chambre."
+    think "Des pas. Lents, réguliers."
+    think "Ils ralentissent juste devant ma porte."
+    think "À cette heure-ci, je préférerais vraiment que ce soit quelqu'un qui cherche les toilettes."
 
     menu:
         "Ouvrir la porte.":
@@ -887,9 +911,11 @@ label _5_0_FIN_JOURNEE:
 label _5_0_NUIT_RETOUR:
 
     $ blink()
-    think "Les pas finissent par s'éloigner. Je me demande qui se promène encore à cette heure-là, puis je renonce à y réfléchir."
-    think "Demain, il faudra affronter un autre vote. Je ne sais pas ce qu'il donnera, mais je compte au moins écouter les autres avant de me décider."
-    "Je m'endors quelques minutes plus tard."
+    think "Les pas s'éloignent enfin. Je reste encore une minute à écouter."
+    think "Je ne sais pas pourquoi ce simple bruit me tient autant éveillé."
+    think "Demain, il faudra voter."
+    think "Cette nuit, je n'ai même pas réussi à identifier qui traversait le couloir. Je me demande ce que je crois vraiment connaître des onze autres."
+    "Le silence revient. Je finis par m'endormir."
 
     $ current_day = 6
     pause 1.0
