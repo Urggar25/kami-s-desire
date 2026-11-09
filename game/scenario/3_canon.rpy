@@ -827,42 +827,46 @@ label _3_PAUSE_CHAMBRE:
 
     call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
 
-    noam colere "Julian, ça suffit. Il t'a demandé de le laisser tranquille, tu l'as entendu ou pas ?"
-    julian colere "Ah, Noam. Parfait. Nyra a donc appelé du renfort ?"
-    nyra neutre "Tomas m'a demandé de venir. Il voulait partir et tu continuais à insister."
-    julian reflexion "Je lui expliquais pourquoi son soutien comptait. On dirait que discuter est devenu interdit."
-    tomas inquiet "Non ! Tu voulais que je dise à tout le monde que je te soutiens, toi ! Et tu m'écoutais même pas !"
-    julian hesitation "Tomas, tu déformes ce que j'ai dit."
-    noam colere "On t'a entendu en arrivant. Tu voulais même lui faire répéter ta phrase."
-    julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que tout le monde va finir par tomber d'accord ?!"
-    noam colere "Au moins, j'essaie pas de forcer les autres à voter comme moi !"
-    julian colere "Tu crois que je fais ça pour m'amuser ? Un seul non et tout ce qu'on a tenté ne sert à rien !"
-    noam colere "Alors parle de l'amendement ! Pas de qui doit te soutenir devant les caméras !"
-    julian colere "C'est facile de jouer les gentils quand tu laisses aux autres le boulot de convaincre !"
-    tomas inquiet "Mais arrêtez tous les deux ! Je suis là, vous savez !"
+    noam colere "Julian ! Il vient de te dire qu'il voulait partir. Tu as un problème avec le mot non ?"
+    julian colere "Ah, Noam. Parfait. Nyra a recruté la police des bonnes intentions ?"
+    nyra neutre "Tomas m'a demandé de venir. Il ne voulait plus discuter avec toi. C'est assez clair."
+    julian reflexion "Je lui explique pourquoi son choix compte. Vous voulez interdire les discussions maintenant ?"
+    tomas inquiet "Non ! Tu veux que je dise que je TE soutiens ! Tu n'as même pas demandé ce qui me faisait hésiter !"
+    julian hesitation "C'est... ce n'est pas ce que je voulais dire."
+    noam colere "On était derrière la porte. On t'a entendu lui dicter sa réponse !"
+    julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que l'unanimité va tomber du plafond ?!"
+    noam colere "Au moins, je ne prends pas les autres pour des bulletins avec des jambes !"
+    julian colere "Tu crois que ça m'amuse ?! UN seul contre et trois jours d'efforts partent en fumée !"
+    noam colere "Alors convaincs-le sur le TEXTE ! Pas sur la jolie photo de groupe que tu veux offrir aux caméras !"
+    julian colere "Tu peux jouer les gentils parce que d'autres prennent le risque de défendre ce qu'ils croient juste !"
+    tomas inquiet "MAIS VOUS ALLEZ VOUS TAIRE ?!"
+    tomas colere "Je suis là ! Je suis pas une chaise qu'on déplace d'un camp à l'autre !"
     "Je me tourne vers Tomas. Il tremble de colère, et je réalise que je viens aussi de parler à sa place."
-    noam culpabilite "T'as raison, désolé. Je voulais pas te mettre au milieu."
-    julian hesitation "Tomas, je..."
-    tomas inquiet "Non ! Laisse-moi finir ! J'ai peut-être envie de voter pour, mais là, franchement, vous me donnez envie de vous envoyer promener tous les deux !"
-    nyra raison "Tomas n'a pas à vous promettre quoi que ce soit. Julian, tu peux partir ? Noam, reste deux minutes avec nous."
-    julian colere "Très bien. Mais si on perd parce que personne n'a voulu convaincre les indécis, vous y repenserez."
-    noam colere "Et toi, essaie de comprendre que les gens ont le droit d'hésiter."
-    julian colere "On verra tout à l'heure."
+    noam culpabilite "T'as raison. Excuse-moi. J'aurais dû te demander ce que tu voulais au lieu de hurler."
+    julian hesitation "Tomas, je ne voulais pas..."
+    tomas inquiet "NON ! Vous m'écoutez pour une fois !"
+    tomas inquiet "J'ai peut-être envie de voter pour, d'accord ? Mais maintenant, j'ai surtout envie de vous envoyer promener tous les deux !"
+    nyra raison "Vous avez terminé ? Alors on va faire quelque chose de révolutionnaire : laisser Tomas réfléchir."
+    nyra neutre "Julian, sors. Noam, reste."
+    julian colere "Très bien. Mais si une seule hésitation nous fait perdre, rappelez-vous qui aura essayé de l'éviter."
+    noam colere "Et rappelle-toi que les gens ont le droit de te dire non !"
+    julian colere "Oui. On verra."
 
     hide julian with moveoutleft
 
     stop music fadeout 0.6
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
 
-    tomas hesitation "Je lui ai dit que je voulais réfléchir. Je sais pas pourquoi il a pas compris."
-    noam triste "Je suis désolé aussi. Je lui ai crié dessus sans même te demander ce que tu voulais."
-    tomas hesitation "Je voudrais que ça passe, je crois. Mais si les gens n'ont plus leurs rations et que ça se passe mal, on fait quoi ?"
-    nyra neutre "Tu voteras sur le texte qu'on aura devant nous, pas sur ce que Julian ou Noam veulent entendre."
-    tomas inquiet "Ouais... J'aurais juste aimé qu'on me laisse un peu de temps."
-    noam determine "Je comprends. On se retrouve au Conclave ?"
-    tomas hoche_la_tete "Ouais. Et s'il vous plaît, arrêtez de vous battre pour moi."
-    nyra sourire "Je reste un moment avec lui. Merci d'être venu, Noam."
-    think "Ils partent ensemble. Je ne sais pas si j'ai vraiment aidé Tomas, et je me demande si Julian va essayer de se venger pendant le débat."
+    tomas hesitation "Je lui ai dit non à la discussion. Je sais pas pourquoi c'est plus difficile à comprendre qu'un non au vote."
+    noam triste "Je ne t'ai pas beaucoup aidé. J'ai fait exactement ce que je lui reprochais."
+    tomas hesitation "Je veux que les choses changent, moi aussi. Mais si on supprime les rations et que les gens n'ont plus rien, ça va être de ma faute ?"
+    nyra neutre "Tu voteras sur le texte. Pas pour faire plaisir à Julian. Pas pour remercier Noam d'être venu."
+    tomas inquiet "J'aurais juste voulu avoir peur tranquillement, vous voyez ? Sans que quelqu'un transforme ça en problème."
+    noam determine "Prends le temps qui reste. On se retrouvera au Conclave."
+    tomas hoche_la_tete "Ouais. Mais je vous en supplie, ne faites pas encore de moi l'enjeu de votre dispute."
+    nyra sourire "Je reste avec lui. Et merci d'être venu sans casser une porte, Noam."
+    think "Nyra reste auprès de Tomas. Je repars seul."
+    think "Je m'étais promis de faire mieux que me disputer. Il est à peine midi, et j'ai déjà perdu une partie de ce pari."
     $ hideGroup()
 
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
@@ -874,13 +878,14 @@ label _3_TRANSITION_CONCLAVE:
     scene couloir_dortoir at adaptive_fullscreen with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
-    think "Je retrouve les autres dans le couloir. Tout le monde avance vers le Conclave, mais personne n’a vraiment envie de discuter."
+    think "Le groupe avance vers la salle du Conclave. Pas de grandes discussions, plus de plaisanteries. On dirait une classe qui rejoint une salle d'examen."
 
     $ showGroup([
         ("noam", "neutre", 0.50),
     ])
 
-    think "Je repense à Tomas. J’aimerais que le texte passe, mais pas parce que quelqu’un aura eu trop peur de dire non. Je suis encore déterminé à essayer, même après cette dispute."
+    think "Je repense à Tomas. Il voulait seulement qu'on lui laisse le choix."
+    think "Et moi, je voulais que le texte passe. Il va falloir vérifier que ces deux souhaits ne deviennent pas incompatibles."
 
     $ showGroup([
         ("lysa", "neutre", 0.25),
@@ -890,14 +895,14 @@ label _3_TRANSITION_CONCLAVE:
     "Lysa marche en retrait. Juste assez pour que ça se remarque."
     "Le groupe accélère quand le couloir se resserre. Elle, non. Elle traîne les pieds, exprès."
 
-    lysa triste "On va voter. On va échouer."
-    lysa triste "Et demain on sera encore coincés ici. Dans trois jours, on recommencera."
-    lysa blase "On est douze à jouer les députés pendant qu'elle décide de tout."
+    lysa triste "On marche vers une défaite avec un sérieux admirable."
+    lysa triste "Et demain ? Les mêmes chambres, les mêmes couloirs. Dans trois jours, on rejouera la même pièce."
+    lysa blase "On se prend pour des législateurs et Kami tient les lumières, les portes et la sortie de secours."
 
     think "Lysa dit ça sans vraiment attendre de réponse. Elle paraît déjà convaincue qu’on va échouer."
 
-    noam reflechit "On n'a pas encore voté, Lysa."
-    noam sourire "Attends au moins le résultat avant de nous enterrer."
+    noam reflechit "On n'a pas encore voté, Lysa. Tu as déjà rédigé le communiqué de défaite ?"
+    noam sourire "Attends au moins qu'on ait le droit de mettre nos bulletins dans l'urne."
 
     "Lysa fait une moue déconfite alors qu'on approche de la porte du Conclave."
 
@@ -907,26 +912,27 @@ label _3_TRANSITION_CONCLAVE:
     think "Sael s'est laissée glisser à l'arrière du groupe, elle aussi. Volontairement. Elle observe Lysa depuis un moment."
     "Sans prévenir, sans théâtre, elle attrape Lysa et la serre contre elle."
 
-    sael "Lysa... Tu as l'air épuisée."
-    sael "Tu vois les problèmes avant tout le monde. C'est utile. Mais tu peux aussi te reposer un peu."
-    sael "On aura besoin de toi pendant le vote."
+    sael "Lysa... Tu peux arrêter de faire semblant d'aller bien cinq minutes ?"
+    sael "Tu repères les problèmes avant tout le monde. C'est précieux. Mais si tu passes ton temps à les porter seule, tu vas t'écrouler."
+    sael "On aura besoin de toi là-dedans. Pas de ta pire prédiction."
 
     "Elle pointe la poitrine de Lysa du doigt. Les épaules de Lysa se relâchent, à peine."
 
-    lysa "Tu dramatises. Je suis toujours là."
+    lysa "Je suis toujours debout. C'est déjà une preuve de bonne santé."
 
-    sael "Je sais. Je te demande juste de ne pas abandonner avant d'avoir essayé."
+    sael "Alors continue. Mais arrête d'annoncer l'échec avant même qu'on entre."
 
-    lysa "Bon. Mais tu me devras un café après ça."
+    lysa "D'accord... Mais tu me devras un café. Un vrai. Pas cette eau brune de station."
 
-    sael sourire "Deux, même. Et sans formulaire."
+    sael sourire "Deux cafés, si tu veux. Et je remplirai les formulaires à ta place."
 
-    lysa blase "Touché. Bref. On y va avant que je devienne sentimentale."
+    lysa blase "Bon. On avance, avant que tu me fasses pleurer devant ces idiots."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_167
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    think "On entre. On s'installe. Voilà. C'est parti."
+    think "La table circulaire nous attend. Je reconnais les sièges, les caméras, l'écran."
+    think "Je découvre surtout que je déteste cette salle quand elle est pleine."
 
     play sound sfx_announce
     pause 1.0
@@ -935,15 +941,15 @@ label _3_TRANSITION_CONCLAVE:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Vous voilà tous ! Douze fauteuils, douze silhouettes. Personne ne manque à l'appel."
-    kami "Ce serait dommage. Les chaises vides, ça déprime l'audience."
+    kami "Douze représentants ! Douze sièges ! Pas un seul absent ! Vous voyez que vous êtes capables de vous entendre sur quelque chose : être à l'heure !"
+    kami "J'aurais été tellement triste de devoir montrer une chaise vide au public. Quelle catastrophe pour la réalisation !"
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Et je vois des visages émus ! Il y a eu de la tendresse dans les couloirs, on dirait."
-    kami "Cameraman, un gros plan sur ces petites âmes fragiles."
+    kami "Ooooh ! Je vois que certains ont eu droit à un câlin avant de venir ! Ça me donne presque envie d'avoir des bras."
+    kami "Cadreur imaginaire, gros plan sur ces petites âmes fragiles ! Oui, je fais aussi la réalisation. Je suis polyvalente."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Installez-vous. On commence dans un instant."
+    kami "Installez-vous. Dans quelques instants, vous allez découvrir combien vous tenez vraiment les uns aux autres."
 
     hide screen kami_broadcast_ui
 
@@ -954,7 +960,8 @@ label _3_TRANSITION_CONCLAVE:
 
     play sound sfx_door
 
-    think "Les portes viennent de se verrouiller. Je vérifie rapidement la poignée : impossible de sortir. Kami compte bien nous garder ici jusqu’au vote."
+    think "Le verrou claque. Je vérifie la poignée par réflexe."
+    think "Bloquée. Un rappel discret que notre grand débat démocratique se déroule dans une cage."
 
 # ============================================================================
 # DÉBAT — PHASE 1 : le texte réel (Fatal Assembly)
