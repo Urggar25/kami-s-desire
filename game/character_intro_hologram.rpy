@@ -145,7 +145,6 @@ screen kd_character_intro_screen(profile_id):
                 size max(13, int(19*ui))
                 color "#6AD8EB"
                 bold True
-                tracking int(2*ui)
                 at kd_intro_reveal(0.25)
 
             text info.get("name", profile_id).upper():
@@ -160,7 +159,7 @@ screen kd_character_intro_screen(profile_id):
             hbox:
                 spacing int(15*ui)
                 at kd_intro_reveal(1.17)
-                text "DISTRICT" size max(17,int(23*ui)) color "#76D5E9" min_width int(215*ui)
+                text "DISTRICT" size max(17,int(23*ui)) color "#76D5E9" xminimum int(310*ui)
                 text info.get("district", "—").upper() size max(17,int(29*ui)) color "#FFFFFF" bold True
 
             add Solid("#3ED6EE46") xsize int(pw*0.82) ysize max(1,int(2*ui)) at kd_intro_reveal(1.23)
@@ -168,7 +167,7 @@ screen kd_character_intro_screen(profile_id):
             hbox:
                 spacing int(15*ui)
                 at kd_intro_reveal(1.64)
-                text "ÂGE" size max(17,int(23*ui)) color "#76D5E9" min_width int(215*ui)
+                text "ÂGE" size max(17,int(23*ui)) color "#76D5E9" xminimum int(310*ui)
                 text (info.get("age", "—") + " ANS") size max(17,int(29*ui)) color "#FFFFFF" bold True
 
             add Solid("#3ED6EE46") xsize int(pw*0.82) ysize max(1,int(2*ui)) at kd_intro_reveal(1.72)
@@ -176,7 +175,7 @@ screen kd_character_intro_screen(profile_id):
             hbox:
                 spacing int(15*ui)
                 at kd_intro_reveal(2.11)
-                text "TAILLE" size max(17,int(23*ui)) color "#76D5E9" min_width int(215*ui)
+                text "TAILLE" size max(17,int(23*ui)) color "#76D5E9" xminimum int(310*ui)
                 text info.get("height", "—") size max(17,int(29*ui)) color "#FFFFFF" bold True
 
             add Solid("#3ED6EE46") xsize int(pw*0.82) ysize max(1,int(2*ui)) at kd_intro_reveal(2.19)
@@ -184,7 +183,7 @@ screen kd_character_intro_screen(profile_id):
             hbox:
                 spacing int(15*ui)
                 at kd_intro_reveal(2.58)
-                text "TOUR DE POITRINE" size max(17,int(23*ui)) color "#76D5E9" min_width int(215*ui)
+                text "TOUR DE POITRINE" size max(17,int(23*ui)) color "#76D5E9" xminimum int(310*ui)
                 text info.get("chest", "—") size max(17,int(29*ui)) color "#FFFFFF" bold True
 
             null height int(9*ui)
