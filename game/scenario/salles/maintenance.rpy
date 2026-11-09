@@ -139,6 +139,7 @@ label decouverte_salle_maintenance:
     noam sourire "Tu as l'air de connaître le modèle."
     kael reflechit "Pas celui-là précisément. Kael, au fait. Je viens d'Orbite."
     $ unlock_character_name("kael")
+    call kd_play_character_intro("kael") from _call_kd_intro_kael_j1
     noam sourire "Noam. Je peux regarder de plus près ?"
     kael neutre "Oui, mais évite les commandes. Je ne sais pas encore ce qu'elles font toutes."
     noam taquin "Je vais essayer de ne pas lancer une fusée par accident."
