@@ -935,30 +935,37 @@ label _5_0_SAEL_PNC:
 
     if _j50_sael_choice == "lit":
         $ j50_sael_mark_seen("lit")
-        think "Le cadre du lit est démonté et les planches sont rangées contre un mur. Sael a gardé le matelas et posé une couverture dessus."
-        noam surpris "T'as démonté tout ça toute seule ? Ça a dû te prendre du temps."
-        sael neutre "Un peu. Chez moi, on dort souvent sur des couches plus simples. Je suis plus à l'aise comme ça."
-        noam sourire "Moi, je crois que j'aurais gardé le lit. J'ai déjà assez de mal à dormir."
-        sael sourire "C'est ton choix. Je vais pas venir démonter le tien."
+        think "Le lit a été réduit à l'essentiel : un matelas et une couverture. Les planches sont rangées contre le mur."
+        think "Je commence à soupçonner Sael d'avoir déclaré la guerre au mobilier."
+        noam surpris "Tu as vraiment démonté un lit entier toute seule ? Tu as une rancune particulière envers les meubles ?"
+        sael neutre "Chez moi, on dort souvent plus près du sol. C'est comme ça que je suis à l'aise."
+        sael sourire "Quant à la rancune, je te rassure : je n'en veux pas au matelas."
+        noam sourire "Moi, si je démonte mon lit, c'est parce que je suis tombé dessus un peu trop fort."
+        sael sourire "Ne t'inquiète pas, je ne viens pas inspecter le tien. Tu peux dormir dans ton nuage."
     elif _j50_sael_choice == "crane":
         $ j50_sael_mark_seen("crane")
-        think "Un petit crâne d'animal est posé parmi des morceaux de bois et des ficelles. Il a été nettoyé et décoré à la main."
-        noam inquiet "C'est un vrai crâne ?"
-        sael neutre "Oui. Il vient d'un animal qu'on a chassé. Chez nous, on essaie de ne pas gaspiller ce qu'on prélève."
-        noam neutre "D'accord. Je te demande parce que j'en ai jamais vu chez moi."
-        sael mefiant "Tu peux regarder, mais évite d'y toucher. J'y tiens."
+        think "Un petit crâne d'animal repose parmi des morceaux de bois et des ficelles."
+        think "Il a été nettoyé et décoré soigneusement. Je crois que mon visage vient de montrer une surprise un peu trop visible."
+        noam inquiet "Euh... je vais poser une question stupide. C'est un vrai crâne ?"
+        sael neutre "Oui. Un animal chassé chez nous."
+        sael neutre "On prend une vie pour se nourrir. Alors on essaie de ne rien gaspiller de ce qu'elle nous donne."
+        noam neutre "D'accord. À Harmonie, ce n'est pas exactement le genre de décoration qu'on trouve sur les étagères."
+        sael mefiant "Regarde si tu veux, mais ne le prends pas. Il a plus de valeur pour moi qu'il n'en a l'air."
     elif _j50_sael_choice == "affaires":
         $ j50_sael_mark_seen("affaires")
-        think "Ses affaires sont rangées dans de petits sacs en toile. Elle a aussi gardé des morceaux de tissu et quelques outils."
-        noam reflexion "Tu as ramené tout ça de chez toi ?"
-        sael neutre "Presque tout. Je savais pas ce qu'ils nous laisseraient garder, alors j'ai pris surtout des choses utiles."
-        noam sourire "J'aurais dû faire pareil. J'ai pris des trucs dont je me sers même pas."
-        sael reflechit "Si tu en as besoin un jour, tu seras peut-être content de les avoir."
+        think "Ses affaires tiennent dans quelques sacs de toile. Elle a conservé des outils, des morceaux de tissu, des objets réparés."
+        think "Je crois que je n'aurais jamais pensé à emporter la moitié de tout ça."
+        noam reflexion "Tu as vraiment apporté tous ces outils depuis ton village ?"
+        sael neutre "Presque. Je ne savais pas ce qu'on pourrait garder, alors j'ai préféré prendre ce qui peut servir."
+        sael taquin "J'aurais sans doute dû emporter des vis aussi. Kael serait venu plus tôt."
+        noam sourire "J'ai emporté des objets parfaitement inutiles. Ma valise aurait honte si elle pouvait te voir."
+        sael reflechit "Un objet inutile aujourd'hui peut te sauver demain. Tout dépend de ce qu'on fait avec."
     else:
         return
 
     if j50_sael_pnc_score >= 3:
-        sael sourire "Bon, tu as fait le tour. Tu voulais surtout parler du vote, non ?"
+        sael sourire "Bon. Tu as étudié ma chambre comme un inspecteur."
+        sael neutre "On peut parler de la vraie raison de ta visite, maintenant ?"
         return
     jump _5_0_SAEL_PNC
 
@@ -966,39 +973,50 @@ label _5_0_NUIT_OUVRIR:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_242
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    "J'entrouvre ma porte. Quelqu'un est déjà presque au bout du dortoir."
+    "J'entrouvre la porte. Une silhouette s'éloigne déjà au bout du dortoir."
+    think "Évidemment. Le temps que je trouve le courage de regarder, le mystérieux visiteur s'en va."
     if doplleganger == 0:
-        think "Je crois reconnaître la façon de marcher de Julian, mais il tourne au coin avant que je puisse le voir de face."
-        noam neutre "Julian ?"
+        think "Cette démarche... Julian ?"
+        think "Il tourne au coin avant que je puisse distinguer son visage."
+        noam neutre "Julian ? C'est toi ?"
     else:
-        think "La silhouette tient quelque chose sous le bras. Je me demande si c'est Elias qui revient de la maintenance."
-        noam neutre "Hé, il y a quelqu'un ?"
-    "Personne ne répond. Je reste quelques secondes dans le couloir avant de retourner me coucher."
+        think "La silhouette porte quelque chose sous le bras. Elias ?"
+        think "Après l'accident de cet après-midi, il pourrait encore chercher une solution à la panne."
+        noam neutre "Hé ! Qui est là ?"
+    "Aucune réponse."
+    think "Je reste seul dans le couloir, avec cette sensation ridicule d'avoir dérangé quelqu'un qui n'existe peut-être même pas."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     jump _5_0_NUIT_RETOUR
 
 
 label _5_0_NUIT_ECOUTER:
 
-    think "Je reste au lit et j'écoute les pas. Quelqu'un s'arrête à proximité, juste assez longtemps pour que je distingue sa voix."
+    think "Je retiens mon souffle. Les pas s'arrêtent."
+    think "Une voix murmure quelque chose, juste assez fort pour que j'en distingue quelques mots."
     if doplleganger == 0:
-        julian decu "Non, c'est pas ce que je voulais dire..."
+        julian decu "Non... c'est pas comme ça qu'il faut le dire..."
         pause 0.3
-        julian neutre "Bon, je recommencerai demain. Si je les vois, je m'excuserai. Enfin, j'essaierai."
-        think "Julian parle tout seul. Il prépare peut-être ce qu'il dira aux autres, ou à Tomas."
+        julian neutre "Demain. Si je vois Tomas, je pourrai..."
+        julian hesitation "Non. Recommence. Dis juste que tu es désolé."
+        think "Julian. Il répète des excuses dans un couloir vide."
+        think "Je n'aurais jamais cru qu'il aurait besoin de s'entraîner pour prononcer ces mots."
     else:
-        elias fatigue "Kael, j'ai vérifié, le message d'erreur est toujours là..."
+        elias fatigue "Kael ? Ouais... j'ai vérifié. L'erreur est toujours là."
         pause 0.3
-        elias inquiet "Non, on a coupé le panneau. Il devrait plus rien alimenter, mais faudrait quand même le regarder demain."
-        think "Elias semble parler dans son communicateur. La panne de la salle d'observation le préoccupe encore."
-    "Les pas reprennent puis s'éloignent. Je ne les entends bientôt plus."
+        elias inquiet "Non, le panneau est coupé. Il ne devrait plus alimenter le circuit, mais... ouais, faudrait vérifier demain."
+        think "Elias téléphone sûrement à Kael. Il continue de s'inquiéter pour le panneau."
+        think "Au moins, il ne fait pas semblant de croire que tout est réparé."
+    "Les pas reprennent. La voix disparaît au bout du couloir."
+    think "Je n'ai pas bougé. J'ai pourtant l'impression d'avoir assisté à une conversation à laquelle je n'étais pas invité."
     jump _5_0_NUIT_RETOUR
 
 
 label _5_0_NUIT_RESTER:
 
-    think "Je n'ai pas envie de sortir vérifier. Les autres ont bien le droit de se déplacer sans que je leur demande des explications."
-    "Je remonte la couverture et j'attends que les pas s'éloignent."
+    think "Je reste au lit."
+    think "Après une journée passée à demander aux autres de m'expliquer leurs choix, je pourrais peut-être leur laisser une nuit de tranquillité."
+    "Je remonte la couverture. Les pas finissent par s'éloigner."
+    think "Pour une fois, je décide de ne pas mener l'enquête."
     jump _5_0_NUIT_RETOUR
 
 # total : 8m
