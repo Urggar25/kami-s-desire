@@ -1,7 +1,7 @@
 # ------------------------------------------------------------
 # CINEMATIQUE DE PRESENTATION DES REPRESENTANTS
 # Jour 0 : Lysa ; jour 1 : les dix autres representants.
-# Animation non interactive de 4 secondes, synchronisee avec
+# Animation non interactive de 8 secondes, synchronisee avec
 # les fiches existantes PROFILE_DATA (pas de donnees dupliquees).
 # ------------------------------------------------------------
 
@@ -24,7 +24,7 @@ transform kd_intro_camera_restore:
 transform kd_intro_veil:
     alpha 0.0
     linear 0.18 alpha 1.0
-    pause 3.37
+    pause 7.37
     linear 0.45 alpha 0.0
 
 transform kd_intro_character:
@@ -35,7 +35,7 @@ transform kd_intro_character:
     zoom 1.03
     alpha 0.0
     easeout 0.55 xoffset 0 zoom 1.15 alpha 1.0
-    pause 2.96
+    pause 6.96
     easein 0.46 xoffset -45 alpha 0.0
 
 transform kd_intro_holo_panel:
@@ -43,7 +43,7 @@ transform kd_intro_holo_panel:
     xoffset 130
     alpha 0.0
     easeout 0.42 xoffset 0 alpha 1.0
-    pause 3.11
+    pause 7.11
     easein 0.47 xoffset 58 alpha 0.0
 
 transform kd_intro_reveal(delay=0.7):
@@ -194,7 +194,7 @@ screen kd_character_intro_screen(profile_id):
                 at kd_intro_reveal(3.07)
 
     # Decompte fixe : aucune interaction/clic supplementaire.
-    timer 4.0 action Return()
+    timer 8.0 action Return()
 
 label kd_play_character_intro(profile_id):
     if profile_id in PROFILE_DATA and profile_id not in kd_character_intro_seen:
