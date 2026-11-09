@@ -551,27 +551,43 @@ label _6_0_1_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
 
-    "Le résultat s'affiche. Les votes contre sont nettement majoritaires, et l'amendement est rejeté. Je reconnais le nom de Sael dans le dépouillement."
+    "Les votes défilent sur l'écran."
+    "Un contre. Puis un autre. Encore un."
+    think "Je savais qu'il n'y aurait pas d'unanimité. Mais voir les refus s'accumuler donne à la défaite un tout autre poids."
+    "Le texte est rejeté. Le nom de Sael apparaît parmi les votes contre."
+    think "Elle avait promis de ne pas mentir sur son choix. Elle a tenu parole."
     if player_vote == "pour":
-        think "J'ai voté pour malgré les risques, parce que je voulais qu'on donne enfin une chance aux familles séparées. Le résultat ne change rien à ce que j'ai choisi."
+        think "J'ai voté pour."
+        think "Pas parce que j'ignorais les risques. Parce que je n'arrivais plus à accepter que des familles soient condamnées à attendre derrière une barrière."
+        think "Ça ne rend pas les peurs de Sael moins réelles."
     elif player_vote == "contre":
-        think "J'ai aussi voté contre. Je n'ai pas réussi à me convaincre qu'une ouverture immédiate serait sans danger, même si je déteste ce que les frontières font subir aux gens."
+        think "J'ai voté contre."
+        think "Je n'ai pas réussi à accepter une ouverture immédiate, sans garantie pour ceux qui vivent près des passages."
+        think "Ça ne m'empêchera pas de revoir le visage de la femme à la télévision."
     else:
-        think "Je me suis abstenu. Avec toutes ces incertitudes, je n'ai pas réussi à trancher, mais je sais que mon abstention ne rendra service à personne aujourd'hui."
+        think "Je me suis abstenu."
+        think "Deux décisions m'effrayaient. Je n'ai pas su choisir laquelle j'étais prêt à assumer."
+        think "Je sais qu'il y a des gens qui appelleraient ça de la prudence. D'autres, de la lâcheté."
     $ hideGroup()
     call j601_sael_vote_animation from _call_j601_sael_vote_animation
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.0
-    think "Sael a tenu parole. Elle n'avait jamais dit qu'elle hésitait, mais voir son vote affiché rend la situation plus difficile pour Ryn."
+    think "L'animation du vote de Sael disparaît."
+    think "Ryn n'a pas détourné les yeux une seule fois."
+    think "Je voudrais lui dire quelque chose. Pour une fois, je n'ai aucune phrase qui me paraît utile."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Résultat du vote : absence d'unanimité. La proposition d'ouverture des frontières est rejetée."
+    kami "Résultat... du scrutin."
+    kami "Absence d'unanimité. La libre circulation entre les districts... est rejetée."
     $ interject("REJETÉ", color="#FF4D6D")
     pause 0.4
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Les restrictions actuelles restent donc en vigueur. Nous nous retrouverons pour le prochain vote."
-    "Sa voix paraît presque normale, mais son image disparaît avant la fin de la transition habituelle."
+    kami "Les restrictions restent en vigueur."
+    kami "Nous nous retrouverons pour... pour le prochain vote."
+    kami "Merci de... votre participation."
+    "Son image disparaît sans musique de conclusion, sans sarcasme, sans la moindre remarque supplémentaire."
+    think "Je crois que c'est la première fois que Kami annonce une défaite sans avoir l'air de savourer le résultat."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
 
@@ -585,20 +601,32 @@ label _6_0_1_VOTE:
         ("elias", "fatigue"),
         ("lysa", "fatigue"),
     ])
-    ryn colere "C'est donc fini. Tous ceux qui attendaient devant les frontières vont rentrer chez eux, et nous, on va faire quoi ? On va encore se dire qu'on a fait de notre mieux ?"
-    sael triste "Je sais que tu es en colère. Je ne te demande pas d'être d'accord avec moi."
-    ryn colere "Bah heureusement, parce que j'y arriverai pas !"
-    mara agace "Ryn, elle avait annoncé sa position avant le vote. Tu pouvais pas découvrir ça aujourd'hui."
-    ryn triste "Je sais, Mara. Mais ça m'empêche pas d'avoir envie de hurler."
-    tomas inquiet "Moi, ce qui me fait peur, c'est qu'on ait voté alors que Kami avait un problème. Comment on sait que tout a été enregistré correctement ?"
-    kael reflechit "Le dépouillement a affiché douze votes, et les vérifications de base semblent correctes. Ça ne nous dit pas pourquoi Kami a perdu le signal."
-    iris inquiet "Donc on vient de constater que la seule chose qui contrôle nos vies peut tomber en panne, et on a juste le droit de rentrer dans nos chambres ?"
-    elias fatigue "Je vais demander à Kael si on peut vérifier quelque chose sur les systèmes de la station. Je sais pas si on aura accès à grand-chose, mais au moins on peut essayer."
-    julian decu "Je voulais une victoire pour le Conclave. À la place, on a deux votes rejetés et une IA qui arrive à peine à tenir une réunion."
-    lysa blase "Pour une fois, t'as résumé la situation sans nous expliquer pourquoi tu aurais fait mieux."
-    julian taquin "Profites-en, ça risque de pas se reproduire."
-    "Quelques personnes sourient malgré elles. Ryn ne réagit pas et quitte la salle sans saluer personne."
-    think "Le vote est terminé, mais les interruptions de Kami préoccupent presque autant le groupe que le résultat. Personne ne sait vraiment ce qui a provoqué ces problèmes."
+    ryn colere "C'EST TOUT ?!"
+    ryn colere "Les gens qui attendaient ce matin vont rentrer chez eux. Encore. Et nous, on va faire quoi ? Se féliciter d'avoir débattu proprement ?!"
+    sael triste "Ryn..."
+    sael triste "Je sais ce que ce vote signifie pour toi. Je ne te demande pas de m'approuver."
+    ryn colere "ALORS ME DEMANDE RIEN !"
+    ryn triste "Parce que là... j'y arriverais pas."
+    mara agace "Elle t'avait prévenu, Ryn. Elle n'a pas changé son vote en douce juste pour te faire mal."
+    ryn triste "Je sais."
+    ryn triste "Mais je me demande comment je vais expliquer ce résultat à ceux qui attendaient."
+    tomas inquiet "Euh... excusez-moi, mais on vient vraiment de voter alors que Kami ne tenait pas sa connexion ?!"
+    tomas inquiet "On sait au moins si nos douze votes ont tous été enregistrés ?"
+    kael reflechit "Douze votes sont affichés. Les vérifications de base ne montrent pas d'anomalie."
+    kael inquiet "Mais ça ne nous explique pas pourquoi Kami a perdu le signal. Ni ce qui arriverait si elle le reperdait."
+    iris inquiet "Attendez... C'est pas juste le vote qui m'inquiète."
+    iris inquiet "La seule chose qui gère les sanctions, nos repas et jusqu'aux portes vient de décrocher en pleine séance. Et on n'a aucun moyen de savoir pourquoi ?"
+    elias fatigue "Kael et moi, on peut inspecter les systèmes locaux."
+    elias gene "Ça me permettra aussi de vérifier que je n'ai pas laissé une catastrophe derrière moi avec mon café."
+    julian decu "Deux votes. Deux échecs."
+    julian decu "Et maintenant, on découvre que notre arbitre peut s'interrompre au milieu d'une phrase. On est censés rassurer qui, exactement ?"
+    lysa blase "Pour une fois, tu as résumé nos problèmes sans ajouter que tu aurais personnellement sauvé le monde."
+    julian taquin "Ne t'y habitue pas. Je prépare une déclaration officielle sur mon incroyable modestie."
+    "Un rire discret parcourt la table. Il s'éteint presque aussitôt."
+    "Ryn se lève et quitte la salle sans saluer personne."
+    think "Personne ne tente de le retenir."
+    think "Les frontières restent fermées. Le vote est terminé."
+    think "Mais pour la première fois, j'ai l'impression que le résultat n'est pas la chose la plus inquiétante de cette journée."
 
     jump _6_0_1_FIN_JOURNEE
 
@@ -618,41 +646,71 @@ label _6_0_1_FIN_JOURNEE:
         ("iris", "fatigue"),
         ("tomas", "inquiet"),
     ])
-    elen inquiet "Vous croyez qu'elle va recommencer à parler normalement demain ? Parce que je dois dire que ça m'a vraiment fait peur."
-    iris reflechit "J'aimerais bien savoir ce qui lui arrive. Elle est insupportable d'habitude, mais au moins on sait à quoi s'attendre."
-    mara agace "Moi, je veux surtout savoir si on peut faire quelque chose si ses systèmes tombent en panne. On va pas attendre tranquillement qu'elle nous annonce une catastrophe."
-    kael reflechit "Je vais vérifier les messages techniques qu'on a reçus. Et je vais regarder ce qui s'est passé dans l'observatoire hier, même si je doute que les deux soient liés."
-    lysa blase "Tu penses vraiment qu'elle va te laisser accéder à ses systèmes ?"
-    kael calme "Probablement pas. Mais je peux au moins examiner ceux de la station."
-    tomas inquiet "Si vous trouvez quelque chose, vous nous le direz, hein ?"
-    iris sourire "Évidemment, Tomas. On va pas garder ça pour organiser une petite surprise."
-    "Les autres se séparent peu à peu. Elen propose à ceux qui le souhaitent de passer à la salle de repos, mais je préfère rentrer."
+    elen inquiet "Vous croyez que Kami sera... redevenue normale demain ?"
+    elen inquiet "Je ne pensais pas dire ça un jour, mais ses insultes me manquent presque."
+    iris reflechit "Elle est insupportable, mais d'habitude ses réactions suivent une logique."
+    iris inquiet "Aujourd'hui, elle avait l'air de lutter pour terminer ses propres phrases."
+    mara agace "Moi, j'aimerais surtout savoir ce qu'on fait si elle s'éteint pour de bon."
+    mara mefiant "On a un plan ? Une trousse de secours pour intelligence artificielle ? Ou on s'assoit et on attend le prochain bip ?"
+    kael reflechit "Je vais regarder les journaux d'erreurs de la station. Et vérifier le panneau de l'observatoire."
+    kael calme "Je ne pense pas qu'un café renversé puisse provoquer ça, mais je préfère éliminer cette possibilité plutôt que deviner."
+    lysa blase "Bonne chance pour demander à Kami l'accès aux fichiers qui prouvent qu'elle n'a aucun problème."
+    lysa taquin "Je sens qu'elle va adorer."
+    kael calme "Pas aux siens. Aux systèmes de la station, peut-être."
+    kael reflechit "Et si même ça nous est refusé, ce sera déjà une information."
+    tomas inquiet "Et si vous trouvez quelque chose..."
+    tomas inquiet "Vous nous prévenez ? Même si c'est une mauvaise nouvelle ?"
+    iris sourire "Bien sûr."
+    iris blase "On n'a pas l'intention d'organiser une fête-surprise avec une panne mondiale."
+    "Elen propose une partie de cartes pour éviter que tout le monde s'enferme dans sa chambre."
+    elen sourire "Sans débat ! Promis !"
+    mara taquin "Tu dis ça comme si une partie de cartes ne pouvait pas déclencher une guerre."
+    "Quelques-uns acceptent. Je préfère rentrer."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_275
     scene bg_dortoir at adaptive_fullscreen with dissolve
     $ showGroup([("julian", "decu", 0.25), ("elias", "fatigue", 0.55), ("ryn", "colere", 0.85)])
-    julian decu "Ryn, je sais que t'es déçu. Mais tu pouvais pas vraiment espérer que Sael change d'avis au dernier moment."
-    ryn colere "Julian, pas maintenant. S'il te plaît."
-    julian neutre "Je voulais juste..."
-    elias fatigue "Laisse-le, Julian. On a tous eu une journée assez compliquée."
-    julian decu "Bon, d'accord. Je vais pas insister."
-    "Ryn repart vers sa chambre. Julian hésite à le suivre, puis renonce. Elias me fait un signe avant de rejoindre Kael."
+    julian decu "Ryn... Je sais que ça s'est mal passé. Mais Sael avait prévenu qu'elle voterait contre."
+    julian hesitation "Je veux dire... tu ne pouvais pas vraiment t'attendre à autre chose."
+    ryn colere "Julian. Pas maintenant."
+    ryn triste "S'il te plaît."
+    julian neutre "Je voulais juste essayer de..."
+    julian hesitation "Bon. D'accord."
+    elias fatigue "Laisse-le tranquille."
+    elias gene "Je sais que tu veux arranger les choses, mais... pas comme ça."
+    julian decu "Je n'insiste pas."
+    julian decu "Bonne soirée, Ryn."
+    "Ryn s'éloigne."
+    "Julian fait un pas dans sa direction, puis s'arrête. Elias lui adresse un petit signe et rejoint Kael."
+    think "Hier, Julian aurait probablement insisté jusqu'à obtenir une réponse. Ce soir, il laisse Ryn partir."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_276
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
-    "Je m'assieds sur mon lit en repensant à ce qu'on a vu aujourd'hui."
-    think "Kami a perdu le contrôle de ses transmissions pendant plusieurs minutes. Elle dit que tout fonctionne normalement, mais je ne l'ai jamais vue aussi pressée de terminer une réunion."
-    think "Et puis il y a eu cet incident dans la salle d'observation hier. Je ne sais pas si ça a un rapport, et ce serait absurde d'en être certain sans aucune preuve."
-    "Je consulte une dernière fois ma tablette. Le résultat du vote s'affiche toujours, accompagné d'un message confirmant que les frontières restent fermées."
-    think "Je pense aux familles qui attendaient devant les postes de contrôle. Demain, elles sauront que rien n'a changé."
-    "Je pose la tablette, éteins la lumière et me couche."
+    "Je m'assieds sur mon lit. La station est silencieuse."
+    think "J'ai l'impression que toutes les conversations de la journée continuent de tourner dans ma tête."
+    think "Kami a perdu le fil de ses propres phrases. Les écrans se sont éteints, les ordres ont bégayé."
+    think "Et elle a continué à nous demander de voter. Comme si terminer la séance comptait plus que tout le reste."
+    think "Je repense au café d'Elias, aux fils endommagés et à la porte qui refusait de s'ouvrir."
+    think "Une simple panne locale peut-elle atteindre Kami ? Kael en doute. Moi, je ne sais même pas par où commencer pour comprendre."
+    "Ma tablette affiche encore le résultat du vote : « REJETÉ »."
+    "En dessous, une ligne confirme que les frontières resteront fermées."
+    think "La femme du reportage attendait devant les barrières pour revoir son frère."
+    think "Demain, les barrières seront toujours là. Je me demande si elle attendra encore."
+    "Je pose la tablette face contre le bureau. J'éteins la lumière et me couche."
+    think "Une journée de plus où je n'ai pas réussi à aider qui que ce soit."
     pause 0.5
     play sound "sfx/glitch_light.mp3"
-    "L'écran mural s'allume une seconde. Je me redresse, mais il est déjà éteint."
-    think "Il n'y a eu ni annonce ni message. Peut-être que ce n'était qu'un problème d'affichage, mais je n'arrive pas à me rendormir tout de suite."
+    "L'écran mural s'allume."
+    "Une fraction de seconde. Pas de visage, pas de message."
+    "Puis le noir."
+    think "Je me redresse si vite que j'envoie ma couverture au sol."
+    think "J'attends."
+    think "Pas de voix. Pas de rire de Kami. Rien."
+    think "Ce matin, son silence me paraissait préférable à ses plaisanteries. Je ne suis plus aussi sûr."
     $ blink()
     "Je finis par fermer les yeux."
+    think "Et j'espère que demain, si Kami nous parle, ce sera vraiment elle qui nous répondra."
 
     $ kami_grant_chapter_2_reward()
 
