@@ -423,6 +423,23 @@ screen quick_menu():
     # historiques sans réafficher de contrôle pendant la partie.
     null
 
+# Raccourci H disponible pendant le jeu, y compris dans les écrans
+# d'exploration modaux. La priorité élevée évite que ces écrans
+# interceptent le clavier avant le raccourci global.
+screen history_hotkey():
+    zorder 1000
+
+    if (not main_menu
+            and not renpy.get_screen("history")
+            and not renpy.get_screen("system_menu")
+            and not renpy.get_screen("input")):
+        key "K_h" action ShowMenu("history")
+
+
+init python:
+    if "history_hotkey" not in config.overlay_screens:
+        config.overlay_screens.append("history_hotkey")
+
 
 ################################################################################
 ## Navigation
