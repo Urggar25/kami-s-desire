@@ -460,42 +460,35 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
     call day4_thread_debate_game from _call_day4_thread_debate_game
 
-    sael determine "Alors vote pour. Mais ne compte pas sur moi pour autoriser ça. Je protégerai mes camarades de la haine des autres."
-    sael colere "Je voterai contre."
-    sael "Et cette fois, c'est certain. Maintenant, excusez-moi."
-
+    sael determine "J'ai entendu ce que vous proposez. Mais pour moi, ouvrir les frontières, même avec des précautions, c'est trop dangereux."
+    ryn colere "Tu sais que ça veut dire qu'on va continuer à ramasser des morts ?!"
+    sael triste "Je sais. Et ça me fait horreur. Mais je refuse de risquer la vie des gens de mon village pour ça."
+    sael determine "Je voterai contre. Je préfère être claire maintenant plutôt que de vous laisser croire que je pourrais changer d'avis."
+    "Sael se lève. Ryn voudrait répondre, mais elle prend déjà la direction de la porte."
     hide sael
     with moveoutright
-
     play sound "sound/sfx_door.ogg"
-    "Sael se lève ; la chaise racle le sol, puis la porte claque."
-    with hpunch
-    with vpunch
-
-    mara taquin "SU-PER. À peine la prochaine proposition est-elle annoncée qu’elle est déjà foutue ?"
-    mara colere "Un vote foire et, soudain, chacun étale sa névrose sur la table."
-
-    ryn colere "Ferme-la, parle pas de ce que tu connais pas !"
-
+    "Sael quitte la salle sans se retourner."
+    mara agace "Bon, au moins elle a été claire. Par contre, Ryn, tu vas arrêter de lui hurler dessus ?"
+    ryn colere "C'est facile pour toi ! Tu récupères pas des morts à la frontière !"
+    mara colere "Et tu crois que tu sais ce que les autres ont vécu ? Elle t'a parlé de son village et t'as même pas essayé de l'écouter."
+    ryn colere "Je l'ai écoutée ! Elle est contre, de toute façon. Alors ça sert à quoi ?!"
+    mara agace "Eh ben très bien. Continue à t'énerver contre tout le monde, on va sûrement avancer comme ça."
+    "Mara récupère sa tablette et quitte la salle à son tour, visiblement agacée par la dispute."
     hide mara
     with moveoutright
-
     play sound "sound/sfx_door.ogg"
-    "Mara part juste après elle, presque en rage."
-
-    tomas "Je... Tout est allé trop vite."
-
-    ryn colere "On va surtout nulle part. Comme d’habitude."
-
-    nyra raison "On n'a même pas commencé le vrai débat. Alors dites-moi : vous voulez à tout prix avoir raison, ou enfin commencer à vous écouter pour pas que le vote finisse comme le précédent ?"
-
-    think "Trois sièges vides. Le vote n'a même pas commencé. On est pas sorti de l'auberge..."
+    tomas inquiet "Je pensais pas qu'ils se prendraient autant la tête..."
+    elen triste "Moi non plus. Mais si Sael dit non, on peut plus rien faire, c'est ça ?"
+    nyra reflechit "Il faudra peut-être lui reparler, mais pas aujourd'hui. Elle a été très claire, et le vote n'aura lieu que dans quelques jours."
+    ryn triste "J'en ai marre. Je pensais vraiment que celle-là, on pouvait la faire passer."
+    think "On vient à peine de découvrir la nouvelle proposition et Sael a déjà annoncé qu'elle votera contre. Je comprends mieux pourquoi après ce qu'elle a raconté, même si je n'ai pas envie qu'on abandonne."
 
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label day4_thread_debate_game:
 
-    think "Le débat part comme un fil tiré jusqu'à la rupture."
+    think "Je cherche comment intervenir sans aggraver la dispute. Ryn et Sael ont tous les deux de bonnes raisons d'avoir peur, mais personne n'arrive à écouter l'autre."
 
     call screen day4_objection_fracturee()
 
@@ -507,49 +500,38 @@ label day4_thread_debate_game:
     return
 
 label day4_thread_debate_success:
-
     $ j4_argument_circulation_cadre = True
-    noam "Attendez."
-    noam "Ryn parle d'une cage. Sael parle d'une digue. Iris parle de ce qui arrivera après l'ouverture."
-    noam "Vous ne défendez pas la même solution, mais vous refusez tous qu'une nouvelle décision transforme encore des gens en victimes."
-    noam "Alors discutons d'un passage encadré : assez libre pour ne plus condamner, assez préparé pour ne pas abandonner."
-    think "Ryn ravale sa colère. Iris ne détourne pas les yeux. Même Sael hésite avant de répondre."
-    think "Je ne les ai pas ralliés. Mais, pour la première fois, ils discutent de la même chose."
+    noam inquiet "Attendez, on parle de deux problèmes différents. Ryn veut qu'on arrête de tuer ceux qui traversent, et Sael a peur que des gens dangereux puissent de nouveau venir chez elle."
+    noam neutre "Est-ce qu'on pourrait au moins imaginer un système où on contrôle les passages sans abattre les gens ?"
+    iris reflechit "Ça serait déjà mieux que ce qu'on a maintenant. Mais ça demanderait de changer d'autres règles."
+    ryn inquiet "Moi, ça me va si les gens peuvent arrêter de crever pour avoir voulu sortir de leur district."
+    sael determine "Je comprends ce que tu proposes, Noam. Mais l'amendement parle d'ouvrir les frontières, pas de mettre en place ce système. Je reste contre."
+    nyra reflechit "Au moins, on a identifié ce qui bloque. On pourra chercher si une autre proposition peut répondre aux deux problèmes."
+    think "Ryn se rassoit. Il n'est pas convaincu par Sael, mais il l'a laissée finir cette fois. Elle n'a pas changé d'avis et ne prétend pas le contraire."
     return
 
 label day4_thread_debate_failure:
-
-    noam "On peut peut-être ralentir et poser un cadre…"
-    ryn "Non, Noam. Là, tu empiles juste nos mots pour éviter de choisir."
-    sael "Tu veux traduire une peur que tu ne connais pas."
-    iris "Et tu promets un cadre qui n'existe encore nulle part."
-    think "Ma tentative se dissout avant même de devenir une proposition. Chacun récupère sa colère intacte."
+    noam inquiet "Attendez, je crois qu'on pourrait trouver une autre façon de faire..."
+    ryn colere "Une autre façon de faire quoi ? On sait même pas ce que tu proposes !"
+    sael desaccord "Tu peux pas simplement nous demander de faire confiance à tout le monde. J'ai déjà essayé, et ça s'est mal terminé."
+    iris fatigue "Je crois que là, personne arrive à réfléchir calmement. On ferait mieux d'arrêter avant de dire des trucs qu'on regrettera."
+    think "Je n'arrive pas à les faire discuter. Sael reste contre et Ryn est encore plus agacé qu'avant."
     return
 
 label _4_0_APRES_CLASH_PRE_FETE:
 
     play music "music/bgm_world_decline.mp3" fadein 2.0
 
-    ryn colere "Super. On a réussi à se déchirer avant même de voter."
-
-    tomas triste "C'est… c'est pas ce qu'on voulait."
-
-    ryn triste "Et pourtant."
-
-    kael reflechit "C'est probablement pas foutu encore, peut-être que quand elle sera..."
-
-    nyra determine "Tu as entendu sa voix : ce soir, elle n'écoutera que sa colère. Il faudra essayer de lui parler calmement demain."
-
-    elias reflechit "Bon. Quelqu'un propose un truc, ou on reste là comme des plantes mortes ? C'est chaud, même elles ont l'air plus vivantes."
-
-    iris sourire "On pourrait se poser un coup à la salle de repos. Enfin, si cette brillante assemblée sait encore décompresser sans se prendre la tête."
-
-    lysa reflechit "Décompresser ? Ouais. Bonne idée en théorie."
-
-    think "Personne ne bouge ni ne répond. Au final, l'invitation meurt sans même être refusée."
-
-    "Ils partent un par un. Tomas d'abord, puis Nyra, Kael et Ryn. Chacun vers sa solitude."
-    think "Je reste seul devant les chaises vides et les verres intacts. On n'a pas tenu une journée. Pas même une."
+    ryn colere "Bon, on a réussi à se disputer alors qu'on vient juste de découvrir le sujet. Ça commence bien."
+    elias reflechit "Ouais, bah moi, je vais manger. Je sais pas vous, mais j'ai pas envie de passer tout l'après-midi à m'engueuler."
+    iris sourire "Pour une fois, je suis d'accord avec toi. On pourrait se retrouver à la salle de repos plus tard, sans parler de politique."
+    lysa blase "On peut essayer. Mais faudra confisquer la tablette de Ryn."
+    ryn colere "Oh, ça va, toi !"
+    elen joie "Moi je viens ! Si Goumi veut bien me laisser avoir du chocolat, je partage."
+    kael calme "Je passerai peut-être après. Il faut que je vérifie quelque chose avant."
+    nyra neutre "D'accord. Et demain, on essaiera de discuter sans se mettre à hurler dès le début."
+    "Les autres commencent à quitter la salle. Iris et Elen discutent déjà de ce qu'elles pourraient faire à la salle de repos, tandis que Ryn s'éloigne de son côté."
+    think "Sael a annoncé qu'elle voterait contre. Ce n'est pas une bonne nouvelle, mais au moins je comprends mieux ce qui lui fait peur. Je me demande si on arrivera à parler de tout ça plus calmement."
 
     jump _4_0_FIN_SOIREE
 
@@ -562,61 +544,19 @@ label _4_0_FIN_SOIREE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
-    "Finalement, je fais un petit tour par la cafétéria, histoire de prendre quelque chose à grignoter."
-
-    think "Le couloir est désert. Le système, lui, n'a pas besoin de nous pour tourner."
-    think "De la lumière sous la porte de Julian. Je ralentis, puis je passe."
-    think "Je pourrais frapper. Enfin… pour lui dire quoi ?"
-
+    "Je passe rapidement à la cafétéria pour prendre un morceau de pain avant de retourner dans ma chambre."
+    "En traversant le dortoir, je remarque de la lumière sous la porte de Julian. J'hésite à frapper, puis je continue. Il m'a clairement dit qu'il voulait qu'on le laisse tranquille."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    $ blink()
-    "La porte de ma chambre se referme d'un clic. Je m'assieds dans le noir."
-
-    pause 1.2
-
-    $ blink()
-    think "Sael qui part en claquant la porte. Julian derrière la sienne."
-    think "Un siège vide, puis trois."
-
-    pause 0.8
-
-    think "On n'était ni d'accord ni particulièrement proches. Mais on était là. Même ça, on le perd."
-
-    $ blink()
-    think "Le plafond reste inerte, rassurant dans sa stupidité totale."
-
-    pause 1.0
-
-    think "La libre circulation ? C'est encore plus chaud à faire adopter !"
-    think "Je ne sais plus ce que je veux. Enfin, je ne sais même plus ce qu'on sait faire ensemble."
-
-    think "Ah et puis merde, j'ai même plus faim."
-    "Je repose le bout de pain que j'avais embarqué sur mon bureau."
-
-    $ blink()
-    pause 0.6
-
+    "Je pose le pain sur mon bureau et je m'assieds sur le lit."
+    think "J'ai cru qu'on pourrait repartir de zéro avec ce nouveau vote. Mais Sael a déjà décidé qu'elle voterait contre, et je peux difficilement lui en vouloir après ce qu'elle nous a raconté."
+    think "Ryn, lui, ne supporte plus de voir des gens mourir près des frontières. J'aimerais bien qu'on puisse les aider sans mettre d'autres personnes en danger."
+    "J'entends des voix dans le couloir, puis un rire que je reconnais comme celui d'Elen. Au moins, certains ont réussi à se changer les idées."
     scene bg_cg012 at adaptive_fullscreen with dissolve
-
     $ blink()
-    think "Finalement, la fatigue rend mon corps encore plus lourd."
-    think "Une porte s'ouvre dans le couloir. Quelqu'un d'autre ne dort pas."
-
+    think "Je vais essayer de dormir. Demain, on aura peut-être l'occasion de parler à Sael sans toute la salle autour."
     $ blink()
-    pause 1.5
-
-    think "Une voix. Un vote. Une table. Et douze façons de tout rater."
-
-    pause 0.8
-
-    think "Demain sera peut-être mieux. Je ne suis même plus sûr d'en avoir envie."
-
-    $ blink()
-    pause 1.0
-
-    "Le sommeil arrive, lourd, sans rêve et sans réponse."
+    "Je finis par m'endormir."
 
     $ current_day = 5
     pause 1.5
