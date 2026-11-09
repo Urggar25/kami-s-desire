@@ -1082,8 +1082,7 @@ label _3_DEBAT1_PHASE2:
     sael triste "Les morts de Limen n'ont pas besoin d'un nouveau responsable."
     sael reflechit "Kami. Dis-nous seulement une chose : ce texte vient-il vraiment de l'un de nous ?"
 
-    think "Les regards se croisent. L'écran central reste figé. Kami ne répond pas."
-    think "Kami ne répond pas. Ryn répète sa question, mais l’écran reste inchangé."
+    think "Kami ne répond pas. Ryn répète sa question, puis Tomas commence à protester lui aussi. L’écran reste inchangé."
 
     lysa blase "Elle ne répondra pas. Dix votes pour douze textes, le tour de passe-passe est parfait."
     lysa colere "Elle peut changer ce qu'elle veut. Et on pourra rien prouver."
@@ -1429,8 +1428,7 @@ label _3_DEBAT1_PHASE3:
 
     noam inquiet "Bon, je crois qu’on a tous compris ce qu’elle a ajouté. Mais qu’est-ce qu’on fait, maintenant ? Moi, j’ai pas envie de décider ça à la va-vite."
 
-    julian "La tête ? On est en train de crever à petit feu, Noam."
-    julian "Et rester comme ça, tu appelles ça une solution ? Les gens manquent déjà de tout."
+    julian colere "À la va-vite ? Noam, ça fait un an que les gens manquent de tout ! Tu veux encore attendre combien de temps ?"
 
     ryn colere "Et ton grand soir, c'est quoi ? On sacrifie Limen pour que Nexus se paie du luxe ?"
 
@@ -1438,22 +1436,21 @@ label _3_DEBAT1_PHASE3:
 
     ryn "…Ouais. Bref. Ça change rien au fond !"
 
-    mara colere "Ryn. Respire. On avance mieux sans hurler."
+    mara taquin "Ryn, tu vas te fatiguer avant de voter si tu continues à gueuler comme ça."
 
     elen joie "Imaginez : tu peux acheter ce que tu veux sans remplir trois formulaires !"
 
     # (combinaison « lysa raison » ajoutée dans images.rpy)
     lysa raison "Encore faut-il avoir de l'argent, Elen. Sinon tu regardes juste les vitrines."
 
-    tomas "Euh… il faut dire que la production mondiale s'est effondrée depuis Kami."
-    tomas "On fabrique presque quatre fois moins qu'avant. C'est… c'est pas rien."
+    tomas hesitation "Moi, je sais juste qu’on fabrique beaucoup moins de choses qu’avant. J’ai vu les chiffres, c’est presque quatre fois moins. Ça fait peur quand même."
 
-    nyra "Rien d'étonnant. Sans récompense, personne ne se donne la peine de produire."
+    nyra reflechit "C’est pas tellement surprenant. Quand on ne gagne rien de plus en travaillant davantage, tout le monde finit par se contenter du minimum."
 
     # Cadrage de Kami : moins clownesque, plus prédatrice.
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
-    kami "Voilà. Enfin une vraie question sous le vernis."
+    kami "Ah ! Voilà une discussion qui devient intéressante !"
     kami "Je vous rappelle que ce texte est né de VOTRE imagination. Ne me regardez pas comme la coupable."
     kami "Continuez. Vous êtes bien plus intéressants quand vous avez peur."
 
@@ -1466,11 +1463,9 @@ label _3_DEBAT1_PHASE3:
         $ p3_argument_one = None
         think "Je n'ai rien de suffisamment solide à ajouter pour le moment."
 
-    stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
 
-    elias "Le vrai problème, c'est qu'on évite la vraie question. Le système actuel, il marche pas. Point."
+    elias "Je comprends qu’on hésite, mais le système actuel, il marche pas non plus. À la Forge, on passe plus de temps à demander des pièces qu’à réparer !"
 
     sael "Chez nous, on s'aide déjà sans bons."
     sael determine "Je comprends votre peur. Mais je ne crois pas qu'attendre Kami pour chaque chose nous aide davantage."
@@ -1550,11 +1545,8 @@ label _3_DEBAT1_PHASE3:
         $ p3_argument_two = None
         think "Je préfère me taire plutôt que parler pour ne rien dire."
 
-    stop music fadeout 1.0
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
-
-    pause 1.0
+    pause 0.3
 
     noam inquiet "Bon... On peut encore en parler pendant des heures, mais je crois que personne n’aura toutes les réponses aujourd’hui."
     nyra neutre "Oui. On sait au moins ce qu’on risque de perdre, et ce qu’on pourrait gagner. À chacun de voir."
@@ -1911,7 +1903,7 @@ label _3_VOTE_POUR:
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
 
-    think "L'écran s'éteint. Aucun cri de joie. On n'a pas gagné. On a changé les règles, c'est tout."
+    think "Dès que l’écran s’éteint, Elen pousse un cri de joie et Julian se lève d’un bond. D’autres restent assis, visiblement moins rassurés par le résultat."
 
     $ showGroup([
         ("julian", "sourire", 0.15),
@@ -1920,13 +1912,14 @@ label _3_VOTE_POUR:
         ("mara", "rire_profond", 0.84),
     ])
 
-    julian sourire "C'est fait. Le collectif vient de créer une chance réelle."
+    julian joie "ON A RÉUSSI ! Je vous l’avais dit ! C’est le premier texte qu’on arrive à faire passer !"
+    elen joie "Ouiiii ! On a réussi à se mettre d’accord ! Enfin... je crois !"
+    mara taquin "Doucement, vous deux. On vient aussi de supprimer les rations de tout le monde."
 
     ryn jaloux "Ouais."
     ryn inquiet "Mais sans les bons, Limen va morfler au début. Faut pas se mentir."
 
-    noam "Je me demande si on savait vraiment ce qu'on faisait."
-    noam "On ne pouvait plus rester comme avant. Mais… est-ce que c'était vraiment un choix ?"
+    noam sourire "Je suis content qu’on ait réussi quelque chose ensemble. J’espère juste qu’on n’a pas fait une énorme bêtise."
 
     mara rire_profond "Génial. On va enfin pouvoir acheter des trucs."
     mara taquin "Et crever avec le choix de la sauce. Le luxe."
@@ -1944,7 +1937,7 @@ label _3_VOTE_POUR:
 
     $ hideGroup()
 
-    think "Dix-sept heures dix. On se lève en silence."
+    think "Il est dix-sept heures dix quand on quitte la salle. Julian continue de parler du résultat, tandis que Ryn refuse de participer aux félicitations."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_184
     scene couloir_dortoir at adaptive_fullscreen with dissolve
@@ -2028,9 +2021,9 @@ label _3_VOTE_CONTRE:
 
     kael doute "Au moins, on connaît déjà ce quotidien. Ça ne s'aggrave pas. C'est déjà ça."
 
-    nyra raison "Qui a voté contre n'a pas choisi l'inaction. Il a choisi le risque connu plutôt que l'inconnu."
+    nyra raison "Attendez, on sait même pas qui a voté contre, et on ne sait pas pourquoi. On va pas commencer à s’accuser les uns les autres."
 
-    think "Les voix montent. Julian se lève et frappe la table. Sa performance vient de perdre son public."
+    think "Julian frappe brusquement la table. Elen sursaute et Tomas lui demande de se calmer, mais il ne l’écoute pas."
 
     julian colere "Rationnel ?! Vous appelez ça rationnel ?"
     julian colere "Continuer à rationner des miettes pendant que les districts crèvent ? On a laissé filer la seule ouverture !"
@@ -2042,9 +2035,10 @@ label _3_VOTE_CONTRE:
 
     ryn colere "Assieds-toi !"
     mara colere "Les riches survivront encore. Quelle surprise."
-    noam "Attendez— un par un ! On ne va pas se déchirer devant le monde entier."
+    noam colere "Julian, arrête ! Crier sur Ryn va pas faire changer le résultat !"
+    nyra neutre "On va pas refaire le débat maintenant. Ceux qui veulent discuter peuvent le faire demain, quand on sera calmés."
 
-    think "Presque dix-sept heures. La journée est finie. Le vote aussi. Rien n'a changé."
+    think "Il est presque dix-sept heures. Le texte a été rejeté, et je ne sais même pas comment on va réussir à s’asseoir tous ensemble au prochain vote."
     think "Maintenant, certains vont chercher qui a voté contre, même si le scrutin est secret. Je n’aime pas du tout la façon dont Julian regarde les autres."
 
     think "Je me lève. Les voix continuent sans moi. Je veux juste rentrer et arrêter de réfléchir."
