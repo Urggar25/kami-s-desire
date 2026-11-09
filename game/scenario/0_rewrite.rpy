@@ -750,6 +750,8 @@ label d0_memory_lysa:
     # Retour aux sprites pendant les echanges ; les CG restent sans sprites.
     $ showGroup([("lysa", "blase", 0.28), ("noam", "reflexion", 0.72)])
     lysa "Attends... Tu veux dire qu'on doit entrer là-dedans ?"
+    $ unlock_character_name("lysa")
+    call kd_play_character_intro("lysa") from _call_kd_intro_lysa_j0
     voix "Le transport est obligatoire. Vous serez endormis pendant le trajet."
     lysa "Génial. On ne sait même pas où on va, mais on doit se laisser enfermer et endormir sans poser de questions ?"
     "Elle se tourne vers moi, comme si elle attendait que je proteste à mon tour."
@@ -791,7 +793,6 @@ label d0_memory_lysa:
     voix "Début de la sédation."
     scene black with dissolve
     think "C'est tout ? Je ne me rappelle vraiment de rien d'autre ?"
-    $ unlock_character_name("lysa")
     if "lysa" not in d0_memories_seen:
         $ d0_memories_seen.append("lysa")
     stop music fadeout 0.4
