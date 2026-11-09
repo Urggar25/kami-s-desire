@@ -64,11 +64,7 @@ label _6_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
-    pause 0.8
-
-    think "Ils sont presque tous là. Ils parlent un peu tous dans leur coin, mais pas vraiment ensemble."
-
-    call play_stat_dialogue("d6_0_1") from _call_stat_dialogue_d6_0_1
+    "En arrivant à la cafétéria, j'entends plusieurs conversations. L'ambiance n'est pas particulièrement joyeuse, mais au moins les gens se parlent."
 
     $ showGroup([
         ("elias", "fatigue"),
@@ -79,66 +75,34 @@ label _6_0_1_CAFETERIA:
         ("sael", "neutre"),
     ])
 
-    play sound "sfx/glass_spill.mp3"
-
-    "CLAC. Encore."
-
-    elias "Putain—"
-
-    call screen trace_qte(path_type="arc", time_limit=1.8, wait_time=0.1, tolerance=86, max_errors=3, anchor_x=960, anchor_y=650, start_radius=125)
-    $ _j601_verre_score = tq_progress
-
-    if _j601_verre_score >= 0.82:
-        think "Ma main part avant ma tête. Je redresse le verre ; quelques gouttes seulement tombent sur le sol."
-        elias inquiet "Oh putain. Merci. C'était chaud, là. Encore..."
-    elif _j601_verre_score >= 0.35:
-        think "Trop tard. Le verre frappe la table ; ma manche arrête l'eau avant Mara."
-        elias inquiet "Merde, merde. J'ai fait quoi, là ? C'est chaud."
-        mara agace "Putain, je suis trempée Elias ! Tu pourrais faire gaffe un peu non ?!"
-    else:
-        think "Je tends le bras trop lentement. Le verre bascule entièrement."
-        elias inquiet "Et merde. Fait chier, c'est chaud."
-        mara colere "... J'ai tout pris sur la tronche ! Je vais finir par te tuer !"
-
-    mara agace "Mais tu n'arrêtes pas de faire tout le temps tomber des trucs, c'est maladif ou quoi ?!"
-    elias triste "J’ai pas—"
-
-    mara "Kael m'a dit qu'hier ta maladresse t'a enfermé dans une salle. Aujourd'hui, tu viens directement m'agresser avec elle."
-
-    elen inquiet "... C'est pas drôle. Il a pas fait exprès, enfin je crois pas..."
-    elen joie "Faudrait être fou pour te rendre de mauvaise humeur dès le matin."
-
-    mara "Je confirme. Faudrait être fou."
-
-    elias inquiet "J'ai glissé. Je suis vraiment désolé Mara ! Vraiment désolé."
-
-    mara neutre "Comme d'habitude : je suis toujours au mauvais endroit, au pire moment."
-
-    elen neutre "Vous avez entendu Kami ? Enfin oui, évidemment, mais vous avez entendu comment elle parlait ? C'était TROOOOP chelou !"
-
-    mara mefiant "Ouais. C'était pas son petit théâtre habituel. C'est vrai."
-
-    lysa reflexion "Elle était beaucoup plus ... Expéditive. Comme si ça la saoulait de nous parler."
-
-    elen taquin "Whaou ! Tu crois qu'elle nous fait une dépression ? Genre un Burn-Out ?!"
-
-    lysa rire "Je crois pas que ce soit possible !"
-
-    elias reflechit "Kami joue toujours un rôle. C'est son truc. En soi, elle nous imite."
-
-    lysa blase "Ouais. Mais là c'était pas comme d'habitude."
-
-    mara colere "Tu m'étonnes qu'elle était pas comme d'habitude. Elle bégayait ! D'où Kami bégaye d'abord !"
-
-    lysa reflechit "Tu crois qu'il lui est arrivé quelque chose ?"
-
-    mara mefiant "Non. Enfin… j'en sais rien. C'était bizarre. Même pour elle."
-
-    noam reflechit "Ouais. On verra bien si ça continuera plus tard, mais je m'étais aussi fait la réflexion."
-
-    "Nous avons chacun continué à manger, plus en silence, nos rations sèches et sans goût."
-    think "Finalement, personne n'a parlé du vote. Personne n'a osé."
-    think "Où alors, tout le monde sait que c'est inutile."
+    elen inquiet "Noam ! Dis-moi que t'as entendu l'annonce de Kami. Elle s'est arrêtée en plein milieu d'une phrase, non ?"
+    noam reflechit "Ouais. J'ai même cru que l'écran avait planté chez moi."
+    elias fatigue "Elle a fait pareil dans le dortoir. C'est pas juste le haut-parleur de ta chambre."
+    mara taquin "Peut-être qu'elle a enfin appris à réfléchir avant de parler. Ça lui ferait pas de mal."
+    lysa blase "C'est bizarre, mais elle nous a déjà fait des blagues plus tordues. Je vais pas commencer à paniquer pour une phrase ratée."
+    iris reflechit "Ce qui m'inquiète, c'est qu'elle ne l'a pas commentée. D'habitude, quand elle veut nous faire peur, elle insiste jusqu'à ce qu'on réagisse."
+    elen taquin "Ou alors elle est crevée ! On devrait lui demander si elle a besoin de vacances."
+    elias sourire "Imagine Kami en vacances. Tous les distributeurs nous laisseraient enfin choisir ce qu'on veut."
+    mara rire "Ça, ce serait une vraie raison de fêter quelque chose."
+    sael mefiant "Vous pouvez plaisanter, mais c'est elle qui commande les systèmes de la station. Si elle rencontre vraiment un problème, je préférerais qu'on le sache avant le vote."
+    noam inquiet "Tu crois que ça peut venir de la station ?"
+    elias inquiet "J'en sais rien. Après ce que j'ai fait hier, j'ai demandé à Kael de vérifier le panneau de l'observatoire. Ça m'étonnerait qu'une console grillée puisse perturber Kami, mais je peux pas te le garantir."
+    iris fatigue "Attends. Vous parlez de l'accident du café ? Ça n'a peut-être aucun rapport, Elias. Ne commence pas à t'accuser de tout."
+    elias reflechit "Je m'accuse pas ! Je dis juste que je vais lui demander, c'est tout."
+    "Goumi passe près de la table pour déposer un plateau. Elias pousse aussitôt sa tasse au milieu de la table, loin de la console et du bord."
+    mara taquin "Tiens, il a retenu la leçon !"
+    elias sourire "Oui, oui, ça va. Je pose mes boissons loin de tout ce qui coûte cher, désormais."
+    lysa reflechit "Bon, et pour le vote ? Quelqu'un a réussi à parler à Sael ?"
+    sael determine "Je suis là, Lysa. Tu peux me demander directement."
+    lysa blase "Je demandais surtout si vous aviez discuté ensemble. Je sais déjà ce que tu vas voter."
+    sael neutre "Noam est venu me voir hier. Je lui ai expliqué mes raisons, mais je reste contre."
+    elen triste "C'est dommage. J'aimerais tellement qu'on trouve un moyen pour que les familles puissent se retrouver."
+    sael triste "Moi aussi. Mais je n'accepterai pas d'ouvrir les frontières sans savoir comment on protégera mon village."
+    mara agace "Et moi, je refuse qu'on fasse comme si ça allait régler tous nos problèmes. On n'arrive déjà pas à gérer les distributions."
+    noam neutre "On en reparlera au Conclave. On a encore quelques heures, autant éviter de se disputer pendant le petit-déjeuner."
+    iris sourire "Excellente idée. J'aimerais finir mon repas sans avoir à arbitrer une bagarre."
+    "Les conversations reprennent autour de la table. Elias raconte à Elen ce que Kael lui a dit sur sa console, tandis que Mara et Lysa discutent de ce qu'elles voudraient demander à Kami."
+    think "Tout le monde semble avoir remarqué quelque chose d'étrange ce matin, mais personne ne sait quoi en penser. Pour le moment, le Conclave fonctionne normalement."
 
     jump _6_0_1_TEMPS_LIBRE
 
