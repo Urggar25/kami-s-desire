@@ -103,6 +103,11 @@ label _6_0_1_CAFETERIA:
     iris sourire "Excellente idée. J'aimerais finir mon repas sans avoir à arbitrer une bagarre."
     "Les conversations reprennent autour de la table. Elias raconte à Elen ce que Kael lui a dit sur sa console, tandis que Mara et Lysa discutent de ce qu'elles voudraient demander à Kami."
     think "Tout le monde semble avoir remarqué quelque chose d'étrange ce matin, mais personne ne sait quoi en penser. Pour le moment, le Conclave fonctionne normalement."
+    "Avant de partir, je remarque qu'un reportage sur les frontières de Limen vient de commencer à la télévision."
+    call _6_0_1_TV_FRONTIERES from _call_6_0_1_TV_FRONTIERES_matinale
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
+    think "Je comprends pourquoi Ryn tient tellement à ce vote, mais je repense aussi aux habitants que Sael veut protéger. Je ne sais pas comment on pourrait satisfaire tout le monde avec le texte actuel."
 
     jump _6_0_1_TEMPS_LIBRE
 
@@ -112,8 +117,7 @@ label _6_0_1_TEMPS_LIBRE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Fin de matinée"
 
-    think "Il reste encore plusieurs heures avant le vote. Assez pour que chacun recommence à éviter les autres."
-    think "Je devrais profiter de ce temps avant que Kami nous rappelle au Conclave."
+    think "Il reste un peu de temps avant le vote. Je vais en profiter pour voir les autres, sans forcément revenir sur nos désaccords d'hier."
 
     call START_FREE_TIME("_6_0_1_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_6_0_1
 
@@ -423,6 +427,12 @@ label _6_0_1_VOTE:
     play music "music/bgm_world_decline.mp3" fadein 1.5
 
     "Le résultat s'affiche. Les votes contre sont nettement majoritaires, et l'amendement est rejeté. Je reconnais le nom de Sael dans le dépouillement."
+    if player_vote == "pour":
+        think "J'ai voté pour malgré les risques, parce que je voulais qu'on donne enfin une chance aux familles séparées. Le résultat ne change rien à ce que j'ai choisi."
+    elif player_vote == "contre":
+        think "J'ai aussi voté contre. Je n'ai pas réussi à me convaincre qu'une ouverture immédiate serait sans danger, même si je déteste ce que les frontières font subir aux gens."
+    else:
+        think "Je me suis abstenu. Avec toutes ces incertitudes, je n'ai pas réussi à trancher, mais je sais que mon abstention ne rendra service à personne aujourd'hui."
     $ hideGroup()
     call j601_sael_vote_animation from _call_j601_sael_vote_animation
     scene bg_conclave at adaptive_fullscreen with dissolve
