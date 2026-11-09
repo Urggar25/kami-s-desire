@@ -351,8 +351,8 @@ label _2_CAFETERIA_POST_ANNONCE:
     show screen day2_quick_vote_notes
 
 
-    "La tablette de Noam vibre, puis celles des autres se mettent à sonner à leur tour."
-    think "Kami a ouvert un dossier consacré au vote. Pour l'instant, il reprend surtout la courte proposition qu'elle vient de nous lire."
+    "Les tablettes des autres se mettent à sonner à leur tour."
+    think "J'ouvre le dossier de vote reçu à l'instant. Pour l'instant, il reprend surtout la courte proposition que Kami vient de nous lire."
     elias inquiet "Merde, j'ai laissé ma tablette dans ma chambre. Kael, tu peux me montrer ?"
     kael reflechit "Y a pas grand-chose à voir. Elle a juste mis la proposition dans le dossier, sans les détails."
     julian sourire "Ça nous laisse une journée pour réfléchir. On devrait au moins essayer de savoir ce qu'on voudrait changer."
