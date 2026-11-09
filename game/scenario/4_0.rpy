@@ -316,8 +316,7 @@ label _4_0_TEMPS_LIBRE_1:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Après-midi"
 
-    "Après le petit-déjeuner, j'ai un peu de temps devant moi."
-    think "Je ne sais pas encore quoi faire."
+    think "Je vais profiter du temps libre pour voir autre chose que les écrans de la cafétéria. Je n'ai pas envie de passer la journée à discuter du même vote."
 
     call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_1
 
@@ -326,28 +325,18 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.8
 
-    pause 1.0
-
-    think "L'après-midi s'étire et chacun se sépare. L'espoir d'hier a laissé place à un marasme de honte et de désespoir."
-    think "Finalement, pourra-t-on changer quoi que ce soit ?"
-
+    think "Pendant l'après-midi, j'ai croisé des représentants qui avaient déjà repris leurs habitudes. Elias cherchait quelque chose à bricoler et Elen essayait de convaincre Goumi de lui trouver du chocolat."
     play sound sfx_announce
-    pause 1.0
-
-    stop music fadeout 1.0
+    pause 0.4
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
-
-    kami "Ahem, je sais bien que vous n'êtes pas encore tout à fait remis, mais le temps ne s'écoule que dans un sens."
-    kami "Il va donc falloir passer à la suite. Vous devriez donc venir dans la salle du Conclave !"
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Un nouveau vote vous attend. Attention, l'audimat monte en FLÈCHE !"
-
+    kami "Mes petits représentants, il faudrait venir au Conclave ! Je vais vous annoncer la prochaine proposition."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "J'espère que vous serez un peu plus détendus cette fois. Enfin, personnellement, je préfère quand vous vous disputez."
+    hide screen kami_broadcast_ui
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-
-    "L'écran se coupe sous le rire aigu de Kami. Des portes s'ouvrent une à une, puis des pas traînent dans le couloir."
+    think "Je rejoins les autres. Ryn marche devant moi en râlant parce qu'il comptait faire une sieste."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_202
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -364,26 +353,15 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("nyra", "raison"),
     ])
 
-    ryn colere "On est vraiment obligé de se retaper tout ça ?"
-
-    kael triste "Julian ne viendra pas. J'ai frappé. Il m'a dit de le laisser."
-    kael reflechit "Il avait l'air d'être encore malade."
-
-    mara "On parle bien du même gars ? Genre celui qui faisait tout pour se faire remarquer hier ?"
-    mara "MDR ! Quelqu'un pense à prévenir les caméras que leur héros est souffrant ?"
-
-    tomas "M-Mara…"
-
-    mara agace "Quoi ? Tu vas pas me dire que tu le défends ?!"
-    mara colere "C'est pas toi qu'il est limite venu menacer hier ?"
-
-    tomas reflechit "Menacer ? J-J'irais pas jusque-là mais..."
-
-    nyra taquin "On a bien fait d'intervenir quand même. Il peut être lourd parfois."
-    nyra reflechit "Mais bon, je pensais pas que ça l'affecterait autant. Je pensais que ce n'était que du cinéma."
-
-    ryn colere "Cinéma ou pas, c'est plus reposant d'avoir ce mec loin de nous."
-    ryn colere "Surtout si faut continuer ce putain de cirque."
+    ryn colere "On est vraiment obligés de revenir ici ? On a pas déjà assez perdu de temps hier ?"
+    kael inquiet "Ça risque de durer. Julian n'est même pas venu, il m'a dit qu'il voulait rester dans sa chambre."
+    mara taquin "Julian qui rate une occasion de se montrer devant les caméras ? Il doit vraiment aller mal."
+    tomas hesitation "Il avait pas l'air bien, ce matin. Je crois que le vote lui a fait plus de mal qu'il veut l'admettre."
+    mara agace "Il a surtout passé la journée d'hier à te mettre la pression, toi. Tu vas pas me dire que ça t'a plu."
+    tomas inquiet "Non, mais j'ai pas envie qu'on recommence à se disputer à cause de lui."
+    nyra reflechit "Personne ne l'excuse, mais s'il est malade, il faut le laisser tranquille. Kael, tu penses qu'il reviendra pour le vote ?"
+    kael calme "Il a dit qu'il serait là quand il le faudrait. J'en sais pas plus."
+    ryn colere "Bon. Il manque quelqu'un, on a compris. On peut savoir pourquoi on est revenus ?"
 
     play sound sfx_announce
     pause 1.0
@@ -393,13 +371,11 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Bon, je vois que certains sont en train de chouiner dans leurs lits."
-
+    kami "Alors, j'en vois un qui manque à l'appel ! Julian, mon chéri, tu comptes passer toute la journée à bouder ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Tu feras gaffe, mon cher Julian, ton brouilleur n'a pas été réactivé !"
-
+    kami "Oh, ne vous inquiétez pas, je peux annoncer une proposition sans lui. Je lui ferai parvenir son invitation pour le vote."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Enfin, bref, poursuivons votre petite aventure démocratique ! Je vais donc vous annoncer le prochain vote..."
+    kami "Et maintenant, passons à la suite ! Votre prochaine proposition est..."
 
     play sound sfx_tambour
     pause 2.2
@@ -427,7 +403,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     hide screen kami_broadcast_ui
     play music "music/bgm_world_decline.mp3" fadein 1.0
 
-    think "Le mot « frontières » reste dans l'air comme une odeur de brûlé."
+    think "Ryn se redresse aussitôt. Sael, elle, ne réagit pas, mais je vois qu'elle serre les mains sur ses genoux."
 
     $ showGroup([
         ("lysa", "blase"),
@@ -441,61 +417,46 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("tomas", "hesitation"),
         ("elen", "triste"),
     ])
-    lysa reflechit "On n’a même pas réussi à faire adopter le droit d’acheter ce qu’on veut, et on doit déjà débattre de l’ouverture des frontières ?"
-
-    iris blase "Qu'est-ce qui pourrait mal tourner ? Si ce n'est retourner aux sources de toutes les guerres qui nous ont opposés ?"
-
-    elias reflechit "Ouais, le sujet est chaud, il fera probablement pas l'unanimité. Mais c'est pas inutile."
-
-    kael reflechit "À Orbite, le débat ne nous concerne pas vraiment. On a pas vraiment de frontières avec les autres districts nous."
-    $ unlock_dossier_arg("p2_orbite")
-
-    ryn sourire "Ah, enfin une proposition qui va dans le bon sens ! Parce que ça fait des années qu’on nous apprend à vivre séparés comme du bétail bien rangé."
-    ryn colere "On est des humains putain de merde ! On devrait pouvoir aller partout où on veut !"
-
-    mara colere "Je te rappelle qu'on est les esclaves de Kami, hein."
-
-    ryn colere "À Limen, les frontières, c'est pas qu'une ligne sur une carte. C’est des types armés. C’est des gens qu’on enterre."
-    ryn colere "C’est des gosses qui grandissent soit en pensant que de l’autre côté, y a forcément un ennemi, soit en se disant à tout prix qu'ils doivent se barrer de Limen."
-
-    sael reflechit "Ces frontières ont du sens. Tu en parles comme si elles étaient là pour le seul plaisir de nous punir."
-
-    ryn colere "Tu veux qu’on dise quoi ? Merci ?"
-
-    sael determine "Je veux que tu arrêtes de faire semblant de ne pas savoir."
-    sael reflechit "Les morts de Limen se souviennent du prix de ces lignes. Les Gardiens aussi."
-
-    noam reflechit "Qu'est-ce que tu veux dire par là ?"
-
-    ryn colere "Pff, comment elle pourrait en parler ! Le Mont Kensen, c'est super loin des frontières."
-    ryn triste "Actuellement, quand quelqu'un traverse la frontière, il meurt sur le coup."
+    elen surpris "Ah, ça, c'est pas du tout la même chose que les magasins !"
+    ryn joie "Enfin ! Ça, c'est une proposition que je peux soutenir !"
+    lysa blase "T'as même pas attendu qu'elle finisse de parler."
+    ryn colere "Parce que je sais de quoi je parle ! À Limen, tu traverses la frontière et Kami te descend. Et après, c'est nous qui récupérons le corps."
     $ unlock_dossier_arg("p2_frontiere_limen")
-
-    pause 0.5
-
-    ryn colere "BAM ! Un coup de laser dans la nuque."
-
-    lysa blase "Et c'est pour ça que tu veux tout faire sauter ?"
-
-    ryn colere "Parce que j'en ai ras le cul de ramasser des cadavres ! La frontière, je la connais ! Je la garde !"
+    iris desaccord "D'accord, mais si tout le monde peut aller partout du jour au lendemain, ça va pas poser des problèmes ?"
+    ryn colere "Tu préfères qu'on continue à tuer les gens qui essaient de partir ?!"
+    iris colere "C'est pas ce que j'ai dit ! Tu peux arrêter de gueuler deux secondes ?"
+    elias reflechit "En fait, ce serait surtout bien pour voir les autres districts, non ? Même juste visiter quelqu'un."
+    kael calme "Orbite est un peu à part. Nos déplacements passent déjà par des autorisations spécifiques, pas par les frontières terrestres."
+    $ unlock_dossier_arg("p2_orbite")
+    sael desaccord "Moi, je suis contre. Je vous le dis tout de suite, je ne veux pas qu'on ouvre ces frontières."
+    elen inquiet "Déjà ? Mais on peut en discuter avant !"
+    sael determine "On peut discuter. Ça changera pas ce que j'ai vu avant qu'elles soient fermées."
+    ryn colere "Voilà ! Elle veut même pas écouter !"
+    sael mefiant "Et toi, tu m'as demandé pourquoi j'étais contre ?"
+    ryn colere "Vas-y, explique-moi pourquoi c'est si important de laisser Kami tirer sur des gens !"
+    sael colere "Arrête de me faire dire des choses que j'ai pas dites !"
+    nyra reflechit "Sael, tu parles des attaques contre ton village ? Tu peux nous expliquer ce qui s'est passé ?"
+    sael triste "Avant Kami, des groupes armés venaient jusqu'à chez nous. Ils prenaient des récoltes, menaçaient les familles, et si quelqu'un essayait de les arrêter, ça se terminait mal."
+    sael determine "Depuis qu'on ne peut plus passer librement d'un district à l'autre, on n'a plus eu à vivre ça. Je ne vais pas prendre le risque de voir ces gens revenir."
+    elen triste "Je savais pas... Je suis désolée."
+    ryn colere "Et moi, j'en ai marre de ramasser les cadavres de gens qui essaient simplement de rejoindre leur famille ! Tu crois que c'est moins grave ?"
+    sael mefiant "Non. Mais si tu ouvres tout sans contrôle, comment tu empêches les groupes armés de revenir ?"
+    ryn colere "Je suis un Gardien de Limen ! Je connais les frontières, je passe mes journées à les surveiller !"
     $ unlock_codex_page("frontieres_limen", with_notification=False)
     $ unlock_codex_page("mont_kensen", with_notification=False)
     $ unlock_codex_page("gardiens_limen", with_notification=False)
-
-    iris desaccord "Imaginons qu'on réouvre les frontières : les gens peuvent passer. Super. Et après ?"
-    iris desaccord "C'est pas comme s'ils partaient ailleurs pour travailler avec ces foutus bons de rationnement."
-
-    ryn triste "On revient encore là-dessus ?"
-
-    nyra reflechit "Faut dire que tout est lié, Ryn !"
-
-    ryn colere "Me dites pas que vous voulez ignorer tout ça ? Que vous voulez ENCORE voter contre ?!"
-    ryn triste "Putain, c'est vraiment ce que vous voulez ? RÉPONDEZ !"
-
-    sael determine "Les frontières, c'est ce qui nous empêche de revivre ça. Moi, je veux pas voir revenir la guerre."
-    sael determine "Elles ont un rôle. Et une histoire aussi."
-
-    ryn colere "Non. Moi, j’en ai juste marre de vivre dans une cage."
+    mara agace "Et tu crois qu'il y aurait pas une autre façon de surveiller les passages que de tirer sur tout le monde ?"
+    sael determine "Peut-être, mais ce n'est pas ce que propose le texte. Il dit qu'on ouvre les frontières entre tous les districts. C'est non."
+    tomas inquiet "Et si on demandait à Kami de laisser passer les gens avec une autorisation ? Je sais pas, une demande pour voir sa famille..."
+    lysa blase "Ça reviendrait à lui demander la permission pour tout. Comme maintenant, mais avec plus de paperasse."
+    iris desaccord "Au moins, ça éviterait peut-être certaines morts. Mais pour travailler ou déménager, il faudrait aussi pouvoir se déplacer."
+    ryn colere "Vous êtes en train de tout compliquer pour rien ! On devrait simplement pouvoir sortir de chez nous sans se faire tuer !"
+    sael colere "Et chez moi, on devrait pouvoir dormir sans avoir peur de revoir ceux qui nous attaquaient !"
+    "Ryn se lève brusquement. Sael ne recule pas. Je vois Nyra déplacer sa chaise pour pouvoir intervenir si la dispute dégénère."
+    noam inquiet "Ryn, attends. Sael a peur que les attaques reprennent. Ça veut pas dire qu'elle est d'accord avec les exécutions aux frontières."
+    ryn colere "Je le sais, Noam ! Mais elle est en train de dire qu'elle votera non alors qu'on a enfin une chance d'arrêter ces morts !"
+    sael determine "Oui, je voterai contre. Je ne veux pas ouvrir les frontières et je ne changerai pas d'avis parce que tu cries."
+    "Elen essaie d'intervenir, mais Ryn parle en même temps qu'elle. Nyra me regarde brièvement, comme pour me demander d'essayer quelque chose."
 
     call day4_thread_debate_game from _call_day4_thread_debate_game
 
