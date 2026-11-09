@@ -1778,24 +1778,24 @@ label _3_DEBAT1_PHASE3_INT2:
             ("ryn", "colere", 0.95),
         ])
 
-        iris reflechit "Avant, tout coûtait cher. Vous avez oublié les prix qui grimpaient sans arrêt ?"
-        iris reflechit "Mais quand un truc manquait, on pouvait au moins chercher ailleurs."
+        iris reflechit "Avant Kami, les prix augmentaient parfois plus vite que les salaires. Vous avez oublié ça ?"
+        iris reflechit "Mais quand quelque chose manquait, on pouvait chercher ailleurs. Ça nous laissait au moins une chance."
 
-        elen joie "Voilà ! Tu bossais, tu achetais. Personne pour juger si tes chaussures étaient assez trouées."
+        elen joie "Voilà ! Tu pouvais acheter des chaussures sans devoir prouver qu'elles étaient vraiment trouées !"
 
-        julian sourire "C'était pas parfait, mais on pouvait essayer autre chose. Aujourd'hui, on attend que Kami décide."
+        julian sourire "Le monde d'avant était loin d'être parfait. Mais tu pouvais essayer, échouer, recommencer. Aujourd'hui, on attend qu'une IA autorise le moindre changement."
 
-        mara reflexion "« Choisir »… c'est un joli mot, Elen."
-        mara reflexion "Moi, je me souviens surtout des sourires obligatoires. Des portes qui se ferment si tu n'es pas… parfaite."
-        mara triste "La liberté d'avant, certains l'ont payée très cher. J'en fais partie."
+        mara reflexion "« Choisir »... C'est un très joli mot quand on a les moyens de choisir."
+        mara reflexion "Moi, je me souviens des portes qui se fermaient devant toi quand tu n'avais pas le bon visage, les bons contacts, la bonne façon de sourire."
+        mara triste "La liberté d'avant n'avait pas le même prix pour tout le monde. Je suis bien placée pour le savoir."
 
-        tomas raison "Les guerres faisaient beaucoup de dégâts aussi. Avec Kami, ce risque-là est plus faible. Enfin... en théorie."
+        tomas raison "Et il y avait des guerres. Des destructions énormes. Avec Kami, les affrontements de cette ampleur ont diminué... enfin, d'après les données."
 
-        ryn colere "« Techniquement ». Dis ça aux gamins de Limen qui bouffaient les restes des riches."
+        ryn colere "Les données ? Va expliquer tes statistiques aux gamins de Limen qui grandissaient avec les restes des autres !"
 
-        noam "Ouais. Enfin, avant, les gens qui avaient pas d'argent galéraient aussi."
+        noam "Avant Kami, l'argent donnait déjà des possibilités aux uns et les retirait aux autres. Ça ne suffit pas de dire qu'on était plus libres."
 
-        elen joie "Alors gardons le meilleur ! L'essentiel pour tous, la liberté pour le reste. Comme avant, mais sans la guerre !"
+        elen joie "Alors... pourquoi on ne pourrait pas garder ce qui marche et changer le reste ?! La liberté, sans laisser les gens mourir de faim !"
 
         think "Mara détourne le regard et ne répond plus. Je crois qu’elle n’avait pas envie de parler de ça devant tout le monde."
 
@@ -1813,23 +1813,23 @@ label _3_DEBAT1_PHASE3_INT2:
             ("sael", "determine", 0.95),
         ])
 
-        ryn colere "Lisez le texte, bon sang ! « Suppression des bons. Fin de la distribution. » Point."
-        ryn colere "Pas de « minimum vital ». Pas de « transition ». Rien."
+        ryn colere "Lisez les mots ! « Suppression des bons. Fin de la distribution. » C'est écrit. Noir sur blanc !"
+        ryn colere "Pas un mot pour ceux qui ne peuvent pas payer. Pas de délai. Pas de minimum vital. RIEN !"
 
-        elias determine "C'est ça qui libère ! Plus de bons, plus de laisse. On produit, on échange, on vit."
+        elias determine "Mais si on garde les bons, on reste dépendants de la permission de Kami pour chaque pièce, chaque outil, chaque repas !"
 
-        noam inquiet "On peut pas garder les bons juste quelques semaines de plus. Soit on les supprime d’un coup, soit on refuse tout. C’est ça qui me fait peur."
+        noam inquiet "On ne peut même pas proposer de maintenir les bons quelques semaines. On nous demande de tout supprimer, ou de ne rien changer."
 
-        kael triste "Sur Orbite, si on arrête les livraisons avant de savoir les remplacer, on risque d’avoir des morts. On peut pas faire ça du jour au lendemain."
+        kael triste "Sur Orbite, couper les circuits actuels sans savoir par quoi les remplacer, ça pourrait nous tuer. On ne change pas une livraison vitale du jour au lendemain."
 
-        lysa blase "Y a écrit « supprimer ». Pas « réduire ». C'est quand même pas compliqué."
+        lysa blase "Le mot est « supprimer ». Pas « aménager ». Si on vote oui, il faudra assumer ce qu'il signifie."
 
-        ryn colere "Sans bons, à Limen, on meurt en silence pendant que vous « produisez » vos rêves."
-        ryn colere "Et ceux qui peuvent pas bosser, ils crèvent ? C'est ça, le plan ?!"
+        ryn colere "Sans les bons, à Limen, on crèvera en silence pendant que vous organiserez votre jolie économie !"
+        ryn colere "Et les gens trop vieux ou trop malades pour bosser ? Ils font quoi ? Ils meurent en attendant un emploi ?!"
 
-        mara stress "…Et il l'écrit noir sur blanc. On ne pourra pas dire qu'on ne savait pas."
+        mara stress "...Au moins, cette fois, ce sera notre responsabilité. On ne pourra pas prétendre qu'on n'avait pas lu."
 
-        sael determine "Les gens échangent déjà des choses là-bas. On le sait tous."
+        sael determine "Les gens échangent déjà ce qu'ils peuvent. Ce n'est pas Kami qui les a inventés, ces échanges."
 
         think "Ryn frappe du poing. Sael ne cille pas."
 
@@ -1847,23 +1847,23 @@ label _3_DEBAT1_PHASE3_INT2:
             ("mara", "reflexion", 0.95),
         ])
 
-        ryn surpris "Attends… tu dis que ça se fait déjà ? Des trocs en douce, à Limen ?"
+        ryn surpris "Attends... tu veux dire qu'il y a déjà des échanges en douce chez nous ?"
 
-        sael reflechit "Depuis toujours. Un sac contre une réparation. Un service contre du tissu. Ça tient les gens debout entre deux rations."
+        sael reflechit "Depuis toujours. Un peu de nourriture contre une réparation. Du tissu contre un service. Quand les rations manquent, c'est parfois ce qui fait tenir les familles."
 
-        noam "Ça marche entre voisins. Mais dans tous les districts ? J'en suis moins sûr."
+        noam "Entre voisins, ça peut fonctionner. Mais à l'échelle de tous les districts, c'est autre chose."
 
-        kael doute "Si ça existe déjà, on pourrait peut-être trouver un moyen de le faire chez nous aussi."
+        kael doute "Si les gens le font déjà malgré les interdictions, il y a peut-être moyen d'organiser ces échanges sans tout bouleverser d'un coup."
 
-        julian sourire "Exactement ! Les gens s'organisent déjà. Supprimer les bons, c'est cesser de nier ce qu'ils font en cachette."
+        julian sourire "Voilà ! Les gens ont déjà commencé à se débrouiller. On ne fait que leur rendre le droit de le faire ouvertement."
 
-        lysa blase "Et y aura toujours des types pour prendre leur part au passage."
+        lysa blase "Et il y aura toujours quelqu'un pour se faire payer très cher le passage d'un sac de riz."
 
-        ryn reflechit "…Mais si c'est déjà là, et que ça sauve des familles… alors on pourrait faire pareil. En mieux. Sans crever en attendant Kami."
+        ryn reflechit "...Si ça sauve déjà des gens, peut-être qu'on pourrait en faire quelque chose de plus grand. Sans devoir se cacher pour survivre."
 
-        mara reflexion "Tiens. Pour une fois, un plan qui ne sort pas de nulle part. Ça existe, ça marche. C'est déjà ça."
+        mara reflexion "Tiens. Un argument qui ne sort pas d'un joli discours. Ça existe, ça fonctionne parfois. C'est déjà plus convaincant."
 
-        sael determine "On survit déjà. On peut faire plus que survivre."
+        sael determine "Pour l'instant, on survit. Je voudrais qu'on puisse recommencer à vivre."
 
         think "Ryn baisse les yeux. Kael pose quelques questions à Sael sur la façon dont ils organisent les échanges chez elle."
 
@@ -1877,12 +1877,12 @@ label _3_DEBAT1_PHASE3_INT2:
             ("iris", "blase", 0.56),
             ("tomas", "hesitation", 0.78),
         ])
-        noam "On parle de supprimer les bons. Mais dans certains districts, ils ne suffisent déjà pas à nourrir tout le monde."
-        ryn colere "À Limen, tu peux attendre toute la journée et repartir les mains vides."
-        iris blase "Donc on garde un système qui marche mal, ou on le supprime d'un coup. Super choix."
-        tomas hesitation "O-On devrait au moins prévoir une période de transition..."
-        mara doute "Sauf qu'on peut pas rajouter une ligne au texte. C'est bien le problème."
-        noam inquiet "Donc même si ça passe, on n’aura pas réglé tous les problèmes. Loin de là."
+        noam "On parle de supprimer les bons. Mais aujourd'hui, certains districts en reçoivent sans jamais pouvoir les utiliser."
+        ryn colere "À Limen, tu peux faire la queue toute la journée et rentrer sans une miette !"
+        iris blase "Deux options : garder un système défaillant ou supprimer sa dernière protection. Quelle magnifique conception du choix."
+        tomas hesitation "On... on devrait au moins avoir une période de transition. Quelque chose pour éviter que les gens se retrouvent sans rien."
+        mara doute "Mais on ne peut pas ajouter un mot au texte. C'est le piège depuis le début."
+        noam inquiet "Même si on adopte cet amendement, il restera des problèmes. Peut-être même des problèmes plus graves."
         $ debat_day3_apply_influence({"ryn": -1, "mara": -1, "tomas": -1, "iris": 1})
 
     elif selected == "approvisionnement":
@@ -1892,12 +1892,12 @@ label _3_DEBAT1_PHASE3_INT2:
             ("kael", "inquiet", 0.56),
             ("elen", "inquiet", 0.78),
         ])
-        noam "Même aujourd'hui, tous les districts ne reçoivent pas la même chose."
-        lysa blase "Et demain, ceux qui ont déjà de quoi payer seront servis les premiers. Quelle surprise."
-        nyra raison "Pas forcément. S'il y a plus de marchandises en circulation, certains endroits pourraient aussi y gagner."
-        kael inquiet "Il faudra surtout que les livraisons arrivent à temps."
-        elen inquiet "Donc on sait pas si ce sera mieux. C'est ça ?"
-        noam "C'est ça. Et on va devoir décider quand même."
+        noam "Déjà aujourd'hui, deux familles de deux districts différents n'obtiennent pas du tout les mêmes ressources."
+        lysa blase "Et demain, si on instaure les ventes, ceux qui possèdent déjà quelque chose auront toutes les chances de passer devant les autres."
+        nyra raison "Pas nécessairement. Une augmentation des échanges pourrait aussi favoriser les districts actuellement délaissés. Il faut considérer les deux possibilités."
+        kael inquiet "Tout dépendra des circuits d'approvisionnement. Sur Orbite, une livraison ratée ne se corrige pas facilement."
+        elen inquiet "Donc... même en y réfléchissant tous ensemble, on ne peut pas savoir si ça va améliorer les choses ?"
+        noam "C'est ça. Et ce n'est pas Kami qui assumera notre choix. Ce sera nous."
         $ debat_day3_apply_influence({"lysa": -1, "kael": -1, "nyra": 1, "elen": 1})
 
     return
