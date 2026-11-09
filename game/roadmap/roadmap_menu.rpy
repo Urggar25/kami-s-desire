@@ -1149,11 +1149,11 @@ init -2 python:
         },
         {
             "id": "revelation_j29_iris_reus",
-            "title": "Révélation — Iris connaissait la machine",
+            "title": "Fin — Reus",
             "short": "Reus",
             "label": "_29_0_1_1_0_0_1_2_REVELATION",
-            "category": "route",
-            "kind": "divergence",
+            "category": "ending",
+            "kind": "ending",
             "x": 15320,
             "y": 1490,
             "summary": "La nouvelle Iris s'éveille avec une mémoire archivée avant Kami, reconnaît la technologie de duplication et cherche Reus.",
@@ -1585,7 +1585,12 @@ init -2 python:
             visiting.add(node_id)
             parents = [parent for parent in by_id[node_id].get("requires", [])
                        if parent in by_id and days[parent] == days[node_id]]
-            rank = max((rank_for(parent) + 1 for parent in parents), default=0)
+            # Un choix critique appartient visuellement à la journée où
+            # le joueur le rencontre. Seules ses conséquences partent à droite.
+            is_day_choice = (node_id == "choice_day1_door"
+                             or node_id.startswith("critical_choice_"))
+            rank = (0 if is_day_choice
+                    else max((rank_for(parent) + 1 for parent in parents), default=0))
             visiting.remove(node_id)
             ranks[node_id] = rank
             return rank
@@ -1611,6 +1616,22 @@ init -2 python:
                     # Les anciennes voies verticales sont préservées autant
                     # que possible, puis écartées de 172 px si nécessaire.
                     preferred_y = max(90, initial[node["id"]][1])
+                    if (node["id"] == "choice_day1_door"
+                            or node["id"].startswith("critical_choice_")):
+                        # Choix placé sous son jour d'origine, dans la même
+                        # colonne, y compris lorsque les coordonnées
+                        # historiques étaient décalées vers la droite.
+                        parent_days = [
+                            by_id[parent] for parent in node.get("requires", [])
+                            if parent in by_id and days[parent] == day
+                            and (by_id[parent].get("kind") == "day"
+                                 or by_id[parent].get("category") == "day")
+                        ]
+                        if parent_days:
+                            preferred_y = max(
+                                preferred_y,
+                                max(initial[parent["id"]][1] for parent in parent_days) + 190
+                            )
                     y = max(preferred_y, last_bottom + 54)
                     node["x"] = next_x + rank * 370
                     node["y"] = y
@@ -2213,13 +2234,26 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                                         if selected_path_ids and not (req in selected_path_ids and node["id"] in selected_path_ids):
                                             $ edge_color = "#334a5b48"
                                             $ edge_glow = "#00000000"
-                                        add Solid(edge_glow) xpos min(sx, mx) ypos (sy - 3) xsize max(6, abs(mx - sx)) ysize 8
-                                        add Solid(edge_glow) xpos (mx - 3) ypos min(sy, ty) xsize 8 ysize max(6, abs(ty - sy))
-                                        add Solid(edge_glow) xpos min(mx, tx) ypos (ty - 3) xsize max(6, abs(tx - mx)) ysize 8
-                                        add Solid(edge_color) xpos min(sx, mx) ypos sy xsize max(2, abs(mx - sx)) ysize 2
-                                        add Solid(edge_color) xpos mx ypos min(sy, ty) xsize 2 ysize max(2, abs(ty - sy))
-                                        add Solid(edge_color) xpos min(mx, tx) ypos ty xsize max(2, abs(tx - mx)) ysize 2
-                                        add Solid(edge_color) xpos (tx - 3) ypos (ty - 3) xsize 8 ysize 8
+                                        if source["x"] == node["x"]:
+                                            # Lien vertical propre entre le jour et son
+                                            # choix : ne pas traverser les cartes en
+                                            # partant du bord droit du parent.
+                                            $ center_x = map_offset_x + int(node["x"] * z) + int(node_w / 2)
+                                            $ source_bottom = map_offset_y + int((source["y"] + 118) * z)
+                                            $ target_top = map_offset_y + int(node["y"] * z)
+                                            $ edge_top = min(source_bottom, target_top)
+                                            $ edge_height = max(2, abs(target_top - source_bottom))
+                                            add Solid(edge_glow) xpos (center_x - 3) ypos edge_top xsize 8 ysize edge_height
+                                            add Solid(edge_color) xpos center_x ypos edge_top xsize 2 ysize edge_height
+                                            add Solid(edge_color) xpos (center_x - 3) ypos (target_top - 3) xsize 8 ysize 8
+                                        else:
+                                            add Solid(edge_glow) xpos min(sx, mx) ypos (sy - 3) xsize max(6, abs(mx - sx)) ysize 8
+                                            add Solid(edge_glow) xpos (mx - 3) ypos min(sy, ty) xsize 8 ysize max(6, abs(ty - sy))
+                                            add Solid(edge_glow) xpos min(mx, tx) ypos (ty - 3) xsize max(6, abs(tx - mx)) ysize 8
+                                            add Solid(edge_color) xpos min(sx, mx) ypos sy xsize max(2, abs(mx - sx)) ysize 2
+                                            add Solid(edge_color) xpos mx ypos min(sy, ty) xsize 2 ysize max(2, abs(ty - sy)) 
+                                            add Solid(edge_color) xpos min(mx, tx) ypos ty xsize max(2, abs(tx - mx)) ysize 2
+                                            add Solid(edge_color) xpos (tx - 3) ypos (ty - 3) xsize 8 ysize 8
 
                             for node in visible_nodes:
                                 $ nx = map_offset_x + int(node["x"] * z)
