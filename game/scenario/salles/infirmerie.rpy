@@ -166,6 +166,7 @@ label decouverte_infirmerie:
     noam sourire "Noam, d'Harmonie."
     sael neutre "Sael. Limen."
     $ unlock_character_name("sael")
+    call kd_play_character_intro("sael") from _call_kd_intro_sael_j1
     noam reflexion "Tu vérifies les réserves ?"
     sael reflechit "Je regarde ce qui peut servir. Ça évite de chercher au dernier moment."
 
