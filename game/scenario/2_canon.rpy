@@ -501,25 +501,29 @@ label _2_APRES_MIDI_LYSA_ELIAS:
         ("lysa", "triste", 0.25),
     ])
 
-    elias ecoute "T'as pas dit grand-chose ce matin. Pourtant, hier, tu parlais tout le temps."
-    lysa blase "J'ai écouté. Ça change."
-    elias sourire "Bah, ça te ressemble pas."
-    lysa neutre "Merci, c'est gentil."
+    elias ecoute "T'étais bizarrement silencieuse ce matin. Hier, tu arrivais à me répondre avant même que je finisse une phrase."
+    lysa blase "J'ai écouté. Expérience nouvelle. Je recommande une fois par trimestre."
+    elias sourire "T'as dû être très malade."
+    lysa neutre "Merci, docteur. Ton diagnostic me touche."
     think "Je les rejoins. Lysa me laisse une place près du mur."
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("noam", "inquiet", 0.13),
         ("lysa", "triste", 0.25),
     ])
-    noam inquiet "T'es préoccupée par le vote ?"
-    lysa reflexion "Ouais. Tout le monde parle de son district, mais quand on parle d'Harmonie, on passe pour les bureaucrates qui font chier tout le monde."
-    noam raison "On pourra leur dire ce qui nous manque."
-    lysa blase "Ils le savent. Si les marchandises sont vendues au plus offrant, on sera encore les derniers servis."
-    elias ecoute "Ah ouais. Moi, je pensais surtout aux pièces détachées."
-    lysa taquin "C'est pour ça que je t'aime bien. Toi, tu penses d'abord aux boulons."
-    elias rire "Au moins, les boulons, ça répond pas !"
-    noam sourire "Et tu vas le dire demain ?"
-    lysa determine "Je vais essayer. J'ai pas envie qu'on décide à ma place."
+    noam inquiet "C'est le commerce qui t'inquiète, ou les gens qui vont voter ?"
+    lysa reflexion "Les deux. Tout le monde défend son district. Mais dès qu'on parle d'Harmonie, on devient les bureaucrates qui empêchent les autres de vivre."
+    noam raison "On peut leur expliquer ce qui nous manque. Ils ne savent pas forcément."
+    lysa blase "Ils savent qu'on a des pénuries. Le problème, c'est que si tout se vend au plus offrant, on sera toujours les derniers à recevoir ce qu'il reste."
+    elias ecoute "Ah. J'avais pas vu ça comme ça. Moi, je pensais juste... aux pièces détachées."
+    lysa taquin "Je sais. Et c'est pour ça que je t'apprécie : tu pourrais assister à la fin du monde et demander où sont les écrous."
+    elias rire "Oui ! Les écrous, au moins, me disent pas que je suis stupide."
+    noam sourire "Alors dis-le demain. Pas à nous, à tout le monde."
+    lysa determine "Je compte bien le faire. Ce qui me fait peur, c'est de finir par voter pour un texte dont personne ne connaît le prix."
+    elias reflechit "On pourrait écrire toutes ces questions dans le dossier. Comme ça, au moins, on oublie pas."
+    lysa taquin "Tu vois ? Les boulons, ça sert aussi à réfléchir."
+    elias rire "Je vais faire semblant de prendre ça pour un compliment."
+    think "Une idée simple, mais la première qui me semble réellement utile depuis ce matin."
 
     call day2_collect_vote_argument("approvisionnement") from _call_day2_collect_vote_argument_approvisionnement
 
@@ -539,15 +543,20 @@ label _2_APRES_MIDI_ELEN:
         ("elen", "content", 0.68),
     ])
 
-    noam surpris "Tu fais quoi avec tous ces papiers ?"
-    elen content "Je voulais juste commander des fraises au distributeur. Ils ont une liste de trucs trop bien !"
-    noam neutre "Et tout ça, c'est pour des fraises ?"
-    elen inquiet "Oui ! Je dois expliquer pourquoi la ration normale me suffit pas, combien j'en veux et qui va les manger."
-    noam taquin "Elles seront pourries avant qu'on t'autorise à les prendre."
-    elen desaccord "Mais oui ! Et c'est pareil pour les outils. J'ai regardé au cas où je casse un truc dans ma chambre."
-    noam raison "Même quand c'est disponible, tu dois remplir toute la demande ?"
-    elen joie "Voilà ! Tu comprends ! Tu veux signer comme témoin pour mes fraises ?"
-    noam sourire "Euh... peut-être plus tard."
+    noam surpris "Attends... tu prépares un amendement ou tu déclares tes revenus ?"
+    elen content "Je voulais des fraises ! Ils en ont ! J'ai vu la liste, je te jure !"
+    noam neutre "Et ces quatre feuilles, c'est pour... un bol de fraises ?"
+    elen inquiet "Oui ! Il faut dire pourquoi j'en veux, combien, quand je vais les manger et si quelqu'un d'autre va en profiter !"
+    noam taquin "À ce rythme-là, elles auront fini leur carrière de fraises avant la réponse."
+    elen desaccord "Mais c'est ça ! Et c'est pareil pour un outil ! Si je casse une lampe, je dois presque raconter toute ma vie pour demander un tournevis."
+    noam raison "Même si l'objet est juste là, sous tes yeux ?"
+    elen joie "OUI ! Tu comprends enfin ! Tu veux être mon témoin ? Je promets de partager !"
+    noam taquin "Je n'ai pas encore accepté !"
+    elen inquiet "Mais je peux mettre ton prénom au crayon, si tu veux."
+    noam sourire "Surtout pas."
+    elen content "Bon... je vais écrire « témoin potentiel »."
+    think "J'aurais dû partir avant qu'elle sorte son stylo."
+    noam sourire "J'ai comme l'impression que je vais finir accusé de trafic de fruits."
     $ unlock_codex_page("derogations_administratives", with_notification=False)
 
     call day2_collect_vote_argument("derogations_complexes") from _call_day2_collect_vote_argument_derogations_complexes
@@ -566,16 +575,16 @@ label _2_APRES_MIDI_SAEL:
         ("sael", "raison", 0.68),
     ])
 
-    noam neutre "Tu disais que chez toi, vous vous débrouilliez sans commerce. Ça marche vraiment ?"
-    sael raison "On mange ce qu'on produit. Chacun s'occupe de quelque chose : les champs, les réparations, les enfants."
-    noam reflexion "Et si quelqu'un ne peut pas travailler ?"
-    sael neutre "On l'aide. Pourquoi voudrais-tu qu'on le laisse tomber ?"
-    noam sourire "Non, je demandais."
-    sael determine "Mais quelqu'un qui peut aider et refuse de le faire, je vais le chercher moi-même."
-    noam taquin "Tu dois être convaincante."
-    sael sourire "En général, oui."
-    noam raison "Je comprends pourquoi tu ne t'inquiètes pas des mêmes choses que Mara."
-    sael mefiant "Je m'inquiète aussi. Je veux juste qu'on ne nous impose pas la façon de vivre des autres."
+    noam neutre "Sael, chez toi, le commerce a vraiment disparu sans que le village s'effondre ?"
+    sael raison "On mange ce qu'on produit. Les uns travaillent la terre, les autres réparent les machines, d'autres s'occupent des enfants. Ce n'est pas une formule magique."
+    noam reflexion "Et ceux qui ne peuvent pas travailler ?"
+    sael neutre "On les aide. Tu pensais qu'on les laissait sans manger ?"
+    noam sourire "Non ! Je voulais juste comprendre."
+    sael determine "En revanche, si quelqu'un peut donner un coup de main et préfère regarder les autres s'épuiser, je vais le chercher. Personnellement."
+    noam taquin "Je commence à avoir pitié de ses excuses."
+    sael sourire "Il n'en trouve pas longtemps."
+    noam raison "Je comprends pourquoi un retour du commerce ne te paraît pas forcément une bonne nouvelle."
+    sael mefiant "Je m'inquiète, crois-moi. Simplement, je refuse qu'une règle écrite ici détruise ce qu'on a construit là-bas."
 
     call day2_collect_vote_argument("valeur_travail") from _call_day2_collect_vote_argument_valeur_travail
 
