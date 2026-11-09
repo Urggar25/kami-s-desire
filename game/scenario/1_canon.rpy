@@ -465,10 +465,10 @@ label _1_CHOICE:
 
         "Tenter d'ouvrir la porte":
             noam determine "Raah, on ne peut pas rester là à rien faire !"
-    ryn determine "Enfin quelqu'un qui parle normalement !"
-    mara taquin "Normalement ? Tu viens de trouver ton premier ami."
-    lysa blase "Ça commence fort."
-    think "J'ai déjà envie de retirer ma proposition."
+            ryn determine "Enfin quelqu'un qui parle normalement !"
+            mara taquin "Normalement ? Tu viens de trouver ton premier ami."
+            lysa blase "Ça commence fort."
+            think "J'ai déjà envie de retirer ma proposition."
             think "Les caméras nous regardent, tout le monde nous regarde."
 
             ryn "Bon bouge de là !"
