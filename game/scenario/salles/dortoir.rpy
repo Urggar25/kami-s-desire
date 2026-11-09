@@ -71,18 +71,6 @@ screen pnc_dortoir():
             ypos 0
             action Jump("DORTOIR_ENTER_CHAMBRE")
 
-    $ corridor_door_path = "images/background/interact/dortoir/porte_couloir_dortoir.png"
-    imagebutton:
-        idle room_interaction_null()
-        hover room_interaction_layer(corridor_door_path, "dortoir", "hover")
-        focus_mask room_interaction_layer(corridor_door_path, "dortoir", "art")
-        xpos 0
-        ypos 0
-        action [
-            SetVariable("corridor_current", "dortoir"),
-            Jump("EXIT_ROOM_TO_CORRIDOR")
-        ]
-
     if current_scene_active == "_2_ROUTE_CAFETERIA" and not day2_cafeteria_route_nyra_seen:
         imagebutton:
             idle Transform(character_image("nyra", "neutre"), zoom=1.00)
@@ -101,6 +89,20 @@ screen pnc_dortoir():
             yalign 1.00
             action Jump("_3_OPT_KAEL_DIAL")
 
+    # La porte doit être visible même sans survol (notamment au J2).
+    # Dessiner son bouton après les PNJ permet aussi de garder la sortie
+    # cliquable si un sprite empiète sur la zone de la porte.
+    $ corridor_door_path = "images/background/interact/dortoir/porte_couloir_dortoir.png"
+    imagebutton:
+        idle room_interaction_layer(corridor_door_path, "dortoir", "art")
+        hover room_interaction_layer(corridor_door_path, "dortoir", "hover")
+        focus_mask room_interaction_layer(corridor_door_path, "dortoir", "art")
+        xpos 0
+        ypos 0
+        action [
+            SetVariable("corridor_current", "dortoir"),
+            Jump("EXIT_ROOM_TO_CORRIDOR")
+        ]
 
 label _2_ROUTE_CAFETERIA_NYRA:
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_336
