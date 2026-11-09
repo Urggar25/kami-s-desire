@@ -231,12 +231,12 @@ screen noam_interupt_radio_duel():
                 yalign 0.5
                 text argument[2]:
                     size 24
-                    color "#ff7af7" if chosen else "#a0a6c0"
+                    color ("#ff7af7" if chosen else "#a0a6c0")
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 text argument[1]:
                     size 28
-                    color "#ffffff" if chosen else "#dfdcf6"
+                    color ("#ffffff" if chosen else "#dfdcf6")
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 if chosen:
