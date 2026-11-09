@@ -140,7 +140,7 @@ label _4_0_CAFETERIA_ECRANS:
     elen surpris "Non essentielles ?! Mais j'ai pas demandé un gâteau de dix étages !"
     elias inquiet "Il reste des barres et des rations normales, ou on mange les emballages maintenant ?"
     goumi "Les repas nécessaires à votre alimentation restent disponibles."
-    elias fatigue "Bon, ça, c'est déjà ça. Mais elles ont aucun goût, tes barres."
+    elias reflechit "Bon, ça, c'est déjà ça. Mais elles ont aucun goût, tes barres."
     nyra reflechit "Attendez, ça concerne seulement les extras ou toutes les livraisons ?"
     goumi "Les provisions non essentielles. Prochain réapprovisionnement prévu au jour 7."
     elen colere "C'est trop facile ! Hier tu nous fais choisir entre deux trucs impossibles, et aujourd'hui tu me retires même la cannelle !"
@@ -308,8 +308,6 @@ label day4_optional_news:
 
     return
 
-    return
-
 label _4_0_TEMPS_LIBRE_1:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_199
@@ -418,7 +416,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("elen", "triste"),
     ])
     elen surpris "Ah, ça, c'est pas du tout la même chose que les magasins !"
-    ryn joie "Enfin ! Ça, c'est une proposition que je peux soutenir !"
+    ryn sourire "Enfin ! Ça, c'est une proposition que je peux soutenir !"
     lysa blase "T'as même pas attendu qu'elle finisse de parler."
     ryn colere "Parce que je sais de quoi je parle ! À Limen, tu traverses la frontière et Kami te descend. Et après, c'est nous qui récupérons le corps."
     $ unlock_dossier_arg("p2_frontiere_limen")
