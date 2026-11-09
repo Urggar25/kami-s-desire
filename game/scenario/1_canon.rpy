@@ -380,7 +380,7 @@ label _1_CANON:
     pause 0.4
 
     $ day1_group_reaction(ryn="colere")
-    think "Tout le monde se regarde de travers."
+    think "Les regards circulent. Personne n'a l'air coupable, ce qui ne m'aide absolument pas."
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
     elias inquiet "Sinon, on peut tenter de la forcer."
@@ -408,7 +408,7 @@ label _1_CANON:
     sael "Donc il faut choisir. Soit on tente d'ouvrir la porte."
     sael "Soit on attend."
 
-    think "Mon cœur accélère."
+    think "Une porte verrouillée. Douze inconnus. Et on me demande de trancher sur notre première mauvaise idée."
 
     jump _1_CHOICE
 
@@ -773,13 +773,13 @@ label _1_PNC_CONCLAVE_RYN:
 
     ryn colere2 "Cette porte me saoule."
     ryn colere "Et puis qu'est-ce qu'on fout là d'abord !"
-    noam surpris "Hein ? Encore ça ?! Mais qu'est-ce que tu as à dire que tu ne sais pas ce qu'on fait là ?!"
+    noam surpris "Attends... Tu ne sais toujours pas pourquoi tu es là ?" 
     ryn "Et d'abord, c'était quoi votre soi-disant annonce de tout à l'heure ?!"
     ryn colere "Réponds-moi ! J'y pige que dalle !"
     noam panique "Mais tu as bien été sélectionné ?"
     ryn surpris "Hein ? Sélectionné ? Mais de..."
     noam surpris "Attends tu n'as vraiment pas entendu l'annonce ?!"
-    noam panne "Elle a dû être diffusée partout dans le monde ! Sur tous les appareils ! Comment tu as pu passer à côté ?"
+    noam panne "Mais l'annonce est passée partout ! Sur tous les écrans ! Comment tu as pu la rater ?"
     ryn "Hein ? Moi j'étais près de la frontière quand on m'a attaqué..."
     noam colere "On t'a attaqué ?!"
     ryn colere "Ouais, ces connards m'ont foutu une sorte de serviette sur le nez et je me suis réveillé ici."
@@ -808,8 +808,8 @@ label _1_PNC_CONCLAVE_MARA:
 
     mara taquin "Alors Monsieur je décide pour tout le monde, tu as trouvé une piste ?"
     noam reflechit "J'essaie déjà de comprendre où on est."
-    mara taquin "Mauvaise nouvelle : on est dans une pièce fermée dans laquelle toutes les sorties sont bloquées."
-    mara jaloux "C'est donc avec vous que je vais devoir passer mes trente prochains jours ici ?"
+    mara taquin "Mauvaise nouvelle : on est enfermés. Bonne nouvelle : tu as trouvé une porte. Quel enquêteur !"
+    mara jaloux "Trente jours avec vous... Je sais pas si je dois rire ou demander une autre cellule."
     mara rire "On devrait pouvoir bien s'amuser !"
     mara taquin "Ou plus, si affinité ?"
     noam peur "Hein ?!"
@@ -839,7 +839,7 @@ label _1_PNC_CONCLAVE_ELIAS:
     noam surpris "Hein ? Comment tu sais ça ?"
     elias neutre "À force de bosser au milieu des machines, je reconnais quand un truc tourne pas rond. Là, ça fait un genre de... Vrrrr..."
     elias reflechit "Non, attends... Brrrrr... Enfin bref, c'est pas le même bruit !"
-    noam reflechit "Maintenant que tu le dis, c'est vrai que la ventilation n'est plus la même."
+    noam reflechit "Maintenant que tu le dis... oui. Le ronronnement est plus aigu."
     elias surpris "Ah, tu l'as remarqué toi aussi ?"
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
     elias ecoute "Intéressant à savoir !"
@@ -865,7 +865,7 @@ label _1_PNC_CONCLAVE_KAEL:
 
     kael reflechit "Si les portes sont bloquées par des permissions, ça veut dire que c'est le même système que sur Orbite."
     noam surpris "Hein ? qu'est-ce que tu racontes ? Tu viens d'Orbite ?"
-    kael doute "Sur Orbite, tout le monde ne peut pas aller partout, t'imagines si un gamin va dans la salle de pilotage..."
+    kael doute "Sur Orbite, on évite de laisser le premier venu toucher aux commandes. Tu imagines le carnage ?"
     kael mefiant "Donc on a des systèmes de vérifications des autorisations par empreinte. Et ça ressemble à ce qui est installé sur les portes."
     noam panique "Donc on ne pourra jamais passer par ces portes ?"
     kael raison "C'est pas ce que j'ai dit, il suffit qu'on nous donne l'accès et on pourra y accéder."
@@ -900,7 +900,7 @@ label _1_PNC_CONCLAVE_TOMAS:
     noam taquin "T'es une sorte de geek ou quelque chose du genre ?"
     tomas gene "Hein ? Moi ? Ah... Non pas vraiment..."
     tomas gene "C'est juste mon travail de savoir ce genre de choses..."
-    tomas determine "Enfin bref, pour faire simple d'habitude sur ce modèle il y a des boutons, là il n'y en a pas. Et évidemment on a pas de sortes de télécommande."
+    tomas determine "Enfin... sur ce modèle, il devrait y avoir des boutons. Ici, rien. Pas de télécommande non plus."
     noam surpris "Et c'est censé vouloir dire quoi ?"
     tomas raison "Qu'on ne peut pas éteindre cet écran. Il est en veille et peut se rallumer à tout moment."
     noam reflechit "Tu pouvais pas commencer par là ?"
@@ -923,7 +923,7 @@ label _1_PNC_CONCLAVE_IRIS:
         ("iris", "triste", 0.6),
     ])
 
-    iris desaccord "Je déteste les salles où tout le monde fait semblant de réfléchir calmement."
+    iris desaccord "Ce qui me rend dingue, c'est que tout le monde essaie d'avoir l'air calme."
     iris triste "On est enfermés. Évidemment que tout le monde panique."
     noam taquin "Pourquoi ? Tu paniques ?"
     iris taquin "Moi ? Non. Et puis quoi encore ?! Je dis juste que vous pouvez montrer que vous êtes paniqués !"
@@ -952,7 +952,7 @@ label _1_PNC_CONCLAVE_ELEN:
     noam neutre "Des pauses ?"
     elen triste "Bah oui. Moi, je ne veux pas travailler tout le teeeemps !"
     elen peur "Et j'ai besoin de trouver urgemment des toilettes..."
-    noam triste "Je crois que nos envies, Kami s'en contrefout."
+    noam triste "À mon avis, Kami a oublié l'option service client."
     elen joie "J'espère au moins qu'il y aura des trucs bons à manger !"
     noam taquin "Tu nous passes d'une urgence à l'autre."
     elen joie "Ben oui ! D'abord les toilettes, après on mange !"
@@ -974,7 +974,7 @@ label _1_PNC_CONCLAVE_NYRA:
         ("nyra", "reflexion", 0.6),
     ])
 
-    nyra reflexion "Tout le monde cherche une issue."
+    nyra reflexion "Vous êtes tous obsédés par les portes."
     nyra hesitation "Mais personne ne se demande encore pourquoi cette salle existe."
     noam "Tu as une idée ?"
     nyra sourire "Kami avait annoncé qu'on devrait voter sur des trucs ? Vu la salle, ça se fera ici."
@@ -1002,7 +1002,7 @@ label _1_PNC_CONCLAVE_JULIAN:
     julian joie "Regarde : les sièges, l'écran, les caméras... C'est fait pour être filmé."
     noam "Tu crois que quelqu'un regarde ?"
     julian determine "Franchement, qui voudrait rater ça ?"
-    julian decontracte "On va peut-être changer les lois de Kami, tu te rends compte ?!"
+    julian decontracte "On va peut-être changer les lois de Kami ! Tu te rends compte de ce que ça représente ?"
     julian joie "Tout le monde regardera ! Évidemment !"
     noam taquin "Tu as déjà préparé ton meilleur profil ?"
     julian sourire "Ce n'est pas une mauvaise idée de soigner sa présentation."
@@ -1105,13 +1105,13 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Du calme mon petit Ryn, c'est vrai que tu n'es pas au courant de tout..."
-    kami "Vous êtes les petits échantillons de l'Humanité que je vais m'amuser à tester."
-    kami "Je vais confronter vos rêves, vos choix, peut-être même ce qui vous rend si spécial.."
+    kami "Vous êtes mon petit échantillon de l'humanité. Douze spécimens, et pas un seul mode d'emploi."
+    kami "Je vais confronter vos rêves à la réalité. Vos belles convictions à vos petites habitudes. Ça promet."
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
 
     kami "Mais aussi votre capacité à obéir…"
-    kami "Et à prétendre que vous obéissez 'pour le bien commun'."
+    kami "Et surtout à appeler votre obéissance le bien commun. J'adore quand vous faites ça."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1175,13 +1175,13 @@ label _1_KAMI_APPARITION:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Vous pourrez renforcer une règle. L'adoucir. La tordre. En ajouter ou en supprimer."
+    kami "Renforcez une règle. Affaiblissez-la. Tordez-la. Supprimez-la. Je veux voir jusqu'où va votre imagination."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Vous êtes libres de proposer ce que vous voulez."
     kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
-    kami "Vous êtes libres de ne penser qu'à vous ; ou à tous les autres."
+    kami "Vous pouvez penser à tous les autres. Ou seulement à vous. Je vous laisse deviner ce que je préfère observer."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1203,7 +1203,7 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
     kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
-    kami "Si vous ne votez pas, votre voix sera considéré comme une abstention."
+    kami "Vous ne votez pas ? Je compte une abstention. Voyez comme je vous facilite la vie."
 
     pause 0.3
 
@@ -1227,7 +1227,7 @@ label _1_KAMI_APPARITION:
 
     scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
 
-    kami "Dans ce cas, l'amendement disparait. Et votre espoir de changer le monde avec."
+    kami "Une voix contre, et votre joli texte disparaît. Avec les grands espoirs que vous aviez mis dedans."
     kami "Une seule petite voix contre et tout peut tomber à l'eau."
 
     pause 0.4
@@ -1235,7 +1235,7 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     kami "Vous allez apprendre quelque chose d'important ici."
-    kami "Vous verrez, ce n'est pas si simple de mettre douze personnes d'accord."
+    kami "Essayez déjà de mettre douze personnes d'accord sur l'heure du dîner. Après, on parlera de changer le monde."
     kami "Alors imaginez convaincre des millions de gens."
 
     pause 0.6
@@ -1247,7 +1247,7 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
-    kami "Je ne participerai à aucune de vos manigances. Je vous laisse vous débrouiller entre vous."
+    kami "Vos alliances, vos manigances, vos petits arrangements ? Sans moi. Je veux la meilleure place pour regarder."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1260,8 +1260,8 @@ label _1_KAMI_APPARITION:
     kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
 
     kami "Vous pouvez vous battre."
-    kami "Vous pouvez mentir."
-    kami "Vous pouvez voler."
+    kami "Vous pouvez mentir. D'ailleurs, certains ont sûrement commencé."
+    kami "Vous pouvez voler. Pensez seulement à rendre ce que vous empruntez... ou pas."
     kami "Vous pouvez vous entretuer."
     elen peur "P-Pardon ?! Tu viens de dire quoi ?!"
     kami "Je l'ai dit assez distinctement, je crois."
@@ -1273,7 +1273,7 @@ label _1_KAMI_APPARITION:
     ryn colere "Personne ici n'a l'intention de tuer qui que ce soit."
     nyra neutre "Tu ne peux pas le savoir."
     think "Je regarde les autres. Cette fois, personne ne soutient le regard de personne."
-    kami "Je ne m'en mêlerai pas. Je ne vous défendrai pas. Je ne vous en empêcherai pas."
+    kami "Je ne viendrai pas vous sauver. Ni vous arrêter. Vous vouliez la liberté, non ?"
     kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
 
     pause 0.4
@@ -1291,7 +1291,7 @@ label _1_KAMI_APPARITION:
     kami "Les portes vous sont désormais ouvertes."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Faites bien connaissance. Après tout, vous allez devoir vous supporter pendant un mois."
+    kami "Faites connaissance ! Vous avez trente jours pour devenir inséparables. Dans tous les sens du terme."
 
     pause 0.5
 
@@ -1530,13 +1530,13 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
         ("lysa", "blase", 0.82),
         ("julian", "sourire", 1.02),
     ])
-    kael calme "Vous avez commencé vos textes ? Je voulais juste savoir si deux d'entre nous pensaient proposer la même chose."
-    iris blase "Moi, j'ai surtout commencé à raturer. Tu veux voir mes brouillons ?"
+    kael calme "Petite question : on vérifie qu'on n'a pas tous écrit la même chose, ou on découvre la catastrophe demain ?"
+    iris blase "Moi, j'ai surtout commencé à raturer. Si tu veux, je peux te montrer mes erreurs."
     kael calme "Non, je demandais comme ça."
     lysa blase "Si quelqu'un veut garder son idée pour lui, il va pas changer d'avis maintenant."
-    julian sourire "Pour ma part, je n'ai rien à cacher. Si vous voulez en discuter, je suis tout à vous."
+    julian sourire "Moi, je peux en parler. Avec plaisir, même. J'ai réfléchi à plusieurs options."
     mara taquin "Lui, au moins, il a déjà trouvé son public."
-    ryn determine "Moi, je sais ce que je veux demander. Et vous le saurez quand ce sera tiré au sort."
+    ryn determine "Moi, j'ai mon idée. Vous la connaîtrez quand elle sortira de l'urne. Pas avant."
     kael calme "Bon, compris. Je voulais juste éviter de perdre du temps."
     think "Iris cache sa feuille lorsque Julian se penche vers elle. Visiblement, personne n'a envie de montrer son travail."
     "Un grésillement interrompt le silence. L'écran central s'allume."
@@ -1563,7 +1563,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     mara taquin "On peut essayer la version silence ?"
     kami "Refusé."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Pour les détails ennuyeux, ouvrez votre tablette. Je ne suis pas votre secrétaire."
+    kami "Les détails administratifs sont sur vos tablettes. Ne comptez pas sur moi pour faire aussi le secrétariat."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Maintenant, vos amendements. Un texte par personne, dans l'urne, avant dix-huit heures. C'est obligatoire !"
     kami "Un texte sera tiré au sort demain, puis un vote aura lieu tous les trois jours. Aucun vote contre pour adopter : les abstentions et les absences ne bloquent pas le résultat."
@@ -1594,7 +1594,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     kami "Sur ce. Écrivez. Réfléchissez. Épatez-moi."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Faites semblant d'être des adultes responsables."
+    kami "Et surtout, essayez d'avoir l'air responsables. Rien que pour la photo."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1703,12 +1703,12 @@ label _1_proposition_amendement:
     $ unlock_gallery_image("bg_cg009")
     play music "music/bgm_cold_metadata.mp3" fadein 1.0
 
-    think "Bon... Ok."
+    think "Bon. Très bien. Si je continue à regarder la page, elle ne va pas s'écrire toute seule."
     think "Il faut que je me grouille. C'est à moi."
 
-    think "Les autres ont presque tous fini et moi, j'ai encore rien écrit."
+    think "Tout le monde avance. Moi, j'ai réussi à souligner mon titre trois fois. Grand progrès."
     think "Si mon idée est tirée au sort et que ça tourne mal, il y aura peut-être des gens qui en paieront le prix."
-    think "Bon. Faut arrêter de paniquer. Les autres ont réussi à écrire quelque chose, je peux le faire aussi."
+    think "Respire, Noam. Même Ryn a terminé. C'est bien la preuve que c'est possible."
     pause 0.3
 
     "Une idée me vient en tête."
@@ -1737,7 +1737,7 @@ label _1_proposition_amendement:
 
     pause 0.4
 
-    think "Voilà. Mon premier amendement. Le dernier déposé, forcément."
+    think "Voilà. Premier amendement, dernière place. Je me demande si je peux encore demander un brouillon."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
@@ -1767,7 +1767,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Oh, vous avez tous rendu votre copie ! Et dans les temps, en plus !"
+    kami "Oh ! Douze copies, aucune en retard ! Je suis émue. Quelqu'un a prévu une remise de diplômes ?"
     kami "C'est presque impressionnant. Vous feriez de très bons élèves !"
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
@@ -1800,7 +1800,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     "Les écrans s'éteignent. Les chaises raclent le sol. Personne ne se dit vraiment au revoir."
 
-    think "C'est fini. Pour aujourd'hui du moins."
+    think "C'est fini. Enfin... c'est ce qu'on est censés croire jusqu'à demain."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_132
     scene couloir_dortoir at adaptive_fullscreen with fade
@@ -2016,7 +2016,7 @@ label _1_FIN_JOURNEE_DORTOIR:
     scene couloir_cafeteria at adaptive_fullscreen with fade
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    think "Les couloirs se sont vidés. Je croise à peine quelqu'un en rejoignant les chambres."
+    think "Le couloir s'est vidé à une vitesse suspecte. Visiblement, personne n'a envie de poursuivre le débat."
 
     pause 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_135
