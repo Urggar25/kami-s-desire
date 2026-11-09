@@ -263,219 +263,81 @@ label _6_0_1_CONCLAVE_START:
 label _6_0_1_SIGNAL_INSTABLE:
 
     play sound "sfx/glitch_heavy.mp3"
-
     show screen kami_broadcast_ui
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
+    scene bg_diffusion_colere at adaptive_fullscreen with hpunch
     play music "music/bgm_system_override.mp3" fadein 0.5
-
-    kami "Maintenez."
-
+    kami "J'ai besoin que vous restiez... que vous restiez ici. Ne quittez pas la salle."
+    "Une alarme discrète se déclenche sur les haut-parleurs. L'écran principal affiche pendant une seconde un message de connexion interrompue."
+    elias inquiet "C'est pas juste un souci avec les enceintes. Elle perd la communication avec les consoles, là."
+    kael inquiet "Je le vois aussi sur ma tablette. Elle essaie de se reconnecter, mais le signal saute."
+    iris inquiet "C'est censé être possible, ça ?"
+    kael reflechit "Je sais pas. Et je préfère pas te répondre au hasard."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "La séance doit continuer normalement. Je vais... régler cela."
+    "Sa voix s'interrompt. Sur les consoles des représentants, les notifications disparaissent brièvement avant de revenir."
+    noam inquiet "On devrait peut-être attendre que tout fonctionne avant de voter."
     scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Le."
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-
-    kami "Signal."
-
-    think "Son image saute en boucle."
-
-    scene bg_conclave at adaptive_fullscreen with vpunch
-
-    $ showGroup([("iris", "inquiet", 0.3), ("ryn", "colere", 0.6), ("lysa", "blase", 0.85)])
-
-    iris "C'est quoi, ce cirque—"
-
-    ryn "Elle bugue complet là ?"
-
-    lysa "Ouais, c'est bien ce qu'on disait tout à l'heure."
-
+    kami "Non. Attendre n'est pas... nécessaire."
     play sound "sfx/glitch_loop.mp3"
-
-    # --- LANCEMENT MINI-JEU ---
+    "Un grésillement plus fort résonne dans la salle. Je protège mes oreilles et je vois Elias se pencher vers le terminal devant lui."
     call j601_play_signal_instable from _call_j601_play_signal_instable
-    # --------------------------
-
     stop sound fadeout 0.5
 
-    think "Le bruit coupe net."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-
-    kami "..."
-
-    think "Pas un silence : un trou."
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-
-    kami "Stabilisation."
-
-    pause 0.2
-
-    scene bg_diffusion_professeur at adaptive_fullscreen
-
-    kami "Incomplète."
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Insuffisante."
-
-    kami "Imprécise."
-
-    think "Sa voix accroche encore."
-
-    play sound "sfx/glitch_light.mp3"
-
-    kami "Corrigez."
-
-    kami "Encore."
-
-    think "Son image reste figée une fraction de trop."
-
-    think "..."
-
-    think "Elle dérape."
-
-    think "Ou elle fait semblant."
-
-    hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    hide screen kami_broadcast_ui
     play music "music/bgm_debate_low.mp3" fadein 1.0
-
-    think "Personne ne commente. Nous attendons seulement la suite."
+    "Le bruit cesse d'un coup. Je regarde les écrans : certains affichent de nouveau nos dossiers, mais d'autres sont encore bloqués."
+    elen inquiet "C'est bon ? On dirait qu'elle est revenue."
+    kael inquiet "Pas complètement. Il y a des connexions qui répondent encore avec du retard."
+    ryn colere "Et elle veut qu'on vote avec ça ? Elle se fout de nous ?"
+    nyra reflechit "Personne n'a intérêt à se précipiter. Même si le vote doit finir par avoir lieu, il faut au moins que le système fonctionne."
+    "Kami réapparaît sur l'écran central. Son visage est parfaitement immobile, alors que sa voix arrive avec une seconde de décalage."
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Je suis toujours là. Les systèmes du Conclave sont... disponibles. Nous pouvons poursuivre."
+    mara mefiant "C'est pas vrai, on vient de voir des écrans s'éteindre !"
+    kami "Ils sont disponibles."
+    "Personne ne répond. Même ceux qui veulent en finir ne semblent plus très pressés."
 
     jump _6_0_1_FRACTURE_QTE
 
-# Durée : ~1m30 (hors mini-jeu)
-
-
 label _6_0_1_FRACTURE_QTE:
 
+    "Un nouveau message apparaît devant moi, mais les caractères changent avant que je puisse le lire. Plusieurs représentants se penchent sur leur tablette."
+    noam inquiet "Attendez, il y a un problème avec l'affichage des votes. Chez vous aussi ?"
+    tomas inquiet "Oui ! Enfin, je crois. J'avais le texte de l'amendement et maintenant ça me demande de confirmer autre chose."
+    kael inquiet "Touchez à rien, je vais regarder si c'est un affichage temporaire."
+    play sound "sfx/glitch_medium.mp3"
+    "L'écran du Conclave affiche des données qui se mélangent avant de revenir à la proposition initiale."
     call j601_play_fracture from _call_j601_play_fracture
     $ j601_fracture_result = _return
 
-    show screen kami_broadcast_ui
-    scene bg_diffusion_colere at adaptive_fullscreen with hpunch
-    play music "music/bgm_system_override.mp3" fadein 1.0
-
-    kami "Puisque vous refusez de débattre…"
-    scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-    kami "Il est temps maintenant de mour—"
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Voter."
-    kami "Voter."
-    scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "Pardon."
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "Correction effectuée."
-
-    play sound "sfx/glitch_heavy.mp3"
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with hpunch
-    kami "Le débat est clos."
-
-    hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
-
-    think "Personne ne bouge."
-
-    $ showGroup([
-        ("mara", "doute"),
-        ("iris", "peur"),
-        ("ryn", "neutre"),
-        ("lysa", "blase"),
-        ("tomas", "inquiet"),
-        ("elen", "inquiet"),
-        ("sael", "neutre"),
-        ("kael", "inquiet"),
-    ])
-
-    iris colere "... Elle vient de dire quoi là ?!"
-
-    ryn reflechit "J-je sais pas, c'était incompréhensible."
-
-    mara mefiant "Bien sûr que si, tu as parfaitement compris ce qu'elle a voulu dire."
-
-    iris inquiet "Vous avez entendu la même chose que moi ?"
-
-    mara "Moi, j'ai entendu « mourir »."
-
-    lysa reflechit "Elle a aussi dit voter."
-
-    mara rire "Ouais. Après. Trop tard."
-    mara reflechit "Je sais pas exactement ce qu'elle a voulu nous dire, mais clairement, vu son état, moi je prends pas le risque de voter pour un truc qui change les règles du monde."
-
-    iris colere "Ouais, c'est clair. C'est beaucoup trop dangereux."
-
-    tomas reflechit "Peut-être... Qu'il y a un truc qu'on a pas compris dans le texte ?"
-
-    elen triste "Bof ! On peut pas voter là-dessus ! On sait même pas ce qu'elle a dit !"
-
-    lysa blase "Et pourtant, ils attendent tous notre réponse."
-
-    elen inquiet "Non, mais vraiment— Si Kami bugge pendant qu’elle annonce le texte, qu’est-ce qui se passe si on vote pour ?"
-
-    sael colere "On ne sait pas. De toute façon j'avais déjà prévu de voter contre."
-    sael triste "Vous pouvez faire ce que vous voulez, ce texte ne passera pas."
-
-    ryn colere "Même si ça pourrait aider tes proches ? Tu es vraiment prête à l'assumer devant eux ?!"
-
-    mara colere "On ne va pas revenir sur le sujet. Puis avec les trucs chelous qui se passent, c'est une raison de plus pour voter contre."
-
-    iris triste "Ce changement-là attendra. C'est tout."
-
-    ryn triste "M-..."
-
-    sael triste "Un jour, tu comprendras."
-
-    think "Elle ne va pas..."
-
-    $ hideGroup()
-
-    call j601_sael_vote_animation from _call_j601_sael_vote_animation
-
-    pause 0.6
-
-    $ showGroup([
-        ("mara", "doute"),
-        ("iris", "peur"),
-        ("ryn", "neutre"),
-        ("lysa", "blase"),
-        ("tomas", "inquiet"),
-        ("elen", "inquiet"),
-        ("sael", "neutre"),
-        ("kael", "inquiet"),
-    ])
-
-    ryn colere "Putain mais pourquoi t'as fait ça ?!"
-
-    noam colere "C'est son choix. Il faut le respecter."
-
+    "Les écrans reviennent enfin sur le texte concernant les frontières. La proposition semble inchangée, mais plusieurs représentants gardent leur tablette à distance."
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    play music "music/bgm_system_override.mp3" fadein 0.5
-
-    kami "HEP HEP HEP ! On était pas-pas au moment du vote !"
-
-    scene bg_diffusion_amour at adaptive_fullscreen with hpunch
-
-    pause 0.5
-
-    scene bg_diffusion_colere at adaptive_fullscreen with hpunch
-    kami "Bref. Le débat était déjà clos. Finissons-en."
-
-    play sound "sfx/glitch_light.mp3"
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    kami "Merci de votre patience. Nous allons maintenant passer au vote."
+    elen inquiet "Mais attends, tu vas bien ? On peut pas juste faire comme si rien ne s'était passé !"
+    kami "Les procédures ont été... rétablies. Vous pouvez voter."
+    iris colere "Et si tu te trompes en comptant nos voix ?"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Le système de dépouillement est distinct de l'affichage des débats. Il est opérationnel."
+    kael reflechit "Je peux pas vérifier ça depuis ma tablette, mais on n'a pas beaucoup d'autres moyens de procéder."
+    mara colere "C'est quand même magnifique. On va voter sur le fonctionnement du monde alors que celle qui le dirige arrive à peine à terminer ses phrases."
+    sael determine "Je ne fais pas confiance à ce qui vient de se passer, mais je n'ai pas changé d'avis. Je voterai contre l'ouverture des frontières."
+    ryn colere "On le sait, Sael. T'as pas besoin de me le rappeler à chaque fois."
+    sael mefiant "Je m'adresse aux autres aussi, pas seulement à toi."
+    noam inquiet "Je veux juste être sûr qu'on vote bien sur la même proposition. Kami, tu peux nous la répéter une dernière fois ?"
+    pause 0.3
+    kami "Autoriser la libre circulation des personnes entre les districts. Aucune autre modification n'est prévue."
+    lysa blase "Bon, au moins on sait ce qu'on nous demande. Je suis pas rassurée pour autant."
+    "Un voyant s'allume sur les tablettes. Le vote est officiellement ouvert."
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_debate_low.mp3" fadein 1.0
-
-    "Kami semble particulièrement pressée d'en finir."
-
+    play music "music/bgm_debate_low.mp3" fadein 0.7
     jump _6_0_1_VOTE
-
-# Durée : ~3m10 hors mini-jeu
 
 label j601_sael_vote_animation:
 
