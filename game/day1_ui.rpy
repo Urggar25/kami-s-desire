@@ -50,9 +50,16 @@ init python:
     DAY_PERIOD_HUD_BLOCKING_SCREENS = (
         "tablet_home",
         "tablet_stats",
+        "tablet_profiles",
+        "tablet_codex",
+        "tablet_succes",
         "messenger_conversation",
         "vote_dossier",
         "investigation_dossier",
+        "system_menu",
+        "game_menu",
+        "roadmap_menu",
+        "main_menu",
     )
 
     def day_period_hud_is_pnc_active():
