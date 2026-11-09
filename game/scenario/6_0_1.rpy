@@ -225,23 +225,25 @@ label _6_0_1_CONCLAVE_START:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.5
 
-    "Quand j'entre, plusieurs personnes sont déjà assises. Julian échange quelques mots avec Tomas ; à l'autre bout de la table, Ryn fixe la place de Sael."
+    "Julian est déjà en grande conversation avec Tomas. C'est presque rassurant : il semble lui parler, pas le coincer."
+    think "À l'autre bout de la table, Ryn fixe Sael avec une intensité qui ne présage absolument rien de bon."
     $ showGroup([("ryn", "colere", 0.20), ("iris", "fatigue", 0.48), ("sael", "neutre", 0.78)])
-    ryn colere "Avant de commencer, j'aimerais quand même comprendre pourquoi certains refusent qu'on ouvre les frontières. Il y a des gens qui attendent depuis ce matin aux points de passage."
-    sael determine "Je t'ai déjà répondu hier. Je ne veux pas exposer les habitants de mon village aux attaques qu'on a subies."
-    ryn colere "Mais moi, je te parle des gens qui meurent maintenant ! Tu peux pas continuer à faire comme s'ils existaient pas."
-    iris desaccord "Ryn, personne fait comme s'ils existaient pas. Vous avez tous les deux expliqué ce qui se passe chez vous, on a compris."
-    ryn colere "Alors pourquoi on en est toujours au même point ?"
-    noam inquiet "Parce que l'amendement est trop vague. Il dit qu'on ouvre les passages, mais personne ne sait ce qui se passera ensuite."
-    sael neutre "C'est exactement pour ça que je voterai contre."
-    "Ryn commence à répondre, mais l'écran principal s'allume avant qu'il ait terminé."
+    ryn colere "Bon. Avant qu'on vote, j'aimerais qu'on m'explique encore une fois pourquoi des familles devraient rester derrière ces foutues barrières !"
+    sael determine "Je t'ai répondu hier. Tu n'étais pas d'accord, mais ça ne signifie pas que tu ne m'as pas entendue."
+    ryn colere "JE T'AI ENTENDUE ! Mais il y a des gens qui meurent MAINTENANT ! Pas il y a dix ans, pas dans tes souvenirs !"
+    iris desaccord "Ryn, arrête de lui faire dire qu'elle se fiche des morts. Tu sais très bien que c'est faux."
+    ryn colere "Alors pourquoi elle peut nous faire perdre le vote à elle toute seule ?!"
+    noam inquiet "Parce qu'on nous demande de tout ouvrir sans prévoir ce qu'on fera ensuite. On en revient toujours au même problème."
+    sael neutre "Et je refuse qu'on transforme cette incertitude en pari sur la vie de mon village."
+    "Ryn s'apprête à répliquer. Le grand écran s'allume avant qu'il puisse reprendre son souffle."
+    think "Kami vient peut-être de nous sauver d'un deuxième round. C'est la première fois que j'envisage de la remercier."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Tout le monde est là ? Bien ! Nous allons débattre de la proposition autorisant la libre circulation entre les districts."
+    kami "Tout le monde est là ? Merveilleux ! Place au deuxième vote de l'histoire du Conclave : la libre circulation entre les districts !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Je suis ravie de voir que certains d'entre vous ont déjà commencé. Continuez, je vous en prie !"
+    kami "Et je vois que vous avez déjà commencé à vous détester ! Quelle efficacité ! J'en attendais presque moins de vous."
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_debate_low.mp3" fadein 1.0
@@ -255,58 +257,91 @@ label _6_0_1_CONCLAVE_START:
         ("elen", "inquiet"),
         ("nyra", "raison"),
     ])
-    elen inquiet "Moi, j'aimerais juste qu'on arrête de tuer les gens qui essaient de retrouver leur famille. Je sais bien qu'il y a eu des attaques, mais on pourrait peut-être contrôler les passages autrement."
-    mara agace "Sauf que c'est pas ce qu'il y a dans le texte. Il suffit qu'on vote oui et tout ouvre, sans qu'on sache comment ça va se passer."
-    ryn colere "Ça fait des années qu'on doit surveiller des frontières qu'on n'a même pas le droit de traverser. Vous pouvez pas nous demander d'attendre encore !"
-    kael inquiet "Il faudra aussi adapter les transports. Si tous les passages ouvrent d'un coup, je vois pas comment les systèmes actuels vont suivre."
-    lysa blase "Oui, mais si on attend d'avoir un plan parfait, personne ne pourra jamais sortir. Ça me dérange aussi."
-    nyra reflechit "Vous êtes pas si loin d'être d'accord sur le problème. Mais vous voulez pas prendre le même risque. Sael, c'est bien le texte tel qu'il est qui te bloque ?"
-    sael determine "Non, Nyra. Je suis opposée à l'ouverture des frontières. Même avec des contrôles, je pense que ça facilitera le retour des groupes armés. Je ne veux pas prendre ce risque."
-    ryn colere "Alors qu'est-ce qu'on est censés faire ? Garder les gens enfermés pour toujours ?"
-    sael colere "Je suis pas celle qui a mis ces règles en place ! Arrête de me demander de répondre pour Kami !"
-    "Le ton monte. Iris frappe doucement la table pour essayer d'intervenir, mais elle s'interrompt quand Kami reprend la parole."
+    elen inquiet "Moi... j'aimerais que les gens puissent revoir leurs proches sans risquer leur vie."
+    elen inquiet "C'est vraiment impossible de contrôler les passages sans laisser Kami tirer sur ceux qui approchent ?"
+    mara agace "Bien sûr qu'on pourrait imaginer autre chose. Mais ce n'est pas ce qu'on vote."
+    mara doute "Le texte dit « ouvrir ». Pas « réfléchir à un système de contrôle ». Et c'est une sacrée différence."
+    ryn colere "À Limen, ça fait des années qu'on regarde mourir des gens devant des passages qu'on surveille nous-mêmes !"
+    ryn colere "Vous voulez qu'on leur dise quoi ? « Encore un peu de patience, on cherche une formulation élégante » ?!"
+    kael inquiet "Même si tout le monde veut traverser pacifiquement, le réseau de transport n'est pas prêt."
+    kael reflechit "Les contrôles, les convois, les points de passage... On ne remet pas tout ça en route avec un bouton."
+    lysa blase "Évidemment qu'il manque des détails. Il manquera toujours des détails."
+    lysa reflechit "La vraie question, c'est combien de temps on accepte de garder les gens enfermés en attendant un plan sans défaut."
+    nyra reflechit "Attendez. Vous êtes presque tous d'accord pour dire que les sanctions sont insupportables."
+    nyra raison "Sael, si on ajoutait des contrôles aux passages, ce serait suffisant pour toi ?"
+    sael determine "Non."
+    sael mefiant "Même avec des contrôles, la réouverture rendrait le retour des groupes armés plus facile."
+    sael determine "J'ai passé des années à faire en sorte que mon village puisse enfin dormir. Je ne vais pas l'exposer à nouveau."
+    ryn colere "ALORS ON FAIT QUOI ?! On attend que toutes les familles soient mortes pour ne plus avoir de problème de frontières ?!"
+    sael colere "ARRÊTE ! Je ne suis pas Kami ! Je n'ai écrit aucun de ses Commandements !"
+    sael colere "Et pourtant, à t'entendre, chaque mort à la frontière serait déjà de ma faute !"
+    "Iris frappe la table du plat de la main."
+    iris colere "Vous pouvez vous parler SANS vous hurler dessus deux secondes ?!"
+    "Une voix sort des haut-parleurs avant que quelqu'un réponde."
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.6
-    kami "Vous avez tous de très bonnes... de bonnes raisons, oui. Vous pourriez peut-être..."
+    kami "Vos arguments sont tous... tous très..."
+    kami "Il faudrait peut-être que vous..."
     pause 0.7
-    "Son visage reste figé. Un grésillement traverse les haut-parleurs avant que sa voix reprenne."
-    kami "Poursuivez le débat. Je vous écoute."
+    "Le visage de Kami se fige."
+    "Un grésillement coupe le silence."
+    think "La phrase ne vient pas. Pour la première fois, elle a l'air incapable de trouver une méchanceté à ajouter."
+    kami "Continuez. Poursuivez... poursuivez le débat. Je vous écoute."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_debate_low.mp3" fadein 1.0
 
-    iris inquiet "Bon, ça commence à faire beaucoup pour une seule journée. Est-ce qu'on pourrait lui demander directement si tout va bien ?"
-    noam neutre "Kami ? Tu nous entends ?"
+    iris inquiet "Non. Désolée, mais là ça suffit."
+    iris inquiet "Kami, qu'est-ce qui t'arrive ? Et ne nous fais pas ton numéro habituel."
+    noam neutre "Kami ? Tu nous entends correctement ?"
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Évidemment que je vous entends. Vous êtes douze, dans une pièce que je surveille en permanence."
-    "Elle marque une nouvelle pause. Cette fois, personne ne dit rien."
-    kami "Vous n'avez pas terminé. Il faut continuer."
-    mara mefiant "Attends, pourquoi il faut ? Tu peux pas simplement nous dire ce qui se passe avec toi ?"
-    kami "Il faut que... le débat doit... continuer."
+    kami "ÉVIDEMMENT que je vous entends ! Douze représentants, une salle, mes caméras partout ! Je ne suis pas sourde !"
+    "Le silence s'étire. Sa bouche reste ouverte une seconde de trop."
+    think "Personne ne plaisante. Même Mara fixe l'écran sans sourire."
+    kami "Vous n'avez pas terminé."
+    kami "Il faut... il faut continuer."
+    mara mefiant "Pourquoi « il faut » ?"
+    mara colere "Qu'est-ce qu'on doit continuer exactement ? Notre débat, ou un spectacle que tu refuses d'arrêter ?"
+    kami "Le débat doit..."
+    kami "Il faut que vous... continuiez. Oui. Continuez."
     play sound "sfx/glitch_medium.mp3"
-    "L'image se déforme. Une partie de la phrase se répète plusieurs fois, sans que Kami termine sa réponse."
-    elias inquiet "Les enceintes font pas ce bruit d'habitude. Kael, t'as une idée ?"
-    kael inquiet "Ça ressemble pas à une panne du système audio. L'image et le son décrochent en même temps."
-    nyra reflechit "Kami, est-ce qu'on doit interrompre la séance ?"
+    "« Continuez. Continuez. Conti... »"
+    "L'image se dédouble. La dernière syllabe se répète comme un disque rayé."
+    think "Quelque chose ne va pas. Et cette fois, je ne crois plus à une mise en scène."
+    elias inquiet "Kael ! C'est pas les haut-parleurs ! Le son décroche en même temps que l'image !"
+    kael inquiet "Je vois. Et ses messages arrivent avec du retard sur ma tablette."
+    kael reflechit "C'est comme si la transmission entière perdait des morceaux."
+    nyra reflechit "Kami, est-ce qu'on doit suspendre la séance jusqu'au rétablissement des systèmes ?"
     scene bg_diffusion_colere at adaptive_fullscreen with hpunch
-    kami "Non ! Le débat continue !"
+    kami "NON !"
+    kami "LE DÉBAT CONTINUE !"
     pause 0.3
-    "Sa réponse est si forte que Tomas se recule dans son fauteuil."
-    tomas inquiet "D'accord, mais... personne t'empêche de nous donner quelques minutes."
-    kami "Je n'ai pas besoin de..."
+    "Le son explose dans les haut-parleurs. Tomas se recule brutalement."
+    tomas peur "AH ! Bon sang, on peut baisser le volume ?!"
+    tomas inquiet "On ne t'empêche pas de faire une pause ! Tu peux même en prendre une longue, si ça t'aide !"
+    kami "Je n'ai pas... besoin de... de..."
     play sound "sfx/glitch_heavy.mp3"
-    "L'écran devient noir, puis l'image réapparaît avec un retard évident sur sa voix."
-    think "Même si elle voulait nous faire peur, je ne comprends pas pourquoi elle insisterait autant pour qu'on continue à parler."
+    "L'écran s'éteint."
+    "Une seconde plus tard, Kami réapparaît. Ses lèvres bougent après que les mots ont déjà été prononcés."
+    think "Je commence à regretter l'époque où son plus gros problème était son humour."
+    think "On dirait qu'elle ne supporte pas l'idée qu'on arrête la séance."
+    think "Pourtant, c'est elle qui n'arrive plus à la tenir."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
-    iris inquiet "Vous avez vu ça ? Elle a complètement perdu l'image pendant une seconde."
-    ryn colere "Qu'elle coupe la séance alors ! On va pas faire semblant que tout va bien juste pour lui faire plaisir."
-    elen inquiet "Attendez, si elle va vraiment mal, qu'est-ce qui se passe pour les gens sur Terre ? Les frontières, les rations... Tout dépend d'elle !"
-    mara mefiant "C'est exactement ce qui m'inquiète. Et elle veut quand même nous faire voter."
-    "Les représentants commencent à parler tous en même temps. Avant que quelqu'un arrive à les calmer, les lumières clignotent à nouveau."
+    iris inquiet "Vous l'avez vue ? Elle n'arrivait même plus à synchroniser sa propre voix !"
+    ryn colere "Alors on ARRÊTE ! On ne va pas voter pendant que l'IA qui gère le monde part en morceaux !"
+    elen inquiet "Mais... si elle s'arrête vraiment, qu'est-ce qu'il se passe sur Terre ?"
+    elen peur "Les rations ? Les frontières ? Les sanctions ? Tout ça dépend d'elle !"
+    mara mefiant "Et elle nous dit de continuer à voter comme si tout était normal."
+    mara agace "Pour une fois que j'aimerais qu'elle nous explique quelque chose, elle se met à répéter trois mots."
+    "Les voix éclatent de tous les côtés."
+    elias inquiet "Je peux vérifier les écrans, mais pas son réseau !"
+    ryn colere "Alors on fait quoi ?!"
+    nyra raison "Personne ne touche aux consoles avant qu'on sache ce qui se passe !"
+    "Les lumières clignotent. D'un coup, tout le monde se tait."
 
     jump _6_0_1_SIGNAL_INSTABLE
 
