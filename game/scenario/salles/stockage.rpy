@@ -145,6 +145,7 @@ label decouverte_stockage:
     noam sourire "Moi c'est Noam, d'Harmonie."
     nyra neutre "Nyra. Orbite."
     $ unlock_character_name("nyra")
+    call kd_play_character_intro("nyra") from _call_kd_intro_nyra_j1
     noam sourire "Je peux t'aider ?"
     nyra reflechit "Pourquoi pas. Tu peux regarder ce qu'il y a dans cette caisse et me dire combien de lampes tu trouves ?"
     "Je soulève le couvercle. Plusieurs lampes sont rangées dans des compartiments en mousse."
