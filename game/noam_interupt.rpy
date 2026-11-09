@@ -279,7 +279,7 @@ screen noam_interupt_radio_duel():
                     spacing 16
                     text ("CIBLE  //  CLIQUE POUR TIRER" if selected_argument else "CIBLE  //  ARME UN ARGUMENT CI-DESSOUS"):
                         size 19
-                        color "#67eaff" if selected_argument else "#db9ee6"
+                        color ("#67eaff" if selected_argument else "#db9ee6")
                         font "fonts/Rajdhani-SemiBold.ttf"
                     text DAY1_RADIO_LINES[line_index]:
                         xsize 1245
@@ -336,12 +336,12 @@ screen noam_interupt_radio_duel():
                 yalign 0.5
                 text argument[2]:
                     size 25
-                    color "#74edff" if chosen else "#a69abf"
+                    color ("#74edff" if chosen else "#a69abf")
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 text argument[1]:
                     size 29
-                    color "#ffffff" if chosen else "#e4ddf5"
+                    color ("#ffffff" if chosen else "#e4ddf5")
                     font "fonts/Rajdhani-SemiBold.ttf"
                     yalign 0.5
                 if chosen:
@@ -383,8 +383,8 @@ screen noam_interupt_radio_duel():
         text ("OBJECTION !" if shot_state == "hit" else "ARGUMENT REJETÉ"):
             xpos 600
             ypos 247
-            size 76 if shot_state == "hit" else 56
-            color "#85f7ff" if shot_state == "hit" else "#ff7f9d"
+            size (76 if shot_state == "hit" else 56)
+            color ("#85f7ff" if shot_state == "hit" else "#ff7f9d")
             outlines [(3, "#0a071d", 0, 0)]
             font "fonts/Rajdhani-SemiBold.ttf"
             at day1_radio_impact_stamp
@@ -398,7 +398,7 @@ screen noam_interupt_radio_duel():
             ypos 943
             xsize 1255
             size 27
-            color "#86edff" if shot_state == "hit" else "#ffb6c9"
+            color ("#86edff" if shot_state == "hit" else "#ffb6c9")
             font "fonts/Rajdhani-SemiBold.ttf"
 
 
