@@ -419,7 +419,7 @@ label _3_OPT_JULIAN_DIAL:
     julian rire "Comme toujours ! Ça change de certaines têtes qu'on croise ici."
     "La tasse de Julian déborde. Il la retire trop tard et se brûle les doigts."
     julian colere "Aïe ! Bon sang, elle marche jamais correctement, cette machine ?!"
-    noam taquin "Tu devrais lui faire un discours, peut-être qu'elle obéira."
+    noam sourire "Tu devrais lui faire un discours, peut-être qu'elle obéira."
     julian sourire "Très drôle. Mais écoute-moi : si ça passe, les gens pourront acheter et vendre sans demander l'autorisation de Kami."
     noam inquiet "Encore faut-il que tout le monde soit d'accord. Et j'ai pas l'impression que c'est gagné."
     julian reflexion "Je sais. Il va falloir convaincre ceux qui hésitent, sinon on perd."
@@ -529,7 +529,7 @@ label _3_CAFETERIA_ARRIVE:
     elen desaccord "Oh non ! Vous allez pas vous y mettre tous les deux !"
     elias sourire "Je dis juste que tu vas avoir faim dans une heure. Moi, j'ai pris des œufs et du poulet."
     elen surpris "Du poulet au petit-déjeuner ?! Mais t'es pas bien !"
-    iris rire "Pour le coup, elle a raison."
+    iris taquin "Pour le coup, elle a raison."
     elias colere "Hé ! Le poulet, c'est très bien !"
     elen sourire "Bon, on peut manger sans parler du vote ? S'il vous plaît ?"
     elias inquiet "J'aimerais bien, mais j'arrête pas d'y penser. Vous avez décidé ce que vous allez voter ?"
@@ -802,7 +802,7 @@ label _3_PAUSE_CHAMBRE:
         julian rire "Tomas, dis-moi juste que tu me soutiens et on en finit. Tu n'as même pas de meilleure idée !"
         tomas peur "Mais j'en sais rien ! Ça fait dix minutes que je te le dis !"
     julian sourire "Allez. Tu viens avec moi au Conclave, tu expliques aux autres que tu es pour, et après je te laisse tranquille."
-    tomas colere "Mais j'ai pas dit que j'étais pour !"
+    tomas inquiet "Mais j'ai pas dit que j'étais pour !"
     "Julian se retourne vers nous. Tomas en profite pour s'éloigner de lui."
 
     call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
@@ -811,30 +811,30 @@ label _3_PAUSE_CHAMBRE:
     julian colere "Ah, Noam. Parfait. Nyra a donc appelé du renfort ?"
     nyra neutre "Tomas m'a demandé de venir. Il voulait partir et tu continuais à insister."
     julian reflexion "Je lui expliquais pourquoi son soutien comptait. On dirait que discuter est devenu interdit."
-    tomas colere "Non ! Tu voulais que je dise à tout le monde que je te soutiens, toi ! Et tu m'écoutais même pas !"
+    tomas inquiet "Non ! Tu voulais que je dise à tout le monde que je te soutiens, toi ! Et tu m'écoutais même pas !"
     julian hesitation "Tomas, tu déformes ce que j'ai dit."
     noam colere "On t'a entendu en arrivant. Tu voulais même lui faire répéter ta phrase."
     julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que tout le monde va finir par tomber d'accord ?!"
-    noam determine "Au moins, j'essaie pas de forcer les autres à voter comme moi !"
+    noam colere "Au moins, j'essaie pas de forcer les autres à voter comme moi !"
     julian colere "Tu crois que je fais ça pour m'amuser ? Un seul non et tout ce qu'on a tenté ne sert à rien !"
     noam colere "Alors parle de l'amendement ! Pas de qui doit te soutenir devant les caméras !"
     julian colere "C'est facile de jouer les gentils quand tu laisses aux autres le boulot de convaincre !"
-    tomas colere "Mais arrêtez tous les deux ! Je suis là, vous savez !"
+    tomas inquiet "Mais arrêtez tous les deux ! Je suis là, vous savez !"
     "Je me tourne vers Tomas. Il tremble de colère, et je réalise que je viens aussi de parler à sa place."
     noam culpabilite "T'as raison, désolé. Je voulais pas te mettre au milieu."
     julian hesitation "Tomas, je..."
-    tomas desaccord "Non ! Laisse-moi finir ! J'ai peut-être envie de voter pour, mais là, franchement, vous me donnez envie de vous envoyer promener tous les deux !"
+    tomas inquiet "Non ! Laisse-moi finir ! J'ai peut-être envie de voter pour, mais là, franchement, vous me donnez envie de vous envoyer promener tous les deux !"
     nyra raison "Tomas n'a pas à vous promettre quoi que ce soit. Julian, tu peux partir ? Noam, reste deux minutes avec nous."
     julian colere "Très bien. Mais si on perd parce que personne n'a voulu convaincre les indécis, vous y repenserez."
-    noam determine "Et toi, essaie de comprendre que les gens ont le droit d'hésiter."
-    julian desaccord "On verra tout à l'heure."
+    noam colere "Et toi, essaie de comprendre que les gens ont le droit d'hésiter."
+    julian colere "On verra tout à l'heure."
 
     hide julian with moveoutleft
 
     stop music fadeout 0.6
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
 
-    tomas fatigue "Je lui ai dit que je voulais réfléchir. Je sais pas pourquoi il a pas compris."
+    tomas hesitation "Je lui ai dit que je voulais réfléchir. Je sais pas pourquoi il a pas compris."
     noam triste "Je suis désolé aussi. Je lui ai crié dessus sans même te demander ce que tu voulais."
     tomas hesitation "Je voudrais que ça passe, je crois. Mais si les gens n'ont plus leurs rations et que ça se passe mal, on fait quoi ?"
     nyra neutre "Tu voteras sur le texte qu'on aura devant nous, pas sur ce que Julian ou Noam veulent entendre."
@@ -1072,7 +1072,7 @@ label _3_DEBAT1_PHASE2:
 
     lysa reflechit "Et pourtant, c'est logique."
 
-    noam "…Comment ça ?"
+    noam surpris "Comment ça, logique ? On va retirer à des gens leur seule source de nourriture !"
 
     lysa blase "Avec le commerce, il faut de l'argent. Pour en avoir, il faut bosser."
     lysa reflechit "Kami a juste décidé de couper les rations pour forcer tout le monde à s'y mettre. Sympa."
@@ -1092,8 +1092,7 @@ label _3_DEBAT1_PHASE2:
 
     lysa salut "Qu'elle nous raconte peut-être n'importe quoi depuis le début. Voilà."
 
-    noam "Elle nous a peut-être bien eus. Mais on doit quand même voter."
-    noam reflexion "Alors parlons de ce qui va vraiment arriver chez nous."
+    noam inquiet "Elle nous a peut-être bien eus, oui. Mais j’aimerais surtout savoir ce qui va arriver aux gens si on vote pour."
 
     # ── Mini-jeu buzzer (Objection Protocol) : influence l'adhésion des PNJ ──
     pause 0.4
@@ -1479,8 +1478,7 @@ label _3_DEBAT1_PHASE3:
     lysa blase "Même en votant pour, il reste un trou béant dans le texte."
     lysa reflechit "Avec quoi les gens gagnent leur premier argent ? Si personne n'a rien, personne ne peut rien acheter à personne."
 
-    noam "Ouais, c'est vrai. On va les trouver où, les premiers salaires ?"
-    noam "Kami. Tu peux nous éclairer, ou tu comptes rester muette encore une heure ?"
+    noam inquiet "Et ils vont sortir d’où, les premiers salaires ? Kami, t’as prévu quelque chose ou tu nous laisses deviner ?"
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -1624,7 +1622,7 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.98),
         ])
 
-        noam "Les gens ont des bons, mais souvent y a rien à acheter avec. Ça sert à quoi ?"
+        noam inquiet "Ryn, t’as dit hier que chez toi, même avec des bons, vous repartez parfois sans rien. C’est toujours comme ça ?"
 
         elias determine "Ça, c'est la vérité vraie. Un bon pour du riz, et pas de riz au bout. On appelle ça la sécurité ?"
 
@@ -1656,7 +1654,7 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.95),
         ])
 
-        noam "On répète que les bons donnent droit à tout. En vrai, ils donnent droit à quoi ?"
+        noam inquiet "Vous trouvez pas ça dingue qu’on ait des bons de rationnement et qu’on manque quand même de nourriture ?"
 
         tomas raison "J'ai vu les chiffres. Dans certains endroits, plus de la moitié des produits manquent presque tout le temps."
 
@@ -1721,7 +1719,7 @@ label _3_DEBAT1_PHASE3_INT1:
         sael neutre "Oui. Quand quelqu'un ne peut pas travailler, on l'aide. Sinon, chacun fait sa part."
         elias reflechit "Ça, ça me parle. Mais avec les nouveaux contrats, ceux qui peuvent pas bosser, ils font quoi ?"
         mara doute "Voilà. C'est exactement ce qui me gêne."
-        noam "Si on vote pour, on doit savoir ce qui arrive à ces gens-là. Pas juste leur dire de se débrouiller."
+        noam inquiet "C’est ça qui m’embête. Si on dit oui, on fait quoi des gens qui peuvent pas travailler ?"
         ryn reflechit "Au moins, tu poses la bonne question."
         $ debat_day3_apply_influence({"sael": 1, "elias": 1, "mara": -1, "ryn": 1})
 
@@ -1732,12 +1730,12 @@ label _3_DEBAT1_PHASE3_INT1:
             ("kael", "calme", 0.60),
             ("nyra", "raison", 0.82),
         ])
-        noam "Elen a dû remplir des formulaires juste pour avoir quelques ingrédients. C'est normal, ça ?"
+        noam sourire "Elen a passé un temps fou sur des formulaires juste pour commander des fraises. Vous trouvez pas qu’on va un peu loin ?"
         elen reflechit "Trois pages ! Pour des épices ! J'ai cru devenir folle."
         iris blase "Et pour une pièce de rechange, c'est la même galère."
         kael calme "Oui. Certains dossiers mettent des jours à être validés."
         nyra raison "Donc le système bloque même les demandes les plus simples. On peut au moins être d'accord là-dessus."
-        noam "Ça explique pourquoi les gens veulent que ça change. Même si on ne sait pas encore si ce texte est le bon."
+        noam inquiet "Voilà pourquoi j’ai envie que ça change. Mais franchement, je sais toujours pas si ce texte va arranger les choses."
         $ debat_day3_apply_influence({"elen": 1, "iris": 1, "kael": 1, "nyra": 1})
 
     return
@@ -1777,7 +1775,7 @@ label _3_DEBAT1_PHASE3_INT2:
 
         elen joie "Alors gardons le meilleur ! L'essentiel pour tous, la liberté pour le reste. Comme avant, mais sans la guerre !"
 
-        think "Mara détourne le regard, comme si elle regrettait déjà d'avoir livré quelque chose de vrai."
+        think "Mara détourne le regard et ne répond plus. Je crois qu’elle n’avait pas envie de parler de ça devant tout le monde."
 
         # Galvanise les convaincus, mais réveille les blessures de Mara et l'amertume de Ryn.
         $ debat_day3_apply_influence({"julian": 1, "elen": 1, "iris": 1, "mara": -1, "ryn": -1})
@@ -1862,7 +1860,7 @@ label _3_DEBAT1_PHASE3_INT2:
         iris blase "Donc on garde un système qui marche mal, ou on le supprime d'un coup. Super choix."
         tomas hesitation "O-On devrait au moins prévoir une période de transition..."
         mara doute "Sauf qu'on peut pas rajouter une ligne au texte. C'est bien le problème."
-        noam "Alors arrêtons de prétendre que ce vote règle tout."
+        noam inquiet "Donc même si ça passe, on n’aura pas réglé tous les problèmes. Loin de là."
         $ debat_day3_apply_influence({"ryn": -1, "mara": -1, "tomas": -1, "iris": 1})
 
     elif selected == "approvisionnement":
@@ -1942,7 +1940,7 @@ label _3_VOTE_POUR:
     kael triste "Si."
 
     think "Julian essaie de sourire, mais Elen paraît surtout soulagée. Ryn garde les yeux baissés, tandis que Kael parle tout bas avec Nyra."
-    think "Personne n'exulte. Le plus dur commence maintenant."
+    think "Certains sont heureux, d’autres ont peur. Pour ma part, je suis soulagé qu’on ait réussi à voter ensemble, même si je ne sais pas encore ce que ça donnera."
 
     $ hideGroup()
 
@@ -1954,7 +1952,7 @@ label _3_VOTE_POUR:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_185
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    think "On a voté pour le changement. J'ignore encore si on est prêts à le vivre."
+    think "On a réussi à faire passer un amendement. Il y a deux jours, je n’aurais pas cru que c’était possible."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_186
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -2008,7 +2006,7 @@ label _3_VOTE_CONTRE:
     hide screen kami_broadcast_ui
 
     play music "music/bgm_world_decline.mp3" fadein 2.0
-    think "L'écran s'éteint. Le rejet retombe sur nos épaules comme une couverture mouillée."
+    think "L’écran s’éteint et personne ne réagit pendant quelques secondes. Puis Julian repousse sa chaise d’un coup."
 
     $ showGroup([
         ("julian", "colere", 0.02),
