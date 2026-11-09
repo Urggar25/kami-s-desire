@@ -122,6 +122,7 @@ screen tablet_home():
                 xsize 1920 ysize 1080
                 focus_mask True
                 at tablet_phase_fade(0.2)
+                sensitive vote_dossier_available()
                 action [Hide("tablet_home"), Show("vote_dossier"), With(Dissolve(0.25))]
 
             # Statistiques : application intégrée à la vitre de la tablette.
