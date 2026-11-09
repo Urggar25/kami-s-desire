@@ -231,58 +231,58 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Ah, vous voilà ! À voir vos têtes, j'ai eu raison de garder le café pour moi."
+    kami "Aaaah, mes petits survivants du petit-déjeuner ! Vous avez des mines superbes. Enfin... pour des gens qui pensent tous à leur testament."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Il est neuf heures. Et nous sommes presque au complet. Presque."
+    kami "Il est neuf heures ! Onze représentants à l'heure... Nous sommes presque au complet. Presque."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Je pourrais attendre le dernier retardataire... Non, je plaisante. Il n'avait qu'à se lever."
+    kami "Je pourrais attendre notre retardataire. Après tout, quel beau geste démocratique ! Mais non. Il n'avait qu'à se lever."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Votre premier amendement a été tiré au sort, et je sens qu'il va bien vous occuper."
+    kami "La petite urne a parlé ! Votre premier amendement est sorti. Et je dois dire... il a beaucoup de personnalité. Enfin, grammaticalement parlant."
     $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
-    ryn neutre "Bon, c'est quoi ?"
+    ryn neutre "T'accouches, oui ?!"
     $ bc_hide()
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Toujours aussi charmant, Ryn ! Je vous lis ça."
+    kami "Quelle délicatesse ! Une seconde, je déplie ce chef-d'œuvre."
     play sound sfx_tambour
     pause 0.8
 
     kami "Je cite : « ça serait bien qu'on réautorise le commerce comme avant. »"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Mais qui a écrit ça ?! C'est... Comment dire... Bon, je pouvais pas en attendre mieux après tout."
-    kami "Au moins tout le monde a compris l'idée de la proposition !"
+    kami "Alors. Je ne vais pas vous demander lequel d'entre vous a écrit ça. L'anonymat, c'est sacré ! Mais je recommande vivement un dictionnaire à l'auteur."
+    kami "Réautoriser le commerce, donc. Une phrase minuscule pour une pagaille potentiellement gigantesque !"
 
     pause 0.8
 
     $ bc_show("sael", "surpris", px=-70, py=-50, pz=0.85)
-    sael triste "Le commerce ?!"
+    sael triste "Le commerce... Comme avant ? Avant quoi, exactement ?"
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra taquin "Le commerce ? Ça pourrait changer pas mal de choses, quand même."
+    nyra taquin "Je crois que quelqu'un vient de proposer de refaire toute l'économie mondiale en douze mots."
 
     $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
-    iris colere "L'idée est mieux qu'attendue."
+    iris colere "Pour une fois, je m'attendais à pire. Le problème, c'est qu'on n'a toujours aucune idée de ce qu'on vote."
     $ bc_hide()
 
     pause 0.6
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Mais ils vont me laisser parler ces petits cons ?!"
-    think "Le silence tombe instantanément."
+    kami "JE PEUX TERMINER MA PHRASE, OU VOUS AVEZ DÉJÀ OUVERT VOTRE PROPRE PARLEMENT ?!"
+    think "Le silence s'abat sur la salle. Même le bruit des couverts s'arrête. C'est impressionnant, tout ce qu'on peut obtenir en hurlant depuis un écran."
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Vous avez jusqu'à demain, quatorze heures, pour vous décider. Oui, c'est court, on a déjà perdu une journée avec votre arrivée."
-    kami "Et je vous rappelle qu'un seul vote contre suffit à rejeter l'amendement."
+    kami "Vote demain, quatorze heures ! Oui, c'est court. Vous avez perdu une journée à vous réveiller et à vous demander où étaient les toilettes."
+    kami "Et n'oubliez pas : un seul vote contre suffit à tout envoyer à la poubelle. L'unanimité, c'est tellement reposant."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Vous pouvez en discuter, essayer de vous convaincre, ou vous détester. Je prends tout !"
+    kami "Discutez ! Convainquez ! Pleurez ! Faites-vous de nouveaux amis ou perdez les anciens. Je prends tout !"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
+    kami "Moi, je vais devoir mettre ça en français correct. Je refuse d'inscrire « ça serait bien » dans mes merveilleux Commandements."
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "Amusez-vous bien. Le monde vous écoute."
+    kami "Amusez-vous bien, mes petits législateurs. Et souriez : le monde vous écoute."
 
     hide screen kami_broadcast_ui
     stop music fadeout 1.0
@@ -305,27 +305,41 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "mefiant", 1.20),
     ])
 
-    elen joie "Attendez, mais c'est génial, non ? Ça veut dire qu'on pourra enfin acheter ce qu'on veut !"
-    iris taquin "Tu penses déjà à remplir ton assiette, c'est ça ?"
-    elen content "Pas seulement ! Mais avoue que ce serait bien d'avoir autre chose que ce que les distributeurs veulent nous donner."
-    sael reflechit "Et on paierait avec quoi ?"
-    elen surpris "Ah oui... C'est vrai qu'on n'a plus vraiment d'argent."
+    elen joie "Mais... c'est super, non ?! On pourrait enfin choisir ce qu'on achète ! Des fraises ! Des vraies fraises !"
+    iris taquin "Et voilà. Elle a entendu commerce, elle a vu un rayon pâtisserie."
+    elen content "Pas seulement ! Des légumes aussi ! Et des livres ! Et... attendez, ça veut dire qu'on pourrait faire des courses pour de vrai ?"
+    sael reflechit "Et avec quel argent, exactement ?"
+    elen inquiet "Bah... on pourrait inventer des tickets ?"
+    iris blase "Félicitations, tu viens de réinventer les bons de rationnement."
+    elen desaccord "Non, mais des tickets jolis !"
+    sael neutre "On ne résout pas une pénurie en décorant du papier."
+    think "Elle a lâché ça avec un tel sérieux qu'Elen reste bouche bée."
+    elen surpris "Ah. Oui. C'est un détail assez important, ça."
     "Elen baisse les yeux vers son plateau, puis se met à rire de sa propre remarque."
-    elias sourire "Moi, si ça me permettait de récupérer des pièces sans faire une demande à chaque fois, je signerais tout de suite."
-    mara neutre "C'est pas toi qui vas devoir les payer, j'espère."
-    elias reflechit "Bah justement, ça m'intéresse de savoir comment ça marcherait. Je continue à réparer des machines, mais depuis Kami, je suis plus payé pour le faire."
-    noam surpris "Attends, tu travailles encore gratuitement ?"
-    elias neutre "Ouais. À la Forge, les machines tombent pas moins en panne parce que le salaire a disparu. Si personne les répare, on finit par manquer de tout."
-    mara reflechit "D'accord, vu comme ça, je comprends mieux pourquoi t'aimerais pouvoir acheter ton matériel."
-    elias taquin "Tu vois ! C'est pas juste parce que j'adore les boulons."
+    elias sourire "Moi, si je pouvais enfin acheter des pièces détachées sans remplir trois formulaires, je signerais avant même le petit-déjeuner."
+    mara neutre "Avec quel salaire ? Parce que j'ai raté le moment où on nous a rendu nos comptes en banque."
+    elias reflechit "Justement ! Je répare des machines toute la journée et je touche plus rien depuis Kami. Tu trouves ça normal ?"
+    noam surpris "Tu répares tout ça... sans être payé ?"
+    elias neutre "Ouais. À la Forge, une machine cassée ne se remet pas à marcher parce qu'on a supprimé les salaires. Si je la laisse, plus personne n'a ce qu'il lui faut."
+    mara reflechit "Tu veux pouvoir acheter les pièces... pour pouvoir continuer à travailler gratuitement. C'est une belle arnaque, ton truc."
+    elias gene "Euh... dit comme ça..."
+    mara sourire "Tu vois ? Tu devrais presque voter contre."
+    elias inquiet "Mais non ! Je..."
+    noam sourire "Mara, laisse-le finir."
+    mara taquin "Je l'aide à réfléchir. C'est un service public."
+    elias taquin "Oui, mais des boulons neufs ! Ça change tout !"
     "Mara esquisse un sourire. De l'autre côté de la table, Tomas essaie d'ouvrir un emballage qui refuse obstinément de céder."
-    tomas inquiet "Euh... quelqu'un pourrait m'aider ? Je crois que je vais le déchirer."
-    iris blase "C'est le principe d'un emballage, Tomas."
+    tomas inquiet "Euh... l'emballage... il y a une languette quelque part ? J'ai peur de tout renverser."
+    iris blase "Tomas. On est censés débattre du commerce mondial. Tu peux gagner ton combat contre une brioche, non ?"
     "Iris lui prend le paquet et l'ouvre d'un geste. Elen éclate de rire lorsque quelques miettes tombent sur la table."
-    ryn reflechit "Enfin bon, tout ça, c'est intéressant, mais on sait même pas ce qu'on aurait le droit d'acheter."
-    nyra neutre "Kami a seulement lu une phrase. Il faudra voir comment elle compte l'écrire."
-    mara taquin "Ah, ça, je lui fais confiance pour nous réserver une surprise."
-    noam reflexion "J'aimerais surtout voir ce qu'elle va faire de la proposition. Pour l'instant, c'est tellement vague qu'on peut imaginer tout et n'importe quoi."
+    ryn reflechit "Vous avez fini avec les viennoiseries ? Parce qu'on ne sait même pas ce que cette règle nous autoriserait vraiment."
+    nyra neutre "La formulation compte autant que l'intention. Avec une phrase aussi vague, Kami peut faire presque ce qu'elle veut."
+    ryn colere "Donc on vote pour quoi ? Ce qu'elle décide ?!"
+    nyra reflexion "On devrait attendre le texte final."
+    mara taquin "Ça fera un beau slogan : votons demain, comprenons après."
+    noam reflexion "J'espère quand même qu'on aura le temps de le lire."
+    mara taquin "Oh, ça, j'ai entièrement confiance en elle. Pour nous la faire à l'envers, elle est excellente."
+    noam reflexion "La question, c'est ce qu'elle va écrire à la place. « Comme avant », ça veut dire quoi pour douze personnes qui n'ont pas connu le même avant ?"
     "La discussion se calme pendant quelques instants. Je commence enfin mon petit-déjeuner, pendant qu'Elen demande à Goumi s'il serait capable de lui préparer un dessert avec les ingrédients disponibles."
     pause 0.5
 
@@ -345,17 +359,17 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("ryn", "reflechit", 1.08),
         ("sael", "mefiant", 1.20),
     ])
-    julian rire "Bonjour à tous ! Julian est enfin parmi vous. Qu'est-ce que j'ai manqué ?"
-    iris colere "T'es en retard, on a déjà commencé."
-    julian sourire "Laisse-moi deviner... une réouverture du commerce ?"
-    elen surpris "Oh ! Comment t'as su ?!"
-    julian taquin "Un grand esprit sait reconnaître les sujets importants."
-    elias taquin "Un grand esprit qui a entendu l'annonce sur l'écran du couloir, surtout."
-    julian panne "Elias ! Tu pourrais me laisser deux secondes de gloire ?"
-    lysa blase "Deux secondes, ça va encore. Après, on facture."
+    julian rire "Bonjour, mes chers collègues ! Je vois que le débat a eu la courtoisie de commencer sans moi."
+    iris colere "Tu es en retard. Et ton entrée ne te donne pas droit à une deuxième séance d'ouverture."
+    julian sourire "Laisse-moi deviner. Un projet de réouverture du commerce ?"
+    elen surpris "Oh ! T'es devin ?!"
+    julian taquin "Disons que certains sujets trouvent naturellement les grands esprits."
+    elias taquin "Ou alors t'as juste entendu Kami depuis le couloir."
+    julian panne "Elias ! Deux secondes. Je demandais deux secondes de mystère !"
+    lysa blase "Deux secondes, ça passe. À la troisième, on te fait payer l'entrée."
 
     $ j2_vote_codex_unlocked = True
-    think "La tablette vibre dans ma poche. Je la sors. Une notification est notée dessus : Nouveau dossier de vote."
+    think "Ma tablette vibre. « Nouveau dossier de vote ». Parfait. La conversation s'annonce encore plus légère."
 
     jump _2_CAFETERIA_POST_ANNONCE
 
