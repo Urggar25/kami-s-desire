@@ -14,7 +14,7 @@ default j50_wire_selected = None
 default j50_wire_done = []
 default j50_wire_right_done = []
 default j50_wire_connections = []
-default j50_wire_time_left = 4.0
+default j50_wire_time_left = 8.0
 default j50_wire_lives = 3
 default j50_wire_failed = False
 default j50_wire_completed = False
@@ -37,16 +37,12 @@ init python:
         ("orange", "#df8a34"),
         ("rouge", "#d94040"),
         ("bleu", "#3f7fe8"),
-        ("vert", "#47b86b"),
-        ("jaune", "#e6c84e"),
-        ("violet", "#9b63d9"),
-        ("orange", "#df8a34"),
     ]
 
-    J50_WIRE_RIGHT_ORDER = ["bleu", "rouge", "jaune", "vert", "orange", "violet", "rouge", "vert", "bleu", "orange", "violet", "jaune"]
+    J50_WIRE_RIGHT_ORDER = ["bleu", "rouge", "jaune", "vert", "orange", "violet", "rouge", "bleu"]
 
-    J50_WIRE_LEFT_YS = [151 + (idx * 62) for idx in range(12)]
-    J50_WIRE_RIGHT_YS = [151 + (idx * 62) for idx in range(12)]
+    J50_WIRE_LEFT_YS = [170 + (idx * 85) for idx in range(len(J50_WIRE_COLORS))]
+    J50_WIRE_RIGHT_YS = [170 + (idx * 85) for idx in range(len(J50_WIRE_RIGHT_ORDER))]
     J50_WIRE_BOARD_LEFT = 535
     J50_WIRE_BOARD_RIGHT = 1385
 
@@ -62,7 +58,7 @@ init python:
         store.j50_wire_done = []
         store.j50_wire_right_done = []
         store.j50_wire_connections = []
-        store.j50_wire_time_left = 4.0
+        store.j50_wire_time_left = 8.0
         store.j50_wire_lives = 3
         store.j50_wire_failed = False
         store.j50_wire_completed = False
@@ -88,7 +84,7 @@ init python:
             store.j50_wire_done.append(idx)
             store.j50_wire_right_done.append(connector_idx)
             store.j50_wire_connections.append((idx, connector_idx))
-            store.j50_wire_time_left = 4.0
+            store.j50_wire_time_left = 8.0
             store.j50_wire_feedback = "CONNEXION VERROUILLÉE — chronomètre réinitialisé."
             renpy.sound.play("audio/sfx_qte_hit.wav")
             if store.j50_wire_success >= len(J50_WIRE_COLORS):
@@ -109,14 +105,14 @@ init python:
             store.j50_wire_lives = max(0, store.j50_wire_lives - 1)
             store.j50_wire_errors += 1
             store.j50_wire_selected = None
-            store.j50_wire_time_left = 5.0
+            store.j50_wire_time_left = 8.0
             renpy.sound.play("audio/sfx_qte_miss.wav")
 
             if store.j50_wire_lives <= 0:
                 store.j50_wire_failed = True
                 store.j50_wire_feedback = "ÉCHEC — alimentation de secours interrompue."
             else:
-                store.j50_wire_feedback = "TEMPS ÉCOULÉ — reprise d'urgence : 5,0 s."
+                store.j50_wire_feedback = "TEMPS ÉCOULÉ — reprise d'urgence : 8,0 s."
 
         renpy.restart_interaction()
 
@@ -189,7 +185,7 @@ screen j50_wire_minigame(failure_has_consequences=False):
         color "#55adff"
         font "fonts/Rajdhani-SemiBold.ttf"
 
-    text "Reliez chaque câble au connecteur de même couleur avant la fin du délai.":
+    text "Raccordez les 8 fils par couleur avant que la batterie de contrôle s'épuise.":
         xpos 690
         ypos 25
         xsize 1180
@@ -198,7 +194,7 @@ screen j50_wire_minigame(failure_has_consequences=False):
         color "#bdc9d5"
         font "fonts/Barlow-Light.ttf"
 
-    # Câbles déjà verrouillés : ombre, halo puis cœur lumineux.
+    # Huit raccordements à rétablir ; chaque bonne liaison réinitialise le délai.
     for left_idx, right_idx in j50_wire_connections:
         $ _wire_color = J50_WIRE_COLORS[left_idx][1]
         $ _wire_y1 = J50_WIRE_LEFT_YS[left_idx]
@@ -258,7 +254,7 @@ screen j50_wire_minigame(failure_has_consequences=False):
                 text "●" size 42 color ("#314354" if connector_idx in j50_wire_right_done else color_hex) outlines [(3, "#08121d", 0, 0), (1, "#dff8ff", 0, 0)]
                 text "[connector_idx + 1:02d]" size 16 color "#8296aa" font "fonts/Rajdhani-SemiBold.ttf"
 
-    # Colonne de gauche : temps, progression et vies.
+    # Colonne de gauche : délai par connexion, progression et vies.
     frame:
         xpos 58
         ypos 78
@@ -277,7 +273,7 @@ screen j50_wire_minigame(failure_has_consequences=False):
                 outlines [(2, "#0d2e4d", 0, 0)]
             hbox:
                 xfill True
-                bar value AnimatedValue(j50_wire_time_left, 5.0, delay=0.1):
+                bar value AnimatedValue(j50_wire_time_left, 8.0, delay=0.1):
                     xsize 260
                     ysize 14
                     left_bar Solid("#428fda")
@@ -314,8 +310,8 @@ screen j50_wire_minigame(failure_has_consequences=False):
                 spacing 18
                 for life_idx in range(3):
                     text "◆" size 42 color ("#ff6574" if life_idx < j50_wire_lives else "#3a4652") outlines [(2, "#40141c", 0, 0)]
-            text "3 vies — expiration uniquement" size 19 color "#9fb0bf"
-            text "Une bonne liaison remet le délai à 4,0 s." size 18 color "#73899c" xsize 310
+            text "3 tentatives avant panne du boîtier" size 19 color "#9fb0bf"
+            text "Une bonne liaison remet le délai à 8,0 s." size 18 color "#73899c" xsize 310
 
     # Colonne de droite : cible et retour système.
     frame:
@@ -456,7 +452,7 @@ label _5_0_CHERCHE_SAEL:
     noam triste "D'accord. Au moins, je comprends mieux pourquoi."
     sael reflechit "Mara est venue hier soir. Elle m'a dit qu'elle avait aussi beaucoup de réserves, mais on n'a pas décidé de voter ensemble. Je préfère te le préciser."
     noam surpris "Je pensais que vous étiez déjà toutes les deux contre."
-    sael neutre "Je ne décide pas pour Mara. Demande-lui directement, si tu veux savoir."
+    sael neutre "Mara m'a dit qu'elle était contre elle aussi. Mais tu devrais lui demander directement ce qui la dérange, je ne vais pas répondre à sa place."
     "Sael se lève pour me raccompagner. Avant d'ouvrir la porte, elle s'arrête."
     sael triste "Tu sais, ça me ferait plaisir de pouvoir revoir les gens que je connais ailleurs. Je ne suis pas contre parce que j'aime voir des gens enfermés."
     noam calme "Je sais. Merci d'avoir accepté de m'en parler."
@@ -612,7 +608,7 @@ label _5_0_0_JULIAN:
             julian decu "Oui... J'y réfléchirai."
         "Lui dire qu'il se complique la vie.":
             $ j50_julian_fissure -= 1
-            noam taquin "Tu sais que tu te compliques énormément la vie pour quelqu'un qui prétend toujours tout maîtriser ?"
+            noam sourire "Tu sais que tu te compliques énormément la vie pour quelqu'un qui prétend toujours tout maîtriser ?"
             julian taquin "C'est pour ça que je suis exceptionnel."
 
     if j50_julian_fissure >= 3:
