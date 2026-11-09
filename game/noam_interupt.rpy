@@ -314,7 +314,7 @@ screen noam_interupt_radio_duel():
                         color "#ffffff"
                         outlines [(2, "#120814", 0, 0)]
                         font "fonts/Rajdhani-SemiBold.ttf"
-                    text ("▶  CLIQUE POUR RÉFUTER" if selected_argument else "CHOISIS UNE PREUVE POUR ARMÉR TON OBJECTION"):
+                    text ("▶  CLIQUE POUR RÉFUTER" if selected_argument else "CHOISIS UNE PREUVE POUR ARMER TON OBJECTION"):
                         size 20
                         color ("#8bf5ff" if selected_argument else "#c9adba")
                         font "fonts/Rajdhani-SemiBold.ttf"
@@ -384,7 +384,7 @@ screen noam_interupt_radio_duel():
         ypos 930
         xsize 620
         ysize 48
-    text "TEMPS  [ '%.2f' % max(0.0, 4.0 - line_elapsed) ] s":
+    text ("TEMPS  %.2f s" % max(0.0, 4.0 - line_elapsed)):
         xpos 830
         ypos 934
         size 34
