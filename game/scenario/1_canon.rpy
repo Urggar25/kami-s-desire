@@ -465,6 +465,10 @@ label _1_CHOICE:
 
         "Tenter d'ouvrir la porte":
             noam determine "Raah, on ne peut pas rester là à rien faire !"
+    ryn determine "Enfin quelqu'un qui parle normalement !"
+    mara taquin "Normalement ? Tu viens de trouver ton premier ami."
+    lysa blase "Ça commence fort."
+    think "J'ai déjà envie de retirer ma proposition."
             think "Les caméras nous regardent, tout le monde nous regarde."
 
             ryn "Bon bouge de là !"
@@ -555,8 +559,16 @@ label _1_CHOICE:
     ])
 
     noam doute "On ne sait pas ce qu'on doit faire, il vaut mieux attendre les consignes."
+    ryn colere "Attendre ?! Tu plaisantes ?"
+    lysa blase "Pour une fois que quelqu'un suggère de ne pas foncer tête baissée..."
+    mara taquin "Je prends les paris. Dix minutes avant qu'il essaie quand même."
+    sael raison "On observe, et on évite d'aggraver la situation."
 
     julian taquin "Toujours à calmer le jeu, hein ? Tu veux qu'on te nomme président de la salle ?"
+    noam taquin "Je te laisse volontiers le poste."
+    julian sourire "Je n'ai jamais dit que ça m'intéressait."
+    mara taquin "Alors pourquoi tu souris comme ça ?"
+    julian neutre "Je ne souris pas."
 
     think "Jour un, et on en est déjà là, à se chamailler pour rien."
 
@@ -772,6 +784,11 @@ label _1_PNC_CONCLAVE_RYN:
     noam colere "On t'a attaqué ?!"
     ryn colere "Ouais, ces connards m'ont foutu une sorte de serviette sur le nez et je me suis réveillé ici."
     ryn triste "Alors j'aimerais comprendre ce qu'il se passe ici !"
+    noam reflechit "Tu n'as vraiment entendu aucune annonce avant d'arriver ?"
+    ryn colere "Tu crois que je ferais semblant pour avoir une conversation passionnante avec toi ?!"
+    noam inquiet "Non, je..."
+    ryn triste "Je sais juste qu'on m'a sauté dessus. Et maintenant je suis là."
+    think "Il a baissé la voix sur les derniers mots. Pour une fois, je ne sais pas quoi répondre."
     noam reflechit "C'est assez dur à expliquer, même nous on ne sait pas grand-chose, Kami va sans doute nous en dire plus..."
     ryn colere "Donc on doit encore attendre après elle... Génial..."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
@@ -797,6 +814,11 @@ label _1_PNC_CONCLAVE_MARA:
     mara taquin "Ou plus, si affinité ?"
     noam peur "Hein ?!"
     mara rire_profond "Ah ah ! Je t'ai mis mal à l'aise, hein ?"
+    noam inquiet "Tu trouves ça amusant ?"
+    mara sourire "Bien sûr. C'est soit ça, soit pleurer."
+    noam reflexion "Et tu choisis toujours la première option ?"
+    mara taquin "T'as envie de vérifier ?"
+    think "Je vais éviter. Pour l'instant."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -821,6 +843,11 @@ label _1_PNC_CONCLAVE_ELIAS:
     elias surpris "Ah, tu l'as remarqué toi aussi ?"
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
     elias ecoute "Intéressant à savoir !"
+    noam sourire "C'est censé être un compliment ?"
+    elias gene "Oh, oui ! Enfin... je crois."
+    noam reflexion "Tu préfères les machines aux gens, c'est ça ?"
+    elias reflechit "Les machines, au moins, elles font le même bruit quand elles ont un problème."
+    think "Je me demande si je dois me sentir visé."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -842,6 +869,10 @@ label _1_PNC_CONCLAVE_KAEL:
     kael mefiant "Donc on a des systèmes de vérifications des autorisations par empreinte. Et ça ressemble à ce qui est installé sur les portes."
     noam panique "Donc on ne pourra jamais passer par ces portes ?"
     kael raison "C'est pas ce que j'ai dit, il suffit qu'on nous donne l'accès et on pourra y accéder."
+    noam reflechit "Et ça, ça te rassure ?"
+    kael calme "Pas particulièrement. Je constate juste que la porte n'est pas cassée."
+    noam inquiet "Tu as une drôle de façon de voir le positif."
+    kael sourire "Déformation professionnelle. Pour l'instant, elle fonctionne parfaitement contre nous."
     noam neutre "J'espère..."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
@@ -872,6 +903,11 @@ label _1_PNC_CONCLAVE_TOMAS:
     tomas determine "Enfin bref, pour faire simple d'habitude sur ce modèle il y a des boutons, là il n'y en a pas. Et évidemment on a pas de sortes de télécommande."
     noam surpris "Et c'est censé vouloir dire quoi ?"
     tomas raison "Qu'on ne peut pas éteindre cet écran. Il est en veille et peut se rallumer à tout moment."
+    noam reflechit "Tu pouvais pas commencer par là ?"
+    tomas gene "Ah... oui. J'aurais pu."
+    noam sourire "Je plaisante."
+    tomas hesitation "Non, mais tu as raison, c'est plus clair..."
+    think "J'ai réussi à le faire s'excuser de connaître la réponse. Bravo, Noam."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -893,6 +929,10 @@ label _1_PNC_CONCLAVE_IRIS:
     iris taquin "Moi ? Non. Et puis quoi encore ?! Je dis juste que vous pouvez montrer que vous êtes paniqués !"
     iris blase "Pas besoin de faire les hypocrites à jouer les durs."
     iris desaccord "Ce n'est pas ça qui ouvrira ces portes de toute façon."
+    noam neutre "Tu as peut-être raison."
+    iris taquin "Peut-être ? Je vois que tu t'es bien réveillé, finalement."
+    noam sourire "C'était un compliment."
+    iris blase "C'est bien ce que je craignais."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -914,6 +954,10 @@ label _1_PNC_CONCLAVE_ELEN:
     elen peur "Et j'ai besoin de trouver urgemment des toilettes..."
     noam triste "Je crois que nos envies, Kami s'en contrefout."
     elen joie "J'espère au moins qu'il y aura des trucs bons à manger !"
+    noam taquin "Tu nous passes d'une urgence à l'autre."
+    elen joie "Ben oui ! D'abord les toilettes, après on mange !"
+    noam sourire "Tu as déjà prévu tout ton programme."
+    elen peur "Ah non ! Il manque le goûter !"
     hide elen
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
@@ -935,6 +979,10 @@ label _1_PNC_CONCLAVE_NYRA:
     noam "Tu as une idée ?"
     nyra sourire "Kami avait annoncé qu'on devrait voter sur des trucs ? Vu la salle, ça se fera ici."
     nyra raison "Peut-être qu'il faut chercher quelque chose en rapport avec ça ?"
+    noam reflexion "Tu regardes toujours les pièces comme des problèmes à résoudre ?"
+    nyra sourire "Non. Parfois, je regarde les gens."
+    noam inquiet "Et tu vois quoi, là ?"
+    nyra neutre "Douze personnes qui préfèrent avoir une réponse à se demander si la question est la bonne."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -956,6 +1004,10 @@ label _1_PNC_CONCLAVE_JULIAN:
     julian determine "Franchement, qui voudrait rater ça ?"
     julian decontracte "On va peut-être changer les lois de Kami, tu te rends compte ?!"
     julian joie "Tout le monde regardera ! Évidemment !"
+    noam taquin "Tu as déjà préparé ton meilleur profil ?"
+    julian sourire "Ce n'est pas une mauvaise idée de soigner sa présentation."
+    noam reflexion "On est peut-être prisonniers."
+    julian decontracte "Et alors ? Tu préfères être filmé en train de faire la tête ?"
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -976,6 +1028,10 @@ label _1_PNC_CONCLAVE_SAEL:
     sael taquin "Seulement quand quelqu'un écoutait derrière les murs."
     noam triste "J'imagine qu'on peut dire avec Kami qu'il y a toujours quelqu'un qui écoute derrière les murs."
     sael triste "Elle avait souvent raison, ma grand-mère."
+    noam reflexion "Tu as appris toutes tes leçons comme ça ?"
+    sael raison "Non. Certaines, j'ai dû les apprendre toute seule."
+    noam inquiet "Des leçons difficiles ?"
+    sael neutre "Celles qu'on retient le mieux."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -1627,6 +1683,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     noam inquiet "Ouais, un peu. Mais là, on va surtout manquer de temps."
     iris fatigue "Alors écrivez, tous les deux !"
     think "Je prends enfin mon stylo."
+    think "Je l'avais sous les yeux depuis le début. Il ne me manquait pas un outil, mais une idée que j'ose signer. Enfin... déposer anonymement."
 
     # --- Timer à 4 minutes ---
     $ day0_timer_set(4 * 60)
@@ -1670,6 +1727,8 @@ label _1_proposition_amendement:
 
     play sound sfx_paper
     think "Je glisse ma feuille dans l'urne. Elle est un peu froissée, mais tant pis."
+    think "C'est idiot, mais j'ai envie de la retenir par un coin."
+    think "Une feuille pliée, et soudain j'ai l'impression qu'elle pèse plus lourd que moi."
     play sound sfx_drop
     $ impact(8, 0.2, "#3BCC82")
     voix "Amendement enregistré."
@@ -1986,10 +2045,10 @@ label _1_FIN_JOURNEE_DORTOIR:
         noam neutre "Ouais."
 
         elias detendu "Moi j'ai tenté de dormir direct. Raté."
-    noam neutre "T'as essayé de compter quelque chose ?"
-    elias sourire "Les bruits du système de ventilation. J'en étais à quatre-vingt-douze quand j'ai compris que j'écoutais si quelqu'un arrivait."
-    noam sourire "Et alors ?"
-    elias inquiet "Personne. C'est ça qui m'a empêché de dormir."
+        noam neutre "T'as essayé de compter quelque chose ?"
+        elias sourire "Les bruits du système de ventilation. J'en étais à quatre-vingt-douze quand j'ai compris que j'écoutais si quelqu'un arrivait."
+        noam sourire "Et alors ?"
+        elias inquiet "Personne. C'est ça qui m'a empêché de dormir."
 
     if choix_1_soir == "dormir":
 
