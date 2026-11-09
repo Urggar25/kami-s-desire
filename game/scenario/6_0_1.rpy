@@ -122,42 +122,13 @@ label _6_0_1_TV_FRONTIERES:
 
     $ j601_border_news_seen = True
     $ unlock_gallery_image("bg_cg035")
-
-    window hide
-    scene expression "images/background/cg/bg_cg035.png" at adaptive_fullscreen
-    show expression Solid("#47b9d8", xsize=1920, ysize=4) as j601_tv_feed_line:
-        ypos 148
-    show expression Text("DIRECT // FRONTIÈRES DE LIMEN", size=54, color="#D9F6FF", font="fonts/Rajdhani-SemiBold.ttf") as j601_tv_feed_title:
-        xalign 0.5
-        ypos 62
-    show expression Text("AFFLUENCE AUX POSTES DE CONTRÔLE  •  PASSAGE TOUJOURS INTERDIT", size=28, color="#FFCF70", font="fonts/Barlow-Light.ttf") as j601_tv_feed_alert:
-        xalign 0.5
-        ypos 930
-    with Dissolve(0.25)
-    window auto
-
-    "La chaîne d'information s'ouvre sur une vue aérienne des frontières limenoises."
-    "Des centaines de personnes se massent devant les postes de contrôle. Certaines portent des sacs. D'autres tiennent leurs enfants par la main."
-    "Les barrières restent fermées. De l'autre côté, les gardes forment une ligne immobile."
-
-    "JOURNALISTE — Depuis ce matin, les rassemblements se multiplient le long des principaux points de passage."
-    "JOURNALISTE — Beaucoup espèrent que le vote du Conclave permettra une réouverture immédiate des frontières."
-
-    "Une femme lève les yeux vers la caméra. Derrière elle, la foule avance d'un pas chaque fois qu'une rumeur traverse les rangs."
-    "UNE FEMME — On ne demande pas un miracle. On veut juste pouvoir passer si le vote dit oui."
-
-    think "Ils attendent déjà. Comme si notre vote était une promesse et pas une formalité condamnée d'avance."
-    think "Sael votera contre. Mara aussi. Tous ces gens l'ignorent encore."
-
-    "L'image saute. Le direct disparaît derrière un bandeau de programmes préenregistrés."
-    think "Je coupe le son. La foule reste imprimée dans le noir de l'écran."
-
-    window hide
-    hide j601_tv_feed_title
-    hide j601_tv_feed_alert
-    hide j601_tv_feed_line
-    with Dissolve(0.2)
-    window auto
+    scene bg_cg035 at adaptive_fullscreen with dissolve
+    "La télévision montre des rassemblements aux points de passage de Limen. Des familles attendent derrière les barrières, avec des sacs et parfois leurs enfants."
+    "JOURNALISTE — Plusieurs groupes se sont réunis ce matin. Ils espèrent que le vote du Conclave permettra de circuler à nouveau entre les districts."
+    "UNE FEMME — Mon frère habite de l'autre côté. Ça fait des années qu'on n'a pas pu se voir, alors oui, je suis venue. Même si je ne sais pas ce qu'ils vont décider."
+    "Un homme interrogé quelques mètres plus loin explique au contraire qu'il redoute l'ouverture des passages et demande comment les autorités contrôleront les groupes violents."
+    think "Les deux réponses me rappellent exactement la dispute entre Ryn et Sael. Ici aussi, les gens sont loin d'être tous d'accord."
+    "Le direct continue sur une vue des barrières. Personne ne tente de les franchir."
     return
 
 label _6_0_1_TRANSITION_CONCLAVE:
@@ -167,91 +138,31 @@ label _6_0_1_TRANSITION_CONCLAVE:
 
     $ current_period = "Après-midi"
 
-    pause 0.6
-
-    "Et puis enfin, l'heure du Conclave est arrivée."
-
-    think "Nous nous sommes rassemblés sans parler. Sans même nous regarder."
-
+    think "À l'approche de quatorze heures, les représentants commencent à rejoindre le Conclave. Je retrouve Elen et Tomas dans le couloir du dortoir."
+    $ showGroup([("elen", "neutre", 0.25), ("tomas", "inquiet", 0.65), ("noam", "neutre", 0.85)])
+    tomas inquiet "Vous avez encore reçu un message de Kami ? Elle nous a avancé l'heure de dix minutes, je crois."
+    elen surpris "Moi, ma tablette dit toujours quatorze heures. Elle a peut-être envoyé la mauvaise notification."
+    noam inquiet "C'est possible. On ferait mieux d'aller voir, de toute façon."
     play sound "sfx/glitch_light.mp3"
-
-    window hide
-    show expression Solid("#000000") as j601_lights_out zorder 300
-    with None
-    pause 0.55
-    show expression Solid("#000000") as j601_lights_out zorder 300:
-        alpha 1.0
-        linear 2.4 alpha 0.0
-    pause 2.4
-    hide j601_lights_out
-    window auto
-
-    think "Les lumières vibrent une seconde, puis reviennent."
-
-    noam "Pourquoi rien ne va dans cette journée ?!"
-
+    "Les éclairages du couloir s'éteignent une fraction de seconde. Quand ils reviennent, l'écran mural affiche une image de Kami, figée."
+    elen inquiet "Bon... ça aussi, elle l'avait prévu ?"
     show screen kami_broadcast_ui
-
-    scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Oh. Déjà en mouvement ? Il restait encore un peu de temps."
-    pause 0.5
-    scene bg_diffusion_taquin at adaptive_fullscreen with hpunch
-    pause 0.5
-    scene bg_diffusion_colere at adaptive_fullscreen
-    kami "C’est bien. C’est très bien."
-    scene bg_diffusion_professeur at adaptive_fullscreen
-    kami "Nous pouvons… anticiper."
-    scene bg_diffusion_einstein at adaptive_fullscreen with vpunch
-    kami "Le vote peut commencer plus tôt."
-    kami "Immédiatement, même. Ça m'arrange beaucoup."
-
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    kami "Mes représentants ! Je constate que vous êtes déjà en route. Parfait. Nous pouvons commencer un peu plus tôt."
+    noam inquiet "Kami ? Pourquoi l'heure a changé ?"
+    pause 0.4
+    kami "L'horaire a été... ajusté. Aucun problème. Rendez-vous au Conclave."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Et tâchez d'arriver tous ensemble, ce serait plus simple pour... enfin, ce serait plus simple."
     hide screen kami_broadcast_ui
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-
-    think "Le couloir reprend comme si rien ne s'était passé. Puis je remarque qu'il manque quelqu'un."
-
-    menu:
-        "Sael ?":
-            $ _j601_absent_pick = "sael"
-        "Iris ?":
-            $ _j601_absent_pick = "iris"
-        "Elias ?":
-            $ _j601_absent_pick = "elias"
-        "Kael ?":
-            $ _j601_absent_pick = "kael"
-
-    if _j601_absent_pick == "sael":
-        think "Sael. Oui. C'est elle. Où est-elle ? Elle était là il y a une seconde !"
-
-        $ showGroup([
-            ("sael", "neutre"),
-            ("noam", "neutre"),
-        ])
-
-        "Sael est derrière le groupe, elle ne bouge plus. Elle fixe un angle vide du couloir."
-
-        noam inquiet "Sael ?"
-        think "Elle ne répond pas tout de suite."
-
-        sael reflechit "... J'ai vu quelqu'un. Là-bas."
-
-        think "Je regarde. Seulement le couloir vide."
-
-        noam reflechit "Il n'y a personne. Enfin… je ne vois personne."
-
-        sael triste "... Oui. Tu as sans doute raison…"
-
-        hide sael with fade
-        hide noam with fade
-
-    else:
-        think "Non. Ce n'est pas ça."
-        "Je recompte tout le monde.."
-        think "Ah si, tout le monde est bien là. Pourquoi j'ai eu cette impression tout à coup ?"
-
-    noam "Bon, on y va. On va essayer de survivre à ce moment."
+    "Elen regarde sa tablette. Le nouvel horaire apparaît maintenant sur l'écran, comme si elle avait reçu la notification avec du retard."
+    elen inquiet "J'aime pas ça. S'il y a un problème avec elle, elle pourrait au moins nous le dire."
+    tomas hesitation "C'est peut-être juste un problème de communication. Je veux dire, ça arrive, non ?"
+    noam neutre "Ouais, ça arrive. Mais pas très souvent avec Kami."
+    "Nous rejoignons le reste du groupe devant l'entrée du Conclave. Sael arrive en dernier, accompagnée de Ryn. Ils ne se parlent pas, mais ils ne se disputent pas non plus."
 
     jump _6_0_1_CONCLAVE_START
 
