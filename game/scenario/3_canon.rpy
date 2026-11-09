@@ -357,7 +357,7 @@ label _3_OPT_KAEL_DIAL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     $ day3_cafeteria_route_kael_seen = True
 
-    think "Kael est adossé au mur, là où la ventilation fait le moins de bruit. Comme s'il se cachait du son."
+    think "Kael est assis près du mur. Il a les yeux fatigués et fait tourner sa tablette entre ses mains."
 
     $ showGroup([
         ("noam", "neutre", 0.20),
@@ -366,11 +366,11 @@ label _3_OPT_KAEL_DIAL:
 
     kael fatigue "Oh. Noam."
 
-    think "Sa voix est plus basse que d'habitude. Presque enrouée."
+    think "Il a l’air d’avoir très peu dormi."
 
     noam "Tu vas à la cafétéria ?"
 
-    kael reflechit "Dans une minute. J'essaie juste de… ralentir mon cerveau."
+    kael reflechit "Dans une minute. J'essaye juste de penser à autre chose qu’au vote."
 
     noam "Le vote ?"
 
@@ -379,12 +379,12 @@ label _3_OPT_KAEL_DIAL:
 
     kael mefiant "On dépend des livraisons pour presque tout. Si ça se dérègle, on fait comment ?"
 
-    think "Ce qu'il décrit, je pourrai le ressortir au débat. La fragilité d'Orbite, personne d'autre ne la mesure vraiment."
+    think "Je note ce qu’il vient de dire. Je ne suis pas certain que les autres comprennent à quel point Orbite dépend de ses livraisons."
 
     # Déblocage optionnel de l'argument « Risque de dépressurisation » (sinon disponible au Jour 2).
     call day3_collect_vote_argument("orbite") from _call_day3_collect_vote_argument_orbite
 
-    think "Il évite mon regard, comme si le plafond avait la réponse."
+    think "Kael baisse les yeux vers sa tablette sans l’allumer."
 
     noam "Tu veux voter contre ?"
 
@@ -399,7 +399,7 @@ label _3_OPT_KAEL_DIAL:
     hide noam
     hide kael
 
-    think "Un « pour » qui tient à un fil. Je note ça quelque part, tout au fond."
+    think "Il semble plutôt favorable, mais il pourrait bien changer d’avis au dernier moment."
 
     pause 0.5
     jump DORTOIR_TP
@@ -414,31 +414,18 @@ label _3_OPT_JULIAN_DIAL:
         ("julian", "joie", 0.75),
     ])
 
-    julian joie "Noam. Prêt à ouvrir la première brèche dans ce système ?"
-
-    noam "On va essayer."
-
-    julian rire "Essayer ? Non. On va le faire."
-    julian "Le café, lui, résiste encore. Mais ça viendra."
-
-    think "La tasse déborde sur ses doigts. Sa mise en scène, elle, reste intacte."
-
-    julian reflexion "Si ce texte passe, on ouvre la première fissure depuis la prise de pouvoir de Kami."
-    julian joie "Commerce. Échanges. Mouvement. Les gens ont besoin de sentir que quelque chose bouge enfin."
-
-    noam "Et si ça ne passe pas ?"
-
-    julian hesitation "Ça passera. On n'est pas venus entretenir le statu quo."
-    julian idee "Les gens veulent un changement visible. Quelqu'un doit l'incarner."
-
-    noam "Tu es sûr que tout le monde suivra ?"
-
-    julian hesitation "…Certains ont juste besoin qu'on formule leur courage à leur place."
-    julian sourire "Imagine : des ressources qui circulent, des districts qui échangent. Comme avant. Ce tableau ne te parle pas ?"
-
-    noam "Dit comme ça… si. Ça me parle."
-
-    julian sourire "À quatorze heures, on change ce monde."
+    julian joie "Noam ! Tu te rends compte ? Aujourd'hui, on peut enfin changer quelque chose."
+    noam sourire "T'es sacrément en forme."
+    julian rire "Comme toujours ! Ça change de certaines têtes qu'on croise ici."
+    "La tasse de Julian déborde. Il la retire trop tard et se brûle les doigts."
+    julian colere "Aïe ! Bon sang, elle marche jamais correctement, cette machine ?!"
+    noam taquin "Tu devrais lui faire un discours, peut-être qu'elle obéira."
+    julian sourire "Très drôle. Mais écoute-moi : si ça passe, les gens pourront acheter et vendre sans demander l'autorisation de Kami."
+    noam inquiet "Encore faut-il que tout le monde soit d'accord. Et j'ai pas l'impression que c'est gagné."
+    julian reflexion "Je sais. Il va falloir convaincre ceux qui hésitent, sinon on perd."
+    noam calme "Les convaincre, oui. Pas leur mettre la pression."
+    julian sourire "Je sais parler aux gens, Noam. Tu verras tout à l'heure."
+    think "Il repart avec son café sans attendre ma réponse. Je ne suis pas sûr qu'on ait la même définition de convaincre."
 
     call day3_collect_vote_argument("monde_avant") from _call_day3_collect_vote_argument_monde_avant
 
@@ -451,9 +438,7 @@ label _3_CAFETERIA_ARRIVE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_159
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    think "La cafétéria se remplit doucement. Le brouhaha se limite au raclement des chaises et au bruit des fourchettes."
-    think "Qui, ici, pourrait voter contre ? Mara ? Sael serait frontale. Ryn est furieux, mais pour qui ?"
-    think "Et moi… suis-je seulement convaincu qu'il faut refaire comme avant ?"
+    think "La cafétéria est déjà bien remplie. Quelques personnes parlent du vote, d’autres mangent sans dire un mot. Je suis toujours motivé, même si je commence à me demander qui acceptera vraiment le texte."
 
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -468,7 +453,7 @@ label _3_CAFETERIA_ARRIVE:
     scene bg_cg013 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg013")
 
-    think "Elen protège un bol énorme et fumant. L'odeur tient de la forêt et du caramel. Un mélange que rien ne devrait autoriser."
+    think "Elen a commandé un énorme bol de pâtes, de noix et d’une sauce que je ne reconnais pas. Iris la regarde avec dégoût."
 
     pause 0.3
 
@@ -488,7 +473,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris "…Ce n'est pas rassurant."
 
-    think "Elen mélange, goûte, et ses yeux s'illuminent comme deux petites diffusions à elle toute seule."
+    think "Elen goûte une bouchée et sourit immédiatement."
 
     elen "Oh ! Ch'est trooop bon ! Exactement trop bon !"
 
@@ -498,10 +483,10 @@ label _3_CAFETERIA_ARRIVE:
 
     iris "Ça me fatigue rien que de te regarder."
 
-    think "Mon plateau se limite à une barre et un jus. La nausée occupe le reste de la place."
+    think "De mon côté, j’ai simplement pris un jus et un morceau de pain. Je ne suis pas tenté par son invention."
 
     scene bg_cg013_1 at adaptive_fullscreen with fade
-    think "Elen compose alors un regard très particulier. Grands yeux, lèvre tremblante."
+    think "Elen me regarde avec de grands yeux suppliants, puis me montre son bol."
 
     elen "Le regard ultiiime ! C'est comme ça que j'ai eu le bol."
 
@@ -514,8 +499,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris inquiet "…T'as pas peur ? Deux secondes ?"
 
-    elen triste "Si. Mais là, maintenant, tout de suite, j'ai faim."
-    elen joie "Alors je m'autorise à oublier la peur. Juste pour un bol."
+    elen triste "Si, j’ai peur ! Mais si je passe la matinée à paniquer, je vais même pas réussir à manger. Alors laissez-moi profiter de mon bol !"
 
     iris surpris "…"
 
@@ -527,7 +511,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris fatigue "Non. Laisse tomber."
 
-    think "Une chaise racle derrière nous. Personne ne regarde. On a appris à ne plus se retourner."
+    think "Elias arrive avec son plateau et s’arrête devant la table d’Elen."
 
     # On quitte le CG (où les persos sont déjà dessinés) et on regroupe TOUS les
     # locuteurs présents dans un seul showGroup, complété à chaque nouvelle arrivée.
@@ -538,48 +522,21 @@ label _3_CAFETERIA_ARRIVE:
         ("elias", "neutre"),
     ])
 
-    elias sourire "Wesh. Vous mangez quoi ?"
-
-    elen joie "Le bonheur."
-
-    iris taquin "Ne la crois surtout pas."
-
-    elias inquiet "…Faut manger correctement. Surtout aujourd'hui."
-
-    elen taquin "Oh non. Iris me faisait déjà la morale. Pas besoin de rab."
-
-    elias colere "Je plaisante pas."
-
-    iris taquin "Il plaisante jamais. Ça, c'est vrai."
-
-    elias sourire "Protéines. Œufs. Poulet. Simple, efficace."
-
-    think "Elen le regarde comme s'il venait de recommander de l'eau tiède pour le plaisir."
-
-    elen triste "Tu veux manger du poulet ? Ici, le seul endroit où on peut demander tout ce qu'on veut ?"
-
-    elias reflechit "C'est une base. Ça tient au corps. Ton truc, là… c'est chaud d'appeler ça un repas."
-
-    iris taquin "Merci. Elle a clairement un palais de doberman."
-
-    elen colere "Oh ! C'est pas des pâtes aux noix. C'est une œuvre d'art gustative."
-
-    elias peur "Franchement, j'en doute."
-    elias reflechit "Cet aprèm, faut être lucides. On peut pas débarquer là-bas tout mous."
-
-    iris triste "…"
-
-    elen colere "On devait pas en parler. Pas pendant le repas."
-
-    elias reflechit "Personne veut en parler. C'est pour ça que ça tourne dans toutes les têtes."
-
-    iris colere "On n'est pas obligés. Là. Maintenant. On mange."
-
-    elias triste "On fait quoi, alors ? On arrive et on improvise ? C'est chaud comme plan."
-
-    elen sourire "Bon. Puisque vous me cassez l'appétit avec ça…"
-
-    think "Elen bondit presque de sa chaise."
+    elias sourire "Salut ! C'est quoi ce truc, Elen ? T'as mis tout le distributeur dans le même bol ?"
+    elen joie "C'est mon petit-déjeuner spécial ! Tu veux goûter ?"
+    elias peur "Euh... non. Tu devrais manger des protéines, surtout aujourd'hui."
+    iris taquin "Merci ! Enfin quelqu'un qui trouve ça bizarre."
+    elen desaccord "Oh non ! Vous allez pas vous y mettre tous les deux !"
+    elias sourire "Je dis juste que tu vas avoir faim dans une heure. Moi, j'ai pris des œufs et du poulet."
+    elen surpris "Du poulet au petit-déjeuner ?! Mais t'es pas bien !"
+    iris rire "Pour le coup, elle a raison."
+    elias colere "Hé ! Le poulet, c'est très bien !"
+    elen sourire "Bon, on peut manger sans parler du vote ? S'il vous plaît ?"
+    elias inquiet "J'aimerais bien, mais j'arrête pas d'y penser. Vous avez décidé ce que vous allez voter ?"
+    iris fatigue "Moi, j'attends de lire le texte. Hier, on en a discuté pendant des heures sans savoir ce que Kami allait en faire."
+    elen inquiet "Oui, mais si tout le monde attend, on va jamais y arriver."
+    noam calme "Moi, en tout cas, j'ai envie qu'on essaie vraiment. Même si j'ai un peu la trouille."
+    elen joie "Voilà ! Moi aussi ! Et je vais vous dire un truc..."
 
     # Mise en avant d'Elen : elle se lève et s'avance (recentrage + pop de zoom).
     show elen joie at day3_vote_pop zorder 60
@@ -587,7 +544,7 @@ label _3_CAFETERIA_ARRIVE:
 
     pause 0.4
 
-    think "Elle l'annonce comme un dessert de mariage. Pas l'ombre d'une hésitation sur son visage."
+    think "Elle parle si fort que les voisins de table se retournent. Iris lui fait signe de baisser le ton, mais Elen continue de sourire."
 
     # Elen se rassoit : on restaure le groupe attablé.
     $ showGroup([
@@ -598,14 +555,13 @@ label _3_CAFETERIA_ARRIVE:
 
     iris reflechit "Tu le dis si facilement."
 
-    elen taquin "Parce que c'est facile. Ici, on crève d'ennui. Dehors, ils crèvent pour de vrai."
-    elen inquiet "…Pardon. C'est pas drôle. Mais vous avez compris. Si on peut changer ça, on change ça, et puis c'est tout."
+    elen inquiet "Non, j’ai réfléchi toute la nuit. Les gens qui nous regardent ont besoin que ça change, alors si on peut faire quelque chose, je veux essayer."
 
     iris reflechit "…"
 
     elias sourire "Tu marques un point."
 
-    think "Julian s'approche, attiré par le mot « vote » comme par un projecteur."
+    think "Julian s’approche avec son café quand il entend Elen parler du vote."
     $ showGroup([
         ("elen", "joie"),
         ("iris", "hesitation"),
@@ -623,11 +579,11 @@ label _3_CAFETERIA_ARRIVE:
 
     julian reflechit "Quoi ? Je ne vais pas cacher une position aussi évidente. On a tous besoin de clarté."
 
-    think "La moitié de la salle regarde vers nous. Elen fédère, même par accident."
+    think "Plusieurs personnes aux tables voisines nous regardent maintenant. Elen n’a pas l’air de s’en rendre compte."
 
     elen taquin "Bon... vous en pensez quoi, vous ? Qui serait pour ?"
 
-    think "Julian lève la main comme si une caméra attendait précisément ce plan."
+    think "Julian lève la main très haut et vérifie du coin de l’œil si on le regarde."
 
     julian rire "Pour. Évidemment."
 
@@ -635,9 +591,9 @@ label _3_CAFETERIA_ARRIVE:
 
     noam reflechit "Tu votes pour… sans aucune hésitation ?"
 
-    elen colere "Nooon, faut voir le bon côté !"
+    elen colere "Mais j’y ai pensé, promis ! J’ai juste envie qu’on tente quelque chose !"
 
-    iris fatigue "Une seule voix contre suffit à tout faire capoter. L'enthousiasme n'est pas une stratégie de vote."
+    iris fatigue "Vous pouvez baisser d’un ton ? Si quelqu’un hésite, vous allez surtout lui donner envie de vous envoyer promener."
 
     elias "Pour. Mais faut que ça soit vraiment appliqué. Sinon on vote pour du vent, et ça, c'est chaud."
 
@@ -677,43 +633,38 @@ label _3_CAFETERIA_ARRIVE:
         ("mara", "neutre"),
     ])
 
-    mara reflechit "On vous entend de loin. Annoncer vos votes devant les caméras, c'est audacieux."
-    mara taquin "Ou généreux. Vous facilitez le travail de tout le monde."
+    mara taquin "Vous êtes sérieux ? Vous annoncez tous votre vote devant les caméras ? Kami doit adorer."
 
     elen joie "Oh non. On est démasqués."
 
     iris reflechit "Alors ? Tu t'es décidée ? Tu votes contre ?"
 
     mara taquin "J'ai pas dit ça."
-    mara reflechit "Je comprends l'idée. Mais on ouvre une porte sans voir ce qu'il y a derrière."
+    mara reflechit "J’ai pas dit que j’étais contre. Mais on sait même pas ce que Kami a écrit. Vous faites comme si c’était déjà réglé."
 
     elen colere "C'est du commerce. C'est pas comme si on proposait d'éradiquer les bébés pingouins."
 
     mara doute "T'en es vraiment sûre ?"
 
-    mara colere "Non, laisse. Je dramatise pas. Je demande juste ce qu'on n'a pas compris."
-    mara colere "Où est le texte exact ? Je veux le voir avant de voter quoi que ce soit."
+    mara colere "Je veux lire le vrai texte avant de me prononcer. C’est trop demander ?"
 
-    elen reflechit "Ok. Je t'entends. Vraiment. Mais… on fait quoi, sinon ?"
-    elen colere "On regarde les gens crever en se disant que c'est pas notre faute ?"
+    elen colere "Mais si on attend toujours d’être sûrs de tout, on va jamais rien changer ! Les gens ont besoin de nous !"
 
-    mara triste "Je dis pas ça."
-    mara peur "Je dis juste que si ça tourne mal, c'est nous qui payons. Pas Kami. Nous."
+    mara triste "Je sais. Mais si ça tourne mal, c’est les gens dehors qui vont payer, pas Kami."
 
-    noam reflechit "Tu veux des garanties. Ne pas signer les yeux fermés."
-
-    mara reflechit "Voilà. Et tout dépendra de l'énoncé précis. Un mot en trop, et une bonne idée devient une condamnation."
+    noam reflechit "Ouais, il faut qu’on voie ce qu’elle a réellement écrit. Elle a dit qu’elle pouvait modifier la formulation."
+    mara reflechit "Exactement. Et je lui fais pas confiance pour choisir les bons mots."
 
     call day3_collect_vote_argument("enonce_precis") from _call_day3_collect_vote_argument_enonce_precis
 
     pause 0.3
 
-    think "Elle a raison. Et c'est exactement ce détail que je n'arrive pas à me sortir de la tête."
+    think "Mara n’a pas tort. Si Kami change le texte, on a peut-être discuté toute la matinée pour rien."
 
-    think "Elen pousse son bol vide avec la fierté d'une mission accomplie."
+    think "Elen repousse son bol vide, visiblement satisfaite."
 
     elen content "Bon. Je vais digérer mon œuvre."
-    elen taquin "Et peut-être convertir quelques âmes à ma bonne humeur en chemin."
+    elen taquin "Et je vais demander aux autres s’ils veulent aussi voter pour !"
 
     iris "Bonne chance."
 
@@ -737,7 +688,7 @@ label _3_CAFETERIA_ARRIVE:
     "Puis elle sort à son tour."
     hide iris with moveoutleft
 
-    think "Je repose mon plateau. Trois heures avant de savoir si on est un groupe, ou juste douze inconnus qui vont se déchirer en direct."
+    think "Je termine mon repas. Je suis toujours motivé, mais après cette discussion, je suis moins certain que tout le monde votera pour."
 
     stop music fadeout 0.8
 
