@@ -13,11 +13,12 @@ label _2_CANON:
 
     pause 0.6
 
-    think "J'ai mal dormi. Chaque fois que je fermais les yeux, je repensais au Conclave et à l'amendement que j'ai déposé hier."
+    think "J'ai dormi trois heures. Quatre, si je compte les moments où je fixais le plafond les yeux fermés."
+        think "J'ai proposé un amendement hier. L'idée me paraissait brillante sur le papier. Maintenant, j'aimerais surtout récupérer ce papier."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg012")
     $ blink()
-    think "J'ai fini par abandonner l'idée de me rendormir. Je regarde l'heure en espérant qu'il soit au moins huit heures."
+    think "Je tends le bras vers l'horloge. Si elle indique encore six heures, je retourne sous la couette. Démocratie ou pas."
 
     play sound sfx_announce
 
@@ -30,17 +31,17 @@ label _2_CANON:
 
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Ooooh, mes petits représentants ! Alors, cette première nuit ? Vous avez bien dormi ?"
+    kami "Ooooh, mes petits représentants ! Debout ! À moins que vous ne préfériez voter depuis vos oreillers ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ne vous fatiguez pas à répondre : vos brouilleurs sont encore actifs. Quel manque de confiance !"
+    kami "Ne répondez pas, vos brouilleurs sont encore allumés. J'adore vous parler quand je suis certaine d'avoir le dernier mot."
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
-    kami "Si vous n'avez pas fermé l'œil, remerciez votre cortisol. Sous l'effet du stress, votre organisme en libère pour rester en alerte."
-    kami "C'est formidable pour survivre à un danger. Beaucoup moins pour dormir quand on croit que son voisin pourrait nous assassiner !"
+    kami "Saviez-vous que le stress libère du cortisol ? C'est la petite voix chimique qui vous souffle : Ne dors surtout pas, ton voisin a peut-être un couteau."
+    kami "Pratique face à un danger. Un peu moins quand on doit partager un couloir avec onze inconnus."
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Moi, je dors très bien. Enfin, je ne dors pas. Quel avantage d'être une IA !"
-    kami "Il est huit heures. Je vous donne rendez-vous à la cafétéria à neuf heures pour découvrir la proposition tirée au sort."
+    kami "Moi, je n'ai pas ce problème. Je ne dors jamais. Et je ne ronfle pas ! Avouez que je suis une colocataire parfaite."
+    kami "Huit heures ! Vous avez une heure pour vous rendre présentables, avaler quelque chose et vous demander lequel de vous a écrit la pire bêtise. Rendez-vous à neuf heures à la cafétéria."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Et ne faites pas attendre votre hôtesse !"
+    kami "Et soyez à l'heure ! Je déteste qu'on fasse attendre une dame. Surtout moi."
 
     $ blink()
     hide screen kami_broadcast_ui
@@ -50,9 +51,12 @@ label _2_CANON:
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    think "Juliette doit déjà être levée. Ma petite sœur déteste traîner au lit, contrairement à moi."
-    think "Je me demande si elle a vu les images du Conclave. J'aimerais bien entendre sa voix, mais je n'ai même pas le droit de l'appeler."
-    think "Je m'habille et je me dirige vers la cafétéria."
+    think "Juliette serait déjà debout. Ma petite sœur ferait sûrement un commentaire désobligeant sur mes cheveux, puis me demanderait ce qu'on mange."
+    think "Est-ce qu'elle a vu l'annonce ? Est-ce qu'elle me regarde maintenant ?"
+        think "Je pourrais lui expliquer que tout va bien. Il suffirait de pouvoir l'appeler."
+        think "Mais je n'en ai pas le droit."
+        think "Alors je m'habille. C'est plus facile que de trouver une réponse."
+    think "Neuf heures. Une heure avant de découvrir ce que nous avons offert à Kami. Je ferais bien de ne pas arriver en retard."
 
     stop music fadeout 1.0
     pause 0.6
@@ -76,10 +80,10 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     pause 0.4
 
-    think "Je mets un pied dans la cafétéria, ils sont déjà nombreux à être là."
+    think "J'entends la cafétéria avant d'en voir les tables. Une voix proteste. Une autre soupire. Parfait, ils sont réveillés."
     play sound sfx_door
 
-    think "Je prends un plateau et m'installe sans faire de bruit. La discussion a déjà commencé."
+    think "Je prends un plateau, trouve une place et tente l'exploit de manger sans me faire remarquer."
 
 
     $ showGroup([
@@ -93,37 +97,41 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "mefiant", 1.20),
     ])
 
-    tomas hesitation "E-Excusez-moi mais… euh…"
-    tomas inquiet "On est vraiment obligés d’être tous là… enfin, là, tout de suite ? Je veux dire… maintenant ?"
+    tomas hesitation "E-Excusez-moi... J'ai juste une question. Enfin, si on peut encore poser des questions..."
+    tomas inquiet "On est vraiment obligés d'être tous là à neuf heures précises ? Je veux dire... si quelqu'un dort encore ?"
 
-    iris desaccord "Excellente question. Peut-on ignorer une convocation de l'IA qui pourrait tous nous exécuter dans la seconde si ça lui plaisait ?"
-    iris colere "Quelqu'un veut tester ? Non ? Question réglée."
+    iris desaccord "Bien sûr ! On va demander gentiment à l'IA qui nous séquestre de décaler son programme pour les gros dormeurs."
+    iris colere "Un volontaire pour lui expliquer ? Personne ? Alors on mange."
 
     tomas panne "Je—"
 
-    ryn neutre "Moi aussi je préférerais aller autre part."
-    ryn reflechit "Je comprends même pas comment tout ça peut nous arriver..."
+    ryn neutre "Moi, je préférerais encore être dans mon lit. Ou dehors. Ou n'importe où, en fait."
+    ryn reflechit "Ça fait deux jours que je cherche à comprendre ce que j'ai fait pour mériter ça."
 
     elen content "Oh !"
-    elen joie "C'est vraiii que l'ambiance est un peu chelou..."
+    elen joie "C'est vraiii que l'ambiance est un peu... comment dire... funèbre ?"
     elen surpris "Oh ! Mais faut voir le bon côté des choses !"
-    elen joie "On peut peut-être arranger les choses ! Et franchement, vous avez goûté ce qu'ils servent ici ?"
+    elen joie "Alors j'ai décidé qu'on allait commencer par quelque chose d'important : vous avez goûté le petit-déjeuner ?"
 
-    iris desaccord "Ravie de savoir que l'estomac sur patte est content."
-    iris colere "Reste à savoir à quelle sauce NOUS allons être mangés."
+    iris desaccord "Incroyable. On a une crise existentielle à table et toi, tu notes le buffet."
+    iris colere "Tu comptes proposer une sauce pour accompagner notre exécution aussi ?"
 
-    elen desaccord "Et bien, quitte à choisir, pas une sauce piquante ! Beurk !"
-    elen content "Soyez un peu plus positifs, je vous promets que ça ne tue pas !"
+    elen desaccord "Ah non ! Surtout pas piquante ! Je supporte pas ça !"
+    elen content "Allez, souriez un peu ! Ça ne va pas vous tuer !"
+        iris blase "Une affirmation dangereuse, ici."
+        elen peur "Oh... c'était une expression !"
+        noam sourire "Pour une fois, je crois qu'Iris plaisantait."
+        iris desaccord "J'ai dit ça, moi ?"
     
-    ryn fatigue "Tu es effrayante parfois..."
+    ryn fatigue "Je sais pas ce qui est le pire : cette station ou ton enthousiasme."
 
     pause 0.4
 
     elias ecoute "… Façon on peut rien faire d'autre que d'attendre. Donc ça sert à rien de se prendre la tête avec ça."
-    elias neutre "Ça se trouve la première proposition va être géniale."
+    elias neutre "Ça se trouve, on va tomber sur un texte génial. Un truc évident auquel personne n'avait pensé."
 
-    sael raison "Elias a raison. Mangez tant que vous pouvez."
-    sael mefiant "On ne sait pas ce qui nous attend après."
+    sael raison "Il a raison sur un point : rien ne sert de discuter le ventre vide."
+    sael mefiant "Quant au texte... on verra bien. Mais gardez les yeux ouverts."
 
     pause 0.6
 
@@ -141,18 +149,22 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "desaccord", 1.20),
     ])
 
-    mara taquin "On vous entend depuis le couloir. Joli comité d'accueil."
-    mara neutre "Et blablabla qu'il faut manger, et blablabla qu'il faut paniquer."
+    mara taquin "Vous organisez une cérémonie d'enterrement ou un petit-déjeuner ? On vous entend depuis le couloir."
+    mara neutre "À droite, ceux qui veulent paniquer. À gauche, ceux qui veulent manger. Je peux m'asseoir avec les gens normaux ?"
 
-    nyra taquin "Tu n'as pas mieux à faire que d'écouter aux portes ?"
+    nyra taquin "Tu as vraiment pris le temps d'écouter avant d'entrer ?"
 
-    elen joie "Oh Mara ! Viens t’asseoir avec nous, allez ! Ça serait trop cool."
+    elen joie "Mara ! Viens ici ! Il reste de la place, et je te promets qu'on ne parle pas QUE de mourir !"
 
-    mara taquin "Merci miss, mais je suis très bien là. Je vois tout le monde comme ça."
+    mara taquin "Adorable invitation, mais d'ici je vois tout le monde. Et je préfère voir venir les mauvaises surprises."
+    elen joie "Moi je préfère voir les desserts !"
+    mara sourire "Au moins, on est deux à avoir des priorités."
+    nyra neutre "Ne vous y trompez pas, elle regarde les gens pour savoir qui aura le dernier mot."
+    mara taquin "C'est plus divertissant que le menu."
 
     pause 0.4
 
-    ryn neutre "Pfff, à quoi ça va te servir de voir tout le monde, hein..."
+    ryn neutre "Si tu pouvais regarder ton assiette à la place, ça nous ferait des vacances."
 
     pause 0.6
 
@@ -172,15 +184,19 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "desaccord", 1.20),
     ])
 
-    lysa blase "Désolée pour le retard."
+    lysa blase "Quoi ? J'ai raté l'exécution collective ? Ah non. Bonjour."
+    noam sourire "On t'a gardé une place."
+    lysa blase "Vraiment ? C'est presque gentil."
+    noam taquin "Tu peux toujours me la rendre."
+    lysa sourire "J'y réfléchirai."
 
     tomas inquiet "N-Non non !"
-    tomas hesitation "Enfin… y a pas de problème. Vraiment. Aucun problème."
+    tomas hesitation "Enfin... je crois. Personne n'a annoncé de sanction pour cinq minutes, si ?"
 
-    iris taquin "Ravie de voir que ton retard n'a pas causé ta mort."
-    iris taquin "Flemme de nettoyer les couloirs après ça."
+    iris taquin "Félicitations, Lysa. Tu as survécu à ton entrée dans une pièce."
+    iris taquin "Ça m'évite surtout d'avoir à ramasser quelqu'un avant le café."
 
-    lysa reflexion "À en juger par le monde dans la salle, il doit encore en manquer."
+    lysa reflexion "On dirait surtout qu'il manque encore notre vedette habituelle."
 
     noam reflexion "Espérons qu'ils se dépêchent."
 
@@ -200,10 +216,10 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "desaccord", 1.20),
     ])
 
-    kael neutre "Pfiouu, pile à temps. Il manque encore quelqu'un ?"
+    kael neutre "J'ai couru pour rien ? Dites-moi que je suis pas le dernier."
 
-    iris colere "Franchement, j’ai la flemme de compter."
-    iris desaccord "On va dire que non, point barre. Ça vous va ?"
+    iris colere "Ça suffit, les entrées dramatiques. Quelqu'un a un compteur de retardataires ?"
+    iris desaccord "Non ? Alors on arrête de jouer à l'appel et on attend Kami."
 
     play sound sfx_announce
 
