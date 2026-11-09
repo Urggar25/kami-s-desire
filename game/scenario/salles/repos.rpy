@@ -203,6 +203,7 @@ label decouverte_salle_repos:
     noam taquin "Noam. C'est gentil de me laisser préparer ma version des faits."
     iris blase "Iris. Et si tu veux un conseil, ne commence jamais une partie avec lui après le dîner."
     $ unlock_character_name("iris")
+    call kd_play_character_intro("iris") from _call_kd_intro_iris_j1
     noam sourire "Pourquoi ?"
     iris colere "Parce qu'il refuse d'aller se coucher tant qu'il n'a pas gagné."
     julian taquin "C'est faux ! Je considère simplement qu'une bonne partie mérite une conclusion satisfaisante."
