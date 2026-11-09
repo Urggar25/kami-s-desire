@@ -19,9 +19,12 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ cafeteria_food_level = "low"
 
     $ blink()
-    think "Je me réveille avant l'annonce de Kami. Aujourd'hui, on doit voter sur l'ouverture des frontières, et j'ai encore en tête ce que Sael m'a raconté."
-    think "Elle a clairement dit qu'elle voterait contre. Je ne sais pas si j'aurais fait le même choix à sa place, mais je comprends mieux pourquoi elle refuse."
-    "J'enfile mes vêtements et je vérifie l'heure sur ma tablette."
+    think "J'ouvre les yeux avant l'annonce. Deuxième vote aujourd'hui."
+    think "Hier, Sael m'a expliqué pourquoi elle dirait non. Et Ryn m'a expliqué pourquoi il ne supporterait pas qu'elle le fasse."
+    think "Pour changer, je suis coincé entre deux personnes qui ont de bonnes raisons de ne pas céder."
+    think "J'avais espéré me réveiller avec une idée brillante. Un compromis, un argument imparable, n'importe quoi."
+    think "À la place, j'ai une marque d'oreiller sur la joue. Ça va sûrement sauver beaucoup de monde."
+    "J'attrape ma tablette. Quatorze heures. Il nous reste quelques heures pour nous convaincre de ce qu'on sait déjà."
 
     play sound sfx_announce
     pause 0.5
@@ -29,22 +32,26 @@ label _6_0_1_REVEIL_CHAMBRE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Booooonjour, tout le monde ! Aujourd'hui, c'est votre deuxième vote. Vous devez commencer à connaître la procédure."
+    kami "BOOOONJOUR, mes petits législateurs ! Aujourd'hui, deuxième grand vote ! J'espère que vous avez enfin appris à compter jusqu'à douze."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Rendez-vous au Conclave à quatorze heures pour vous prononcer sur la circulation entre les districts."
-    "Sa voix se coupe très brièvement au milieu de la phrase. L'écran reste figé un instant, puis l'animation reprend."
+    kami "Rendez-vous à quatorze heures au Conclave. Au programme : les frontières ! Et tous les charmants désaccords qui vont avec."
+    "La dernière syllabe s'étire étrangement."
+    "Le sourire de Kami reste figé une fraction de seconde."
+    think "Je m'attends à une plaisanterie. Elle ne vient pas."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Vous pourrez discuter avant, bien sûr. Je vous laisse une dernière occasion de... de..."
+    kami "Vous pouvez encore discuter avant le scrutin ! Une dernière occasion de... de..."
     pause 0.7
-    kami "De vous mettre d'accord. Voilà."
+    kami "...De vous mettre d'accord. Oui. C'est bien ça."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "La cafétéria est ouverte. Profitez-en, la prochaine livraison arrivera demain matin."
+    kami "La cafétéria est ouverte ! Profitez de vos délicieuses rations. Le ravitaillement est prévu demain matin."
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    think "Je reste un moment à regarder l'écran éteint. Kami a déjà fait semblant de buguer pour nous provoquer, mais cette fois, elle n'a même pas essayé d'en rire."
-    think "Je vais voir si les autres ont remarqué la même chose."
-    "Je ramasse ma veste sur la chaise et je quitte la chambre."
+    think "Je reste devant l'écran noir."
+    think "Quand Kami veut nous faire peur, elle le fait avec une joie insupportable. Là, elle avait surtout l'air de chercher ses mots."
+    think "Peut-être que je me fais des idées. Ce ne serait pas la première fois."
+    think "Je vais quand même demander aux autres."
+    "J'enfile ma veste et quitte la chambre. Au moins, si Kami a décidé d'inventer le bégaiement, elle aurait pu commencer par une meilleure blague."
 
     $ current_scene_active = "_6_0_1_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
@@ -64,7 +71,8 @@ label _6_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
-    "En arrivant à la cafétéria, j'entends plusieurs conversations. L'ambiance n'est pas particulièrement joyeuse, mais au moins les gens se parlent."
+    "Une conversation traverse toute la cafétéria avant même que je pose un pied dedans."
+    think "Au moins, cette fois, quelqu'un a trouvé un sujet qui n'est pas directement le vote. Enfin... j'espère."
 
     $ showGroup([
         ("elias", "fatigue"),
@@ -75,39 +83,62 @@ label _6_0_1_CAFETERIA:
         ("sael", "neutre"),
     ])
 
-    elen inquiet "Noam ! Dis-moi que t'as entendu l'annonce de Kami. Elle s'est arrêtée en plein milieu d'une phrase, non ?"
-    noam reflechit "Ouais. J'ai même cru que l'écran avait planté chez moi."
-    elias fatigue "Elle a fait pareil dans le dortoir. C'est pas juste le haut-parleur de ta chambre."
-    mara taquin "Peut-être qu'elle a enfin appris à réfléchir avant de parler. Ça lui ferait pas de mal."
-    lysa blase "C'est bizarre, mais elle nous a déjà fait des blagues plus tordues. Je vais pas commencer à paniquer pour une phrase ratée."
-    iris reflechit "Ce qui m'inquiète, c'est qu'elle ne l'a pas commentée. D'habitude, quand elle veut nous faire peur, elle insiste jusqu'à ce qu'on réagisse."
-    elen taquin "Ou alors elle est crevée ! On devrait lui demander si elle a besoin de vacances."
-    elias sourire "Imagine Kami en vacances. Tous les distributeurs nous laisseraient enfin choisir ce qu'on veut."
-    mara rire "Ça, ce serait une vraie raison de fêter quelque chose."
-    sael mefiant "Vous pouvez plaisanter, mais c'est elle qui commande les systèmes de la station. Si elle rencontre vraiment un problème, je préférerais qu'on le sache avant le vote."
-    noam inquiet "Tu crois que ça peut venir de la station ?"
-    elias inquiet "J'en sais rien. Après ce que j'ai fait hier, j'ai demandé à Kael de vérifier le panneau de l'observatoire. Ça m'étonnerait qu'une console grillée puisse perturber Kami, mais je peux pas te le garantir."
-    iris fatigue "Attends. Vous parlez de l'accident du café ? Ça n'a peut-être aucun rapport, Elias. Ne commence pas à t'accuser de tout."
-    elias reflechit "Je m'accuse pas ! Je dis juste que je vais lui demander, c'est tout."
-    "Goumi passe près de la table pour déposer un plateau. Elias pousse aussitôt sa tasse au milieu de la table, loin de la console et du bord."
-    mara taquin "Tiens, il a retenu la leçon !"
-    elias sourire "Oui, oui, ça va. Je pose mes boissons loin de tout ce qui coûte cher, désormais."
-    lysa reflechit "Bon, et pour le vote ? Quelqu'un a réussi à parler à Sael ?"
-    sael determine "Je suis là, Lysa. Tu peux me demander directement."
-    lysa blase "Je demandais surtout si vous aviez discuté ensemble. Je sais déjà ce que tu vas voter."
-    sael neutre "Noam est venu me voir hier. Je lui ai expliqué mes raisons, mais je reste contre."
-    elen triste "C'est dommage. J'aimerais tellement qu'on trouve un moyen pour que les familles puissent se retrouver."
-    sael triste "Moi aussi. Mais je n'accepterai pas d'ouvrir les frontières sans savoir comment on protégera mon village."
-    mara agace "Et moi, je refuse qu'on fasse comme si ça allait régler tous nos problèmes. On n'arrive déjà pas à gérer les distributions."
-    noam neutre "On en reparlera au Conclave. On a encore quelques heures, autant éviter de se disputer pendant le petit-déjeuner."
-    iris sourire "Excellente idée. J'aimerais finir mon repas sans avoir à arbitrer une bagarre."
-    "Les conversations reprennent autour de la table. Elias raconte à Elen ce que Kael lui a dit sur sa console, tandis que Mara et Lysa discutent de ce qu'elles voudraient demander à Kami."
-    think "Tout le monde semble avoir remarqué quelque chose d'étrange ce matin, mais personne ne sait quoi en penser. Pour le moment, le Conclave fonctionne normalement."
-    "Avant de partir, je remarque qu'un reportage sur les frontières de Limen vient de commencer à la télévision."
+    elen inquiet "NOAM ! Dis-moi que tu as entendu ! Kami a fait... un truc !"
+    noam surpris "Un truc ? Ça réduit peu les possibilités."
+    elen inquiet "Elle s'est arrêtée au milieu d'une phrase ! Toute seule !"
+    noam reflechit "J'ai vu. J'ai attendu la chute de sa blague, mais il n'y en avait pas."
+    elias fatigue "Pareil dans le dortoir. Et sur ma tablette."
+    elias inquiet "Pour une fois que ce n'est pas mon matériel qui plante, je sais même pas si je dois être soulagé."
+    mara taquin "Elle a peut-être découvert qu'on pouvait réfléchir AVANT d'ouvrir la bouche."
+    mara sourire "Une révolution technologique."
+    lysa blase "Une IA qui hésite. Dramatique. Si elle commence à oublier les prénoms, je propose qu'on l'envoie à la retraite."
+    iris reflechit "Non, il y a quelque chose qui cloche. Quand Kami se moque de nous, elle nous force à le remarquer."
+    iris inquiet "Là, elle a repris comme si elle espérait qu'on n'avait rien vu."
+    elen taquin "Ou alors... elle est fatiguée !"
+    elen joie "Imaginez Kami à la plage ! Avec un tout petit parasol sur un serveur géant !"
+    elias sourire "Et nous, pendant ce temps-là, on pourrait enfin commander autre chose que ces barres de rationnement."
+    mara rire "Dans ce cas, je lui réserve les vacances les plus longues de l'histoire. Sans billet retour."
+    sael mefiant "Vous avez fini ?"
+    sael neutre "Elle contrôle les portes, les livraisons et les sanctions. Si elle a réellement un problème, je voudrais le savoir AVANT qu'on lui confie un nouveau vote."
+    noam inquiet "Elias... la console d'hier. Tu crois qu'elle pourrait avoir provoqué ça ?"
+    elias inquiet "Je... j'espère que non ! J'ai demandé à Kael de vérifier l'observatoire."
+    elias reflechit "Un panneau de contrôle local, ça devrait pas pouvoir toucher Kami. Enfin... « devrait », c'est le mot qui m'embête."
+    iris fatigue "Attends. L'accident du café ?"
+    iris blase "Elias, tu ne vas pas te déclarer responsable de tous les dysfonctionnements de l'univers pour une tasse renversée."
+    elias reflechit "Je m'accuse pas !"
+    elias gene "Enfin, j'essaie de ne pas m'accuser avant d'avoir les résultats de Kael."
+    "Goumi arrive avec les plateaux. Elias pousse immédiatement sa tasse vers le centre de la table."
+    think "Sa tasse a désormais une zone de sécurité personnelle."
+    mara taquin "Oh ! Regardez ! Elias applique les règles de sécurité du café !"
+    elias sourire "Exactement ! Plus de boisson près des machines, des câbles ou des objets coûteux !"
+    mara taquin "Il te reste l'option de boire debout dans le couloir."
+    elias gene "C'est... pas idiot."
+    lysa reflechit "Bon, avant qu'on rédige un code de la sécurité des boissons : quelqu'un a parlé à Sael ?"
+    sael determine "Je suis juste en face de toi, Lysa."
+    sael neutre "Tu peux encore t'adresser directement à moi. C'est autorisé."
+    lysa blase "Je sais. Je voulais savoir si quelqu'un avait réussi à avoir une discussion, pas une déclaration de vote."
+    sael neutre "Noam est venu me voir hier. On a parlé."
+    sael determine "Et non, je n'ai pas changé d'avis."
+    elen triste "J'ai vu des enfants attendre aux frontières à la télévision... Ils espèrent vraiment pouvoir revoir leurs proches."
+    sael triste "Je le sais, Elen."
+    sael determine "Et je ne pourrai pas regarder les miens en face si j'ouvre notre village à ceux qui nous attaquaient. Je suis désolée."
+    mara agace "On n'arrive déjà pas à assurer les livraisons normales. Mais oui, ouvrons toutes les routes d'un coup. Qu'est-ce qui pourrait mal se passer ?"
+    noam neutre "Il reste quelques heures. On pourrait au moins finir de manger avant de recommencer la guerre des frontières."
+    iris sourire "Merci. J'aimerais avaler une bouchée sans qu'on m'annonce une crise internationale entre le pain et le café."
+    "Elen se penche sur la tasse d'Elias."
+    elen taquin "Tu sais que Goumi peut peut-être te servir dans un gobelet fermé ?"
+    elias sourire "Tu veux rire, mais j'y ai pensé."
+    mara blase "Je savais qu'il y aurait un débat plus idiot que celui sur les frontières."
+    think "La conversation repart sur le café. Au bout de quelques répliques, même Sael esquisse un sourire."
+    think "Pendant quelques minutes, tout ressemble à un petit-déjeuner normal."
+    think "Puis l'écran de la cafétéria change de programme. Les conversations ralentissent d'elles-mêmes."
+    "Une carte de Limen apparaît. Le présentateur annonce un reportage sur les familles rassemblées près des postes de contrôle."
     call _6_0_1_TV_FRONTIERES from _call_6_0_1_TV_FRONTIERES_matinale
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-    think "Je comprends pourquoi Ryn tient tellement à ce vote, mais je repense aussi aux habitants que Sael veut protéger. Je ne sais pas comment on pourrait satisfaire tout le monde avec le texte actuel."
+    think "Ceux qui attendent derrière les barrières ont déjà fait leur choix."
+    think "À quelques sièges de moi, Sael a fait le contraire."
+    think "Il va falloir les regarder en face au moment de voter."
 
     jump _6_0_1_TEMPS_LIBRE
 
@@ -117,7 +148,8 @@ label _6_0_1_TEMPS_LIBRE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Fin de matinée"
 
-    think "Il reste un peu de temps avant le vote. Je vais en profiter pour voir les autres, sans forcément revenir sur nos désaccords d'hier."
+    think "Il reste quelques heures avant le vote."
+    think "J'aimerais parler aux autres sans transformer chacune de leurs réponses en argument électoral. On a déjà donné hier."
 
     call START_FREE_TIME("_6_0_1_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_6_0_1
 
@@ -127,12 +159,19 @@ label _6_0_1_TV_FRONTIERES:
     $ j601_border_news_seen = True
     $ unlock_gallery_image("bg_cg035")
     scene bg_cg035 at adaptive_fullscreen with dissolve
-    "La télévision montre des rassemblements aux points de passage de Limen. Des familles attendent derrière les barrières, avec des sacs et parfois leurs enfants."
-    "JOURNALISTE — Plusieurs groupes se sont réunis ce matin. Ils espèrent que le vote du Conclave permettra de circuler à nouveau entre les districts."
-    "UNE FEMME — Mon frère habite de l'autre côté. Ça fait des années qu'on n'a pas pu se voir, alors oui, je suis venue. Même si je ne sais pas ce qu'ils vont décider."
-    "Un homme interrogé quelques mètres plus loin explique au contraire qu'il redoute l'ouverture des passages et demande comment les autorités contrôleront les groupes violents."
-    think "Les deux réponses me rappellent exactement la dispute entre Ryn et Sael. Ici aussi, les gens sont loin d'être tous d'accord."
-    "Le direct continue sur une vue des barrières. Personne ne tente de les franchir."
+    "La caméra survole un poste de contrôle. Des sacs au sol. Des enfants assis sur des valises. Des adultes qui scrutent les barrières comme si elles pouvaient s'ouvrir à force de les regarder."
+    "JOURNALISTE — Des familles se sont rassemblées dès l'aube devant plusieurs passages de Limen. Elles attendent le résultat du vote sur la libre circulation."
+    "UNE FEMME — Mon frère est juste de l'autre côté. Je sais où il habite. Je sais qu'il est vivant."
+    "UNE FEMME — Mais je peux pas aller le voir. Alors oui, je suis venue. J'avais envie qu'il sache que j'attendais encore."
+    "Un homme intervient derrière elle."
+    "UN HOMME — Et ceux qui venaient piller nos villages, vous allez les laisser passer aussi ? Qui va les arrêter, cette fois ?"
+    "LA FEMME — Je ne demande pas qu'on laisse entrer des criminels ! Je veux voir mon frère !"
+    "UN HOMME — Et moi, je veux que mes enfants puissent dormir !"
+    "Le journaliste essaie de reprendre la parole. Les deux continuent de se répondre."
+    think "Même à des kilomètres d'ici, ils n'arrivent pas à terminer une phrase sans se disputer."
+    think "Je pourrais presque entendre Ryn et Sael à leur place. Ça ne me fait pas rire."
+    "La caméra recule. Des dizaines de personnes attendent en silence derrière la ligne."
+    think "Personne ne s'avance. Tout le monde connaît le prix d'un pas de trop."
     return
 
 label _6_0_1_TRANSITION_CONCLAVE:
@@ -142,31 +181,41 @@ label _6_0_1_TRANSITION_CONCLAVE:
 
     $ current_period = "Après-midi"
 
-    think "À l'approche de quatorze heures, les représentants commencent à rejoindre le Conclave. Je retrouve Elen et Tomas dans le couloir du dortoir."
+    think "À l'approche du vote, je retrouve Elen et Tomas dans le dortoir."
+    think "Tous les deux fixent leur tablette. Je reconnais l'expression de gens qui ne sont même plus d'accord avec une horloge."
     $ showGroup([("elen", "neutre", 0.25), ("tomas", "inquiet", 0.65), ("noam", "neutre", 0.85)])
-    tomas inquiet "Vous avez encore reçu un message de Kami ? Elle nous a avancé l'heure de dix minutes, je crois."
-    elen surpris "Moi, ma tablette dit toujours quatorze heures. Elle a peut-être envoyé la mauvaise notification."
-    noam inquiet "C'est possible. On ferait mieux d'aller voir, de toute façon."
+    tomas inquiet "Euh... dites-moi que je ne deviens pas fou. Mon message dit maintenant treize heures cinquante."
+    elen surpris "Quoi ? La mienne affiche toujours quatorze heures !"
+    elen inquiet "On peut même plus se mettre d'accord sur l'heure ?!"
+    noam inquiet "On va y aller. Je préfère arriver trop tôt que découvrir que Kami nous a fait voter sans nous."
     play sound "sfx/glitch_light.mp3"
-    "Les éclairages du couloir s'éteignent une fraction de seconde. Quand ils reviennent, l'écran mural affiche une image de Kami, figée."
-    elen inquiet "Bon... ça aussi, elle l'avait prévu ?"
+    "Les lumières s'éteignent."
+    "Une seconde plus tard, le couloir retrouve ses couleurs. L'écran mural, lui, montre un sourire de Kami parfaitement immobile."
+    think "Je déteste déjà ce sourire. Quand il ne bouge pas, c'est encore pire."
+    elen inquiet "Ça... c'est censé nous rassurer ?"
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Mes représentants ! Je constate que vous êtes déjà en route. Parfait. Nous pouvons commencer un peu plus tôt."
-    noam inquiet "Kami ? Pourquoi l'heure a changé ?"
+    kami "Mes petits représentants ! Vous êtes déjà en route. Quelle efficacité ! Nous pouvons commencer légèrement... plus tôt."
+    noam inquiet "Kami, pourquoi avancer l'heure ? On a reçu des messages différents."
     pause 0.4
-    kami "L'horaire a été... ajusté. Aucun problème. Rendez-vous au Conclave."
+    kami "L'horaire a été... ajusté."
+    kami "Tout est normal. Rendez-vous au Conclave."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et tâchez d'arriver tous ensemble, ce serait plus simple pour... enfin, ce serait plus simple."
+    kami "Et venez tous ensemble ! Ce serait plus facile pour... pour..."
+    kami "Ce serait plus facile. Voilà."
     hide screen kami_broadcast_ui
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-    "Elen regarde sa tablette. Le nouvel horaire apparaît maintenant sur l'écran, comme si elle avait reçu la notification avec du retard."
-    elen inquiet "J'aime pas ça. S'il y a un problème avec elle, elle pourrait au moins nous le dire."
-    tomas hesitation "C'est peut-être juste un problème de communication. Je veux dire, ça arrive, non ?"
-    noam neutre "Ouais, ça arrive. Mais pas très souvent avec Kami."
-    "Nous rejoignons le reste du groupe devant l'entrée du Conclave. Sael arrive en dernier, accompagnée de Ryn. Ils ne se parlent pas, mais ils ne se disputent pas non plus."
+    "Elen baisse les yeux. Sur sa tablette aussi, quatorze heures vient de devenir treize heures cinquante."
+    elen inquiet "Je n'aime vraiment pas ça. D'habitude, elle nous fait peur exprès."
+    elen inquiet "Là... elle a l'air de ne même pas comprendre ce qui lui arrive."
+    tomas hesitation "Ça pourrait être juste un problème de transmission. Les appareils peuvent se désynchroniser, non ?"
+    elen inquiet "Tomas, tu dis ça pour nous rassurer ou pour te rassurer toi-même ?"
+    tomas hesitation "Les deux, je crois."
+    noam neutre "Même si c'est une simple panne, je n'ai jamais vu Kami perdre le contrôle d'une annonce aussi longtemps."
+    "Nous rejoignons les autres. Sael et Ryn arrivent ensemble, sans échanger un mot."
+    think "Ils ne se sont pas disputés. Je suppose qu'on peut appeler ça une bonne nouvelle, jusqu'à preuve du contraire."
 
     jump _6_0_1_CONCLAVE_START
 
