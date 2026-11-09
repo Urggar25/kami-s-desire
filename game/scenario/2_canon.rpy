@@ -13,38 +13,11 @@ label _2_CANON:
 
     pause 0.6
 
-    think "Je n'arrive pas vraiment à dormir. Je me retourne encore et encore."
-    think "Un coup sur le côté gauche. Non, ça ne va pas. Sur le dos, peut-être ? Raah c'est pire. Une jambe repliée... toujours pas."
-    think "Le matelas est confortable, même très confortable. Le problème, enfin... c'est moi. C'est tout ce qui nous arrive."
-    
-    $ blink()
-
-    pause 0.6
-
-    think "J'ouvre les yeux. Encore une fois."
+    think "J'ai mal dormi. Chaque fois que je fermais les yeux, je repensais au Conclave et à l'amendement que j'ai déposé hier."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg012")
-
     $ blink()
-
-    think "Je les referme. J'essaye de me reposer mais rien n'y fait."
-
-    $ blink()
-    pause 0.4
-    $ blink()
-
-    pause 0.6
-
-    think "Chaque fois que je commence à m'endormir, des images me reviennent."
-    $ blink()
-    think "La salle. Les sièges. Les onze autres personnes avec qui je serai bloqué pendant un mois. Un mois..."
-    $ blink()
-    think "Et puis elle. Kami."
-    think "Est-ce que j'ai déposé un bon amendement ? Putain qu'est-ce que j'en sais..."
-
-    pause 0.6
-
-    $ blink()
+    think "J'ai fini par abandonner l'idée de me rendormir. Je regarde l'heure en espérant qu'il soit au moins huit heures."
 
     play sound sfx_announce
 
@@ -57,56 +30,17 @@ label _2_CANON:
 
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Ooooh ? Vous êtes déjà en train de remuer dans vos petits lits ?"
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Enfin, je ne peux que spéculer : vous n'êtes pas nombreux à avoir désactivé votre brouilleur !"
-
+    kami "Ooooh, mes petits représentants ! Alors, cette première nuit ? Vous avez bien dormi ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-
-    kami "C’est mignon. Vraiment. J'espère que certains d'entre vous ont pu passer une bonne nuit !"
-    kami "Mes valeureux serviteurs ont eu bien du mal à vous fabriquer des lits d'aussi bonne qualité !"
-
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Mais soit. Nous en sommes au deuxième jour."
-    kami "J'espère que vos vacances se passent pour le mieux ?!"
-
-    $ blink()
-
-    kami "Il est huit heures du matin."
-    kami "Certains d’entre vous ont l'air d'avoir très mal dormi à en juger par les quelques têtes qui sont déjà sorties de leur chambre."
-    kami "Et je tiens à préciser que c'est tout à fait normal…"
-
-    pause 0.5
+    kami "Ne vous fatiguez pas à répondre : vos brouilleurs sont encore actifs. Quel manque de confiance !"
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
-
-    kami "Votre cerveau adore ce genre de choses. Vraiment."
-    kami "Il appelle ça du stress. Et quand il est stressé…"
-
-    $ blink()
-
-    kami "Il libère du cortisol. Une petite hormone très pratique."
-
-    $ blink()
-
-    kami "Elle vous garde éveillés. Alertes. Prêts à survivre."
-    kami "Le problème… C’est qu’elle déteste le sommeil."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Votre cerveau a travaillé tard. Même quand vous faisiez semblant de dormir."
-    kami "D'ailleurs il ne s'endort jamais vraiment, lui. Un peu comme moi au final !"
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Mais ce n'est pas pour ça que vous êtes si alertes en m'écoutant, non ?!"
-    kami "Ah ! Vous voulez le savoir, hein ! Quelle sera la toute première proposition mise au vote !"
-    kami "Et bien, vous le saurez après un court instant publicitaire !"
-    kami "En attendant, je vous attends nombreux dans la Salle du Conclave pour la première annonce majeure !"
-    kami "Je vous conseille d’y assister. Ce serait dommage de rater un moment clé…"
-
-    pause 0.4
+    kami "Si vous n'avez pas fermé l'œil, remerciez votre cortisol. Sous l'effet du stress, votre organisme en libère pour rester en alerte."
+    kami "C'est formidable pour survivre à un danger. Beaucoup moins pour dormir quand on croit que son voisin pourrait nous assassiner !"
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Moi, je dors très bien. Enfin, je ne dors pas. Quel avantage d'être une IA !"
+    kami "Il est huit heures. Je vous donne rendez-vous à la cafétéria à neuf heures pour découvrir la proposition tirée au sort."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-
-    kami "…surtout quand il s’agit de votre avenir proche."
+    kami "Et ne faites pas attendre votre hôtesse !"
 
     $ blink()
     hide screen kami_broadcast_ui
@@ -116,20 +50,9 @@ label _2_CANON:
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
-    think "Cette fois, je suis complètement réveillé. Hier, tout s’est enchaîné trop vite pour vraiment réfléchir."
-    think "Maintenant, le calme ramène tout ce que j'ai essayé de refouler jusque-là."
-    think "Ma famille est à des milliers de kilomètres de là. Qu'est-ce qu'ils font ?"
-    think "Que fait Juliette, ma petite sœur, toujours debout trop tôt, toujours en train de poser une nouvelle question avant même d’avoir eu la réponse à la précédente."
-    think "Comment lui expliquer ce qu'il se passe ici, au Conclave ? Comment lui expliquer ce que nous fait Kami sans lui apprendre à avoir peur de chaque écran ?"
-
-    pause 0.6
-
-    think "Elle me regarde peut-être en ce moment. Moi, je ne peux ni la voir ni l'aider."
-    think "Enfin... Rester allongé n'y changera rien."
-
-    call day2_play_wakeup_trace from _call_day2_play_wakeup_trace
-
-    think "Je me redresse et pose les pieds au sol. Il faut que j'aille à la cafétéria, c'est bien ça ?"
+    think "Juliette doit déjà être levée. Ma petite sœur déteste traîner au lit, contrairement à moi."
+    think "Je me demande si elle a vu les images du Conclave. J'aimerais bien entendre sa voix, mais je n'ai même pas le droit de l'appeler."
+    think "Je m'habille et je me dirige vers la cafétéria."
 
     stop music fadeout 1.0
     pause 0.6
@@ -292,53 +215,21 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Oh. Quelle belle image."
-    kami "Des visages tendus, des regards méfiants… On dirait presque une réunion de famille ratée."
-    kami "Mais qui est l'abruti qui a osé parler de politique ou d'argent ?!"
-
+    kami "Ah, vous voilà ! À voir vos têtes, j'ai eu raison de garder le café pour moi."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Jour deux. Il est neuf heures."
-    kami "Et vous êtes tous... Ah non. Il manque quelqu'un."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Et bien, tant pis pour le retardataire !"
-
-    pause 0.4
-
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "J’adore quand vous essayez d'anticiper. Quand vous essayez de deviner."
-    kami "Ça vous rend… délicieusement prévisible."
-
-    $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
-    ryn neutre "Elle va y venir ou pas ?"
-    $ bc_hide()
-
-    kami "Oh. L’impatience. Un si joli défaut."
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Mais moi, contrairement à vous, j'ai tout mon temps ! Mais c'est vrai que si nous voulons profiter de notre mois ensemble, il faut accélérer !"
-    kami "Le premier vote du Conclave a été tiré au sort."
-
-    $ bc_show("tomas", "surpris", px=-70, py=-50, pz=0.85)
-    tomas surpris "D-Déjà ?!"
-    $ bc_hide()
-
-    kami "Oui. Déjà. Mais ça je l'avais annoncé dès hier. Essayez de suivre les enfants."
-
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
-    kami "Je suis efficace. MOI."
-
+    kami "Il est neuf heures. Et nous sommes presque au complet. Presque."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "J'avais peur que vous vous ennuyiez ici. Je vous donne donc un sujet de discussion."
+    kami "Je pourrais attendre le dernier retardataire... Non, je plaisante. Il n'avait qu'à se lever."
 
-    pause 0.4
-
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Et voici le résultat tant attendu. La proposition pour laquelle vous devrez voter..."
-    kami "Attention, roulement de tambour !"
-
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Votre premier amendement a été tiré au sort, et je sens qu'il va bien vous occuper."
+    $ bc_show("ryn", "surpris", px=-70, py=-50, pz=0.85)
+    ryn neutre "Bon, c'est quoi ?"
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Toujours aussi charmant, Ryn ! Je vous lis ça."
     play sound sfx_tambour
-    pause 2.0
+    pause 0.8
 
     kami "Je cite : « ça serait bien qu'on réautorise le commerce comme avant. »"
 
@@ -366,24 +257,13 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     pause 0.4
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Bon. Habituellement vous auriez eu trois jours pour discuter de cette proposition."
-    kami "Pour discuter. Pour convaincre les autres. Ou pour égorger ceux qui s'apprêtent à voter contre."
-    kami "Ça, c'est de votre ressort."
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Mais nous sommes déjà au jour 2. Or le premier vote a lieu à la fin du troisième jour !"
-    kami "Vous n'avez donc qu'une journée pour vous décider. Mais zen. Vous allez y arriver."
-
-    pause 0.4
-
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je rappelle que pour que cette volonté soit faite, personne ne devra voter contre..."
-    kami "Si la moindre personne vote contre. La proposition tombe à l'eau."
-
-    pause 0.6
+    kami "Vous avez jusqu'à demain, quatorze heures, pour vous décider. Oui, c'est court, on a déjà perdu une journée avec votre arrivée."
+    kami "Et je vous rappelle qu'un seul vote contre suffit à rejeter l'amendement."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Vous pouvez en discuter, essayer de vous convaincre, ou vous détester. Je prends tout !"
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
+        kami "Je vais devoir réécrire ça au propre. C'est impossible d'inclure une formulation aussi enfantine dans mes merveilleux commandements !"
 
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
     kami "Amusez-vous bien. Le monde vous écoute."
@@ -409,47 +289,24 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("sael", "mefiant", 1.20),
     ])
 
-    tomas hesitation "A-Attendez... On pourrait vraiment recommencer à acheter des choses ? Comme avant ?"
-
-    nyra sourire "A priori, oui. Enfin, si Kami respecte vraiment l'idée proposée."
-
-    elen joie "Et si on essayait d'en parler calmement ? Tous ensemble ?"
-    elen content "Moi je trouve que l'idée est vraiment cool !"
-
-    ryn taquin "Ah ouais, tu trouves ça cool toi ?"
-
-    elen sourire "Bah ouais ! On pourra de nouveau acheter tout ce qu'on veut !"
-    elen joie "On ne sera plus obligé de demander tout le temps des dérogations à nos districts !"
-
-    sael raison "Des dérogations ? De quoi est-ce que tu parles ?"
-
-    elen surpris "Hein ? Bah de remplir tous ces papiers ultra loooongs pour avoir un peu de matériel !"
-    elen triste "Vu qu'avec les bons de rationnement on ne pouvait avoir que de la nourriture pourrie, pour tout le reste il faut tout le temps demander !"
-
-    sael reflechit "Des bons de rationnement ? Je connais pas."
-
-    ryn colere "Hein ? Mais qu'est-ce que tu racontes ?"
-    ryn reflechit "Heureusement qu'il y a les bons de rationnement, sinon à Limen tout le monde crèverait la bouche en cœur !"
-    $ unlock_codex_page("bons_rationnement", with_notification=False)
-
-    mara taquin "Revenir au système de commerce ? MDR ! Qui a proposé ça ?"
-    mara colere "Je dois vous rappeler ce que c'est que ce système de commerce ?"
-
-    iris colere "Oh par pitié, tu ne vas quand même pas nous faire la leçon..."
-
-    mara colere "Les riches se servent et les autres ramassent ce qui reste. Vous avez déjà oublié ?"
-
-    elias colere "Hein ? Pourquoi c'est toi qui t'attaque à ça ? T'es bien la fille Shiran, non ?!"
-
-    mara colere "Je m'appelle Mara, c'est tout."
-
-    noam calme "Oh oh ! Stop, on se calme tout le monde ! On peut..."
-
-    pause 0.6
-
+    elen joie "Mais c'est super ! On pourra acheter autre chose que les rations !"
+    sael reflechit "Acheter avec quoi ?"
+    elen surpris "Bah, de l'argent ! Enfin, si on nous en redonne."
+    ryn reflechit "Chez moi, c'est déjà une galère pour manger. Si tout devient payant, on fait comment ?"
+    mara colere "Voilà ! Merci. Je croyais être la seule à y penser."
+    iris desaccord "Personne a dit qu'on allait supprimer les rations. Tu pars déjà dans tous les sens."
+    mara taquin "Et toi, tu comptes sur Kami pour régler les détails ?"
+    elias inquiet "Moi je veux juste acheter une pièce quand une machine pète. J'en ai marre de remplir trois formulaires pour un boulon."
+    tomas reflechit "Mais le commerce de quoi ? Des objets ? De la nourriture ? Entre les districts ?"
+    elen inquiet "Attendez, on pourrait perdre nos bons de rationnement ?"
+    sael raison "Chez nous, on n'en a pas. On partage ce qu'on produit."
+    ryn surpris "Sérieux ? Vous faites comment quand il manque quelque chose ?"
+    sael neutre "On s'arrange. On l'a toujours fait."
+    mara colere "Vous voyez ? On habite tous dans des endroits différents et on va voter sur une phrase écrite à l'arrache !"
+    noam raison "On peut au moins attendre le texte exact avant de se disputer ?"
+    iris taquin "Oh, un début de bonne idée. Notez la date."
     play sound sfx_door
-    "La porte claque. Tous les regards convergent vers Julian."
-
+    "La porte s'ouvre brusquement. Julian entre sans attendre la fin de la discussion."
     $ showGroup([
         ("elias", "rire", -0.11),
         ("mara", "fatigue", 0.01),
@@ -459,45 +316,19 @@ label _2_CAFETERIA_ANNONCE_KAMI:
         ("iris", "colere", 0.49),
         ("tomas", "inquiet", 0.60),
         ("elen", "content", 0.72),
-        ("kael", "colere", 0.84),
+        ("kael", "neutre", 0.84),
         ("nyra", "taquin", 0.96),
         ("ryn", "reflechit", 1.08),
         ("sael", "mefiant", 1.20),
     ])
-
-    julian rire "Bonjour à tous. Julian est enfin parmi vous."
-    julian surpris "Qu'ai-je manqué ? C'était quoi tous ces cris ?"
-
-    nyra raison "Pouah ! Quelle entrée ! Tu ne vas pas me faire croire que tout ça n'était pas préparé !"
-
-    pause 0.6
-
-    julian sourire "Reprenons clairement. Où en sommes-nous ?"
-
-    iris colere "Tu arrives en retard et tu demandes un récapitulatif personnalisé. Pourquoi ça ne m'étonne pas ?"
-
-    julian decu "Tu pourrais résumer pour ton plus ancien allié ici."
-
-    iris sourire "Mon allié ? Tu as tenté de me séduire pendant six mois. En étant assez lourd, je dois bien l'avouer."
-
-    julian sourire "Très bien. JE reconstituerai seul la situation."
-    julian reflexion "Kami a annoncé un vote. À voir vos visages..."
-
-    think "Il regarde patiemment chaque visage, tout en gardant son meilleur angle pour la caméra."
-
-    julian reflexion "La proposition n'est pas manifestement hostile. Vous êtes plusieurs à être convaincus."
-    julian sourire "Laissez-moi deviner... Oui c'est ça ! Une réouverture du commerce !"
-
-    iris intervention "Comment tu as—"
-
-    julian taquin "Julian a une très bonne intuition. Mes prédictions tombent juste 30%% du temps !"
-
-    lysa blase "Pourquoi il me semble avoir déjà entendu ça quelque part...?"
-
-    elias taquin "Bah, c'est pas trop compliqué à comprendre !"
-    elias ecoute "La télé dans les couloirs elle redit aussi ce que Kami dit. C'est chaud de faire genre t'as deviné."
-
-    julian panne "… T'aurais pas pu te taire, hein ?!"
+    julian rire "Bonjour à tous ! Julian est enfin parmi vous. Qu'est-ce que j'ai manqué ?"
+    iris colere "T'es en retard, on a déjà commencé."
+    julian sourire "Laisse-moi deviner... une réouverture du commerce ?"
+    elen surpris "Oh ! Comment t'as su ?!"
+    julian taquin "Un grand esprit sait reconnaître les sujets importants."
+    elias taquin "Un grand esprit qui a entendu l'annonce sur l'écran du couloir, surtout."
+    julian panne "Elias ! Tu pourrais me laisser deux secondes de gloire ?"
+    lysa blase "Deux secondes, ça va encore. Après, on facture."
 
     $ j2_vote_codex_unlocked = True
     think "La tablette vibre dans ma poche. Je la sors. Une notification est notée dessus : Nouveau dossier de vote."
@@ -513,181 +344,54 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     call play_stat_dialogue("d2") from _call_stat_dialogue_d2
 
-    think "Tout le monde sort sa tablette."
-
-    kael reflechit "Ah, la formulation est là."
-
-    elias triste "hein ? Attendez, montrez-moi, j'ai pas ma tablette !"
-
-    kael reflechit "« Ça serait bien qu'on réautorise le commerce comme avant. »"
-    kael neutre "Kami peut encore modifier la façon dont c'est écrit."
-
-    noam inquiet "Attends, elle peut changer le texte ?"
-    noam reflechit "Et demain on devra voter sur sa version ?"
-
-    lysa colere "Ça veut surtout dire que c'est un piège évidemment."
-
-    sael raison "C'est peut-être trop beau pour être vrai. Il faut se méfier de nos certitudes."
-
-    kael neutre "L'amendement vient en théorie de l'un de nous. La volonté est claire en tout cas."
-    kael inquiet "Ça dépend surtout de ce qu'elle va écrire. Un mot peut tout changer."
-
-    mara neutre "Ce qui est risqué c'est de retomber dans le capitalisme qui a causé toutes ces guerres."
-
-    nyra raison "Qu'est-ce que tu veux dire, Mara ?"
-
-    mara triste "Pff. Vous ne voyez pas où ça nous mène ?"
-    mara triste "Si on remet le commerce, on remet l'argent avec. Forcément."
-    mara peur "Et les gens qui ont déjà tout auront encore une longueur d'avance."
-
-    iris colere "Et en quoi c'est problématique, hein ?!"
-    iris colere "Si travailler est le prix pour être libre, où est le problème ?"
-
-    elen triste "Tu vas quand même pas me dire que t'es contente du système actuel, Mara ?"
-
-    mara colere "..."
-    mara triste "Tu travaillais à la Forge, Elias, non ?"
-
-    elias reflechit "Hein ? Oui, pourquoi ? Qu'est-ce que j'ai à voir avec ça ?"
-
-    mara reflechit "Tu étais content de travailler là-bas ? Te faire exploiter pour pas grand-chose."
-
-    elias reflechit "Ça change pas vraiment d’aujourd’hui, à vrai dire."
-
-    mara surpris "Hein ? Tu continues à travailler ? Pourquoi ? Tu y es obligé ?"
-
-    elias sourire "C'est la seule chose que je sais faire. Et même si on est plus payé, je me dis que ce que je fabrique servira toujours à quelqu'un d'autre."
-    elias sourire "Alors oui, c'est pas facile. Ça c'est clair. Mais si je peux être utile..."
-    
-    mara colere "Me dis pas que tu préférais le système d'avant ?"
-
-    elias reflechit "Bah ouais ! Avant, quand il me manquait une pièce, j'allais l'acheter."
-    elias colere "Maintenant, faut remplir trois formulaires et attendre qu'un type décide si j'en ai vraiment besoin. C'est complètement con !"
-
-    nyra taquin "Et vous, qu'est-ce qui vous ferait vraiment peur si les échanges reprenaient ?"
-    nyra raison "Il faut qu'on en parle pour savoir quels sont les points de blocage."
-
-    iris colere "Là, on sait même pas ce qu'on vote ! On pourrait avoir le texte exact, déjà ?"
-
-    mara taquin "Tu sais que t'es sexy quand tu deviens sérieuse ?"
-
-    iris surpris "Hein ?! Je— Ce n'est pas le sujet !"
-
-    mara sourire "Dommage. Continue quand même."
-
-    iris colere "Sérieusement… Et ça veut dire qu’on va devoir causer de tout le reste ensemble. L'enfer."
-
-    kael reflechit "Faudra trancher demain. Qu'on le veuille ou non."
-
-    elen joie "On peut essayer d’être d’accord, non ? Juste une fois. Rien qu’une."
-    elen joie "Pour pas leur filer exactement ce qu’ils attendent de nous. Puis si on peut de nouveau avoir accès à tout ce qu'on veut ! Moi je vote pour !"
-
-    iris colere "Ils veulent du spectacle. Du vrai drama de téléréalité."
-
-    elen content "Franchement… la proposition a pas l’air si pourrie que ça, si ?"
-    elen joie "Je veux dire… y a claiiirement pire, non ?"
-
-    think "Personne ne répond. Personne ne proteste non plus."
-
-    sael raison "Ce serait bien qu'on s'entende. Mais on n'a pas encore le vrai texte."
-
-    tomas hesitation "Je… Je pense que c’est important. Parce que ça concerne nos districts. Directement."
-    tomas inquiet "Et si on peut faire circuler des choses entre nous… Ben… on peut aussi s’entraider, non ?"
-
-    kael surpris "C'est-à-dire ?"
-
-    tomas hesitation "On pourrait déjà faire venir des médicaments. Ou des pièces pour réparer les machines..."
-    tomas surpris "Et pourquoi pas des gens, aussi. À un moment donné."
-
-    noam inquiet "Les gens, c’est autre chose. La proposition ne parle que du commerce."
-
-    tomas hesitation "O-Ouais. Je sais… M-Mais si les échanges deviennent autorisés… alors peut-être que…"
-
-    mara taquin "C’est mignon tout ça, mais qui va surveiller ces petits échanges ?"
-    mara reflechit "Et qui empêchera que tout parte à Nexus ? Les autres, on leur laissera quoi ?"
-
-    tomas hesitation "On n’a pas les détails."
-
-    kael reflechit "Justement. On devra décider sans."
-
-    mara neutre "Décider à l’aveugle, ou presque. J’adore quand on improvise avec nos vies."
-
-    tomas colere "Du coup… on doit se faire confiance. Voilà."
-
-    nyra taquin "On se pose deux minutes ? Qu'est-ce qu'on sait, au juste ?"
-    nyra raison "Dites-moi ce qui vous inquiète chez vous. On verra ensuite."
-
-    mara taquin "T’as de quoi pondre un roman sur tout ce qu’on sait pas ?"
-
-    nyra taquin "Je veux une base."
-
-    kael reflechit "Elle a raison. Sinon on va se bouffer entre nous."
-
-    elen joie "Oh ! Je peux prendre des notes ! J'écris super vite quand je panique."
-    elen content "Et après je peux faire des catégories. Avec des couleurs ! J'ai toujours aimé ça !"
-
-    julian surpris "Adjugé, vendu ! Elen, tu seras ma secrétaire préférée !"
-
-    elen joie "O-Ouais trop bien !"
-
-    julian joie "Il nous faut une méthode. On ne peut pas tourner en rond jusqu'au vote."
-
-    iris surpris "Tu proposes quoi, là, concrètement ? Vas-y, je t’écoute."
-
-    julian sourire "Il faut que chacun note les besoins de ses districts. Demain, nous mettons tout en commun."
-    julian taquin "Il faut nous coordonner pour le débat de demain."
-
-    iris colere "Dire qu’on réfléchit, c’est super facile à balancer."
-    iris desaccord "Le faire vraiment, par contre… c’est une autre paire de manches."
-
-    nyra peur "Moi j'ai une question avant ça. C'est par rapport aux règles."
-    nyra reflechit "Est-ce que quelqu'un votera contre quoi qu'il arrive ? Qu'on ne perde pas du temps pour rien."
-
-    think "Tout le monde se regarde, personne ne parle."
-
-    nyra taquin "Donc, tu pourrais ne pas voter contre, Mara ?"
-
-    mara taquin "Je verrai... Si vous le voulez tant ce changement, au pire je ne voterai pas."
-    mara taquin "Je suis pas une salope non plus."
-
-    sael desaccord "Une voix contre suffit. Ceux qui ne veulent pas se livrer doivent pouvoir garder le silence."
-
-    noam reflechit "Tu pourrais voter contre Sael ?"
-
-    sael reflechit "Je ne sais pas. Là où j'habite, on ne commerçait déjà pas avant Kami. Quel que soit le résultat du vote, ça ne changera rien pour nous."
-    sael inquiet "Si vous avez besoin qu'on vote pour, alors je suivrai ce que décide le groupe."
-
-    ryn colere "Mais tu viens d'où en fait ? Déjà tout à l'heure tu disais ne pas savoir ce que sont les bons de ravitaillement ?"
-
-    sael reflechit "Je viens d'une tribu située au pied du Mont Kensen."
-    sael sourire "Chez nous, les habitudes ont peu changé depuis l'arrivée de Kami."
-    sael sourire "Nous ne faisions pas de commerce, nous ne demandions rien. Tout le monde travaillait constamment."
-    sael joie "Alors quand la divine Ka-"
-
-    ryn colere "DIVINE ?! Mais t'as pété un plomb ou quoi !"
-
-    noam colere "Laisse-la parler au lieu de crier."
-
-    sael sourire "Merci mais j'ai l'habitude de ce genre de réaction. C'est ce à quoi on est habituée quand on est cheffe de tribu."
-
-    elen joie "Ouaah t'étais la cheffe de ton village ?! Mais t'es toute jeune pourtant !"
-
-    sael sourire "On cultive toujours nos champs. Et depuis Kami, les attaques ont cessé."
-    sael reflechit "Avant, on craignait les groupes armés. Depuis Kami, ils ne viennent plus. Pour moi, ça compte."
-
-    elias sourire "Ah ouais... C'est quand même un sacré bordel, votre histoire."
-    elias triste "Au moins, Kami a mis fin à la violence. Alors c'est pas parfait, hein, mais c'est déjà ça."
-
-    mara doute "Bref, pendant que vous perdez votre temps à papoter… Kami nous mate."
-    mara taquin "Elle grave tout : qui parle, qui propose quoi, qui va péter les plombs en premier."
-
-    iris desaccord "Alors on craque pas. Personne ne craquera. OK ?"
-
-    mara neutre "C'est facile à dire. T'as déjà l'air d'être la première à craquer."
-
-    tomas hesitation "Et si quelqu’un vote contre ?"
-
-    noam reflechit "Alors c'est la démocratie. On ne va forcer personne à voter pour. Personne."
+    think "Tout le monde sort sa tablette, sauf Elias, qui fouille ses poches en jurant."
+    elias inquiet "Merde, je l'ai laissée dans ma chambre. Quelqu'un peut me montrer ?"
+    kael reflechit "C'est la même phrase que Kami a lue. Elle n'a pas encore donné sa version définitive."
+    iris colere "Donc on discute d'un truc qu'elle va réécrire à sa sauce ? Génial."
+    nyra raison "On vérifiera qu'elle n'a pas changé le sens du texte."
+    mara colere "Même si elle le garde tel quel, ceux qui ont de l'argent vont pouvoir tout acheter."
+    iris desaccord "Et les autres pourront enfin acheter sans supplier trois administrations !"
+    mara taquin "T'as jamais manqué d'argent, toi ?"
+    iris colere "Bien sûr que si ! Pourquoi tu me demandes ça ?"
+    elen inquiet "Moi je pensais surtout aux fruits... Mais si des gens peuvent plus manger, j'ai pas envie de ça."
+    julian sourire "On n'est pas obligés de choisir entre des fruits et la famine. Il doit bien y avoir un juste milieu !"
+    lysa blase "Et tu vas nous le trouver avant demain, je suppose ?"
+    julian reflexion "Je pourrais essayer, si on m'écoutait..."
+    ryn colere "Moi, je veux savoir si mes voisins de Limen garderont leurs rations. Personne répond !"
+    sael raison "Parce que personne ne sait. La proposition ne dit rien là-dessus."
+    tomas hesitation "Et si on réautorise le commerce, il faut savoir quelles règles restent en place."
+    elias colere "Avant, quand il manquait une pièce à la Forge, je l'achetais. Maintenant je dois attendre qu'un type qui a jamais touché une machine m'autorise à travailler !"
+    mara neutre "Et avant, les patrons payaient bien les ouvriers, peut-être ?"
+    elias reflechit "Bah non ! J'ai pas dit ça. Je veux juste pouvoir réparer sans perdre trois jours."
+    noam inquiet "Vous parlez pas de la même chose. Elias veut des pièces, Mara a peur que tout soit trop cher."
+    iris taquin "Merci Noam, on avait suivi."
+    noam neutre "D'accord, je me tais."
+    nyra neutre "Non, il a raison : on ne sait même pas si le texte permet de nouveaux achats ou supprime quelque chose d'existant."
+    mara taquin "Merci. Pour une fois, je suis pas la seule rabat-joie."
+    sael reflechit "Chez moi, on n'utilisait pas d'argent. On cultivait, on réparait et on s'aidait."
+    ryn surpris "Et c'est où, chez toi ?"
+    sael sourire "Au pied du Mont Kensen."
+    elen joie "Oh, tu vivais dans un village avec une cheffe ?"
+    sael neutre "J'en suis la cheffe."
+    elen surpris "Quoi ?! Mais t'es super jeune !"
+    sael sourire "Et depuis l'arrivée de la divine Ka—"
+    ryn colere "LA DIVINE ?! Tu déconnes ?!"
+    sael desaccord "Non. Depuis qu'elle gouverne, les bandes armées ne viennent plus attaquer nos terres."
+    ryn colere "Et ceux qu'elle exécute, tu les oublies ?"
+    noam determine "Ryn, laisse-la finir !"
+    sael mefiant "J'ai fini. Mais je ne voterai pas en fonction de tes cris."
+    "Ryn repousse sa chaise et se lève. Elias s'écarte pour le laisser passer."
+    elen inquiet "Il est fâché à cause de moi ? Je demandais juste pour le village..."
+    lysa blase "Non, Elen. C'est pas contre toi."
+    kael calme "On devrait faire une pause. On s'engueule et on n'a même pas le texte final."
+    julian sourire "On pourrait réfléchir chacun aux besoins de son district et en parler demain."
+    iris blase "Tu viens d'arriver et tu veux déjà organiser tout le monde."
+    nyra raison "Avant de partir, quelqu'un sait déjà qu'il votera contre ?"
+    mara taquin "Je me déciderai quand on saura sur quoi on vote. Ça te va ?"
+    nyra neutre "C'est ce que je voulais savoir."
+    sael raison "Moi non plus, je ne promets rien. Je ne vais pas voter pour juste parce que vous êtes plus nombreux."
+    noam calme "Au moins demain, on essaiera d'écouter tout le monde."
+    iris fatigue "On peut déjà finir de manger ? Mon assiette est froide."
 
     think "Les chaises raclent. Les plateaux s'éloignent. La réunion se dissout sans véritable conclusion."
     $ unlock_codex_page("commerce_monnaie", with_notification=False)
@@ -695,15 +399,14 @@ label _2_CAFETERIA_POST_ANNONCE:
 
     $ hideGroup()
 
-    think "La matinée finit. La tension reste accrochée aux épaules, aux gestes, aux sourires trop appliqués."
-    think "Mes mains se crispent. Je marche avant de recommencer à chercher une réponse qui n'existe pas."
+    think "Je finis mon repas pendant que Mara et Iris continuent à se chamailler à voix basse. Même après le départ de Ryn, personne ne semble détendu."
 
     stop music fadeout 0.8
     pause 0.6
 
     hide screen day2_quick_vote_notes
 
-    think "Je traverse des couloirs pour changer d'air. Je ne sais pas qui craquera. Je ne sais pas si ce sera moi."
+    think "Je quitte la cafétéria. J'ai besoin de parler à quelqu'un sans que tout le groupe nous écoute."
 
     call START_FREE_TIME("_2_APRES_MIDI") from _call_START_FREE_TIME
 
@@ -752,7 +455,7 @@ label _2_APRES_MIDI_MARA_SAEL:
     mara taquin "T'es toujours aussi rassurante."
     sael neutre "Je ne cherche pas à te rassurer."
 
-    think "Le silence tranche la conversation."
+    think "Mara regarde Sael, qui ne rajoute rien."
 
     mara stress "À plus tard."
     mara doute "… si tout a pas déjà explosé d’ici là."
@@ -774,83 +477,29 @@ label _2_APRES_MIDI_LYSA_ELIAS:
         ("lysa", "triste", 0.25),
     ])
 
-    elias ecoute "Tu devrais parler avec nous. Si tu veux. Faut pas rester seule ici."
-
-    lysa neutre "Tu sais je préfère... Ouais, fin- Je sais..."
-
-    pause 1.0
-
-    elias fatigue "T'as pas beaucoup parlé aujourd'hui. Hier, t'arrêtais pas."
-
-    lysa reflexion "Ouais. J’ai écouté."
-
-    elias neutre "Et ça va, tu as trouvé ça reposant ?"
-
-    lysa taquin "Je pense qu'on aura pas beaucoup l'occasion de se reposer ici..."
-
-    elias ecoute "Non. Mais il va bien falloir survivre."
-
-    think "Je m'approche."
+    elias ecoute "T'as pas dit grand-chose ce matin. Pourtant, hier, tu parlais tout le temps."
+    lysa blase "J'ai écouté. Ça change."
+    elias sourire "Bah, ça te ressemble pas."
+    lysa neutre "Merci, c'est gentil."
+    think "Je les rejoins. Lysa me laisse une place près du mur."
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("noam", "inquiet", 0.13),
         ("lysa", "triste", 0.25),
     ])
-
-
-    noam hesitation "Ça va ?"
-
-    lysa determine "Ça va comme ça peut."
-
-    elias ecoute "On va CLAIREMENT avoir besoin de toi pour le débat."
-
-    lysa opposition "Vous allez surtout parler. Moi, on m’écoutera à moitié."
-
-    noam inquiet "Pourquoi tu penses ça ?"
-
-    lysa reflexion "Tu crois qu'ils nous prennent au sérieux ? On vient d'[codex_dialogue_link('harmonie', 'Harmonie')], je te rappelle !"
-    lysa neutre "C'est notre district qui les fait tous chier avec l'administratif !"
-    lysa colere "Comment tu veux qu'ils nous écoutent ?"
-
-    noam surpris "Je suis pas d'accord avec toi."
-    noam surpris "S'il y a deux représentants de chaque district, c'est qu'il y a une raison."
-
-    lysa triste "Tu veux leur dire quoi ? Qu’on manque déjà de tout ?"
-    lysa blase "Ils le savent."
-
-    noam culpabilite "Tous les districts ont des problèmes, enfin... je crois que—"
-
-    lysa opposition "Justement."
-
-    think "Lysa regarde le sol."
-
-    elias fatigue "T'es pas obligée de parler à la réunion. Mais... On s'en sortirait mieux si tu nous aidais."
-
-    lysa determine "Bof. J'ai pas envie, mais si je ne parle pas… On parlera pour moi."
-
-    noam hesitation "Tu as peur ?"
-
-    lysa peur "Ouais. Mais toi aussi."
-
-    noam panne "Ouais. C'est peut-être un signe montrant qu'on est sain d'esprit ?"
-
-    lysa blase "Alors n’essaie pas de faire le gars solide. Ça se voit quand ça sonne faux."
-
-    noam culpabilite "Je fais ce que je peux."
-
-    lysa determine "Je viendrai. On tirera ça au clair."
-    lysa blase "Mais j’ai des réserves sur ce vote…"
-    lysa reflexion "Si on manque déjà de tout là-bas… autoriser les échanges, le commerce…"
-    lysa fatigue "Ça risque pas d’empirer les choses ?"
-
-    noam raison "C'est possible. Pour tout te dire, je ne sais pas. Enfin, pas encore."
-
-    lysa blase "J’ai pas envie de briser leurs espoirs… mais tu as compris."
+    noam inquiet "T'es préoccupée par le vote ?"
+    lysa reflexion "Ouais. Tout le monde parle de son district, mais quand on parle d'Harmonie, on passe pour les bureaucrates qui font chier tout le monde."
+    noam raison "On pourra leur dire ce qui nous manque."
+    lysa blase "Ils le savent. Si les marchandises sont vendues au plus offrant, on sera encore les derniers servis."
+    elias ecoute "Ah ouais. Moi, je pensais surtout aux pièces détachées."
+    lysa taquin "C'est pour ça que je t'aime bien. Toi, tu penses d'abord aux boulons."
+    elias rire "Au moins, les boulons, ça répond pas !"
+    noam sourire "Et tu vas le dire demain ?"
+    lysa determine "Je vais essayer. J'ai pas envie qu'on décide à ma place."
 
     call day2_collect_vote_argument("approvisionnement") from _call_day2_collect_vote_argument_approvisionnement
 
-    tuto "Vous venez de gagner un argument. Une information majeure qui pourra être utilisée au cours du débat."
-    tuto "Vous pouvez consulter vos arguments sur votre tablette dans l'onglet Dossier de vote."
+    think "Je note l'inquiétude de Lysa dans mon dossier de vote."
 
     $ hideGroup()
     return
@@ -866,22 +515,16 @@ label _2_APRES_MIDI_ELEN:
         ("elen", "content", 0.68),
     ])
 
-    noam "Tu fais quoi avec toute cette paperasse ?"
-
-    elen content "J'essaie de demander une dérogation au distributeur."
-    elen joie "J'ai trouvé une liste de nourriture originale ! Des vrais fruits, des épices, même des trucs qui croustillent !"
-    elen reflexion "Et il y a aussi des objets utiles. Des outils, du matériel de couture, des pièces pour réparer ce qu'on casse."
-
-    noam surpris "Tu plaisantes."
-
-    elen joie "J'aimerais ! Pour obtenir un seul truc, il y a des formulaires beaucoup trop loooongs !"
-    elen inquiet "Il faut expliquer pourquoi la ration normale ne suffit pas, à quoi servira l'objet, pendant combien de temps et qui va le garder."
-    elen reflexion "Même pour un ingrédient un peu original ou un outil tout bête, la dérogation est plus compliquée que la demande."
+    noam surpris "Tu fais quoi avec tous ces papiers ?"
+    elen content "Je voulais juste commander des fraises au distributeur. Ils ont une liste de trucs trop bien !"
+    noam neutre "Et tout ça, c'est pour des fraises ?"
+    elen inquiet "Oui ! Je dois expliquer pourquoi la ration normale me suffit pas, combien j'en veux et qui va les manger."
+    noam taquin "Elles seront pourries avant qu'on t'autorise à les prendre."
+    elen desaccord "Mais oui ! Et c'est pareil pour les outils. J'ai regardé au cas où je casse un truc dans ma chambre."
+    noam raison "Même quand c'est disponible, tu dois remplir toute la demande ?"
+    elen joie "Voilà ! Tu comprends ! Tu veux signer comme témoin pour mes fraises ?"
+    noam sourire "Euh... peut-être plus tard."
     $ unlock_codex_page("derogations_administratives", with_notification=False)
-
-    noam reflexion "Donc le système prévoit des exceptions que presque personne ne peut obtenir."
-
-    elen content "Voilà ! Tu comprends vite quand tu n'as pas le formulaire sous les yeux."
 
     call day2_collect_vote_argument("derogations_complexes") from _call_day2_collect_vote_argument_derogations_complexes
 
@@ -899,20 +542,16 @@ label _2_APRES_MIDI_SAEL:
         ("sael", "raison", 0.68),
     ])
 
-    noam "Ce que tu disais ce matin… l'arrivée de Kami n'a vraiment rien changé dans ton village ?"
-
-    sael raison "Presque rien. Nous travaillions déjà tous avant elle."
-    sael neutre "Les uns cultivent. Les autres réparent, chassent, soignent ou gardent les plus jeunes."
-    sael sourire "Et quand quelqu'un ne peut plus tenir, le village l'aide. Personne n'est abandonné."
-
-    noam reflexion "Ça ressemble à une solidarité totale."
-
-    sael determine "Une solidarité exigeante. Chacun donne ce qu'il peut."
-    sael colere "Mais il n'y a pas de place pour les fainéants. Refuser d'aider alors qu'on en est capable, c'est faire porter son poids aux autres."
-
-    noam raison "Donc pour toi, travailler donne aussi le droit de recevoir."
-
-    sael raison "Chez nous, tout le monde aide. On ne se demande pas combien ça rapporte."
+    noam neutre "Tu disais que chez toi, vous vous débrouilliez sans commerce. Ça marche vraiment ?"
+    sael raison "On mange ce qu'on produit. Chacun s'occupe de quelque chose : les champs, les réparations, les enfants."
+    noam reflexion "Et si quelqu'un ne peut pas travailler ?"
+    sael neutre "On l'aide. Pourquoi voudrais-tu qu'on le laisse tomber ?"
+    noam sourire "Non, je demandais."
+    sael determine "Mais quelqu'un qui peut aider et refuse de le faire, je vais le chercher moi-même."
+    noam taquin "Tu dois être convaincante."
+    sael sourire "En général, oui."
+    noam raison "Je comprends pourquoi tu ne t'inquiètes pas des mêmes choses que Mara."
+    sael mefiant "Je m'inquiète aussi. Je veux juste qu'on ne nous impose pas la façon de vivre des autres."
 
     call day2_collect_vote_argument("valeur_travail") from _call_day2_collect_vote_argument_valeur_travail
 
@@ -933,27 +572,14 @@ label _2_SALLE_OBSERVATION:
         ("kael", "neutre", 0.84),
     ])
 
-    noam neutre "Kael. Tu sais où on est ? Enfin... précisément."
-
-    kael neutre "Non."
-    kael reflechit "Si ce n'est que c'est du matériel d'Orbite."
-
-    noam raison "Donc on est bien proches de chez toi."
-
-    kael doute "Orbite est immense. Proche ne veut rien dire ici."
-    kael jaloux "Mais oui. Nous sommes probablement dans mon district."
-
-    noam inquiet "Ça te rassure ?"
-
-    kael colere "Non. Ce lieu prouve que tout était prévu."
-
-    noam inquiet "Tu crois qu’ils ont prévu l'issue du vote aussi ?"
-
-    kael mefiant "Le texte, peut-être pas. Nos réactions, oui."
-
-    noam raison "Il me semble qu’on n’est pas encore divisés."
-
-    kael colere "Nous le sommes. Sinon, on aurait tous discuté hier avant de déposer nos amendements."
+    noam neutre "Kael, tu sais où on est exactement ?"
+    kael neutre "Non. Mais je reconnais le matériel d'Orbite."
+    noam raison "Tu dois te sentir chez toi, alors."
+    kael doute "Pas vraiment. Cette station a été préparée à l'avance et personne ne m'en a parlé."
+    noam inquiet "Tu crois qu'elle avait prévu nos amendements aussi ?"
+    kael reflechit "Nos textes, non. Nos réactions, peut-être."
+    noam taquin "Tu vas me rendre parano."
+    kael calme "Désolé. Ça fait beaucoup de surprises en deux jours."
 
     pause 0.6
 
@@ -983,49 +609,31 @@ label _2_SALLE_OBSERVATION:
         ("kael", "neutre", 0.84),
     ])
 
-    noam inquiet "Quatorze heures. On y sera vite."
-
-    kael mefiant "C’est clair."
-
-    noam inquiet "Tu penses qu'on peut réussir à valider ça ?"
-
-    kael raison "Personne n'est ouvertement contre. Donc je ne sais pas."
-    kael inquiet "Moi-même, je ne sais pas quoi faire..."
-    
-    noam reflexion "Pourquoi ça ? Chez toi, sur Orbite, comment vous gérez les approvisionnements ?"
-
-    kael doute "On reçoit suffisamment de stocks pour assurer les rations quotidiennes. C'est un peu comme ici, on a une dizaine de jours d'attente entre chaque livraison."
-    kael sourire "Puis on a quelques serres qui produisent quelques aliments, mais on dépend beaucoup de l'extérieur."
-
-    noam reflexion "Comme partout, alors. Enfin, je crois."
-
+    noam inquiet "Quatorze heures. Ça nous laisse pas beaucoup de temps."
+    kael mefiant "Non, surtout si personne ne veut changer d'avis."
+    noam inquiet "Et toi, tu pourrais voter contre ?"
+    kael raison "Je ne sais pas. Orbite dépend de ses livraisons pour presque tout. Acheter ce qu'il nous manque, ça m'intéresse."
+    kael reflechit "Mais plus on fait venir de marchandises, plus il y a de contrôles et de risques d'erreur."
+    noam surpris "Je vois pas où tu veux en venir."
+    kael inquiet "Les sanctions de Kami. Sur Terre, vous avez peur pour la personne qu'elle vise. Sur Orbite, le tir peut aussi traverser la coque d'un module."
+    noam peur "Attends, l'air peut s'échapper ?!"
+    kael triste "Oui. On a des masques partout, mais il suffit d'une brèche qu'on ne peut pas fermer pour que tout le monde soit en danger."
+    noam colere "Mais pourquoi Kami tire si elle sait que ça peut tuer des innocents ?!"
+    kael fatigue "Elle répond que c'est à nous d'éviter les infractions."
+    noam inquiet "T'as déjà vu ça arriver ?"
+    kael triste "J'ai aidé à fermer un compartiment après une dépressurisation. Deux personnes étaient encore derrière la porte."
+    noam peur "Elles ont pu sortir ?"
+    kael triste "Non. Et si on avait attendu, on aurait perdu tout le module."
+    "Kael s'arrête de parler et regarde dehors. Je ne sais pas quoi lui répondre."
+    noam triste "Je suis désolé. Je savais pas."
+    kael calme "Je sais. Mais demain, pense aussi aux gens qui vivent ici."
     call day2_collect_vote_argument("rationnement") from _call_day2_collect_vote_argument_rationnement
-
-    noam neutre "Le commerce pourrait améliorer ça. Des magasins, du libre accès... peut-être."
-
-    kael raison "Peut-être, mais-"
-    kael doute "Plus il y a de règles, plus quelqu'un risque de se faire tirer dessus."
-
-    noam neutre "Il suffit de respecter les règles, non ? Enfin... en théorie."
-
-    kael colere "Pas sur Orbite. On vit dans des modules pressurisés."
-    kael inquiet "Si une personne commet une infraction, le laser l'élimine, et il perce la coque du vaisseau."
-    kael inquiet "Tout le module perd son oxygène."
-
-    noam triste "Hein ?! Comment vous faites alors ?!"
-
-    kael inquiet "On a des masques partout. Mais quand la coque est percée, on n'a pas toujours le temps de les attraper."
-
-    $ hideGroup()
-
-    kael triste "Excuse-moi. J'ai besoin de vérifier quelque chose."
-
     call day2_collect_vote_argument("orbite") from _call_day2_collect_vote_argument_orbite
+    kael fatigue "Je dois aller vérifier les relevés des consoles. À plus tard."
+    $ hideGroup()
+    think "Je reste quelques minutes devant la vitre. Deux personnes sont mortes parce que quelqu'un d'autre avait enfreint une règle. J'ai du mal à me sortir ça de la tête."
+    think "En passant devant le gymnase, j'entends Elias compter à voix haute et Iris l'engueuler. Je décide d'entrer pour faire autre chose que ruminer."
 
-    think "Je reste face au vide et compte mes respirations."
-    think "Juliette chantait faux pour chasser les cauchemars. Là, même ses chansons niaises me manquent."
-
-    pause 0.6
     jump _2_GYMNASE
 
 # Durée : 2m15
@@ -1089,11 +697,9 @@ label _2_GYMNASE:
 
     elias ecoute "Encore deux séries. Après tu peux t'arrêter."
 
-    tuto "Durant vos temps libres, il sera possible de faire certaines actions qui augmenteront vos statistiques personnelles."
-    tuto "Faire du sport est l'une d'entre elles."
-    tuto "En faisant du sport, vous lancerez un minijeu qui, s’il est réussi, aura une chance d'augmenter votre statistique Physique."
-    tuto "Certaines actions ou certains choix seront bloqués ou débloqués selon ces statistiques secondaires."
-    tuto "De plus, pratiquer ce genre d'activité permet parfois de charger des évènements, seuls ou avec d'autres personnages."
+    elias ecoute "Allez, encore deux et tu poses la barre. Je suis là si tu lâches."
+    noam inquiet "Tu m'avais promis un truc simple !"
+    iris taquin "C'est trop compliqué ? Je vais chercher les petits haltères roses."
 
     noam reflexion "Un… Deux… Allez Noam !"
 
@@ -1113,17 +719,12 @@ label _2_GYMNASE:
 
     pause 0.4
 
-    noam reflexion "Donc… Si je ne fais rien…"
-
-    elias neutre "Tu vas stagner. Et plus tard, ton corps te le fait payer."
-
-    think "Mes mains tremblent encore."
-
-    noam neutre "Je reviendrai."
-
-    iris sourire "Bonne idée."
-
-    elias ecoute "Je serai là. Mais la prochaine fois, on commence sans que tu trembles avant même de toucher la barre, hein ?"
+    noam neutre "J'ai les bras complètement morts."
+    elias joie "C'est normal. Tu recommenceras quand t'auras récupéré."
+    iris sourire "Et évite de te plaindre toute la soirée. On t'a pas forcé."
+    noam sourire "Pas forcé ? Vous avez même pas attendu ma réponse !"
+    elias rire "T'es toujours vivant. C'est déjà une bonne séance, non ?"
+    noam taquin "Je vais surtout essayer de tenir ma fourchette ce soir."
 
     $ hideGroup()
 
@@ -1154,35 +755,23 @@ label _2_CAFETERIA_SOIR:
 
     think "Lorsque j'arrive à la cafétéria, Nyra est en pleine discussion sur sa vie à Orbite."
 
-    nyra sourire "À Orbite, on mangeait en décalé. Quel rythme vous aviez, à [codex_dialogue_link('harmonie', 'Harmonie')] ?"
-    nyra sourire "Là-haut, on mangeait souvent sans parler. Ici, c'est presque impossible."
-
-    noam hesitation "Tu regrettes ?"
-
-    kael neutre "La routine me manque. Pas l'endroit."
-    kael neutre "Disons que c'est plus mes proches qui me manquent."
-
-    elen taquin "Orbite, c'était comment ? On entend vraiiiment n'importe quoi dessus !"
-    elen content "Vous dormez en flottant ? Et les repas, ils se baladent ? Imagine une soupe en apesanteur !"
-
-    kael neutre "On flotte dans certaines sections. La vaisselle reste attachée."
-
-    tomas hesitation "Et… euh… vous aviez aussi des médiateurs, chez vous ?"
-    tomas inquiet "Des… assemblées, ou un truc comme ça ? C-Comment vous faisiez pour prendre les décisions ?"
-
-    kael calme "On suit les consignes. Si on improvise, ça peut très mal finir."
-
-    tomas inquiet "Et si on fait une erreur ...?"
-
-    kael triste "Une erreur sur Orbite tue. Alors on évite d'en faire au maximum."
-
-    elen triste "Je me demande si nos familles nous regardent en ce—"
-    elen surpris "Oh ! Vous avez goûté la purée ? Elle a un goût différent ce soir, non ? Plus salé, ou moins jaune, ou—"
-
-    kael reflechit "On ne vote pas uniquement pour eux. Mais quand même..."
-
-    elen triste "Je déteste ça."
-    elen surpris "Enfin, c'est peut-être la purée. Vous trouvez pas qu'elle est bizarre ?"
+    nyra sourire "À Orbite, les repas étaient plus calmes. Vous parlez toujours autant à Harmonie ?"
+    noam sourire "Pas à ce point. Là, ça fait deux jours qu'on est enfermés ensemble."
+    elen joie "Moi je trouve ça sympa ! Enfin, quand personne ne crie."
+    kael neutre "Chez nous, il fallait surtout manger vite pour laisser la place à l'équipe suivante."
+    elen surpris "Vous flottez pendant les repas ? Genre la soupe, elle vole partout ?"
+    kael sourire "Non, Elen. On a une gravité artificielle et on attache les plateaux quand il le faut."
+    elen content "Ah, dommage ! J'aurais adoré essayer."
+    tomas hesitation "C'est bizarre de se dire qu'on pourrait changer votre vie demain, alors que je connais presque rien d'Orbite."
+    nyra neutre "On peut t'en parler, mais pas tout expliquer en une soirée."
+    noam inquiet "Kael m'a raconté ce qui arrive quand un tir perce un module. J'arrête pas d'y penser."
+    kael fatigue "Je voulais pas te gâcher le dîner."
+    noam neutre "C'est pas toi qui l'as gâché."
+    elen inquiet "Et nos familles, elles nous regardent peut-être maintenant..."
+    elen joie "D'ailleurs, vous avez goûté la purée ? Ils ont mis quelque chose de différent dedans !"
+    nyra taquin "Je crois surtout qu'on l'a laissée refroidir."
+    tomas sourire "Pour une fois, voilà un sujet sur lequel on peut être tous d'accord."
+    think "Elen se met à comparer les assiettes, pendant que Kael lui explique comment ils préparent la nourriture sur Orbite."
 
     think "D'autres se joignent à nous. Questions, souvenirs, comparaisons puis la fatigue finit par dissoudre le débat."
 
@@ -1204,7 +793,7 @@ label _2_CAFETERIA_SOIR:
 
     scene bg_cg011 at adaptive_fullscreen with fade
 
-    think "L'eau chaude efface le bruit de mes pensées."
+    think "Je reste sous la douche plus longtemps que prévu. Je repense à ce que Kael m'a raconté."
 
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
 
@@ -1212,7 +801,7 @@ label _2_CAFETERIA_SOIR:
     think "Je me sèche et tombe sur le lit."
     
     scene bg_cg012 at adaptive_fullscreen with fade
-    think "Demain sera dense. À quatorze heures, on saura si changer les choses est réellement possible."
+    think "Demain à quatorze heures, on vote. J'espère qu'on arrivera au moins à s'écouter."
 
     $ blink()
 
