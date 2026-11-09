@@ -18,103 +18,33 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ current_period = "Matin"
     $ cafeteria_food_level = "low"
 
-    pause 1.0
-
     $ blink()
-
-    think "J'ouvre les yeux après une longue nuit de sommeil."
-    think "J'ai enfin pu dormir convenablement. Peut-être parce que je sais déjà ce que cette journée nous réserve."
-    think "Finalement, ça ne sert à rien de se prendre la tête pour un vote déjà perdu d'avance."
+    think "Je me réveille avant l'annonce de Kami. Aujourd'hui, on doit voter sur l'ouverture des frontières, et j'ai encore en tête ce que Sael m'a raconté."
+    think "Elle a clairement dit qu'elle voterait contre. Je ne sais pas si j'aurais fait le même choix à sa place, mais je comprends mieux pourquoi elle refuse."
+    "J'enfile mes vêtements et je vérifie l'heure sur ma tablette."
 
     play sound sfx_announce
-
-    pause 1.0
-
+    pause 0.5
     show screen kami_broadcast_ui
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    pause 0.4
-
-    kami "Eh bien bonjouur à tous ! Aujourd'hui est le jour que vous attendez tant ! C'est jour de vote !"
-
+    kami "Booooonjour, tout le monde ! Aujourd'hui, c'est votre deuxième vote. Vous devez commencer à connaître la procédure."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Le vote sur la libre circulation entre districts aura lieu aujourd'hui à qu-quatorze heure, dans le conclave."
-
-    pause 0.8
-    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    pause 0.8
-
+    kami "Rendez-vous au Conclave à quatorze heures pour vous prononcer sur la circulation entre les districts."
+    "Sa voix se coupe très brièvement au milieu de la phrase. L'écran reste figé un instant, puis l'animation reprend."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais vous commencez déjà à avoir l'habitude de cette petite routine, n-n-'est-ce pas ?."
-
-    "La voix grésille, elle est étrange. Presque comme modifiée."
-
-    scene bg_diffusion_professeur at adaptive_fullscreen
-    with vpunch
-
-    pause 0.1
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-
-    kami "Votre présence est-est... Recommandée."
-    pause 2.0
-
-    scene bg_diffusion_triste at adaptive_fullscreen
-    with dissolve
-
-    kami "Vous avez l'air fatigués. Enfin... J'imagine."
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-    with dissolve
-
-    kami "Vous me semblez, bi-bien moins intéréssant que ces derniers jours.."
-    kami "C'est très contrariant."
-
-    pause 0.4
-
-    scene bg_diffusion_einstein at adaptive_fullscreen
-    with hpunch
-
-    pause 0.1
-
-    scene bg_diffusion_colere at adaptive_fullscreen
-
-    kami "Les jouets se cassent toujours plus vite une fois qu'on commence à jouer sérieusement avec eux."
-
+    kami "Vous pourrez discuter avant, bien sûr. Je vous laisse une dernière occasion de... de..."
+    pause 0.7
+    kami "De vous mettre d'accord. Voilà."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "La cafétéria est ouverte. Profitez-en, la prochaine livraison arrivera demain matin."
     scene bg_chambre at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
-
-    pause 0.8
-
-    think "L'écran s'éteint rapidement. Sans l'éclat de rire désormais habituel de Kami."
-    think "Qu'est-ce qui a bien pu se passer ? Elle n'était pas comme d'habitude..."
-
-    noam "C'est quoi ce bordel, encore..."
-
-    pause 0.4
-
-    think "Kami simule tout : joie, tendresse, colère, même ses silences. Mais... Pas là. Du moins j'en ai pas eu l'impression."
-
-    $ _j601_reveil_trace_score = 0
-
-    call screen trace_qte(path_type="s_curve", time_limit=4.2, wait_time=0.25, tolerance=78, max_errors=4, anchor_x=960, anchor_y=650, start_radius=120)
-    if _return["success"]:
-        $ _j601_reveil_trace_score = 1
-
-    think "Je me lève. Mes jambes répondent avec un léger retard."
-
-    pause 0.4
-
-    think "Ma veste est par terre, beaucoup trop loin. Je la ramasse, l'enfile et gagne la porte."
-
-    if _j601_reveil_trace_score >= 1:
-        think "Je me relève rapidement. Je n'ai pas vraiment envie d'aller à la cafétéria."
-    else:
-        think "Mes jambes sont encore endormies. J'ai franchement la flemme de me lever."
-
-    think "Mais bon, faut y aller. C'est tout."
+    play music "music/bgm_quiet_routine.mp3" fadein 1.0
+    think "Je reste un moment à regarder l'écran éteint. Kami a déjà fait semblant de buguer pour nous provoquer, mais cette fois, elle n'a même pas essayé d'en rire."
+    think "Je vais voir si les autres ont remarqué la même chose."
+    "Je ramasse ma veste sur la chaise et je quitte la chambre."
 
     $ current_scene_active = "_6_0_1_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
