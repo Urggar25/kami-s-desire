@@ -482,85 +482,42 @@ label _6_0_1_FIN_JOURNEE:
         ("kael", "fatigue"),
         ("iris", "fatigue"),
         ("tomas", "inquiet"),
-        ("sael", "fatigue"),
     ])
-
-    elen triste "Waaa, vraiment trop dég de ce qui s'est passé !"
-
-    lysa blase "Ouais. C'était vraiment étrange ce qui s'est passé."
-    lysa colere "J'espère juste qu'elle pètera pas un câble demain."
-
-    iris blase "Ils voulaient du changement ? Deux votes, deux échecs."
-    iris colere "Franchement, qu'est-ce que vont dire les gens ?"
-
-    mara colere "On en a rien à foutre de l'avis des gens."
-    mara taquin "T'as vraiment cru que leurs avis m'intéressent."
-
-    tomas triste "Franchement, je-je crois bien qu'on va jamais réussir à faire passer un amendement."
-
-    elias colere "On sert vraiment à rien..."
-
-    iris triste "Je veux prendre une douche."
-    iris colere "Et j'en ai marre qu'elle décide tout pour nous ! Qu'elle garde son cerveau de génie, mais qu'elle nous foute la paix deux minutes !"
-
-    kael "Navré hein, mais ça ça sera pas demain la veille."
+    elen inquiet "Vous croyez qu'elle va recommencer à parler normalement demain ? Parce que je dois dire que ça m'a vraiment fait peur."
+    iris reflechit "J'aimerais bien savoir ce qui lui arrive. Elle est insupportable d'habitude, mais au moins on sait à quoi s'attendre."
+    mara agace "Moi, je veux surtout savoir si on peut faire quelque chose si ses systèmes tombent en panne. On va pas attendre tranquillement qu'elle nous annonce une catastrophe."
+    kael reflechit "Je vais vérifier les messages techniques qu'on a reçus. Et je vais regarder ce qui s'est passé dans l'observatoire hier, même si je doute que les deux soient liés."
+    lysa blase "Tu penses vraiment qu'elle va te laisser accéder à ses systèmes ?"
+    kael calme "Probablement pas. Mais je peux au moins examiner ceux de la station."
+    tomas inquiet "Si vous trouvez quelque chose, vous nous le direz, hein ?"
+    iris sourire "Évidemment, Tomas. On va pas garder ça pour organiser une petite surprise."
+    "Les autres se séparent peu à peu. Elen propose à ceux qui le souhaitent de passer à la salle de repos, mais je préfère rentrer."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_275
     scene bg_dortoir at adaptive_fullscreen with dissolve
-
     $ showGroup([("julian", "decu", 0.25), ("elias", "fatigue", 0.55), ("ryn", "colere", 0.85)])
-
-    julian triste "On va vraiment faire comme si rien ne s'était passé ?"
-    julian colere "Remarquable stratégie collective. Si on continue comme ça, on échouera tous les trois jours."
-
-    ryn colere "Fais pas comme si t'en avais quelque chose à foutre."
-
-    elias triste "Arrêtez. Vous deux."
-    elias colere "On n'est pas des gamins. Arrêtez."
-    elias neutre "Ne vous battez pas ici."
-
-    julian "Où alors ?"
-
-    noam colere "Bon j'ai pas de temps pour vos chamailleries."
-    noam triste "Bonne nuit, et faites moins de bruit."
+    julian decu "Ryn, je sais que t'es déçu. Mais tu pouvais pas vraiment espérer que Sael change d'avis au dernier moment."
+    ryn colere "Julian, pas maintenant. S'il te plaît."
+    julian neutre "Je voulais juste..."
+    elias fatigue "Laisse-le, Julian. On a tous eu une journée assez compliquée."
+    julian decu "Bon, d'accord. Je vais pas insister."
+    "Ryn repart vers sa chambre. Julian hésite à le suivre, puis renonce. Elias me fait un signe avant de rejoindre Kael."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_276
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
-
-    think "La porte de ma chambre se referme. Le calme revient. Il m'avait manqué."
-    think "J'ai voté. Ils ont voté. Kami a déliré toute la journée…"
-
-    think "Je laisse tomber ma veste et reste debout sans raison."
-    think "Qu'est-ce qui s'est passé ?"
-
-    think "Pourquoi la machine qui dirige le monde s'est-elle mise à dérailler ?"
-    think "Est-ce que ça aurait un rapport avec l'incident d'hier ? Elias aurait-il endommagé quelque chose dont Kami dépend ?"
-
-    noam "Non. Impossible... Ce serait beaucoup trop simple."
-
-    think "Rien n'avait de sens dans ce qu'elle disait..."
-    think "Un lapsus. Une menace. Un bug."
-
-    think "Lapsus, menace ou panne. Trois réponses, aucune utile."
-
-    think "Quelque chose a changé."
-    think "Je l'ai pensé ce matin. Maintenant, ce n'est plus qu'une impression."
-
+    "Je m'assieds sur mon lit en repensant à ce qu'on a vu aujourd'hui."
+    think "Kami a perdu le contrôle de ses transmissions pendant plusieurs minutes. Elle dit que tout fonctionne normalement, mais je ne l'ai jamais vue aussi pressée de terminer une réunion."
+    think "Et puis il y a eu cet incident dans la salle d'observation hier. Je ne sais pas si ça a un rapport, et ce serait absurde d'en être certain sans aucune preuve."
+    "Je consulte une dernière fois ma tablette. Le résultat du vote s'affiche toujours, accompagné d'un message confirmant que les frontières restent fermées."
+    think "Je pense aux familles qui attendaient devant les postes de contrôle. Demain, elles sauront que rien n'a changé."
+    "Je pose la tablette, éteins la lumière et me couche."
+    pause 0.5
     play sound "sfx/glitch_light.mp3"
-
-    think "L'écran mural clignote une fois. Je me retourne. Il n'y a rien."
-    think "Je passe de l'eau froide sur mon visage. Pas assez froide. Le miroir me rend celui du matin, un peu plus fatigué."
-
-    think "Je retourne au lit sans me changer complètement."
-
-    think "Demain, ça ira mieux."
-    noam "Mmhh, si seulement c'était possible..."
-
-    think "Tant pis."
-    think "Mes paupières deviennent lourdes. Derrière le silence, très loin ou très près, la voix de Kami résonne dans ma tête."
-
+    "L'écran mural s'allume une seconde. Je me redresse, mais il est déjà éteint."
+    think "Il n'y a eu ni annonce ni message. Peut-être que ce n'était qu'un problème d'affichage, mais je n'arrive pas à me rendormir tout de suite."
     $ blink()
+    "Je finis par fermer les yeux."
 
     $ kami_grant_chapter_2_reward()
 
