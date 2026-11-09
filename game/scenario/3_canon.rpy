@@ -726,16 +726,13 @@ label _3_PAUSE_CHAMBRE:
         ("nyra", "neutre", 0.60),
     ])
 
-    nyra stress "Julian fait le tour des indécis. Un par un."
-
-    noam "Attends. Qu'est-ce qu'il fait, exactement ?"
-
-    nyra colere "Il est passé voir Tomas, puis d'autres. Il parle surtout de lui, maintenant."
-    nyra triste "Ça va finir par agacer tout le monde. Et on a besoin de leurs voix."
-
-    noam "Il est où ?"
-
-    nyra "Dans la salle de repos. Encore."
+    nyra stress "Noam, viens. Julian est avec Tomas dans la salle de repos, et ça se passe vraiment mal."
+    noam inquiet "Mal comment ? Ils se disputent ?"
+    nyra colere "Julian lui demande de promettre qu'il votera pour et surtout qu'il le soutiendra devant les autres. Tomas a essayé de partir, mais il ne le lâche pas."
+    noam colere "Il est sérieux ? Mais pourquoi il s'acharne sur Tomas ?"
+    nyra stress "Parce qu'il sait que Tomas a du mal à dire non. S'il continue, Tomas risque de voter contre juste pour qu'on lui fiche la paix."
+    noam determine "Bon, on y va."
+    nyra neutre "Et essaie de ne pas t'engueuler avec Julian. Si vous vous mettez tous les deux contre lui, on aura rien arrangé."
 
     stop music fadeout 0.5
     play music "music/bgm_world_decline.mp3" fadein 0.6
@@ -744,13 +741,11 @@ label _3_PAUSE_CHAMBRE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_163
     scene couloir_dortoir at adaptive_fullscreen, day3_run_shake with fade
 
-    think "On se met à courir. La salle de repos n'est pas loin, par chance."
+    think "On part immédiatement. Nyra a reçu un message de Tomas qui lui demandait de venir."
 
     play sound sfx_run
 
-    think "Mes semelles claquent sur le métal. Nyra file devant sans se retourner."
-    "Les néons défilent. Les caméras pivotent avec nous, patientes."
-    think "Encore un joli spectacle qu'on offre au monde entier."
+    think "Nyra court devant moi. J’ai du mal à la suivre dans les virages, mais je ne veux pas laisser Tomas seul avec Julian plus longtemps."
 
     play sound sfx_run
 
@@ -799,82 +794,56 @@ label _3_PAUSE_CHAMBRE:
     ])
 
     if day3_corridor_success >= 2:
-        think "On est arrivés vite. Julian vient à peine de commencer son numéro."
-
-        julian sourire "—et si JE prends la parole en premier, on y arrivera plus vite."
-        julian sourire "Il faut un cap. Quelqu'un en qui les gens se reconnaissent."
-
-        tomas hesitation "N-Ne compte pas sur… j-je…"
-
-        think "Tomas hésite encore, mais il tient debout. On est arrivés à temps."
+        think "On arrive assez vite pour entendre Tomas demander à Julian de le laisser partir."
+        tomas inquiet "Je t'ai dit que je voulais réfléchir tout seul. Pourquoi tu continues ?"
+        julian sourire "Parce que le vote est dans une heure et que si tu attends trop, tu risques de prendre une décision sur un coup de tête."
     else:
-        think "On a traîné. À voir la tête de Tomas, Julian le travaille au corps depuis un moment."
-
-        julian rire "…et voilà pourquoi c'est TOI qu'il faut, Tomas. Répète-le : « je soutiens le porteur du vote »."
-
-        tomas peur "J-Je… oui… enfin, si tu crois que c'est mieux…"
-
-        julian sourire "Évidemment que c'est mieux. Tu vois ? On se comprend."
-
-        think "Il l'a essoré. Tomas n'ose même plus finir ses phrases. J'aurais dû courir plus vite."
-
-    julian rire "Tomas, réfléchis. Si on se présente ensemble, les autres écouteront."
-
-    tomas inquiet "O-Ouais, sans doute…"
-
-    think "Tomas cherche ses mots. Julian ne lui laisse même pas le temps de répondre. Je m'approche."
+        think "Tomas est coincé entre une table et Julian. Il tient sa tablette contre lui, très énervé."
+        julian rire "Tomas, dis-moi juste que tu me soutiens et on en finit. Tu n'as même pas de meilleure idée !"
+        tomas peur "Mais j'en sais rien ! Ça fait dix minutes que je te le dis !"
+    julian sourire "Allez. Tu viens avec moi au Conclave, tu expliques aux autres que tu es pour, et après je te laisse tranquille."
+    tomas colere "Mais j'ai pas dit que j'étais pour !"
+    "Julian se retourne vers nous. Tomas en profite pour s'éloigner de lui."
 
     call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
 
-    noam determine "Julian, attends. Qu'est-ce que tu racontes à Tomas ?"
-
-    julian sourire "Ah. Noam. Il fallait bien que tu débarques."
-
-    noam hesitation "Je veux aussi que ça passe. Mais là, tu parles plus de toi que du texte."
-    julian reflexion "Et toi, tu fais quoi pour convaincre les autres ? Tu attends que tout le monde se mette d'accord par miracle ?"
-    noam reflexion "Non, mais..."
-    julian sourire "Alors laisse-moi essayer. Tomas avait des questions, je lui répondais."
-    tomas hesitation "E-Enfin... Il me demandait surtout de le soutenir lui."
-    noam raison "Voilà. C'est ça le problème. Tu crois pas que ça va finir par les braquer ?"
-    julian hesitation "Peut-être. Mais au moins, je fais quelque chose. Et si personne se bouge, ce vote est mort."
-
-    julian taquin "Tu m'en veux parce que je parle trop fort, Noam ? Ça, j'avais remarqué."
-    julian reflexion "Mais je suis d'accord sur un point : je dois mieux parler du texte."
-
-    noam "C'est tout ce que je te demande. Les autres doivent pouvoir choisir sans te suivre les yeux fermés."
-
-    tomas hesitation "Je... Je veux bien écouter vos arguments. Mais j'ai pas envie de choisir un camp entre vous deux."
-
-    julian triste "Très bien. On parlera du texte. Mais ne viens pas me reprocher ensuite de n'avoir rien tenté."
-    julian reflexion "Et arrête de faire comme si j'étais le seul à avoir quelque chose à prouver."
+    noam colere "Julian, ça suffit. Il t'a demandé de le laisser tranquille, tu l'as entendu ou pas ?"
+    julian colere "Ah, Noam. Parfait. Nyra a donc appelé du renfort ?"
+    nyra neutre "Tomas m'a demandé de venir. Il voulait partir et tu continuais à insister."
+    julian reflexion "Je lui expliquais pourquoi son soutien comptait. On dirait que discuter est devenu interdit."
+    tomas colere "Non ! Tu voulais que je dise à tout le monde que je te soutiens, toi ! Et tu m'écoutais même pas !"
+    julian hesitation "Tomas, tu déformes ce que j'ai dit."
+    noam colere "On t'a entendu en arrivant. Tu voulais même lui faire répéter ta phrase."
+    julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que tout le monde va finir par tomber d'accord ?!"
+    noam determine "Au moins, j'essaie pas de forcer les autres à voter comme moi !"
+    julian colere "Tu crois que je fais ça pour m'amuser ? Un seul non et tout ce qu'on a tenté ne sert à rien !"
+    noam colere "Alors parle de l'amendement ! Pas de qui doit te soutenir devant les caméras !"
+    julian colere "C'est facile de jouer les gentils quand tu laisses aux autres le boulot de convaincre !"
+    tomas colere "Mais arrêtez tous les deux ! Je suis là, vous savez !"
+    "Je me tourne vers Tomas. Il tremble de colère, et je réalise que je viens aussi de parler à sa place."
+    noam culpabilite "T'as raison, désolé. Je voulais pas te mettre au milieu."
+    julian hesitation "Tomas, je..."
+    tomas desaccord "Non ! Laisse-moi finir ! J'ai peut-être envie de voter pour, mais là, franchement, vous me donnez envie de vous envoyer promener tous les deux !"
+    nyra raison "Tomas n'a pas à vous promettre quoi que ce soit. Julian, tu peux partir ? Noam, reste deux minutes avec nous."
+    julian colere "Très bien. Mais si on perd parce que personne n'a voulu convaincre les indécis, vous y repenserez."
+    noam determine "Et toi, essaie de comprendre que les gens ont le droit d'hésiter."
+    julian desaccord "On verra tout à l'heure."
 
     hide julian with moveoutleft
 
     stop music fadeout 0.6
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
 
-    tomas mefiant "…D-Désolé. À cause de moi, vous avez dû venir."
-
-    nyra "Non. Il fallait remettre les points sur les i de toute façon."
-
-    tomas hesitation "En fait... Il m'a mis mal à l'aise. Mais il a pas tort sur tout."
-    tomas hesitation "Tu vas prendre la parole tout à l'heure, Noam ?"
-
-    noam "Je vais essayer. J'ai pas envie qu'on se plante à cause d'une dispute."
-
-    tomas hoche_la_tete "O-Ouais. On verra bien."
-
-    nyra sourire "Allez, viens, Tomas. Tu as bien mérité une pause."
-    nyra "Merci, Noam."
-
-    think "Ils repartent ensemble. Tomas marche un peu plus droit qu'à l'aller."
-    hide tomas with moveoutleft
-    hide nyra with moveoutleft
-
-    think "Ce vote, ce n'est pas juste un texte. C'est une question de confiance."
-    think "Julian veut vraiment que le vote passe. Mais il a toujours besoin qu'on le remarque."
-    think "J'ai encore les mains moites. Ça promet pour le débat."
-    think "Julian m'énerve. Mais il a raison sur un truc : jusqu'ici, j'ai surtout regardé les autres se débrouiller."
+    tomas fatigue "Je lui ai dit que je voulais réfléchir. Je sais pas pourquoi il a pas compris."
+    noam triste "Je suis désolé aussi. Je lui ai crié dessus sans même te demander ce que tu voulais."
+    tomas hesitation "Je voudrais que ça passe, je crois. Mais si les gens n'ont plus leurs rations et que ça se passe mal, on fait quoi ?"
+    nyra neutre "Tu voteras sur le texte qu'on aura devant nous, pas sur ce que Julian ou Noam veulent entendre."
+    tomas inquiet "Ouais... J'aurais juste aimé qu'on me laisse un peu de temps."
+    noam determine "Je comprends. On se retrouve au Conclave ?"
+    tomas hoche_la_tete "Ouais. Et s'il vous plaît, arrêtez de vous battre pour moi."
+    nyra sourire "Je reste un moment avec lui. Merci d'être venu, Noam."
+    think "Ils partent ensemble. Je ne sais pas si j'ai vraiment aidé Tomas, et je me demande si Julian va essayer de se venger pendant le débat."
+    $ hideGroup()
 
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
 
