@@ -1454,33 +1454,34 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    noam inquiet "Bon, je crois qu’on a tous compris ce qu’elle a ajouté. Mais qu’est-ce qu’on fait, maintenant ? Moi, j’ai pas envie de décider ça à la va-vite."
+    noam inquiet "On a compris ce qu'elle a ajouté. Mais on fait quoi, maintenant ? On ne peut pas décider ça entre deux cris."
 
-    julian colere "À la va-vite ? Noam, ça fait un an que les gens manquent de tout ! Tu veux encore attendre combien de temps ?"
+    julian colere "Entre deux cris ?! Ça fait un an que les gens manquent de tout ! Tu veux leur demander d'attendre encore combien de temps ?"
 
-    ryn colere "Et ton grand soir, c'est quoi ? On sacrifie Limen pour que Nexus se paie du luxe ?"
+    ryn colere "Et ton grand projet, c'est quoi ?! On sacrifie Limen pour que Nexus se paie des nouveaux jouets ?!"
 
-    julian surpris "Nexus ? Je te rappelle que j'en viens, de Nexus. Et je ne roule pas sur l'or, figure-toi."
+    julian surpris "Tu crois que tous ceux de Nexus roulent sur l'or ?! J'en viens, figure-toi !"
 
-    ryn "…Ouais. Bref. Ça change rien au fond !"
+    ryn "...C'est pas ce que j'ai dit ! Enfin, si, mais c'est pas le problème !"
 
-    mara taquin "Ryn, tu vas te fatiguer avant de voter si tu continues à gueuler comme ça."
+    mara taquin "Économise ta salive, Ryn. On n'a même pas encore le droit de cocher une case."
 
-    elen joie "Imaginez : tu peux acheter ce que tu veux sans remplir trois formulaires !"
+    elen joie "Mais imaginez ! Acheter quelque chose sans devoir raconter pourquoi on en a besoin à un distributeur !"
 
     # (combinaison « lysa raison » ajoutée dans images.rpy)
-    lysa raison "Encore faut-il avoir de l'argent, Elen. Sinon tu regardes juste les vitrines."
+    lysa raison "Pour acheter, il faut de l'argent, Elen. Une vitrine pleine ne nourrit personne quand ton portefeuille est vide."
 
-    tomas hesitation "Moi, je sais juste qu’on fabrique beaucoup moins de choses qu’avant. J’ai vu les chiffres, c’est presque quatre fois moins. Ça fait peur quand même."
+    tomas hesitation "Je... j'ai regardé les chiffres de production. Dans certains secteurs, on fabrique presque quatre fois moins qu'avant."
+    tomas inquiet "Alors oui, continuer comme ça me fait peur aussi."
 
-    nyra reflechit "C’est pas tellement surprenant. Quand on ne gagne rien de plus en travaillant davantage, tout le monde finit par se contenter du minimum."
+    nyra reflechit "Ce n'est pas étonnant. Quand produire davantage n'apporte aucune possibilité supplémentaire, le système encourage souvent à se limiter au minimum."
 
     # Cadrage de Kami : moins clownesque, plus prédatrice.
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with vpunch
-    kami "Ah ! Voilà une discussion qui devient intéressante !"
-    kami "Je vous rappelle que ce texte est né de VOTRE imagination. Ne me regardez pas comme la coupable."
-    kami "Continuez. Vous êtes bien plus intéressants quand vous avez peur."
+    kami "ENFIN ! Vous avez commencé à vous battre avec des arguments plutôt qu'avec des meubles. Je suis fière de vous !"
+    kami "Je vous rappelle que ce petit monstre est né de VOTRE imagination. Moi, je n'ai fait que lui donner des dents."
+    kami "Continuez ! La peur vous rend tellement éloquents. Et puis je trouve que la rougeur vous va très bien."
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Premier échange — Quel argument présenter ?")
@@ -1489,31 +1490,31 @@ label _3_DEBAT1_PHASE3:
         call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
     else:
         $ p3_argument_one = None
-        think "Je n'ai rien de suffisamment solide à ajouter pour le moment."
+        think "J'ai des opinions. Beaucoup trop. Pas encore un argument que je pourrais défendre devant tout le monde."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    elias "Je comprends qu’on hésite, mais le système actuel, il marche pas non plus. À la Forge, on passe plus de temps à demander des pièces qu’à réparer !"
+    elias "Moi je comprends qu'on ait peur. Mais à la Forge, on remplit plus de formulaires qu'on ne répare de machines ! On peut pas appeler ça un système qui marche !"
 
-    sael "Chez nous, on s'aide déjà sans bons."
-    sael determine "Je comprends votre peur. Mais je ne crois pas qu'attendre Kami pour chaque chose nous aide davantage."
+    sael "Chez nous, on s'aide déjà sans attendre les bons."
+    sael determine "Je ne dis pas que le changement sera simple. Je dis qu'on a fini par dépendre d'une permission pour tout."
 
-    lysa blase "Même en votant pour, il reste un trou béant dans le texte."
-    lysa reflechit "Avec quoi les gens gagnent leur premier argent ? Si personne n'a rien, personne ne peut rien acheter à personne."
+    lysa blase "Vous êtes très enthousiastes, mais il manque toujours un détail : l'argent."
+    lysa reflechit "D'où viennent les premiers salaires ? On fait comment pour acheter quoi que ce soit quand personne n'a reçu le moindre paiement ?"
 
-    noam inquiet "Et ils vont sortir d’où, les premiers salaires ? Kami, t’as prévu quelque chose ou tu nous laisses deviner ?"
+    noam inquiet "Kami ! Tu as prévu des revenus dès le premier jour ou il faudra apprendre à manger des promesses ?"
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Oh. Une question pratique ? On progresse."
+    kami "Oh ! Une question pratique ! Mes petits représentants découvrent l'économie ! Je suis si émue."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Si ce texte passe, j'ouvrirai des contrats de travail rémunérés. Des tâches assignées, des objectifs, un salaire à la clé."
-    kami "Vous fabriquez, vous récoltez, vous livrez. Vous êtes payés. Simple."
+    kami "Si le texte passe, je proposerai des contrats rémunérés. Des tâches, des objectifs, un salaire. Comme dans vos vieux souvenirs d'avant moi, mais avec moins de paperasse inutile."
+    kami "Vous produisez, récoltez, transportez, réparez. Je vous paie. Vous achetez. Facile, non ?"
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Libre à vous de travailler. Ou pas. Mais ne comptez plus sur la générosité des rations."
-    kami "Et pour ceux qui ne voudront pas travailler... Eh bien, il faudra se débrouiller sans rations. Motivant, non ?"
+    kami "Vous serez libres de travailler. Ou de ne pas travailler. Attention : la liberté de ne rien gagner est incluse dans l'offre."
+    kami "Et ceux qui refuseront de travailler ? Eh bien... il faudra se débrouiller. Les rations ne seront plus là pour attendre les retardataires. Motivant !"
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1532,18 +1533,18 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    elen inquiet "Attendez, il faut travailler pour avoir à manger, maintenant ? Mais ceux qui sont malades, ils font comment ?"
-    ryn colere "Et les vieux ? Et les gens qui peuvent pas bosser ? Tu vas les laisser crever ?!"
-    sael determine "Chez moi, on s'occupe de ceux qui ne peuvent pas travailler. Tout le monde ne peut pas produire autant."
-    mara colere "Donc elle supprime les rations et elle décide elle-même qui a le droit de gagner de l'argent. Vous voyez le problème ou pas ?!"
-    julian reflexion "Au moins, les gens pourront retravailler et recevoir quelque chose en échange. On peut pas rester bloqués avec les anciens bons."
-    lysa blase "Et si les contrats sont tous proposés à Nexus ? Les autres vont faire quoi, marcher pendant trois jours pour aller bosser ?"
-    elias reflechit "Pour réparer une machine, moi, j'aurais du boulot. Mais les gens qui ont pas de métier comme ça... j'en sais rien."
-    tomas inquiet "Et les premiers salaires, ils seront versés quand ? Le jour même ? Dans une semaine ? Faut bien manger entre-temps !"
-    nyra raison "Kami, tu peux au moins préciser quand les contrats commencent et comment les districts seront approvisionnés ?"
+    elen inquiet "Mais... les gens malades ? Les personnes qui ne peuvent pas travailler ? Ils vont manger quoi ?"
+    ryn colere "Et les vieux ?! Et ceux qui ont déjà plus la force de se lever ?! C'est quoi, le programme, on les laisse crever ?!"
+    sael determine "Chez nous, personne n'est abandonné parce qu'il ne peut pas travailler. La solidarité, ça ne se mesure pas à la quantité produite."
+    mara colere "Attendez ! Elle supprime les rations ET décide quels contrats existent. C'est elle qui contrôle les deux côtés de l'équation !"
+    julian reflexion "Au moins, le travail redeviendra une manière de gagner quelque chose. On ne peut pas rester éternellement coincés avec les anciens bons."
+    lysa blase "Et si tous les contrats sont à Nexus ? Les habitants des autres districts vont payer le trajet avec leurs bonnes intentions ?"
+    elias reflechit "Moi, je trouverais sûrement à réparer des choses. Mais un type sans formation, sans outil et sans moyen de transport, il commence comment ?"
+    tomas inquiet "Et le premier salaire, il tombe quand ? Aujourd'hui ? Dans une semaine ? Les gens ne peuvent pas mettre leur faim sur pause !"
+    nyra raison "Kami, précise au moins le calendrier. À partir de quand ces contrats seront-ils disponibles, et comment seront assurées les livraisons ?"
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Les contrats seront disponibles dès l'entrée en vigueur du texte. Pour le reste, je vous laisse organiser votre merveilleuse nouvelle économie !"
+    kami "Contrats disponibles dès l'entrée en vigueur ! Pour l'approvisionnement, vous découvrirez les joies de l'organisation humaine. Après tout, vous vouliez reprendre les choses en main !"
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -1559,10 +1560,11 @@ label _3_DEBAT1_PHASE3:
         ("lysa", "reflexion", 1.06),
         ("elias", "reflechit", 1.19),
     ])
-    iris colere "Ah bah super ! Elle nous donne les contrats, mais on doit se débrouiller pour le reste !"
-    kael inquiet "Sur Orbite, si les livraisons ne suivent pas, des gens peuvent mourir très vite. Ce n'est pas une question de confort."
-    noam inquiet "Je voulais qu'on puisse acheter ce qui nous manque, pas qu'on retire à tout le monde le droit de manger. Et là, on doit se décider sans même savoir comment ça va fonctionner."
-    sael neutre "Il faudra choisir malgré ça. Mais ce n'est pas une raison pour faire semblant que tout ira bien."
+    iris colere "Magnifique ! Elle distribue les contrats et nous laisse gérer les conséquences ! Même son service après-vente est une blague !"
+    kael inquiet "Sur Orbite, il suffit de manquer une livraison critique pour perdre des vies. Ce n'est pas un désagrément administratif."
+    noam inquiet "Au départ, on voulait pouvoir obtenir ce qui manque. Maintenant, on doit décider si on supprime le filet qui protège encore des familles."
+    noam inquiet "Je ne peux pas faire comme si ces deux décisions étaient identiques."
+    sael neutre "Nous devrons choisir quand même. Mais personne ne devra prétendre qu'il n'avait pas compris les risques."
 
     play sound "sound/sfx_argument_impact.ogg"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Dernier échange — Quel argument présenter ?")
@@ -1571,16 +1573,16 @@ label _3_DEBAT1_PHASE3:
         call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
     else:
         $ p3_argument_two = None
-        think "Je préfère me taire plutôt que parler pour ne rien dire."
+        think "J'aurais aimé trouver une phrase capable de les rassurer. Je n'en connais aucune qui soit honnête."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     pause 0.3
 
-    noam inquiet "Bon... On peut encore en parler pendant des heures, mais je crois que personne n’aura toutes les réponses aujourd’hui."
-    nyra neutre "Oui. On sait au moins ce qu’on risque de perdre, et ce qu’on pourrait gagner. À chacun de voir."
+    noam inquiet "On peut discuter encore des heures. On ne saura pas tout. À un moment, il faudra choisir en acceptant cette incertitude."
+    nyra neutre "On connaît les bénéfices possibles et les risques immédiats. Personne ne peut décider à la place des autres."
 
     # ── CLIFFHANGER 2 : le dernier indécis, avant le vote ──
-    think "Je regarde Kael. Il a encore l’air de chercher ce qu’il va faire, et je ne crois pas que je serais capable de le convaincre avec une phrase de plus."
+    think "Je cherche Kael du regard. Chaque mot du débat semble l'avoir un peu plus éloigné d'une réponse."
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -1588,35 +1590,35 @@ label _3_DEBAT1_PHASE3:
         ("kael", "inquiet", 0.68),
     ])
 
-    noam "Ryn, Kael... Vous en pensez quoi, maintenant ?"
+    noam "Ryn... Kael... Vous avez réussi à vous décider ?"
 
-    ryn triste "…Moi, je sais. Que je le veuille ou non. Limen, c'est écrit là. Alors je porterai mon choix."
+    ryn triste "...Moi, je sais ce que je dois faire. Que ça me plaise ou non. Demain, je devrai regarder les gens de Limen en face."
 
-    think "Reste Kael. Celui qui déciderait « au moment de voter ». Le moment, c'est maintenant."
+    think "Reste Kael. Il m'avait dit qu'il déciderait devant le bulletin. Le bulletin n'est plus très loin."
 
     kael inquiet "Je…"
 
-    kael triste "Sur Orbite, une erreur ne pardonne pas. Et là, je n'arrive pas à voir si on ouvre une porte…"
-    kael peur "…ou si on retire le dernier filet sous nos pieds."
+    kael triste "Sur Orbite, une erreur peut tuer des innocents. Et je n'arrive pas à savoir si ce texte nous ouvre une porte..."
+    kael peur "...ou s'il retire simplement le dernier filet qui nous empêchait de tomber."
 
-    noam inquiet "Kael, t’as toujours pas décidé ? On peut encore attendre une minute si t’as besoin."
+    noam inquiet "Kael, on peut te laisser une minute. Personne ne va te forcer à..."
 
     think "Il ouvre la bouche."
 
     play sound sfx_announce
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    kami "STOP !"
-    kami "Non, non, non. Ne me gâchez pas le suspense en le disant tout haut."
-    kami "L'audimat est à son sommet. Un cœur qui hésite en direct, ça n'a pas de prix."
+    kami "STOOOOOP !"
+    kami "Non, non, NON ! Ne gâchez pas le suspense en lui faisant prononcer son choix avant le bulletin !"
+    kami "Une main qui tremble au moment de voter... c'est de l'or pour l'audience ! Ne me privez pas de ça."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Vous garderez vos réponses pour le bulletin. C'est plus honnête. Et tellement plus cruel."
-    kami "Rappel des règles : il suffit d'un « contre ». Un seul. Et tout s'effondre."
+    kami "Gardez votre courage, vos regrets et vos petites lâchetés pour le secret de l'urne. C'est beaucoup plus élégant."
+    kami "Une seule voix contre, et tout tombe. Je vous le répète une dernière fois, parce que je vous aime."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Alors… on vote. Maintenant. POUR, ou CONTRE."
-    kami "Je meurs d'envie de compter."
+    kami "Alors... PLACE AU VOTE ! Pour, contre, abstention : il est temps de voir ce que vous valez quand plus personne ne vous entend."
+    kami "J'ai tellement hâte de compter. Et ne vous inquiétez pas : je sais compter jusqu'à douze."
 
     jump vote_phase3_final
 
