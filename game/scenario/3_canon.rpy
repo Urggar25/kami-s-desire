@@ -725,17 +725,18 @@ label _3_PAUSE_CHAMBRE:
     $ current_period = "Après-midi"
 
     "Je suis remonté dans ma chambre pour souffler un peu."
-    think "Bientôt l'heure. Autant fermer les yeux deux minutes."
+    think "Il reste assez de temps pour respirer. Pas assez pour décider quoi que ce soit."
+    think "Je me laisse tomber sur le lit. Deux minutes les yeux fermés, et je repars."
 
     play sound sfx_knock
-    think "On frappe. Fort."
+    think "Trois coups frappés à la porte. Fort. Visiblement, la tranquillité n'a pas voté pour moi."
     pause 0.2
     play sound sfx_knock
     pause 0.2
 
-    nyra "Noam. Ouvre."
+    nyra "Noam ! Ouvre. Vite."
 
-    think "Ce n'est pas la voix de quelqu'un qui vient discuter."
+    think "Ce n'est pas une visite de courtoisie. Je me redresse d'un bond."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_162
     scene bg_dortoir at adaptive_fullscreen with fade
@@ -745,13 +746,13 @@ label _3_PAUSE_CHAMBRE:
         ("nyra", "neutre", 0.60),
     ])
 
-    nyra stress "Noam, viens. Julian est avec Tomas dans la salle de repos, et ça se passe vraiment mal."
-    noam inquiet "Mal comment ? Ils se disputent ?"
-    nyra colere "Julian lui demande de promettre qu'il votera pour et surtout qu'il le soutiendra devant les autres. Tomas a essayé de partir, mais il ne le lâche pas."
-    noam colere "Il est sérieux ? Mais pourquoi il s'acharne sur Tomas ?"
-    nyra stress "Parce qu'il sait que Tomas a du mal à dire non. S'il continue, Tomas risque de voter contre juste pour qu'on lui fiche la paix."
-    noam determine "Bon, on y va."
-    nyra neutre "Et essaie de ne pas t'engueuler avec Julian. Si vous vous mettez tous les deux contre lui, on aura rien arrangé."
+    nyra stress "Noam, viens. Julian a coincé Tomas dans la salle de repos. Il ne le laisse pas partir."
+    noam inquiet "Coincé comment ? Il l'a menacé ?"
+    nyra colere "Il veut lui faire promettre un vote pour. Et lui faire dire devant les caméras qu'il le soutient. Tomas a dit qu'il voulait réfléchir seul."
+    noam colere "Et il s'acharne sur Tomas ?! Évidemment. Il pouvait pas commencer par quelqu'un qui lui répondrait non."
+    nyra stress "C'est justement ce qui m'inquiète. Tomas n'ose pas lui tenir tête. Il va finir par dire oui pour avoir la paix... ou non pour se venger."
+    noam determine "On y va. Avant qu'ils se mettent à voter pour savoir qui a le droit de quitter la pièce."
+    nyra neutre "Et ne transforme pas ça en duel avec Julian. Tomas n'a pas demandé deux personnes de plus pour décider à sa place."
 
     stop music fadeout 0.5
     play music "music/bgm_world_decline.mp3" fadein 0.6
@@ -760,11 +761,11 @@ label _3_PAUSE_CHAMBRE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_163
     scene couloir_dortoir at adaptive_fullscreen, day3_run_shake with fade
 
-    think "On part immédiatement. Nyra a reçu un message de Tomas qui lui demandait de venir."
+    think "Tomas a envoyé un message à Nyra. Pas à moi. Il savait visiblement qui serait la plus utile."
 
     play sound sfx_run
 
-    think "Nyra court devant moi. J’ai du mal à la suivre dans les virages, mais je ne veux pas laisser Tomas seul avec Julian plus longtemps."
+    think "Nyra avale les couloirs. Je la suis de mon mieux, en essayant d'oublier que mes jambes n'ont pas signé pour une course-poursuite."
 
     play sound sfx_run
 
@@ -800,7 +801,7 @@ label _3_PAUSE_CHAMBRE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_164
     scene couloir_cafeteria at adaptive_fullscreen with fade
-    think "J'entends Julian derrière la porte. Il parle encore plus fort que d'habitude."
+    think "La voix de Julian traverse la porte. Pour une fois, je souhaiterais qu'il ait réellement appris à faire des discours brefs."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_165
     scene bg_repos at adaptive_fullscreen with fade
@@ -813,15 +814,15 @@ label _3_PAUSE_CHAMBRE:
     ])
 
     if day3_corridor_success >= 2:
-        think "On arrive assez vite pour entendre Tomas demander à Julian de le laisser partir."
-        tomas inquiet "Je t'ai dit que je voulais réfléchir tout seul. Pourquoi tu continues ?"
-        julian sourire "Parce que le vote est dans une heure et que si tu attends trop, tu risques de prendre une décision sur un coup de tête."
+        think "On arrive juste au moment où Tomas essaie de mettre fin à la discussion. Sa voix est plus ferme que d'habitude. Ça ne suffit pas."
+        tomas inquiet "Julian, je t'ai déjà répondu ! J'ai besoin de réfléchir. Tu peux me laisser passer ?"
+        julian sourire "Justement, le vote est dans une heure ! Tu ne peux pas remettre ta décision à la dernière seconde et espérer qu'elle sera bonne !"
     else:
-        think "Tomas est coincé entre une table et Julian. Il tient sa tablette contre lui, très énervé."
-        julian rire "Tomas, dis-moi juste que tu me soutiens et on en finit. Tu n'as même pas de meilleure idée !"
-        tomas peur "Mais j'en sais rien ! Ça fait dix minutes que je te le dis !"
-    julian sourire "Allez. Tu viens avec moi au Conclave, tu expliques aux autres que tu es pour, et après je te laisse tranquille."
-    tomas inquiet "Mais j'ai pas dit que j'étais pour !"
+        think "Tomas serre sa tablette contre lui. Julian lui barre le passage avec l'assurance de quelqu'un qui croit rendre service."
+        julian rire "Tomas, dis simplement que tu soutiens notre position, et on en termine ! Tu as une meilleure solution, peut-être ?"
+        tomas peur "MAIS J'EN SAIS RIEN ! Je te le répète depuis dix minutes !"
+    julian sourire "On va au Conclave ensemble, tu annonces que tu es pour, et tu verras : personne ne te posera plus la question."
+    tomas inquiet "Mais c'est TOI qui dis que je suis pour !"
     "Julian se retourne vers nous. Tomas en profite pour s'éloigner de lui."
 
     call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
