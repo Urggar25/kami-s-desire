@@ -766,70 +766,43 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 label _5_0_FIN_JOURNEE:
 
     $ current_period = "Soir"
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_240
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+    if doplleganger == 0:
+        call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_240
+        scene bg_dortoir at adaptive_fullscreen with dissolve
+    else:
+        call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_240
+        scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
-    pause 0.8
-
-    think "Puis l'après-midi passe. Elle se termine comme elle a commencé : lourde, lente, sans discussion."
-    "Puis je retourne dans ma chambre."
+    if doplleganger == 0:
+        think "Je quitte Julian et retourne au dortoir. J'espère qu'il finira par discuter avec les autres, même si je sais qu'il aura du mal à passer sur le résultat du vote."
+    else:
+        think "En rentrant depuis la salle d'observation, je repense à Elias et à sa console. J'espère que Kael pourra réparer les dégâts avant que quelqu'un ait besoin des relevés."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_241
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    think "Je m'assieds au bord du lit, pas encore prêt à m'allonger."
-    think "Tout le monde a raison, d'une certaine façon. Et demain, le vote échouera."
-
-    $ blink()
-    "Je m'allonge."
-
+    "Je pose ma tablette sur le bureau et m'assieds sur le lit."
+    think "Demain, Sael votera contre. Je comprends pourquoi elle refuse de prendre le risque, mais ça n'empêche pas Ryn d'avoir raison quand il parle de ceux qui meurent aux frontières."
+    think "J'aimerais qu'on puisse voter sur quelque chose de moins brutal. Pour le moment, Kami ne nous a laissé que ces deux possibilités."
+    "Je me change et je me couche. Je commence enfin à m'endormir quand j'entends une porte s'ouvrir dans le dortoir."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
-
-    think "Plus qu'une nuit. Un matin. Puis le vote."
-
-    think "Que peut-on encore faire ? Peut-être que « faire » n'est même plus le bon mot."
-    think "Peut-être qu'il faut seulement rester là, sans solution."
-
-    pause 0.5
-
-    $ blink()
-
-    "Une porte s'ouvre dans le couloir. Des pas discrets passent devant ma chambre."
-    think "Quelqu'un ne dort pas."
-
-    pause 0.6
+    think "Quelqu'un marche dans le couloir. Il est tard, et les pas ralentissent près de ma chambre."
 
     menu:
         "Ouvrir la porte.":
             jump _5_0_NUIT_OUVRIR
-
         "Écouter sans bouger.":
             jump _5_0_NUIT_ECOUTER
-
         "Ignorer les pas et rester allongé.":
             jump _5_0_NUIT_RESTER
 
 label _5_0_NUIT_RETOUR:
 
     $ blink()
-
-    think "Je ferme les yeux. Le corps tombe toujours avant la tête."
-
-    think "Le vote est probablement perdu. Pourtant, m'être levé, avoir frappé aux portes, être resté là…"
-    think "Ça ne ressemble pas tout à fait à une défaite."
-    think "Je me suis battu quand même. Personne ne pourra me le reprocher."
-
-    pause 0.4
-
-    think "Je ne sais pas encore ce que ça veut dire."
-
-    $ blink()
-    pause 1.5
-
-    think "Demain sera difficile. Mais j'y serai quand même."
-    "Puis le sommeil arrive rapidement."
+    think "Les pas finissent par s'éloigner. Je me demande qui se promène encore à cette heure-là, puis je renonce à y réfléchir."
+    think "Demain, il faudra affronter un autre vote. Je ne sais pas ce qu'il donnera, mais je compte au moins écouter les autres avant de me décider."
+    "Je m'endors quelques minutes plus tard."
 
     $ current_day = 6
     pause 1.0
@@ -847,80 +820,72 @@ label _5_0_SAEL_PNC:
 
     $ _j50_sael_choice = renpy.call_screen("j50_sael_room_pnc")
 
-    if _j50_sael_choice == "finish":
-        return
-
     if _j50_sael_choice == "lit":
         $ j50_sael_mark_seen("lit")
-        think "Le lit n'est pas défait."
-        think "Il a été refusé."
-        sael neutre "Le lit était trop mou."
-        sael "On dort mal quand le corps oublie le sol."
-        if j50_sael_pnc_score >= 3:
-            return
-        jump _5_0_SAEL_PNC
-
-    if _j50_sael_choice == "crane":
+        think "Le cadre du lit est démonté et les planches sont rangées contre un mur. Sael a gardé le matelas et posé une couverture dessus."
+        noam surpris "T'as démonté tout ça toute seule ? Ça a dû te prendre du temps."
+        sael neutre "Un peu. Chez moi, on dort souvent sur des couches plus simples. Je suis plus à l'aise comme ça."
+        noam sourire "Moi, je crois que j'aurais gardé le lit. J'ai déjà assez de mal à dormir."
+        sael sourire "C'est ton choix. Je vais pas venir démonter le tien."
+    elif _j50_sael_choice == "crane":
         $ j50_sael_mark_seen("crane")
-        think "Je ne sais pas si c'est un souvenir, un avertissement ou une prière."
-        think "Chez elle, même les morts semblent avoir une fonction."
-        sael neutre "Ne touche pas."
-        if j50_sael_pnc_score >= 3:
-            return
-        jump _5_0_SAEL_PNC
-
-    if _j50_sael_choice == "affaires":
+        think "Un petit crâne d'animal est posé parmi des morceaux de bois et des ficelles. Il a été nettoyé et décoré à la main."
+        noam inquiet "C'est un vrai crâne ?"
+        sael neutre "Oui. Il vient d'un animal qu'on a chassé. Chez nous, on essaie de ne pas gaspiller ce qu'on prélève."
+        noam neutre "D'accord. Je te demande parce que j'en ai jamais vu chez moi."
+        sael mefiant "Tu peux regarder, mais évite d'y toucher. J'y tiens."
+    elif _j50_sael_choice == "affaires":
         $ j50_sael_mark_seen("affaires")
-        think "Elle n'a pas décoré sa chambre."
-        think "Elle l'a rendue habitable selon ses propres règles."
-        think "Pas confortable. Habitable."
-        if j50_sael_pnc_score >= 3:
-            return
-        jump _5_0_SAEL_PNC
+        think "Ses affaires sont rangées dans de petits sacs en toile. Elle a aussi gardé des morceaux de tissu et quelques outils."
+        noam reflexion "Tu as ramené tout ça de chez toi ?"
+        sael neutre "Presque tout. Je savais pas ce qu'ils nous laisseraient garder, alors j'ai pris surtout des choses utiles."
+        noam sourire "J'aurais dû faire pareil. J'ai pris des trucs dont je me sers même pas."
+        sael reflechit "Si tu en as besoin un jour, tu seras peut-être content de les avoir."
+    else:
+        return
 
-    return
-
+    if j50_sael_pnc_score >= 3:
+        sael sourire "Bon, tu as fait le tour. Tu voulais surtout parler du vote, non ?"
+        return
+    jump _5_0_SAEL_PNC
 
 label _5_0_NUIT_OUVRIR:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_242
     scene bg_dortoir at adaptive_fullscreen with dissolve
-
-    "J'entrouvre la porte. Une silhouette disparaît au bout du couloir."
-    think "Trop vite pour un visage. Pas assez pour l'inventer."
-
-    think "Le Conclave ne dort pas."
-    think "Il se déplace à voix basse."
-
+    "J'entrouvre ma porte. Quelqu'un est déjà presque au bout du dortoir."
+    if doplleganger == 0:
+        think "Je crois reconnaître la façon de marcher de Julian, mais il tourne au coin avant que je puisse le voir de face."
+        noam neutre "Julian ?"
+    else:
+        think "La silhouette tient quelque chose sous le bras. Je me demande si c'est Elias qui revient de la maintenance."
+        noam neutre "Hé, il y a quelqu'un ?"
+    "Personne ne répond. Je reste quelques secondes dans le couloir avant de retourner me coucher."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     jump _5_0_NUIT_RETOUR
 
 
 label _5_0_NUIT_ECOUTER:
 
-    think "Je reste immobile. Les pas ralentissent derrière la porte."
-
+    think "Je reste au lit et j'écoute les pas. Quelqu'un s'arrête à proximité, juste assez longtemps pour que je distingue sa voix."
     if doplleganger == 0:
-        julian "Je voulais aider."
-        pause 0.5
-        julian "Non. Trop faible."
-        julian "J'ai porté une idée que vous n'étiez pas prêts à comprendre."
+        julian decu "Non, c'est pas ce que je voulais dire..."
+        pause 0.3
+        julian neutre "Bon, je recommencerai demain. Si je les vois, je m'excuserai. Enfin, j'essaierai."
+        think "Julian parle tout seul. Il prépare peut-être ce qu'il dira aux autres, ou à Tomas."
     else:
-        elias fatigue "C'est moche."
-        pause 0.5
-        elias "Mais ça tient."
-        elias "Faut que ça tienne jusqu'à demain, c'est tout."
-
-    think "Puis les pas s'éloignent."
+        elias fatigue "Kael, j'ai vérifié, le message d'erreur est toujours là..."
+        pause 0.3
+        elias inquiet "Non, on a coupé le panneau. Il devrait plus rien alimenter, mais faudrait quand même le regarder demain."
+        think "Elias semble parler dans son communicateur. La panne de la salle d'observation le préoccupe encore."
+    "Les pas reprennent puis s'éloignent. Je ne les entends bientôt plus."
     jump _5_0_NUIT_RETOUR
 
 
 label _5_0_NUIT_RESTER:
 
-    think "Je pourrais me lever."
-    think "Je pourrais ouvrir."
-    think "Mais ce soir, je n'ai plus la force de devenir utile."
-
+    think "Je n'ai pas envie de sortir vérifier. Les autres ont bien le droit de se déplacer sans que je leur demande des explications."
+    "Je remonte la couverture et j'attends que les pas s'éloignent."
     jump _5_0_NUIT_RETOUR
 
 # total : 8m
