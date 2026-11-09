@@ -136,6 +136,7 @@ init python:
         "raison": ("corps_1", "bras_sur_torse", "bouche_neutre", "yeux_neutre"),
         "determine": ("corps_1", "bras_croise", "bouche_neutre", "yeux_colere"),
         "hesitation": ("corps_1", "bras_long_corps", "bouche_decu", "yeux_peur"),
+        "gene": ("corps_1", "bras_long_corps", "bouche_decu", "yeux_peur"),
         "choc": ("corps_1", "bras_en_air", "bouche_peur", "yeux_peur"),
         "taquin": ("corps_1", "bras_en_air", "bouche_content", "yeux_content"),
         "surpris": ("corps_1", "bras_sur_torse", "bouche_decu", "yeux_peur"),
@@ -194,6 +195,7 @@ image elias detendu           = elias_expression("detendu")
 image elias raison            = elias_expression("raison")
 image elias determine         = elias_expression("determine")
 image elias hesitation        = elias_expression("hesitation")
+image elias gene              = elias_expression("gene")
 image elias choc              = elias_expression("choc")
 image elias taquin              = elias_expression("taquin")
 image elias surpris              = elias_expression("surpris")
