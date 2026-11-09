@@ -400,7 +400,7 @@ label _1_CANON:
     sael raison "Laquelle ?"
     elen peur "Quelqu'un nous explique où sont les toilettes."
     lysa fatigue "Je sens que cette histoire va durer trente jours."
-    think "Sael ferme les yeux une seconde. C'est peut-être sa façon de compter jusqu'à dix."
+    think "La femme qui parlait de sa grand-mère ferme les yeux une seconde. C'est peut-être sa façon de compter jusqu'à dix."
 
     elen desaccord "Mais attendre, c'est risqué aussi, nooon ?"
     elen desaccord "Et si on reste là sans rien faire, ça va pas nous aider non plus !"
@@ -1070,10 +1070,10 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    $ bc_show("noam", "inquiet", px=-80, py=-50, pz=0.8)
+    $ bc_show("noam", "reflexion", px=-80, py=-45, pz=0.85)
     noam reflexion "Pourquoi nous ?"
-
     $ bc_hide()
+
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1081,30 +1081,42 @@ label _1_KAMI_APPARITION:
     kami "Excellente question."
 
     kami "Parce que vous êtes douze."
+    $ bc_show("elen", "surpris", px=-80, py=-45, pz=0.85)
     elen surpris "On a été choisis pour une histoire de chiffres ?!"
+    $ bc_hide()
     kami "Tu préférais une histoire de taille ?"
+    $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "Hein ?!"
+    $ bc_hide()
     kami "Rassure-toi. Il n'y a pas de toise à l'entrée. Enfin... plus maintenant."
     kami "Et que douze, c'est un chiffre pratique."
     kami "Assez pour créer des alliances."
     kami "Pas assez pour se cacher dans la foule."
+    $ bc_show("julian", "reflexion", px=-80, py=-45, pz=0.85)
     julian reflexion "Et qu'est-ce qu'on est censés représenter, exactement ?"
+    $ bc_hide()
     kami "Une excellente transition ! Je vois que certains ont déjà envie d'avoir la parole."
+    $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
     mara taquin "Il attend ça depuis qu'il a ouvert les yeux."
+    $ bc_hide()
+    $ bc_show("julian", "neutre", px=-80, py=-45, pz=0.85)
     julian neutre "Je pose une question."
+    $ bc_hide()
     kami "Et moi, je savoure ce moment."
 
     pause 0.3
 
-    $ bc_show("ryn", "colere", px=-90, py=-40, pz=0.85)
+    $ bc_show("ryn", "reflechit", px=-80, py=-45, pz=0.85)
     ryn reflechit "Un test de quoi ?"
-    ryn colere "Qu'est-ce qu'on fout ici ?"
-
     $ bc_hide()
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
+    ryn colere "Qu'est-ce qu'on fout ici ?"
+    $ bc_hide()
+
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Du calme mon petit Ryn, c'est vrai que tu n'es pas au courant de tout..."
+    kami "Du calme, mon grand. C'est vrai que tu n'es pas au courant de tout..."
     kami "Vous êtes mon petit échantillon de l'humanité. Douze spécimens, et pas un seul mode d'emploi."
     kami "Je vais confronter vos rêves à la réalité. Vos belles convictions à vos petites habitudes. Ça promet."
 
@@ -1120,11 +1132,19 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Alors je vous le dis : bienvenue au Conclave."
+    $ bc_show("elen", "joie", px=-80, py=-45, pz=0.85)
     elen joie "On peut applaudir ?"
+    $ bc_hide()
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "TU VAS VRAIMENT APPLAUDIR ?!"
+    $ bc_hide()
+    $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "Mais non ! Je demandais !"
+    $ bc_hide()
     kami "Oh, faites comme chez vous. Il n'y aura pas de deuxième cérémonie d'accueil."
+    $ bc_show("mara", "rire", px=-80, py=-45, pz=0.85)
     mara rire "Dommage. J'avais préparé mon discours."
+    $ bc_hide()
 
     pause 0.5
 
@@ -1132,11 +1152,17 @@ label _1_KAMI_APPARITION:
 
     kami "Le Conclave durera trente jours."
     kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
+    $ bc_show("noam", "inquiet", px=-80, py=-45, pz=0.85)
     noam inquiet "Trente jours ? Tu ne nous as pas demandé notre avis !"
+    $ bc_hide()
     kami "C'est vrai. J'ai oublié le formulaire de satisfaction."
+    $ bc_show("lysa", "colere", px=-80, py=-45, pz=0.85)
     lysa colere "Tu nous retiens prisonniers."
+    $ bc_hide()
     kami "Prisonniers ? Quelle vilaine façon de parler d'un séjour tous frais payés !"
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Ouvre les portes et viens dire ça en face !"
+    $ bc_hide()
     kami "Tu me reproches déjà de ne pas être présente physiquement ? C'est touchant."
 
     scene bg_diffusion_triste at adaptive_fullscreen with dissolve
@@ -1146,11 +1172,13 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    $ bc_show("elen", "inquiet", px=-70, py=-50, pz=0.85)
+    $ bc_show("elen", "desaccord", px=-80, py=-45, pz=0.85)
     elen desaccord "Décider de quoi exactement ?"
-    elen desaccord "Attends, explique-moi, je suis larguée là."
-
     $ bc_hide()
+    $ bc_show("elen", "desaccord", px=-80, py=-45, pz=0.85)
+    elen desaccord "Attends, explique-moi, je suis larguée là."
+    $ bc_hide()
+
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1164,13 +1192,25 @@ label _1_KAMI_APPARITION:
     kami "Aujourd'hui, au cours de cette première journée…"
     kami "Chacun de vous proposera une modification, un Amendement. Un seul."
     kami "Sur le commandement ou la règle de votre choix."
+    $ bc_show("kael", "reflexion", px=-80, py=-45, pz=0.85)
     kael reflexion "On écrit ça comment ? Un texte complet ? Une proposition ?"
+    $ bc_hide()
     kami "Un amendement. C'est un mot très pratique : tout le monde a l'impression de savoir ce qu'il signifie."
+    $ bc_show("julian", "sourire", px=-80, py=-45, pz=0.85)
     julian sourire "Au moins, on pourrait en discuter entre nous."
+    $ bc_hide()
+    $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
     nyra neutre "Et tu penses que tout le monde te dira la vérité ?"
+    $ bc_hide()
+    $ bc_show("julian", "reflexion", px=-80, py=-45, pz=0.85)
     julian reflexion "Je pense qu'on peut essayer."
-    mara taquin "Ça ferait déjà un premier amendement : interdire à Julian de faire des discours."
+    $ bc_hide()
+    $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
+    mara taquin "Ça ferait déjà un premier amendement : interdire au beau parleur de faire des discours."
+    $ bc_hide()
+    $ bc_show("julian", "colere", px=-80, py=-45, pz=0.85)
     julian colere "Tu peux arrêter deux minutes ?!"
+    $ bc_hide()
     kami "Oh non. Continuez. Je prends un plaisir considérable à vous écouter."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -1190,10 +1230,10 @@ label _1_KAMI_APPARITION:
 
     pause 0.5
 
-    $ bc_show("tomas", "reflechit", px=-80, py=-45, pz=0.85)
+    $ bc_show("tomas", "raison", px=-80, py=-45, pz=0.85)
     tomas raison "Et ensuite ?"
-
     $ bc_hide()
+
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
@@ -1216,13 +1256,25 @@ label _1_KAMI_APPARITION:
     $ impact(10, 0.25, "#c81e2e")
 
     kami "Personne ne devra voter contre. Sinon, le vote est refusé."
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Attends ! Un seul type peut bloquer tout le monde ?"
+    $ bc_hide()
     kami "Exact ! Tu as compris plus vite que je ne l'espérais."
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Et si un idiot vote contre juste pour nous faire chier ?"
+    $ bc_hide()
+    $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
     nyra neutre "Il n'aura même pas besoin de justifier son choix."
+    $ bc_hide()
+    $ bc_show("julian", "reflexion", px=-80, py=-45, pz=0.85)
     julian reflexion "C'est une règle qui donne un pouvoir énorme à chacun."
-    mara taquin "Et tout le monde vient de regarder Ryn. C'est vexant, non ?"
+    $ bc_hide()
+    $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
+    mara taquin "Et tout le monde vient de regarder notre champion de la porte. C'est vexant, non ?"
+    $ bc_hide()
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "J'AI RIEN FAIT !"
+    $ bc_hide()
     kami "Pas encore. Voilà qui est enthousiasmant."
 
     scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
@@ -1263,15 +1315,25 @@ label _1_KAMI_APPARITION:
     kami "Vous pouvez mentir. D'ailleurs, certains ont sûrement commencé."
     kami "Vous pouvez voler. Pensez seulement à rendre ce que vous empruntez... ou pas."
     kami "Vous pouvez vous entretuer."
+    $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "P-Pardon ?! Tu viens de dire quoi ?!"
+    $ bc_hide()
     kami "Je l'ai dit assez distinctement, je crois."
+    $ bc_show("iris", "colere", px=-80, py=-45, pz=0.85)
     iris colere "Tu ne peux pas annoncer ça comme si tu nous proposais le dessert !"
+    $ bc_hide()
     kami "Je pourrais l'annoncer plus gaiement. Tu veux que je recommence ?"
+    $ bc_show("sael", "raison", px=-80, py=-45, pz=0.85)
     sael raison "Et si quelqu'un est blessé ?"
+    $ bc_hide()
     kami "Vous vous débrouillerez. C'est le principe de la liberté."
-    think "La salle se tait. Même Mara n'a pas trouvé de réponse."
+    think "La salle se tait. Même la femme qui se moquait de tout n'a pas trouvé de réponse."
+    $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Personne ici n'a l'intention de tuer qui que ce soit."
+    $ bc_hide()
+    $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
     nyra neutre "Tu ne peux pas le savoir."
+    $ bc_hide()
     think "Je regarde les autres. Cette fois, personne ne soutient le regard de personne."
     kami "Je ne viendrai pas vous sauver. Ni vous arrêter. Vous vouliez la liberté, non ?"
     kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
@@ -1324,14 +1386,14 @@ label _1_KAMI_APPARITION:
     elias panique "Ouais ! Et toi, t'as vu comment tu me regardais ? J'ai cru que t'allais me sauter dessus !"
     ryn surpris "Quoi ?! Mais je te regardais même pas !"
     elias inquiet "Tu tournais la tête vers moi, avec une tête de tueur !"
-    elen peur "Un tueur ?! Ryn, tu veux tuer Elias ?!"
+    elen peur "Un tueur ?! Tu veux vraiment le tuer ?!"
     ryn colere "MAIS NON ! J'ai rien fait !"
-    elen peur "Pourquoi tu cries alors ?! Noam, aide-le !"
-    noam inquiet "Elen, Elias a eu peur, mais personne n'a menacé personne."
+    elen peur "Pourquoi tu cries alors ?! Hé, quelqu'un, dites-lui d'arrêter !"
+    noam inquiet "Doucement ! Il a eu peur, mais personne n'a menacé personne."
     mara rire "Magnifique. On est là depuis une heure et vous avez déjà monté un film d'horreur."
     iris colere "C'est pas drôle ! Si quelqu'un nous plante un couteau, Kami laissera faire !"
     "Mara cesse de rire. Elias éloigne discrètement sa chaise de celle de Ryn."
-    ryn fatigue "Je vais pas le tuer, votre Elias. Vous pouvez arrêter de me regarder comme ça ?"
+    ryn fatigue "Je vais pas le tuer, votre copain ! Vous pouvez arrêter de me regarder comme ça ?"
     elen inquiet "Mais si quelqu'un devient vraiment méchant, on fait quoi ?"
     lysa blase "On évite de lui tourner le dos, déjà."
     think "Personne ne rit cette fois. Jusqu'ici, je cherchais surtout comment sortir. Maintenant, je me demande avec qui je vais devoir vivre pendant trente jours."
@@ -1351,7 +1413,7 @@ label _1_KAMI_APPARITION:
     iris blase "Ah bah oui, ça va sûrement empêcher quelqu'un de péter un câble."
     iris taquin "Quoique, certains ça ne les gêne pas tant que ça."
 
-    think "Julian se lève, il ajuste sa veste et trouve une caméra avant de trouver ses mots."
+    think "Le type qui soigne tellement sa présentation se lève, ajuste sa veste et repère une caméra avant de trouver ses mots."
 
     julian rire "Franchement ? Ce moment est historique."
     julian neutre "Enfin un lieu où nos paroles peuvent peser sur les règles."
@@ -1544,44 +1606,77 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
 
     play sound sfx_announce volume 5.0
 
+    $ bc_off()
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Rebonjour, mes petits représentants ! J'espère que vous avez trouvé les toilettes. Elen, je pense surtout à toi !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "On a déjà parlé des Commandements ce matin, alors je vous épargne la rediffusion. Il reste trois détails pratiques."
     kami "Vous ne quitterez pas la station avant le trentième jour et vous ne pouvez pas appeler l'extérieur. Si quelqu'un vous appelle, vous pouvez répondre."
+    $ bc_show("elen", "inquiet", px=-80, py=-45, pz=0.85)
     elen inquiet "Mais... si quelqu'un nous appelle, comment il sait qu'on est là ?"
+    $ bc_hide()
     kami "Ah, une excellente question."
+    $ bc_show("elen", "surpris", px=-80, py=-45, pz=0.85)
     elen surpris "Vraiment ?"
+    $ bc_hide()
     kami "Non. La suivante."
+    $ bc_show("elen", "desaccord", px=-80, py=-45, pz=0.85)
     elen desaccord "Hééé !"
+    $ bc_hide()
     kami "Vous êtes filmés, sauf dans vos chambres quand le brouilleur est actif. Les enregistrements restent conservés : je pourrai les consulter sept jours plus tard, même si rien ne sera diffusé pendant le brouillage."
+    $ bc_show("julian", "inquiet", px=-80, py=-45, pz=0.85)
     julian inquiet "Attends, donc on est surveillés même quand on ne l'est pas ?"
+    $ bc_hide()
     kami "Quelle jolie manière de le formuler."
+    $ bc_show("iris", "colere", px=-80, py=-45, pz=0.85)
     iris colere "Tu réalises à quel point c'est malsain ?"
+    $ bc_hide()
     kami "J'ai eu trente jours à préparer mes réponses à cette question. Tu veux la version courte ?"
+    $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
     mara taquin "On peut essayer la version silence ?"
+    $ bc_hide()
     kami "Refusé."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Les détails administratifs sont sur vos tablettes. Ne comptez pas sur moi pour faire aussi le secrétariat."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Maintenant, vos amendements. Un texte par personne, dans l'urne, avant dix-huit heures. C'est obligatoire !"
     kami "Un texte sera tiré au sort demain, puis un vote aura lieu tous les trois jours. Aucun vote contre pour adopter : les abstentions et les absences ne bloquent pas le résultat."
+    $ bc_show("ryn", "reflechit", px=-80, py=-45, pz=0.85)
     ryn reflechit "Donc on peut perdre juste parce qu'un seul type n'est pas d'accord."
+    $ bc_hide()
+    $ bc_show("sael", "raison", px=-80, py=-45, pz=0.85)
     sael raison "Ou gagner si personne ne s'y oppose."
+    $ bc_hide()
+    $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
     nyra neutre "Ce n'est pas la même chose qu'obtenir un accord."
+    $ bc_hide()
+    $ bc_show("julian", "sourire", px=-80, py=-45, pz=0.85)
     julian sourire "C'est à nous de convaincre."
+    $ bc_hide()
+    $ bc_show("lysa", "blase", px=-80, py=-45, pz=0.85)
     lysa blase "Ou de savoir qui préfère se taire."
+    $ bc_hide()
     think "La phrase de Lysa reste suspendue. Pour la première fois, je pense aux abstentions autrement."
     kami "Et même un amendement refusé peut avoir des conséquences. Moi, je l'appliquerai à la lettre."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Il vous reste trente-et-une minutes. Au travail !"
+    $ bc_show("elias", "surpris", px=-80, py=-45, pz=0.85)
     elias surpris "Trente-et-une ?! Pourquoi pas trente ?"
+    $ bc_hide()
     kami "Parce que j'aime être généreuse."
+    $ bc_show("elias", "inquiet", px=-80, py=-45, pz=0.85)
     elias inquiet "J'ai même pas choisi mon titre..."
+    $ bc_hide()
+    $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
     mara taquin "Commence par écrire : Au secours."
+    $ bc_hide()
+    $ bc_show("elias", "gene", px=-80, py=-45, pz=0.85)
     elias gene "C'est pas un amendement..."
+    $ bc_hide()
+    $ bc_show("mara", "sourire", px=-80, py=-45, pz=0.85)
     mara sourire "Ça dépend des destinataires."
+    $ bc_hide()
 
     $ unlock_codex_page("reglement_conclave", with_notification=False)
     $ unlock_codex_page("commandements", with_notification=False)
