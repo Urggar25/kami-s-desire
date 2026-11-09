@@ -199,6 +199,7 @@ label decouverte_salle_repos:
 
     julian sourire "Julian. Je préfère me présenter avant de te battre, histoire que tu puisses raconter l'histoire correctement."
     $ unlock_character_name("julian")
+    call kd_play_character_intro("julian") from _call_kd_intro_julian_j1
     noam taquin "Noam. C'est gentil de me laisser préparer ma version des faits."
     iris blase "Iris. Et si tu veux un conseil, ne commence jamais une partie avec lui après le dîner."
     $ unlock_character_name("iris")
