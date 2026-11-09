@@ -598,21 +598,21 @@ label _2_SALLE_OBSERVATION:
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_148
     scene bg_observation at adaptive_fullscreen with dissolve
 
-    think "Derrière la baie vitrée : le vide, immense et calme. Kael est déjà là."
+    think "La Terre flotte derrière la vitre, impassible. Kael contemple les consoles. Il a l'air d'attendre qu'une machine lui explique pourquoi nous sommes ici."
 
     $ showGroup([
         ("noam", "neutre", 0.13),
         ("kael", "neutre", 0.84),
     ])
 
-    noam neutre "Kael, tu sais où on est exactement ?"
-    kael neutre "Non. Mais je reconnais le matériel d'Orbite."
-    noam raison "Tu dois te sentir chez toi, alors."
-    kael doute "Pas vraiment. Cette station a été préparée à l'avance et personne ne m'en a parlé."
-    noam inquiet "Tu crois qu'elle avait prévu nos amendements aussi ?"
-    kael reflechit "Nos textes, non. Nos réactions, peut-être."
-    noam taquin "Tu vas me rendre parano."
-    kael calme "Désolé. Ça fait beaucoup de surprises en deux jours."
+    noam neutre "Tu as reconnu la station ? Ou tu viens ici pour être tranquille ?"
+    kael neutre "Je reconnais les équipements. Pas la station. Et crois-moi, ça fait une sacrée différence."
+    noam raison "Ça doit quand même te rassurer, non ?"
+    kael doute "Pas tellement. Construire un endroit pareil sans qu'aucune équipe d'Orbite n'en entende parler... c'est loin d'être rassurant."
+    noam inquiet "Tu crois que Kami savait d'avance ce qu'on allait écrire ?"
+    kael reflechit "Les textes ? Je sais pas. Mais nos réactions... On est peut-être moins originaux qu'on l'imagine."
+    noam taquin "Merci. J'étais venu pour me détendre."
+    kael calme "Désolé. C'est mon problème : quand je ne comprends pas une machine, je suppose d'abord qu'elle cache quelque chose."
 
     pause 0.6
 
@@ -624,11 +624,11 @@ label _2_SALLE_OBSERVATION:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 0.8
 
-    kami "Petite annonce, l'un d'entre vous m'a demandé l'heure du vote demain."
-    kami "Le vote aura lieu demain à quatorze heures. Soyez ponctuels."
+    kami "Petite annonce ! Puisque quelqu'un a réussi l'exploit de me demander trois fois la même heure, je répète pour les distraaaaits !"
+    kami "Le vote aura lieu demain à quatorze heures. Quatorze ! Deux heures après midi ! Et non, je ne fais pas de calendrier personnalisé."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Profitez bien de votre douce nuit de réflexion."
+    kami "Profitez de votre adorable soirée de réflexion. Je sais que vous allez dormir comme des bébés... des bébés très inquiets."
 
     hide screen kami_broadcast_ui
     stop music fadeout 0.8
@@ -642,30 +642,35 @@ label _2_SALLE_OBSERVATION:
         ("kael", "neutre", 0.84),
     ])
 
-    noam inquiet "Quatorze heures. Ça nous laisse pas beaucoup de temps."
-    kael mefiant "Non, surtout si personne ne veut changer d'avis."
-    noam inquiet "Et toi, tu pourrais voter contre ?"
-    kael raison "Je ne sais pas. Orbite dépend de ses livraisons pour presque tout. Acheter ce qu'il nous manque, ça m'intéresse."
-    kael reflechit "Mais plus on fait venir de marchandises, plus il y a de contrôles et de risques d'erreur."
-    noam surpris "Je vois pas où tu veux en venir."
-    kael inquiet "Les sanctions de Kami. Sur Terre, vous avez peur pour la personne qu'elle vise. Sur Orbite, le tir peut aussi traverser la coque d'un module."
-    noam peur "Attends, l'air peut s'échapper ?!"
-    kael triste "Oui. On a des masques partout, mais il suffit d'une brèche qu'on ne peut pas fermer pour que tout le monde soit en danger."
-    noam colere "Mais pourquoi Kami tire si elle sait que ça peut tuer des innocents ?!"
-    kael fatigue "Elle répond que c'est à nous d'éviter les infractions."
-    noam inquiet "T'as déjà vu ça arriver ?"
-    kael triste "J'ai aidé à fermer un compartiment après une dépressurisation. Deux personnes étaient encore derrière la porte."
-    noam peur "Elles ont pu sortir ?"
-    kael triste "Non. Et si on avait attendu, on aurait perdu tout le module."
+    noam inquiet "Demain quatorze heures... Même si on voulait comparer tous les risques, on n'aurait pas le temps."
+    kael mefiant "On pourrait avoir un mois, ça ne servirait à rien si chacun s'est déjà décidé."
+    noam inquiet "Alors toi... tu voterais contre ?"
+    kael raison "Je ne sais pas. Sur Orbite, on dépend des livraisons. Un commerce plus libre pourrait nous sauver des semaines d'attente."
+    kael reflechit "Mais chaque cargaison, c'est aussi des contrôles, des opérations et des occasions de faire une erreur."
+    noam surpris "Une erreur de livraison ? C'est si grave que ça ?"
+    kael inquiet "Sur Terre, quand Kami sanctionne quelqu'un, tu vois surtout la cible. Ici, un tir peut traverser la coque d'un module. Et l'espace se moque de savoir qui est innocent."
+    noam peur "Attends... tu veux dire qu'on peut perdre tout l'air d'un coup ?!"
+    kael triste "Oui. On a des masques, des cloisons, des procédures. Mais une brèche qui reste ouverte, et tout le compartiment devient un piège."
+    noam colere "Mais elle le sait ! Pourquoi tirer si elle peut tuer ceux qui n'ont rien fait ?!"
+    kael fatigue "Sa réponse est toujours la même : il fallait empêcher l'infraction. Comme si on avait tous le contrôle sur les autres."
+    noam inquiet "Tu parles comme si tu avais déjà vu ça."
+    kael triste "Une fois, on a dû fermer une cloison après une dépressurisation. J'ai aidé à actionner la fermeture."
+        kael triste "Il y avait encore deux personnes de l'autre côté."
+    noam peur "Elles... elles sont sorties, après ?"
+    kael triste "Non."
+    noam inquiet "Mais... personne n'a essayé de les..."
+    kael triste "On a essayé. Jusqu'à ce que l'alarme de pression ne nous laisse plus le choix."
+    think "Je ne trouve pas de phrase qui ne sonne pas creux."
+        kael fatigue "Si on avait attendu quelques secondes de plus, on aurait perdu le module entier."
     "Kael s'arrête de parler et regarde dehors. Je ne sais pas quoi lui répondre."
-    noam triste "Je suis désolé. Je savais pas."
-    kael calme "Je sais. Mais demain, pense aussi aux gens qui vivent ici."
+    noam triste "Je... je savais pas. Désolé."
+    kael calme "Je sais. Alors demain, quand tu entendras « commerce », essaie aussi de penser aux gens qui vivent derrière ces cloisons."
     call day2_collect_vote_argument("rationnement") from _call_day2_collect_vote_argument_rationnement
     call day2_collect_vote_argument("orbite") from _call_day2_collect_vote_argument_orbite
     kael fatigue "Je dois aller vérifier les relevés des consoles. À plus tard."
     $ hideGroup()
-    think "Je reste quelques minutes devant la vitre. Deux personnes sont mortes parce que quelqu'un d'autre avait enfreint une règle. J'ai du mal à me sortir ça de la tête."
-    think "En passant devant le gymnase, j'entends Elias compter à voix haute et Iris l'engueuler. Je décide d'entrer pour faire autre chose que ruminer."
+    think "La Terre semble si tranquille derrière la vitre. Je revois Kael fermer une cloison, deux personnes de l'autre côté. Il n'a pas raconté leurs visages. Je les imagine quand même."
+    think "Au détour du couloir, j'entends Elias compter, puis Iris lui aboyer dessus. Pour une fois, une dispute serait presque rassurante."
 
     jump _2_GYMNASE
 
@@ -678,16 +683,16 @@ label _2_GYMNASE:
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_MAYBE_PLAY_SCRIPTED_DOOR_150
     scene bg_gymnase at adaptive_fullscreen with dissolve
 
-    think "Le bruit régulier des machines couvre presque les pensées. Iris enchaîne les répétitions ; Elias, lui, les compte."
+    think "Le gymnase sent le métal et la sueur. Iris pousse une charge comme si elle voulait la punir. Elias compte avec le sérieux d'un contrôleur d'ascenseur."
 
     $ showGroup([
         ("iris", "determine", 0.49),
         ("elias", "neutre", -0.11),
     ])
 
-    iris determine "Encore. Tant que mes muscles brûlent, mon cerveau ferme enfin sa gueule."
+    iris determine "Encore ! Tant que ça brûle, au moins mon cerveau arrête de me refaire la journée."
 
-    elias ecoute "Attends. Respire. Sinon tu vas te fatiguer pour rien."
+    elias ecoute "Doucement ! Respire ! Tes muscles n'ont rien fait pour mériter ça."
 
     think "Je m'approche."
     $ showGroup([
@@ -697,75 +702,79 @@ label _2_GYMNASE:
     ])
 
 
-    noam hesitation "Je dérange ?"
+    noam hesitation "Je dérange une séance de torture ou je peux entrer ?"
 
-    iris taquin "Pas tant que tu ne prends pas ma place et que tu ne te blesses pas de façon stupide. J'ai déjà assez de travail."
+    iris taquin "Tu dérangeras quand tu te seras blessé en essayant de nous impressionner. Pour l'instant, entre."
 
-    elias ecoute "Non. Tu tombes bien."
-    elias joie "Tu veux apprendre ? Ouais ! J'peux te montrer."
+    elias ecoute "Oh ! Tu tombes très bien, justement."
+    elias joie "Tu veux essayer ? Allez, je te montre ! Promis, je commence facile."
 
-    noam surpris "Euh… Je crois ?"
+    noam surpris "Attends, j'ai dit ça, moi ?"
 
-    iris determine "Alors bouge au lieu de me mater. Il y a des bancs libres."
+    iris determine "Alors arrête de nous regarder comme une attraction touristique et choisis un banc."
 
-    elias joie "Celui-là. Regarde, assieds-toi. On va faire un truc simple pour le début."
+    elias joie "Celui-là ! Assieds-toi. On va commencer avec quelque chose de simple. Enfin... simple pour commencer."
 
     think "Le métal est froid sous mon dos."
 
-    elias raison "Stop, tu vas te bousiller le dos ! Souffle quand tu pousses. Voilà, doucement."
+    elias raison "Stop ! Si tu cambres comme ça, demain tu me demanderas de réparer ta colonne vertébrale. Respire et pousse doucement."
 
-    iris taquin "Tu lui fais commencer par du développé couché dès la première séance ? Excellent. Le spectacle sera amusant !"
+    iris taquin "Du développé couché pour sa première séance ? Excellent. Elias, t'es sûr que tu veux pas directement lui faire soulever le gymnase ?"
 
-    noam inquiet "Je tremble déjà rien que d'y penser."
+    noam inquiet "J'ai encore rien fait et mes bras veulent déjà rentrer se coucher."
 
-    elias ecoute "Regarde. Vas-y doucement et laisse pas tomber la barre."
+    elias ecoute "Concentre-toi sur la barre. Et surtout, ne la lâche pas. Je tiens à garder mes doigts."
 
-    think "Je soulève. Ouh ! C'est beaucoup plus lourd que prévu."
+    think "Je pousse. La barre bouge. Mon âme, elle, reste coincée sur le banc."
 
-    elias ecoute "Pas comme ça. Va moins vite. Descends pas trop vite."
+    elias ecoute "Moins vite ! Pas besoin de battre un record. On essaie juste de survivre à une série."
 
-    think "Je recommence. Oh putain ça brûle."
+    think "Je recommence. Les muscles qui me servaient à ouvrir une porte viennent de déclarer leur indépendance."
 
     iris fatigue "Voilà."
 
-    elias ecoute "Encore deux séries. Après tu peux t'arrêter."
+    elias ecoute "Encore deux séries et tu auras mérité une vraie pause !"
 
-    elias ecoute "Allez, encore deux et tu poses la barre. Je suis là si tu lâches."
-    noam inquiet "Tu m'avais promis un truc simple !"
-    iris taquin "C'est trop compliqué ? Je vais chercher les petits haltères roses."
+    elias ecoute "Allez ! Encore deux répétitions, et je te laisse respirer. Je suis là si tu flanches."
+    noam inquiet "Tu m'avais promis une initiation ! Pas une tentative de meurtre !"
+    iris taquin "Oh, le pauvre. Je peux te chercher les haltères roses, si tu veux. Il y a des petits cœurs dessus."
+    elias gene "Ils sont pas là pour décorer, les petits haltères..."
+    iris blase "Je sais. C'était une plaisanterie."
+    noam inquiet "Merci, Elias. Je commençais à croire que tu étais de son côté."
+    elias sourire "Je suis du côté de ta colonne vertébrale."
 
-    noam reflexion "Un… Deux… Allez Noam !"
+    noam reflexion "Un... deux... Je refuse de me faire humilier par un morceau de fer !"
 
     $ mg_skip_scene_pick = True
     call minijeu_halteres from _call_minijeu_halteres
 
-    think "Je repose et récupère l'usage de mes poumons."
+    think "Je repose la barre. Il me faut quelques secondes pour retrouver l'existence de mes bras... et de mes poumons."
     $ mg_skip_scene_pick = False
 
     pause 0.6
 
-    elias joie "Tu sens tes muscles ? C'est ça qu'on aime. La sensation de toujours faire mieux ! Mais le sport, ça se perd vite, alors refais-en souvent !"
-    elias raison "Si tu reviens de temps en temps, tu verras, ça ira mieux."
+    elias joie "Tu sens ?! Ça, c'est le progrès ! Enfin... la douleur, c'est pas automatiquement du progrès. Mais tu t'es débrouillé !"
+    elias raison "Reviens de temps en temps. Avec de l'entraînement, on pourra même discuter pendant que tu pousses."
 
-    iris determine "Et parfois, c'est juste pour ne pas rentrer et tout casser."
-    iris taquin "La fonte, ça coûte moins cher qu'un psy et ça pose moins de questions idiotes."
+    iris determine "Ou tu viens ici simplement parce que tu as envie de casser quelque chose et qu'on préfère te laisser une barre."
+    iris taquin "La fonte ne te demande pas comment tu te sens. C'est son principal avantage."
 
     pause 0.4
 
-    noam neutre "J'ai les bras complètement morts."
-    elias joie "C'est normal. Tu recommenceras quand t'auras récupéré."
-    iris sourire "Et évite de te plaindre toute la soirée. On t'a pas forcé."
-    noam sourire "Pas forcé ? Vous avez même pas attendu ma réponse !"
-    elias rire "T'es toujours vivant. C'est déjà une bonne séance, non ?"
-    noam taquin "Je vais surtout essayer de tenir ma fourchette ce soir."
+    noam neutre "J'ai des bras en coton. On peut les échanger contre des neufs ?"
+    elias joie "Demain, tu vas découvrir des muscles dont tu ignorais l'existence !"
+    iris sourire "Et pas de plainte ce soir. Tu es entré de ton plein gré."
+    noam sourire "Tu m'as déjà condamné aux haltères avant que j'aie dit oui !"
+    elias rire "Regarde le positif : tu peux toujours marcher !"
+    noam taquin "On en reparle quand j'essaierai de porter ma fourchette."
 
     $ hideGroup()
 
-    think "Je quitte la salle. Les machines continuent, régulières et implacables."
+    think "Je sors du gymnase avec les bras d'une marionnette mal assemblée. Derrière moi, Iris a déjà recommencé une série."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_infirmerie", "couloir_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_151
     scene couloir_infirmerie at adaptive_fullscreen with dissolve
-    think "L'heure tourne. Mon estomac me ramène à la cafétéria."
+    think "Mon estomac me rappelle qu'il existe encore une activité physique à ma portée : manger."
 
     jump _2_CAFETERIA_SOIR
 
