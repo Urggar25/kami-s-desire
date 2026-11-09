@@ -115,6 +115,7 @@ label decouverte_salle_canon:
     noam sourire "Moi c'est Noam."
     ryn neutre "Ryn. Limen."
     $ unlock_character_name("ryn")
+    call kd_play_character_intro("ryn") from _call_kd_intro_ryn_j1
     "Il me fait signe d'approcher. Sur l'écran, une carte de la Terre est découpée en secteurs."
     ryn determine "Ils ont tout préparé. Même pas besoin de chercher où tirer, ça doit être enregistré depuis des mois."
     noam inquiet "Tu crois qu'il y a un moyen de voir sur quelle zone il est braqué ?"
