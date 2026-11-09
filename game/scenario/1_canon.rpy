@@ -202,7 +202,7 @@ label _1_CANON:
     lysa taquin "Oh, rien. Juste la réunion la plus importante de ta vie. Tu peux te rendormir, si tu veux."
     think "Cette voix me dit quelque chose. Le ton aussi. Agressivement rassurant."
     camera master at day1_wake_close
-    think "J'ouvre péniblement les yeux. Lysa est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste encore indistincte."
+    think "J'ouvre péniblement les yeux. La fille qui m'a réveillé est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste indistincte."
     $ blink()
     camera master at day1_wake_close_talk
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
@@ -211,7 +211,7 @@ label _1_CANON:
     camera master at day1_wake_close_talk
     lysa blase "Bah quoi ? J'allais pas te laisser dormir là toute la journée."
     camera master at day1_wake_close
-    think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans que Lysa s'éloigne vraiment."
+    think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans qu'elle s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
     camera master at day1_wake_close_talk
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
@@ -362,7 +362,7 @@ label _1_CANON:
     tomas neutre "Tu as une erreur en particulier ?"
 
     lysa "Hein ? Euh attends..."
-    lysa "Lysa, Permission denied..."
+    lysa "Permission denied... C'est tout ce que ça dit."
 
     tomas reflechit "D-Donc ça te détecte et... Et il y a un système de permission par personne..."
     tomas raison "On devrait peut-être tous essayer ?"
