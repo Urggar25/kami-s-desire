@@ -271,16 +271,17 @@ label _4_0_CAFETERIA_PNC_RYN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("ryn", "colere", 0.70)])
 
-    noam inquiet "Ryn, t'as l'air de vouloir casser quelque chose. Ça va ?"
-    ryn colere "Pas vraiment. J'ai l'impression que depuis hier, tout le monde pense que c'est moi qui ai voté contre."
-    noam neutre "Personne peut le savoir. Même moi, je sais pas qui a voté quoi."
-    ryn colere2 "Je sais ! Mais comme j'ai parlé de Limen et des rations, ils ont décidé que c'était forcément moi."
-    noam inquiet "T'as quand même dit que les supprimer d'un coup serait dangereux. C'est peut-être pour ça qu'ils te soupçonnent."
-    ryn colere "Et j'avais pas le droit de le dire ? Chez nous, y a des gens qui comptent sur ces distributions. J'allais pas faire semblant que tout irait bien !"
-    noam neutre "Non, t'avais raison d'en parler. J'aurais juste aimé qu'on ait plus de temps pour trouver quelque chose."
-    ryn triste "Moi aussi. Mais si Julian me cherche encore, je vais finir par lui répondre autrement."
-    noam inquiet "Évite, s'il te plaît. On va devoir revoter ensemble dans quelques jours."
-    ryn colere "Ouais, bah dis-lui ça à lui aussi."
+    noam inquiet "Ryn... tu comptes manger ce plateau ou le lancer contre le mur ?"
+    ryn colere "Fais pas semblant de pas voir. Depuis hier, tout le monde me regarde comme si j'avais saboté le vote !" 
+    noam neutre "On ne sait pas qui a voté contre. Même si tu me le demandais, je pourrais pas te répondre."
+    ryn colere2 "Je SAIS ! Mais comme j'ai osé parler de Limen et des rations, ils ont décidé que ça suffisait à faire de moi le coupable !"
+    noam inquiet "Tu as été l'un des plus inquiets. Je suppose que certains prennent tes arguments pour un aveu."
+    ryn colere "Et alors ?! Je devais mentir ? À Limen, des familles dépendent de ces sacs ! J'avais pas le droit de défendre les miens ?!"
+    noam neutre "Tu avais raison de le dire. J'aurais seulement voulu qu'on puisse proposer autre chose qu'un oui ou un non."
+    ryn triste "Moi aussi..."
+    ryn colere "Mais si Julian continue à me fixer comme un traître, je vais finir par lui demander des explications. Et j'aurai pas envie de sourire."
+    noam inquiet "Essaie de ne pas lui donner une nouvelle raison de t'accuser. On doit encore voter ensemble."
+    ryn colere "Alors va lui dire. Pour une fois que tu distribuerais les conseils dans les deux sens."
 
     $ j4_cafeteria_ryn_talked = True
     return
@@ -291,20 +292,21 @@ label _4_0_CAFETERIA_PNC_JULIAN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("julian", "neutre", 0.70)])
 
-    noam neutre "T'as même pas touché à ton plateau. Tu te sens pas bien ?"
-    julian decu "J'ai pas faim. Et j'ai pas tellement envie d'entendre les autres se féliciter d'avoir tout laissé comme avant."
-    noam inquiet "Personne se félicite, Julian. Tout le monde était inquiet à cause des rations."
-    julian colere "Ouais, et maintenant les gens vont continuer à faire la queue pendant qu'on trouve des excuses."
-    noam neutre "On n'avait pas que des excuses. Le texte était vraiment dangereux."
-    julian decu "Tu sais qui a voté contre ?"
-    noam surpris "Non. Pourquoi tu me demandes ça ?"
-    julian neutre "Parce que quelqu'un a empêché le vote de passer, et j'aimerais comprendre pourquoi."
-    noam inquiet "On était douze autour de la table. Personne te le dira si la personne veut rester anonyme."
-    julian colere "C'est pratique, quand même. Tu peux ruiner les efforts des autres et te cacher derrière le scrutin secret."
-    noam colere "Attends, c'est aussi pour ça qu'il est secret ! Si on commence à faire pression sur ceux qui sont pas d'accord, on va jamais avancer."
-    julian decu "Je sais. Tu m'as déjà fait le discours hier."
-    "Il détourne les yeux vers son assiette. Pour une fois, il n'essaie même pas d'avoir le dernier mot."
-    julian neutre "Laisse-moi un peu tranquille, Noam."
+    noam neutre "Julian, ça fait dix minutes que tu fixes la même tranche de pain. Tu veux la convaincre de quelque chose ?"
+    julian decu "Pas faim. Et j'en ai assez d'entendre des gens se féliciter d'avoir conservé les pénuries."
+    noam inquiet "Personne ne fête le résultat. Tout le monde a vu ce qu'on risquait en supprimant les rations d'un coup."
+    julian colere "Et maintenant, des familles continueront à attendre des heures pour un paquet de riz ! Mais bon, nous avons été prudents. Quelle consolation !"
+    noam neutre "Ce n'était pas une excuse. Le texte pouvait aussi faire des morts. Tu le sais."
+    julian decu "Dis-moi quelque chose, Noam... Tu sais qui a voté contre ?"
+    noam surpris "Non. Et je croyais qu'on était d'accord pour ne pas poser cette question."
+    julian neutre "Parce que quelqu'un nous a fait échouer. Je voudrais au moins comprendre ce qu'il avait en tête."
+    noam inquiet "On était douze. Si la personne voulait expliquer son vote, elle l'aurait déjà fait. C'est son droit."
+    julian colere "C'est formidable, ce système ! On peut faire échouer tout le monde sans jamais devoir s'en expliquer !"
+    noam colere "Justement ! Le vote est secret pour qu'on ne puisse pas punir ceux qui ne sont pas d'accord. Tu veux vraiment nous enlever ça aussi ?"
+    julian decu "Oui. Tu me l'as déjà expliqué hier. Devant Tomas, si tu te souviens."
+    "Julian baisse les yeux vers son plateau. Je m'attends à une réplique bien sentie. Elle ne vient pas."
+    think "Son silence me met presque plus mal à l'aise que son arrogance."
+    julian neutre "Laisse-moi seul, Noam. S'il te plaît."
 
     $ j4_cafeteria_julian_talked = True
     return
@@ -312,7 +314,8 @@ label _4_0_CAFETERIA_PNC_JULIAN:
 label day4_optional_news:
 
     scene bg_cg034 at adaptive_fullscreen with dissolve
-    think "La télévision montre toujours les distributions. Certains repartent avec des sacs pleins, d'autres attendent leur tour, mais je ne peux pas savoir combien de gens seront servis aujourd'hui."
+    think "Les images de distribution tournent en boucle. Des sacs remplis, des files interminables, des sourires devant la caméra."
+    think "Je voudrais savoir combien de personnes repartiront réellement avec quelque chose. L'écran ne le dit pas."
 
     return
 
@@ -322,7 +325,7 @@ label _4_0_TEMPS_LIBRE_1:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ current_period = "Après-midi"
 
-    think "Je vais profiter du temps libre pour voir autre chose que les écrans de la cafétéria. Je n'ai pas envie de passer la journée à discuter du même vote."
+    think "Je quitte la cafétéria avant que quelqu'un propose un deuxième décompte des voix. Je pourrais essayer de parler aux autres... de n'importe quoi qui ne ressemble pas à une élection."
 
     call START_FREE_TIME("_4_0_RETOUR_CONCLAVE_ANALYSE") from _call_START_FREE_TIME_1
 
@@ -331,18 +334,19 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.8
 
-    think "Pendant l'après-midi, j'ai croisé des représentants qui avaient déjà repris leurs habitudes. Elias cherchait quelque chose à bricoler et Elen essayait de convaincre Goumi de lui trouver du chocolat."
+    think "J'ai croisé Elias avec des outils, puis Elen poursuivant Goumi pour savoir si le chocolat faisait partie des denrées essentielles."
+    think "L'ambiance s'est presque normalisée. C'est précisément le moment que choisit Kami pour intervenir."
     play sound sfx_announce
     pause 0.4
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Mes petits représentants, il faudrait venir au Conclave ! Je vais vous annoncer la prochaine proposition."
+    kami "Mes petits représentants ! Retour au Conclave ! Une nouvelle proposition vous attend, et elle ne se dévoilera pas toute seule !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "J'espère que vous serez un peu plus détendus cette fois. Enfin, personnellement, je préfère quand vous vous disputez."
+    kami "J'espère que vous avez profité de votre repos. Personnellement, j'ai trouvé vos disputes beaucoup trop courtes. Nous allons remédier à ça !"
     hide screen kami_broadcast_ui
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    think "Je rejoins les autres. Ryn marche devant moi en râlant parce qu'il comptait faire une sieste."
+    think "Ryn râle dans le couloir. À l'entendre, Kami vient personnellement de lui voler la plus belle sieste de sa vie."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_202
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -359,15 +363,15 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("nyra", "raison"),
     ])
 
-    ryn colere "On est vraiment obligés de revenir ici ? On a pas déjà assez perdu de temps hier ?"
-    kael inquiet "Ça risque de durer. Julian n'est même pas venu, il m'a dit qu'il voulait rester dans sa chambre."
-    mara taquin "Julian qui rate une occasion de se montrer devant les caméras ? Il doit vraiment aller mal."
-    tomas hesitation "Il avait pas l'air bien, ce matin. Je crois que le vote lui a fait plus de mal qu'il veut l'admettre."
-    mara agace "Il a surtout passé la journée d'hier à te mettre la pression, toi. Tu vas pas me dire que ça t'a plu."
-    tomas inquiet "Non, mais j'ai pas envie qu'on recommence à se disputer à cause de lui."
-    nyra reflechit "Personne ne l'excuse, mais s'il est malade, il faut le laisser tranquille. Kael, tu penses qu'il reviendra pour le vote ?"
-    kael calme "Il a dit qu'il serait là quand il le faudrait. J'en sais pas plus."
-    ryn colere "Bon. Il manque quelqu'un, on a compris. On peut savoir pourquoi on est revenus ?"
+    ryn colere "ON REVIENT ENCORE ICI ?! Hier on y a passé la moitié de la journée, c'était pas suffisant ?!"
+    kael inquiet "Ça risque surtout de commencer sans tout le monde. Julian m'a dit qu'il resterait dans sa chambre. Il n'avait pas l'air d'humeur à discuter."
+    mara taquin "Julian qui renonce à une caméra ?! Vous avez vérifié qu'il respirait ? Normalement, elles le suivent naturellement."
+    tomas hesitation "Il avait vraiment l'air mal. Je crois que le résultat lui reste en travers de la gorge... même si j'ai pas très envie d'aller lui demander."
+    mara agace "Après la façon dont il t'a traité hier, tu vas quand même t'inquiéter pour lui ? Tomas, tu as un problème avec le fait de dire non."
+    tomas inquiet "Je peux être en colère contre ce qu'il a fait sans vouloir qu'il aille mal ! C'est pas incompatible, si ?"
+    nyra reflechit "Non, ce n'est pas incompatible. Kael, il t'a dit s'il participerait au prochain vote ?"
+    kael calme "Il m'a dit qu'il viendrait quand ce serait nécessaire. Pour le reste, j'ai pas insisté."
+    ryn colere "Bon, on va faire l'appel toute la journée ou elle peut nous annoncer ce fichu texte ?!"
 
     play sound sfx_announce
     pause 1.0
