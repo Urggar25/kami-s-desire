@@ -1,6 +1,3 @@
-default j4_photo_pick_trace_attempts = 0
-default j4_photo_put_trace_attempts = 0
-default j4_tray_eaten = []
 default j4_cafeteria_ryn_talked = False
 default j4_cafeteria_julian_talked = False
 
@@ -55,67 +52,6 @@ screen day4_cafeteria_tv_pnc():
             text "Consulter la télévision" size 28 color "#A6D8FF"
             text "Ryn et Julian peuvent être interrogés." size 19 color "#DCE8F7"
 
-screen day4_cafeteria_elen_gate():
-    modal True
-    zorder 205
-
-    add Solid("#000")
-    add "images/background/scene/cafeteria2.png" at cover_screen
-
-    imagebutton:
-        idle Transform(character_image("elen", "colere"), zoom=1.00)
-        hover Transform(character_image("elen", "colere_noire"), zoom=1.00)
-        focus_mask True
-        xalign 0.55
-        yalign 1.00
-        action Return("elen")
-
-screen day4_tray_pnc():
-    modal True
-    zorder 210
-
-    add "images/background/interact/cafeteria/plateau/plateau.png" at cover_screen
-
-    if "bread" not in j4_tray_eaten:
-        imagebutton:
-            idle "images/background/interact/cafeteria/plateau/pain.png"
-            hover "images/background/interact/cafeteria/plateau/pain.png"
-            xalign 0.29
-            yalign 0.54
-            action Return("bread")
-
-    if "ration" not in j4_tray_eaten:
-        imagebutton:
-            idle "images/background/interact/cafeteria/plateau/ration.png"
-            hover "images/background/interact/cafeteria/plateau/ration.png"
-            xalign 0.50
-            yalign 0.50
-            action Return("ration")
-
-    if "bar" not in j4_tray_eaten:
-        imagebutton:
-            idle "images/background/interact/cafeteria/plateau/barre.png"
-            hover "images/background/interact/cafeteria/plateau/barre.png"
-            xalign 0.65
-            yalign 0.64
-            action Return("bar")
-
-    button:
-        xalign 0.37
-        yalign 0.68
-        xsize 260
-        ysize 170
-        background None
-        action Return("empty")
-
-    textbutton "Terminer":
-        xalign 0.84
-        yalign 0.88
-        xsize 190
-        ysize 58
-        action Return("finish")
-
-
 label _4_0_REVEIL_CHAMBRE:
 
     scene bg_cg012 at adaptive_fullscreen with dissolve
@@ -125,37 +61,17 @@ label _4_0_REVEIL_CHAMBRE:
     $ current_period = "Matin"
     $ cafeteria_food_level = "medium"
 
-    pause 1.5  # Légèrement plus long pour accentuer la lourdeur
-
     call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_2
-
     $ blink()
-    "Je reviens à moi sous la lumière bleue des veilleuses."
-    $ blink()
-    think "Hier, il a suffi d'un non. Un seul et tout a été refusé."
-    think "Le bouton vert est resté éteint, et le monde a repris sa place exacte."
+    think "Je me réveille un peu avant l'annonce de Kami. J'ai mal dormi, mais j'ai surtout envie d'arrêter de repenser à ce qui s'est passé hier."
+    think "Le vote a échoué. Je suis déçu, même si je ne suis toujours pas sûr qu'on aurait dû supprimer les rations."
 
-    $ blink()
-    think "Mon cœur bat comme s'il voulait économiser ses forces. Aurais-je pu faire autrement ?"
-    think "On a gardé le système de rations. La sécurité. Mais aussi les chaînes avec."
-
-    $ blink()
-    pause 2.5  # Pause plus longue pour laisser peser le vide
-
-    "Parmi les affaires qui ont été amenées ici lors de mon arrivée, il y avait cette photo."
-
-    call day4_photo_take_trace from _call_day4_photo_take_trace
-
+    "Sur mon bureau, une photographie de quelques amis attire mon attention."
     scene bg_cg029 at adaptive_fullscreen with dissolve
-    think "Le cadre est froid et le papier représente une famille souriante. Pas la mienne : ce sont des amis."
     $ unlock_gallery_image("bg_cg029")
-    think "Pourquoi est-ce que je les regarde comme ça ?"
-    think "Est-ce qu'ils sourient encore ? Est-ce qu'ils auraient préféré abandonner ces putains de bons de rationnement ?"
-
-    call day4_photo_put_trace from _call_day4_photo_put_trace
-
-    "Je repose la photo face contre la table."
-    think "À quoi ça sert de se poser ce genre de questions... Je n'aurai pas la réponse."
+    think "Je reconnais leurs sourires. On avait pris cette photo avant mon départ, un jour où personne n'avait besoin de se demander ce que Kami allait décider pour lui."
+    think "J'aimerais savoir ce qu'ils ont pensé du vote. Il faudrait déjà que je puisse les appeler."
+    "Je repose le cadre et j'attrape mes vêtements."
 
     play sound sfx_announce
     pause 1.0
@@ -164,70 +80,22 @@ label _4_0_REVEIL_CHAMBRE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Et bien booooonjour tout le monde ! J'espère que vous n'avez pas trop la gueule de bois ?!"
-    kami "Il est huit heures et, bonne nouvelle : votre petite révolution a été annulée faute de courage."
-
+    kami "Booooonjour, mes petits représentants ! Bien remis de votre premier vote ?"
+    kami "Les rations restent en place, les frontières aussi, et personne n'a besoin d'apprendre à faire ses courses. Quelle victoire pour les habitudes !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Oh mais ne vous en faites pas, vous aurez bien des occasions de voir les conséquences de vos choix."
-    kami "La situation reste impeccablement identique à tout ce que vous avez connu depuis un an : pas une pièce qui circule, pas une once de liberté supplémentaire."
-    kami "Après tout, la liberté et la sécurité sont rarement compatibles !"
-
+    kami "Ne vous inquiétez pas, vous aurez d'autres propositions à examiner. En attendant, j'ai réorganisé certaines livraisons pour que la Terre profite du système que vous avez décidé de garder."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "C'est beau, non ? Ce calme avant… le calme."
-    kami "Pas d'alarme. Pas de chaos. Juste la garantie que demain ressemblera exactement à aujourd'hui."
-    kami "Mais vous avez confirmé ce que je pensais : l'humanité aime la liberté tant qu'elle ne menace pas son dîner."
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Allez, ne faites pas cette tête ! Vous avez probablement sauvé des gens."
-    kami "Vous verrez tout ça de vos propres yeux à la cafétéria. Les écrans sont chauds et vos rations sont prêtes."
+    kami "Je vous conseille d'aller prendre votre petit-déjeuner. Elen risque d'avoir quelques questions. J'ai hâte de l'entendre !"
 
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
-    pause 1.0
-
+    pause 0.3
     play sound sfx_drop
-    "Un bruit sec retentit dans le couloir, comme si on avait donné un coup dans une surface métallique."
+    "Un objet tombe bruyamment dans le couloir. Quelqu'un jure, puis s'éloigne."
+    think "Je finis de m'habiller et je prends ma tablette. Autant aller manger."
 
     jump _4_0_NAVIGATION_CAFETERIA
-
-label day4_photo_take_trace:
-
-    $ j4_photo_pick_trace_attempts = 0
-
-label day4_photo_take_trace_loop:
-
-    call screen trace_qte(path_type="curve_right", time_limit=6.0, wait_time=0.5, tolerance=70, max_errors=5, anchor_x=860, anchor_y=620)
-
-    if _return["success"]:
-        return
-
-    $ j4_photo_pick_trace_attempts += 1
-    if j4_photo_pick_trace_attempts >= 2:
-        "Mes doigts glissent une première fois, puis finissent par trouver le bord du cadre."
-        return
-
-    "Je m'y reprends."
-    jump day4_photo_take_trace_loop
-
-label day4_photo_put_trace:
-
-    $ j4_photo_put_trace_attempts = 0
-
-label day4_photo_put_trace_loop:
-
-    call screen trace_qte(path_type="arc", time_limit=5.0, wait_time=0.4, tolerance=72, max_errors=5, anchor_x=960, anchor_y=620)
-
-    if _return["success"]:
-        return
-
-    $ j4_photo_put_trace_attempts += 1
-    if j4_photo_put_trace_attempts >= 2:
-        "Je finis par la reposer, maladroitement."
-        return
-
-    "Le cadre accroche mes doigts."
-    jump day4_photo_put_trace_loop
 
 label _4_0_NAVIGATION_CAFETERIA:
 
@@ -236,7 +104,7 @@ label _4_0_NAVIGATION_CAFETERIA:
 
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
     "Je sors de la chambre."
-    think "Lumière froide. Portes fermées. Personne ne veut être le premier à sortir."
+    think "Je croise Elias dans le couloir. Il me fait un signe rapide avant de continuer vers la cafétéria."
 
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
     $ current_scene_active = None
@@ -252,19 +120,8 @@ label _4_0_CAFETERIA_ELEN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
-    "À peine entré dans la cafétéria, je repère Elen près du comptoir."
-    think "Elle ne parle pas. Elle bouillonne."
-
-label _4_0_CAFETERIA_ELEN_PARTIAL:
-
-    call screen day4_cafeteria_elen_gate()
-
-    if _return == "elen":
-        $ showGroup([("elen", "colere", 0.55)])
-        elen "Noam. Viens voir ça."
-        jump _4_0_CAFETERIA_ECRANS
-
-    jump _4_0_CAFETERIA_ELEN_PARTIAL
+    "J'entends Elen discuter avec Goumi au comptoir. Je m'approche pour voir ce qui se passe."
+    jump _4_0_CAFETERIA_ECRANS
 
 label _4_0_CAFETERIA_ECRANS:
 
