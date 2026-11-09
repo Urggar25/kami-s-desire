@@ -412,6 +412,7 @@ label _1_CHOICE_DEATH:
     jump _1_CHOICE
 
 label _1_CHOICE:
+    $ roadmap_unlock("choice_day1_door", set_current=False)
 
     menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Tenter d'ouvrir la porte":{"label":"_1_CHOICE_DEATH"}}):
         "Que devrions-nous faire ?"
@@ -489,6 +490,8 @@ label _1_CHOICE:
 
         "Rester assis et écouter":
             think "Je m'assois à une chaise et ne bouge pas."
+
+    $ roadmap_complete("choice_day1_door")
 
     $ showGroup([
         ("lysa", "neutre", -0.11),
@@ -2116,6 +2119,8 @@ label _1_FIN_JOURNEE_DORTOIR:
 # Fin alternative : Noam meurt en tentant d'ouvrir la porte.
 # La route s'arrête ici et le joueur revient à la chronologie.
 label _1_CHOICE_FATAL_END:
+    $ roadmap_complete("choice_day1_door")
+    $ roadmap_complete("ending_day1_asphyxia")
     $ hideGroup()
     stop music fadeout 0.6
     scene black with dissolve
@@ -2130,7 +2135,7 @@ label _1_CHOICE_FATAL_END:
     jump _1_CHOICE_FATAL_ROADMAP
 
 label _1_CHOICE_FATAL_ROADMAP:
-    call screen roadmap_menu(focus_node_id="day_1")
+    call screen roadmap_menu(focus_node_id="ending_day1_asphyxia")
     jump _1_CHOICE_FATAL_ROADMAP
 
 # Durée : 1m40 — Total : ~1h 4m 50s
