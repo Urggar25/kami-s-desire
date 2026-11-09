@@ -238,53 +238,41 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     scene bg_cg034 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg034")
 
-    "Le flux d'information bascule sur une rue d'un district que je ne connais pas. Sous une tente, des bénévoles remplissent des sacs de vivres."
-    "Les distributions de rationnement continuent. Les cartons passent de main en main, gratuitement, sans interruption."
-
-    think "Sans sourire, également."
-
-    kael "La chaîne tient encore. C'est comme d'hab, ce ne sont pas les institutions qui distribuent. Ce sont les bénévoles."
-
-    iris "Ils donnent tout gratuitement… Alors que notre vote n'a rien arrangé. Pff, la haine."
-
-    noam "Malgré l'échec, voir ça reste un soulagement. Au moins, les gens ne sont pas abandonnés."
-
-    "Un homme récupère son sac sans un mot. Derrière lui, plusieurs personnes crachent au sol en quittant la file."
-    "Leurs regards restent braqués sur les cartons et les tentes improvisées. La distribution continue, mais personne ne semble satisfait de ce qu'elle est devenue."
-
-    ryn "Ils ont encore besoin de faire la queue pour qu'on leur donne de quoi tenir une journée. Évidemment qu'ils sont en colère."
-
-    iris "Je te rappelle que t'hésitais encore à changer tout ça hier, c'est peut-être même toi qui as voté contre !"
-
-    ryn "Quoi ?! T'insinues que c'est ma faute, c'est ça ?!"
-
-    noam "Oh oh ! Du calme !"
-    noam "C'est bon, c'est du passé, il faut passer à autre chose maintenant !"
-
-    lysa "Le soulagement et l'humiliation dans la même image. Tantale aurait apprécié la mise en scène."
-
-    julian "Tout ça me donne la nausée. Excusez-moi mais je préfère m'en aller."
+    "L'écran montre une distribution de nourriture dans un district que je ne connais pas. Des bénévoles remplissent des sacs et les donnent à une longue file de personnes."
+    elias inquiet "Bon, les livraisons ont pas été coupées. Ça, c'est déjà une bonne chose."
+    kael reflechit "Les bénévoles continuent à distribuer ce qu'ils reçoivent. On voit pas si les quantités ont augmenté, par contre."
+    iris fatigue "Et voilà pourquoi Elen a plus de cannelle. Je suppose qu'on devrait applaudir."
+    ryn colere "T'as vu combien ils sont à attendre ? Ça fait des heures qu'ils font la queue, et certains repartiront quand même sans rien."
+    noam inquiet "Je suis content qu'ils reçoivent encore quelque chose, mais ça change pas ce qui nous posait problème hier."
+    lysa blase "Exactement. On a évité un changement qui pouvait être dangereux, mais c'est pas pour ça que le système actuel marche bien."
+    "Une femme explique à la caméra qu'elle a attendu toute la matinée. Le journaliste lui demande ce qu'elle pense du vote."
+    "Elle répond qu'elle aurait aimé que les représentants trouvent une solution, mais qu'elle est soulagée de ne pas perdre ses bons."
+    mara reflechit "Bah voilà. Même dehors, les gens savent pas ce qu'ils auraient préféré."
+    iris desaccord "Et nous, on avait encore moins d'informations. Franchement, je veux bien critiquer le résultat, mais on pouvait pas faire de miracles."
+    julian colere "On aurait quand même pu essayer au lieu de tout refuser."
+    ryn colere "T'as pas fini ? On a voté à bulletin secret, alors arrête de regarder les autres comme si tu savais qui a dit non !"
+    julian decu "J'ai rien dit sur toi."
+    ryn colere "T'as pas besoin de le dire !"
+    nyra neutre "On n'a aucun moyen de savoir qui a voté contre. Ce serait peut-être plus utile de regarder ce qu'on peut faire au prochain vote."
+    julian decu "Ouais, bon. Je vais manger ailleurs."
+    "Julian quitte la table. Ryn le suit des yeux, mais ne répond pas."
     return
-
 
 label _4_0_CAFETERIA_PNC_RYN:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("ryn", "colere", 0.70)])
 
-    noam "Ryn… ça va ?"
-
-    ryn colere "Tu sais ce que je comprends pas ? Pourquoi tout le monde est aussi froid avec moi."
-    ryn "Ils me regardent comme si j'avais provoqué tout ça. Comme si j'avais choisi les files et les ventres vides."
-
-    noam "Les nerfs sont à vif. Ils cherchent peut-être juste quelqu'un sur qui les poser."
-
-    ryn colere2 "J'ai fait que dire la vérité sur ce qui se passe à Limen !"
-    ryn "Les gens attendent des heures. Ils se battent pour des rations. J'allais pas sourire et faire semblant que tout allait bien."
-
-    noam reflexion "Dire la vérité ne veut pas toujours dire que les autres sont prêts à l'entendre."
-
-    ryn colere "Alors qu'ils m'en veuillent. Ça rendra pas Limen moins affamée."
+    noam inquiet "Ryn, t'as l'air de vouloir casser quelque chose. Ça va ?"
+    ryn colere "Pas vraiment. J'ai l'impression que depuis hier, tout le monde pense que c'est moi qui ai voté contre."
+    noam neutre "Personne peut le savoir. Même moi, je sais pas qui a voté quoi."
+    ryn colere2 "Je sais ! Mais comme j'ai parlé de Limen et des rations, ils ont décidé que c'était forcément moi."
+    noam inquiet "T'as quand même dit que les supprimer d'un coup serait dangereux. C'est peut-être pour ça qu'ils te soupçonnent."
+    ryn colere "Et j'avais pas le droit de le dire ? Chez nous, y a des gens qui comptent sur ces distributions. J'allais pas faire semblant que tout irait bien !"
+    noam neutre "Non, t'avais raison d'en parler. J'aurais juste aimé qu'on ait plus de temps pour trouver quelque chose."
+    ryn triste "Moi aussi. Mais si Julian me cherche encore, je vais finir par lui répondre autrement."
+    noam inquiet "Évite, s'il te plaît. On va devoir revoter ensemble dans quelques jours."
+    ryn colere "Ouais, bah dis-lui ça à lui aussi."
 
     $ j4_cafeteria_ryn_talked = True
     return
@@ -295,29 +283,20 @@ label _4_0_CAFETERIA_PNC_JULIAN:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "reflexion", 0.28), ("julian", "neutre", 0.70)])
 
-    noam "Tu ne dis rien. C'est pas vraiment ton genre."
-
-    julian neutre "Je n'ai rien à ajouter."
-
-    noam "Depuis quand ça t'arrête ?"
-
-    julian "J'étais sûr que le texte passerait. Vraiment sûr."
-    julian decu "Les arguments étaient là. Les conséquences aussi. Il suffisait de choisir."
-
-    pause 0.4
-
-    julian neutre "Qui a voté contre ?"
-
-    noam surpris "Je ne sais pas. Et même si je le savais—"
-
-    julian "Ce n'était pas une question compliquée, Noam. Qui a voté contre ?"
-
-    noam inquiet "Pourquoi tu veux savoir ?"
-
-    julian "Pour comprendre."
-    julian decu "Pour l'instant."
-
-    think "Pas de sourire. Pas de geste pour la caméra. Sa voix est basse, sèche, presque agressive."
+    noam neutre "T'as même pas touché à ton plateau. Tu te sens pas bien ?"
+    julian decu "J'ai pas faim. Et j'ai pas tellement envie d'entendre les autres se féliciter d'avoir tout laissé comme avant."
+    noam inquiet "Personne se félicite, Julian. Tout le monde était inquiet à cause des rations."
+    julian colere "Ouais, et maintenant les gens vont continuer à faire la queue pendant qu'on trouve des excuses."
+    noam neutre "On n'avait pas que des excuses. Le texte était vraiment dangereux."
+    julian decu "Tu sais qui a voté contre ?"
+    noam surpris "Non. Pourquoi tu me demandes ça ?"
+    julian neutre "Parce que quelqu'un a empêché le vote de passer, et j'aimerais comprendre pourquoi."
+    noam inquiet "On était douze autour de la table. Personne te le dira si la personne veut rester anonyme."
+    julian colere "C'est pratique, quand même. Tu peux ruiner les efforts des autres et te cacher derrière le scrutin secret."
+    noam colere "Attends, c'est aussi pour ça qu'il est secret ! Si on commence à faire pression sur ceux qui sont pas d'accord, on va jamais avancer."
+    julian decu "Je sais. Tu m'as déjà fait le discours hier."
+    "Il détourne les yeux vers son assiette. Pour une fois, il n'essaie même pas d'avoir le dernier mot."
+    julian neutre "Laisse-moi un peu tranquille, Noam."
 
     $ j4_cafeteria_julian_talked = True
     return
@@ -325,8 +304,9 @@ label _4_0_CAFETERIA_PNC_JULIAN:
 label day4_optional_news:
 
     scene bg_cg034 at adaptive_fullscreen with dissolve
-    think "Les mêmes distributions continuent de défiler."
-    think "Même file. Même attente. Même colère contenue."
+    think "La télévision montre toujours les distributions. Certains repartent avec des sacs pleins, d'autres attendent leur tour, mais je ne peux pas savoir combien de gens seront servis aujourd'hui."
+
+    return
 
     return
 
