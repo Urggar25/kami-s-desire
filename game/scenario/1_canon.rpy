@@ -198,6 +198,9 @@ label _1_CANON:
     noam inquiet "Mh... Arrête de me secouer..."
     camera master at day1_wake_close_talk
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
+    noam inquiet "Le prochain quoi...?"
+    lysa taquin "Oh, rien. Juste la réunion la plus importante de ta vie. Tu peux te rendormir, si tu veux."
+    think "Cette voix me dit quelque chose. Le ton aussi. Agressivement rassurant."
     camera master at day1_wake_close
     think "J'ouvre péniblement les yeux. Lysa est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste encore indistincte."
     $ blink()
@@ -283,17 +286,36 @@ label _1_CANON:
     ryn colere "Quoi ?? Qu'est-ce que t'as dit !"
 
     mara taquin "Ouuuh effraaayant !"
+    elen surpris "Hé, attendez ! Vous êtes sûrs qu'on est tous censés être là ?"
+    mara taquin "Non, on s'est réunis par hasard pour l'anniversaire du monsieur qui hurle."
+    ryn colere "TU TE FOUS DE MOI ?!"
+    elen desaccord "Oh, moi j'avais pas prévu de cadeau..."
+    think "À peine réveillés, et il y a déjà deux conversations que personne ne contrôle."
 
     noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
+    mara taquin "Le même bateau ? J'espère que t'as pas le permis."
+    ryn colere "On n'est PAS sur un bateau !"
+    lysa blase "Merci, capitaine. On avait un doute."
+    noam inquiet "C'était une expression..."
+    think "J'aurais dû me taire. Ça aurait au moins fait un argument de moins."
 
     think "Je cherche les caméras. Elles sont propres, discrètes, partout. Enfin quelque chose de familier."
 
     $ day1_group_reaction(mara="rire", ryn="colere", iris="blase", nyra="reflexion")
     julian peur "On pourrait peut-être discuter sans hurler, non ?"
     julian reflexion "C'est exactement ce qu'elle veut : qu'on commence à s'engueuler. Je vais pas lui faire ce plaisir."
+    mara taquin "Oh, quelle noblesse. Monsieur va sauver l'humanité en parlant doucement."
+    julian sourire "Tu peux essayer, toi aussi. C'est gratuit."
+    mara rire "J'ai pas dit que j'avais envie de sauver l'humanité."
 
     iris inquiet "Tu ne changeras donc jamais."
     iris blase "On attend quoi ? Un miracle ? Une notice ? Quelqu'un de compétent ? On ne sait même pas ce qu'on doit faire."
+    elias inquiet "On peut peut-être commencer par chercher une sortie ?"
+    iris desaccord "Formidable. Quelqu'un vient d'inventer la porte."
+    elias gene "Je proposais juste..."
+    kael calme "Pour sa défense, c'est pas la pire idée qu'on ait eue depuis notre réveil."
+    ryn colere "Et c'était quoi, la pire ?!"
+    kael calme "Je voulais pas désigner de volontaire."
 
     nyra triste "Si elle voulait nous parler elle pourrait le faire à tout moment."
     nyra neutre "Elle contrôle tout ici, non ?"
@@ -304,6 +326,11 @@ label _1_CANON:
     elen inquiet "Hein ?? On est enfermés ?!"
     elen inquiet "Mais comment qu'on va faire..."
     elen fatigue "Aaaahh ! En plus j'ai envie d'aller faire pipi !"
+    elen inquiet "C'est sérieux, hein ! J'ai cherché des toilettes dans mon rêve et y en avait même pas !"
+    mara taquin "C'est peut-être ça, le fameux test de l'humanité."
+    sael raison "On peut éviter les plaisanteries et chercher un plan de cette salle."
+    elen desaccord "Ben justement ! Un plan avec des toilettes !"
+    think "Je crois qu'elle est sincèrement la plus motivée de nous tous."
 
     ryn reflechit "Et bah retiens-toi. Fais comme tout le monde"
 
@@ -313,6 +340,10 @@ label _1_CANON:
 
     mara rire "J'adore. Douze pigeons, zéro animateur. Et un susceptible."
     mara taquin "Il est vraiment mal foutu cet enlèvement. Amatrice !"
+    julian sourire "Tu devrais lui proposer tes services."
+    mara rire "Avec plaisir. J'aurais au moins mis de la musique."
+    tomas hesitation "P-Pour rappel, on est peut-être enregistrés..."
+    mara taquin "Alors elle pourra prendre des notes."
 
     tomas reflechit "T-Tu sais qu'elle entend tout ce qu'on dit ? Tout le temps."
     tomas reflechit "C'est pas parce qu'elle dit rien qu'elle nous écoute pas."
@@ -335,6 +366,11 @@ label _1_CANON:
 
     tomas reflechit "D-Donc ça te détecte et... Et il y a un système de permission par personne..."
     tomas raison "On devrait peut-être tous essayer ?"
+    ryn determine "Voilà une idée ! Allez, poussez-vous."
+    lysa blase "Tu veux vraiment faire la queue pour te faire recaler par une porte ?"
+    ryn colere "Tu préfères rester là à rien faire ?"
+    nyra hesitation "Ce serait utile de savoir si les refus sont identiques."
+    mara taquin "Parfait. Un interrogatoire de poignées. On progresse."
 
     lysa blase "T'en as d'autres des idées de génie ?"
     lysa fatigue "Je vois pas pourquoi l'un d'entre nous aurait des permissions que les autres n'auraient pas."
@@ -348,12 +384,23 @@ label _1_CANON:
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
     elias inquiet "Sinon, on peut tenter de la forcer."
+    elias gene "Enfin, j'ai pas dit qu'on allait la défoncer. Juste... regarder si elle bouge."
+    ryn determine "Ça, je peux le faire."
+    iris peur "Non ! C'est justement ce qu'il ne faut pas faire !"
+    ryn colere "Tu veux décider à ma place ?"
+    sael raison "Personne ne touche à la porte pour l'instant."
+    mara sourire "Pour une fois, je vote avec la porte."
 
     iris peur "Tu veux nous faire tuer ou quoi ?!"
 
     sael raison "Il n'y a pas le choix."
     sael raison "Ma grand-mère disait toujours de réfléchir avant de se jeter sur une porte fermée."
     sael raison "Il faut prendre une décision claire."
+    elen inquiet "Il y a une troisième possibilité ?"
+    sael raison "Laquelle ?"
+    elen peur "Quelqu'un nous explique où sont les toilettes."
+    lysa fatigue "Je sens que cette histoire va durer trente jours."
+    think "Sael ferme les yeux une seconde. C'est peut-être sa façon de compter jusqu'à dix."
 
     elen desaccord "Mais attendre, c'est risqué aussi, nooon ?"
     elen desaccord "Et si on reste là sans rien faire, ça va pas nous aider non plus !"
@@ -978,9 +1025,18 @@ label _1_KAMI_APPARITION:
     kami "Excellente question."
 
     kami "Parce que vous êtes douze."
+    elen surpris "On a été choisis pour une histoire de chiffres ?!"
+    kami "Tu préférais une histoire de taille ?"
+    elen peur "Hein ?!"
+    kami "Rassure-toi. Il n'y a pas de toise à l'entrée. Enfin... plus maintenant."
     kami "Et que douze, c'est un chiffre pratique."
     kami "Assez pour créer des alliances."
     kami "Pas assez pour se cacher dans la foule."
+    julian reflexion "Et qu'est-ce qu'on est censés représenter, exactement ?"
+    kami "Une excellente transition ! Je vois que certains ont déjà envie d'avoir la parole."
+    mara taquin "Il attend ça depuis qu'il a ouvert les yeux."
+    julian neutre "Je pose une question."
+    kami "Et moi, je savoure ce moment."
 
     pause 0.3
 
@@ -1008,6 +1064,11 @@ label _1_KAMI_APPARITION:
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
     kami "Alors je vous le dis : bienvenue au Conclave."
+    elen joie "On peut applaudir ?"
+    ryn colere "TU VAS VRAIMENT APPLAUDIR ?!"
+    elen peur "Mais non ! Je demandais !"
+    kami "Oh, faites comme chez vous. Il n'y aura pas de deuxième cérémonie d'accueil."
+    mara rire "Dommage. J'avais préparé mon discours."
 
     pause 0.5
 
@@ -1015,6 +1076,12 @@ label _1_KAMI_APPARITION:
 
     kami "Le Conclave durera trente jours."
     kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
+    noam inquiet "Trente jours ? Tu ne nous as pas demandé notre avis !"
+    kami "C'est vrai. J'ai oublié le formulaire de satisfaction."
+    lysa colere "Tu nous retiens prisonniers."
+    kami "Prisonniers ? Quelle vilaine façon de parler d'un séjour tous frais payés !"
+    ryn colere "Ouvre les portes et viens dire ça en face !"
+    kami "Tu me reproches déjà de ne pas être présente physiquement ? C'est touchant."
 
     scene bg_diffusion_triste at adaptive_fullscreen with dissolve
 
@@ -1041,6 +1108,14 @@ label _1_KAMI_APPARITION:
     kami "Aujourd'hui, au cours de cette première journée…"
     kami "Chacun de vous proposera une modification, un Amendement. Un seul."
     kami "Sur le commandement ou la règle de votre choix."
+    kael reflexion "On écrit ça comment ? Un texte complet ? Une proposition ?"
+    kami "Un amendement. C'est un mot très pratique : tout le monde a l'impression de savoir ce qu'il signifie."
+    julian sourire "Au moins, on pourrait en discuter entre nous."
+    nyra neutre "Et tu penses que tout le monde te dira la vérité ?"
+    julian reflexion "Je pense qu'on peut essayer."
+    mara taquin "Ça ferait déjà un premier amendement : interdire à Julian de faire des discours."
+    julian colere "Tu peux arrêter deux minutes ?!"
+    kami "Oh non. Continuez. Je prends un plaisir considérable à vous écouter."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -1085,6 +1160,14 @@ label _1_KAMI_APPARITION:
     $ impact(10, 0.25, "#c81e2e")
 
     kami "Personne ne devra voter contre. Sinon, le vote est refusé."
+    ryn colere "Attends ! Un seul type peut bloquer tout le monde ?"
+    kami "Exact ! Tu as compris plus vite que je ne l'espérais."
+    ryn colere "Et si un idiot vote contre juste pour nous faire chier ?"
+    nyra neutre "Il n'aura même pas besoin de justifier son choix."
+    julian reflexion "C'est une règle qui donne un pouvoir énorme à chacun."
+    mara taquin "Et tout le monde vient de regarder Ryn. C'est vexant, non ?"
+    ryn colere "J'AI RIEN FAIT !"
+    kami "Pas encore. Voilà qui est enthousiasmant."
 
     scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
 
@@ -1124,6 +1207,16 @@ label _1_KAMI_APPARITION:
     kami "Vous pouvez mentir."
     kami "Vous pouvez voler."
     kami "Vous pouvez vous entretuer."
+    elen peur "P-Pardon ?! Tu viens de dire quoi ?!"
+    kami "Je l'ai dit assez distinctement, je crois."
+    iris colere "Tu ne peux pas annoncer ça comme si tu nous proposais le dessert !"
+    kami "Je pourrais l'annoncer plus gaiement. Tu veux que je recommence ?"
+    sael raison "Et si quelqu'un est blessé ?"
+    kami "Vous vous débrouillerez. C'est le principe de la liberté."
+    think "La salle se tait. Même Mara n'a pas trouvé de réponse."
+    ryn colere "Personne ici n'a l'intention de tuer qui que ce soit."
+    nyra neutre "Tu ne peux pas le savoir."
+    think "Je regarde les autres. Cette fois, personne ne soutient le regard de personne."
     kami "Je ne m'en mêlerai pas. Je ne vous défendrai pas. Je ne vous en empêcherai pas."
     kami "Ici, vous êtes libres de vos actions à condition qu'elles respectent le réglement du Conclave."
 
@@ -1401,15 +1494,38 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "On a déjà parlé des Commandements ce matin, alors je vous épargne la rediffusion. Il reste trois détails pratiques."
     kami "Vous ne quitterez pas la station avant le trentième jour et vous ne pouvez pas appeler l'extérieur. Si quelqu'un vous appelle, vous pouvez répondre."
+    elen inquiet "Mais... si quelqu'un nous appelle, comment il sait qu'on est là ?"
+    kami "Ah, une excellente question."
+    elen surpris "Vraiment ?"
+    kami "Non. La suivante."
+    elen desaccord "Hééé !"
     kami "Vous êtes filmés, sauf dans vos chambres quand le brouilleur est actif. Les enregistrements restent conservés : je pourrai les consulter sept jours plus tard, même si rien ne sera diffusé pendant le brouillage."
+    julian inquiet "Attends, donc on est surveillés même quand on ne l'est pas ?"
+    kami "Quelle jolie manière de le formuler."
+    iris colere "Tu réalises à quel point c'est malsain ?"
+    kami "J'ai eu trente jours à préparer mes réponses à cette question. Tu veux la version courte ?"
+    mara taquin "On peut essayer la version silence ?"
+    kami "Refusé."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Pour les détails ennuyeux, ouvrez votre tablette. Je ne suis pas votre secrétaire."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Maintenant, vos amendements. Un texte par personne, dans l'urne, avant dix-huit heures. C'est obligatoire !"
     kami "Un texte sera tiré au sort demain, puis un vote aura lieu tous les trois jours. Aucun vote contre pour adopter : les abstentions et les absences ne bloquent pas le résultat."
+    ryn reflechit "Donc on peut perdre juste parce qu'un seul type n'est pas d'accord."
+    sael raison "Ou gagner si personne ne s'y oppose."
+    nyra neutre "Ce n'est pas la même chose qu'obtenir un accord."
+    julian sourire "C'est à nous de convaincre."
+    lysa blase "Ou de savoir qui préfère se taire."
+    think "La phrase de Lysa reste suspendue. Pour la première fois, je pense aux abstentions autrement."
     kami "Et même un amendement refusé peut avoir des conséquences. Moi, je l'appliquerai à la lettre."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Il vous reste trente-et-une minutes. Au travail !"
+    elias surpris "Trente-et-une ?! Pourquoi pas trente ?"
+    kami "Parce que j'aime être généreuse."
+    elias inquiet "J'ai même pas choisi mon titre..."
+    mara taquin "Commence par écrire : Au secours."
+    elias gene "C'est pas un amendement..."
+    mara sourire "Ça dépend des destinataires."
 
     $ unlock_codex_page("reglement_conclave", with_notification=False)
     $ unlock_codex_page("commandements", with_notification=False)
@@ -1464,10 +1580,21 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     julian sourire "Moi, j'ai une proposition. Enfin, j'en avais trois, mais il faut choisir."
     mara taquin "C'est fou, Justin. Pour une fois, tu vas devoir faire court."
     julian neutre "Julian. Et je peux très bien être bref quand je veux."
+    mara taquin "Alors prouve-le. Tout de suite."
+    julian reflexion "Je n'ai pas à me justifier."
+    lysa blase "Magnifique. Quatre mots."
+    elen joie "On pourrait l'inscrire dans le procès-verbal !"
+    julian colere "Vous êtes intenables."
     lysa blase "On attend de voir ça."
     kael calme "On pourrait quand même se donner un avis, même rapide. Ça éviterait peut-être une grosse erreur."
     ryn reflechit "Non, merci. Je vais pas laisser des inconnus choisir à ma place."
     nyra neutre "Et si quelqu'un ment sur ce qu'il écrit, cette discussion n'aura servi à rien."
+    kael reflechit "Ou elle nous aura permis de savoir qui ment mal."
+    tomas hesitation "C-C'est pas forcément très rassurant..."
+    mara sourire "Moi, j'aimerais bien voir ça."
+    iris desaccord "Moi, j'aimerais surtout finir avant de mourir de vieillesse."
+    elen inquiet "On a seulement trente minutes !"
+    lysa blase "Merci pour le rappel. Ça aide énormément."
     tomas hesitation "Surtout qu'on ne connaît même pas toutes les conséquences d'un refus..."
     iris desaccord "Voilà. Alors laissez-moi me concentrer, j'ai déjà du mal à tourner ma phrase."
     think "Les stylos commencent à gratter les feuilles. Kael cherche encore un regard, puis finit par baisser les yeux sur son texte."
@@ -1483,6 +1610,11 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     mara sourire "Ah bah voilà ! Il en fallait un pour que les autres se bougent."
     julian sourire "Ou alors on voulait juste vérifier que l'urne ne mordait pas."
     ryn colere "Tu veux essayer avec ta main ?"
+    julian sourire "Tu sais, on a aussi le droit de plaisanter sans menacer quelqu'un."
+    ryn colere "Je te menaçais pas !"
+    mara rire "Non, il te proposait une expérience scientifique."
+    sael raison "Ça suffit. Chacun son texte."
+    think "Même ceux qui étaient prêts à s'entraider baissent les yeux."
     elen inquiet "Ryn, arrête, tu me fais peur quand tu plaisantes comme ça !"
     ryn fatigue "Je plaisantais... Oh, laisse tomber."
     play sound sfx_drop
@@ -1582,6 +1714,11 @@ label _1_AMENDEMENT_DEPOSE:
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
     kami "Grâce à vous, je n'aurai pas besoin d'éliminer qui que ce soit aujourd'hui."
+    elen peur "É-Éliminer ?! C'était prévu, ça ?"
+    kami "Prévu ? Non. Envisagé ? Oh, tout est envisageable."
+    tomas inquiet "Tu... tu ne plaisantes pas ?"
+    kami "Vous avez tous rendu votre copie. Ne gâchons pas cette merveilleuse réussite collective."
+    think "Elle vient de prononcer le mot réussite comme une menace."
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
@@ -1661,6 +1798,11 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     think "Julian se laisse tomber dans un fauteuil avec juste assez de bruit pour rester au centre de la scène."
 
     julian detendu "J'ai recommencé mon texte trois fois. Trois !"
+    mara taquin "Trois versions du même discours sur toi-même ?"
+    julian sourire "Je voulais être précis."
+    nyra taquin "Tu as réussi à garder ton nom hors du titre ?"
+    julian detendu "Très drôle. Ça vous amuse, mais si le texte est tiré..."
+    mara sourire "Tu feras une quatrième version pour la postérité."
     julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
     julian detendu "Ça me ferait chier qu'on la rejette juste parce que je l'ai mal écrite !"
 
@@ -1712,6 +1854,11 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     $ bc_show("mara", "content", px=-70, py=-50, pz=0.85)
     mara sourire "Oh ! Y'a pire."
     mara taquin "Tu pourrais être mort tout court."
+    tomas gene "Ah... merci, c'est très... apaisant."
+    mara sourire "De rien, c'est mon talent."
+    julian detendu "Mara, laisse-le poser son plateau."
+    mara taquin "Tu vois ? Je suis gentille. Je lui ai même laissé une chance de survie."
+    tomas hesitation "Je... je vais juste servir le thé."
     $ bc_hide()
 
     mara sourire "Il reste une place ici."
@@ -1723,6 +1870,10 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     tomas hesitation "Un truc chaud. Juste… un truc chaud."
     tomas gene "Je savais pas combien on allait être alors j'en ai pris quelques-uns..."
     tomas "Voilà. Rien de cassé. Enfin, pas encore."
+    mara taquin "Quel dommage. On avait presque un premier incident."
+    nyra sourire "Détendez-vous. Pour une fois, personne ne vote."
+    julian sourire "Je vote pour qu'on laisse le thé tranquille."
+    think "Et, bizarrement, tout le monde a l'air d'accord."
 
     $ bc_show("julian", "joie", px=-70, py=-50, pz=0.85)
     julian detendu "Merci, Tomas. Franchement, ça fait du bien."
@@ -1752,11 +1903,21 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian "C'est JU-LIAN !"
 
     mara "Ouais, si tu le dis !"
+    tomas gene "Je crois qu'elle connaît ton nom, tu sais."
+    julian colere "Merci, Tomas, je l'avais deviné."
+    mara rire "Jules, arrête de te crisper, ton thé va tourner."
+    julian "C'est JU..."
+    think "Il s'arrête. Mara sourit dans sa tasse. Match terminé."
 
     pause 2.0
 
     "L'ambiance retombe un peu."
     tomas vide "Demain… À neuf heures on saura…"
+    nyra vide "Si l'un de nous a écrit quelque chose que les autres ne pourront pas accepter."
+    julian vide "C'est un peu tôt pour supposer le pire."
+    mara vide "C'est même pas le pire. C'est juste une réunion."
+    tomas hesitation "Une réunion où une voix peut tout bloquer."
+    think "Plus personne ne touche à sa tasse pendant quelques secondes."
 
     julian vide "Ouais. Demain. Mais c'est encore loin !"
     julian "Allez, parle pas déjà de demain. On peut souffler cinq minutes ?"
@@ -1825,6 +1986,10 @@ label _1_FIN_JOURNEE_DORTOIR:
         noam neutre "Ouais."
 
         elias detendu "Moi j'ai tenté de dormir direct. Raté."
+    noam neutre "T'as essayé de compter quelque chose ?"
+    elias sourire "Les bruits du système de ventilation. J'en étais à quatre-vingt-douze quand j'ai compris que j'écoutais si quelqu'un arrivait."
+    noam sourire "Et alors ?"
+    elias inquiet "Personne. C'est ça qui m'a empêché de dormir."
 
     if choix_1_soir == "dormir":
 
@@ -1840,6 +2005,11 @@ label _1_FIN_JOURNEE_DORTOIR:
     elias inquiet "Putain, me rappelle pas ça ! J'avais réussi à l'oublier cinq minutes."
     noam sourire "Désolé."
     elias sourire "Allez, bonne nuit. Et si j'entends Ryn dans le couloir, je verrouille ma porte !"
+    noam sourire "Tu crois qu'il va essayer toutes les chambres ?"
+    elias detendu "Je sais pas. Mais s'il demande où est la sortie, je lui indique la tienne."
+    noam inquiet "Sympa."
+    elias sourire "Je plaisante !"
+    think "Je ne suis pas certain que ça me rassure."
     noam neutre "Bonne nuit."
 
     pause 0.3
@@ -1881,7 +2051,10 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     $ blink()
 
-    think "Je ferme les yeux. Cette fois, je finis par m'endormir."
+    think "Je ferme les yeux. Les voix du Conclave me reviennent une à une. Douze représentants, une seule voix contre pour tout arrêter... et demain, l'une de nos feuilles deviendra l'affaire de tous."
+    think "J'essaye de me souvenir de qui a souri pendant l'annonce."
+    think "Je préfère arrêter de compter."
+    think "Le sommeil finit par gagner."
 
     $ blink()
 
