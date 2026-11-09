@@ -302,11 +302,13 @@ label _3_CANON:
 
     pause 0.5
 
-    think "Je me réveille avant l'annonce de Kami. Aucune idée de pourquoi, mais aujourd'hui je n'ai pas envie de rester au lit."
+    think "Je suis réveillé avant l'annonce de Kami. Première victoire de la journée : l'IA n'a pas eu besoin de me tirer du lit."
+    think "Deuxième victoire : je n'ai pas encore vomi en pensant à quatorze heures."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ blink()
-    think "Le vote me fait peur, bien sûr. Si quelqu'un dit non, on aura passé trois jours ici pour rien. Mais si ça passe, on aura vraiment changé quelque chose."
-    think "Je me redresse et j'attrape ma tablette. Cette fois, j'ai envie d'y aller."
+    think "Un seul non et on repart à zéro. Douze inconnus, une urne et une phrase qui pourrait faire basculer le monde."
+    think "J'aimerais croire que ce sera aussi simple qu'une couleur sur un écran."
+    think "Je saisis ma tablette. Hier, elle débordait d'arguments. Aujourd'hui, il va falloir faire quelque chose de tout ça."
 
     play sound sfx_announce
     pause 1.0
@@ -317,19 +319,19 @@ label _3_CANON:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
 
-    kami "Bonjour, mes petits représentants."
-    kami "Vous avez la tête de gens qui ont mal dormi. C'est parfait."
+    kami "Booooonjour, mes douze petites consciences ! Vous avez une mine à faire pâlir mes caméras."
+    kami "Pas dormi ? Tant mieux ! Une décision historique mérite quelques cernes. C'est plus photogénique."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Aujourd'hui, C'est JOUR DE VOOOOOTE !"
-    kami "L'un de vous a écrit un texte. Dans quelques heures, on saura s'il valait vraiment la peine d'exister."
+    kami "AUJOURD'HUI... C'EST LE JOUR DU VOOOOOTE ! Oui ! Le premier ! J'ai préparé des effets sonores et tout !"
+    kami "L'un de vous a griffonné une idée sur une feuille. Dans quelques heures, on saura si elle mérite de devenir une règle... ou du papier recyclé."
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Un seul « non » et votre proposition tombe à l’eau. Je sais, je vous l’ai déjà dit, mais j’adore voir vos têtes quand je le répète !"
+    kami "Un seul « non » et pouf ! Plus d'amendement. Je sais, je me répète. Mais c'est tellement délicieux que je ne m'en lasse pas."
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Alors soyez adorables les uns envers les autres."
-    kami "Rendez-vous au Conclave à quatorze heures. Je compte les têtes. J'espère les compter toutes."
+    kami "Soyez gentils les uns avec les autres, surtout ! De petits sourires, des encouragements, aucune menace... ou presque."
+    kami "Conclave, quatorze heures. Douze sièges, douze têtes. J'aimerais beaucoup qu'il y ait autant de têtes en repartant."
 
     pause 0.3
     hide screen kami_overlay with dissolve
@@ -337,10 +339,11 @@ label _3_CANON:
     pause 0.8
     scene bg_cg012 at adaptive_fullscreen with fade
 
-    think "Même Kami ne parvient pas à me décourager ce matin. Pour une fois, j'ai envie de lui montrer qu'on peut faire mieux que se disputer."
+    think "Même ses menaces n'arrivent pas à gâcher mon envie de réussir. C'est presque inquiétant : je commence à ressembler à Elen."
     scene bg_chambre at adaptive_fullscreen with fade
-    think "Je m'habille rapidement. Je ne sais pas comment se passera le vote, mais j'ai envie d'essayer."
-    think "Allez, petit-déjeuner. Et après, on verra."
+    think "Je m'habille. Le miroir me renvoie la tête de quelqu'un qui essaie d'avoir l'air sûr de lui."
+    think "Il ne fait pas semblant très bien."
+    think "D'abord manger. Après, convaincre onze personnes de ne pas faire exploser cette journée."
 
     # Trajet jouable : chambre -> dortoir -> couloir -> cafétéria.
     # Kael et Julian peuvent être croisés, mais leurs dialogues restent optionnels.
@@ -357,49 +360,51 @@ label _3_OPT_KAEL_DIAL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     $ day3_cafeteria_route_kael_seen = True
 
-    think "Kael est assis près du mur. Il a les yeux fatigués et fait tourner sa tablette entre ses mains."
+    think "Kael est assis dans le dortoir. Il fait tourner sa tablette entre ses doigts sans jamais l'allumer. Il a cette tête qu'on fait devant une machine en panne."
 
     $ showGroup([
         ("noam", "neutre", 0.20),
         ("kael", "fatigue", 0.65),
     ])
 
-    kael fatigue "Oh. Noam."
+    kael fatigue "Ah... Noam. J'ai entendu des pas. J'espérais presque que ce soit un technicien."
 
     think "Il a l’air d’avoir très peu dormi."
 
-    noam "Tu vas à la cafétéria ?"
+    noam "Tu descends manger, ou tu as décidé de t'installer dans ce couloir ?"
 
-    kael reflechit "Dans une minute. J'essaye juste de penser à autre chose qu’au vote."
+    kael reflechit "Dans une minute. J'essaie de ne pas penser au vote. Pour l'instant, c'est un échec monumental."
 
-    noam "Le vote ?"
+    noam "C'est toujours le commerce qui te travaille ?"
 
-    kael inquiet "Tout le monde dit que ça va rien changer."
-    kael inquiet "Sur Orbite, une livraison en retard peut tuer des gens. Alors si, ça me fait peur."
+    kael inquiet "J'en entends qui disent que ça ne changera rien. Et d'autres qui parlent déjà comme si tout était gagné."
+    kael inquiet "Sur Orbite, une livraison retardée peut tuer des gens. Et une livraison mal contrôlée aussi. Je suis censé être rassuré par quoi, exactement ?"
 
-    kael mefiant "On dépend des livraisons pour presque tout. Si ça se dérègle, on fait comment ?"
+    kael mefiant "On vit grâce à des cargaisons régulières. Si tout le système change du jour au lendemain, je ne peux pas juste croiser les doigts."
 
-    think "Je note ce qu’il vient de dire. Je ne suis pas certain que les autres comprennent à quel point Orbite dépend de ses livraisons."
+    think "Il ne cherche même pas à me convaincre. C'est peut-être ça qui me trouble : il a vraiment peur."
 
     # Déblocage optionnel de l'argument « Risque de dépressurisation » (sinon disponible au Jour 2).
     call day3_collect_vote_argument("orbite") from _call_day3_collect_vote_argument_orbite
 
     think "Kael baisse les yeux vers sa tablette sans l’allumer."
 
-    noam "Tu veux voter contre ?"
+    noam "Donc... tu penses voter contre ?"
 
-    kael surpris "Non. Enfin… je suis pour. En théorie."
-    kael culpabilite "Mais toucher aux règles de ce monde, ça me terrifie. Et je déteste avoir peur devant les autres."
+    kael surpris "Non ! Enfin... je suis plutôt pour. Sur le principe."
+    kael doute "En pratique, c'est une autre histoire."
+    kael culpabilite "J'ai déjà dû fermer une porte sur deux personnes pour en sauver d'autres. Je sais ce que coûte une mauvaise décision."
+    kael inquiet "Et je déteste que les autres me regardent comme si j'avais toutes les réponses."
 
-    noam "Je comprends. Mais si on laisse tout comme ça, ça va pas s'arranger non plus."
+    noam "Je comprends. Mais maintenir les règles actuelles, c'est aussi une décision. Et on sait déjà qu'elles font des dégâts."
 
-    kael calme "…Ouais. On verra à quatorze heures."
-    kael sourire "Merci d'être passé. Ça aide, même si je le montre mal."
+    kael calme "Ouais... On verra quand on aura le bulletin devant nous."
+    kael sourire "Merci d'être passé. Au moins, j'ai arrêté de fixer ma tablette pendant deux minutes."
 
     hide noam
     hide kael
 
-    think "Il semble plutôt favorable, mais il pourrait bien changer d’avis au dernier moment."
+    think "Il a l'air d'avoir deux opinions contradictoires, et de bonnes raisons pour chacune. J'espère qu'il choisira avant de prendre son bulletin."
 
     pause 0.5
     jump DORTOIR_TP
@@ -407,25 +412,29 @@ label _3_OPT_KAEL_DIAL:
 label _3_OPT_JULIAN_DIAL:
     scene expression Image(corridor_background("cafeteria")) at adaptive_fullscreen with dissolve
     $ day3_cafeteria_route_julian_seen = True
-    think "Julian tapote le distributeur comme si la machine lui devait un service."
+    think "Julian donne de petites tapes au distributeur. Il négocie manifestement avec une machine qui n'a aucunement l'intention de le respecter."
 
     $ showGroup([
         ("noam", "neutre", 0.30),
         ("julian", "joie", 0.75),
     ])
 
-    julian joie "Noam ! Tu te rends compte ? Aujourd'hui, on peut enfin changer quelque chose."
-    noam sourire "T'es sacrément en forme."
-    julian rire "Comme toujours ! Ça change de certaines têtes qu'on croise ici."
+    julian joie "Noam ! Quelle journée ! On pourrait entrer dans l'histoire d'ici quelques heures !"
+    noam sourire "T'as pris combien de cafés avant de dire bonjour ?"
+    julian rire "Un seul, mais il suffit de savoir se motiver. Tu devrais essayer devant un miroir."
     "La tasse de Julian déborde. Il la retire trop tard et se brûle les doigts."
-    julian colere "Aïe ! Bon sang, elle marche jamais correctement, cette machine ?!"
-    noam sourire "Tu devrais lui faire un discours, peut-être qu'elle obéira."
-    julian sourire "Très drôle. Mais écoute-moi : si ça passe, les gens pourront acheter et vendre sans demander l'autorisation de Kami."
-    noam inquiet "Encore faut-il que tout le monde soit d'accord. Et j'ai pas l'impression que c'est gagné."
-    julian reflexion "Je sais. Il va falloir convaincre ceux qui hésitent, sinon on perd."
-    noam calme "Les convaincre, oui. Pas leur mettre la pression."
-    julian sourire "Je sais parler aux gens, Noam. Tu verras tout à l'heure."
-    think "Il repart avec son café sans attendre ma réponse. Je ne suis pas sûr qu'on ait la même définition de convaincre."
+    julian colere "AÏE ! Cette machine a décidé de saboter mon discours !"
+    noam sourire "Tu peux toujours lui expliquer ton programme. Peut-être qu'elle votera pour toi."
+    julian sourire "Très spirituel. Mais imagine : des gens qui achètent et vendent sans supplier Kami de leur donner la permission. On peut y arriver."
+    noam inquiet "À condition que tout le monde accepte aussi la disparition des rations. J'ai croisé Kael, il n'est pas tranquille."
+    julian reflexion "Je sais. C'est précisément pour ça qu'il faut parler aux indécis. Il faut les amener avec nous."
+    noam calme "Les convaincre, pas les coincer dans un couloir jusqu'à ce qu'ils disent oui."
+    julian sourire "Je sais faire la différence, Noam. Et crois-moi, je sais parler aux gens."
+    noam reflechit "C'est justement ce qui m'inquiète."
+    julian taquin "Tu t'inquiètes trop. Ça ne fait pas gagner des élections, tu sais."
+    noam neutre "On n'est pas en campagne."
+    julian sourire "Pas officiellement."
+    think "Il part avant que je puisse répondre. Il a l'assurance de quelqu'un qui n'imagine pas une seule seconde être le problème."
 
     call day3_collect_vote_argument("monde_avant") from _call_day3_collect_vote_argument_monde_avant
 
@@ -438,7 +447,8 @@ label _3_CAFETERIA_ARRIVE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_159
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    think "La cafétéria est déjà bien remplie. Quelques personnes parlent du vote, d’autres mangent sans dire un mot. Je suis toujours motivé, même si je commence à me demander qui acceptera vraiment le texte."
+    think "La cafétéria ressemble à une salle d'attente avant une opération : certains bavardent trop fort, les autres regardent leur plateau comme s'il allait les sauver."
+    think "J'avais envie d'un petit-déjeuner tranquille. Manifestement, ce n'est pas aujourd'hui."
 
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
@@ -453,7 +463,7 @@ label _3_CAFETERIA_ARRIVE:
     scene bg_cg013 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg013")
 
-    think "Elen a commandé un énorme bol de pâtes, de noix et d’une sauce que je ne reconnais pas. Iris la regarde avec dégoût."
+    think "Elen a créé une chose qui ressemble à des pâtes prises en otage par des noix. Iris fixe le bol comme si elle évaluait sa dangerosité."
 
     pause 0.3
 
