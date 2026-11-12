@@ -123,6 +123,8 @@ init python:
 
         if not store.debat_phase1_success:
             renpy.play("audio/sfx_victory.mp3", channel="sound")
+            store.debat_phase1_success = True
+            fa_fx_event("on_success")
         store.debat_phase1_success = True
 
     def debat_phase1_setup(target=None, count_reset=False):
@@ -211,6 +213,9 @@ init python:
 
         if store.debat_phase1_words[word_id]["text"] != store.debat_phase1_target[target_slot]:
             store.debat_phase1_wrong_drops += 1
+            fa_fx_event("on_drop", False)
+        else:
+            fa_fx_event("on_drop", True)
 
         if occupant is not None and occupant != word_id:
             if current_slot is not None:
@@ -352,25 +357,310 @@ init -2:
         insensitive_background Solid("#1A1E2688")
 
 
+# ------------------------------------------------------------
+# MISE EN SCÈNE « FATAL ASSEMBLY »
+# Plateau holographique du Conclave, chrono circulaire, Kami qui surgit
+# pour mettre la pression et bulles de réactions des représentants.
+# La logique (mots, emplacements, score) reste celle de debat_phase1_*.
+# ------------------------------------------------------------
+init python:
+    import time as _fa_time
+
+    FA_ASSETS = "minijeu/fatal_assembly_assets/"
+    FA_CYAN = "#5cd3ff"
+    FA_AMBER = "#ffb84d"
+    FA_KAMI = "#ff2e8a"
+    FA_BUBBLE_TIME = 3.2
+    FA_KAMI_TIME = 3.9
+    FA_TIMER_CX = 1730
+    FA_TIMER_CY = 182
+    FA_TIMER_SEGMENTS = 48
+
+    # Réactions des représentants : (personnage, expression, réplique).
+    FA_REP_WRONG = [
+        ("ryn", "colere", _("Ça veut rien dire, ça !")),
+        ("nyra", "raison", _("Relis la structure. Le verbe vient avant.")),
+        ("tomas", "inquiet", _("Attends, ce mot-là n'a rien à faire là...")),
+        ("mara", "blase", _("Super. On va voter sur du charabia.")),
+        ("iris", "colere", _("Concentre-toi, Noam !")),
+        ("kael", "reflexion", _("Non. Ça ne colle pas avec la suite.")),
+    ]
+    FA_REP_GOOD = [
+        ("elen", "joie", _("Ouiii, ça prend forme !")),
+        ("julian", "sourire", _("Voilà qui ressemble enfin à un texte de loi.")),
+        ("lysa", "reflexion", _("Continue, t'es pas loin.")),
+        ("tomas", "joie", _("C'est ça ! Je reconnais la phrase.")),
+    ]
+    FA_REP_IDLE = [
+        ("ryn", "colere", _("Ça fait combien de temps qu'on est là ?!")),
+        ("nyra", "raison", _("Les virgules. Regarde les virgules.")),
+        ("elen", "inquiet", _("Je comprends plus rien...")),
+        ("julian", "sourire", _("Les caméras tournent, Noam. Souris.")),
+        ("sael", "determine", _("Commence par le verbe. Le reste suivra.")),
+    ]
+    FA_KAMI_LINES = {
+        "reset": ("taquin", _("On recommence ? Je prends note de chaque hésitation.")),
+        "wrong3": ("professeur", _("Trois erreurs. Vous lisez avec les pieds, médiateur ?")),
+        "wrong6": ("colere", _("Six. Je commence à douter de vos capacités de lecture.")),
+        "success": ("fier", _("Hm. Correct. Ne vous habituez pas à mes félicitations.")),
+        "start": ("taquin", _("Le texte est là. Il suffit de le lire. Simple, non ?")),
+    }
+    FA_KAMI_THRESHOLD_EXPR = {120: "taquin", 60: "professeur", 30: "fier", 10: "colere"}
+
+    class _FARuntime(object):
+        pass
+
+    _fa_runtime = _FARuntime()
+    _fa_runtime.fx = None
+
+    def fa_strip_speaker(line):
+        text = kd_tr(line)
+        head, sep, rest = text.partition(":")
+        if sep and head.strip().lower() in ("kami", "kami "):
+            return rest.strip()
+        return text
+
+    class FAFX(object):
+        def __init__(self, total):
+            self.total = float(total)
+            self.left = float(total)
+            self.elapsed = 0.0
+            self._clock = None
+            self.bubbles = []
+            self.kami = None
+            self.kami_serial = 0
+            self.bubble_serial = 0
+            self.streak = 0
+            self.wrong = 0
+            self.thresholds = set()
+            self.idle_marks = [22.0, 58.0, 96.0, 138.0]
+            self.idle_pool = list(range(len(FA_REP_IDLE)))
+            self.heartbeat = False
+            self.started = False
+            _fa_runtime.fx = self
+
+        # --- événements -------------------------------------------------
+        def bubble(self, entry):
+            who, expr, line = entry
+            self.bubble_serial += 1
+            self.bubbles = [dict(who=who, expr=expr, text=line, t0=self.elapsed, id=self.bubble_serial)]
+            renpy.sound.play("audio/sfx_beep.mp3", channel="kd_fx", relative_volume=0.5)
+
+        def say_kami(self, key=None, expr=None, text=None):
+            if key is not None:
+                expr, text = FA_KAMI_LINES[key]
+            self.kami_serial += 1
+            self.kami = dict(expr=expr, text=text, t0=self.elapsed, id=self.kami_serial)
+            renpy.sound.play("audio/sfx_kami_alert.wav", channel="kd_fx")
+
+        def on_drop(self, correct):
+            if correct:
+                self.streak += 1
+                if self.streak in (4, 8, 12):
+                    self.bubble(renpy.random.choice(FA_REP_GOOD))
+            else:
+                self.streak = 0
+                self.wrong += 1
+                if self.wrong == 3:
+                    self.say_kami("wrong3")
+                elif self.wrong == 6:
+                    self.say_kami("wrong6")
+                else:
+                    self.bubble(renpy.random.choice(FA_REP_WRONG))
+
+        def on_reset(self):
+            self.streak = 0
+            self.say_kami("reset")
+
+        def on_success(self):
+            self.say_kami("success")
+            self.bubble(("lysa", "sourire", _("C'est bon, on l'a !")))
+
+        # --- horloge ----------------------------------------------------
+        def tick(self):
+            now = _fa_time.time()
+            dt = 0.0 if self._clock is None else min(0.25, max(0.0, now - self._clock))
+            self._clock = now
+            if not self.started:
+                self.started = True
+                _fa_runtime.fx = self
+                self.say_kami("start")
+            if debat_phase1_success:
+                dt = 0.0
+            self.elapsed += dt
+            self.left = max(0.0, self.left - dt)
+
+            for threshold in DEBAT_PHASE1_COMMENT_THRESHOLDS:
+                if self.left <= threshold and threshold not in self.thresholds:
+                    self.thresholds.add(threshold)
+                    if self.total > threshold + 1:
+                        self.say_kami(
+                            expr=FA_KAMI_THRESHOLD_EXPR.get(threshold, "taquin"),
+                            text=fa_strip_speaker(debat_phase1_pick_pressure_comment(threshold)),
+                        )
+
+            if self.idle_marks and self.elapsed >= self.idle_marks[0]:
+                self.idle_marks.pop(0)
+                if self.idle_pool and (self.kami is None):
+                    index = renpy.random.choice(self.idle_pool)
+                    self.idle_pool.remove(index)
+                    self.bubble(FA_REP_IDLE[index])
+
+            if self.left <= 10 and not self.heartbeat:
+                self.heartbeat = True
+                renpy.music.play("audio/sfx_heartbeat.mp3", channel="kd_fx_loop", loop=True)
+
+            self.bubbles = [b for b in self.bubbles if self.elapsed - b["t0"] < FA_BUBBLE_TIME]
+            if self.kami is not None and self.elapsed - self.kami["t0"] >= FA_KAMI_TIME:
+                self.kami = None
+
+            if self.left <= 0:
+                fa_stop_loops()
+                return {"success": False, "time_left": 0}
+            return None
+
+        # --- affichage --------------------------------------------------
+        def seconds_left(self):
+            return int(self.left + 0.999)
+
+        def clock_text(self):
+            seconds = self.seconds_left()
+            return "%02d:%02d" % (seconds // 60, seconds % 60)
+
+        def centis(self):
+            return "%02d" % int((self.left - int(self.left)) * 100)
+
+        def color(self):
+            if self.left <= 30:
+                return FA_KAMI
+            if self.left <= 60:
+                return FA_AMBER
+            return FA_CYAN
+
+        def segments(self):
+            lit = int(round(FA_TIMER_SEGMENTS * self.left / max(1.0, self.total)))
+            out = []
+            for index in range(FA_TIMER_SEGMENTS):
+                angle = 360.0 * index / FA_TIMER_SEGMENTS
+                rad = _fa_math.radians(angle - 90)
+                x = FA_TIMER_CX + int(100 * _fa_math.cos(rad))
+                y = FA_TIMER_CY + int(100 * _fa_math.sin(rad))
+                out.append((x, y, angle, index < lit))
+            return out
+
+        def kami_image(self):
+            return fa_kami_displayable((self.kami or {}).get("expr", "taquin"))
+
+        def kami_chars(self):
+            if self.kami is None:
+                return 0
+            return int((self.elapsed - self.kami["t0"]) * 55)
+
+    import math as _fa_math
+
+    _fa_kami_cache = {}
+
+    def _fa_kami_frame(st, at, expr):
+        talking = st < 2.4 and int(st * 7) % 2 == 0
+        path = "images/background/kami_diffusion/%s%s.png" % (expr, "_parle" if talking else "")
+        if not renpy.loadable(path):
+            path = "images/background/kami_diffusion/%s.png" % expr
+        return Transform(path, crop=(380, 100, 820, 780), zoom=0.42), 0.07
+
+    def fa_kami_displayable(expr):
+        if expr not in _fa_kami_cache:
+            _fa_kami_cache[expr] = DynamicDisplayable(_fa_kami_frame, expr)
+        return _fa_kami_cache[expr]
+
+    def fa_stop_loops():
+        renpy.music.stop(channel="kd_fx_loop", fadeout=0.3)
+
+    def fa_fx_event(name, *args):
+        fx = getattr(_fa_runtime, "fx", None)
+        if fx is None:
+            return
+        getattr(fx, name)(*args)
+
+    renpy.music.register_channel("kd_fx_loop", mixer="sfx", loop=True)
+
+
+transform fa_scan_line:
+    alpha 0.16
+    yoffset -1080
+    linear 3.6 yoffset 1080
+    repeat
+
+transform fa_bubble_pop:
+    subpixel True
+    alpha 0.0 zoom 0.7 yoffset 24
+    easeout 0.16 alpha 1.0 zoom 1.06 yoffset 0
+    easein 0.08 zoom 1.0
+    pause (FA_BUBBLE_TIME - 0.5)
+    linear 0.22 alpha 0.0 yoffset -10
+
+transform fa_kami_hop:
+    subpixel True
+    yoffset 420 rotate -12
+    easeout 0.22 yoffset -26 rotate 6
+    easein 0.12 yoffset 0 rotate 0
+    block:
+        ease 0.35 yoffset -10 rotate -3
+        ease 0.35 yoffset 0 rotate 3
+        repeat 4
+    easein 0.25 yoffset 460 rotate 10
+
+transform fa_kami_bubble:
+    subpixel True
+    alpha 0.0 xoffset 40
+    pause 0.15
+    easeout 0.16 alpha 1.0 xoffset 0
+    pause (FA_KAMI_TIME - 0.75)
+    linear 0.2 alpha 0.0
+
+transform fa_kami_glitch:
+    alpha 0.0
+    linear 0.04 alpha 0.18
+    linear 0.04 alpha 0.0
+    linear 0.03 alpha 0.12
+    linear 0.12 alpha 0.0
+
+transform fa_seg(angle):
+    anchor (0.5, 0.5)
+    rotate angle
+
+transform fa_digits_pulse:
+    zoom 1.0
+    easeout 0.08 zoom 1.12
+    easein 0.42 zoom 1.0
+    repeat
+
+transform fa_edge_alarm:
+    alpha 0.0
+    easeout 0.12 alpha 0.85
+    easein 0.75 alpha 0.15
+    repeat
+
+transform fa_eye_watch:
+    alpha 0.55
+    ease 1.4 alpha 0.95
+    ease 1.4 alpha 0.55
+    repeat
+
+transform fa_face_tilt:
+    rotate_pad False
+    rotate -4
+
+
 screen debat_phase1_opening():
     modal True
     zorder 250
-    default fa_hovered_word = None
-    default fa_time_left = DEBAT_PHASE1_TOTAL_TIME
-    default fa_shown_thresholds = []
-    default fa_pressure_comment = ""
 
-    timer 1.0 repeat True action [
-        If(fa_time_left > 0, true=SetScreenVariable("fa_time_left", fa_time_left - 1)),
-        If(
-            (fa_time_left in DEBAT_PHASE1_COMMENT_THRESHOLDS) and (fa_time_left not in fa_shown_thresholds),
-            true=[
-                SetScreenVariable("fa_pressure_comment", debat_phase1_pick_pressure_comment(fa_time_left)),
-                SetScreenVariable("fa_shown_thresholds", fa_shown_thresholds + [fa_time_left]),
-            ],
-        ),
-        If(fa_time_left <= 0, true=Return({"success": False, "time_left": 0})),
-    ]
+    default fx = FAFX(DEBAT_PHASE1_TOTAL_TIME)
+
+    timer 0.04 repeat True action Function(fx.tick)
+
+    key "rollback" action NullAction()
+    key "rollforward" action NullAction()
 
     # --- GARDE ANTI-DESYNC ---
     $ expected = len(debat_phase1_target) if debat_phase1_target else len(DEBAT_PHASE1_TARGET)
@@ -381,277 +671,132 @@ screen debat_phase1_opening():
 
     $ fa_filled_count = sum(1 for slot_word_id in debat_phase1_slots if slot_word_id is not None)
     $ fa_total_slots = max(1, len(debat_phase1_slots))
-    $ fa_time_text = debat_phase1_format_time(fa_time_left)
-    $ fa_timer_width = int(184 * max(0, fa_time_left) / float(max(1, DEBAT_PHASE1_TOTAL_TIME)))
+    $ fa_timer_color = fx.color()
 
-    fixed:
-        add Solid("#020711")
+    # ------------------------------------------------------------
+    # Décor : Conclave assombri, scan holographique.
+    # ------------------------------------------------------------
+    add "bg_conclave" at adaptive_fullscreen
+    add Solid("#030812d6")
+    add "gui/main_menu_kami/scanlines.png" alpha 0.28
+    add "gui/main_menu_kami/vignette.png"
+    add Solid(FA_CYAN, xysize=(1920, 2)) at fa_scan_line
 
-        add Solid("#154668"):
-            alpha 0.20
+    if fx.left <= 10 and not debat_phase1_success:
+        add "gui/main_menu_kami/vignette.png" at fa_edge_alarm:
+            matrixcolor TintMatrix(FA_KAMI) * BrightnessMatrix(0.25)
 
-        for gx in range(48, 1921, 96):
-            add Solid("#2A9CCD14", xsize=1, ysize=1080):
-                xpos gx
-                ypos 0
-        for gy in range(40, 1081, 72):
-            add Solid("#2A9CCD10", xsize=1920, ysize=1):
-                xpos 0
-                ypos gy
-
-        add Solid("#00000058", xsize=1920, ysize=86):
-            xpos 0
-            ypos 0
-        add Solid("#00000066", xsize=1920, ysize=150):
-            xpos 0
-            ypos 930
-        add Solid("#00000036", xsize=90, ysize=1080):
-            xpos 0
-            ypos 0
-        add Solid("#00000036", xsize=90, ysize=1080):
-            xpos 1830
-            ypos 0
-
-    fixed:
-        xpos 34
-        ypos 28
-        xysize (820, 82)
-
-        add Solid("#06111DD8", xsize=820, ysize=82)
-        add Solid("#5DCBFFAA", xsize=4, ysize=62):
-            xpos 0
-            ypos 10
-        text "▽":
-            xpos 24
-            ypos -6
-            size 68
-            color "#BFD9EA"
-            outlines [(2, "#020711", 0, 0)]
+    # ------------------------------------------------------------
+    # Titre
+    # ------------------------------------------------------------
+    vbox:
+        xpos 40
+        ypos 22
+        spacing 0
         text "FATAL ASSEMBLY":
-            xpos 96
-            ypos -2
-            size 42
-            color "#EAF4FF"
-            bold True
-            outlines [(2, "#020711", 0, 0)]
-        text "RECONSTRUISEZ LE VÉRITABLE TEXTE":
-            xpos 100
-            ypos 52
-            size 20
-            color "#9BCDEB"
-            outlines [(1, "#020711", 0, 0)]
-        add Solid("#53CFFF", xsize=128, ysize=6):
-            xpos 412
-            ypos 60
-        add Solid("#53CFFF99", xsize=28, ysize=6):
-            xpos 548
-            ypos 60
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 68
+            color "#ffffff"
+            kerning 6
+            outlines [(3, "#0b4a66", 0, 0)]
+        text _("RECONSTITUEZ LE TEXTE OFFICIEL AVANT LA FIN DU DÉCOMPTE"):
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 22
+            color FA_CYAN
+            kerning 2
+    add Solid(FA_CYAN, xysize=(220, 4)) xpos 44 ypos 146
+    add Solid(FA_CYAN + "66", xysize=(60, 4)) xpos 272 ypos 146
 
-    text "ARCHIVE // ANALYSE DE TEXTE":
-        xpos 1542
-        ypos 32
-        xanchor 1.0
-        size 20
-        color "#6F8BA2"
-        outlines [(1, "#020711", 0, 0)]
-    add Solid("#4FC8FF", xsize=114, ysize=4):
-        xpos 1572
-        ypos 60
-    add Solid("#4FC8FF88", xsize=28, ysize=4):
-        xpos 1700
-        ypos 60
+    if fx.kami is None:
+        hbox at fa_eye_watch:
+            xpos 760
+            ypos 44
+            spacing 12
+            add Transform("gui/main_menu_kami/glyph_kami.png", zoom=0.26)
+            text _("KAMI OBSERVE"):
+                font "fonts/Rajdhani-SemiBold.ttf"
+                size 22
+                color FA_KAMI
+                kerning 4
+                yalign 0.5
 
+    # ------------------------------------------------------------
+    # Chrono circulaire
+    # ------------------------------------------------------------
+    add FA_ASSETS + "timer_disc.png" xcenter FA_TIMER_CX ycenter FA_TIMER_CY
+    for seg_x, seg_y, seg_angle, seg_on in fx.segments():
+        add FA_ASSETS + "seg.png" at fa_seg(seg_angle):
+            xpos seg_x
+            ypos seg_y
+            matrixcolor TintMatrix(fa_timer_color if seg_on else "#1b2c40")
+    text _("TEMPS"):
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 18
+        color "#8fb4c8"
+        kerning 4
+        xcenter FA_TIMER_CX
+        ycenter (FA_TIMER_CY - 44)
+    if fx.left <= 10 and not debat_phase1_success:
+        text fx.clock_text() at fa_digits_pulse:
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 64
+            color fa_timer_color
+            outlines [(2, "#000000", 0, 0)]
+            xcenter FA_TIMER_CX
+            ycenter (FA_TIMER_CY + 4)
+    else:
+        text fx.clock_text():
+            font "fonts/Rajdhani-SemiBold.ttf"
+            size 64
+            color fa_timer_color
+            outlines [(2, "#000000", 0, 0)]
+            xcenter FA_TIMER_CX
+            ycenter (FA_TIMER_CY + 4)
+    text fx.centis():
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 22
+        color "#8fb4c8"
+        xcenter FA_TIMER_CX
+        ycenter (FA_TIMER_CY + 50)
+
+    # ------------------------------------------------------------
+    # Panneaux de jeu
+    # ------------------------------------------------------------
     frame:
-        xpos 34
-        ypos 126
-        xsize 820
-        ysize 180
-        background Solid("#071421E8")
-        padding (18, 18)
-
-        fixed:
-            add Solid("#3EBEFF99", xsize=3, ysize=156):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF66", xsize=784, ysize=1):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF35", xsize=784, ysize=1):
-                xpos 0
-                ypos 155
-            frame:
-                xpos 16
-                ypos 0
-                xsize 156
-                ysize 156
-                background Solid("#0D253BEE")
-                padding (0, 0)
-                add "images/character/kami/analyse.png":
-                    xysize (156, 156)
-                    alpha 0.92
-            vbox:
-                xpos 198
-                ypos 8
-                spacing 8
-                text "KAMI":
-                    size 22
-                    color "#5FD5FF"
-                    bold True
-                    outlines [(1, "#020711", 0, 0)]
-                text "Alors, médiateur...":
-                    size 24
-                    color "#F2F6FF"
-                    outlines [(1, "#020711", 0, 0)]
-                if fa_pressure_comment:
-                    text kd_tr(fa_pressure_comment):
-                        size 21
-                        color "#DCEBFA"
-                        xmaximum 560
-                        line_spacing 4
-                        outlines [(1, "#020711", 0, 0)]
-                else:
-                    text "Remettez les mots dans le bon ordre.\nMontrez-moi que vous comprenez vraiment ce que vous votez.":
-                        size 22
-                        color "#DCEBFA"
-                        line_spacing 4
-                        outlines [(1, "#020711", 0, 0)]
-
-    frame:
-        xpos 884
-        ypos 126
-        xsize 1002
-        ysize 180
-        background Solid("#071421E8")
-        padding (22, 18)
-
-        fixed:
-            add Solid("#3EBEFF99", xsize=3, ysize=156):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF66", xsize=956, ysize=1):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF35", xsize=956, ysize=1):
-                xpos 0
-                ypos 155
-            vbox:
-                xpos 22
-                ypos 4
-                spacing 10
-                hbox:
-                    spacing 12
-                    text "●":
-                        size 28
-                        color "#62D9FF"
-                    text "OBJECTIF":
-                        size 26
-                        color "#EAF4FF"
-                        bold True
-                        outlines [(1, "#020711", 0, 0)]
-                text "Glissez-déposez les mots pour reconstituer la phrase exacte du texte officiel.":
-                    size 23
-                    color "#E7F0FA"
-                    xmaximum 650
-                    outlines [(1, "#020711", 0, 0)]
-                text "Chaque placement compte : une proposition propre donne un meilleur résultat.":
-                    size 19
-                    color "#91AABD"
-                    xmaximum 650
-                    outlines [(1, "#020711", 0, 0)]
-            fixed:
-                xpos 766
-                ypos 4
-                xysize (164, 146)
-                add Solid("#020A13EE", xsize=164, ysize=146)
-                add Solid("#FFB42E", xsize=10, ysize=120):
-                    xpos 140
-                    ypos 13
-                add Solid("#173149", xsize=184, ysize=8):
-                    xpos -10
-                    ypos 130
-                add Solid("#FFD35C", xsize=fa_timer_width, ysize=8):
-                    xpos -10
-                    ypos 130
-                text "TEMPS\nRESTANT":
-                    xpos 0
-                    ypos 18
-                    xsize 136
-                    text_align 0.5
-                    size 18
-                    color "#9BCDEB"
-                    line_spacing 2
-                    outlines [(1, "#020711", 0, 0)]
-                text "[fa_time_text]":
-                    xpos 0
-                    ypos 74
-                    xsize 136
-                    text_align 0.5
-                    size 36
-                    color ("#FF4D6D" if fa_time_left <= 10 else "#F4F8FF")
-                    bold True
-                    outlines [(2, "#020711", 0, 0)]
-
-    frame:
+        background Frame("minijeu/refutation_assets/panel.png", 26, 26)
         xpos 34
         ypos DEBAT_PHASE1_BANK_Y
         xsize 1852
         ysize 266
-        background Solid("#071421E8")
-        padding (20, 28)
-
-        fixed:
-            add Solid("#3EBEFFAA", xsize=3, ysize=232):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF66", xsize=1810, ysize=1):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF35", xsize=1810, ysize=1):
-                xpos 0
-                ypos 231
-            add Solid("#65D5FF24", xsize=120, ysize=232) at fa_panel_scan
-            text "MOTS DISPONIBLES":
-                xpos 22
-                ypos -12
-                size 24
-                color "#65D5FF"
-                bold True
-                outlines [(1, "#020711", 0, 0)]
-            add Solid("#65D5FF", xsize=92, ysize=5):
-                xpos 256
-                ypos 0
+    text _("FRAGMENTS DU TEXTE"):
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 24
+        color FA_CYAN
+        kerning 3
+        xpos 62
+        ypos (DEBAT_PHASE1_BANK_Y + 18)
+    add Solid(FA_CYAN, xysize=(80, 3)) xpos 64 ypos (DEBAT_PHASE1_BANK_Y + 50)
 
     frame:
+        background Frame("minijeu/refutation_assets/panel.png", 26, 26)
         xpos 34
-        ypos 680
+        ypos 650
         xsize 1852
-        ysize 218
-        background Solid("#06101CE8")
-        padding (20, 28)
-
-        fixed:
-            add Solid("#3EBEFFAA", xsize=3, ysize=184):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF66", xsize=1810, ysize=1):
-                xpos 0
-                ypos 0
-            add Solid("#3EBEFF35", xsize=1810, ysize=1):
-                xpos 0
-                ypos 183
-            text "VOTRE PHRASE":
-                xpos 22
-                ypos -12
-                size 24
-                color "#65D5FF"
-                bold True
-                outlines [(1, "#020711", 0, 0)]
-            text "[fa_filled_count]/[fa_total_slots] mots placés":
-                xpos 1548
-                ypos -8
-                size 18
-                color "#7895AA"
-                outlines [(1, "#020711", 0, 0)]
+        ysize 252
+    text _("TEXTE OFFICIEL  //  RECONSTITUTION"):
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 24
+        color FA_CYAN
+        kerning 3
+        xpos 62
+        ypos 668
+    text ("%d / %d" % (fa_filled_count, fa_total_slots)):
+        font "fonts/Rajdhani-SemiBold.ttf"
+        size 24
+        color "#8fb4c8"
+        xpos 1850
+        xanchor 1.0
+        ypos 668
 
     use mk_help_button("tuto_debat_phase1")
 
@@ -668,7 +813,6 @@ screen debat_phase1_opening():
             xsize 1824
             ysize 266
 
-        # --- SLOTS ---
         for i in range(len(debat_phase1_slots)):
             $ sx, sy, slot_w, slot_h = debat_phase1_slot_layout[i]
             drag:
@@ -679,50 +823,20 @@ screen debat_phase1_opening():
                 ypos sy
                 xsize slot_w
                 ysize slot_h
+                fixed:
+                    xysize (slot_w, slot_h)
+                    add Frame(FA_ASSETS + "slot.png", 16, 16, xysize=(slot_w, slot_h))
+                    if debat_phase1_slots[i] is None:
+                        add Solid(FA_CYAN + "30", xysize=(slot_w - 8, slot_h - 10)) at fa_slot_pulse:
+                            xpos 4
+                            ypos 4
 
-                frame:
-                    xfill True
-                    yfill True
-                    background Solid("#101A2680")
-                    padding (6, 6)
-
-                    fixed:
-                        xfill True
-                        yfill True
-
-                        add Solid("#0A1522D8", xsize=slot_w, ysize=slot_h)
-
-                        if debat_phase1_slots[i] is None:
-                            add Solid("#2AE5FF40", xsize=slot_w, ysize=slot_h) at fa_slot_pulse
-                        else:
-                            add Solid("#2AE5FF40", xsize=slot_w, ysize=slot_h) at fa_slot_filled_glow
-
-                        if debat_phase1_slots[i] is None:
-                            add Solid("#64EBFF66", xsize=slot_w, ysize=2):
-                                xpos 0
-                                ypos 0
-                            add Solid("#64EBFF66", xsize=slot_w, ysize=2):
-                                xpos 0
-                                ypos slot_h - 2
-                        else:
-                            add Solid("#74F3FFAA", xsize=slot_w, ysize=2):
-                                xpos 0
-                                ypos 0
-                            add Solid("#74F3FFAA", xsize=slot_w, ysize=2):
-                                xpos 0
-                                ypos slot_h - 2
-
-                        if debat_phase1_success:
-                            add Solid("#63EBFF55", xsize=slot_w, ysize=slot_h) at fa_success_flash
-
-        # --- WORDS ---
         for word in debat_phase1_words:
             if word is None:
                 continue
 
             $ word_id = word["id"]
             $ slot_index = debat_phase1_find_word_slot(word_id)
-
             if slot_index is not None:
                 $ wx = debat_phase1_slot_layout[slot_index][0]
                 $ wy = debat_phase1_slot_layout[slot_index][1]
@@ -730,15 +844,12 @@ screen debat_phase1_opening():
                 $ wx = word["home_x"]
                 $ wy = word["home_y"]
 
-            $ float_at = None
-
             $ is_word_wrong = False
             if slot_index is not None and not debat_phase1_success:
                 $ is_word_wrong = (word["text"] != debat_phase1_target[slot_index])
-
-            # Largeur stable pour éviter les tiles "bizarres"
             $ ww = debat_phase1_word_width(word["text"])
             $ th = 54
+            $ tile_img = "tile_ok.png" if debat_phase1_success else ("tile_wrong.png" if is_word_wrong else "tile.png")
 
             drag:
                 drag_name ("word_%d" % word_id)
@@ -746,101 +857,129 @@ screen debat_phase1_opening():
                 ypos wy
                 xsize ww
                 ysize th
-                draggable True
+                draggable (not debat_phase1_success)
                 droppable False
                 drag_raise True
                 drag_handle (0, 0, ww, th)
                 dragged (lambda drags, drop, wid=word_id: debat_phase1_handle_drop(wid, drags, drop))
-
                 fixed:
-                    xsize ww
-                    ysize th
-                    if float_at is not None:
-                        at float_at
+                    xysize (ww, th)
+                    add Solid("#00000070", xysize=(ww - 6, th - 6)) xpos 5 ypos 8
+                    if is_word_wrong:
+                        add Frame(FA_ASSETS + tile_img, 16, 16, xysize=(ww, th)) at fa_error_shake
+                    else:
+                        add Frame(FA_ASSETS + tile_img, 16, 16, xysize=(ww, th))
+                    text kd_tr(word["text"]):
+                        style "fa_word"
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 26
+                        color ("#ffd0e2" if is_word_wrong else "#ffffff")
+                        xalign 0.5
+                        yalign 0.5
 
-                    # shadow (sans texte -> pas de doublon)
-                    frame:
-                        xsize ww
-                        ysize th
-                        background Solid("#00000066")
-                        at fa_tile_shadow
+    # ------------------------------------------------------------
+    # Barre du bas : réinitialiser, progression, valider.
+    # ------------------------------------------------------------
+    textbutton _("RÉINITIALISER"):
+        xpos 40
+        ypos 942
+        xysize (300, 80)
+        background Frame("minijeu/refutation_assets/frag_idle.png", 30, 26)
+        hover_background Frame("minijeu/refutation_assets/frag_selected.png", 30, 26)
+        text_font "fonts/Rajdhani-SemiBold.ttf"
+        text_size 28
+        text_color "#d9ecf7"
+        text_kerning 3
+        text_xalign 0.5
+        text_yalign 0.5
+        sensitive (not debat_phase1_success)
+        action [Play("sound", "audio/sfx_glitch.mp3"), Function(debat_phase1_setup, count_reset=True), Function(fa_fx_event, "on_reset")]
 
-                    # main tile
-                    frame:
-                        xsize ww
-                        ysize th
-                        background Solid("#1B2D43E8")
-                        at fa_tile_idle
+    hbox:
+        xcenter 960
+        ycenter 982
+        spacing 6
+        for pi in range(fa_total_slots):
+            add Solid((FA_CYAN if pi < fa_filled_count else "#1b2c40"), xysize=(int(min(46, 1040 / fa_total_slots - 6)), 12))
 
-                        fixed:
-                            xfill True
-                            yfill True
+    textbutton _("VALIDER"):
+        xpos 1580
+        ypos 936
+        xysize (300, 92)
+        background Frame("minijeu/refutation_assets/frag_idle.png", 30, 26)
+        hover_background Frame("minijeu/refutation_assets/frag_selected.png", 30, 26)
+        insensitive_background Frame("minijeu/refutation_assets/frag_idle.png", 30, 26)
+        text_font "fonts/Rajdhani-SemiBold.ttf"
+        text_size 34
+        text_color "#ffffff"
+        text_insensitive_color "#4f6a80"
+        text_kerning 4
+        text_xalign 0.5
+        text_yalign 0.5
+        sensitive debat_phase1_success
+        action [Function(fa_stop_loops), Play("sound", "audio/sfx_victory.mp3"), Return({"success": True, "time_left": fx.seconds_left()})]
+        if debat_phase1_success:
+            at fa_btn_focus_pulse
 
-                            add Solid("#74EFFF18", xsize=ww - 2, ysize=2):
-                                xpos 1
-                                ypos 1
+    # ------------------------------------------------------------
+    # Pression : bulles des représentants et irruptions de Kami.
+    # ------------------------------------------------------------
+    for bubble index bubble["id"] in fx.bubbles:
+        $ b_color = kd_char_color(bubble["who"])
+        fixed at fa_bubble_pop:
+            xpos 40
+            ypos 150
+            xysize (560, 150)
+            fixed at fa_face_tilt:
+                xysize (112, 112)
+                ypos 14
+                add Solid(b_color)
+                add kd_face(bubble["who"], bubble["expr"], 104) xalign 0.5 yalign 0.5
+            add FA_ASSETS + "tail_rep.png" xpos 124 ypos 50
+            frame:
+                background Frame(FA_ASSETS + "bubble_rep.png", 24, 24)
+                xpos 150
+                ypos 6
+                xmaximum 400
+                padding (24, 14)
+                vbox:
+                    spacing 2
+                    text kd_display_name(bubble["who"]).upper():
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 20
+                        color b_color
+                        kerning 2
+                    text kd_tr(bubble["text"]):
+                        size 24
+                        color "#eef7ff"
 
-                            if debat_phase1_success:
-                                add Solid("#61F0FF44") at fa_success_flash
-                            elif is_word_wrong:
-                                add Solid("#FF4D5E22") at fa_error_shake
-
-                            text kd_tr(word["text"]):
-                                style "fa_word"
-                                xalign 0.5
-                                yalign 0.5
-
-    fixed:
-        xpos 34
-        ypos 930
-        xysize (1852, 112)
-
-        textbutton "↻  RÉINITIALISER":
-            xpos 0
-            ypos 18
-            xsize 300
-            ysize 76
-            action [Play("sound", "audio/sfx_glitch.mp3"), Function(debat_phase1_setup, count_reset=True)]
-            style "fa_btn"
-            text_style "fa_btn_text"
-
-        frame:
-            xpos 560
-            ypos 30
-            xsize 720
-            ysize 54
-            background Solid("#071421D8")
-            padding (18, 12)
-
-            hbox:
-                spacing 12
-                yalign 0.5
-                text "— PROGRESSION":
-                    size 18
-                    color "#6F8BA2"
-                    outlines [(1, "#020711", 0, 0)]
-                for pi in range(len(debat_phase1_slots)):
-                    $ pip_color = "#65D5FF" if pi < fa_filled_count else "#162C42"
-                    $ pip_edge = "#9BE8FF" if pi < fa_filled_count else "#41627A"
-                    fixed:
-                        xsize 18
-                        ysize 18
-                        add Solid(pip_edge, xsize=18, ysize=18)
-                        add Solid(pip_color, xsize=12, ysize=12):
-                            xpos 3
-                            ypos 3
-
-        textbutton "✓  VALIDER":
-            xpos 1540
-            ypos 8
-            xsize 312
-            ysize 88
-            sensitive debat_phase1_success
-            action [Play("sound", "audio/sfx_victory.mp3"), Return({"success": True, "time_left": fa_time_left})]
-            style "fa_btn"
-            text_style "fa_btn_text"
-            if debat_phase1_success:
-                at fa_btn_focus_pulse
+    for kami_line index kami_line["id"] in ([fx.kami] if fx.kami else []):
+        add Solid(FA_KAMI) at fa_kami_glitch
+        fixed:
+            add fx.kami_image() at fa_kami_hop:
+                xpos 1236
+                ypos 0
+            frame at fa_kami_bubble:
+                background Frame(FA_ASSETS + "bubble_kami.png", 24, 24)
+                xpos 620
+                ypos 150
+                xsize 600
+                padding (28, 18)
+                vbox:
+                    spacing 4
+                    text "KAMI":
+                        font "fonts/Rajdhani-SemiBold.ttf"
+                        size 22
+                        color FA_KAMI
+                        kerning 4
+                    text kd_tr(kami_line["text"]):
+                        size 27
+                        color "#ffffff"
+                        slow_cps 55
+            add FA_ASSETS + "tail_kami.png" at fa_kami_bubble:
+                xpos 1212
+                ypos 210
+                xzoom -1.0
 
 
 # ------------------------------------------------------------
