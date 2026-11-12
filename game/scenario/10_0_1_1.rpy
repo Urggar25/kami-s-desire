@@ -239,187 +239,176 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
 
 
 label _10_0_1_1_ENQUETE_CLIM:
-
     if len(j10011_relays_checked) >= 3:
         jump _10_0_1_1_RETOUR_ELIAS
-
     scene couloir_maintenance at adaptive_fullscreen with dissolve
-
-    "Je m'arrête à l'intersection des couloirs. Sans ventilation, le silence porte beaucoup plus loin que d'habitude."
-
+    if len(j10011_relays_checked) == 0:
+        think "Archives, gymnase, infirmerie. Trois endroits à vérifier. Ça devrait être simple."
+    elif len(j10011_relays_checked) == 1:
+        think "Un relais vérifié. J'aimerais déjà avoir quelque chose de concret à raconter à Elias."
+    else:
+        think "Plus qu'un relais. J'ai la chemise trempée et l'impression que les couloirs deviennent de plus en plus étroits."
     menu:
         "Quel relais vérifier ?"
-
         "Relais des Archives" if not j10011_relay_archives_checked:
             jump _10_0_1_1_RELAIS_ARCHIVES
-
         "Relais du Gymnase" if not j10011_relay_gym_checked:
             jump _10_0_1_1_RELAIS_GYMNASE
-
         "Relais de l'Infirmerie" if not j10011_relay_infirmary_checked:
             jump _10_0_1_1_RELAIS_INFIRMERIE
 
 
 label _10_0_1_1_RELAIS_ARCHIVES:
-
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_j10011_archive_relay
     scene bg_archive at adaptive_fullscreen with dissolve
-
-    "Le relais des archives est fixé dans une niche au-dessus d'une grille basse. Une diode verte clignote à intervalle régulier."
-
+    "Les archives sont plus calmes encore que d'habitude. Sans ventilation, je peux entendre le frottement de mes semelles sur le sol."
+    "La diode du relais est verte. Rien d'autre ne semble anormal."
+    noam neutre "Bon. Elias a dit de regarder trois trucs."
     menu:
         "Qu'est-ce que je vérifie d'abord ?"
-
         "L'écran":
-            "L'affichage indique un flux stable et une ouverture de vanne presque maximale."
-            think "Donc, d'après lui, tout fonctionne."
+            "Je lis : « Vannes ouvertes. Pression stable. Flux normal. »"
+            noam reflechit "Donc tout marche ?"
+            "Je tends aussitôt la main devant la grille, par réflexe. Pas la moindre brise."
+            noam desaccord "Ah, bah oui. Parfaitement."
             jump _10_0_1_1_RELAIS_ARCHIVES_SUITE
-
         "La grille":
-            "Je place ma main devant la grille. Pas un souffle, même pas un courant d'air tiède."
-            think "Super."
+            "Je place la paume contre les lamelles. Rien ne bouge. Même la poussière reste sur place."
+            noam taquin "Vous avez pensé à prévenir l'air qu'il était censé passer par ici ?"
+            "Je me rends compte que je parle à une grille. Je retire la main."
             jump _10_0_1_1_RELAIS_ARCHIVES_SUITE
-
         "Le conduit":
-            "Le métal est plus chaud que prévu. Pas brûlant, mais assez pour que je retire la main presque aussitôt."
-            think "Quelque chose circule là-dedans, ou alors quelque chose chauffe."
+            "La paroi métallique est beaucoup plus chaude que le reste du mur. Je laisse la main dessus un instant."
+            "Un petit clic résonne dans la gaine, bien plus loin."
+            noam reflechit "Un clapet... ?"
+            "Le bruit ne revient pas."
             jump _10_0_1_1_RELAIS_ARCHIVES_SUITE
 
 
 label _10_0_1_1_RELAIS_ARCHIVES_SUITE:
-
-    "Je vérifie le reste avant de repartir."
-    "L'écran affirme toujours que le flux est actif, la grille ne souffle rien et le conduit continue de chauffer."
-
-    think "Un relais qui fonctionne parfaitement, sauf pour la partie où il est censé ventiler."
-
+    "Je vérifie les deux autres éléments. La diode reste obstinément verte, l'écran soutient que tout fonctionne, et aucun air ne sort de la grille."
+    noam reflechit "S'il n'y a pas de panne, pourquoi j'étouffe ?"
+    "En quittant l'allée, je crois entendre une deuxième fois le clic du conduit."
+    "Je m'arrête. Le bruit s'arrête aussi."
+    think "Il faudrait que je demande à Elias si les machines ont le droit de faire exprès de m'énerver."
     $ j10011_relay_archives_checked = True
     $ j10011_relays_checked.append("archives")
     $ j10011_relay_order.append("archives")
-
     jump _10_0_1_1_ENQUETE_CLIM
 
 
 label _10_0_1_1_RELAIS_GYMNASE:
-
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_j10011_gym_relay
     scene bg_gymnase at adaptive_fullscreen with dissolve
-
     $ unlock_gallery_image("bg_cg051")
     scene bg_cg051 at adaptive_fullscreen with dissolve
-
-    "Le gymnase n'est pas tout à fait vide."
-
-    "Iris est seule près des tapis, les cheveux attachés et les mains entourées de bandes. Au moment où j'entre, elle enchaîne deux coups rapides contre un sac, pivote, puis termine par un mouvement de hanche sec avant de reculer."
-
-    noam surpris "Je savais pas que tu faisais ça."
-
-    "Elle se retourne, essoufflée, puis attrape sa serviette."
-
-    iris fatigue "Tu savais pas beaucoup de choses sur moi."
-
-    noam reflexion "Depuis longtemps ?"
-
-    iris fatigue "Quelques années. Boxe, un peu de judo. Ça m'aide à arrêter de réfléchir cinq minutes."
-
-    noam sourire "Je note de pas trop t'énerver."
-
-    iris colere "Il serait temps."
-
-    "Elle boit une gorgée d'eau et grimace en regardant la bouche d'aération."
-
-    iris fatigue "Par contre sans clim, je vais mourir avant d'avoir fini. Amuse-toi bien avec ton truc."
-
+    "Je tombe sur Iris au milieu d'un entraînement. Elle enchaîne deux coups contre un sac, pivote et termine par un mouvement si net que je préfère rester à bonne distance."
+    noam surpris "Ah ! Pardon. Je savais pas que tu faisais de la boxe."
+    iris fatigue "Tu connais encore beaucoup de choses que je ne fais pas ?"
+    noam taquin "Je sais que tu m'engueules souvent."
+    iris colere "C'est pas un sport."
+    noam sourire "Tu devrais y penser. Tu serais championne."
+    iris desaccord "T'es venu pour être drôle ou pour quelque chose d'utile ?"
+    noam reflechit "Elias m'a envoyé vérifier la ventilation."
+    iris fatigue "Alors dis-lui qu'il m'envoie de l'air avant de m'envoyer un rapport ! J'ai l'impression de m'entraîner dans une boîte de conserve."
+    noam neutre "C'est ce qu'on essaie de comprendre."
+    iris reflechit "Les voyants sont verts, pourtant. Je les ai regardés en arrivant."
+    noam surpris "Tu as vérifié le relais ?"
+    iris colere "Non, j'ai posé les yeux dessus. Tu sais, ce truc qu'on fait quand on regarde quelque chose."
+    noam taquin "Tu es vraiment reposante à fréquenter."
+    iris taquin "Et toi vraiment courageux de rester à portée de mes poings."
+    "Elle prend une serviette, s'essuie le front et baisse le ton."
+    iris fatigue "J'arrivais pas à dormir. J'ai pensé que ça aiderait."
+    noam hesitation "À cause du vote ?"
+    iris neutre "À cause de plein de trucs."
+    "Elle se tourne vers le sac. Elle pourrait lui donner un dernier coup, mais n'en fait rien."
+    iris fatigue "Kael me répond à peine depuis hier. Et Kami est revenue. Et maintenant il fait une chaleur à crever."
+    noam neutre "Je peux pas faire grand-chose pour les deux premiers."
+    iris taquin "Alors dépêche-toi sur le troisième."
+    noam sourire "Bien reçu."
+    "Elle récupère ses affaires, puis s'arrête au seuil."
+    iris fatigue "Noam ?"
+    noam reflexion "Oui ?"
+    iris hesitation "Si jamais tu parles à Kael... ne lui demande pas encore s'il est sûr d'avoir bien rangé la photo."
+    noam neutre "Je n'allais pas le faire."
+    iris reflechit "Tant mieux."
+    "Elle quitte le gymnase. Une fois seul, je réalise à quel point le grondement habituel de la ventilation me manque."
     scene bg_gymnase at adaptive_fullscreen with dissolve
-
-    "Elle récupère ses affaires et quitte le gymnase. L'odeur de caoutchouc et de métal paraît encore plus forte sans le souffle constant de la climatisation."
-    "Le relais est derrière une protection transparente, juste à côté d'une large bouche d'aération."
-
     menu:
         "Qu'est-ce que je vérifie d'abord ?"
-
         "L'écran":
-            "Le relais annonce une pression correcte, puis la valeur tombe à zéro pendant une fraction de seconde avant de revenir exactement à la valeur précédente."
-            think "J'ai peut-être cligné des yeux au mauvais moment."
+            "La valeur de pression est stable. Elle tombe à zéro le temps d'un clignement d'œil, puis revient exactement au même chiffre."
+            noam surpris "Hein ?"
+            "Je me penche davantage. La valeur ne bouge plus."
             jump _10_0_1_1_RELAIS_GYMNASE_SUITE
-
         "La grille":
-            "Je tends la main devant la bouche d'aération. Rien."
-            "En approchant davantage, j'entends pourtant un léger ronflement derrière la grille, comme si un moteur tournait beaucoup plus loin."
+            "La grille est sèche, chaude, immobile. En collant l'oreille à proximité, je perçois pourtant un très léger ronronnement, comme une machine qui tournerait de l'autre côté d'une cloison."
+            noam reflechit "Il y a bien quelque chose qui fonctionne..."
             jump _10_0_1_1_RELAIS_GYMNASE_SUITE
-
         "Le conduit":
-            "Le conduit vibre très faiblement sous mes doigts, puis s'immobilise au moment précis où je m'en rends compte."
-            think "..."
+            "Une vibration traverse la paroi sous ma paume. Je retire la main, puis la repose aussitôt."
+            "Cette fois, rien."
+            noam desaccord "C'est pas possible. Je l'ai sentie."
             jump _10_0_1_1_RELAIS_GYMNASE_SUITE
 
 
 label _10_0_1_1_RELAIS_GYMNASE_SUITE:
-
-    "Je contrôle les autres éléments."
-    "Même résultat : des valeurs normales, aucun souffle, et ce ronflement trop faible pour savoir s'il vient réellement du conduit."
-
+    "Je vérifie le reste. Les données paraissent normales, mais rien ne sort du conduit."
     if len(j10011_relays_checked) >= 1:
-        think "Ça commence à faire beaucoup de systèmes « normaux » qui ne font pas ce qu'ils affichent."
-
+        think "Deux endroits différents, le même affichage absurde. Elias va adorer."
+    else:
+        think "Si les deux autres relais font pareil, je ne vais pas pouvoir lui raconter grand-chose d'utile."
+    "Je jette un dernier regard à l'endroit où Iris s'entraînait. La chaleur est toujours là, mais sa petite colère avait presque rendu l'endroit agréable."
     $ j10011_relay_gym_checked = True
     $ j10011_relays_checked.append("gymnase")
     $ j10011_relay_order.append("gymnase")
-
     jump _10_0_1_1_ENQUETE_CLIM
 
 
 label _10_0_1_1_RELAIS_INFIRMERIE:
-
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "infirmerie1") from _call_j10011_infirmary_relay
     scene infirmerie1 at adaptive_fullscreen with dissolve
-
-    "Le relais de l'infirmerie est encastré dans le mur du couloir intérieur. Sa diode reste verte, immobile."
-    "Je m'approche et l'écran s'allume avant même que je le touche."
-
+    "L'infirmerie est déserte. Je m'attendais à croiser quelqu'un ; à la place, un bourdonnement électrique vient du couloir intérieur."
+    "La diode du relais est fixe. Verte, évidemment."
+    noam fatigue "Vous vous êtes tous passé le mot ou quoi ?"
+    "Quand je m'approche, l'écran s'allume avant que je l'aie touché."
+    noam reflechit "Ah. D'accord."
     menu:
         "Qu'est-ce que je vérifie d'abord ?"
-
         "L'écran":
-            "FLUX : ACTIF."
-            "TEMPÉRATURE : 31.4 °C."
-            "PRESSION : NORMALE."
-            "Je reste quelques secondes devant les valeurs. Une ligne supplémentaire apparaît si vite que je ne suis pas certain de l'avoir vraiment lue."
-            "Puis l'écran revient à son affichage normal."
-            think "..."
+            "FLUX : ACTIF. TEMPÉRATURE : 31,4 °C. PRESSION : NORMALE."
+            "Une ligne supplémentaire apparaît au bas de l'écran. Elle s'efface si vite que je ne réussis pas à la lire."
+            noam surpris "Attends !"
+            "Je touche la bordure de l'écran. Rien ne se passe."
+            think "J'ai peut-être simplement cligné des yeux."
             jump _10_0_1_1_RELAIS_INFIRMERIE_SUITE
-
         "La grille":
-            "Aucun souffle."
-            "Quand je retire ma main, quelque chose frappe doucement dans la gaine, une seule fois, suffisamment loin pour que je ne sache pas d'où vient le bruit."
-            think "Un clapet. Probablement."
+            "Je tends la main. Aucun souffle. Puis quelque chose frappe dans la gaine, une seule fois."
+            noam hesitation "Elias ?"
+            "Je me rends compte de l'absurdité de la question. Il est à l'autre bout de la station."
             jump _10_0_1_1_RELAIS_INFIRMERIE_SUITE
-
         "Le conduit":
-            "Le métal est chaud."
-            "Je laisse mes doigts dessus une seconde de plus et une vibration courte traverse la paroi, comme un mouvement transmis depuis un autre conduit."
-            "Quand je retire la main, tout s'arrête."
+            "Le métal est brûlant par endroits. Je pose deux doigts sur une zone plus froide."
+            "Une vibration lente passe sous ma main. Pas un grondement continu : plutôt un mouvement bref, suivi d'un autre."
+            "Je retire les doigts. Plus rien."
+            noam inquiet "..."
             jump _10_0_1_1_RELAIS_INFIRMERIE_SUITE
 
 
 label _10_0_1_1_RELAIS_INFIRMERIE_SUITE:
-
-    "Je vérifie les deux autres éléments."
-    "Le relais maintient que tout est normal. Pourtant la grille reste parfaitement silencieuse."
-
+    "Je contrôle les deux autres éléments, sans rien apprendre de plus. L'écran affirme que la pression est normale, tandis que la grille reste immobile."
     if len(j10011_relays_checked) == 2:
-        think "Les trois relais disent la même chose. Ce n'est pas une panne locale."
-
+        think "Trois relais. Aucun air. Aucun signal d'erreur. Elias avait raison, ça n'a aucun sens."
     elif len(j10011_relays_checked) == 1:
-        think "Deux relais, deux affichages normaux, et toujours aucun air."
-
+        think "Deux relais identiques, et pourtant j'ai l'impression que quelque chose d'autre se passe dans celui-ci."
     else:
-        think "Si les autres affichent la même chose, Elias avait raison de s'inquiéter."
-
+        think "Il vaut mieux que je vérifie les deux autres avant d'aller inquiéter Elias."
+    "Je m'éloigne de la grille. Au moment de tourner le dos, j'entends de nouveau le bruit dans la gaine."
+    "Pas le même rythme."
+    think "Je vais arrêter d'écouter les tuyaux comme si quelqu'un allait me répondre."
     $ j10011_relay_infirmary_checked = True
     $ j10011_relays_checked.append("infirmerie")
     $ j10011_relay_order.append("infirmerie")
-
     jump _10_0_1_1_ENQUETE_CLIM
 
 
