@@ -137,208 +137,172 @@ label noam_garde_secret:
 
 
 label _11_0_1_1_APRES_REVEIL:
-
-    scene bg_chambre at adaptive_fullscreen
-    play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
-    
-    "Le silence revient dans la chambre après le départ d’Iris."
-    "Je reste allongé, les yeux fixés au plafond. Ma tête tourne encore un peu."
-
-    think "Une silhouette… juste une silhouette…"
-    think "C’était loin. Flou. Ça ne veut rien dire."
-    think "C’était forcément quelqu’un d’autre. Forcément."
-
-    noam "… C’était rien."
-
-    "Je murmure ces mots tout bas, presque pour moi-même."
-
-    think "Je ne vais pas commencer à me monter la tête avec ça. Pas maintenant."
-    think "C’est la fièvre. Juste la fièvre et la fatigue."
-
-    pause 2.5
-
-    "Quelques minutes plus tard, la porte s’ouvre à nouveau."
-
-    $ showGroup([
-        ("noam", "neutre", 0.20),
-        ("iris", "neutre", 0.40),
-        ("sael", "neutre", 0.60),
-        ("julian", "neutre", 0.80),
-        ("nyra", "neutre", 1.00),
-    ])
-
-    iris "Voilà, je vous l’avais dit. Il est réveillé et il est déjà en train de se creuser la tête avec des conneries."
-
-    sael "On s’est dit qu’on allait pas te laisser manger tout seul comme un gosse abandonné."
-
-    julian taquin "Exactement ! Faut bien quelqu’un pour t’empêcher de refaire ton grand show dramatique."
-    julian "Franchement Noam, si tu voulais prendre la vedette pendant le débat, y’avait des façons plus discrètes que de t’évanouir d’un coup."
-
-    "Julian pose un plateau bien garni sur la table de chevet avec un sourire moqueur. Nyra reste un peu en retrait, calme comme toujours."
-
-    nyra "On t’a pris des portions légères. Quoique pas tant que ça en fait. Tu as du riz, du poulet et des légumes. Rien qui risque de te retourner l’estomac et tout pour te redonner des forces."
-
-    "Ils s’installent autour du lit : Iris s’assoit au bord, Sael prend la chaise, Julian reste debout, Nyra s’adosse au mur."
-
-    "Je commence à manger lentement, sans grand appétit."
-
-    think "Ils sont tous là, normaux… comme si rien ne s’était passé."
-    think "Et moi je suis là, à me repasser en boucle cette putain d'ombre que j'ai cru voir dans le couloir."
-    think "Mais non. C’était rien. Juste une silhouette. Rien de plus."
-
-    iris "T’as repris un peu de couleurs, c’est déjà ça."
-    iris "Mange correctement hein, sinon je vais devoir te forcer."
-
-    julian taquin "Ouais, reprends des forces. On a besoin de toi en pleine forme pour la prochaine connerie que Kami va nous sortir."
-
-    "Le repas se déroule dans une ambiance plutôt légère. Ils parlent du vote d’hier, de la chaleur, de tout et de rien. Je ris à leurs blagues, mais mon esprit reste ailleurs."
-
-    think "C’était forcément quelqu’un d’autre."
-    think "Arrête de penser à ça."
-
-    "Je force un sourire et continue à manger en silence tandis que le groupe parle de tout et de rien."
-
-
-    call show_custom_title("Une bonne heure plus tard") from _call_show_custom_title_2
-
-    pause 1.5
-
     scene bg_chambre at adaptive_fullscreen with dissolve
-
+    play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
+    "Une fois seul, je tente de me lever. Mes pieds touchent à peine le sol que je me ravise."
+    noam faible "D'accord. Point pour Iris."
+    "Je reste assis, le verre dans les mains, à regarder la table. Il n'y a toujours pas le dessin de Juliette."
+    think "Je pourrais reprendre mes recherches. Ou tomber tête la première sur le bureau. Ça ferait une belle fin."
+    "Des voix montent du couloir."
+    julian "JE N'AI JAMAIS DIT QU'IL FALLAIT EN METTRE AUTANT !"
+    iris "C'EST TOI QUI AS PRIS LE PLATEAU !"
+    sael "Arrêtez de secouer la porte !"
+    "Je n'ai même pas le temps de comprendre qu'elle s'ouvre."
     $ showGroup([
-        ("noam", "neutre", 0.20),
-        ("iris", "neutre", 0.40),
-        ("sael", "neutre", 0.60),
-        ("julian", "neutre", 0.80),
+        ("noam", "fatigue", 0.20), ("iris", "neutre", 0.40),
+        ("sael", "neutre", 0.60), ("julian", "neutre", 0.80),
         ("nyra", "neutre", 1.00),
     ])
-
-    "Le repas touche à sa fin. Je me sens un peu mieux, mais chaque mouvement me rappelle que mon corps n’a pas encore tout à fait récupéré."
-
-    think "J’ai l’impression d’être en verre. Un faux mouvement et je me brise à nouveau."
-
-    iris "Bon, t’as fini de jouer avec ta nourriture ?"
-    iris "Tu tiens debout ou on doit encore te traîner comme un sac ?"
-
-    julian taquin "Moi je vote pour une petite balade. Rester couché toute la journée va te ramollir le cerveau."
-
-    sael "J'ai une idée Noam, je vais t'emmener à la salle d’observation. Il y a une meilleure ventilation en ce moment."
-    sael "Il fera moins chaud qu'ici, même si c'est déjà beaucoup plus supportable qu'ici..."
-
-    nyra "Tant qu’il ne force pas."
-
-    "Je me lève lentement. Mes jambes tremblent légèrement, mais je serre les dents et commence à avancer."
-
+    julian taquin "Messieurs-dames ! Voici le service de restauration le plus prestigieux de l'orbite !"
+    iris colere "Pose. Le. Plateau."
+    julian "Je le pose !"
+    "Le plateau touche la table avec un bruit sinistre. Un morceau de pain roule jusqu'au bord."
+    noam taquin "C'est un repas ou une attaque ?"
+    julian sourire "Les deux, si tu continues."
+    sael desaccord "Julian, écarte-toi."
+    julian "J'essaye de rendre service !"
+    nyra raison "Tu en rendrais davantage en laissant de l'espace autour du lit."
+    julian "Il y a donc une coalition contre les bénévoles."
+    iris taquin "Elle est unanime."
+    "Sael prend ma main, vérifie brièvement mon pouls, puis me rend mon poignet."
+    sael neutre "Tu as moins chaud. La fièvre est tombée, mais tu te reposes aujourd'hui. Pas de discussion."
+    noam fatigue "Les discussions, c'est pourtant notre seule activité ici."
+    sael determine "Alors tu peux faire exception."
+    nyra neutre "J'ai demandé qu'on prépare des portions simples. C'est ce qui nous paraissait le moins risqué après la nuit dernière."
+    julian taquin "Riz, poulet et légumes. La gastronomie du rétablissement. Aucun risque d'y prendre goût."
+    iris colere "Tu peux arrêter d'insulter la nourriture pendant qu'il mange ?!"
+    noam sourire "Je trouve ça délicieux."
+    julian surpris "Tu n'as pas encore goûté !"
+    noam taquin "Je voulais t'embêter. Ça marche plutôt bien."
+    "Nyra détourne les yeux. Elle sourit très légèrement, puis reprend sa posture habituelle."
+    sael reflechit "La ventilation fonctionne mieux ce matin. Les équipes techniques ont remis une partie du circuit en service."
+    iris fatigue "Ça explique pourquoi j'ai pu dormir vingt minutes sans me réveiller en nage."
+    nyra raison "Le Canon a encore sollicité le réseau de refroidissement. Le diagnostic n'est pas terminé."
+    julian "Pourrais-je proposer qu'on interdise les coups de chaud par vote unanime ?"
+    iris desaccord "Non."
+    noam neutre "Même pas pour mon bien ?"
+    sael neutre "Mange."
+    "J'obéis. Pendant quelques minutes, les autres débattent de la quantité de sel dans les légumes et d'une éventuelle redistribution des desserts."
+    julian "Je dis simplement que les malades méritent un dessert supplémentaire."
+    iris taquin "Tu t'es découvert une maladie ?"
+    julian "Le manque de reconnaissance."
+    nyra neutre "Le traitement sera long."
+    "Je manque d'avaler de travers."
+    noam sourire "Nyra !"
+    nyra raison "C'était une observation."
+    sael desaccord "Une observation très pertinente. Et maintenant, laisse-le manger."
+    "Je repose ma cuillère. L'espace d'une seconde, j'oublie le Conclave, le vote et le couloir."
+    "Puis Kael me revient en tête. Sa photographie. Les images qui pourraient montrer qui est entré chez lui."
+    noam reflexion "Kael n'est pas venu ?"
+    iris inquiet "Il est passé cette nuit. Il ne voulait pas te réveiller."
+    sael reflechit "Il a demandé si tu allais mieux. Puis il est reparti."
+    julian neutre "Il n'a toujours pas retrouvé sa photo."
+    iris desaccord "Julian !"
+    julian "Quoi ? Il le sait déjà."
+    noam neutre "C'est vrai."
+    nyra reflechit "Kael a demandé l'accès aux images de sa chambre. Nous n'avons pas encore de réponse."
+    iris fatigue "On dirait qu'on peut enfin parler d'autre chose que de ma capacité à veiller un malade."
+    noam taquin "C'est toi qui en parles le plus."
+    iris colere "TOI, MANGE."
+    "Je reprends ma cuillère."
+    call show_custom_title("Une bonne heure plus tard") from _call_show_custom_title_2
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("noam", "neutre", 0.20), ("iris", "neutre", 0.40),
+        ("sael", "neutre", 0.60), ("julian", "neutre", 0.80),
+        ("nyra", "neutre", 1.00),
+    ])
+    julian taquin "Voilà. Notre malade a mangé. Je réclame officiellement une médaille."
+    iris fatigue "Tu l'as regardé manger. C'est tout."
+    julian "J'ai aussi transporté le plateau."
+    sael determine "Et failli le renverser."
+    julian "Les critiques sont parfois injustes envers les grands hommes."
+    "Je me lève en m'appuyant sur le rebord du lit."
+    sael inquiet "Doucement."
+    noam fatigue "J'ai juste besoin de marcher un peu. Promis, je ne pars pas courir autour de la station."
+    iris desaccord "Tu veux que je te porte, tant qu'on y est ?"
+    noam taquin "Ça dépend. Tu pourrais ?"
+    iris colere "ESSAIE POUR VOIR."
+    nyra reflechit "La salle d'observation est moins chaude. On peut l'y accompagner, si Sael pense que ça ne pose pas de problème."
+    sael neutre "Quelques minutes. Et au moindre vertige, retour au lit."
+    noam sourire "Compris."
     $ hideGroup()
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-
-    "Je les suis et je marche un peu en retrait, légèrement étourdi."
-    "Au bout d’un moment, nous arrivons devant la salle d’observation. La porte est entrouverte."
-    "On entend la voix de Kami à l’intérieur."
-
+    "Dans le couloir, Julian se lance dans une description interminable de son système idéal de répartition des desserts. Iris corrige chaque point. Nyra ne participe pas. Sael marche près de moi."
+    julian "Je propose donc trois catégories : les desserts de consolation, les desserts de victoire et les desserts de nécessité diplomatique."
+    iris desaccord "Tu viens d'inventer trois raisons pour en manger."
+    julian "Trois excellentes raisons."
+    sael neutre "On arrive."
+    "Une voix filtre à travers la porte entrouverte de la salle d'observation."
     stop music fadeout 1.0
-
     play music "music/bgm_system_override.mp3" fadein 2.0
-
-    kami "Je suis désolée Kael, mais c’est bien plus compliqué que ça."
-
-    "Nous nous arrêtons instinctivement. Sael me fait signe de rester silencieux."
-
+    kami "Oh, Kael... J'aimerais tellement t'aider. Mais tu ne peux pas exiger que la technologie obéisse à tes sentiments."
+    "Nous nous arrêtons. Julian referme aussitôt la bouche."
+    kael "Sept jours. C'est ça que tu me dis ?"
+    "Personne ne bouge. Sael me lance un regard, puis pousse la porte."
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_42
     scene bg_observation at adaptive_fullscreen with dissolve
     $ current_period = "Après-midi"
-
     $ showGroup([
         ("kael", "neutre", 0.50),
+        ("noam", "fatigue", 0.18), ("iris", "inquiet", 0.34),
+        ("sael", "neutre", 0.66), ("julian", "neutre", 0.82),
+        ("nyra", "neutre", 0.96),
     ])
-
-    kael "Sept jours ? Tu es sérieuse ?"
-    kael colere "J'ai vraiment besoin de ces images !"
-
-    kami "Les brouilleurs actuellement en circulation sont particulièrement efficaces."
-    kami "Ils ne se contentent pas de bloquer le signal en temps réel."
-    kami "Ils appliquent un filtre de sept jours sur toutes les données vidéo et audio enregistrées dans leur rayon lorsqu'ils sont allumés."
-    kami "C’est une sécurité intégrée. Même moi, je ne peux pas contourner ça instantanément."
-
-    kael triste "Donc si je comprends bien… même si le vote autorise les brouilleurs, ça ne changera rien pour moi avant sept jours ?"
-
-    kami "Exactement. Et si vous votez pour les interdire… eh bien, tu n’auras plus jamais accès à ces enregistrements."
-    kami "Quel choix intéressant, n’est-ce pas ?"
-
-    "Kael reste silencieux. Ses poings sont serrés."
-
-    think "Il cherche encore la photo de sa sœur ?"
-    think "Il n’abandonne toujours pas."
-
-    "Je sens un vertige me reprendre. Je m’appuie discrètement contre le mur."
-
-    sael inquiet "Noam ? Ça va ?"
-
-    "Le groupe se tourne vers moi. Kael remarque enfin notre présence et sursaute légèrement."
-
-    kael calme "... Vous étiez là."
+    kael colere "Je t'ai posé une question simple !"
+    kami "Et je t'ai donné une réponse merveilleusement claire."
+    kael "Je veux les images de ma chambre. Celles de la nuit où ma photo a disparu."
+    kami "Et moi, je veux un peu de gratitude."
+    kael colere "KAMI !"
+    kami "D'accord, d'accord ! Les brouilleurs en vigueur imposent un délai de sept jours sur l'accès aux données vidéo et audio concernées."
+    kami "Ce n'est pas une question de bonne volonté. Même moi, je ne peux pas te donner immédiatement ce que le système ne rendra accessible que plus tard."
+    kael reflechit "Donc avant sept jours, impossible de vérifier qui est venu."
+    kami "Exactement ! Je vois que tu écoutes quand tu veux."
+    kael triste "Et si le vote échoue ?"
+    kami "Si vous interdisez les brouilleurs, les enregistrements concernés ne redeviendront pas accessibles par magie."
+    "Kael ne répond pas. Il serre les doigts si fort autour du bord de la console que ses phalanges blanchissent."
+    iris inquiet "Kael..."
+    kael surpris "..."
+    "Il nous remarque enfin."
+    kael calme "Vous êtes là depuis combien de temps ?"
+    julian taquin "Assez pour découvrir que Kami déteste toujours rendre service."
+    kami "Julian, je suis BLESSÉE !"
+    nyra raison "L'indisponibilité est-elle une propriété du brouilleur, ou une limitation de la base d'archives ?"
+    kami "Une propriété de la protection en place. Et non, je ne vais pas vous remettre son manuel technique."
+    nyra reflechit "C'était pourtant ma question suivante."
+    kael fatigue "Super. On va donc attendre une semaine pendant que celui qui m'a pris la photo..."
+    "Il s'interrompt."
+    sael neutre "Personne ici ne te demande d'oublier Léa."
+    kael triste "J'ai pas dit ça."
+    sael reflechit "Je sais."
+    iris fatigue "Tu as mangé quelque chose aujourd'hui ?"
+    kael colere "Ça n'a aucun rapport !"
+    iris desaccord "Je sais. Mais t'as quand même besoin de manger."
+    kael calme "... Plus tard."
+    "Il se tourne vers la porte, puis revient vers nous."
+    kael reflechit "Si vous découvrez quelque chose sur les chambres, vous me le dites. Même un détail."
+    noam neutre "Oui."
+    "Kael sort. Les autres le regardent partir."
     call play_stat_dialogue("j11") from _call_play_stat_dialogue_10
-
-    pause 1.0
-
-    $ showGroup([
-        ("noam", "neutre", 0.20),
-        ("iris", "neutre", 0.40),
-        ("sael", "neutre", 0.60),
-        ("julian", "neutre", 0.80),
-        ("nyra", "neutre", 1.00),
-        ("kael", "neutre", 1.20),
-    ])
-
-    julian taquin "On passait juste. On voulait pas déranger ton… entretien privé avec notre chère geôlière."
-
-    kami "Oh ! Mais vous ne dérangez rien du tout !"
-    kami "D’ailleurs, Noam, tu as meilleure mine. J’ai eu peur que ce soit plus grave qu'un simple malaise."
-
-    "Sa voix est douce, presque mielleuse."
-
-    noam fatigue "Ouais... Je vais bien…"
-
-    kael colere "… Laisse tomber. On en reparlera plus tard, Kami."
-
-    "Kael sort de la pièce sans un mot de plus. Son regard croise le mien une fraction de seconde. Il a l’air épuisé."
-
-    hide kael with dissolve
-
-    iris inquiet "T'as vu sa tête ? Il dort encore, à ton avis ?"
-
-    sael reflexion "On peut le comprendre…"
-    sael reflexion "Qu'est ce que tu ferais si ce que tu avais de plus précieux avait été piqué par on ne sait qui ?"
-
-    nyra "..."
-    nyra taquin "C'est même étonnant qu'il soit aussi calme."
-
-    "Je sens à nouveau ma tête tourner. Je ferme les yeux une seconde."
-
-    noam fatigue "Je… j’ai besoin de m’asseoir un moment."
-
-    "Iris me prend immédiatement le bras."
-
-    iris triste "Évidemment qu’il a besoin de s’asseoir, il est encore à moitié mort !"
-    iris determine "On va aller se poser à la salle commune."
-
-    think "Encore marcher ? Non. J'en peux plus."
-
-    noam "Allez-y sans moi, je vais retourner me reposer un peu."
-    noam sourire "Merci de m'avoir tenu compagnie."
-
-    nyra "T'es sûr que ça va aller ?"
-    nyra "Tu veux qu'on t'accompagne ?"
-
-    noam "Non ça va aller, c'est juste à côté."
-    noam "Allez profiter un peu avant la journée de demain."
-
-    iris "Si c'est ce que Monsieur veut. Il ne faut pas le dire deux fois."
-
-    "Iris s'éloigne rapidement en grimaçant."
-    "Le groupe se dissout et je retourne me poser dans ma chambre."
-
+    julian neutre "Bon. Les desserts diplomatiques peuvent attendre."
+    iris fatigue "Pour une fois, oui."
+    nyra reflechit "La distinction est intéressante. Il a parlé d'images de chambre, pas des couloirs."
+    noam reflexion "Parce que les brouilleurs sont dans les chambres."
+    nyra raison "Exactement."
+    sael inquiet "Noam ?"
+    "Je me suis appuyé contre le mur sans m'en rendre compte."
+    noam fatigue "Je vais retourner m'allonger."
+    iris desaccord "Pour une fois, voilà une bonne idée !"
+    julian taquin "Une décision raisonnable de Noam. Cette journée est historique."
+    noam sourire "Vous pouvez continuer votre débat sur les desserts sans moi."
+    nyra neutre "Tu veux qu'on t'accompagne ?"
+    noam neutre "C'est juste à côté. Ça ira."
+    sael determine "Tu marches lentement, et tu préviens si ça recommence."
+    noam taquin "Oui, Sael."
+    iris gene "Et repose-toi vraiment cette fois."
+    "Je les laisse dans la salle. Les pas de Julian et la voix d'Iris recommencent presque aussitôt derrière moi."
     jump _11_0_1_2_CHAMBRE_INTROSPECTION
+
 
 label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
