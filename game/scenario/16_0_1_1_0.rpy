@@ -267,6 +267,7 @@ label _16_0_1_1_CORRIDOR_KAEL:
 
     noam colere "Putain mais Kael, on te voit prendre ta propre photo. Celle dont tu jurais ne pas savoir où elle était passée."
 
+    call cutin("kael") from _call_kd_cutin_16_kael
     kael colere "Tu crois que je le sais pas ?! Tu crois que je ne m'en rappelle pas ?!"
     kael fatigue "Hier, j'ai quitté la salle parce que je voulais retourner fouiller ma chambre. Tu es resté devant les écrans."
     kael colere "J'ai tout fouillé ! TOUT ! Je ne l'ai pas retrouvé ! Où j'aurais bien pû la mettre hein ?"

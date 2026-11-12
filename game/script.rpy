@@ -17,8 +17,14 @@
 # ------------------------------------------------------------
 init -2 python:
     config.layers = [ "bgcam", "master", "lighting", "transient", "screens", "overlay" ]
-    CINEMA_ZOOM_BG = 2.25
-    CINEMA_CAM_Y = 0.41
+    # 1.67 = sprites affichés à leur résolution native (0.60 x 1.67 ~ 1.0) :
+    # image nette et cadrage buste complet (tête non coupée).
+    CINEMA_ZOOM_BG = 1.67
+    CINEMA_CAM_Y = 0.38
+    # Durée du recadrage sur un nouveau locuteur (nerveux, façon DR/THL).
+    CINEMA_FOCUS_TIME = 0.24
+    # Seuil au-delà duquel la caméra est considérée cadrée sur un locuteur.
+    CINEMA_SPEAKER_ZOOM_MIN = CINEMA_ZOOM_BG * 0.92
     CINEMA_SPRITE_ZOOM = 1.0
     CINEMA_SPRITE_YPUSH = -80
 
@@ -67,6 +73,9 @@ default persistent.unlocked_vote_argument_ids = []
 default persistent.unlocked_dossier_args = []
 default persistent.pegi18_prompt_done = False
 default persistent.known_character_names = []
+# Caméra qui suit la souris : désactivée par défaut, le cadrage reste celui
+# de la mise en scène. Activable dans les préférences.
+default persistent.cinema_mouse_follow = False
 
 default day_id = 0
 
@@ -120,7 +129,9 @@ init python:
         # Changement de locuteur : on recadre d'abord le personnage au plus
         # près du centre pendant le travelling. La souris reprend ensuite la
         # main, sans annuler l'autofocus dès la première image.
-        if speaker_mode:
+        if not persistent.cinema_mouse_follow:
+            target_x, target_y = base_x, base_y
+        elif speaker_mode:
             if st < duration:
                 target_x, target_y = base_x, base_y
             else:
@@ -303,7 +314,7 @@ init python:
             prev_edge_y = sh * max(0.0, z0 - 1.0) / 2.0
             prev_pointer_x = (0.5 - max(0.0, min(1.0, float(mx) / sw))) * 2.0 * prev_edge_x
             prev_pointer_y = (0.5 - max(0.0, min(1.0, float(my) / sh))) * 2.0 * prev_edge_y
-            store._cinema_previous_mode = (prev_pointer_x, prev_pointer_y, z0, z0 >= 1.75, dx0, dy0)
+            store._cinema_previous_mode = (prev_pointer_x, prev_pointer_y, z0, z0 >= CINEMA_SPEAKER_ZOOM_MIN, dx0, dy0)
             store.cam_runtime_dx0 = dx0
             store.cam_runtime_dy0 = dy0
             store.cam_runtime_z0 = z0
@@ -311,11 +322,11 @@ init python:
             store.cam_runtime_dy1 = dy1
             store.cam_runtime_z1 = z1
             store.cam_runtime_duration = t
-            store.cam_runtime_speaker = z1 >= 1.75
+            store.cam_runtime_speaker = z1 >= CINEMA_SPEAKER_ZOOM_MIN
             tr = cam_runtime(
                 dx0=dx0, dy0=dy0, z0=z0,
                 dx1=dx1, dy1=dy1, z1=z1,
-                t=t, speaker_mode=(z1 >= 1.75)
+                t=t, speaker_mode=(z1 >= CINEMA_SPEAKER_ZOOM_MIN)
             )
             renpy.show_layer_at([], layer=ly)
             renpy.show_layer_at([tr], layer=ly)
@@ -351,20 +362,28 @@ init python:
 # Sprites : dim / restore / focus
 # ------------------------------------------------------------
 
+# Les personnages inactifs sont assombris et désaturés, jamais rendus
+# transparents : le décor ne doit pas apparaître à travers les corps.
+# Le paramètre `a` est conservé pour compatibilité (0.35 = assombri standard).
 transform char_restore:
     alpha 1.0
     zoom 1.0
     yoffset 0
+    ease 0.12 matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
 
 transform char_dim(a=0.35):
-    alpha a
-    zoom 1.0
-    yoffset 0
-
-transform char_focus:
     alpha 1.0
     zoom 1.0
     yoffset 0
+    ease 0.14 matrixcolor TintMatrix("#8d97b8") * BrightnessMatrix(-0.80 * a) * SaturationMatrix(0.55)
+
+# Nouveau locuteur : retour en pleine lumière + petit sursaut vertical.
+transform char_focus:
+    alpha 1.0
+    zoom 1.0
+    matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
+    yoffset 14
+    easeout 0.13 yoffset 0
 
 # ------------------------------------------------------------
 # BG blur — SAFE (Ren'Py 8)
@@ -714,6 +733,15 @@ init python:
                     cinema_lock_static_background()
                 return
 
+            # Un gros plan posé par close_up() est relâché dès qu'un autre
+            # personnage prend la parole (pas d'oubli de release_cam).
+            closeup_tag = getattr(store, "_kd_closeup_tag", None)
+            if manual_camera and closeup_tag and tag not in (closeup_tag, "__NARRATOR__"):
+                store._cinema_manual_override = False
+                store._kd_closeup_tag = None
+                manual_camera = False
+                store._focus_last_params = dict(tag="__REGROUP__")
+
             if manual_camera:
                 return  # Les mouvements de caméra explicitement scénarisés restent possibles.
 
@@ -722,14 +750,19 @@ init python:
             store._cinema_last_scene_signature = scene_signature
 
             if tag == "__NARRATOR__":
-                last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
-                # Ne pas sauter le cadrage après un changement de pièce,
-                # même si les deux répliques consécutives sont des pensées.
-                wanted_zoom = CINEMA_ZOOM_BG * 0.80
-                wrong_camera = abs(store.cam_z_cur - wanted_zoom) > 0.001 or abs(store.bg_cam_z_cur - wanted_zoom) > 0.001
-                if not scene_changed and last_tag == "__NARRATOR__" and not wrong_camera:
+                # Narration / pensées : on GARDE le plan courant (pas de
+                # va-et-vient de zoom entre chaque réplique et chaque pensée).
+                # Seul un changement de lieu ou une caméra jamais cadrée
+                # impose un plan large, posé en coupe sèche.
+                never_framed = not store._focus_last_params
+                if scene_changed or never_framed:
+                    cinematic_reset(t=0.0)
                     return
-                cinematic_reset(t=0.6)
+                last_tag = store._focus_last_params.get("tag")
+                if (last_tag not in (None, "__NARRATOR__", "__STATIC_BACKGROUND__", "__NO_AUTOFOCUS__")
+                        and not renpy.showing(last_tag, layer="master")):
+                    # Le dernier locuteur a quitté le plan : revenir au large.
+                    cinematic_reset(t=CINEMA_FOCUS_TIME)
                 return
 
             last_tag = store._focus_last_params.get("tag") if store._focus_last_params else None
@@ -739,7 +772,8 @@ init python:
                 # Ses animations de bouche et son audio ont déjà été lancés.
                 return
 
-            cinematic_focus(tag, t=0.6)
+            # Coupe sèche à l'arrivée dans un lieu, recadrage nerveux sinon.
+            cinematic_focus(tag, t=0.0 if scene_changed else CINEMA_FOCUS_TIME)
 
         return _cb
 

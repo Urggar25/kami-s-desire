@@ -1340,3 +1340,13 @@ image anya taquin              = anya_expression("taquin")
 # ======================
 
 image goumi vide              = im.FactorScale("images/character/vide.png", 0.60)
+
+
+# ======================
+# Alias d'expressions utilisées par les scénarios sans calque dédié
+# ======================
+image julian vide               = julian_expression("panne")
+image noam murmure              = noam_expression("fatigue")
+image noam content              = noam_expression("sourire")
+image mara hesitation           = mara_expression("doute")
+image nyra doute                = nyra_expression("hesitation")

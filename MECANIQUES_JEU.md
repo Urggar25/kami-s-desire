@@ -2,7 +2,7 @@
 
 > **Lecture obligatoire avant toute modification du dépôt.** Ce document est la carte des outils déjà disponibles pour construire une nouvelle journée de jeu. Toute nouvelle mécanique, tout nouvel effet ou écran réutilisable doit être ajouté ici dans la même modification.
 
-Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `game/`, hors traductions, sauvegardes `.bak` et écrans internes non destinés à être appelés directement.
+Dernier audit complet : **30 septembre 2026** — refonte de la mise en scène (tempo, caméra, cut-ins, procès) : **12 novembre 2026** — sources Ren'Py actives sous `game/`, hors traductions, sauvegardes `.bak` et écrans internes non destinés à être appelés directement.
 
 ## Mode d'emploi
 
@@ -65,8 +65,8 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Plan fixe pour diffusions et CG | Désactive le zoom et l'autofocus des dialogues pour `bg_diffusion_*` et `bg_cg*` ; les autres scènes gardent la caméra automatique. | `game/script.rpy` | `scene bg_diffusion_champagne at adaptive_fullscreen` |
 | Éclairage automatique des décors | Teinte dynamiquement les scènes et les fonds d'ouverture de porte selon `current_period` sans dupliquer les images. | `game/scene_backgrounds.rpy`, `game/scenario/map.rpy` | `scene bg_cafeteria at adaptive_fullscreen` |
 | Affichage individuel de personnage | Affiche, remplace ou repositionne un sprite en mémorisant expression et position. | `game/script.rpy` | `$ showP("lysa", "blase", 0.72)` |
-| Affichage de groupe | Place automatiquement un groupe de personnages avec entrées/sorties cohérentes. | `game/transform.rpy` | `$ showGroup([("noam", "neutre", 0.25), ("lysa", "blase", 0.75)])` |
-| Caméra cinématique | Déplace et zoome les couches décor/personnages avec restauration de l'état courant. | `game/script.rpy` | `$ cam_move(fx=0.68, fy=0.45, z=1.25, t=0.4)` |
+| Affichage de groupe | Place un groupe de personnages : les nouveaux arrivants glissent depuis le bord le plus proche (0,18 s), les personnages déjà présents se déplacent sans refaire de fondu, les sortants s'effacent en 0,14 s. | `game/transform.rpy` | `$ showGroup([("noam", "neutre", 0.25), ("lysa", "blase", 0.75)])` |
+| Caméra cinématique | Déplace et zoome les couches décor/personnages avec restauration de l'état courant. Réglages centraux : `CINEMA_ZOOM_BG = 1.67` (sprites à leur résolution native), `CINEMA_CAM_Y`, `CINEMA_FOCUS_TIME = 0.24`. | `game/script.rpy` | `$ cam_move(fx=0.68, fy=0.45, z=1.25, t=0.4)` |
 | Autofocus du locuteur | Zoome le personnage qui parle, atténue les autres et floute le décor automatiquement. | `game/script.rpy` | `lysa blase "On n'a pas le temps."` |
 | Noms inconnus puis révélés | Affiche un alias tant qu'un nom n'est pas connu et persiste son déblocage. | `game/script.rpy` | `$ unlock_character_name("anya")` |
 | Expressions et tenues composées | Génère les sprites animés depuis corps, tenue, bras, bouche, yeux et accessoires équipés. | `game/images.rpy` | `$ showP("noam", "reflexion", 0.50)` |
@@ -106,7 +106,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Impacts cinématiques directionnels | Combine flash bref, micro-gel, recul amorti gauche/droite et accentuation RVB selon quatre intensités ; utilisable dans les combats et QTE narratifs. | `game/impact_fx.rpy` | `call impact_fx("critical", direction="left")` |
 | Éclaboussures de sang | Superpose des textures transparentes temporaires sur l'écran lors d'une blessure confirmée : petites gouttes (`screen`) ou projection latérale (`spray`). | `game/impact_fx.rpy`, `game/images/effects/impact_blood_screen.svg`, `game/images/effects/impact_blood_spray.svg` | `call impact_fx("brutal", direction="right", blood="screen")` |
 | Flashs d'impact | Transitions blanche, rouge ou cyan prêtes pour révélation, coup et signal système. | `game/effects.rpy` | `with flash_red` |
-| Coupure et fondus | Fournit coupure noire, dissolution rapide et dissolution douce. | `game/effects.rpy` | `with cut_black` |
+| Coupure et fondus | Fournit coupure noire, dissolution rapide et dissolution douce. Les transitions standard `dissolve` (0,2 s) et `fade` (0,4 s) sont raccourcies globalement dans `kd_staging.rpy`. | `game/effects.rpy`, `game/kd_staging.rpy` | `with cut_black` |
 | Secousse paramétrable | Secoue décor et personnages avec intensité et durée configurables. | `game/effects.rpy` | `$ shake(18, 0.5)` |
 | Impact combiné | Combine flash coloré et secousse en un seul appel. | `game/effects.rpy` | `$ impact(intensity=14, duration=0.35, color="#ffffff")` |
 | Bandes cinéma | Anime un letterbox en haut et en bas pour cadrer une séquence dramatique. | `game/effects.rpy` | `$ letterbox_on(h=110, t=0.4)` |
@@ -126,10 +126,32 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Réveil trouble | Superpose respiration, scan et mise au point selon un niveau d'éveil. | `game/day1_ui.rpy` | `show screen day1_wakeup_overlay(level="heavy")` |
 | Overlay de souvenir | Ajoute teinte violette, vignette et grain filmique autour d'un flashback. | `game/day0_ui.rpy` | `show screen day0_flashback_overlay with d0_flashback_entry` |
 | Diffusion portrait de Kami | Cadre un interlocuteur devant un fond expressif de Kami avec portrait dynamique et chrome broadcast. | `game/transform.rpy` | `scene bg_diffusion_taquin; show screen kami_broadcast_ui; $ bc_show("ryn", "colere"); ryn "Non."; $ bc_hide()` |
-| Décors narratifs et CG des jours 8 à 21 | Fournit les fonds du réseau, de la cavité, de la salle Goumi et de la navette, ainsi que les CG de révélations `bg_cg040` à `bg_cg059`, dont les confrontations de doubles et les fins alternatives des jours 20 et 21. | `game/scene_backgrounds.rpy`, `game/images/background/scenes/`, `game/images/background/cg/` | `$ unlock_gallery_image("bg_cg058"); scene bg_cg058 at adaptive_fullscreen` |
+| Décors narratifs et CG des jours 8 à 21 | Fournit les fonds du réseau, de la cavité, de la salle Goumi et de la navette, ainsi que les CG de révélations `bg_cg040` à `bg_cg059`, dont les confrontations de doubles et les fins alternatives des jours 20 et 21. | `game/scene_backgrounds.rpy`, `game/images/background/scene/`, `game/images/background/cg/` | `$ unlock_gallery_image("bg_cg058"); scene bg_cg058 at adaptive_fullscreen` |
 | CG clés des jours 22 à 30 et fins tardives | Illustre les pivots narratifs `bg_cg060` à `bg_cg066` et réserve `bg_cg067` à `bg_cg070` aux fins « À ma place », « Le départ des autres », « Destination inconnue » et « Ceux qu'il veut libérer ». | `game/images/background/cg/`, `game/scenario/` | `$ unlock_gallery_image("bg_cg068"); scene bg_cg068 at adaptive_fullscreen` |
 | Montage chibi | Joue une planche chibi comme une séquence rythmée avec cuts, impacts, particules et SFX synchronisés. | `game/chibi_montage.rpy` | `$ chibi_montage_play(CHIBI_MONTAGE_J701_NOAM)` |
 | Boîte à outils bande-annonce | Fournit zooms, pans, grades, glitch RGB, titres, citations, letterbox et cartes de fin cinématiques. | `game/version_2_1_trailer_kit.rpy` | `show screen trl_title("LE CONCLAVE", kicker="ILS VOUS REGARDENT", slam=True)` |
+
+## Mise en scène « procès » (Danganronpa / The Hundred Line)
+
+Grammaire à utiliser en priorité pour rendre une scène dynamique. Règles d'usage : voir `AGENTS.md`, section « Mise en scène dynamique ».
+
+| Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
+|---|---|---|---|
+| Cut-in d'accusation | Bande diagonale à la couleur du personnage, gros plan du visage avec l'expression courante, nom et réplique optionnelle en très gros, flash et impact sonore (≈1 s). | `game/kd_staging.rpy` | `call cutin("mara", _("C'EST FAUX !"))` |
+| Panneaux de réactions | Affiche 2 à 4 visages en panneaux inclinés pour montrer des réactions simultanées à une révélation. | `game/kd_staging.rpy` | `call reactions([("elen", "peur"), ("ryn", "colere"), ("tomas", "peur")])` |
+| Ouverture de séance du Conclave | Carton signature de 2,5 s (bandes défilantes du casting, titre claqué, sous-titre) à jouer au début de chaque débat/vote. | `game/kd_staging.rpy` | `call trial_intro(subtitle=_("JOUR [current_day]"))` |
+| Gros plan | Coupe sèche sur le visage d'un personnage, les autres assombris ; relâché automatiquement quand un autre personnage parle. | `game/kd_staging.rpy` | `$ close_up("noam")` |
+| Relâcher la caméra | Rend la main à l'autofocus après un plan manuel. | `game/kd_staging.rpy` | `$ release_cam()` |
+| Plan d'ensemble | Revient immédiatement au plan large, tous les personnages en pleine lumière. | `game/kd_staging.rpy` | `$ wide_shot()` |
+| Coup de zoom | Petit zoom brusque sur le plan courant pour ponctuer une réplique. | `game/kd_staging.rpy` | `$ punch_in(0.16)` |
+| Plan incliné | Incline la caméra (malaise, manipulation) jusqu'au prochain recadrage. | `game/kd_staging.rpy` | `$ dutch(-6); $ dutch_off()` |
+| Mot-clé coloré | Balise de texte qui met un indice ou un terme clé en gras et en couleur. | `game/kd_staging.rpy` | `mara "J'étais dans {k}ma chambre{/k}."` |
+| Réplique criée | Balise de texte qui grossit, colore et met en gras un cri. | `game/kd_staging.rpy` | `ryn colere "{shout}TU TE FOUS DE MOI ?!{/shout}"` |
+| Couleurs signature | Couleur unique par personnage (nom, cut-in, panneaux) et couleurs d'accent `KD_KEYWORD_COLOR`, `KD_DANGER_COLOR`, `KD_TRIAL_ACCENT`. | `game/kd_staging.rpy` | `$ c = kd_char_color("lysa")` |
+| Visage cadré | Construit un gros plan carré du visage d'un personnage avec l'expression voulue (cadrage `KD_FACE_BOX`). | `game/kd_staging.rpy` | `add kd_face("iris", "peur", 340)` |
+| Personnages inactifs assombris | Les personnages qui ne parlent pas sont assombris et désaturés (jamais transparents) ; le locuteur fait un petit sursaut à sa première réplique. | `game/script.rpy` | `$ restyle_char("lysa", "dim")` |
+| Caméra libre à la souris | Option des préférences (désactivée par défaut) qui laisse le joueur explorer le plan avec la souris. | `game/script.rpy`, `game/screens.rpy` | `$ persistent.cinema_mouse_follow = True` |
+| Alias d'expressions | Expressions utilisées par les scénarios sans calque dédié, redirigées vers l'expression la plus proche. | `game/images.rpy` | `julian vide "..."` |
 
 ## Mécaniques sonores
 
@@ -141,6 +163,7 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 | Génération des SFX indispensables | Synthétise au premier lancement les sons système manquants afin d'éviter les erreurs d'assets. | `game/_sfx_bootstrap.rpy` | `$ _sfx_bootstrap()` |
 | Rupture audio horrifique | Coupe brutalement la musique avec un impact inversé puis restaure son volume de façon progressive. | `game/effects.rpy`, `game/audio/sfx_audio_drop.wav` | `$ horror_audio_cut(duration=0.42, restore_volume=0.75)` |
 | Musique horrifique ralentie | Bascule en fondu vers une variante réellement ralentie et assombrie de la musique courante. | `game/effects.rpy`, `game/audio/music/bgm_cold_metadata_slow.mp3` | `$ horror_music_slow()` |
+| Canal d'effets de mise en scène | Canal `kd_fx` (mixeur SFX) utilisé par les cut-ins, panneaux et ouvertures de séance, sans couper les SFX de scène. | `game/kd_staging.rpy` | `play kd_fx "audio/sfx_interrupt_impact.wav"` |
 | Couches sonores de bande-annonce | Superpose plusieurs impacts/risers grâce aux canaux dédiés `trl_sfx2`, `trl_sfx3` et `trl_amb`. | `game/version_2_1_trailer_kit.rpy` | `play trl_sfx2 "audio/trailer/trl_impact_deep.wav"` |
 
 ### Bibliothèque musicale disponible
@@ -149,16 +172,16 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 |---|---|---|---|
 | Menu principal | Thème du menu principal. | `game/audio/music/main_menu.mp3` | `play music "audio/music/main_menu.mp3" fadein 1.0` |
 | Déclin du monde | Ambiance sombre et ample pour crise ou enquête. | `game/audio/music/bgm_world_decline.mp3` | `play music "audio/music/bgm_world_decline.mp3" fadein 1.0` |
-| Distance non dite | Ambiance relationnelle retenue, disponible en deux variantes. | `game/audio/music/bgm_unsaid_distance.mp3`, `game/audio/music/bgm_unsaid_distance2.mp3` | `play music "audio/music/bgm_unsaid_distance.mp3" fadein 1.0` |
-| Système outrepassé | Tension technologique, disponible en deux variantes. | `game/audio/music/bgm_system_override.mp3`, `game/audio/music/bgm_system_override2.mp3` | `play music "audio/music/bgm_system_override.mp3" fadein 1.0` |
-| Matin néon doux | Ambiance matinale légère, disponible en deux variantes. | `game/audio/music/bgm_soft_neon_morning.mp3`, `game/audio/music/bgm_soft_neon_morning2.mp3` | `play music "audio/music/bgm_soft_neon_morning.mp3" fadein 1.0` |
-| Routine calme | Quotidien posé, disponible en deux variantes. | `game/audio/music/bgm_quiet_routine.mp3`, `game/audio/music/bgm_quiet_routine2.mp3` | `play music "audio/music/bgm_quiet_routine.mp3" fadein 1.0` |
-| Tension basse | Suspense discret, disponible en deux variantes. | `game/audio/music/bgm_low_tension.mp3`, `game/audio/music/bgm_low_tension2.mp3` | `play music "audio/music/bgm_low_tension.mp3" fadein 1.0` |
+| Distance non dite | Ambiance relationnelle retenue. | `game/audio/music/bgm_unsaid_distance.mp3` | `play music "audio/music/bgm_unsaid_distance.mp3" fadein 1.0` |
+| Système outrepassé | Tension technologique. | `game/audio/music/bgm_system_override.mp3` | `play music "audio/music/bgm_system_override.mp3" fadein 1.0` |
+| Matin néon doux | Ambiance matinale légère. | `game/audio/music/bgm_soft_neon_morning.mp3` | `play music "audio/music/bgm_soft_neon_morning.mp3" fadein 1.0` |
+| Routine calme | Quotidien posé. | `game/audio/music/bgm_quiet_routine.mp3` | `play music "audio/music/bgm_quiet_routine.mp3" fadein 1.0` |
+| Tension basse | Suspense discret. | `game/audio/music/bgm_low_tension.mp3` | `play music "audio/music/bgm_low_tension.mp3" fadein 1.0` |
 | Atmosphère introspective | Fond émotionnel pour réflexion ou débrief. | `game/audio/music/bgm_introspective_atmosphere.mp3` | `play music "audio/music/bgm_introspective_atmosphere.mp3" fadein 1.5` |
 | Assemblée fatale | Thème de confrontation et de débat majeur. | `game/audio/music/bgm_fatal_assembly.mp3` | `play music "audio/music/bgm_fatal_assembly.mp3" fadein 1.0` |
 | Élan amoureux | Thème romantique ou chaleureux. | `game/audio/music/bgm_fallin_love.mp3` | `play music "audio/music/bgm_fallin_love.mp3" fadein 1.0` |
 | Métadonnées froides | Ambiance analytique, distante et technologique. | `game/audio/music/bgm_cold_metadata.mp3` | `play music "audio/music/bgm_cold_metadata.mp3" fadein 1.0` |
-| Désir prudent | Intimité hésitante, disponible en deux variantes. | `game/audio/music/bgm_careful_wanting.mp3`, `game/audio/music/bgm_careful_wanting2.mp3` | `play music "audio/music/bgm_careful_wanting.mp3" fadein 1.0` |
+| Désir prudent | Intimité hésitante. | `game/audio/music/bgm_careful_wanting.mp3` | `play music "audio/music/bgm_careful_wanting.mp3" fadein 1.0` |
 | Calme, pas paix | Accalmie ambiguë qui conserve une tension sous-jacente. | `game/audio/music/bgm_calm_not_peace.mp3` | `play music "audio/music/bgm_calm_not_peace.mp3" fadein 1.0` |
 | Pulsation horrifique | Variante ralentie et grave pour poursuites dans les conduits et présence invisible. | `game/audio/music/bgm_horror_pulse.mp3` | `play music "audio/music/bgm_horror_pulse.mp3" fadein 1.0` |
 | Révélation horrifique | Variante très ralentie du déclin du monde pour découverte d'un corps ou d'un double. | `game/audio/music/bgm_horror_reveal.mp3` | `play music "audio/music/bgm_horror_reveal.mp3" fadein 1.0` |
@@ -183,10 +206,10 @@ Dernier audit complet : **30 septembre 2026** — sources Ren'Py actives sous `g
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
 |---|---|---|---|
-| Dialogue personnage | Utilise les personnages dynamiques, guillemets, autofocus, noms révélables et image tags. | `game/script.rpy` | `lysa blase "Ouais. On avance."` |
+| Dialogue personnage | Utilise les personnages dynamiques, guillemets, autofocus, noms révélables et image tags ; le nom s'affiche dans la couleur signature du personnage (`KD_CHARACTER_COLORS`). | `game/script.rpy`, `game/screens.rpy`, `game/kd_staging.rpy` | `lysa blase "Ouais. On avance."` |
 | Pensée de Noam | Affiche une pensée courte avec le style narratif dédié. | `game/script.rpy` | `think "Je suis épuisé."` |
-| Narration / voix off | Réinitialise automatiquement le focus cinématique lorsqu'aucun personnage ne parle. | `game/script.rpy` | `n "Le couloir est vide."` |
-| Animation de ponctuation | Détecte question, exclamation et suspense pour animer les bords du dialogue et jouer un son adapté. | `game/dialogue_animations.rpy` | `mara colere "Tu plaisantes ?!"` |
+| Narration / voix off | Conserve le plan courant (pas de dézoom à chaque pensée) ; revient au plan large seulement après un changement de lieu ou si le dernier locuteur a quitté la scène. | `game/script.rpy` | `n "Le couloir est vide."` |
+| Animation de ponctuation | Réservée aux vrais éclats : `?!`, `!!`, `!!!` et répliques criées en MAJUSCULES déclenchent liseré, secousse et son ; un simple `!` ou `?` ne déclenche plus rien. | `game/dialogue_animations.rpy` | `mara colere "Tu plaisantes ?!"` |
 | Choix standard | Affiche le menu Ren'Py stylisé pour deux ou trois perspectives non binaires. | `game/screens.rpy` | `menu: "Observer": $ choix = "observer"` |
 | Choix critique | Remplace le menu standard pour une décision majeure de 2 à 4 options. | `game/critical_choice.rpy` | `menu (screen="critical_choice", noam_expr="peur"):` |
 | Diffusion de Kami | Affiche Kami sur un fond expressif et réserve `bc_show` aux interlocuteurs qui lui répondent. | `game/transform.rpy` | `scene bg_diffusion_taquin; show screen kami_broadcast_ui; kami "Oh."; $ bc_show("noam", "inquiet")` |

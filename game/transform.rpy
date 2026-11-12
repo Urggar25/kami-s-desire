@@ -17,14 +17,29 @@ transform char_group_fade_in(xpos):
     zoom 1.0 alpha 0.0
     linear 0.35 alpha 1.0
 
+# Entrée : glissé latéral depuis le bord le plus proche + fondu court.
 transform char_group_enter(xpos, ypos=1.0):
     subpixel True
     xalign xpos
     yalign ypos
-    alpha 0.0
     zoom 1.0
     yoffset 0
-    linear 0.5 alpha 1.0
+    matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
+    alpha 0.0
+    xoffset (-80 if xpos < 0.5 else 80)
+    easeout 0.18 alpha 1.0 xoffset 0
+
+# Personnage déjà présent : déplacement vers sa nouvelle place, sans fondu.
+transform char_group_move(xpos, ypos=1.0, from_x=None):
+    subpixel True
+    xalign (xpos if from_x is None else from_x)
+    alpha 1.0
+    zoom 1.0
+    yoffset 0
+    xoffset 0
+    yalign ypos
+    matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
+    easeout 0.2 xalign xpos
 
 transform char_group_exit(xpos, ypos=1.0):
     subpixel True
@@ -33,7 +48,7 @@ transform char_group_exit(xpos, ypos=1.0):
     alpha 1.0
     zoom 1.0
     yoffset 0
-    linear 0.5 alpha 0.0
+    easein 0.14 alpha 0.0 xoffset (-60 if xpos < 0.5 else 60)
 
 
 transform char_group_place(xpos, ypos=1.0):
@@ -43,10 +58,15 @@ transform char_group_place(xpos, ypos=1.0):
     alpha 1.0
     zoom 1.0
     yoffset 0
+    xoffset 0
+    matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
 
 init python:
 
     GROUP_MAX_MEMBERS = 12
+    # Temps bloquants des entrées/sorties de groupe (avant : 0.5 s chacun).
+    GROUP_ENTER_TIME = 0.18
+    GROUP_EXIT_TIME = 0.14
     GROUP_AUTO_X_MIN = -0.11
     GROUP_AUTO_X_MAX = 1.20
     GROUP_AUTO_X_MAX_SMALL = 1.10
@@ -93,7 +113,7 @@ init python:
             renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, old_y)], layer=old_layer)
 
         if any(tag not in next_tags for tag in old_tags):
-            renpy.pause(0.5, hard=True)
+            renpy.pause(GROUP_EXIT_TIME, hard=True)
             for tag in old_tags:
                 if tag not in next_tags:
                     old_layer = store.char_state.get(tag, {}).get("layer", layer)
@@ -101,14 +121,26 @@ init python:
                     store.char_pos.pop(tag, None)
                     store.char_state.pop(tag, None)
 
+        entered = False
         for idx, (tag, expr, x) in enumerate(normalized):
+            # Un personnage déjà présent ne refait pas de fondu d'entrée :
+            # il glisse vers sa nouvelle place et change d'expression.
+            already = tag in old_tags and renpy.showing(tag, layer=layer)
+            from_x = store.char_state.get(tag, {}).get("x", x)
             store.char_pos[tag] = x
             store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_enter(x, y)], layer=layer, zorder=zorder + idx)
+            if already:
+                at = char_group_move(x, y, from_x)
+            else:
+                at = char_group_enter(x, y)
+                entered = True
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[at], layer=layer, zorder=zorder + idx)
 
-        if normalized:
-            renpy.pause(0.5, hard=True)
+        if entered:
+            renpy.pause(GROUP_ENTER_TIME, hard=True)
         store.group_members = next_tags
+        # Force l'autofocus à recadrer au prochain locuteur / à la prochaine narration.
+        store._focus_last_params = dict(tag="__REGROUP__")
 
     def hideGroup():
         """Cache tous les personnages du groupe actuel avec fade out"""
@@ -122,7 +154,7 @@ init python:
                 expr = state.get("expr", "neutre")
                 renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y)], layer=layer)
         if members:
-            renpy.pause(0.5, hard=True)
+            renpy.pause(GROUP_EXIT_TIME, hard=True)
         for tag in members:
             layer = store.char_state.get(tag, {}).get("layer", "master")
             renpy.hide(tag, layer=layer)

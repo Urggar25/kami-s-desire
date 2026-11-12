@@ -854,7 +854,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
         think "Sur ce dernier point, je suis entièrement d'accord."
         elias fatigue "Ils vont changer le contrôleur entier..."
         elias gene "Je vais peut-être finir par prendre mon café en dehors du Conclave."
-    play sound "sound/sfx_door.ogg"
+    play sound "audio/sfx_door.mp3"
     "La porte s'ouvre. Je sors presque trop vite. Elias, lui, s'arrête devant la console une dernière fois."
     elias inquiet "Je vais prévenir Kael tout de suite. S'il voit le contrôleur sans savoir ce qui l'a endommagé, il va croire à une panne plus grave."
     noam sourire "Très bien. Et la prochaine fois... essaie de boire loin des circuits électriques."

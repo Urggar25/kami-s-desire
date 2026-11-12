@@ -93,10 +93,17 @@ screen say(who, what):
         add Solid("#5cd3ff55", xsize=4, ysize=120) xpos 194 ypos 80
 
         if who is not None:
+            # Couleur signature du personnage qui parle (nom + liseré).
+            $ kd_who_color = kd_name_color(who)
             window:
                 id "namebox"
                 style "namebox"
-                text (who.upper() if isinstance(who, str) else who) id "who"
+                if kd_who_color:
+                    text (who.upper() if isinstance(who, str) else who) id "who" color kd_who_color
+                else:
+                    text (who.upper() if isinstance(who, str) else who) id "who"
+            if kd_who_color:
+                add Solid(kd_who_color) xpos (gui.name_xpos + 60) ypos (gui.name_ypos + gui.namebox_height - 14) xsize (gui.namebox_width - 120) ysize 4
 
         text what id "what"
         add "gui/textbox_arrow.png" xpos 1760 yalign 0.9 at textbox_arrow_blink
@@ -1172,6 +1179,7 @@ screen preferences():
                     style_prefix "check"
                     label _("Accessibilité")
                     textbutton _("Animations de dialogue") action ToggleField(persistent, "dialogue_animations")
+                    textbutton _("Caméra libre (souris)") action ToggleField(persistent, "cinema_mouse_follow")
 
                 vbox:
                     style_prefix "radio"

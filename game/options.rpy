@@ -30,6 +30,9 @@ define kd_cjk_font = "fonts/SourceHanSansLite.ttf"
 init -100 python:
     _kd_cjk_replaced_fonts = (
         "fonts/Barlow-Light.ttf",
+        "fonts/Barlow-Regular.ttf",
+        "fonts/Barlow-Medium.ttf",
+        "fonts/Barlow-SemiBold.ttf",
         "fonts/Rajdhani-SemiBold.ttf",
         "fonts/day_font.ttf",
     )
@@ -45,6 +48,10 @@ init -100 python:
                         config.font_replacement_map[replacement_key] = ("fonts/SourceHanSansLite.ttf", is_bold, is_italic)
                     else:
                         config.font_replacement_map.pop(replacement_key, None)
+
+        # Gras réel (et non simulé) pour {b}, {k} et {shout} dans les dialogues.
+        if not use_cjk_font:
+            config.font_replacement_map[("fonts/Barlow-Regular.ttf", True, False)] = ("fonts/Barlow-SemiBold.ttf", False, False)
 
     kd_update_language_fonts()
     config.change_language_callbacks.append(kd_update_language_fonts)

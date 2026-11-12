@@ -145,7 +145,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_210
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_tension_phase3.mp3" fadein 1.8
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.8
 
     $ showGroup([("noam", "neutre", 0.50)])
 

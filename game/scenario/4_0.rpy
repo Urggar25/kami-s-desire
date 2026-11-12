@@ -483,7 +483,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     "Sael se lève. Ryn ouvre la bouche, puis la referme. Pour une fois, aucun d'eux n'a de quoi répondre."
     hide sael
     with moveoutright
-    play sound "sound/sfx_door.ogg"
+    play sound "audio/sfx_door.mp3"
     "La porte se referme derrière Sael. Personne ne la rappelle."
     mara agace "Bon. Voilà. Une voix contre annoncée avant même le vote. On peut maintenant arrêter de lui hurler dessus ?"
     ryn colere "FACILE À DIRE ! C'est pas toi qui ramasses les gens morts en traversant une frontière !"
@@ -494,7 +494,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     think "Elle a presque l'air plus en colère contre Ryn que contre le texte."
     hide mara
     with moveoutright
-    play sound "sound/sfx_door.ogg"
+    play sound "audio/sfx_door.mp3"
     tomas inquiet "Je... j'ai l'impression qu'on vient de perdre le vote avant même d'avoir reçu nos bulletins."
     elen triste "On pourrait peut-être lui reparler ? Je veux dire... pas pour lui forcer la main, mais pour comprendre..."
     nyra reflechit "Pas aujourd'hui. Elle vient de nous expliquer quelque chose de personnel. Revenir à la charge maintenant serait la meilleure manière de lui donner raison de se méfier."

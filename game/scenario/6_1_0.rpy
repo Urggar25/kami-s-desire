@@ -564,6 +564,7 @@ label _6_1_0_DEBAT:
 
     scene bg_conclave at adaptive_fullscreen, j610_vote_breathe with fade
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_6_1_0
 
     $ showGroup([
         ("elias", "colere"),
@@ -594,6 +595,7 @@ label _6_1_0_DEBAT:
 
     ryn triste "J'ai déconné."
 
+    call cutin("mara", expr="colere_noire") from _call_kd_cutin_6_mara
     mara colere_noire "Tu as frappé Noam avant un vote décisif et ton résumé, c'est que tu as déconné ?"
 
     elias colere "Il a menacé Sael aussi."

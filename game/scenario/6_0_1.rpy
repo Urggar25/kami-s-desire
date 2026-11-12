@@ -225,7 +225,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
     elen surpris "Quoi ? La mienne affiche toujours quatorze heures !"
     elen inquiet "On peut même plus se mettre d'accord sur l'heure ?!"
     noam inquiet "On va y aller. Je préfère arriver trop tôt que découvrir que Kami nous a fait voter sans nous."
-    play sound "sfx/glitch_light.mp3"
+    play sound "audio/sfx_glitch.mp3"
     "Les lumières s'éteignent."
     "Une seconde plus tard, le couloir retrouve ses couleurs. L'écran mural, lui, montre un sourire de Kami parfaitement immobile."
     think "Je déteste déjà ce sourire. Quand il ne bouge pas, c'est encore pire."
@@ -260,7 +260,8 @@ label _6_0_1_CONCLAVE_START:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_267
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_debate_low.mp3" fadein 1.5
+    play music "music/bgm_low_tension.mp3" fadein 1.5
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_6_0_1
 
     "Julian est debout derrière une chaise. Il attend que quelqu'un le regarde avant de prendre la parole."
     julian sourire "Mesdames, messieurs, je propose de nous écouter jusqu'au bout, dans un esprit de..."
@@ -294,7 +295,7 @@ label _6_0_1_CONCLAVE_START:
     kami "Et je vois que vous avez déjà commencé à vous détester ! Quelle efficacité ! J'en attendais presque moins de vous."
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_debate_low.mp3" fadein 1.0
+    play music "music/bgm_low_tension.mp3" fadein 1.0
 
     $ showGroup([
         ("ryn", "colere"),
@@ -350,7 +351,7 @@ label _6_0_1_CONCLAVE_START:
     kami "Continuez. Poursuivez... poursuivez le débat. Je vous écoute."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_debate_low.mp3" fadein 1.0
+    play music "music/bgm_low_tension.mp3" fadein 1.0
 
     iris inquiet "Non. Désolée, mais là ça suffit."
     iris inquiet "Kami, qu'est-ce qui t'arrive ? Et ne nous fais pas ton numéro habituel."
@@ -371,7 +372,7 @@ label _6_0_1_CONCLAVE_START:
     mara colere "Qu'est-ce qu'on doit continuer exactement ? Notre débat, ou un spectacle que tu refuses d'arrêter ?"
     kami "Le débat doit..."
     kami "Il faut que vous... continuiez. Oui. Continuez."
-    play sound "sfx/glitch_medium.mp3"
+    play sound "audio/sfx_glitch.mp3"
     "« Continuez. Continuez. Conti... »"
     "L'image se dédouble. La dernière syllabe se répète comme un disque rayé."
     think "Quelque chose ne va pas. Et cette fois, je ne crois plus à une mise en scène."
@@ -387,7 +388,7 @@ label _6_0_1_CONCLAVE_START:
     tomas peur "AH ! Bon sang, on peut baisser le volume ?!"
     tomas inquiet "On ne t'empêche pas de faire une pause ! Tu peux même en prendre une longue, si ça t'aide !"
     kami "Je n'ai pas... besoin de... de..."
-    play sound "sfx/glitch_heavy.mp3"
+    play sound "audio/trailer/trl_glitch_stutter.wav"
     "L'écran s'éteint."
     "Une seconde plus tard, Kami réapparaît. Ses lèvres bougent après que les mots ont déjà été prononcés."
     think "Je commence à regretter l'époque où son plus gros problème était son humour."
@@ -419,7 +420,7 @@ label _6_0_1_CONCLAVE_START:
 
 label _6_0_1_SIGNAL_INSTABLE:
 
-    play sound "sfx/glitch_heavy.mp3"
+    play sound "audio/trailer/trl_glitch_stutter.wav"
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with hpunch
     play music "music/bgm_system_override.mp3" fadein 0.5
@@ -443,7 +444,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     scene bg_diffusion_colere at adaptive_fullscreen
     kami "Non."
     kami "Attendre... attendre n'est pas nécessaire."
-    play sound "sfx/glitch_loop.mp3"
+    play sound "audio/sfx_static.mp3"
     "Un grésillement traverse la salle. Je plaque mes mains sur mes oreilles."
     "Devant moi, des caractères défilent à toute vitesse."
     elias inquiet "Noam ! Regarde ton écran ! Il y a quelque chose à faire, je crois !"
@@ -452,7 +453,7 @@ label _6_0_1_SIGNAL_INSTABLE:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
-    play music "music/bgm_debate_low.mp3" fadein 1.0
+    play music "music/bgm_low_tension.mp3" fadein 1.0
     "Le son s'arrête aussi brusquement qu'il avait commencé."
     "Plusieurs écrans reviennent à la normale. Celui de Tomas continue d'afficher une ligne d'erreur."
     think "C'est la première fois que le silence de Kami me donne envie de l'entendre revenir."
@@ -497,7 +498,7 @@ label _6_0_1_FRACTURE_QTE:
     tomas inquiet "À sa décharge, le bouton clignote vraiment très fort."
     iris blase "C'est merveilleux. On va mourir à cause d'un bouton lumineux."
     kael colere "SURTOUT s'il clignote !"
-    play sound "sfx/glitch_medium.mp3"
+    play sound "audio/sfx_glitch.mp3"
     "Les données s'entremêlent sur l'écran principal."
     "Pendant une seconde, les mots « libre circulation » sont remplacés par des signes incompréhensibles."
     think "Je comprends pourquoi Tomas a retiré ses mains de la tablette. Je fais la même chose."
@@ -553,7 +554,7 @@ label _6_0_1_FRACTURE_QTE:
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_debate_low.mp3" fadein 0.7
+    play music "music/bgm_low_tension.mp3" fadein 0.7
     jump _6_0_1_VOTE
 
 label j601_sael_vote_animation:
@@ -809,7 +810,7 @@ label _6_0_1_FIN_JOURNEE:
     "Je pose la tablette face contre le bureau. J'éteins la lumière et me couche."
     think "Je pourrais accuser Kami. Ce serait confortable. Je n'ai pourtant pas eu besoin qu'elle me tienne la main pour voter."
     pause 0.5
-    play sound "sfx/glitch_light.mp3"
+    play sound "audio/sfx_glitch.mp3"
     "L'écran mural s'allume."
     "Une fraction de seconde. Pas de visage, pas de message."
     "Puis le noir."

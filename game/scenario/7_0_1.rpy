@@ -1399,7 +1399,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_286
     scene bg_canon at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_tension.mp3" fadein 1.5
+    play music "music/bgm_low_tension.mp3" fadein 1.5
     "La salle du Canon a l'air inchangée. Aucun grondement, aucun voyant d'alerte."
     $ showGroup([("tomas", "inquiet", 0.30), ("noam", "neutre", 0.70)])
     tomas reflechit "Le système publie un décompte des exécutions liées aux Commandements."

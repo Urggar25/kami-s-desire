@@ -461,7 +461,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     scene bg_cg050 at adaptive_fullscreen with vpunch
     kael colere "Alors qu'il vienne me regarder dans les yeux !"
     stop music fadeout 0.8
-    play music "music/bgm_stabilisation_tension.mp3" fadein 0.8
+    play music "music/bgm_system_override.mp3" fadein 0.8
     call j801_play_stabilisation from _call_j801_play_stabilisation
     $ j801_stabilisation_result = _return
     jump _8_0_1_APRES_STABILISATION

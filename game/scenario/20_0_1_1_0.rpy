@@ -101,9 +101,11 @@ label _20_0_1_1_0_REVEIL:
         ("sael", "surpris", 0.96),
     ])
 
+    call cutin("noam", expr="desespoir", color="#ff2e55") from _call_kd_cutin_20_noam
     noam desespoir "Mara est morte !"
 
     "Plus personne ne parle."
+    call reactions([("ryn", "surpris"), ("elen", "peur"), ("iris", "inquiet")]) from _call_kd_reactions_20_mara
 
     ryn surpris "Quoi ?" id j20_cafeteria_ryn_quoi
 

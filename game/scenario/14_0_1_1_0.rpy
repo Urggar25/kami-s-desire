@@ -342,7 +342,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_27
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_tension_debate.mp3" fadein 2.0
+    play music "music/bgm_tense_meeting.mp3" fadein 2.0
 
     "Je rejoins le dortoir quelques minutes plus tard. Plus j'approche de la chambre de Sael, moins son invitation me paraît être une bonne idée, mais si elle sait quelque chose sur ce que j'ai vu, je ne peux pas simplement l'ignorer."
 
@@ -493,6 +493,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
     "Ryn souffle entre ses dents."
 
     ryn agace "Réponds juste et on avance."
+    call cutin("noam") from _call_kd_cutin_14_noam
     noam colere "Vous me plaquez contre un mur pour un exorcisme et c'est moi qui vous fais perdre du temps ?!"
 
     sael mefiant "Qui es-tu ?"
@@ -569,7 +570,7 @@ label _14_0_1_1_0_CHAMBRE_SAEL:
     "Un cri me traverse soudainement la tête, net et violent, comme si quelqu'un venait de hurler directement derrière mes yeux."
 
     scene bg_chambre_sael at adaptive_fullscreen with hpunch
-    play music "music/bgm_tension_debate.mp3" fadein 0.5
+    play music "music/bgm_tense_meeting.mp3" fadein 0.5
 
     $ showGroup([
         ("noam", "peur", 0.18),

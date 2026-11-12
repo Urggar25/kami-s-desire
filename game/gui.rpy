@@ -30,7 +30,8 @@ define gui.interface_text_color     = '#8aacbc'
 ## Polices
 ################################################################################
 
-define gui.text_font           = "fonts/Barlow-Light.ttf"
+## Barlow Regular : la graisse Light était trop fine pour une lecture longue.
+define gui.text_font           = "fonts/Barlow-Regular.ttf"
 define gui.name_text_font      = "fonts/Rajdhani-SemiBold.ttf"
 define gui.interface_text_font = "fonts/Barlow-Light.ttf"
 

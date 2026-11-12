@@ -734,6 +734,7 @@ label _7_1_0_1_ANNONCE_VOTE:
 
     scene bg_conclave at adaptive_fullscreen with fade
     play music "music/bgm_system_override.mp3" fadein 1.0
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_7_1_0_1
 
     $ showGroup([
         ("mara", "mefiant"),

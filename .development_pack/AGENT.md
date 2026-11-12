@@ -37,7 +37,7 @@
 
 ## Rangement des décors et des CG
 
-- Les fonds narratifs non interactifs vont dans `game/images/background/scenes/`.
+- Les fonds narratifs non interactifs vont dans `game/images/background/scene/` (dossier au singulier : le chemin `scenes/` n'existe pas et provoque des images introuvables).
 - Toute illustration spéciale à collectionner va dans `game/images/background/cg/`, suit l'identifiant `bg_cgNNN`, et doit appeler `$ unlock_gallery_image("bg_cgNNN")` lors de sa première apparition.
 
 ## Changements de période

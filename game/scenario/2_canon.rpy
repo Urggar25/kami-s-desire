@@ -651,6 +651,7 @@ label _2_SALLE_OBSERVATION:
     kael inquiet "Sur Terre, quand Kami sanctionne quelqu'un, tu vois surtout la cible. Ici, un tir peut traverser la coque d'un module. Et l'espace se moque de savoir qui est innocent."
     noam peur "Attends... tu veux dire qu'on peut perdre tout l'air d'un coup ?!"
     kael triste "Oui. On a des masques, des cloisons, des procédures. Mais une brèche qui reste ouverte, et tout le compartiment devient un piège."
+    $ close_up("noam")
     noam colere "Mais elle le sait ! Pourquoi tirer si elle peut tuer ceux qui n'ont rien fait ?!"
     kael fatigue "Sa réponse est toujours la même : il fallait empêcher l'infraction. Comme si on avait tous le contrôle sur les autres."
     noam inquiet "Tu parles comme si tu avais déjà vu ça."

@@ -448,7 +448,7 @@ label _10_0_1_1_DOPPELGANGER:
     "Je reste planté là, une main serrée sur le mur, incapable de comprendre ce qui m'a fait m'arrêter."
     think "C'était quoi, ça ?"
     "J'ouvre la bouche pour appeler quelqu'un. Aucun son ne sort."
-    play sound "audio/sfx/metal_hit_distant.ogg"
+    play sound "audio/sfx_metal_clank.mp3"
     "Un choc métallique résonne derrière moi." with vpunch
     scene bg_cg030 at adaptive_fullscreen
     show flash_white at hard_flash
@@ -638,6 +638,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     tomas inquiet "Oui ! Je ne demande pas d'interdire les brouilleurs. Je demande qu'on sache ce que ça implique !"
     elias reflechit "Il a pas complètement tort. Si une personne se fait agresser dans une zone coupée du réseau..."
     ryn colere "Alors on l'aide nous-mêmes ! On n'a pas besoin de Kami pour ça !"
+    call cutin("elias") from _call_kd_cutin_10_elias
     elias colere "ET SI Y A PERSONNE POUR L'AIDER ?!"
     "Ryn se tourne vers lui. Pendant un instant, j'ai peur qu'ils recommencent la dispute de ce matin."
     sael determine "On peut les autoriser et travailler sur une alerte indépendante. Ça n'oblige pas à laisser Kami surveiller chaque pièce."

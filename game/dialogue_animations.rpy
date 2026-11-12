@@ -13,16 +13,18 @@ init -2 python:
     import random as _dialogue_random
     from functools import partial as _dialogue_partial
 
+    # Effets réservés aux vrais éclats : un simple « ! » ou « ? » ne déclenche
+    # plus rien (avant : ~3 100 secousses et ~6 100 sons sur le jeu entier,
+    # ce qui vidait l'effet de son sens). Seuls ?!, !! et !!! réagissent.
     _DIALOGUE_SHAKE_PROFILES = {
-        "exclaim_soft": (4, 0.22, 0.35),
-        "exclaim_medium": (9, 0.30, 0.45),
-        "exclaim_strong": (16, 0.42, 0.60),
+        "exclaim_medium": (7, 0.20, 0.45),
+        "exclaim_strong": (14, 0.28, 0.60),
     }
 
+    _DIALOGUE_EDGE_PROFILES = ("exclaim_medium", "exclaim_strong", "question_strong")
+
     _DIALOGUE_SFX_PROFILES = {
-        "question": ("audio/sfx_question.mp3", 0.70),
         "question_strong": ("audio/sfx_question.mp3", 0.90),
-        "exclaim_soft": ("audio/sfx_exclamation.mp3", 0.65),
         "exclaim_medium": ("audio/sfx_exclamation.mp3", 0.85),
         "exclaim_strong": ("audio/sfx_exclamation.mp3", 1.00),
     }
@@ -40,6 +42,12 @@ init -2 python:
 
         if max_bangs >= 3:
             return "exclaim_strong"
+        # Réplique criée en MAJUSCULES : traitée comme un éclat fort.
+        letters = [ch for ch in clean if ch.isalpha()]
+        if len(letters) >= 6 and (max_bangs or max_questions):
+            caps_ratio = sum(1 for ch in letters if ch.isupper()) / float(len(letters))
+            if caps_ratio >= 0.7:
+                return "exclaim_strong"
         if "?!" in clean or "!?" in clean or (max_bangs and max_questions):
             return "exclaim_medium"
         if max_bangs >= 2:
@@ -165,7 +173,7 @@ transform dialogue_strong_flash:
 screen dialogue_punctuation_overlay(what):
     $ profile = dialogue_effect_profile(what)
 
-    if profile != "none":
+    if profile in _DIALOGUE_EDGE_PROFILES:
         $ effect_color = dialogue_effect_color(profile)
         $ edge_motion = dialogue_edge_transform(profile)
         fixed:

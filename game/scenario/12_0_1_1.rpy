@@ -587,9 +587,11 @@ label _12_0_1_1_DEBAT_TRAITRE:
     noam desespoir "Je sais plus ce que j'ai vu. Je sais plus si j'ai eu peur pour une vraie raison. Et la seule chose qui aurait pu me répondre a disparu !"
     "Je sens ma gorge se serrer. Les mots sortent de travers."
     elen inquiet "Mais on peut chercher ensemble..."
+    call cutin("noam") from _call_kd_cutin_12_noam
     noam colere "Et si c'était justement quelqu'un ici qui l'avait effacé ?!"
     "Cette fois, tout s'arrête."
     pause 0.6
+    call reactions([("mara", "stress"), ("ryn", "colere"), ("julian", "inquiet")]) from _call_kd_reactions_12_accusation
     mara stress "Tu nous accuses ?"
     noam peur "Je... Je sais pas."
     ryn colere "C'est trop facile, ça. Tu balances un truc pareil et après tu sais pas ?"

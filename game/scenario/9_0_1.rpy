@@ -275,6 +275,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
 
 label _9_0_1_CONCLAVE_DEBAT:
     $ current_period = "Après-midi"
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_9_0_1
     call j901_play_signal_vivant from _call_j901_play_signal_vivant
     $ j901_signal_result_tier = _return
     jump _9_0_1_CONCLAVE_DEBAT_PARTIE_2
@@ -468,13 +469,13 @@ label _9_0_1_VOTE:
     $ j901_vote_adopte = (j901_player_vote == "pour")
 
     if j901_player_vote == "pour":
-        scene Solid("#0AFF8844")
+        scene expression Solid("#0AFF8844")
         with Dissolve(0.12)
     elif j901_player_vote == "contre":
-        scene Solid("#FF2A2A44")
+        scene expression Solid("#FF2A2A44")
         with Dissolve(0.12)
     else:
-        scene Solid("#FF2A2A44")
+        scene expression Solid("#FF2A2A44")
         with Dissolve(0.12)
 
     pause 0.4

@@ -509,10 +509,10 @@ image noam_salle_bain = DynamicDisplayable(automatic_scene_image_dynamic, "image
 # Le laboratoire est un PNG unique (bg_laboratoire.png) : sans déclaration
 # dynamique, Ren'Py l'affiche brut, sans l'étalonnage de current_period.
 image bg_laboratoire = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_laboratoire.png")
-image bg_conduit_reseau = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_conduit_reseau.png")
+image bg_conduit_reseau = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_conduit_reseau.png")
 image bg_cavite_technique = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_cavite_technique.png")
-image bg_salle_goumi_cachee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scenes/bg_salle_goumi_cachee.png")
-image bg_navette = "images/background/scenes/bg_navette.png"
+image bg_salle_goumi_cachee = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/bg_salle_goumi_cachee.png")
+image bg_navette = "images/background/scene/bg_navette.png"
 
 # CG de révélation des jours 8 à 21, indexées automatiquement par la galerie.
 image bg_cg040 = "images/background/cg/bg_cg040.png"

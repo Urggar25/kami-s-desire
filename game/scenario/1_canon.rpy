@@ -288,6 +288,7 @@ label _1_CANON:
     mara taquin "Ouuuh effraaayant !"
     elen surpris "Hé, attendez ! Vous êtes sûrs qu'on est tous censés être là ?"
     mara taquin "Non, on s'est réunis par hasard pour l'anniversaire du monsieur qui hurle."
+    call cutin("ryn") from _call_kd_cutin_1_ryn
     ryn colere "TU TE FOUS DE MOI ?!"
     elen desaccord "Oh, moi j'avais pas prévu de cadeau..."
     think "À peine réveillés, et il y a déjà deux conversations que personne ne contrôle."
@@ -1422,6 +1423,7 @@ label _1_KAMI_APPARITION:
     think "Il offre son meilleur profil à la caméra. Pour lui, ça semble avoir toute l'importance du monde."
 
     lysa doute "T'es sérieux ?"
+    call cutin("lysa") from _call_kd_cutin_1_lysa
     lysa colere "On est coincés ici, on risque de crever si ça tourne mal, et toi tu poses pour les caméras ?!"
     lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
 

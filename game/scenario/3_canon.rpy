@@ -836,6 +836,7 @@ label _3_PAUSE_CHAMBRE:
     noam colere "On était derrière la porte. On t'a entendu lui dicter sa réponse !"
     julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que l'unanimité va tomber du plafond ?!"
     noam colere "Au moins, je ne prends pas les autres pour des bulletins avec des jambes !"
+    call cutin("julian") from _call_kd_cutin_3_julian
     julian colere "Tu crois que ça m'amuse ?! UN seul contre et trois jours d'efforts partent en fumée !"
     noam colere "Alors convaincs-le sur le TEXTE ! Pas sur la jolie photo de groupe que tu veux offrir aux caméras !"
     julian colere "Tu peux jouer les gentils parce que d'autres prennent le risque de défendre ce qu'ils croient juste !"
@@ -968,6 +969,7 @@ label _3_TRANSITION_CONCLAVE:
 # ============================================================================
 
 label _3_DEBAT1_PHASE1:
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_3
 
     pause 0.4
 
@@ -1053,6 +1055,7 @@ label _3_DEBAT1_PHASE1:
 
     lysa reflexion "Attendez... « Autoriser le transport, la vente et l'échange de marchandises. » Très bien. Mais la suite..."
     lysa colere "« En conséquence, le système de distribution de denrées est aboli. » Vous avez bien LU ce passage ?!"
+    call reactions([("elen", "peur"), ("ryn", "colere"), ("tomas", "peur")]) from _call_kd_reactions_3_abolition
     elen peur "HEIN ?! Mais j'ai déjà dit à tout le monde que je voterais pour ! Je savais pas qu'on supprimait les bons !"
     ryn colere "VOUS ÊTES MALADES ?! À LIMEN, ON MANGE QUOI QUAND LES BONS DISPARAISSENT ? LE TEXTE ?!"
     tomas peur "Non... hier, il n'y avait pas ça. Je l'aurais remarqué ! J'ai relu la phrase au moins dix fois !"
@@ -1414,7 +1417,7 @@ label _3_DEBAT1_PHASE3:
     $ day2_sync_argument_titles()
 
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_tension_phase3.mp3" fadein 1.0
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
     show screen kami_broadcast_ui
 
     python:
@@ -1483,7 +1486,7 @@ label _3_DEBAT1_PHASE3:
     kami "Je vous rappelle que ce petit monstre est né de VOTRE imagination. Moi, je n'ai fait que lui donner des dents."
     kami "Continuez ! La peur vous rend tellement éloquents. Et puis je trouve que la rougeur vous va très bien."
 
-    play sound "sound/sfx_argument_impact.ogg"
+    play sound "audio/trailer/trl_impact_deep.wav"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Premier échange — Quel argument présenter ?")
     if p3_pick is not None and p3_round_options[0][p3_pick]["unlocked"]:
         $ p3_argument_one = p3_round_options[0][p3_pick]["id"]
@@ -1566,7 +1569,7 @@ label _3_DEBAT1_PHASE3:
     noam inquiet "Je ne peux pas faire comme si ces deux décisions étaient identiques."
     sael neutre "Nous devrons choisir quand même. Mais personne ne devra prétendre qu'il n'avait pas compris les risques."
 
-    play sound "sound/sfx_argument_impact.ogg"
+    play sound "audio/trailer/trl_impact_deep.wav"
     $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Dernier échange — Quel argument présenter ?")
     if p3_pick is not None and p3_round_options[1][p3_pick]["unlocked"]:
         $ p3_argument_two = p3_round_options[1][p3_pick]["id"]
@@ -1912,7 +1915,7 @@ label _3_VOTE_POUR:
     
     scene bg_conclave at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
-    play music "music/bgm_victory_bitter.mp3" fadein 2.0
+    play music "music/bgm_calm_not_peace.mp3" fadein 2.0
 
     pause 1.2
 

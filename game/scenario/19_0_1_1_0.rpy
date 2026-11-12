@@ -128,6 +128,7 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
 
     noam "Avec toi !"
 
+    call cutin("mara", expr="colere_noire") from _call_kd_cutin_19_mara
     mara colere_noire "Mais j'étais pas avec toi !"
 
     $ investigation_add("mara_exploration", notify=False)
