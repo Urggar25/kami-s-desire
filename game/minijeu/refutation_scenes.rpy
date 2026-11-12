@@ -90,7 +90,7 @@ init python:
             ("kael", "calme", _("Ce fichier, tu ne sais même pas [[s'il est complet]].")),
             ("noam", "determine", _("Alors explique-moi pourquoi [[on voit cette séquence]].")),
         ],
-        fragments=[("video", _("L'enregistrement retrouvé")), ("chrono", _("Chronologie de la soirée")), ("intuition", _("Mon intuition")), ("suppression", _("Historique supprimé"), "j15_video_kael_debloquee")],
+        fragments=[("video", _("L'enregistrement retrouvé")), ("chrono", _("Chronologie de la soirée")), ("intuition", _("Mon intuition")), ("suppression", _("Historique supprimé"), lambda: "camera" in getattr(store, "investigation_pa_completed", []))],
         solution={(0, 0): "video"}, lives=3, line_time=5.8,
     )
 
