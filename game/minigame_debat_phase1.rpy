@@ -387,7 +387,7 @@ screen debat_phase1_opening():
     fixed:
         add Solid("#020711")
 
-        add "gui/day3/vote_phase2/bg_overlay.png":
+        add Solid("#154668"):
             alpha 0.20
 
         for gx in range(48, 1921, 96):
