@@ -1,5 +1,3 @@
-default day3_julian_clash_rewarded = False
-
 # Réfutations scénarisées. Chaque duel conserve plusieurs voix et une faille démontrable.
 # Les entrées verrouillées restent visibles dans la tablette (voir refutation.rpy).
 
