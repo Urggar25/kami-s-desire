@@ -381,12 +381,18 @@ screen refutation_screen(refutation_id):
         add "gui/main_menu_kami/scanlines.png" alpha 0.35
         add Solid(RF_CYAN, xysize=(1920, 2)) at rf_scan
 
-        # --- Locuteur, cadré à droite.
+        # --- Locuteur, cadré à droite. Kami n'a pas de sprite humain :
+        # afficher son écran de diffusion plutôt qu'une image inexistante.
         for index, entry in enumerate(data["statements"]):
             if rf.line == index and rf.intro <= 0:
-                add Transform(character_image(entry[0], entry[1]), zoom=1.5) at rf_speaker_in:
-                    xpos 1060
-                    ypos -10
+                if entry[0] == "kami":
+                    add Transform("bg_diffusion_professeur", zoom=0.55) at rf_speaker_in:
+                        xpos 1050
+                        ypos 110
+                else:
+                    add Transform(character_image(entry[0], entry[1]), zoom=1.5) at rf_speaker_in:
+                        xpos 1060
+                        ypos -10
 
         # --- Bandeau supérieur : locuteur et chrono.
         frame:
