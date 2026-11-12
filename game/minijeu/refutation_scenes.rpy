@@ -23,12 +23,13 @@ init python:
             ("elias", "determine", _("Le commerce va [[récompenser ceux qui travaillent]].")),
             ("lysa", "opposition", _("Et si tu ne peux pas travailler, [[tu manges comment]] ?")),
             ("julian", "sourire", _("Au moins avec ce texte [[tout le monde aura sa chance]].")),
+            ("julian", "determine", _("Avec les échanges, [[il n\u0027y aura plus de pénuries]].")),
             ("mara", "doute", _("Le problème, c'est qu'on ne sait pas [[qui assurera la transition]].")),
             ("ryn", "colere", _("Vous parlez de chiffres. Chez moi, [[les gens ont faim maintenant]] !")),
             ("nyra", "reflexion", _("Le texte permet des échanges, pas [[une distribution garantie]].")),
         ],
-        fragments=[("penuries", _("La réalité des pénuries")), ("transition", _("Aucune garantie de transition")), ("liberte", _("La liberté de commercer"))],
-        solution={(2, 0): "transition"}, lives=3, line_time=5.8,
+        fragments=[("penuries", _("La réalité des pénuries")), ("transition", _("L’énoncé précis du vote"), lambda: bool(getattr(store, "dossier_unlocked_args", {}).get("enonce_precis"))), ("liberte", _("La liberté de commercer"))],
+        solution={(2, 0): "transition", (3, 0): "penuries"}, lives=3, line_time=5.8,
     )
 
     refutation_register(
@@ -92,7 +93,7 @@ init python:
             ("kael", "calme", _("Ce fichier, tu ne sais même pas [[s'il est complet]].")),
             ("noam", "determine", _("Alors explique-moi pourquoi [[on voit cette séquence]].")),
         ],
-        fragments=[("video", _("L'enregistrement retrouvé")), ("chrono", _("Chronologie de la soirée")), ("intuition", _("Mon intuition")), ("suppression", _("Historique supprimé"), lambda: "camera" in getattr(store, "investigation_pa_completed", []))],
+        fragments=[("video", _("L'enregistrement retrouvé")), ("chrono", _("Chronologie de la soirée")), ("intuition", _("Mon intuition"))],
         solution={(0, 0): "video"}, lives=3, line_time=5.8,
     )
 
@@ -105,7 +106,7 @@ init python:
             ("noam", "inquiet", _("Je peux au moins vous dire [[où je l'ai vue]].")),
             ("sael", "mefiant", _("Une chose à la fois. [[Qui avait accès à cet endroit]] ?")),
         ],
-        fragments=[("lieu", _("Le lieu de la découverte")), ("conduits", _("Le réseau d'aération")), ("souvenir", _("Mon souvenir")), ("video", _("Vidéo de surveillance"), "j20_preuve_camera")],
+        fragments=[("lieu", _("Le lieu de la découverte")), ("conduits", _("Le réseau d'aération")), ("souvenir", _("Mon souvenir"))],
         solution={(2, 0): "lieu"}, lives=3, line_time=5.8,
     )
 
