@@ -41,3 +41,10 @@ Référence : grammaire « procès » inspirée de Danganronpa / The Hundred Lin
 ## Vérification Ren'Py
 
 - Lint obligatoire après modification de `.rpy` : `renpy.sh <projet> lint`. Si le lint signale « Line with id … appears twice » sans que le texte ait été dupliqué, il s'agit de `.rpyc` périmés : lancer « Force Recompile » depuis le launcher (ou `renpy.sh <projet> compile`) puis relancer le lint.
+
+## Objections et réfutations
+
+- Toute objection jouable (le joueur contredit une affirmation avec un argument ou une preuve) passe par le mini-jeu **Réfutation** (`game/minijeu/refutation.rpy`) : déclarer les données avec `refutation_register(...)` puis `call refutation_run("id") from _call_...`. Ne plus créer d'écran de duel ad hoc.
+- Les affirmations sont marquées `_()` et leurs failles entourées de `[[ ]]` (à conserver telles quelles dans les traductions). Prévoir 4 à 6 affirmations, une faille par affirmation, une seule paire faille/fragment gagnante (ou plusieurs si le scénario les gère), et 4 à 6 fragments.
+- L'habillage reste celui de Kami's Desires (HUD cyan, failles ambre, Kami magenta) : ne pas reprendre d'éléments graphiques propres à Danganronpa (barillet, balles, palette rose/orange).
+- Le cut-in de victoire (`play_noam_interupt` ou `cutin`) est joué par le label appelant, après `refutation_run`.

@@ -385,6 +385,7 @@ transform kd_trial_marquee(direction=1):
     linear 2.6 xoffset (-1600 if direction > 0 else 0)
 
 transform kd_tilt(angle=-4):
+    rotate_pad False
     rotate angle
 
 # Positionnement par le centre : la rotation agrandit la boîte englobante,
