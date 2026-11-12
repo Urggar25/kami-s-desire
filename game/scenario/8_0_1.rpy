@@ -110,7 +110,7 @@ label _8_PNC_AERATION:
     $ showGroup([("noam", "reflexion", 0.50)])
     "Je passe les doigts le long de la bouche d'aération, puis j'écarte prudemment deux lamelles."
     "Le souffle froid soulève la poussière accumulée derrière la grille. Aucun morceau de papier, seulement l'obscurité du conduit."
-    think "Le dessin n'a pas pu finir là-dedans tout seul."
+    think "Je ne sais même pas pourquoi je vérifie un conduit. Si Juliette me voyait, elle demanderait si je compte fouiller jusqu'à la Terre."
     return
 
 label _8_PNC_LIT:
@@ -122,7 +122,8 @@ label _8_PNC_LIT:
     $ showGroup([("noam", "inquiet", 0.50)])
     "Je retire l'oreiller, secoue la couverture et passe la main entre le matelas et le sommier."
     "Je m'agenouille ensuite pour regarder dessous. Une chaussette oubliée, un peu de poussière... mais aucune trace du dessin."
-    think "Je l'aurais vu tomber. J'étais juste là, hier soir."
+    noam desaccord "Même les chaussettes ont survécu, et pas ton dessin ? C'est une blague..."
+    think "J'aimerais croire que c'en est une."
     return
 
 label _8_PNC_TELEVISION:
@@ -133,8 +134,9 @@ label _8_PNC_TELEVISION:
     $ pnc_flags["television"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
     "L'écran mural reste entièrement noir. Je vérifie malgré moi le rebord inférieur et l'espace étroit entre le cadre et le mur."
-    think "Rien. Et toujours aucun signe de Kami."
-    think "Ce silence devrait me rassurer, mais il donne l'impression que la chambre retient son souffle."
+    noam taquin "Et alors ? Tu peux bien m'aider une fois, non ?"
+    "Le reflet du plafond reste immobile dans l'écran. Je me sens idiot de lui avoir parlé."
+    think "Au moins, elle ne pourra pas raconter ça aux autres."
     return
 
 label _8_PNC_TIROIR:
@@ -146,7 +148,8 @@ label _8_PNC_TIROIR:
     $ showGroup([("noam", "reflexion", 0.50)])
     "J'ouvre le tiroir jusqu'à la butée. Quelques formulaires du Conclave, mon badge de réserve et un stylo roulent vers l'avant."
     "Je sors tout, inspecte chaque feuille, puis retire complètement le tiroir pour regarder derrière."
-    think "Ce ne sont que des papiers administratifs. Le dessin n'est pas là."
+    noam fatigue "J'ai emporté un badge de réserve jusque dans l'espace, mais j'ai perdu une feuille..."
+    "Je repose les formulaires, puis les reprends. Une deuxième vérification ne me coûte rien. Elle ne m'apporte rien non plus."
     return
 
 label _8_PNC_ARMOIRE:
@@ -158,7 +161,8 @@ label _8_PNC_ARMOIRE:
     $ showGroup([("noam", "reflexion", 0.50)])
     "J'ouvre l'armoire et décroche mes vêtements un par un. Je palpe les poches, déplie le pull de l'étagère et vérifie derrière les cintres."
     "Le fond métallique apparaît entièrement nu."
-    think "Même plié, le dessin aurait laissé une trace. Il n'est pas ici."
+    think "Je fouille la poche de ma veste une deuxième fois. Elle est toujours vide."
+    noam colere "Bon sang, arrête de faire semblant de ne pas comprendre !"
     return
 
 label _8_PNC_SALLE_DE_BAIN:
@@ -171,6 +175,7 @@ label _8_PNC_SALLE_DE_BAIN:
     "Je pousse la porte de la salle de bain et vérifie le meuble sous le lavabo, le panier à linge et même l'arrière des serviettes."
     "L'humidité aurait gondolé le papier. Tout est sec, parfaitement rangé et vide."
     think "Je n'aurais jamais apporté le dessin ici."
+    "Mais je vérifie quand même la même serviette deux fois."
     return
 
 label _8_PNC_BROUILLEUR:
@@ -182,7 +187,8 @@ label _8_PNC_BROUILLEUR:
     $ showGroup([("noam", "inquiet", 0.50)])
     "Je longe le boîtier du brouilleur du bout des doigts et regarde entre l'appareil et le mur."
     "Aucun papier n'y est coincé. La diode pulse avec une régularité presque organique."
-    think "Ce truc est censé nous protéger. Alors pourquoi est-ce que je me sens observé ?"
+    think "Le boîtier continue de pulser. Kami est muette, mais ça, au moins, semble toujours fonctionner."
+    noam reflechit "Ce serait bien que le reste du monde soit aussi simple à vérifier."
     return
 
 label _8_PNC_TABLETTE:
@@ -194,7 +200,8 @@ label _8_PNC_TABLETTE:
     $ showGroup([("noam", "inquiet", 0.50)])
     "Je soulève la tablette, inspecte sa station d'accueil, puis passe la main derrière la table et sous son plateau."
     "La surface où j'avais posé le dessin est nue. Pas de feuille tombée, pas même un coin de papier coincé contre le mur."
-    think "C'est ici que je l'ai vu pour la dernière fois. J'en suis certain."
+    "Je pose la tablette à l'endroit exact où se trouvait le dessin, puis la repousse."
+    think "J'étais certain de l'avoir vu ici. Pourquoi est-ce que plus je cherche, moins je suis sûr de moi ?"
     return
 
 label _8_PNC_SORTIE:
