@@ -1018,6 +1018,13 @@ label _24_0_1_1_0_0_CONCLAVE:
     tomas colere "J'ai pas dit ça !"
 
     ryn desaccord "Ça fait depuis ce matin que tu cherches une raison de pas voter pour."
+    noam determine "Ryn, tu lui fais dire ce qu'il n'a pas dit. On va clarifier ça."
+    call refutation_run("j24_tomas")
+    if _return[0] == "success":
+        call play_noam_interupt
+        tomas fatigue "Merci. Je suis pour le principe. J'ai juste peur qu'on vote un texte vide."
+    else:
+        tomas colere "Je ne suis pas contre ! Je demande juste qu'on écoute ma réserve !" 
 
     tomas colere "Non ! J'essaie de comprendre si ma réserve est suffisamment importante pour qu'on la prenne en compte ! C'est pas la même chose !"
 

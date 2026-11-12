@@ -511,7 +511,8 @@ label day4_thread_debate_game:
     think "Ryn parle de ceux qui meurent en voulant traverser. Sael parle de ceux qui risqueraient de mourir si tout le monde pouvait entrer."
     think "Je cherche une phrase qui ne demande à aucun des deux d'oublier ses morts."
 
-    call screen day4_objection_fracturee()
+    call refutation_run("j4_frontieres")
+    $ _return = _return[0]
 
     if _return == "success":
         call day4_thread_debate_success from _call_day4_thread_debate_success

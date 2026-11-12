@@ -1435,6 +1435,13 @@ label _20_0_1_1_LYSA_SAEL:
     lysa "Parce que ça change rien au fait que t'étais hors de contrôle ! Iris savait pas ce que t'allais faire la seconde d'après. Et franchement ? Moi non plus."
 
     noam colere "J'étais pas hors de contrôle. J'étais énervé parce que personne ne m'écoutait."
+    noam fatigue "Bon. Vous voulez une explication ? Alors écoutez jusqu'au bout."
+    call refutation_run("j20_defense")
+    if _return[0] == "success":
+        call play_noam_interupt
+        noam raison "Je peux vous montrer où j'ai trouvé le corps. C'est au moins un point qu'on peut vérifier."
+    else:
+        lysa fatigue "Je te crois quand tu dis avoir eu peur. Mais ça ne suffit pas à expliquer le couteau."
 
     lysa blase "Tu vois, rien que cette phrase, elle résume assez bien le problème."
 

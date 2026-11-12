@@ -93,6 +93,7 @@ init -1 python:
             self.total = 0.0
             self.intro = 1.4
             self.fragment = 0
+            self.locked_hint = ""
             self.hover = False
             self.shot = None
             self.shot_t = 0.0
@@ -112,12 +113,34 @@ init -1 python:
             frags = self.data["fragments"]
             return frags[self.fragment if index is None else index][0]
 
+        def fragment_available(self, index):
+            """Conserve les indices en visuel, mais interdit les preuves non acquises."""
+            item = self.data["fragments"][index]
+            if len(item) < 3 or not item[2]:
+                return True
+            requirement = item[2]
+            if callable(requirement):
+                return bool(requirement())
+            if isinstance(requirement, str):
+                return bool(getattr(store, requirement, False))
+            return bool(requirement)
+
         def select(self, index):
-            if self.shot is None:
-                self.fragment = index % len(self.data["fragments"])
+            if self.shot is not None:
+                return
+            index = index % len(self.data["fragments"])
+            if self.fragment_available(index):
+                self.fragment = index
+                self.locked_hint = ""
+            else:
+                self.locked_hint = _("Argument non débloqué")
 
         def cycle(self, step):
-            self.select(self.fragment + step)
+            for n in range(1, len(self.data["fragments"]) + 1):
+                target = (self.fragment + step * n) % len(self.data["fragments"])
+                if self.fragment_available(target):
+                    self.select(target)
+                    break
 
         def chip_y(self, index):
             return RF_CHIP_Y + index * (RF_CHIP_H + RF_CHIP_GAP)
@@ -169,6 +192,9 @@ init -1 python:
 
         def fire(self, fault):
             if self.shot is not None or self.intro > 0:
+                return
+            if not self.fragment_available(self.fragment):
+                self.locked_hint = _("Argument non débloqué")
                 return
             frag = self.fragment_id()
             self.last_fragment = frag
@@ -355,12 +381,18 @@ screen refutation_screen(refutation_id):
         add "gui/main_menu_kami/scanlines.png" alpha 0.35
         add Solid(RF_CYAN, xysize=(1920, 2)) at rf_scan
 
-        # --- Locuteur, cadré à droite.
+        # --- Locuteur, cadré à droite. Kami n'a pas de sprite humain :
+        # afficher son écran de diffusion plutôt qu'une image inexistante.
         for index, entry in enumerate(data["statements"]):
             if rf.line == index and rf.intro <= 0:
-                add Transform(character_image(entry[0], entry[1]), zoom=1.5) at rf_speaker_in:
-                    xpos 1060
-                    ypos -10
+                if entry[0] == "kami":
+                    add Transform("bg_diffusion_professeur", zoom=0.55) at rf_speaker_in:
+                        xpos 1050
+                        ypos 110
+                else:
+                    add Transform(character_image(entry[0], entry[1]), zoom=1.5) at rf_speaker_in:
+                        xpos 1060
+                        ypos -10
 
         # --- Bandeau supérieur : locuteur et chrono.
         frame:
@@ -456,13 +488,14 @@ screen refutation_screen(refutation_id):
             ypos (RF_CHIP_Y - 48)
         for index, fragment in enumerate(data["fragments"]):
             $ chosen = (index == rf.fragment)
+            $ available = rf.fragment_available(index)
             button:
                 xpos (RF_CHIP_X + (18 if chosen else 0))
                 ypos rf.chip_y(index)
                 xysize (RF_CHIP_W, RF_CHIP_H)
                 background Frame(RF_ASSETS + ("frag_selected.png" if chosen else "frag_idle.png"), 30, 26)
                 hover_background Frame(RF_ASSETS + "frag_selected.png", 30, 26)
-                sensitive (rf.shot is None)
+                sensitive (rf.shot is None and available)
                 action Function(rf.select, index)
                 padding (52, 0, 20, 0)
                 hbox:
@@ -471,13 +504,18 @@ screen refutation_screen(refutation_id):
                     text ("%02d" % (index + 1)):
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 22
-                        color (RF_CYAN if chosen else "#6f8ba0")
+                        color ("#607080" if not available else (RF_CYAN if chosen else "#6f8ba0"))
                         yalign 0.5
                     text kd_tr(fragment[1]):
                         font "fonts/Rajdhani-SemiBold.ttf"
                         size 28
-                        color ("#ffffff" if chosen else "#b9c9d6")
+                        color ("#73808c" if not available else ("#ffffff" if chosen else "#b9c9d6"))
                         yalign 0.5
+                    if not available:
+                        text _("VERROUILLÉ"):
+                            size 17
+                            color "#ffb84d"
+                            yalign 0.5
 
         text _("MOLETTE OU Q / E : CHANGER DE FRAGMENT     •     CLIC SUR UNE FAILLE : INJECTER"):
             font "fonts/Rajdhani-SemiBold.ttf"

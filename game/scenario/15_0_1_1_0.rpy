@@ -785,6 +785,13 @@ label _15_0_1_1_0_CONFRONTATION_KAEL:
     noam colere "Et ta photo ?"
     kael fatigue "Je ne sais pas non plus."
 
+    think "Je revois les images sur ma tablette. Je ne peux pas le laisser s'en sortir avec trois « je ne sais pas »."
+    call refutation_run("j15_kael")
+    if _return[0] == "success":
+        call play_noam_interupt
+        noam determine "Kael, j'ai vu la vidéo. Je ne dis pas que je comprends ce qui s'est passé. Mais arrête de faire comme si elle n'existait pas."
+    else:
+        kael fatigue "Je ne peux pas t'expliquer ce dont je ne me souviens pas."
     "Je fais un pas vers lui. Kael recule légèrement, puis son expression change."
     "Pas brutalement. C’est presque imperceptible : ses épaules se détendent, sa respiration ralentit et quelque chose disparaît de son regard."
     $ horror_audio_cut(duration=0.42, restore_volume=0.78)
