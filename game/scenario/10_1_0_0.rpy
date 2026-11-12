@@ -421,6 +421,13 @@ label _10_1_0_0_DEBAT_ARRIVEE:
     elias reflechit "Je suis assez d'accord avec lui. J'aime pas l'idée d'être observé en permanence, mais la surveillance, c'est pas seulement du contrôle. Ça peut aussi protéger les gens."
 
     mara reflexion "Donc vous seriez contre les brouilleurs ?"
+    noam reflexion "Attendez, on mélange la surveillance et la possibilité de l'interrompre. Ce n'est pas la même chose."
+    call refutation_run("j10_brouilleurs")
+    if _return[0] == "success":
+        call play_noam_interupt
+        nyra raison "Noam a raison. Personne n'a demandé qu'on retire toutes les caméras."
+    else:
+        nyra raison "Une chose est sûre : le vote ne concerne pas la suppression générale des caméras."
 
     tomas inquiet "Je sais pas encore. Je dis juste qu'en les autorisant partout, on crée aussi des zones où quelqu'un peut faire n'importe quoi sans laisser de trace."
 
