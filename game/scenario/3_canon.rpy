@@ -825,7 +825,12 @@ label _3_PAUSE_CHAMBRE:
     tomas inquiet "Mais c'est TOI qui dis que je suis pour !"
     "Julian se retourne vers nous. Tomas en profite pour s'éloigner de lui."
 
-    call day3_julian_clash_minigame from _call_day3_julian_clash_minigame
+    call refutation_run("j3_julian")
+    if _return[0] == "success":
+        call play_noam_interupt
+        julian hesitation "D'accord, personne ne m'a demandé de parler en son nom. Mais on doit bien prendre une décision !"
+    else:
+        tomas colere "Je t'ai dit d'arrêter, Julian. Ça suffit !"
 
     noam colere "Julian ! Il vient de te dire qu'il voulait partir. Tu as un problème avec le mot non ?"
     julian colere "Ah, Noam. Parfait. Nyra a recruté la police des bonnes intentions ?"
@@ -1142,7 +1147,16 @@ label _3_DEBAT1_PHASE2:
     kami "À vos arguments ! Et essayez de ne pas vous tuer avant le vote, ça compliquerait le dépouillement."
 
 label day3_before_objection_protocol_minigame:
-    call debat_phase2_minigame from _call_debat_phase2_minigame
+    call refutation_run("j3_assemblee")
+    if _return[0] == "success":
+        call play_noam_interupt
+        noam determine "Attendez. Le texte ouvre des échanges. Il ne garantit pas que ceux qui n'ont rien pourront acheter quoi que ce soit."
+        lysa raison "Voilà. C'est exactement ce qui me gêne."
+        $ debat_day3_apply_influence({"lysa": 1, "mara": 1, "tomas": 1})
+    else:
+        mara agace "On crie, on s'interrompt, et on n'a toujours aucune réponse sur la transition."
+        $ debat_day3_apply_influence({"mara": -1, "tomas": -1})
+    $ debat_phase2_vote_summary = debat_day3_compute_votes()
 
     # ── CLIFFHANGER 1 : Kami rend la conséquence humaine, en direct ──
     stop music fadeout 0.6
