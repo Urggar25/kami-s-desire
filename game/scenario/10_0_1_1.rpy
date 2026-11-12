@@ -29,7 +29,6 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     call show_chapter_title("Début du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond") from _call_show_chapter_title_17
 
     scene black
-
     $ current_day = 10
     $ j10011_cafeteria_done = False
     $ j10011_waiting_elias = False
@@ -40,40 +39,34 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     $ j10011_relay_infirmary_checked = False
     $ j10011_alibis_checked = []
     $ j10011_alibi_done = False
-
     $ cafeteria_food_level = "medium"
     $ current_period = "Matin"
     $ noam_has_juliette_drawing = False
-
     play music "music/bgm_calm_not_peace.mp3" fadein 2.0
-
     $ blink()
 
-    think "Je me réveille avant l'annonce, avec la tête lourde, la bouche sèche et cette sensation désagréable d'avoir dormi dans une pièce trop petite."
-
+    "Je rêve du Conclave. Les sièges sont vides, les pupitres sont allumés et quelqu'un me demande encore de voter alors que le canon tire déjà."
+    "Je me réveille en voulant répondre, avec la bouche sèche et le drap collé au dos."
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    "Quand je repousse le drap, la chaleur me saute au visage avec assez de violence pour me faire regretter le geste."
-    "L'air est lourd, presque immobile, et ma chemise me colle déjà au dos alors que je viens à peine de me lever."
-
-    think "La température est censée être régulée partout. Si ma chambre chauffe comme ça, ce n'est pas juste une mauvaise nuit."
-
-    "Je reste un moment assis au bord du lit, les coudes sur les genoux, à écouter le couloir derrière la porte."
-    "Après le vote d'hier, je m'attendais à entendre des portes claquer, des disputes, quelqu'un marcher trop vite ou parler trop fort."
-
-    think "Mais il n'y a rien. Pas le moindre éclat de voix, pas même ces bruits inutiles qu'on finit par ne plus entendre quand tout va à peu près bien."
-
-    "Je finis par enfiler ma veste malgré la chaleur et je sors."
-
+    noam fatigue "Mais il fait combien, là-dedans... ?"
+    "La pièce est étouffante. Je repousse la couverture du pied et tends la main vers la bouche d'aération, sans sentir le moindre courant d'air."
+    noam desaccord "Super. Deux jours sans Kami, une nuit avec le canon... et maintenant on nous fait cuire."
+    "Je regarde l'écran mural. Rien. Pas d'annonce, pas de commentaire sur ma coiffure, pas de bulletin triomphal sur les tirs d'hier."
+    think "D'habitude, je me serais réjoui de ce silence. Là, je voudrais juste savoir si les tirs se sont arrêtés."
+    "Je m'approche du bureau. La place du dessin de Juliette est toujours vide."
+    noam triste "Je ne t'ai pas oublié."
+    "Je suis sur le point de fouiller à nouveau sous la tablette lorsque quelque chose résonne dans le couloir : le claquement d'une porte, puis des pas pressés."
+    think "Quelqu'un est enfin réveillé. Ça devrait me rassurer."
+    "J'enfile ma veste, la retire aussitôt à cause de la chaleur, puis la reprends par habitude. Je dois avoir l'air malin."
     stop music fadeout 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_25
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-
-    "Le couloir est encore plus étouffant que ma chambre. Une porte s'entrouvre au fond, reste ainsi une seconde, puis se referme dès que j'avance."
-
-    think "Personne n'a envie de croiser les autres. Moi non plus, mais si quelqu'un sait déjà quelque chose sur hier, ce sera à la cafétéria."
-
+    "Le couloir est presque aussi chaud que la chambre. Une silhouette disparaît au coin du mur avant que je puisse reconnaître qui que ce soit."
+    noam neutre "Hé !"
+    "Les pas ne s'arrêtent pas."
+    think "Peut-être qu'on n'a simplement pas envie de se parler aujourd'hui. Moi le premier."
+    "Je repense à Ryn, à Sael qui lui barrait la route, et au grondement qui couvrait nos voix. Pour la première fois, je ne sais pas si j'ai envie de croiser quelqu'un du Conclave."
     $ j10011_waiting_elias = True
     $ free_time_active = False
     $ free_time_next_label = None
@@ -86,238 +79,162 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     $ sync_character_links_from_persistent()
     $ conclave_lock = False
     $ dortoir_lock = False
-
-    think "Je devrais aller manger quelque chose, ou au moins essayer."
-
+    think "Je vais à la cafétéria. Si quelqu'un a des nouvelles de Limen, c'est là que je les trouverai."
     call KD_ROUTE_J10_LYSA from _call_optional_kd_route_j10_lysa
     jump START_EXPLORATION_LIBRE_MAP
 
 
 label _10_0_1_1_CAFETERIA_ELIAS:
-
     $ j10011_waiting_elias = False
     $ free_time_active = False
     $ exploration_libre_active = False
     $ exploration_libre_allowed_rooms = None
-
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_26
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
-
     $ showGroup([
-        ("noam", "inquiet"),
-        ("elias", "fatigue"),
-        ("mara", "stress"),
-        ("ryn", "colere"),
-        ("nyra", "reflechit"),
+        ("noam", "inquiet"), ("elias", "fatigue"),
+        ("mara", "stress"), ("ryn", "colere"), ("nyra", "reflechit"),
     ])
-
-    "La cafétéria est presque pleine, mais elle n'a rien de vivant. Les conversations repartent par petits morceaux avant de s'interrompre chaque fois qu'une nouvelle ligne apparaît sur l'écran d'information."
-    "Elias, Mara et Nyra sont installés au fond. Ryn, lui, reste debout derrière une chaise, les deux mains serrées sur le dossier."
-
-    elias inquiet "Noam... T'as vu l'écran ?"
-
-    noam inquiet "Non. Je viens de me lever. Qu'est-ce qu'il y a ?"
-
-    mara agace "Assieds-toi avant qu'il soit obligé de le répéter une quatrième fois, sinon il va finir par réciter le communiqué en dormant."
-
-    noam hesitation "D'accord..."
-
-    "Je tire une chaise et m'installe. Elias attend une seconde, les yeux fixés sur son plateau, puis reprend."
-
-    elias fatigue "Ils disent que la majorité des campements se sont dispersés avant la fin du délai."
-    elias inquiet "C'est tout. Pas de liste, pas de chiffre précis, pas de bilan. Juste cette phrase."
-
-    nyra reflechit "Durant le vote, Kami a accepté plusieurs déclarations préalables."
-    nyra raison "Ceux qui ont transmis un registre complet avant la fin du compte à rebours ne pouvaient plus être considérés comme des campements clandestins."
-
-    ryn colere "Tu peux pas raconter ça comme s'ils avaient tranquillement rempli un formulaire."
-
-    nyra reflechit "Je ne raconte rien. Je répète ce que nous savons."
-
-    ryn colere "Ils ont fui avec ce qu'ils avaient sur le dos, Nyra. Ils se sont dispersés parce qu'un Canon était braqué sur eux, pas parce qu'ils avaient soudain envie de régulariser leur situation."
-
-    nyra raison "Je sais."
-
-    ryn colere "Non, tu sais ce que dit l'écran. Moi, j'essaie de penser à ceux qui ont pas couru assez vite."
-
-    mara stress "Ryn..."
-
-    ryn colere "Quoi ? Ça te coupe l'appétit ?"
-
-    mara colere "Non. Ça me donne surtout envie que t'arrêtes de parler comme si on avait oublié ce qui s'est passé."
-
-    elias inquiet "On peut éviter de se bouffer entre nous pendant cinq minutes ? Juste cinq."
-
-    "Ryn lâche enfin le dossier, mais il ne s'assoit pas. Sa colère ne retombe pas vraiment ; elle change simplement de place."
-
-    noam triste "On ne sait pas combien de personnes ont réussi à partir, mais le délai a servi à quelque chose."
-
-    ryn colere "Je sais."
-
-    noam hesitation "Alors pourquoi tu me regardes comme si je venais de dire l'inverse ?"
-
-    ryn fatigue "Parce que j'ai pas envie d'entendre que ça s'est bien terminé."
-
-    "Personne ne répond tout de suite. Même Mara baisse les yeux."
-
-    elias fatigue "Quand j'ai lu « majorité dispersée », j'ai été soulagé."
-
-    mara stress "Moi aussi."
-
-    elias inquiet "Une seconde seulement, mais... ouais."
-
-    mara agace "Tu croyais être le seul connard de la table ?"
-
-    elias fatigue "Ça aurait été rassurant."
-
-    nyra raison "On demandera les chiffres complets. Les déclarations déposées, les zones évacuées et celles qui ne répondent plus."
-
-    ryn reflechit "Je viens avec toi."
-
-    nyra reflechit "Je m'en doutais."
-
-    ryn colere "C'était pas une demande."
-
-    nyra raison "Je sais."
-
-    "La conversation s'éteint d'elle-même. L'écran continue de faire défiler les mêmes mots, comme s'il suffisait de les répéter pour qu'ils deviennent plus précis."
-
-    elias fatigue "Je vais bouger un peu."
-
-    mara stress "Pour aller où ?"
-
-    elias fatigue "N'importe où tant qu'il y a des vis, des câbles et personne pour me demander ce que je ressens."
-
-    noam taquin "Ça réduit pas mal le choix."
-
-    elias fatigue "La maintenance. Au moins les machines savent fermer leur gueule."
-
-    "Il se lève avec son plateau presque intact et quitte la cafétéria sans attendre de réponse."
-
+    mara agace "NON. T'as pas le droit de faire ça."
+    elias fatigue "Je ne fais RIEN !"
+    mara colere "Tu sépares les morceaux de pain pour manger la mie et laisser la croûte ! C'est quoi le projet ?"
+    elias reflechit "Manger la partie qui ressemble encore à du pain ?"
+    ryn colere "Vous pouvez fermer vos gueules deux secondes ?"
+    "La remarque claque plus fort que nécessaire. Elias laisse tomber sa croûte sur le plateau."
+    mara stress "Tu crois qu'on fait ça pour t'emmerder ?"
+    ryn colere "Je crois surtout que vous arrivez à parler de pain après hier."
+    nyra neutre "Ryn. Tu n'es pas le seul à avoir regardé le canon tirer."
+    ryn colere "J'AI PAS DIT ÇA !"
+    "J'hésite sur le pas de la porte. Hier encore, une dispute pareille aurait fini en blague."
+    noam hesitation "Euh... Salut ?"
+    elias fatigue "Noam ! Voilà. Un témoin. Tu manges la croûte de ce truc, toi ?"
+    mara desaccord "Ne l'encourage pas !"
+    noam fatigue "J'ai surtout l'impression que ce pain a déjà servi de matériau de construction."
+    elias sourire "MERCI."
+    ryn fatigue "..."
+    "Elias ricane, mais ça ne dure pas. Sur l'écran d'information, les mêmes phrases défilent depuis mon arrivée."
+    noam reflechit "Il y a des nouvelles ?"
+    nyra reflechit "Un communiqué. « La majorité des campements a été dispersée avant la reprise des sanctions. »"
+    noam inquiet "Et le reste ?"
+    nyra neutre "Aucun chiffre publié. Aucune répartition. Rien de vérifiable."
+    ryn colere "Donc une phrase pour nous dire de nous féliciter."
+    elias inquiet "Ça veut peut-être dire qu'une majorité s'est sauvée."
+    ryn colere "OU ÇA VEUT DIRE QU'ILS SONT MORTS !"
+    "Elias se fige. Même Mara ne bouge plus."
+    nyra raison "Les deux restent possibles. On ne peut pas déduire le bilan de cette phrase."
+    ryn colere "T'es sérieuse, là ? Tu vas encore m'expliquer comment lire un écran ?"
+    nyra neutre "Si tu veux qu'on trouve les survivants, il faudra commencer par admettre qu'on ne sait pas qui ils sont."
+    ryn colere "..."
+    mara stress "Ryn, t'as le droit d'être en colère. Mais tu peux pas nous demander de le rester vingt-quatre heures sur vingt-quatre."
+    ryn colere "Je demande rien."
+    mara agace "Ah, d'accord ! C'est juste ton visage qui menace tout le monde !"
+    noam triste "On a essayé de les prévenir."
+    ryn fatigue "Je sais."
+    noam hesitation "On a gagné du temps, au moins."
+    ryn colere "Je SAIS, Noam !"
+    "Il serre le dossier d'une chaise. Pendant un instant, j'ai peur qu'il l'arrache du sol."
+    ryn fatigue "Je le sais. Mais j'ai passé la nuit à me demander qui j'avais vu sur cet écran. Et s'il avait couru assez vite."
+    "Personne ne lui répond. Je m'assieds à côté d'Elias, qui pousse silencieusement une tasse vers moi."
+    noam reflechit "C'est quoi ?"
+    elias fatigue "Du café. Pas renversé, cette fois. Il paraît que ça se boit."
+    noam taquin "Tu te diversifies."
+    mara taquin "Éloignez-le des machines, il va provoquer une deuxième panne mondiale."
+    elias desaccord "C'est BON, cette blague !"
+    "Ryn souffle du nez. Ce n'est pas un rire, mais Elias le remarque et lève la tasse comme s'il venait de remporter un prix."
+    nyra reflechit "J'irai vérifier les rapports du Canon. Tomas aura peut-être obtenu le détail des déclarations."
+    ryn neutre "Je viens."
+    nyra raison "D'accord, mais tu me laisses accéder aux données sans menacer l'ordinateur."
+    ryn desaccord "Je menace pas les ordinateurs."
+    mara taquin "Seulement ceux qui te répondent."
+    "Il ne réplique pas. Il fixe son plateau pendant quelques secondes."
+    ryn fatigue "J'ai pas faim."
+    "Ryn part avant que quelqu'un puisse lui demander de rester. Nyra attend qu'il ait franchi la porte, puis récupère sa tablette."
+    nyra neutre "Je vais quand même vérifier les chiffres."
+    mara stress "Oui. Merci."
+    "Quand Nyra s'éloigne à son tour, l'espace laissé par leurs chaises paraît immense."
+    elias fatigue "Je crois que j'aurais préféré qu'on se dispute pour de vrai sur le pain."
+    mara neutre "C'était une vraie dispute."
+    elias taquin "T'es capable de t'énerver pour de la mie, Mara."
+    mara sourire "Et je t'emmerde avec amour."
+    noam taquin "C'est une déclaration qui restera dans l'histoire du Conclave."
+    "Mara me tire la langue. Elias essaye de sourire, puis baisse les yeux vers ses mains."
+    elias triste "Quand j'ai vu « majorité dispersée », ça m'a soulagé. Une seconde. J'ai eu l'impression que c'était fini."
+    noam neutre "Moi aussi."
+    mara stress "Moi aussi. Bon. On va pas commencer à se détester pour avoir respiré un coup."
+    elias fatigue "J'aurais peut-être préféré travailler. Au moins, les vis ne te demandent pas si t'es une bonne personne."
+    mara taquin "Non. Elles se contentent de s'enfuir quand tu les touches."
+    elias rire "C'est vrai."
+    "Il se lève, ramasse son plateau et le repose aussitôt parce qu'il a oublié sa tablette."
+    elias fatigue "Je vais à la maintenance. J'ai un relais qui fait un bruit de merde depuis ce matin."
+    noam reflexion "Un relais ?"
+    elias neutre "La ventilation. Tu trouves pas qu'il fait chaud ?"
+    noam desaccord "J'ai cru que j'allais fondre dans mon lit."
+    elias sourire "Voilà. J'espère que c'est rien. Si le Conclave se met à transpirer, j'ai pas envie d'être celui qu'on appelle pour essuyer les murs."
+    mara rire "C'est bien dommage, j'avais précisément ce rôle en tête pour toi."
+    elias fatigue "Tu vois ? Une raison de plus de partir."
+    "Il quitte la salle. Mara termine son verre sans me regarder."
+    mara stress "T'as une tête épouvantable, toi aussi."
+    noam fatigue "Merci."
+    mara neutre "C'est pas une insulte. Pas aujourd'hui."
+    "Je hoche la tête, sans savoir quoi répondre."
     $ hideGroup()
-
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
-
-    think "Je baisse les yeux vers mon propre plateau. J'ai faim, mais chaque bouchée paraît trop sèche et trop chaude."
-
-    "Je reste encore quelques minutes avec les autres avant de repousser ma chaise."
-
     jump _10_0_1_1_MARCHE_APRES_TABLE
 
 
 label _10_0_1_1_MARCHE_APRES_TABLE:
     $ current_period = "Après-midi"
-
     stop music fadeout 1.5
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_29
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.2
-
-    "Dès que la porte se referme derrière moi, le peu de fraîcheur de la cafétéria disparaît."
-    "Le couloir semble encore plus chaud qu'avant. L'air vibre légèrement au-dessus des plaques métalliques, comme au-dessus d'un radiateur."
-
-    think "Elias est parti en maintenance. Ce n'est pas vraiment une destination, mais c'est mieux que de tourner en rond."
-
-    "Je prends la direction qu'il a empruntée quelques minutes plus tôt."
-
+    "Dans le couloir, je tire sur le col de ma chemise. La chaleur s'est aggravée depuis ce matin."
+    think "Rester assis à me demander combien de gens sont morts ne va pas me donner la réponse. Et je crois qu'Elias a besoin de parler à quelqu'un, même s'il affirme le contraire."
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_30
     scene bg_maintenance at adaptive_fullscreen with dissolve
-
-    $ showGroup([
-        ("noam", "fatigue"),
-        ("elias", "fatigue"),
-    ])
-
-    "Elias est accroupi devant un coffret ouvert. Un outil lui échappe des mains et roule sous une armoire ; il le regarde disparaître sans même essayer de le retenir."
-
-    elias fatigue "Ouais. Reste là-dessous. Très bonne idée."
-
-    noam taquin "Je vous laisse régler ça entre vous ? Toi et le sol ?"
-
-    elias fatigue "Non. Reste. Lui, il a déjà gagné."
-
-    "Il se penche enfin, récupère l'outil et retourne devant le coffret."
-
-    noam reflexion "Tu répares quoi ?"
-
-    elias reflechit "Un relais de ventilation. Il faisait un bruit bizarre."
-
-    noam reflexion "Il était vraiment en panne ?"
-
-    elias fatigue "J'ai dit qu'il faisait un bruit bizarre."
-
-    noam hesitation "Donc non."
-
-    "Il serre la mâchoire, replace l'outil contre une vis et manque encore son geste."
-
-    elias colere "Tu veux quoi, Noam ? Que je retourne m'asseoir là-bas et que je fasse un discours sur mes sentiments ?"
-
-    noam raison "Non."
-
-    elias colere "Parce que je me sens coupable, voilà. Super. Maintenant, ce relais peut continuer à faire son bruit de merde ?"
-
-    noam triste "T'as été soulagé qu'ils soient pas tous morts. Je vois pas ce qu'il y a de dégueulasse là-dedans."
-
-    elias fatigue "Je sais. Enfin... je crois."
-
-    "Il inspire comme s'il voulait continuer, puis un déclic sec résonne dans les gaines au-dessus de nous."
-    "Le souffle de la ventilation s'arrête d'un seul coup."
-
-    elias inquiet "Putain..."
-
-    noam reflexion "C'était toi ?"
-
+    $ showGroup([("noam", "fatigue"), ("elias", "fatigue")])
+    "Elias est à genoux devant un coffret ouvert. Il tourne un outil entre ses doigts avec un air si contrarié que j'hésite à lui demander s'il s'est encore disputé avec une vis."
+    elias colere "Ça n'a AUCUN sens !"
+    noam taquin "Bonjour à toi aussi."
+    elias surpris "Oh. Noam. Désolé."
+    noam reflechit "C'est le relais ?"
+    elias fatigue "Oui. Non. Enfin, j'en sais rien, justement."
+    noam taquin "Excellent diagnostic. C'est rassurant de savoir qu'on a un spécialiste."
+    elias fatigue "Tu veux la version professionnelle ?"
+    noam sourire "Vas-y."
+    elias colere "Ça n'a AUCUN PUTAIN DE SENS."
+    "Je ris malgré moi. Elias aussi, brièvement. Puis un cliquetis résonne dans le mur."
+    noam reflechit "Ça fait souvent ça ?"
+    elias inquiet "C'est la quatrième fois. Et chaque fois que je pense l'avoir localisé, il s'arrête."
+    noam neutre "Il te fuit."
+    elias blase "Comme les vis."
+    "Il touche une commande. Une ligne de valeurs se met à défiler sur l'écran."
+    elias reflechit "Regarde. L'alimentation est bonne, le contrôle répond, les vannes sont ouvertes."
+    noam hesitation "Donc on devrait avoir de l'air."
+    elias neutre "Exactement."
+    "Le bruit de ventilation derrière nous s'interrompt si brusquement que j'entends Elias avaler sa salive."
+    noam inquiet "Tu l'as arrêté ?"
     elias inquiet "Non."
-
-    "Il se relève immédiatement et fixe le petit écran du coffret. Des lignes de texte défilent, disparaissent, puis laissent place à un message unique."
-
-    "FLUX PRINCIPAL — INDISPONIBLE"
-
-    elias inquiet "Non, non, non..."
-
-    noam reflexion "La clim est en panne ?"
-
-    elias reflechit "J'en sais rien. Mais ça devrait pas se couper comme ça."
-
-    "Il tape rapidement sur le clavier intégré. L'écran clignote, affiche brièvement plusieurs valeurs, puis revient au même message."
-
-    elias inquiet "Pas d'alarme. Pas de notification. Rien."
-
-    noam hesitation "Kami ?"
-
-    elias reflechit "Possible, mais d'habitude elle nous le ferait savoir. Elle adore annoncer quand elle touche à quelque chose."
-
-    "Il rouvre le coffret et contrôle les branchements un par un."
-
-    elias reflechit "Le relais répond. L'alimentation aussi. C'est le flux qui manque."
-
-    noam reflexion "Donc quelque chose bloque ailleurs."
-
-    elias reflechit "Peut-être. Il y a trois relais secondaires accessibles : archives, gymnase et infirmerie."
-
-    noam reflexion "Je vais les vérifier."
-
-    elias inquiet "Regarde l'écran, la grille et le conduit. Si les trois racontent la même chose, tu reviens me voir."
-
-    noam hesitation "Et toi ?"
-
-    elias fatigue "Je reste ici pour comprendre pourquoi ce machin affirme qu'il fonctionne alors que plus rien ne souffle."
-
-    "Un nouveau déclic passe dans la gaine, plus loin cette fois. Aucun courant d'air ne revient."
-
-    elias inquiet "Et Noam... si tu vois un truc qui n'a aucun sens, tu touches à rien. Tu reviens."
-
-    noam reflexion "Ça inspire confiance."
-
-    elias fatigue "C'est exactement l'effet recherché."
-
+    "Il pousse la même commande. La diode passe au vert, et aucun souffle ne revient."
+    elias colere "Mais BORDEL !"
+    noam reflechit "C'est à cause du canon ?"
+    elias reflechit "Peut-être. Il a tiré pendant des heures hier. Sauf que si le refroidissement tirait trop sur le système, les relais devraient remonter une alerte."
+    noam neutre "Et ils n'en remontent pas."
+    elias inquiet "Rien. Comme si tout allait merveilleusement bien."
+    "Il ferme les yeux une seconde, se masse les tempes puis se tourne vers moi."
+    elias neutre "Je vais rester ici et suivre l'alimentation principale. Tu peux m'aider ?"
+    noam sourire "J'allais justement me proposer, avant de te voir discuter avec tes outils."
+    elias reflechit "Il y a trois relais secondaires accessibles : archives, gymnase, infirmerie. Va voir leur écran, leur grille, le conduit. Juste observer."
+    noam taquin "Et si je trouve une petite créature qui vit dans la ventilation ?"
+    elias fatigue "Tu lui dis de payer son loyer, et tu reviens."
+    noam rire "D'accord."
+    "Je commence à partir. Il me retient par la manche."
+    elias inquiet "Noam. Si tu vois un truc bizarre, ne démonte rien. Je voudrais éviter qu'on se retrouve aussi sans lumière."
+    noam taquin "Très bien, monsieur « ça n'a aucun sens »."
+    elias desaccord "JE SUIS SÉRIEUX !"
+    noam neutre "Moi aussi."
     $ hideGroup()
-
-    think "Trois relais. Archives, gymnase, infirmerie. Au moins cette fois, j'ai une raison de tourner dans les couloirs."
-
     tuto "(Inspecte les trois relais de ventilation. Tu peux les vérifier dans l'ordre de ton choix.)"
-
     jump _10_0_1_1_ENQUETE_CLIM
 
 
