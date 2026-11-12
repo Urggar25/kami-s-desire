@@ -9,36 +9,32 @@ label _8_1_0_0_CANON:
     scene black
     $ current_day = 8
     $ noam_has_juliette_drawing = False
-    play music "music/bgm_calm_not_peace.mp3" fadein 2.5
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
-    $ noam_has_juliette_drawing = False
+    play music "music/bgm_calm_not_peace.mp3" fadein 2.5
 
     $ blink()
     pause 1.0
     $ blink()
     scene bg_cg012 at adaptive_fullscreen with dissolve
 
-    "Une ligne de lumière traverse le sol sous le rideau. Je reste allongé quelques secondes, surpris de m'être réveillé sans annonce ni voix dans les murs."
-
-    think "Deux jours sans Kami. Je devrais peut-être arrêter de compter, mais le silence est encore trop inhabituel pour devenir normal."
-
-    $ blink()
-    think "Pour une fois, personne ne me force à sortir du lit. Je peux rester là uniquement parce que j'en ai envie."
-
-    "Je m'étire, puis mon regard se pose sur la table près du lit. L'espace vide me rappelle immédiatement ce que je voulais vérifier."
-
-    think "Le dessin de Juliette. Je l'avais encore hier soir, j'en suis certain."
+    think "..."
+    think "Pas d'annonce."
+    "Je reste allongé quelques secondes, l'oreille tendue, à attendre une voix qui m'aurait fait bondir du lit une semaine plus tôt."
+    think "Deuxième matin de silence. Et moi qui écoute le plafond comme un idiot."
+    "Je vais pour attraper ma tablette, puis j'aperçois l'espace vide sur le bureau."
+    think "Le dessin."
+    "Le sommeil me quitte d'un seul coup."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    "Je me redresse et cherche autour de moi. Rien sur la table, rien sur le lit, rien au sol."
-
-    think "Elle avait passé trois semaines dessus en recommençant chaque fois qu'un détail lui déplaisait. À la fin, elle trouvait toujours que mon nez était raté."
-    think "Je lui avais répondu que le dessin était parfait. Elle croyait que je voulais seulement lui faire plaisir, mais je le pensais vraiment."
-
-    "Je me lève et inspecte une nouvelle fois les abords du lit. Le dessin n'a pas pu disparaître. Je l'ai forcément rangé quelque part sans m'en souvenir."
-
+    noam inquiet "Juliette... Où est-ce que je t'ai rangée ?"
+    "Hier soir, j'ai retourné les affaires du bureau avant de me promettre de chercher au réveil. J'espérais presque que la feuille réapparaîtrait d'elle-même pendant la nuit."
+    noam reflechit "Allez. Tu as dû le glisser dans un tiroir. Ou dans un livre. Ou..."
+    "Je revois Juliette penchée sur son dessin, tirant la langue pour ajouter une dernière mèche de cheveux à mon portrait."
+    think "Elle avait passé trois semaines à recommencer mon nez, et j'avais fini par lui dire que c'était le mien qui était raté."
+    think "Elle avait ri. Puis elle m'avait interdit de toucher au dessin tant qu'elle n'avait pas signé."
+    noam triste "Je l'ai emporté jusque dans l'espace. Ce serait vraiment idiot de le perdre maintenant."
+    "Je regarde la chambre. Je suis presque certain d'avoir déjà tout fouillé. Presque."
     tuto "(Fouille la chambre. Le dessin est peut-être encore là.)"
     $ hideGroup()
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -46,10 +42,6 @@ label _8_1_0_0_CANON:
     $ pnc_flags = {}
     $ room_scene_indices["chambre"] = 1
     jump _8_PNC_BOUCLE
-
-# -------------------------------------------------------
-# SCREEN PnC — Chambre jour 8
-# -------------------------------------------------------
 
 screen pnc_chambre_j8():
 
@@ -226,193 +218,152 @@ label _8_PNC_SORTIE:
 label _8_FIN_RECHERCHE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
-
-    "Je m'assieds au milieu du désordre créé par ma recherche. Le lit est défait, le tiroir repose encore hors de ses rails et mes vêtements débordent de l'armoire."
-
-    think "Le dessin n'est pas là. Pourquoi je l'aurais perdu ? Je n'y ai pas touché."
-    think "J'ai envie de me convaincre que je l'ai rangé ailleurs, mais il n'existe pas beaucoup d'« ailleurs » possibles dans cette chambre."
-
-    "Je me relève malgré l'impression d'abandonner quelque chose d'important."
-
-    "Mon estomac se rappelle brusquement à moi. Je n'ai rien mangé depuis hier soir et continuer à retourner la chambre ne fera pas réapparaître le dessin."
-
-    think "Je vais déjeuner, puis je reprendrai les recherches calmement. Les objets ne disparaissent pas sans raison."
-
-    "Je récupère une veste parmi les vêtements sortis de l'armoire."
-
+    "Le tiroir est sur le sol, les vêtements sur le lit, et je suis à deux doigts de fouiller une troisième fois dans la même poche."
+    noam desaccord "Ça suffit..."
+    think "Non. Ça ne suffit pas. J'aurais voulu pouvoir arrêter après avoir trouvé quelque chose."
+    "Je repense au bureau tel qu'il était avant que je le vide. La feuille était là. Ou alors je me trompe sur le moment où je l'ai vue pour la dernière fois."
+    noam reflechit "Je vais finir par accuser une chaussette de m'avoir volé..."
+    "Mon estomac proteste. Il est déjà tard."
+    think "Je vais manger. Ensuite, je pourrai revenir ici avec une tête qui fonctionne."
+    "Je récupère ma veste au fond d'une pile de vêtements."
     menu:
         "Laisser la chambre telle quelle.":
-            think "Je rangerai en rentrant. Pour le moment, je n'ai plus envie de regarder cette pièce."
+            think "Au moins, si je reviens, je saurai où j'en étais."
             $ chambre_range = True
-
         "Remettre l'essentiel en place avant de sortir.":
-            "Je remets le tiroir sur ses rails, repousse mes vêtements dans l'armoire et referme sa porte."
-            think "Je ne sais pas pourquoi j'en ressens le besoin. Peut-être simplement pour être certain de voir si quelque chose bouge encore."
+            "Je remets le tiroir sur ses rails et repousse les vêtements dans l'armoire."
+            think "Ça ne fait pas réapparaître le dessin, mais je respire un peu mieux."
             $ chambre_range = False
-
     $ hideGroup()
-    "Je quitte la chambre en refermant la porte derrière moi."
+    "Je ferme ma porte. Par réflexe, je vérifie qu'elle est bien verrouillée."
+    "Je n'ai aucune raison de le faire deux fois. Je le fais quand même."
     stop music fadeout 1.0
     jump _8_0_1_CAFETERIA
 
+
 label _8_0_1_CAFETERIA:
     call KD_ROUTE_J8_JULIAN from _call_optional_kd_route_j8_julian
-    # Navigation libre jusqu'à la destination de l'objectif.
     call START_EXPLORATION_LIBRE("_8_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__8_0_1_CAFETERIA
+
 
 label _8_0_1_CAFETERIA_ARRIVEE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_293
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
-
     $ showGroup([
-        ("iris",   "sourire"),
-        ("julian", "decontracte"),
-        ("lysa",   "neutre"),
-        ("noam",   "fatigue"),
-        ("elias",  "detendu"),
-        ("mara",   "rire"),
-        ("tomas",  "fatigue"),
-        ("elen",  "sourire")
+        ("iris", "sourire"), ("julian", "decontracte"), ("lysa", "neutre"),
+        ("noam", "fatigue"), ("elias", "detendu"), ("mara", "rire"),
+        ("tomas", "fatigue"), ("elen", "sourire")
     ])
 
-    "La cafétéria est plus bruyante que d'habitude. Les conversations se croisent, les rires viennent sans effort et personne ne surveille les écrans entre deux phrases."
-
-    think "Deux jours sans Kami, d'une certaine manière, nous nous y sommes faits."
-
-    iris sourire "Je commence à croire qu'on est officiellement en vacances. Encore une journée sans annonce et je réclame une grasse matinée collective."
-
-    julian decontracte "C'est clair ! C'est un vrai soulagement de ne plus être réveillés par Kami."
-
-    mara rire "Tu parles surtout de dormir. Même si j'aimerais comprendre ce qu'il se passe, c'est vrai que c'est reposant."
-
-    julian sourire "Le confort est une valeur fondamentale de l'humanité. Encore une cause JUSTE sur laquelle JE peux m'engager."
-
-    elias detendu "Ça explique beaucoup de choses sur toi, et aucune n'est rassurante."
-
-    "Je m'installe avec mon plateau à côté de Lysa. Elle m'observe à peine une seconde avant de reprendre son repas."
-
-    lysa neutre "Tu as une sale tête. Je suppose que le silence de Kami n'a pas amélioré ton sommeil."
-
-    noam fatigue "Rien à voir avec Kami mais... J'ai simplement passé une partie de la matinée à chercher quelque chose."
-
-    lysa taquin "Pas étonnant que tu aies perdu quelque chose quand on voit l'état de ta chambre !"
-
-    noam colere "Eh ! Mais elle est tout le temps rangée ma chambre !"
-
-    lysa taquin "Ouais, c'est ce que tu dis ça !"
-    lysa reflexion "Sinon, tu veux de l'aide pour t'aider à chercher ?"
-
+    julian sourire "C'est officiel. J'annonce la naissance du premier jour férié du Conclave !"
+    iris blase "Tu annonces surtout le début de ta prochaine crise de mégalomanie."
+    julian taquin "La Fête du Grand Silence. Nous pourrions ériger un monument à son fondateur."
+    mara taquin "Un oreiller à ta taille ?"
+    elias rire "T'en as un assez grand ?"
+    julian surpris "Vous n'avez aucun respect pour l'histoire !"
+    elen joie "Moi, je trouve ça sympa, une fête ! On pourrait préparer quelque chose pour ce soir."
+    iris sourire "Tant que « quelque chose » ne veut pas dire m'obliger à chanter."
+    elen surpris "Mais je chante bien !"
+    mara rire "Voilà, ça commence déjà mal."
+    "Elen menace Mara avec une petite cuillère. Mara lève les mains en signe de reddition, beaucoup trop heureuse d'avoir obtenu cette réaction."
+    noam taquin "On a décrété une fête sans même m'inviter ?"
+    julian joie "Noam ! Notre invité d'honneur. Tu arrives juste à temps pour financer l'organisation."
+    noam desaccord "Je retire ma candidature."
+    lysa sourire "Oh, laisse-le. Sans Kami, Julian a perdu sa seule concurrente en matière d'autosatisfaction."
+    julian taquin "Je prends ça comme un compliment."
+    iris blase "C'est le problème."
+    "Je pose mon plateau à côté de Lysa. Le café est chaud, les rires aussi. J'aurais aimé ne pas avoir passé toute la matinée à retourner ma chambre."
+    lysa neutre "Tu as l'air d'avoir perdu un combat contre un placard."
+    noam fatigue "J'ai cherché un truc. Rien de grave."
+    lysa taquin "Laisse-moi deviner. Une deuxième chaussette ?"
+    noam desaccord "Je t'interdis de parler de mes chaussettes."
+    lysa sourire "Je me sens immédiatement plus libre."
+    lysa reflechit "Tu veux que je t'aide à chercher ?"
     if chambre_range == False:
-        think "Ma chambre est clairement en bordel. Il ne faut pas que Lysa voit ça."
-
-    think "Je pourrais lui parler du dessin. Pourtant, au milieu de cette ambiance presque normale, je n'ai aucune envie de ramener la conversation dans ma chambre."
-
-    noam neutre "C'est gentil mais je vais bien finir par le retrouver."
-
-    "Tomas reste penché sur son écran portable. Son doigt remonte lentement une colonne de chiffres pendant que les autres parlent."
-
-    iris taquin "Oh non, je commence à savoir ce qu'il se passe quand Tomas tire cette tête-là. Dans quelques secondes, il va nous annoncer une catastrophe."
-
-    tomas gene "N-Non. Ce n'est pas vraiment une catastrophe. J'ai seulement consulté les statistiques publiques cette nuit."
-
-    mara neutre "Pourquoi est-ce que tu consultes des statistiques pendant ton temps libre ? T'as rien de mieux à foutre ?"
-    mara taquin "Un beau gars comme toi, je peux l'occuper de plusieurs manières moi..."
-
-    tomas gene "... J'aime bien fouiller dans les données. C'est toujours très enrichissant."
-
-    iris rire "Je ne sais pas qui j'ai le plus envie de détester. Mara avec ses phrases louches ou Tomas avec ses tableaux à la noix."
-
-    tomas reflechit "C'est important... Depuis le vote du sixième jour, je n'ai trouvé aucune nouvelle exécution enregistrée."
-
-    "Autour de la table, les sourires s'effacent sans que personne ait besoin de réclamer le silence."
-
-    noam surpris "Ah c'est ce dont on parlait hier ?"
-
-    tomas reflechit "Ouais... Dans tous les districts. Le compteur mondial est resté à zéro pendant deux journées complètes."
-    tomas inquiet "C'est juste tellement improbable que c'est presque impossible."
-
-    elen surpris "Attends... Mais c'est TROOOP BIEN ! Plus aucune exécution !"
-
-    mara surpris "T'es vraiment sûr que c'est impossible ?"
-
-    tomas inquiet "Techniquement, c'est toujours possible. Statistiquement, compte tenu des chiffres précédents, c'est extrêmement improbable."
-
-    noam reflechit "Depuis que Kami a commencé à buguer il n'y a plus aucune exécution ?"
-
-    julian decontracte "Vous imaginez ? Elias renverse un café et sauve le monde. Même moi, j'aurais pas osé inventer ça !"
-    julian sourire "Nous avons devant nous le héros de l'humanité. Il est armé de son imparable tasse de café ! J'annonce, le grand Elias !"
-
-    elias detendu "J'ai rien fait. J'ai même pas fait exprès de renverser ce foutu café."
-
-    iris sourire "On rigole, mais c'est pas impossible. Tu as peut-être bien sauvé le monde par maladresse. Ça te ressemble bien."
-
-    mara rire "C'est complètement ridicule présenté comme ça, mais je préfère cette version à toutes les autres."
-
-    elias fatigue "Vous êtes vraiment cons..."
-
-    "Il sourit malgré lui. Je ne me rappelle plus la dernière fois où je l'ai vu se détendre assez longtemps pour oublier de se méfier."
-
+        think "J'ai au moins remis une partie de la chambre en ordre. Elle pourrait y entrer sans devoir escalader un tiroir."
+    noam hesitation "Merci. Je te dirai si je ne trouve vraiment pas."
+    lysa neutre "Comme tu veux."
+    "Elle ne me demande pas ce que j'ai perdu. Je suis content qu'elle n'insiste pas, et un peu vexé qu'elle n'insiste pas."
+    elen sourire "Au fait, on a décidé pour la fête ?"
+    mara taquin "Oui. Julian fait un discours, et nous, on se bouche les oreilles."
+    julian surpris "J'ai dit que je pouvais faire un discours ! Pas que j'allais le faire !"
+    iris blase "Tu as déjà commencé."
+    elias rire "Si tu parles assez longtemps, Kami va peut-être se rallumer juste pour te couper."
+    "Un rire passe autour de la table. Iris, elle, relève aussitôt la tête."
+    iris reflechit "C'est peut-être exactement ce qu'on devrait essayer."
+    mara surpris "Faire parler Julian pendant six heures ?!"
+    iris colere "NON ! Tester les réactions du système !"
+    kael reflechit "Il faudrait distinguer les fonctions automatisées des réponses de Kami."
+    julian taquin "Je propose un test simple : on lui demande lequel d'entre nous est le plus séduisant."
+    lysa blase "On connaît déjà ta réponse."
+    tomas reflechit "À propos des fonctions automatisées, j'ai... enfin, j'ai vérifié un chiffre cette nuit."
+    iris fatigue "Tomas. Pas pendant que je mange."
+    tomas gene "C'est important."
+    mara taquin "Ses statistiques sont jalouses. Elles veulent aussi leur moment de gloire."
+    tomas inquiet "Il n'y a eu aucune nouvelle exécution enregistrée."
+    "Le verre d'Elen s'arrête à quelques centimètres de sa bouche."
+    elen surpris "Aucune ?"
+    tomas reflechit "Depuis la fin du vote du jour six. Le compteur mondial n'a pas bougé."
+    noam neutre "Tu as revérifié depuis hier ?"
+    tomas neutre "Trois fois. Je ne voulais pas vous le dire tant que je n'avais pas..."
+    mara agace "Attends, tu le savais déjà ?!"
+    tomas gene "Noam aussi. Je lui ai montré hier."
+    "Les regards convergent vers moi. Merci, Tomas."
+    julian surpris "Et vous avez gardé ça pour vous ?!"
+    noam hesitation "On n'était pas sûrs. On ne l'est toujours pas."
+    elen joie "Mais ça veut dire que plus personne ne meurt à cause des Commandements !"
+    tomas inquiet "Pas nécessairement. Ça veut dire que le système n'enregistre plus d'exécutions."
+    elen surpris "C'est différent ?"
+    tomas neutre "Si les données sont fausses, oui. Si les sanctions ont réellement cessé, non. Et si..."
+    iris colere "TOMAS ! Respire !"
+    tomas gene "Pardon."
+    elias reflechit "Donc on sait rien, sauf que les chiffres font un truc impossible."
+    tomas neutre "C'est... une formulation assez juste."
+    julian sourire "Ou alors nous tenons l'homme qui a sauvé l'humanité."
+    elias fatigue "Oh non."
+    julian joie "Elias ! Le chevalier au café ! Le renverseur d'empires !"
+    mara rire "J'imagine déjà la statue. Un mug sur la tête !"
+    elias colere "JE L'AI PAS FAIT EXPRÈS !"
+    iris taquin "C'est précisément ce qui rend la théorie crédible."
+    elias fatigue "Je vais finir par boire de l'eau."
+    lysa blase "Ne prends pas ce risque. On ne sait pas ce qui arriverait à la gravité."
+    "Il essaye de ne pas rire. Il échoue."
     menu:
-        "Rentrer dans la blague.":
-            noam taquin "Franchement, Elias, je suis impressionné. Très peu de gens peuvent prétendre avoir neutralisé Kami avec un café."
-
-            julian sourire "Enfin quelqu'un de lucide. Je commençais à désespérer de ce groupe."
-
-            elias rire "Je vous déteste tous, sans exception."
-
-        "Rester prudent.":
-            noam inquiet "Ou alors quelque chose dysfonctionne réellement. Et si l'absence d'exécutions est liée à la panne, rien ne garantit que ça durera longtemps."
-
-            mara fatigue "Oui... Il y a aussi cette possibilité. Mais je préfère la version du café héroïque, ça claque mieux."
-
-            tomas inquiet "C'est pourtant celle que je considère comme la plus probable."
-
-    iris taquin "En attendant de savoir, je compte bien profiter du calme."
-
-    lysa blase "Parce que tu as peur que Kami revienne demain ?"
-
-    iris fatigue "J'ai peur qu'elle revienne dans cinq minutes et qu'elle nous fasse payer chaque seconde de répit."
-
-    "Un silence bref traverse la table. Il ne dure pas assez longtemps pour briser l'ambiance, seulement pour rappeler que personne n'a réellement oublié où nous sommes."
-
-    julian sourire "Alors profitons-en tant que c'est encore possible. Je refuse de laisser une menace hypothétique gâcher un déjeuner bien réel."
-
-    elias detendu "Pour une fois, je suis d'accord avec lui."
-
-    mara rire "Quelqu'un devrait noter la date. Ça risque de ne jamais se reproduire."
-
-    "Les discussions reprennent autour de sujets sans importance : la nourriture, le sommeil et les souvenirs du monde d'avant. Pendant quelques minutes, nous ressemblons presque à des gens ordinaires."
-
-    think "Presque. Le dessin n'était pas dans ma chambre et, même entouré par leurs voix, je n'arrive pas à l'oublier complètement."
-
+        "Entrer dans leur jeu.":
+            noam taquin "Quand tu auras ton monument, Elias, rappelle-toi de nous. On a tous assisté à l'attaque décisive."
+            elias rire "Vous êtes vraiment irrécupérables."
+            julian sourire "L'Histoire me donnera raison."
+        "Ramener la discussion aux faits.":
+            noam reflechit "Je préférerais qu'on évite de tester cette théorie sur Terre."
+            tomas raison "Exactement. Une baisse des exécutions, même réelle, ne garantit pas la disparition des Commandements."
+            mara neutre "D'accord. Mais je garde l'idée de la statue."
+    elen inquiet "Si des gens commencent à croire qu'ils peuvent désobéir, et que Kami revient..."
+    "La phrase se perd. Plus personne ne sourit."
+    iris fatigue "On ne sait même pas si elle est vraiment partie."
+    lysa reflechit "On connaît une chose : elle n'a donné aucun ordre depuis deux jours."
+    mara neutre "Ça fait une chose de plus que ce qu'on savait hier."
+    "Julian regarde son dessert, le découpe en deux et pousse discrètement la plus grande moitié vers Elen."
+    elen surpris "C'est pour moi ?"
+    julian decontracte "Considère ça comme une réparation diplomatique après le gâteau d'hier."
+    elen sourire "Je n'avais pas oublié !"
+    julian taquin "Je sais. C'est bien ce qui m'inquiétait."
+    "Lysa s'esclaffe. La table retrouve peu à peu son bruit ordinaire, sans que personne ait vraiment répondu à la question d'Elen."
+    think "J'aimerais leur parler du dessin. Avec eux, cela deviendrait peut-être une histoire de chaussette ou de mug. Je ne suis pas prêt."
     $ hideGroup()
     jump _8_0_1_TEMPS_LIBRE_1
 
-label _8_0_1_TEMPS_LIBRE_1:
 
+label _8_0_1_TEMPS_LIBRE_1:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_294
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-
     menu:
         "Discuter un instant avec Julian.":
             call KD_EXTRA_J8_JULIAN from _call_kd_extra_j8_julian
         "Passer directement au temps libre.":
             pass
-
     call START_FREE_TIME("_8_0_1_APRES_MIDI_KAEL_CRISE") from _call_START_FREE_TIME_8_0_1
 
-# --------------------------------------------------------------------------------------------
-# JOUR 8 — Après-midi
-# Kael débarque en crise dans l'espace commun.
-# Découverte collective : la photo de Léa a disparu.
-# Lancement du mini-jeu STABILISATION.
-# Suivi : Noam décide de trouver le coupable.
-# --------------------------------------------------------------------------------------------
-
-# ============================================================
-# LABEL — AMORCE DE LA CRISE
-# ============================================================
 
 transform d8_kael_door_entry:
     xalign 1.12
@@ -423,43 +374,46 @@ transform d8_kael_door_entry:
     linear 0.08 xoffset -18
     linear 0.08 xoffset 0
 
+
 label _8_0_1_APRES_MIDI_KAEL_CRISE:
     $ current_period = "Après-midi"
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_295
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
-
     $ showGroup([
-        ("lysa",   "neutre",      0.15),
-        ("ryn",    "decontracte", 0.35),
-        ("elias",  "fatigue",     0.65),
-        ("noam",   "neutre",      0.85),
+        ("lysa", "neutre", 0.15), ("ryn", "decontracte", 0.35),
+        ("elias", "fatigue", 0.65), ("noam", "neutre", 0.85)
     ])
-
-    "L'après-midi s'écoule dans un calme presque suspect. Je retrouve Lysa, Ryn et Elias à la cafétéria, mais personne ne semble réellement concentré sur ce qu'il fait."
-
-    lysa neutre "Tu as vu Kael depuis ce matin ? Il est parti juste après le déjeuner et il avait l'air... différent."
-
-    noam hesitation "Non. Qu'est-ce que tu veux dire par « différent » ?"
-
-    ryn desaccord "Il tournait en rond dans les couloirs. Je l'ai croisé deux fois et, la seconde, il ne m'a même pas remarqué."
-
-    elias fatigue "J'ai essayé de lui parler près des chambres. Il a marmonné quelque chose avant de repartir dans l'autre sens."
-
-    "Je repose mon verre. Kael n'est pas du genre à ignorer quelqu'un sans même s'en rendre compte."
-
+    ryn desaccord "J'ai jamais dit que c'était facile."
+    lysa blase "Non, tu as seulement dit que tout le monde devrait savoir le faire."
+    elias fatigue "Vous vous disputez sur quoi, encore ?"
+    ryn colere "Sur le fait que monter une étagère sans instructions, ça devrait pas demander trois personnes !"
+    lysa taquin "Il a monté les deux côtés à l'envers."
+    ryn colere "ÇA TENAIT !"
+    noam sourire "Je suppose que l'étagère n'a pas partagé ton avis."
+    elias rire "Elle s'est effondrée après que j'ai posé une seule boîte dessus."
+    ryn desaccord "Une boîte qui pesait le poids d'un moteur !"
+    lysa sourire "L'étagère a fait son choix. Respecte-le."
+    "Ryn grogne mais finit par rire. Je découvre que le son est presque rassurant, quand il ne le dirige contre personne."
+    lysa reflechit "Au fait... Kael a disparu après le repas."
+    noam neutre "Il travaille peut-être."
+    elias inquiet "Je l'ai croisé devant les chambres. Il allait dans un sens, puis dans l'autre. Je lui ai demandé s'il voulait de l'aide."
+    ryn inquiet "Il t'a répondu ?"
+    elias fatigue "« Pas maintenant ». Et je crois qu'il ne savait même pas que c'était moi."
+    lysa neutre "Kael n'est pas du genre à se perdre dans un couloir."
+    ryn reflechit "Peut-être qu'il cherche ce qu'Elias a perdu hier."
+    elias colere "JE N'AI PAS PERDU LES BATTERIES !"
+    lysa blase "Tu vas le graver sur ta tombe, celle-là."
+    "Je souris, mais l'image de ma chambre me revient."
     menu:
-        "Aller voir s'il va bien.":
-            noam inquiet "Quelque chose cloche. Je vais le chercher avant qu'il continue à tourner seul dans les couloirs."
-            noam neutre "Au moins pour savoir ce qui lui arrive exactement."
-
-        "Attendre, il est peut-être juste fatigué.":
-            noam hesitation "On a tous besoin de rester seuls parfois. Il sait où nous trouver s'il veut parler... Enfin, je suppose."
-            ryn hesitation "Peut-être, mais je n'aimais vraiment pas la tête qu'il faisait."
-
+        "Proposer d'aller chercher Kael.":
+            noam inquiet "On devrait peut-être aller le voir. On est tous assez nerveux comme ça."
+            ryn neutre "J'allais le proposer."
+        "Lui laisser du temps.":
+            noam hesitation "Si quelque chose ne va pas, il viendra nous parler. On devrait peut-être le laisser respirer."
+            lysa reflechit "Peut-être..."
     play sound "audio/sfx_door.mp3" volume 1.0
     with hpunch
-
     $ showP("lysa", "choc", 0.12)
     $ showP("ryn", "inquiet", 0.28)
     $ showP("elias", "choc", 0.72)
@@ -470,81 +424,94 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     $ char_state["kael"] = dict(expr="colere", x=0.50, y=1.0, layer="master", zorder=2)
     $ group_members = ["lysa", "ryn", "kael", "elias", "noam"]
 
-    "La porte claque contre le mur. Kael entre d'un pas brutal, s'arrête au milieu de la pièce et nous dévisage comme s'il cherchait un visage précis parmi nous."
-
-    kael colere "C'est qui ?!"
-
-    elias choc "Kael... Qu'est-ce qui se passe ?"
-
-    kael colere "Qui est entré dans ma chambre ? Quelqu'un y est allé et a pris quelque chose."
-
-    ryn inquiet "Attends, comment tu peux être sûr que quelqu'un est entré dans ta chambre ?"
-
-    kael colere "Parce que je cherche depuis ce matin ! Elle était sous mon oreiller et elle n'est plus nulle part."
-
-    noam triste "Attends, calme-toi..."
-
-    lysa choc "Qu'est-ce qui a disparu ?"
-
-    kael inquiet "La photo de ma sœur. Celle de Léa."
-
-    "Personne ne répond. Lysa ferme brièvement les yeux, Elias recule d'un demi-pas et Ryn baisse le regard."
-    "Les mains de Kael tremblent de colère."
-
+    kael colere "Qui est entré dans ma chambre ?"
+    elias choc "Kael ?"
+    kael colere "Je vais le demander une fois. Qui est entré dans ma chambre ?!"
+    ryn inquiet "Hé. Personne ici n'a dit qu'il y était allé."
+    kael colere "Alors pourquoi il manque quelque chose ?!"
+    noam inquiet "Qu'est-ce que tu as perdu ?"
+    kael colere "Je ne l'ai pas perdu !"
+    "La réponse est tellement violente que je recule d'un pas."
+    lysa choc "Kael... On ne sait même pas de quoi tu parles."
+    kael inquiet "Une photo. Une petite photo que je gardais sous l'oreiller."
+    elias inquiet "Tu es sûr qu'elle était..."
+    kael colere "LÉA ! C'ÉTAIT LA PHOTO DE LÉA !"
+    "Ryn ouvre la bouche, puis la referme. Kael respire beaucoup trop vite."
+    kael inquiet "Je l'ai vue hier. Je l'ai prise pour la regarder avant de dormir et..."
+    "Il ne termine pas."
+    noam hesitation "On peut t'aider à chercher."
+    kael colere "J'AI CHERCHÉ !"
+    "Sa voix me fait sursauter. Ce n'est pas le Kael qui calculait tranquillement les pannes pendant que nous paniquions tous."
+    ryn inquiet "D'accord. On t'écoute."
+    kael colere "Alors dis-moi pourquoi personne ne répond !"
+    ryn desaccord "Parce qu'on n'a pas la réponse !"
+    lysa colere "Ryn, PAS MAINTENANT !"
+    "Ryn se tait aussitôt. Kael regarde la porte, les tables, nos visages, puis revient sur moi."
+    kael inquiet "Si quelqu'un l'a prise, il savait où elle était."
+    noam inquiet "Kael..."
+    kael colere "ET IL SAVAIT À QUI ELLE APPARTENAIT !"
     $ unlock_gallery_image("bg_cg050")
     scene bg_cg050 at adaptive_fullscreen with vpunch
-
-    kael colere "Alors je vous le demande une dernière fois : qui a pris la photo ?!"
-
-    stop music fadeout 1.0
+    kael colere "Alors qu'il vienne me regarder dans les yeux !"
+    stop music fadeout 0.8
     play music "music/bgm_stabilisation_tension.mp3" fadein 0.8
-    with vpunch
     call j801_play_stabilisation from _call_j801_play_stabilisation
     $ j801_stabilisation_result = _return
     jump _8_0_1_APRES_STABILISATION
 
-# ============================================================
-# LABEL — APRÈS LA STABILISATION
-# ============================================================
 
 label _8_0_1_APRES_STABILISATION:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.5
     $ showGroup([
-        ("lysa",  "triste",   0.12),
-        ("ryn",   "inquiet",  0.28),
-        ("kael",  "effondre", 0.50),
-        ("elias", "choc",     0.72),
-        ("noam",  "neutre",   0.88),
+        ("lysa", "triste", 0.12), ("ryn", "inquiet", 0.28),
+        ("kael", "effondre", 0.50), ("elias", "choc", 0.72),
+        ("noam", "neutre", 0.88)
     ])
-
-    "Le calme revient progressivement. Kael reste assis, les coudes sur les genoux, encore essoufflé mais enfin capable de nous entendre."
-    "Lysa approche une chaise et pose une main sur l'accoudoir, près de lui, sans essayer de le toucher."
-
-    noam reflechit "On devrait vérifier les autres chambres. Si quelqu'un est entré chez toi, il a peut-être fouillé ailleurs."
-
-    kael effondre "Ça ne ramènera pas la photo. Elle n'est plus là, c'est tout."
-
-    elias choc "Qui pourrait faire un truc pareil ? Il fallait savoir ce que tu cachais et exactement où chercher."
-    elias reflechit "Et pourquoi quelqu'un te piquerait une photo ? Faut dire que ça n'a pas de sens..."
-
-    "Je regarde les quatre personnes autour de moi. Nous avons mangé, voté et vécu ensemble pendant plus d'une semaine. Pourtant, les chambres sont verrouillées et les couloirs surveillés."
-
-    think "Kami se tait depuis deux jours, est-ce que c'est pour ça que quelqu'un se permettrait de nous voler nos affaires ?!"
-    think "Non, Elias vient de le dire, ça n'a pas de sens..."
-
-    noam inquiet "Il faut que je vous dise quelque chose. Moi aussi, j'ai perdu un objet ce matin."
-
-    "Tous les regards se tournent vers moi. Kael relève lentement la tête."
-
-    noam inquiet "C'est un dessin que Juliette, ma petite sœur, m'avait fait. Je l'avais encore hier soir."
-    noam inquiet "J'ai fouillé toute ma chambre au réveil, mais il a disparu et j'arrive pas à le retrouver."
-
-    lysa choc "Toi aussi ? Pourquoi tu ne nous en as pas parlé ce matin ?"
-
-    noam hesitation "Je pensais l'avoir mal rangé. Je préférais croire ça plutôt que d'imaginer quelqu'un entrer dans ma chambre sans permission."
-
-    elias inquiet "Donc Kael ne s'est pas trompé, et toi non plus. Quelqu'un a fouillé au moins deux chambres. Vous savez de quand ça date ?"
+    "Kael finit par s'asseoir. Sa respiration est encore irrégulière. Lysa pousse un verre d'eau à sa portée, puis recule sans chercher à le toucher."
+    elias inquiet "Je suis désolé, Kael. J'aurais pas dû..."
+    kael effondre "Tu n'as rien fait."
+    elias gene "Ouais. Mais..."
+    kael effondre "S'il te plaît."
+    "Elias baisse les yeux. Cette fois, il réussit à se taire."
+    ryn inquiet "Je peux vérifier les couloirs. Demander si quelqu'un a vu..."
+    kael effondre "Arrêtez."
+    "Le silence est immédiat."
+    kael triste "Je ne voulais pas vous crier dessus."
+    lysa neutre "Tu n'as pas besoin de t'excuser maintenant."
+    kael effondre "J'ai promis que je la garderais."
+    noam inquiet "La photo ?"
+    kael effondre "Oui."
+    "Il se frotte le visage d'une main. Personne ne lui demande de raconter la suite."
+    noam hesitation "Kael... Je vais te dire quelque chose, mais je ne sais pas si ça va t'aider."
+    lysa reflechit "Noam ?"
+    noam inquiet "Le dessin de Juliette. Ma petite sœur me l'avait donné avant mon départ. Je l'ai cherché toute la matinée."
+    noam triste "Il a disparu lui aussi."
+    ryn surpris "Quoi ?!"
+    elias choc "Attends. Deux objets personnels, dans deux chambres différentes ?"
+    kael inquiet "Quand ?"
+    noam reflechit "Je l'ai remarqué hier soir. Et je n'ai rien trouvé ce matin."
+    lysa triste "C'était ça que tu cherchais..."
+    noam hesitation "Oui. Je croyais l'avoir mal rangé."
+    lysa desaccord "Tu aurais pu me le dire."
+    noam neutre "Je sais."
+    "Elle ne réplique pas. Elle regarde Kael, puis mes mains vides."
+    elias inquiet "On a aussi les batteries et les outils qui manquent depuis hier."
+    ryn colere "Alors il y a quelqu'un qui vole dans les chambres !"
+    noam reflechit "On ne sait pas ça. On sait que des objets ont disparu."
+    ryn desaccord "Tu vas pas me dire que c'est une coïncidence !"
+    noam neutre "Je dis qu'on ne devrait pas accuser quelqu'un sans preuve."
+    ryn colere "Et attendre que d'autres affaires disparaissent ?!"
+    kael effondre "Je me fiche des batteries."
+    "Sa voix est basse. Ryn s'interrompt."
+    kael triste "Je veux juste ma photo."
+    "Cette phrase fait plus mal que ses cris."
+    lysa neutre "Alors on va essayer de comprendre. Sans transformer le Conclave en chasse aux sorcières."
+    elias reflechit "Les caméras sont peut-être encore actives. Même si Kami ne parle plus..."
+    noam inquiet "Kael, on peut vérifier les accès aux chambres. Tu préfères qu'on commence là ?"
+    kael effondre "Je ne sais pas."
+    kael neutre "Faites ce que vous voulez. Je ne veux juste pas qu'on vienne me raconter que j'ai oublié où je l'avais mise."
+    noam neutre "D'accord."
 
     $ investigation_add("photo_lea_disparue")
     $ investigation_add("dessin_juliette_disparu")
@@ -552,28 +519,20 @@ label _8_0_1_APRES_STABILISATION:
     $ investigation_add("cafe_renverse", notify=False)
     $ investigation_add("livraison_j7", notify=False)
     $ investigation_add("kami_hors_ligne", notify=False)
-
-    noam triste "Je suis persuadé qu'il était encore là hier."
-
-    kael effondre "... Mais pourquoi...? Je ne comprends pas..."
-
-    noam reflechit "Quelqu'un a peut-être choisi précisément ce qui avait le plus de valeur pour nous ?"
-
-    think "Je devrais garder ces faits séparés du Codex. Pas du lore : une trace de ce qui nous arrive."
-
     call play_stat_dialogue("d8") from _call_stat_dialogue_d8
 
+    "Ryn propose de prévenir tout le monde. Lysa lui fait remarquer qu'on pourrait commencer par interroger les gens sans les traiter de voleurs."
+    ryn desaccord "J'ai pas dit que j'allais leur taper dessus !"
+    lysa blase "Tu l'as pensé si fort que j'ai cru l'entendre."
+    "Il fulmine, mais n'insiste pas. Elias reste près de Kael, à une distance suffisamment grande pour ne pas l'étouffer."
+    noam reflechit "Je vais chercher du côté des accès. Et je vérifierai encore ma chambre."
+    kael effondre "... Merci."
+    "J'aurais préféré qu'il s'énerve une dernière fois. C'est plus facile à supporter que cette voix-là."
     $ hideGroup()
-
-    "Les minutes passent. Les autres finissent par se lever, non pour partir, mais parce que rester immobiles autour de Kael devient insupportable."
-
-    think "Je reste encore un moment. Il faut découvrir qui a fait ça avant qu'un autre objet disparaisse, ou que quelqu'un décide de chercher un coupable au hasard."
-    think "Pour le moment, je n'ai que deux certitudes : quelqu'un est entré dans nos chambres et a pris exactement ce qui comptait le plus pour nous."
-    think "Je ne sais pas encore qui. Pas encore."
-
     stop music fadeout 2.0
     scene black with fade
     jump _8_0_1_SOIREE
+
 
 label _8_0_1_SOIREE:
     $ current_period = "Soir"
@@ -581,27 +540,29 @@ label _8_0_1_SOIREE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 3.0
     $ showGroup([("noam", "inquiet", 0.50)])
-
-    "Après avoir erré dans les couloirs sans savoir quoi chercher, je retourne dans ma chambre et referme soigneusement la porte."
-    "Le désordre du matin n'a pas bougé. Le sac reste ouvert sur le lit, le placard ferme mal et aucun dessin n'est miraculeusement réapparu pendant mon absence."
-
-    think "Deux jours sans Kami ont suffi pour nous faire croire que nous étions libres. Maintenant, quelqu'un rôde et nous pique nos affaires..."
-
-    "Je m'assieds sur le bord du lit et regarde chaque meuble comme si la personne qui était entrée avait pu laisser une trace évidente."
-
-    think "Quelqu'un est venu ici. C'est sûr. Cette personne savait ce qui comptait pour moi et elle l'a emporté sans toucher au reste."
-
-    "L'écran mural demeure noir. Son silence ne me rassure plus du tout."
-
-    think "Peut-être que tout ça n'a rien à voir avec Kami. Ou peut-être que cette peur est exactement ce qu'elle attendait de son absence."
-
-    "Je tire la chaise jusqu'à la porte et la bloque sous la poignée. Ce n'est pas une vraie protection, mais je saurai au moins si quelqu'un essaie d'entrer pendant mon sommeil."
-
-    think "Demain, je trouverai qui a pris le dessin et la photo. Même si la réponse me conduit vers l'un d'entre nous."
-
+    "Le bureau est exactement dans l'état où je l'ai laissé."
+    "Ça ne devrait pas me rassurer. Ça me rassure quand même."
+    think "Une photo. Un dessin. Des batteries."
+    think "À la table, tout le monde cherchait un mobile. Moi aussi. Pourtant, je ne sais même pas si nous parlons de la même personne."
+    "Je récupère une feuille vierge et un stylo. Je note les heures auxquelles je me souviens avoir vu mon dessin."
+    noam reflechit "Avant le vote... puis..."
+    "Je m'arrête. Je ne peux pas me rappeler exactement à quel moment je l'ai posé sur le bureau."
+    think "Je suis certain de l'avoir eu. Mais je commence à comprendre ce que Kael ressent quand on lui demande s'il n'a pas simplement oublié."
+    "Je ferme le tiroir. Un bruit sec me fait tourner la tête."
+    pause 0.5
+    "Rien. C'était ma chaise qui s'était déplacée."
+    noam taquin "Magnifique. Je vais bientôt interroger les meubles."
+    "J'essaye de rire. Le son ne va pas bien loin."
+    "L'écran de Kami reste noir. Sans ses remarques, la pièce devrait être plus accueillante."
+    think "Depuis deux jours, on ne nous dit plus quoi faire. J'avais pris ça pour une liberté."
+    think "Peut-être que c'en est une. Peut-être aussi qu'on ne sait pas quoi en faire."
+    "Je bloque la chaise sous la poignée, puis je m'arrête pour mesurer à quel point mon geste est ridicule."
+    noam fatigue "Si quelqu'un veut vraiment entrer, il trouvera un moyen."
+    "Je laisse la chaise en place."
+    "Avant de m'allonger, je regarde encore le bureau. J'aurais donné n'importe quoi pour y voir un simple dessin mal rangé."
+    noam triste "Juliette... Je vais le retrouver."
+    "Je ferme les yeux."
+    "Dans le silence, le petit claquement du tiroir me revient. Cette fois, je n'arrive plus à me souvenir si c'était bien ma chaise."
     $ hideGroup()
     call end_day("9", sleeping=True) from _call_end_day_12
     jump _9_0_1_REVEIL_CHAMBRE
-
-# Total journée : 7 minutes
-# Durée totale : 2h10
