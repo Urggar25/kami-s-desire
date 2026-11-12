@@ -1,67 +1,36 @@
 label _12_0_1_1_REVEIL_CHAMBRE:
-
     $ cafeteria_food_level = "low"
     $ current_period = "Nuit"
     $ current_day = 12
     $ noam_has_juliette_drawing = False
-
     scene bg_chambre at adaptive_fullscreen with fade
-    play music "music/bgm_fatal_assembly.mp3" fadein 3.0
+    play music "music/bgm_fatal_assembly.mp3" fadein 2.0
     play sound sfx_creak volume 0.6
-
-    "Je me réveille en sursaut, le cœur cognant violemment dans ma poitrine."
-
-    "Un bruit… J’ai entendu un bruit."
-    "Comme un frottement. Ou un pas. Juste à côté du lit."
+    "Un bruit me tire du sommeil."
+    "Pas celui de la porte. Quelque chose de plus proche. Un frottement, à peine audible, comme si on avait déplacé un objet sur le sol."
     $ investigation_add("bruits_chambre")
-
-    "Je reste immobile plusieurs secondes, les yeux grands ouverts dans le noir."
-    "Seul le bourdonnement lointain des ventilations du Conclave me répond."
-
-    noam faible "... Il y a quelqu’un ?"
-
-    "Aucune réponse."
-
-    "Je me redresse lentement, la tête lourde et la gorge sèche."
-
-    think "Ce n’était pas un rêve… J’en suis presque sûr."
-
-    think "Je me suis déjà réveillé en sursaut avant."
-    think "Mais jamais comme ça."
-    think "J'ai vraiment entendu quelque chose de bizarre."
-    think "Ou quelqu'un."
-    "Je tends la main vers l’interrupteur. La lumière froide de la chambre m’aveugle un instant."
-
+    noam faible "... Qui est là ?"
+    "Je n'obtiens aucune réponse."
+    think "D'accord. Je suis réveillé depuis trois secondes et je commence déjà à parler au mobilier."
+    "Je reste allongé. La ventilation souffle normalement. Dans le couloir, rien ne bouge."
+    "Je tends la main jusqu'à l'interrupteur."
     scene bg_chambre at adaptive_fullscreen with dissolve
-
-    "La pièce est vide."
-    "La porte est fermée. Rien ne semble déplacé."
-
-    think "Alors pourquoi j'ai l'impression qu'on m'observe encore ?"
-
-    "Je reste immobile."
-    "À écouter."
-    "À attendre un second bruit."
-    "Quelque chose."
-    "Rien ne vient."
-    "Pourtant, je ne peux pas me calmer."
-
-    think "Je deviens parano… Il faut que j’arrête."
-    think "… Mais si ce n’était pas de la parano ?"
-
-    "Sans vraiment réfléchir, je me lève et commence à fouiller la chambre."
-
+    "L'éclairage me fait cligner des yeux. La porte est fermée. La chaise est à sa place, près du bureau."
+    noam hesitation "..."
+    "Je vérifie le verrou, puis me retourne vers la pièce."
+    think "J'ai entendu quelque chose. J'en suis sûr. Ou alors je recommence à me fabriquer des souvenirs."
+    "Hier, les images du couloir avaient disparu. Maintenant, j'ai peur jusque dans ma chambre."
+    noam fatigue "Non. Cette fois, je vérifie."
     $ pnc_room = "chambre_j12"
     $ pnc_flags = {}
     $ room_scene_indices["chambre"] = 1
     call screen pnc_chambre_j12()
     return
 
-screen pnc_chambre_j12():
 
+screen pnc_chambre_j12():
     modal True
     zorder 200
-
     use room_scene_background("chambre")
     use room_scene_interactions("chambre", {
         "chambre1_aeration": "_12_0_1_1_aeration",
@@ -75,9 +44,6 @@ screen pnc_chambre_j12():
         "chambre3_photo_juliette": "_12_0_1_1_photo_juliette",
         "chambre3_tablette": "_12_0_1_1_tablette",
     })
-
-    # Le dessin a disparu : son calque n'est plus rendu, mais son emplacement
-    # reste inspectable afin que la vue et les interactions racontent le même état.
     if room_scene_stem("chambre") == "chambre3" and not noam_has_juliette_drawing:
         $ missing_photo_path = "images/background/interact/chambre/chambre3/photo_juliette.png"
         imagebutton:
@@ -86,171 +52,117 @@ screen pnc_chambre_j12():
             focus_mask room_interaction_layer(missing_photo_path, "chambre", "art")
             xpos 0 ypos 0
             action Jump("_12_0_1_1_photo_juliette")
-
     frame:
         xalign 0.5 yalign 0.04
         background Solid("#071722DC")
         padding (18, 10)
         text _("FOUILLER LA CHAMBRE  ·  [len(pnc_flags)]/3 INDICES MINIMUM") size 18 color "#DCEFFC"
 
-# ==================== MINILABELS ====================
 
 label _12_0_1_1_aeration:
-
     $ pnc_flags["aeration"] = True
-
-    "Je m'approche de la bouche d'aération et tends l'oreille."
-    "Le souffle est régulier. Aucun frottement, aucun pas dans le conduit."
-
-    think "Le bruit ne venait pas de là... enfin, je crois."
-
+    "Je m'approche de la grille. Le souffle est régulier, cette fois."
+    noam fatigue "Tu vas pas recommencer, toi aussi."
+    "Je tends l'oreille. Pas de bruit de pas. Juste la ventilation qui tourne."
+    think "Elias serait ravi d'apprendre qu'une machine fait enfin son travail."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_sous_lit:
-
     $ pnc_flags["lit"] = True
-
-    "Je m’agenouille devant le lit."
-    "Mon cœur bat plus vite que nécessaire."
-
-    think "Personne ne peut être là."
-
-    "Je soulève lentement la couverture."
-    "Pendant une seconde, je redoute réellement ce que je pourrais trouver."
-    "Je passe une main dessous."
-    "Puis la tête."
-    "Rien."
-    "Seulement de la poussière."
-    "Le vide."
-
-    think "Évidemment."
-
-    "Je reste quand même quelques secondes à regarder."
-
-    think "J'ai vraiment cru qu'il y aurait quelque chose."
-
+    "Je soulève la couverture, puis m'accroupis pour regarder sous le lit."
+    noam hesitation "Bon. Si quelqu'un est là, on peut éviter de se faire peur mutuellement ?"
+    "De la poussière, une chaussette et rien d'autre."
+    noam fatigue "Formidable. Un suspect, taille trente-neuf."
+    "Je récupère la chaussette, puis la pose sur le lit. Je reste malgré moi un instant à regarder sous le sommier."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_television:
-
     $ pnc_flags["television"] = True
-
-    "Je passe la main sur le bord de l'écran."
-    "Il est éteint et froid. Rien n'indique que Kami l'ait activé pendant la nuit."
-
-    think "Pour une fois, ce silence ne vient pas d'elle."
-
+    "Je touche le bord de l'écran mural. Il est froid et éteint."
+    think "Pas d'annonce. Pas de visage souriant pour m'expliquer que j'ai rêvé."
+    noam fatigue "Pourvu que ça dure."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_placard:
-
     $ pnc_flags["placard"] = True
-
-    "J’ouvre le placard d’un coup sec, le cœur battant."
-
-    "Mes vêtements sont là, bien rangés."
-    "Mais sur l’étagère du haut… quelque chose attire mon regard."
-
-    "Un de mes sweats est légèrement de travers."
-    "Et surtout… il y a une légère empreinte de main sur la poussière de l’étagère."
-    "Je tends la main vers elle."
-    "Sans la toucher."
-    "Juste assez près pour comparer."
-
-    think "... Ce n’est pas moi qui ai touché là-haut."
-
-    "Mon ventre se noue."
-
-    think "Non."
-    think "Je ne peux pas être certain."
-    think "Je me change régulièrement j'ai peut-être bougé ça accidentellement."
-    think "Je ne sais même plus."
-
+    "J'ouvre le placard d'un coup. Les cintres s'entrechoquent, et je sursaute à mon propre bruit."
+    noam colere "Putain..."
+    "Un sweat est coincé de travers sur l'étagère du haut. Dans la poussière, une marque ressemble à une empreinte de paume."
+    "J'approche ma main. La trace pourrait être la mienne. Je n'arrive plus à me rappeler quand j'ai rangé ce sweat."
+    think "C'est exactement comme le badge : assez pour m'inquiéter, jamais assez pour être sûr."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_bureau:
-
     $ pnc_flags["bureau"] = True
-
-    "Je m’approche du bureau et regarde rapidement les affaires."
-
-    "Tout semble à sa place… sauf mon badge."
-    "Il est retourné, face cachée."
-
-    think "Je ne me souviens pas l’avoir laissé comme ça."
-    think "Ça ne veut rien dire."
-    think "Un badge retourné."
-    think "C'est ridicule."
-    think "Alors pourquoi j'ai l'impression que quelque chose ne va pas ?"
-
+    "La tablette est là. Le badge aussi, retourné."
+    noam reflexion "Je l'avais remis comme ça ?"
+    "Je le retourne, puis m'interromps."
+    think "Voilà. Maintenant, si je le retrouve à l'envers demain, je ne saurai même plus comment je l'ai laissé."
+    noam fatigue "Bravo, Noam."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_salle_de_bain:
-
     $ pnc_flags["salle_de_bain"] = True
-
-    "J'entrouvre la porte de la salle de bain et vérifie chaque recoin."
-    "La pièce est vide. Le miroir ne me renvoie que mon propre visage épuisé."
-
-    think "Personne ici non plus."
-
+    "La salle de bain est vide. Le miroir me renvoie un visage pâle, avec des cernes que je ne me connaissais pas."
+    noam taquin "Belle tête. Tu devrais te présenter aux élections."
+    "L'eau du robinet coule quelques secondes. Je me passe les mains sur le visage."
+    "En ressortant, je vérifie quand même derrière la porte."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_brouilleur:
-
     $ pnc_flags["brouilleur"] = True
-
-    "Je vérifie le brouilleur et son boîtier."
-    "Aucune vis ne dépasse, aucun câble ne semble avoir été déplacé."
-
-    think "S'il y avait quelqu'un ici, le brouilleur ne l'a pas empêché d'entrer."
-
+    "Le voyant du brouilleur pulse tranquillement."
+    noam reflexion "Sept jours pour revoir une chambre..."
+    "Le boîtier n'a pas l'air abîmé. Je le fixe, comme s'il allait me donner le nom de celui qui a pris le dessin."
+    think "Ce truc est censé protéger ma vie privée. C'est aussi lui qui rendrait une intrusion si difficile à prouver."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_tablette:
-
     $ pnc_flags["tablette"] = True
-
-    "Je réveille la tablette et parcours rapidement les dernières activités."
-    "Aucun accès récent. Aucun message. Rien qui explique le bruit."
-
-    think "Même les traces numériques sont muettes."
-
+    "J'ouvre l'historique de ma tablette. Aucune activité inhabituelle."
+    noam fatigue "Ça aurait été trop simple."
+    "Je passe à deux doigts d'envoyer un message à Elias pour lui demander s'il est réveillé, puis je renonce."
+    think "Il mérite probablement une nuit sans que je lui parle de bruits dans les murs."
     call screen pnc_chambre_j12()
     return
+
 
 label _12_0_1_1_photo_juliette:
-
     $ pnc_flags["photo_juliette"] = True
-    "Mon regard s'arrête sur l'emplacement vide du cadre."
-    think "Le dessin de Juliette n'est toujours pas revenu. Rien n'a bougé autour."
+    "L'emplacement du dessin de Juliette est toujours vide."
+    "Je touche le bord du cadre, puis retire ma main."
+    noam faible "Je vais le retrouver."
+    "Je suis incapable de dire si je fais cette promesse à elle ou à moi."
     call screen pnc_chambre_j12()
     return
 
-label _12_0_1_1_recoucher:
 
+label _12_0_1_1_recoucher:
     if len(pnc_flags) < 3:
-        think "Pas encore. Je dois vérifier au moins quelques endroits avant de me recoucher."
+        think "Pas encore. Si je me recouche sans vérifier, je vais simplement rester à écouter le moindre bruit."
         call screen pnc_chambre_j12()
         return
-
-    "Je reste un moment debout au milieu de la chambre, puis je soupire."
-
-    think "Je deviens complètement dingue…"
-    think "Il faut que je dorme."
-
-    "Je me recouche, mais le sommeil met longtemps à revenir."
-
+    "Je reviens au milieu de la pièce. Rien ne manque de plus. Rien ne permet de dire que quelqu'un est entré."
+    noam fatigue "Bon. Je suis officiellement le pire enquêteur du Conclave."
+    "Je coupe l'éclairage, puis me recouche."
+    "Juste avant de fermer les yeux, je vérifie une dernière fois le verrou."
     jump _12_0_1_1_CAFETERIA
 
-# Fin du label principal
+
 label _12_0_1_1_CAFETERIA:
 
     $ current_period = "Matin"
