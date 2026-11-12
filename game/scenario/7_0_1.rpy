@@ -1305,7 +1305,7 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     elen rire "Mais c'était ma part !"
     julian surpris "Ah."
     lysa blase "Voilà. Premier crime du monde sans Kami : vol de dessert."
-    elias taquin "On peut lancer une enquête. Je suis sûr que le suspect porte encore les preuves autour de la bouche."
+    elias rire "On peut lancer une enquête. Je suis sûr que le suspect porte encore les preuves autour de la bouche."
     julian hesitation "Je ne vois absolument pas de quoi tu parles."
     iris colere "Et EN PLUS tu nous prends pour des imbéciles !"
     noam sourire "Vous avez l'air de bien vous amuser."
@@ -1353,7 +1353,7 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     iris taquin "Enfin une proposition raisonnable."
     julian joie "Je demande à en être nommé organisateur officiel."
     mara taquin "Refusé à l'unanimité."
-    julian desaccord "Tu n'as même pas organisé de vote !"
+    julian surpris "Tu n'as même pas organisé de vote !"
     lysa rire "Tu vois ? On progresse déjà."
     "Une minute plus tard, le ton remonte. Elen a décidé qu'on devait porter un toast à quelque chose, sans parvenir à trouver quoi."
     call j701_play_plate from _call_j701_play_plate
@@ -1455,7 +1455,7 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
         ("elen", "joie"), ("noam", "neutre")
     ])
     elen joie "Mais tu as caché la carte sous ton coude !"
-    julian colere "C'est une technique de prestidigitation !"
+    julian surpris "C'est une technique de prestidigitation !"
     mara taquin "C'est une technique de triche avec un costume."
     iris rire "Tu vois ? Même quand Kami disparaît, on peut encore compter sur Julian pour nous mentir."
     julian taquin "Mes secrets sont à la hauteur de mon charme."
