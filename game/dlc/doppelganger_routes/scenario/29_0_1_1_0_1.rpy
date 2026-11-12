@@ -718,7 +718,7 @@ label _29_0_1_1_0_1_OBJECTIONS:
         jump _29_0_1_1_0_1_OBJECTIONS
 
     if j29a_objections == 3:
-        mara mefiant "Tomas s'est mis tout le monde à dos avec ce vote. Voilà votre mobile."
+        lysa blase "Tomas s'est mis tout le monde à dos avec ce vote. Voilà votre mobile."
         call refutation_run("j29_mobile")
         if _return[0] == "success":
             call play_noam_interupt
