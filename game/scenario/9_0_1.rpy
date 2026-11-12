@@ -389,6 +389,13 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     nyra raison "Une fois le texte adopté, les campements constitués avant le vote seront-ils couverts ?"
     sael determine "C'est une question légitime."
     lysa blase "Et accessoirement une question qui prend du temps."
+    noam determine "Kami, on ne te laissera pas esquiver ça aussi facilement."
+    call refutation_run("j9_regroupements")
+    if _return[0] == "success":
+        call play_noam_interupt
+        tomas raison "On a encore le droit de demander des précisions avant de voter !"
+    else:
+        nyra reflexion "Elle ne nous donnera pas plus. Il va falloir avancer avec ce qu'on sait."
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
