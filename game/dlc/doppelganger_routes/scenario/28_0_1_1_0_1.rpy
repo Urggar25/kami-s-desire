@@ -436,6 +436,13 @@ label _28_0_1_1_0_1_ANALYSE:
     noam reflexion "Et nos maux de tête ?"
     sael raison "Ça colle avec une exposition. Mais entre la nourriture pourrie et ce qu'on a trouvé, on ne peut pas isoler une cause."
     lysa reflexion "Les somnifères, alors ?"
+    noam inquiet "On a un flacon, oui. Mais maintenant on a aussi ce montage dans le conduit."
+    call refutation_run("j28_tomas")
+    if _return[0] == "success":
+        call play_noam_interupt
+        iris raison "Exact. Le flacon ne suffit pas à conclure au suicide. Il faut poursuivre les analyses."
+    else:
+        sael neutre "Pas d'accusation pour l'instant. On doit encore vérifier le dispositif."
     sael neutre "On n'a toujours pas la preuve qu'il en ait pris. Le flacon était là. C'est tout."
     iris fatigue "Et on ne sait même pas depuis quand ce montage est dans le conduit."
     "Je regarde les trois photos : la plaque, le récipient et la chambre."
