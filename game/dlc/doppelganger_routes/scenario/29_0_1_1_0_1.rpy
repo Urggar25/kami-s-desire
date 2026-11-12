@@ -673,58 +673,63 @@ label _29_0_1_1_0_1_REUNION:
 # Durée : ~1m30.
 
 label _29_0_1_1_0_1_OBJECTIONS:
+    # Quatre réfutations au lieu des menus binaires, avec des voix différentes.
+    # Chaque réponse doit s'appuyer sur une information déjà présentée par l'enquête.
     if j29a_objections >= 4:
         jump _29_0_1_1_0_1_ACCUSATION
-    if j29a_objections == 0:
-        menu:
-            "« La chambre était fermée. Il ne pouvait pas y avoir de meurtrier. »"
-            "Montrer le dispositif d'aération":
-                $ j29a_objections = 1
-                noam raison "Quelqu'un a pu préparer le dispositif depuis la maintenance. Pas besoin d'entrer dans la chambre."
-                kael raison "Oui. L'accès technique permet d'atteindre cette branche."
-                julian inquiet "D'accord. J'avais pas pensé à ça."
-            "Montrer le livre de Tomas":
-                $ j29a_erreurs += 1
-                lysa raison "Le livre nous dit rien sur la porte. Regarde plutôt les photos du conduit."
-        jump _29_0_1_1_0_1_OBJECTIONS
-    if j29a_objections == 1:
-        menu:
-            "« Le flacon prouve que Tomas voulait mourir. »"
-            "Présenter les conclusions d'Iris":
-                $ j29a_objections = 2
-                iris raison "On ne sait même pas s'il a pris les comprimés. Les signes d'intoxication et le dispositif sont beaucoup plus importants."
-                elen triste "Je savais qu'on pouvait pas conclure comme ça..."
-            "Présenter les menaces reçues sur Terre":
-                $ j29a_erreurs += 1
-                noam fatigue "Les menaces expliquent pourquoi il allait mal. Pas ce qui l'a tué."
-        jump _29_0_1_1_0_1_OBJECTIONS
-    if j29a_objections == 2:
-        menu:
-            "« La plante ne pousse qu'à Limen. »"
-            "Rappeler les autres régions arides et les livraisons":
-                $ j29a_objections = 3
-                sael raison "Exactement. Le lieu de croissance d'une plante ne dit pas qui l'a apportée."
-                ryn fatigue "Merci. C'est ce que j'essaie de dire depuis hier."
-                nyra neutre "Et on reçoit régulièrement des marchandises des autres districts."
-            "Accuser Ryn parce qu'il connaît le nom de la plante":
-                $ j29a_erreurs += 1
-                ryn colere "Mais tu m'écoutes quand je parle, ou pas ?!"
-                noam fatigue "Non. C'est pas suffisant."
-        jump _29_0_1_1_0_1_OBJECTIONS
-    if j29a_objections == 3:
-        menu:
-            "« Tomas n'avait aucune autre raison d'être visé que son vote. »"
-            "Présenter Keyper et l'appareil disparu":
-                $ j29a_objections = 4
-                noam raison "Il enquêtait encore sur Keyper et sur un appareil qu'il avait trouvé. Ça pouvait aussi déranger quelqu'un."
-                julian reflexion "Mais tu sais pas ce que c'était."
-                noam raison "Non. C'est une deuxième piste, pas un mobile démontré."
-            "Présenter le verrou de la chambre":
-                $ j29a_erreurs += 1
-                lysa raison "Ça nous dit comment le meurtre a pu être fait, pas pourquoi."
-        jump _29_0_1_1_0_1_OBJECTIONS
-# Durée : ~3m00, selon les tentatives.
 
+    if j29a_objections == 0:
+        julian reflexion "La porte était fermée. Alors explique-moi comment quelqu'un serait entré."
+        call refutation_run("j29_porte")
+        if _return[0] == "success":
+            call play_noam_interupt
+            noam raison "Par les conduits. La porte ne protège pas toute la pièce."
+            kael raison "Oui. La branche de maintenance rejoint la chambre."
+            julian inquiet "D'accord. Ça change pas mal de choses."
+            $ j29a_objections = 1
+        else:
+            $ j29a_erreurs += 1
+            lysa blase "Noam, le livre ne dit rien sur l'accès à la chambre. Regarde les photos."
+        jump _29_0_1_1_0_1_OBJECTIONS
+
+    if j29a_objections == 1:
+        elen triste "Et les comprimés ? On va pas faire comme si le flacon n'existait pas."
+        call refutation_run("j29_flacon")
+        if _return[0] == "success":
+            call play_noam_interupt
+            iris raison "On ne sait pas si Tomas en a pris. Ce n'est pas une preuve de suicide."
+            $ j29a_objections = 2
+        else:
+            $ j29a_erreurs += 1
+            iris fatigue "Les menaces expliquent son état. Pas sa mort."
+        jump _29_0_1_1_0_1_OBJECTIONS
+
+    if j29a_objections == 2:
+        julian inquiet "Et cette plante ? Ça vient de Limen, non ?"
+        call refutation_run("j29_plante")
+        if _return[0] == "success":
+            call play_noam_interupt
+            sael raison "La plante ne pousse pas qu'à Limen, et les livraisons circulent entre districts."
+            ryn fatigue "Merci. J'en ai marre d'être un suspect juste parce que je connais un nom."
+            $ j29a_objections = 3
+        else:
+            $ j29a_erreurs += 1
+            ryn colere "Tu vas pas m'accuser pour une plante que j'ai jamais touchée !"
+        jump _29_0_1_1_0_1_OBJECTIONS
+
+    if j29a_objections == 3:
+        mara mefiant "Tomas s'est mis tout le monde à dos avec ce vote. Voilà votre mobile."
+        call refutation_run("j29_mobile")
+        if _return[0] == "success":
+            call play_noam_interupt
+            noam raison "Il enquêtait aussi sur Keyper et sur un appareil disparu. On ne peut pas écarter cette piste."
+            julian reflexion "Mais tu ne sais toujours pas ce que c'était."
+            noam raison "Non. C'est une piste, pas une preuve."
+            $ j29a_objections = 4
+        else:
+            $ j29a_erreurs += 1
+            lysa blase "Le verrou explique peut-être comment c'est arrivé. Pas pourquoi."
+        jump _29_0_1_1_0_1_OBJECTIONS
 
 label _29_0_1_1_0_1_ACCUSATION:
     scene bg_conclave at adaptive_fullscreen with dissolve
