@@ -34,6 +34,8 @@ default j3_codex_dot = False
 default j45_vote_codex_active = False
 default day3_cafeteria_route_kael_seen = False
 default day3_cafeteria_route_julian_seen = False
+# Empêche de créditer plusieurs fois la récompense de la réfutation de Julian.
+default day3_julian_clash_rewarded = False
 # Course des 3 virages : nombre de réussites + malus/bonus d'influence sur Tomas,
 # appliqué au vote après la remise à zéro des adhésions (phase 1 du débat).
 default day3_corridor_success = 0
