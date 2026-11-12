@@ -123,7 +123,7 @@ init python:
     )
 
     refutation_register(
-        "j28_tomas", title=_("TOMAS — SUICIDE OU MEURTRE ?"), bg="bg_conclave",
+        "j28_tomas", title=_("TOMAS — SUICIDE OU MEURTRE ?"), bg="bg_infirmerie",
         statements=[
             ("lysa", "reflexion", _("Il y avait un flacon. [[Ça ressemble à un suicide]].")),
             ("sael", "raison", _("On ne sait même pas [[s'il a pris ces comprimés]].")),
