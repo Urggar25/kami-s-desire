@@ -445,6 +445,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     elen inquiet "Mais si on interdit les brouilleurs, on n'aura jamais la certitude de ce qui s'est passé dans sa chambre..."
     tomas raison "Pas forcément. Il y a ce délai de sept jours. Les données restent indisponibles pendant cette période, même avec l'appareil en place."
     $ unlock_dossier_arg("p4_delai")
+    call play_stat_dialogue("j12") from _call_play_stat_dialogue_11
     iris reflechit "On sait déjà tout ça. Kael a essayé d'accéder aux archives."
     kael fatigue "Oui. J'ai essayé."
     noam reflexion "Et les couloirs, eux..."
