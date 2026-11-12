@@ -351,552 +351,319 @@ label _call_MAYBE_PLAY_SCRIPTED_DOOR_60:
     jump _12_0_1_1_ATTENTE_VOTE
 
 label _12_0_1_1_ATTENTE_VOTE:
-
     $ current_period = "Après-midi"
     scene bg_conclave at adaptive_fullscreen with fade
-    play music "music/bgm_world_decline.mp3" fadein 3.0
-
-    "J'arrive dans la salle du Conclave alors que les derniers représentants prennent place."
-    think "14h… Le moment est venu."
-
-    "Les haut-parleurs crachent soudain la voix de Kami."
-
-    play sound sfx_announce
-    show screen kami_broadcast_ui
-    pause 1.0
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Mes chers représentants, votre attention s’il vous plaît."
-    kami "Le débat sur l’autorisation ou l’interdiction des dispositifs de brouillage va débuter dans quelques minutes."
-    kami "Je vous attends tous dans la Salle du Conclave. Ne tardez pas~"
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et essayez de ne pas vous entretuer avant le vote, ce serait dommage."
-
-    hide screen kami_broadcast_ui
-
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    "Presque tout le monde est déjà là. L’ambiance est lourde, électrique."
-
+    play music "music/bgm_world_decline.mp3" fadein 2.0
+    "Lorsque j'arrive, plusieurs représentants sont debout. Julian gesticule avec une tablette à la main pendant que Mara fait semblant de ne pas l'écouter."
     $ showGroup([
-        ("elias", "fatigue", -0.11),
-        ("mara", "stress", 0.01),
-        ("noam", "triste", 0.13),
-        ("lysa", "inquiet", 0.25),
-        ("julian", "hesitation", 0.37),
-        ("iris", "inquiet", 0.49),
-        ("tomas", "raison", 0.60),
-        ("elen", "inquiet", 0.72),
-        ("kael", "calme", 0.84),
-        ("nyra", "raison", 0.96),
-        ("ryn", "colere", 1.08),
-        ("sael", "mefiant", 1.20),
+        ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
+        ("noam", "fatigue", 0.13), ("lysa", "inquiet", 0.25),
+        ("julian", "hesitation", 0.37), ("iris", "inquiet", 0.49),
+        ("tomas", "raison", 0.60), ("elen", "inquiet", 0.72),
+        ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
+        ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-
-    "Je m’installe discrètement à ma place habituelle."
-
-    tomas "Bon… on y est."
-    tomas "Je pense qu’on est tous d’accord pour dire que ce vote est crucial."
-
-    mara "Évidemment qu’on autorise les brouilleurs !"
+    julian taquin "Je vous explique qu'on ne peut pas se présenter à un vote pareil sans un minimum de dignité vestimentaire !"
+    mara agace "Et moi je t'explique que ton col est de travers depuis ce matin."
+    julian surpris "QUOI ?!"
+    "Il se précipite sur le reflet d'un écran éteint."
+    lysa blase "T'es cruelle, Mara."
+    mara taquin "Je sais. Ça me détend."
+    iris fatigue "Vous pouvez le laisser tranquille ? Il va encore monopoliser une heure à se recoiffer."
+    elen rire "Au moins, on parlerait pas du vote !"
+    "Elle s'interrompt en remarquant les regards des autres."
+    ryn colere "Moi, j'ai très envie qu'on en parle, du vote."
+    tomas inquiet "On a encore quelques minutes. Ce n'est pas la peine de..."
+    ryn colere "De quoi ? De se préparer ?"
+    tomas "De commencer en s'engueulant."
+    ryn colere "Bonne chance."
+    "Elias s'est installé devant un verre vide. Il ne participe pas. Kael, lui, garde les mains sur la tablette qu'il n'a pas quittée depuis notre arrivée."
+    noam neutre "Salut."
+    elias fatigue "Tiens. Le survivant."
+    noam taquin "Je vois que tout le monde est très original aujourd'hui."
+    elias sourire "J'ai décidé de suivre la mode."
+    iris inquiet "Noam, tu tiens le coup ?"
+    noam fatigue "Sael m'a fait passer un interrogatoire médical. Je suppose que oui."
+    sael neutre "J'ai posé quatre questions."
+    noam taquin "Et elles étaient toutes difficiles."
+    sael mefiant "Tu as dormi combien d'heures ?"
+    noam fatigue "Ça fait une cinquième."
+    "Sael soupire. Au fond de la salle, Ryn repousse violemment un siège."
+    ryn colere "BON. Qui est contre les brouilleurs ? Qu'on sache tout de suite."
+    nyra raison "Ce n'est pas comme ça que fonctionne un scrutin secret."
+    ryn colere "Je pose une question, pas un bulletin."
+    sael determine "Et tu mets les gens sous pression avant qu'ils aient parlé."
+    ryn colere "Je veux éviter un nouveau vote où quelqu'un nous poignarde dans le dos."
+    "Je relève la tête. L'expression me reste désagréablement en travers de la gorge."
+    mara stress "T'as pas besoin de parler de poignarder quelqu'un à chaque fois qu'on entre ici."
+    ryn colere "J'ai pas dit que j'allais le faire !"
+    lysa blase "C'est précisément pour ça que tu devrais choisir un autre verbe."
+    "Un rire nerveux traverse la table, trop bref pour faire oublier ce qui s'est passé au jour neuf."
+    play sound sfx_announce
+    $ hideGroup()
+    show screen kami_broadcast_ui
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 1.0
+    kami "VOILÀÀÀ ! Vous êtes presque à l'heure ! Et quel joli brouhaha, j'aurais dû vendre des billets."
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Aujourd'hui, vous devez décider si les dispositifs de brouillage peuvent être possédés, fabriqués et utilisés librement dans les limites des autres Commandements."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Unanimité favorable : l'autorisation entre en vigueur. Sinon, les interdictions et les sanctions prévues s'appliqueront aux zones qui continueront à les utiliser."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Je vous laisse un dernier instant pour exprimer vos idées. Et rappelez-vous : parler n'a jamais suffi à éviter un vote."
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_world_decline.mp3" fadein 1.0
+    $ showGroup([
+        ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
+        ("noam", "fatigue", 0.13), ("lysa", "inquiet", 0.25),
+        ("julian", "hesitation", 0.37), ("iris", "inquiet", 0.49),
+        ("tomas", "raison", 0.60), ("elen", "inquiet", 0.72),
+        ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
+        ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
+    ])
+    mara stress "C'est oui. Pour moi, ça ne devrait même pas se discuter."
     $ unlock_dossier_arg("p4_intimite")
-    mara stress "J’en peux plus de savoir que Kami peut nous mater 24h/24 !"
-
-    elen "Moi aussi ! J’ai envie de pouvoir danser dans ma chambre sans me sentir jugée !"
-
-    julian taquin "Et moi j’ai envie de pouvoir dire des conneries sans que Kami les enregistre pour plus tard."
-
-    iris "C’est clair… La vie privée, c’est important."
-
-    "Je les écoute en silence, les bras croisés."
-
-    think "Tout le monde est pour."
-    think "Même ceux qui étaient hésitants hier semblent avoir basculé."
-
-    sael "Techniquement, tant qu’on respecte les Commandements, on devrait pouvoir avoir notre intimité."
-
-    kael calme "… Tant qu’on respecte les Commandements, oui."
-
-    "Je serre les mâchoires."
-
-    think "Et si on n’avait pas de brouilleurs…"
-    think "Est-ce qu’on aurait pu savoir qui m’a volé mes affaires ?"
-    think "Est-ce qu’on aurait pu savoir qui a volé la photo de la sœur de Kael ?"
-
-    think "Les brouilleurs… ils protègent peut-être notre intimité…"
-    think "… mais ils protègent surtout ceux qui veulent agir dans l’ombre."
-
-    "Cette pensée me reste en travers de la gorge."
-
-    ryn colere "Moi je dis qu’on autorise tout ça. Point final."
-    ryn "J’en ai marre de vivre dans un putain de reality show."
-
-    nyra raison "Il faut juste faire attention aux conséquences. Si tout le monde a des brouilleurs, on ne pourra plus rien prouver."
+    elen joie "Moi aussi. Je veux pouvoir parler dans ma chambre sans me demander si Kami garde chaque phrase quelque part."
+    julian taquin "Et je tiens particulièrement à pouvoir critiquer ce lieu sans qu'une IA me rappelle mes propos au petit-déjeuner."
+    iris desaccord "Tu le fais déjà."
+    julian "Précisément. Je suis un homme de principes."
+    elias reflechit "Ouais, enfin... ça a aussi des inconvénients."
+    mara agace "Tu peux pas commencer par être d'accord et t'arrêter là, une fois ?"
+    elias fatigue "J'ai essayé. Ça m'a tenu quatre secondes."
+    nyra raison "Il faut distinguer le droit à la vie privée du fait qu'un brouilleur peut compliquer une enquête."
     $ unlock_dossier_arg("p4_preuves")
-
-    "Je reste muet."
-
-    think "Exactement."
-    think "Les brouilleurs permettent l’insécurité."
-    think "Ils permettent à quelqu’un de se faire passer pour moi, d’effacer des preuves, de voler… sans qu’on puisse jamais rien prouver."
-
-    "Iris me jette un regard en coin."
-
-    iris inquiet "Noam… tu dis rien ?"
-
-    $ bc_show("noam", "fatigue", px=-70, py=-50, pz=0.85)
-    noam fatigue "… Je réfléchis."
-    $ bc_hide()
-
-    julian taquin "Allez, Noam ! T’es pas d’accord pour qu’on ait enfin un peu d’intimité ?"
-
-    "Je hausse légèrement les épaules."
-
-    noam "Si… bien sûr."
-
-    think "Mais à quel prix ?"
-
-    "La discussion continue autour de moi, animée, presque enthousiaste."
-    "Moi, je reste en retrait, perdu dans mes pensées."
-
-    think "Si on vote pour les brouilleurs… on donne encore plus de pouvoir à celui qui se cache parmi nous."
-    think "Et je suis le seul à m’en rendre compte ?"
-
-    pause 1.5
-
+    ryn colere "Donc tu veux que Kami puisse fouiller nos vies dès qu'une affaire tourne mal ?"
+    nyra reflechit "Ce n'est pas ce que j'ai dit."
+    ryn colere "Ça y ressemble."
+    kael calme "Ce serait quand même bien d'avoir les images quand on nous vole quelque chose."
+    "Sa voix est calme. Tout le monde l'a entendue."
+    $ unlock_dossier_arg("p4_voleur")
+    sael mefiant "Tu sais que personne ici ne minimise ce qui t'est arrivé."
+    kael triste "Alors arrêtez de me demander de patienter."
+    "Sael ne répond pas."
+    elen inquiet "Mais si on interdit les brouilleurs, on n'aura jamais la certitude de ce qui s'est passé dans sa chambre..."
+    tomas raison "Pas forcément. Il y a ce délai de sept jours. Les données restent indisponibles pendant cette période, même avec l'appareil en place."
+    $ unlock_dossier_arg("p4_delai")
+    iris reflechit "On sait déjà tout ça. Kael a essayé d'accéder aux archives."
+    kael fatigue "Oui. J'ai essayé."
+    noam reflexion "Et les couloirs, eux..."
+    "Je m'interromps. Lysa me regarde."
+    lysa reflechit "Quoi, les couloirs ?"
+    noam fatigue "Rien. Continuez."
+    lysa blase "Formidable. C'est devenu une habitude."
+    ryn colere "Je vote pour, et c'est tout ! Je suis pas venu jusqu'ici pour demander à une caméra la permission d'aller pisser."
+    mara taquin "Ça te ferait pas de mal de demander la permission avant certaines choses."
+    ryn colere "QUOI, ENCORE ?!"
+    sael determine "On peut être favorables au texte sans nier les risques. Et on peut parler des risques sans vouloir condamner ceux qui utilisent ces appareils."
+    elias reflechit "Merci. C'est à peu près ce que j'essayais de dire."
+    iris taquin "En beaucoup moins clair."
+    elias fatigue "Je sais."
+    "J'ai l'impression que nous rejouons la même dispute depuis des jours, avec des arguments différents et les mêmes visages de plus en plus fatigués."
+    noam inquiet "Et si quelqu'un se sert des brouilleurs pour nous faire du mal ?"
+    "La question m'échappe plus sèchement que je ne le voudrais."
+    julian inquiet "C'est une possibilité. Mais on ne peut pas retirer toute liberté simplement parce que quelqu'un pourrait mal agir."
+    noam reflechit "Et si c'est déjà arrivé ?"
+    iris inquiet "Noam..."
+    kael calme "C'est déjà arrivé. On m'a pris la photo de Léa."
+    mara stress "Et Noam a perdu le dessin de sa sœur."
+    lysa reflechit "Personne n'a encore prouvé que les brouilleurs avaient servi à ces vols."
+    "Elle dit ça en me regardant. Je détourne les yeux."
+    nyra raison "On devrait éviter de confondre ce qu'on sait et ce qu'on imagine."
+    "C'est une remarque raisonnable. Elle me donne pourtant envie de taper sur la table."
     jump _12_0_1_1_DEBAT_VOTE
 
+
 label _12_0_1_1_DEBAT_VOTE:
-
-    scene bg_conclave at adaptive_fullscreen with fade
-    play music "music/bgm_fatal_assembly.mp3" fadein 2.0
-
-    "Tout le monde parle. Moi, je n'arrive plus à suivre ce qui se dit."
-
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
+    "Le débat se poursuit, malgré les rappels de Kami. Je voudrais qu'on tranche, puis je me rappelle ce qui peut arriver lorsqu'on tranche trop vite."
     call j12_play_trolley_problem from _call_j12_play_trolley_problem
     $ j12011_vote_data = _return
-
     scene bg_conclave at adaptive_fullscreen with fade
-
-    # Le débat a déjà eu lieu avant la simulation : reprendre directement
-    # sur la révélation de Noam, sans rejouer les arguments.
+    "Je reste assis après la simulation. Plusieurs représentants ont déjà recommencé à parler autour de moi."
+    think "Quoi qu'on choisisse, on ne peut pas faire disparaître les risques en refusant d'y penser."
     jump _12_0_1_1_DEBAT_TRAITRE
+
 
 label _12_0_1_1_DEBAT_SECURITE:
-
+    # Compatibilité des anciennes sauvegardes : les débats alternatifs
+    # rejoignent désormais la confrontation commune.
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_fatal_assembly.mp3" fadein 2.5
-
-    "La Salle du Conclave est pleine. Tout le monde est présent. L’air est lourd, chargé d’électricité."
-
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
     $ showGroup([
-        ("elias", "fatigue", -0.11),
-        ("mara", "stress", 0.01),
-        ("noam", "fatigue", 0.13),
-        ("lysa", "inquiet", 0.25),
-        ("julian", "hesitation", 0.37),
-        ("iris", "inquiet", 0.49),
-        ("tomas", "raison", 0.60),
-        ("elen", "inquiet", 0.72),
-        ("kael", "calme", 0.84),
-        ("nyra", "raison", 0.96),
-        ("ryn", "colere", 1.08),
-        ("sael", "mefiant", 1.20),
+        ("noam", "fatigue", 0.18), ("kael", "calme", 0.42),
+        ("mara", "stress", 0.66), ("nyra", "raison", 0.88),
     ])
-
-    tomas "Bon… on ne va pas tourner autour du pot pendant trois heures."
-    tomas "Le vote est clair : est-ce qu’on autorise les dispositifs de brouillage, oui ou non ?"
-
-    mara stress "Pour moi c’est évident ! On autorise !"
-    mara "J’en peux plus de vivre comme dans une télé-réalité où Kami nous mate 24h sur 24 !"
-    mara "Je veux pouvoir me changer, parler librement, ou même pleurer sans que quelqu’un, ou quelque chose, analyse mes larmes !"
-
-    elen "Moi aussi ! J’ai envie de danser comme une folle dans ma chambre sans me demander si elle est en train de me noter sur 10 !"
-
-    julian taquin "Et moi j’ai envie de pouvoir dire que Kami est une grosse sadique sans qu’elle me le rappelle gentiment le lendemain."
-
-    "Quelques rires nerveux parcourent la salle."
-
-    call play_stat_dialogue("j12") from _call_play_stat_dialogue_11
-
-    elias fatigue "Je comprends l’idée, mais le sujet est quand même important."
-    elias fatigue "Sans ça, Kami pourra plus ni nous surveiller, ni nous protéger..."
-
-    lysa inquiet "Alors pas vraiment."
-    lysa inquiet "Même avec les brouilleurs, Kami peut avoir accès aux vidéos, mais après une semaine de délai."
-    $ unlock_dossier_arg("p4_delai")
-
-    nyra raison "Je peux comprendre l’envie d’intimité… mais il ne faut pas oublier les risques."
-    nyra "Si tout le monde a des brouilleurs, comment on prouve quoi que ce soit ?"
-    nyra "Le vol chez Kael, par exemple… on ne saura jamais qui c’était."
-
-    kael "… Exactement."
-
-    "Kael parle d’une voix basse, mais tout le monde se tait un instant."
-
-    kael "Si on autorise les brouilleurs, peut-être que je ne saurai jamais qui m'a volé la photo de ma sœur."
-    $ unlock_dossier_arg("p4_voleur")
-    kael "Je veux savoir qui c'est."
-
-    ryn colere "Et alors ? Tu préfères vivre en prison dorée juste pour avoir une chance de choper un voleur ?"
-    ryn "Moi je dis : l'important c'est d'être libre. On n’est pas des animaux de foire."
-
-    sael mefiant "C’est facile à dire tant que ce n’est pas toi qui t’es fait voler un truc précieux."
-
-    "La discussion s’enflamme petit à petit. Je reste silencieux, les bras croisés, à écouter."
-
-    think "Tout le monde penche pour l’autorisation…"
-    think "Même ceux qui étaient hésitants hier ont l'air plus convaincus."
-
-    iris "Noam ? Tu dis rien ?"
-
-    "Tous les regards se tournent vers moi."
-
-    noam fatigue "… Je réfléchis."
-
-    julian taquin "Noam, on peut au moins décider de ce qu'on fait dans nos chambres, non ? T'es avec nous ?"
-
-    think "Si on vote pour les brouilleurs…"
-    think "Tout le monde pourra vivre l'esprit plus serein..."
-    think "Il faudra plusieurs jours à Kami pour savoir ce qui se passe sous les brouilleurs..."
-
-    think "Mais si on vote contre…"
-    think "On reste sous la surveillance totale de Kami."
-    think "Elle saura tout. Absolument tout. Tout le temps."
-
-    "Je serre les dents."
-
-    noam raison "… La sécurité."
-
-    "Le mot sort plus sèchement que prévu."
-
-    noam "Je ne dis pas que ça me plaît."
-    noam fatigue "Je ne dis pas que vivre sous caméra, c’est normal."
-    noam determine "Mais les brouilleurs ne protègent pas seulement notre intimité. Ils nous protègent aussi de ceux qui veulent profiter de cette intimité."
-
-    elen "Noam…"
-
-    noam "S’il n’y avait pas eu ces zones mortes, ces coupures, ces moyens de disparaître…"
-    noam colere "On saurait déjà qui a volé les affaires de Kael."
-    noam colere "Et on saurait aussi qui a touché aux miennes."
-
-    "Kael relève lentement les yeux vers moi."
-
-    kael reflechit "…"
-
-    noam fatigue "On peut appeler ça liberté si vous voulez."
-    noam "Je ne suis au final pas sûr que ce soit l'idéal."
-
-    mara stress "Donc ta solution, c’est de laisser Kami nous regarder jusque dans nos chambres ?"
-
-    noam desaccord "il n'y a pas de solution parfaite."
-
-    "Je sens tous les regards peser sur moi."
-
-    "La discussion reprend de plus belle autour de moi, mais je n’écoute plus vraiment."
-
-    pause 1.5
-
+    noam reflexion "Je sais ce que vous allez dire : qu'il faut accepter le risque pour avoir un peu de liberté."
+    mara stress "Si tu veux nous répondre, réponds. Mais nous fais pas le discours à notre place."
+    noam inquiet "Quelqu'un a volé des affaires dans nos chambres, et les caméras ne nous aideront pas avant plusieurs jours."
+    kael calme "Je le sais. Crois-moi."
+    nyra raison "Le problème existe. Autoriser les brouilleurs ne le résoudra pas, mais les interdire n'effacera pas les vols."
+    noam fatigue "Je sais."
+    "Je baisse les yeux. Ce que je voudrais vraiment dire n'a presque rien à voir avec les appareils."
     jump _12_0_1_1_DEBAT_TRAITRE
+
 
 label _12_0_1_1_DEBAT_LIBERTE:
-
+    # Compatibilité des anciennes sauvegardes : conserver ce label.
     scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_fatal_assembly.mp3" fadein 2.5
-
-    "La Salle du Conclave est pleine à craquer. L’atmosphère est électrique, presque fiévreuse."
-
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
     $ showGroup([
-        ("elias", "fatigue", -0.11),
-        ("mara", "stress", 0.01),
-        ("noam", "neutre", 0.13),
-        ("lysa", "inquiet", 0.25),
-        ("julian", "hesitation", 0.37),
-        ("iris", "inquiet", 0.49),
-        ("tomas", "raison", 0.60),
-        ("elen", "inquiet", 0.72),
-        ("kael", "calme", 0.84),
-        ("nyra", "raison", 0.96),
-        ("ryn", "colere", 1.08),
-        ("sael", "mefiant", 1.20),
+        ("noam", "fatigue", 0.18), ("ryn", "colere", 0.42),
+        ("sael", "mefiant", 0.66), ("lysa", "inquiet", 0.88),
     ])
-
-    tomas "Très bien… Il faut qu'on arrête de tourner autour du pot."
-    tomas "Le vote d’aujourd’hui est clair : est-ce qu’on autorise les dispositifs de brouillage, oui ou non ?"
-
-    mara stress "Autoriser ! Évidemment qu’on autorise !"
-    mara "Je refuse de continuer à vivre comme une souris de laboratoire !"
-    mara "Je veux pouvoir fermer ma porte, parler librement, pleurer, crier, ou même me disputer sans que Kami analyse tout ce que je fais !"
-
-    elen "Exactement ! J’en ai marre de me sentir observée même quand je danse seule dans ma chambre !"
-
-    julian taquin "Moi je veux pouvoir insulter Kami tranquillement sans qu’elle me le ressorte six mois plus tard avec un petit smiley sadique."
-
-    elias fatigue "Je ne vais pas mentir… moi aussi, l’idée de pouvoir respirer deux minutes sans caméra me tente."
-    elias reflechit "Même si je comprends aussi l'intérêt des caméras."
-
-    lysa inquiet "Ça ne règle pas tout. Mais continuer comme ça, avec Kami partout, tout le temps… C'est quand même particulier..."
-
-    ryn colere "Liberté ! Point final !"
-    ryn "On n’est pas des putains de prisonniers ! On mérite de pouvoir avoir un minimum d’intimité dans cet enfer !"
-
-    "Plusieurs voix s’élèvent en soutien. L’énergie est clairement du côté de la liberté."
-
-    nyra raison "Je comprends l’envie… vraiment."
-    nyra "Mais on ne peut pas ignorer les risques. Si tout le monde porte un brouilleur, comment on prouve quoi que ce soit ?"
-
-    kael "… Comme ce qui m’est arrivé."
-
-    "Le silence retombe un instant."
-
-    kael calme "Kami m'a dit que si on interdit les brouilleurs, je n’aurai probablement jamais accès aux images de ma chambre."
-    kael triste "Les brouilleurs seront désinstallés dans toutes les chambres, les images capturées avec..."
-    kael "Le voleur restera invisible. Pour toujours."
-
-    sael mefiant "Et si on les interdit ? On reste sous la surveillance totale de Kami. C’est encore moins la solution."
-
-    mara "Exactement ! On échange une prison contre une autre !"
-    mara "Moi je préfère risquer l’insécurité plutôt que de vivre dans une cage dorée."
-    mara "Qu'est-ce que je risque hein ?! A part qu'un bel homme ait envie de se glisser dans ma chambre ?"
-
-    "La discussion devient de plus en plus animée. Je reste silencieux, les bras croisés, à écouter."
-
-    iris "Noam ? Tu n’as toujours rien dit ?"
-
-    "Les regards convergent vers moi."
-
-    noam fatigue "… Je réfléchis encore."
-
-    julian taquin "Noam ! On a une chance de récupérer un peu de liberté. Tu vas quand même pas nous laisser passer à côté ?"
-
-    "Je sens ma mâchoire se crisper."
-
-    noam fatigue "… Ouais."
-
-    "Le mot me laisse un goût amer dans la bouche."
-
-    noam "Je ne dis pas que c’est sans risque."
-    noam hesitation "Je ne dis pas que Kael a tort. Ni Nyra. Ni Tomas."
-    noam "Mais si on accepte que Kami voie tout, tout le temps, alors on ne vote plus pour notre sécurité."
-    noam desaccord "On vote pour notre obéissance totale à ses règles, même quand elles sont absurdes."
-
-    elen "Donc tu es avec nous ?"
-
-    noam fatigue "Je suis avec personne."
-    noam "Je veux juste qu’on garde un endroit où on peut juste être soi-même."
-
-    mara stress "Voilà. C’est exactement ça."
-
-    kael calme "Et si quelqu’un utilise cet endroit pour voler encore ?"
-
-    noam "Alors il faudra le coincer autrement."
-    noam "..."
-
-    "Je baisse légèrement les yeux."
-
-    think "Je ne crois même pas totalement à ce que je viens de dire."
-    think "Pas comme eux."
-    think "Pas tant que je ne sais pas qui, parmi eux, est responsable de tout ça."
-
-    "La discussion reprend de plus belle, passionnée et bruyante."
-    "Moi, je reste en retrait, le cœur lourd et l’esprit tourmenté."
-
-    pause 1.5
-
+    ryn colere "J'ai pas signé pour qu'une IA puisse regarder chez moi quand elle veut !"
+    sael mefiant "Personne ne te demande de lui remettre tes clés."
+    noam reflexion "Je veux aussi qu'elle nous laisse tranquilles. Je sais juste plus si ça suffira à nous protéger."
+    lysa reflechit "Ça ne suffira pas. Mais ça n'en fait pas une mauvaise décision."
+    "Ryn se tait. Moi aussi."
     jump _12_0_1_1_DEBAT_TRAITRE
 
+
 label _12_0_1_1_DEBAT_TRAITRE:
-
-    play music "music/bgm_fatal_assembly.mp3" fadein 1.5
-
+    play music "music/bgm_fatal_assembly.mp3" fadein 1.0
     $ showGroup([
-        ("elias", "fatigue", -0.11),
-        ("mara", "stress", 0.01),
-        ("noam", "neutre", 0.13),
-        ("lysa", "inquiet", 0.25),
-        ("julian", "hesitation", 0.37),
-        ("iris", "inquiet", 0.49),
-        ("tomas", "raison", 0.60),
-        ("elen", "inquiet", 0.72),
-        ("kael", "calme", 0.84),
-        ("nyra", "raison", 0.96),
-        ("ryn", "colere", 1.08),
-        ("sael", "mefiant", 1.20),
+        ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
+        ("noam", "fatigue", 0.13), ("lysa", "inquiet", 0.25),
+        ("julian", "hesitation", 0.37), ("iris", "inquiet", 0.49),
+        ("tomas", "raison", 0.60), ("elen", "inquiet", 0.72),
+        ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
+        ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-
-    "Le débat fait rage depuis plusieurs minutes. Les voix se chevauchent, les arguments fusent."
-
-    mara stress "Bon, on passe au vote et on autorise les brouilleurs, point final ! J’en peux plus de cette surveillance constante !"
-
-    ryn colere "Ouais ! On n’est pas des putains de cobayes !"
-
-    tomas "O-Ouais... C'est peut-être pour le mieux..."
-
-    "Je sens quelque chose craquer en moi."
-    "Toutes ces discussions… ces belles paroles… alors que quelqu’un, ici, a effacé les images des caméras."
-
-    noam colere "FERMEZ-LA !"
+    mara stress "Bon. On a fait le tour, non ? On peut enfin voter ?"
+    tomas inquiet "Il manque encore quelques précisions sur le texte."
+    ryn colere "Sérieusement, Tomas ?!"
+    tomas raison "Oui, sérieusement. Le statut des dispositifs existants, par exemple."
+    elias fatigue "Oh, non. On va refaire l'épisode des campements."
+    elen inquiet "Ne dis pas ça..."
+    julian taquin "Je propose qu'on vote pour ne plus jamais entendre l'expression « déclaration préalable »."
+    iris desaccord "Julian, ferme-la une seconde."
+    "Les discussions repartent. Je regarde successivement les visages. Elen qui se mord la lèvre, Elias qui s'enfonce dans son fauteuil, Kael qui ne lâche pas sa tablette."
+    think "Hier, ils étaient tous dans ma chambre. Ils m'ont apporté à manger. J'ai même ri avec eux."
+    think "Les données de la caméra ont été supprimées. Kami a dit qu'un accès autorisé était responsable."
+    "Je regarde le siège de Lysa. Elle me fixe déjà."
+    lysa inquiet "Noam ?"
+    noam fatigue "..."
+    mara agace "Non, mais c'est bon, on peut discuter pendant trois jours de toute façon, ça changera rien au..."
+    noam colere "ARRÊTEZ !"
     with vpunch
-
-    "Le silence tombe d’un coup sur la salle. Tout le monde se tourne vers moi, stupéfait."
-
-    iris inquiet "Noam… ?"
-
-    noam colere "Vous êtes tous là à débattre comme si tout était normal !"
-    noam colere "Comme si on était une grande famille heureuse qui doit juste choisir entre avoir un peu d'intimité et vivre en sécurité !"
-    noam desespoir "Mais vous êtes aveugles ou quoi ?!"
-
-    julian hesitation "Noam, calme-toi mec…"
-
-    noam colere "Me calmer ?!"
-    noam desespoir "Quelqu’un a supprimé les enregistrements des caméras hier soir !"
-    noam colere "Dans le couloir près de la salle de stockage ! Juste avant l’annonce !"
-    noam peur "Et ce quelqu’un est ici ! Parmi nous !"
-
-    "Un silence de plomb s’abat sur la salle."
-
-    sael mefiant "… Quoi ? De quoi tu parles ?!"
-
-    noam colere "J’ai demandé à Kami de me montrer les images. Elles ont été effacées !"
-    noam colere "Nettoyées. Comme si elles n’avaient jamais existé !"
-    noam panne "Et ce n’est pas Kami qui l’a fait ! Elle me l’a dit elle-même !"
-
-    mara stress "Attends… tu es en train de nous dire que quelqu’un aurait supprimé les images des caméras ?"
-    mara colere "Mais pourquoi quelqu'un irait faire ça ?!"
-
-    noam colere "Oui !"
-    noam panne "Quelqu’un qui était là hier soir. Quelqu’un qui savait exactement ce qu’il faisait !"
-
-    elen inquiet "Noam… tu es sûr de ce que tu dis ? Tu étais encore malade hier, peut-être que…"
-
-    noam colere "Ne me parle pas comme si j’étais fou, Elen !"
-    noam peur "Il s'est passé quelque chose de bizarre dans ce couloir !"
-    noam colere "Et tout a été effacé !"
-
-    ryn colere "Et tu nous accuses nous ?! T’es sérieux là ?!"
-
-    noam colere "Oui ! Parce que c’est forcément l’un d’entre vous !"
-    noam triste "Qui d’autre aurait pu le faire ?!"
-
-    kael calme "... Noam. Respire."
-
-    noam colere "Non ! Je ne respire plus !"
-    noam fatigue "Quelqu’un ici joue un double jeu !"
-    noam colere "Quelqu’un qui sourit, qui vote avec nous, qui fait semblant de s’inquiéter pour moi… et qui efface des preuves dans mon dos !"
-
-    iris inquiet "Noam, arrête… Tu es épuisé, tu as fait un malaise hier, tu—"
-
-    noam colere "Ne me dis pas que je suis épuisé, Iris !"
-    noam colere "Je sais ce que j’ai vu !"
-    noam peur "Et je sais qu’un de vous ment !"
-
-    sael mefiant "Et tu accuses qui exactement ? Balance un nom si tu es si sûr de toi !"
-
-    noam triste "Je ne sais pas encore qui !"
-    noam colere "Mais je sais que c’est l’un d’entre vous !"
-    noam fatigue "Je ne sais pas ! Mais quelqu’un ici est un traître !"
-
-    julian hesitation "Woah woah… Noam, tu dérapes là…"
-    julian "Un traître ? Carrément ?!"
-
-    elen inquiet "Noam… on est tous avec toi. On s’est inquiétés pour toi hier…"
-
-    lysa inquiet "Personne ne gagne quoi que ce soit à te voir t’effondrer devant nous."
-
-    elias fatigue "Et personne ne devrait voter pendant que tout le monde se jauge comme ça."
-
-    noam fatigue "Arrêtez avec ça !"
-    noam inquiet "Je ne veux plus entendre que vous vous inquiétez pour moi !"
-    noam colere "L’un de vous a supprimé ces images ! L’un de vous cache quelque chose !"
-    noam culpabilite "Et vous êtes tous là à débattre tranquillement sur les brouilleurs comme si rien ne s’était passé !"
-
-    "Ma voix se brise légèrement sur la fin. Je suis essoufflé, tremblant de rage et de fatigue."
-
-    nyra raison "Noam… si ce que tu dis est vrai, on doit en parler calmement. Accuser tout le monde ne nous aidera pas."
-
-    noam colere "Calmement ?!"
-    noam desaccord "Comment tu veux que je sois calme ?!"
-
-    "Le silence qui suit est assourdissant."
-
-    iris inquiet "Noam… regarde-moi."
-    iris "On est tous fatigués. On est tous sur les nerfs. Mais on est une équipe."
-
-    noam panne "... Une équipe ?"
-    noam peur "Une équipe où quelqu’un poignarde les autres dans le dos."
-
-    "Je reste debout, les mains tremblantes."
-
-    "Tout le monde me regarde maintenant avec un mélange de peur, de pitié et de suspicion."
-
+    "Ma voix claque plus fort que prévu. Mara tourne la tête vers moi, stupéfaite."
+    elen inquiet "Noam ?"
+    noam colere "Vous pouvez arrêter de parler des brouilleurs pendant trente secondes ?!"
+    ryn colere "C'est littéralement le sujet du vote !"
+    noam colere "JE SAIS !"
+    "Je me lève. Ma chaise recule brutalement."
+    iris inquiet "Noam, assieds-toi."
+    noam inquiet "Non. J'ai besoin de vous dire un truc."
+    sael mefiant "Alors dis-le. Mais sans hurler."
+    noam reflexion "Hier, j'ai demandé à Kami les enregistrements du couloir près de l'infirmerie. À l'heure où j'ai cru voir quelque chose."
+    julian hesitation "Et ?"
+    noam inquiet "Ils ont été supprimés."
+    "Le silence n'arrive pas immédiatement. Ryn commence à répondre, mais Tomas le coupe."
+    tomas surpris "Supprimés ? Pas simplement indisponibles à cause du brouillage ?"
+    noam colere "SUPPRIMÉS. Le terminal l'a affiché."
+    kael calme "Tu es sûr du créneau ?"
+    noam desaccord "J'ai vérifié !"
+    lysa reflechit "Et Kami t'a dit quoi ?"
+    noam inquiet "Que ça venait d'un accès autorisé. Pas d'elle."
+    "Nyra relève la tête. Elle ne dit rien tout de suite."
+    mara stress "Un accès autorisé à bord de la station ?"
+    noam reflexion "Oui."
+    elias reflechit "Attends, ça peut être un compte technique. Les consoles de maintenance ont des accès..."
+    noam colere "Tu crois que j'ai pas pensé à ça ?!"
+    elias colere "JE DEMANDE !"
+    "Je le vois se raidir. Je comprends trop tard que je viens de lui sauter dessus sans raison."
+    noam fatigue "Désolé."
+    elias fatigue "Ouais."
+    nyra raison "Une suppression effective est importante. Mais elle ne désigne pas son auteur."
+    noam inquiet "Je sais !"
+    ryn colere "Alors pourquoi tu nous regardes comme si l'un de nous avait fait le coup ?"
+    "Je n'ai pas de réponse."
+    iris inquiet "Noam, tu as encore mal à la tête ?"
+    noam colere "Arrête avec ça, Iris !"
+    iris colere "Je te pose une question !"
+    noam desespoir "Je sais plus ce que j'ai vu. Je sais plus si j'ai eu peur pour une vraie raison. Et la seule chose qui aurait pu me répondre a disparu !"
+    "Je sens ma gorge se serrer. Les mots sortent de travers."
+    elen inquiet "Mais on peut chercher ensemble..."
+    noam colere "Et si c'était justement quelqu'un ici qui l'avait effacé ?!"
+    "Cette fois, tout s'arrête."
+    pause 0.6
+    mara stress "Tu nous accuses ?"
+    noam peur "Je... Je sais pas."
+    ryn colere "C'est trop facile, ça. Tu balances un truc pareil et après tu sais pas ?"
+    sael determine "Ryn, recule."
+    ryn colere "Je suis assis !"
+    sael mefiant "Alors reste-le."
+    "Elen regarde Mara, puis moi. Kael fixe obstinément la table."
+    julian inquiet "Il faut vérifier. Pas se mettre à désigner des coupables parce que Kami s'est amusée avec toi."
+    noam colere "Tu crois que je m'amuse ?!"
+    julian colere "NON ! Je crois que quelqu'un devrait t'empêcher de te faire manipuler pendant que tu vas mal !"
+    "Je me tais. Julian aussi. Il semble immédiatement regretter le ton qu'il vient d'employer."
+    kael calme "Les images de ma chambre sont bloquées pendant sept jours. Celles du couloir sont supprimées. Ce sont deux problèmes différents."
+    noam fatigue "Je sais."
+    kael triste "Alors arrête de parler comme si tu avais déjà une réponse."
+    "Il ne hausse pas la voix. Je baisse les yeux."
+    lysa reflechit "Noam, tu as le droit d'avoir peur. Tu n'as pas besoin d'être certain pour le dire."
+    lysa inquiet "Mais si tu commences à nous accuser tous, tu vas finir par nous pousser à te répondre comme si on était coupables."
+    "Je regarde ses mains. Elles sont posées à plat sur la table."
+    noam fatigue "Je voulais juste savoir."
+    nyra raison "Alors conservons les faits : le segment a été effacé, l'accès était autorisé selon Kami, et tu ignores ce que montraient ces images."
+    noam desaccord "Tu peux arrêter de résumer ma vie en trois points ?!"
+    "Nyra ne répond pas. Elle serre légèrement la mâchoire."
+    iris desaccord "Elle essaye de t'aider, idiot."
+    noam colere "J'ai pas besoin que tout le monde m'aide !"
+    "Ma voix se brise. Je déteste le silence qui suit."
+    elen fatigue "D'accord..."
+    "Elle baisse les yeux sur sa tablette. Je me rappelle qu'elle m'a proposé son pain ce matin."
+    "Je voudrais lui dire que je ne parlais pas d'elle. Je n'arrive pas à ouvrir la bouche."
+    ryn fatigue "On a encore un vote."
+    tomas inquiet "Et rien de tout ça n'a répondu à la question des brouilleurs."
+    noam fatigue "Alors votez."
+    iris inquiet "Noam..."
+    noam desaccord "Je veux juste sortir."
+    "Je tourne les talons avant que quelqu'un se lève pour me retenir."
     jump _12_0_1_1_APRES_EXPLOSION
 
+
 label _12_0_1_1_APRES_EXPLOSION:
-
-    noam fatigue "J’en ai marre."
-
-    iris inquiet "Noam…"
-
-    noam colere "Non."
-    noam fatigue "Ce débat ne mène nulle part."
-
-    tomas inquiet "On n’a pas fini le vote."
-
-    noam desaccord "Alors finissez-le sans moi."
-
-    "Personne ne répond."
-
-    "Je tourne les talons avant que quelqu’un trouve une nouvelle phrase pour me retenir."
-
+    stop music fadeout 1.0
+    "Personne ne me suit immédiatement. J'entends une chaise bouger derrière moi, puis la voix d'Elen."
+    elen "Il faudrait peut-être..."
+    sael "Laisse-le."
+    "Je ne sais pas si elle a raison. Je suis seulement soulagé qu'on ne m'arrête pas."
     play sound sfx_door
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_65
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-
-    "Le couloir me paraît trop long."
-    "Trop blanc."
-    "Trop silencieux après tout ce bruit."
-
-    think "Je suis allé trop loin."
-    think "Ou pas assez."
-    think "Je ne sais plus."
-
+    "Je marche trop vite. Au bout de quelques mètres, je m'arrête contre le mur pour reprendre mon souffle."
+    think "J'ai parlé des images. Au moins, ça, je l'ai fait."
+    think "Et j'ai accusé tout le monde de quelque chose que je ne peux pas prouver."
+    noam fatigue "Merde..."
+    "Je repense à Elias qui m'a aidé avec la ventilation, à Elen et son pain, à Julian qui s'est énervé pour me défendre malgré lui."
+    "Ce ne sont pas des preuves. Ce sont des gens."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_66
     scene bg_chambre at adaptive_fullscreen with dissolve
-    play sound sfx_creak volume 0.6
-
     $ current_period = "Soir"
-
-    "Je referme la porte de ma chambre derrière moi."
-    "Le déclic de la serrure me fait presque sursauter."
-
-    noam fatigue "Putain…"
-
-    "Je ne prends même pas le temps d’enlever correctement mes vêtements."
-    "Je m’allonge sur le lit, encore tendu, encore furieux, encore honteux."
-
-    think "Je ne veux plus penser."
-    think "Pas au vote."
-    think "Pas à Kael."
-    think "Pas aux brouilleurs."
-    think "Pas à celui qui ment."
-
-    pause 1.5
-
-    "Le sommeil finit par me tomber dessus d’un coup, lourd et sale, comme une coupure de courant."
-
+    play music "music/bgm_calm_not_peace.mp3" fadein 2.0
+    "La chambre est exactement comme je l'ai laissée. Le bureau, le lit, la chaise. Il me faut une seconde pour oser refermer la porte."
+    noam fatigue "Quel abruti..."
+    "Je m'assieds au bord du matelas. Ma tablette affiche l'heure. Le vote a lieu sans moi."
+    think "Je ne sais même pas comment ils vont voter. Hier, j'aurais cru que ça m'importait plus que tout."
+    "Je laisse la tablette de côté. Un instant, j'imagine retourner là-bas pour m'excuser."
+    "Je ne bouge pas."
+    "Le silence est interrompu par un léger bruit dans le conduit."
+    "Je lève immédiatement les yeux."
+    pause 1.0
+    "Cette fois, c'est la ventilation. Le souffle augmente, puis redescend."
+    noam fatigue "D'accord. Pas ce soir."
+    "Je tire la couverture sur moi. Il fait encore assez chaud pour que je la repousse aussitôt."
+    think "J'espère qu'Elen ne croit pas que je lui en veux."
+    "C'est la dernière pensée claire que j'ai avant de m'endormir."
     scene black with fade
     stop music fadeout 3.0
-
     call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond") from _call_show_chapter_title_18
     call end_day("13", sleeping=True) from _call_end_day_12_0_1_1
-
-    # L'autre branche J13 n'a pas encore de scenario.
-    # getattr evite aussi un NameError sur les sauvegardes ou ce resultat
-    # n'a jamais ete defini par le debat.
+    # L'autre branche J13 n'a pas encore de scénario.
     if getattr(store, "j12011_wire_result", "security") != "security":
         call screen kd_route_vote_convergence
     jump _13_0_1_1_0_REVEIL_CHAMBRE
-
-# Total journée : 14 minutes 30
-# Durée totale : 2h56,20
