@@ -489,98 +489,60 @@ label _11_0_1_1_CONFRONTATION_KAMI:
 
 label _11_0_1_1_RETOUR_CHAMBRE:
     $ current_period = "Soir"
-
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_47
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_calm_not_peace.bgm" fadein 3.0
-
-    "Je sors de la salle d’observation sans un regard en arrière."
-    "Mes jambes sont lourdes. Chaque pas résonne dans ma tête comme un marteau."
-
-    think "Je ne veux voir personne."
-    think "Ni Iris, ni Sael, ni Julian… personne."
-
-    "Je marche droit vers ma chambre, ignorant les voix lointaines qui proviennent de la salle commune."
-
+    play music "music/bgm_calm_not_peace.mp3" fadein 3.0
+    "Dans le couloir, j'entends une dispute venir de la salle commune."
+    julian "J'AI DIT QUE C'ÉTAIT UNE MÉDAILLE HONORIFIQUE !"
+    iris "T'AS DESSINÉ TON PROPRE VISAGE DESSUS !"
+    "Je m'arrête. Il y a quelques heures, j'aurais ri. Maintenant, je me demande combien de temps ils ont passé ensemble avant de rentrer ici."
+    think "Non. C'est exactement ce que Kami veut."
+    "Je reprends ma marche."
+    "Au croisement du dortoir, une porte s'ouvre. Lysa passe la tête dans le couloir."
+    lysa neutre "Noam ?"
+    noam fatigue "Salut."
+    lysa reflechit "Tu tiens debout. C'est déjà mieux qu'hier."
+    noam taquin "Vous avez tous préparé des remarques sur mon malaise ?"
+    lysa sourire "On a fait un concours. J'ai perdu contre Julian. Il avait dix-sept propositions."
+    noam fatigue "Ça lui ressemble."
+    "Elle m'observe un peu trop longtemps."
+    lysa reflechit "Tu vas bien ?"
+    noam neutre "Je suis fatigué."
+    lysa neutre "C'est pas la question."
+    "Je n'ai pas envie de lui mentir. Je n'ai pas non plus envie de lui répondre."
+    noam hesitation "Je cherche encore des choses. J'en trouve pas beaucoup."
+    lysa reflechit "Le dessin ?"
+    noam neutre "Pas seulement."
+    "Elle ne demande pas lesquelles."
+    lysa neutre "D'accord. Si tu veux parler, évite juste de tomber avant d'arriver à ma porte. Ça devient pénible."
+    noam sourire "Je vais essayer."
+    "Elle rentre dans sa chambre. Je reste encore un instant dans le couloir."
+    think "Elle m'aurait laissé parler. J'en suis sûr."
+    think "Pourquoi est-ce que ça ne m'aide pas à me sentir mieux ?"
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_48
     scene bg_chambre at adaptive_fullscreen with fade
-
-    "À peine la porte refermée, je m’adosse contre elle un instant, les yeux fermés."
-
-    noam "..."
-
-    "Le silence de la chambre m’enveloppe. Enfin."
-
-    "Je me traîne jusqu’au lit et m’y laisse tomber lourdement, tout habillé."
-
-    think "Je veux juste dormir."
-    think "Oublier cette journée. Oublier cette silhouette. Oublier ce qu’a dit Kami."
-
-    pause 1.5
-
-    think "Mais je n’y arrive pas."
-
-    "Je fixe le plafond. Les mots de Kami tournent en boucle dans ma tête."
-
-    think "« La personne qui a effacé ces images… elle est parmi vous. »"
-
-    noam "... Arrête."
-
-    think "C’est impossible. Aucun d’entre eux ne ferait ça."
-    think "Iris ? Elle était avec moi presque tout le temps."
-    think "Sael ? Elle m’a aidé quand je me suis écroulé."
-    think "Julian ? Il passe son temps à faire des blagues débiles…"
-    think "Nyra ? Tomas ? Mara ?"
-
-    "Je me retourne dans le lit, nerveux."
-
-    think "Ils étaient tous là. Ils se sont inquiétés pour moi."
-    think "Pourquoi l’un d’eux irait jusqu’à supprimer des preuves ?"
-
-    "Je serre les draps entre mes doigts."
-
-    think "Kami ment. Elle ment forcément. Elle adore nous manipuler."
-    think "C’est son jeu préféré."
-
-    pause 2.0
-
-    think "... Et si elle ne mentait pas ?"
-
-    "Cette pensée me glace."
-
-    think "Si c’est vraiment l’un d’eux…"
-    think "Alors tout ce qu’on a vécu ensemble, tous ces moments, tous ces votes…"
-    think "… n’était que du vent ?"
-
-    "Je ferme les yeux de toutes mes forces, comme si ça pouvait chasser les images."
-
-    noam faible "… Je veux juste dormir."
-
-    think "Mais le sommeil ne vient pas. Seulement un tourbillon de visages, de soupçons, et cette silhouette qui... Non."
-    think "Parmi nous…"
-    think "Quelqu’un m’a regardé dans les yeux aujourd’hui… et a effacé les preuves."
-
-    "Je me retourne encore une fois, le cœur serré."
-
-    think "Je ne veux pas y croire."
-    think "Je refuse d’y croire."
-
-    "Pourtant, au fond de moi, quelque chose s’est déjà fissuré."
-
-    pause 3.0
-
-    "Finalement, l’épuisement prend le dessus. Mes paupières deviennent trop lourdes."
-
-    $ blink()
-    think "Demain… je réfléchirai demain."
-
-    "Ou peut-être que je continuerai juste à me mentir à moi-même."
-
+    "Je ferme la porte et m'assieds sur le lit."
+    "La chaise du bureau est toujours à sa place. Je me souviens l'avoir bloquée contre la poignée avant de dormir. Je me souviens aussi de la photo de Léa, du dessin de Juliette, des batteries qu'Elias cherchait."
+    think "Des objets disparaissent. Des données disparaissent aussi."
+    noam reflechit "Et moi, je ne suis même pas capable de dire ce que j'ai vu."
+    "Je prends ma tablette pour noter ce que Kami a dit. « Accès autorisé ». « Données supprimées ». « Sept jours »."
+    "Je relis ma liste."
+    think "Aucune de ces trois phrases ne prouve qu'un représentant a fait quoi que ce soit."
+    "Je repose la tablette sur le bureau, à l'endroit où le dessin aurait dû se trouver."
+    noam fatigue "Juliette..."
+    "Je repense à Iris qui s'est endormie au bord du matelas, à Sael qui m'a obligé à boire, à Julian qui a failli renverser un plateau sur moi."
+    think "Tout ça s'est vraiment passé. Leurs gestes ne disparaissent pas parce que Kami a décidé de me faire peur."
+    "Je commence à retirer ma veste."
+    "Un bruit de pas passe devant la porte."
+    "Je m'immobilise."
+    pause 1.0
+    "Les pas s'éloignent. Quelqu'un doit simplement regagner sa chambre."
+    noam taquin "Très bien. Demain, je soupçonnerai le couloir de comploter contre moi."
+    "Je n'arrive pas à rire."
+    "Je me couche sans bloquer la porte avec une chaise. Après quelques secondes, je me redresse pour vérifier le verrou."
+    think "C'est fermé."
+    "Je vérifie une deuxième fois."
     scene black with fade
     stop music fadeout 4.0
-
     call end_day("12", sleeping=True) from _call_end_day_2
     jump _12_0_1_1_REVEIL_CHAMBRE
-
-# Total journée : 11 minutes
-# Durée totale : 2h41,50
