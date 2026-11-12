@@ -11,7 +11,7 @@ init python:
             ("tomas", "inquiet", _("Julian, je t'ai demandé de [[me laisser réfléchir]].")),
             ("julian", "taquin", _("Je force personne. Je leur donne juste [[un peu d'élan]].")),
             ("julian", "determine", _("Les indécis [[m'ont choisi pour les représenter]].")),
-            ("lysa", "blase", _("On dirait surtout que tu [[parles à leur place]].")),
+            ("nyra", "neutre", _("Tu devrais surtout arrêter de [[parler à leur place]].")),
         ],
         fragments=[("mandat", _("Personne ne t'a mandaté")), ("tomas", _("La demande de Tomas")), ("texte", _("Le contenu du vote"))],
         solution={(3, 0): "mandat"}, lives=3, line_time=5.8,
@@ -125,10 +125,10 @@ init python:
     refutation_register(
         "j28_tomas", title=_("TOMAS — SUICIDE OU MEURTRE ?"), bg="bg_conclave",
         statements=[
-            ("julian", "inquiet", _("Il y avait un flacon. [[Ça ressemble à un suicide]].")),
+            ("lysa", "reflexion", _("Il y avait un flacon. [[Ça ressemble à un suicide]].")),
             ("sael", "raison", _("On ne sait même pas [[s'il a pris ces comprimés]].")),
-            ("ryn", "agace", _("La chambre était fermée. [[Personne n'a pu entrer]].")),
-            ("kael", "reflechit", _("Les conduits sont accessibles. [[La porte n'est pas la seule entrée]].")),
+            ("lysa", "inquiet", _("La chambre était fermée. [[Personne n'a pu entrer]].")),
+            ("noam", "raison", _("Les conduits sont accessibles. [[La porte n'est pas la seule entrée]].")),
             ("iris", "raison", _("On a relevé des signes d'intoxication. [[Ça ne prouve pas le suicide]].")),
         ],
         fragments=[("conduit", _("Accès par les conduits")), ("analyses", _("Conclusions médicales")), ("flacon", _("Le flacon de comprimés"))],
@@ -171,7 +171,7 @@ init python:
     refutation_register(
         "j29_mobile", title=_("DOSSIER TOMAS — MOBILE"), bg="bg_conclave",
         statements=[
-            ("mara", "mefiant", _("Tout le monde lui en voulait pour son vote. [[C'est la seule piste]].")),
+            ("lysa", "blase", _("Tout le monde lui en voulait pour son vote. [[C'est la seule piste]].")),
             ("julian", "reflexion", _("Il fouillait aussi dans [[une histoire de matériel disparu]].")),
             ("nyra", "neutre", _("Ses recherches sur Keyper [[n'impliquent pas un meurtrier]].")),
         ],
