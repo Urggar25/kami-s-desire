@@ -305,71 +305,39 @@ label _11_0_1_1_APRES_REVEIL:
 
 
 label _11_0_1_2_CHAMBRE_INTROSPECTION:
-
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_43
     scene bg_chambre at adaptive_fullscreen with dissolve
-    stop music fadeout 1.0  # pour laisser un silence lourd au début
-
-    "À peine arrivé dans ma chambre, je m’effondre sur le lit sans même enlever mes chaussures."
-    "Mon corps est lourd. La tête tourne encore un peu par moments."
-
-    "Je fixe le plafond blanc, la respiration un peu saccadée."
-
-    think "Je n’en peux plus de cette fatigue… On dirait qu’elle est incrustée dans mes os."
-    think "Et pourtant, je n’arrive pas à fermer les yeux."
-    think "Impossible de me reposer vraiment."
-
-    pause 1.8
-
-    think "Cette silhouette… Ce n’était pas rien."
-    think "J’ai beau me répéter que c’était la fièvre, la chaleur, le stress… quelque chose au fond de moi refuse d’y croire."
-
-    "Je passe une main sur mon visage. Ma peau est encore chaude."
-
-    noam "Et mon état s'arrange pas..."
-
-    think "Kael cherchait des images de sa chambre… il n'a pas pu y accéder à cause du brouilleur."
-    think "Sept jours de délai."
-    think "Mais Kami… elle voit tout. Elle est au-dessus de tout ça."
-
-    think "Sept jours de délai à cause des brouilleurs ?"
-    think "À cause des brouilleurs..."
-
+    stop music fadeout 1.0
+    "Je ferme la porte, retire mes chaussures et m'affale sur le lit."
+    noam fatigue "Voilà. J'obéis. Tout le monde est content."
+    "Le silence de la chambre est agréable pendant une dizaine de secondes. Puis les paroles de Kael me reviennent."
+    think "Sept jours..."
+    "Je me redresse légèrement."
+    noam reflechit "Les brouilleurs..."
+    "Je regarde le petit boîtier fixé au mur. Le voyant continue de pulser."
+    think "Kami dit qu'on ne peut pas consulter les images d'une chambre avant sept jours. D'accord."
+    "Je repense au couloir d'hier. J'étais près de l'infirmerie, pas dans une chambre."
+    noam hesitation "Mais là où j'étais..."
+    "Je m'interromps. J'aimerais vraiment avoir tort, parce que l'autre possibilité m'oblige à me lever."
     call _11_0_1_2_MINIJEU_7JOURS from _call__11_0_1_2_MINIJEU_7JOURS
-
     play music "music/bgm_world_decline.mp3" fadein 2.0
-    "Je reste immobile plusieurs secondes. Plus je me répète ces quelques mots, plus une idée me frappe, claire et presque trop évidente."
-
-    think "... Et si je lui demandais directement ?"
-    think "Si je lui demandais de me montrer les caméras du couloir d’hier soir ?"
-
-    think "Parce qu'il n'y a PAS DE BROUILLEUR dans les couloirs !"
-    
-    noam "Donc les images sont accessibles ?!"
-
-    "Mon cœur s’accélère un peu. L’idée est simple. Probablement stupide."
-    "Mais rester ici à tourner en rond dans ma tête l’est encore plus."
-
-    noam "... Je dois savoir."
-    noam "Elle refusera... Mais... Qui ne tente rien n'a rien, non ?"
-
-    "Je me redresse brusquement. Trop brusquement."
-
-    think "Il faut que je sache si ce que j'ai vu est vrai."
-    think "Et si ce n’était pas rien…"
-
-    "Je serre les poings."
-
-    noam "Alors je veux en avoir le cœur net."
-
-    "Je me relève, encore un peu instable sur mes jambes, et me dirige vers la porte."
-
+    noam reflechit "Il n'y a pas de brouilleur dans les couloirs."
+    "Je laisse la phrase résonner. Elle paraît simple. Presque bête."
+    noam inquiet "Alors les caméras du couloir... elles devraient être accessibles, non ?"
+    "Je reste encore un instant au bord du lit, à fixer mes chaussures."
+    think "Iris m'étranglerait si elle me voyait me relever. Sael m'ordonnerait de retourner sous les draps."
+    noam taquin "Et Julian ferait un discours sur l'héroïsme des malades."
+    "Je remets mes chaussures."
+    think "Si j'ai imaginé tout ça, les images me le diront. Et si je n'ai rien imaginé..."
+    "Je me relève, plus prudemment que ce matin."
+    noam neutre "Je vais juste poser une question. Après, je reviens."
     call KD_ROUTE_J11_NYRA from _call_optional_kd_route_j11_nyra
     call OFFER_DAILY_EXPLORATION(
         "_11_0_1_3_SALLE_COMMUNICATION", 1,
         ["observation", "archive", "dortoir"],
         _("Rejoindre la salle d'Observation"), "observation"
     ) from _call_offer_exploration_j11
+
 
 label _11_0_1_3_SALLE_COMMUNICATION:
 
