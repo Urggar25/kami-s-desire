@@ -1362,7 +1362,7 @@ screen argument_menu_ui(options, prompt="Choisissez un argument pour orienter le
                     xpos 0 ypos 0 xsize 450 ysize 280
                     background Solid("#0B1824E8")
                     padding (0, 0)
-                    add "gui/day3/vote_phase2/portraits/noam_idle.png":
+                    add Transform(character_image("noam", "neutre"), zoom=0.85):
                         xysize (450, 450)
                         yalign 0.28
                         alpha 0.72
