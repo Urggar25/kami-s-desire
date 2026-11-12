@@ -828,6 +828,9 @@ label _3_PAUSE_CHAMBRE:
     call refutation_run("j3_julian")
     if _return[0] == "success":
         call play_noam_interupt
+        if not day3_julian_clash_rewarded:
+            $ player_kamyz += 20
+            $ day3_julian_clash_rewarded = True
         julian hesitation "D'accord, personne ne m'a demandé de parler en son nom. Mais on doit bien prendre une décision !"
     else:
         tomas colere "Je t'ai dit d'arrêter, Julian. Ça suffit !"
