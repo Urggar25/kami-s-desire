@@ -130,6 +130,13 @@ label _7_1_0_1_KAMI_SAS:
     ])
 
     nyra raison "En vertu de quelle règle ?"
+    noam determine "Attends. Tu veux vraiment tuer quelqu'un ici ? Alors on va reprendre tes propres règles."
+    call refutation_run("j7_anya")
+    if _return[0] == "success":
+        call play_noam_interupt
+        nyra raison "Voilà. Ce que tu trouves gênant n'est pas forcément interdit."
+    else:
+        nyra determine "Tu peux t'énerver autant que tu veux. Montre-nous l'article qui t'autorise à tirer."
 
     pause 0.5
 
