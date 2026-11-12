@@ -340,81 +340,49 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
 
 
 label _11_0_1_3_SALLE_COMMUNICATION:
-
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_44
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.0
-
-    "La salle d'observation est plongée dans une lumière bleue froide. Les grands écrans sont tous allumés, mais sans image."
-
-    noam "Kami ? Tu es là ?"
-
-    pause 1.0
-
+    "Les écrans de la salle d'observation affichent la Terre. Je m'installe devant une console et j'attends une seconde."
+    noam neutre "Kami ?"
+    pause 0.8
+    noam taquin "C'est la partie où tu apparais en me disant que j'ai une tête de zombie."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Oh ? Noam ? Je suis toujours là voyons."
-    kami "Tu devrais être en train de te reposer, mon petit bout de chou. Tu étais pourtant dans un sale état tout à l’heure."
-
-    "Sa voix douce résonne dans toute la pièce, presque maternelle."
-
+    kami "Oh, mais JE PEUX ! Tu es tellement prévisible, Noam."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ne me dis pas que tu as déjà repris du poil de la bête ? Comme c’est mignon."
-
-    $ bc_show("noam", "hesitation", px=-70, py=-50, pz=0.85)
-    noam hesitation "J’ai une question à te poser."
-    $ bc_hide()
-
+    kami "D'ailleurs, je croyais que tu étais censé te reposer. Iris et Sael vont me gronder si je te laisse te fatiguer davantage !"
+    noam fatigue "Elles sont pas là."
+    kami "La désobéissance commence toujours par une phrase comme celle-là."
+    noam neutre "J'ai besoin d'accéder à des enregistrements."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je t’écoute. Pose ta question, je suis toute ouïe."
-
-    $ bc_show("noam", "hesitation", px=-70, py=-50, pz=0.85)
-    noam "Hier soir. Juste avant l’annonce. Le couloir près de la salle de stockage."
-    noam "Est-ce que tu peux me montrer les enregistrements des caméras de cette zone ?"
-    $ bc_hide()
-
-    "Un long silence. Les écrans clignotent légèrement."
-
+    kami "Oh ? Nous avons un futur archiviste parmi nous ? Quelle vocation passionnante !"
+    noam reflechit "Hier. Dans le couloir près de l'infirmerie. Juste avant ton annonce."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Hmm… Intéressant."
-    kami "C'est ce que tu as cru voir qui te fait venir me demander ça ?."
-
+    kami "Et tu voudrais voir si tu avais une bonne raison de demander l'alibi de tous tes petits camarades ?"
+    "Je serre les dents. Elle n'a pas oublié."
+    noam inquiet "Oui."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais bon… Je ne voudrais pas que le représentant d'[codex_dialogue_link('harmonie', 'Harmonie')] devienne totalement fou."
-    kami "Que va en penser ta famille sinon ?!"
-
-    "Je ravale douloureusement ma salive."
-
-    think "Pourquoi elle parle de ma famille tout à coup ?!"
-    think "Je fais si pitié à voir ?!"
-
-    "..."
-
-    think "Non ressaisis toi Noam. Te laisse pas berner."
-
-    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
-    noam "Je veux voir ces images."
-    $ bc_hide()
-
+    kami "Tu pourrais aussi choisir de croire les gens. C'est une méthode très reposante, tu sais."
+    noam colere "Tu vas me donner les images, oui ou non ?"
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Oh mais quelle assurance !"
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "J'aime ce tact !"
-
+    kami "Quelle IMPOLITESSE ! Et après, on se demande pourquoi les enfants grandissent si mal."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Alors soit, tu peux accéder aux images de surveillance depuis un des ordinateurs."
-    kami "Je te débloque les accès."
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Enfin, si tu sais t'en servir !"
-
+    kami "Mais enfin, pourquoi pas ? Les caméras des couloirs ne sont pas soumises au brouillage de vos chambres."
+    noam reflechit "Donc les images sont accessibles."
+    kami "Si elles sont encore là, évidemment."
+    "Je relève la tête."
+    noam inquiet "Comment ça, « si » ?"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Un ordinateur, Noam ! Il faut parfois le laisser travailler au lieu de le harceler."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Je t'ouvre le catalogue des archives. Cherche toi-même : heure, secteur, caméra. Rien de plus simple."
+    noam fatigue "C'est gentil, vraiment."
+    kami "Je sais. C'est presque inquiétant."
     scene bg_observation at adaptive_fullscreen with dissolve
-
-    "Les écrans des ordinateurs s’allument d’un coup."
-    "Il y a plusieurs tranches horaires et plusieurs salles disponibles."
-    "Il va falloir que je trouve le segment que je cherche..."
-
+    "La console se déverrouille. Plusieurs secteurs apparaissent, chacun subdivisé en dizaines de créneaux horaires."
+    "Je commence à chercher celui que je veux. Mon cœur bat beaucoup trop vite pour un simple menu d'ordinateur."
     call _11_0_1_3_MINIJEU_CAMERAS from _call__11_0_1_3_MINIJEU_CAMERAS
+
 
 label _11_0_1_1_CONFRONTATION_KAMI:
 
