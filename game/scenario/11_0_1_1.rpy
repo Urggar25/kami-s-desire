@@ -385,155 +385,107 @@ label _11_0_1_3_SALLE_COMMUNICATION:
 
 
 label _11_0_1_1_CONFRONTATION_KAMI:
-
     scene bg_observation at adaptive_fullscreen with dissolve
-
-    "Je sélectionne enfin la bonne combinaison."
-    "L’écran s’allume… puis devient noir en une fraction de seconde."
-    "\"Données supprimées - Accès impossible\""
+    "Je sélectionne le dernier créneau. La console affiche un aperçu du couloir."
+    "Mon doigt reste suspendu au-dessus de la commande de lecture."
+    noam inquiet "Allez..."
+    "L'image disparaît."
+    "DONNÉES SUPPRIMÉES — ACCÈS IMPOSSIBLE."
     $ investigation_add("videos_supprimees")
-
-    $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
-    noam colere "C’est quoi cette putain de blague ?!"
-    noam colere "Kami ! Sors de là !"
-    $ bc_hide()
-
+    "Je clique une seconde fois. Puis une troisième."
+    noam colere "Non. Non, NON !"
+    "Même message."
+    noam colere "KAMI !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ohhh~ Quel cri du cœur ! Tu m’as presque fait sursauter !"
-    kami "Tu sais que quand tu t’énerves comme ça, tu deviens presque mignon ?"
-
-    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
-    noam colere "Arrête tes conneries ! Pourquoi les images ont disparu ?!"
-    noam colere "Tu m’as dit que tu me donnais l'accès aux vidéos !"
-    $ bc_hide()
-
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je t’ai donné accès aux archives, oui. Ce n’est pas ma faute si quelqu’un a fait le ménage avant toi."
-    kami "Et franchement… chapeau. C’était du travail très propre. Même moi je suis un peu jalouse."
-
-    think "Quelqu'un a vraiment fait ça ?"
-    think "Ou elle essaie juste de me faire perdre du temps ?"
-
-    $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
-    noam colere "Tu mens ! Tu mens forcément !"
-    noam colere "Montre-moi les images ! Tout de suite !"
-    $ bc_hide()
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Houlà, du calme, monsieur l’inspecteur. On se croirait dans un épisode de Brooklyn Nine-Nine, l'humour en moins cela dit."
-    kami "Je ne suis pas responsable de cette suppression, mon cœur. Parole de Kami."
-    kami "Quelqu’un d’autre a appuyé sur le petit bouton « effacer »."
-
-    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
-    noam colere "Et tu vas me faire croire que tu ne sais pas qui c’est ?!"
-    $ bc_hide()
-
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Je n’ai pas dit ça~"
-    kami "J’ai juste dit que je n’étais pas responsable."
-    kami "Mais entre nous… la personne qui a fait ça est parmi vous."
-
-    think "Parmi nous..."
-    think "Non."
-    think "Impossible."
-
+    kami "OH ! Je ne savais pas que nous en étions déjà à l'étape où tu cries mon nom dans une pièce vide."
+    noam colere "Les images ont été supprimées !"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Qui ça peut bien être ? Et pourquoi se donner cette peine ?"
-
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Oui oui, parmi tes charmants petits camarades. Celle ou celui qui te sourit tous les jours."
-    kami "Celle ou celui qui vote avec toi, qui mange avec toi, qui fait semblant de s’inquiéter pour toi."
-    kami "N’est-ce pas excitant ?"
-
-    think "Elle essaie de me retourner contre eux."
-    think "C'est forcément ça."
-
-    $ bc_show("noam", "peur", px=-70, py=-50, pz=0.85)
-    noam peur "... Tu mens."
-    $ bc_hide()
-
+    kami "Oui. Je sais lire."
+    noam colere "C'est toi ?"
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je mens ? Moi ? Jamais."
-    kami "Je suis une IA honnête, tu sais. Un peu sadique, certes, mais honnête et adoraaable."
-
-    $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
-    noam colere "Arrête de jouer avec moi !"
-    noam colere "Dis-moi qui c’est !"
-    $ bc_hide()
-
+    kami "Moi ?! Tu me blesses. Je t'ai ouvert les archives avec toute la gentillesse dont je suis capable."
+    noam desaccord "Tu pouvais faire semblant de m'y donner accès."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Quel soupçon désobligeant. La requête d'effacement n'a pas été effectuée par moi."
+    noam reflechit "Une requête ?"
+    kami "Oui, une requête. Je peux même te l'épeler si tu préfères."
+    noam colere "Qui l'a envoyée ?!"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et où serait le plaisir si je te le disais directement ?"
-    kami "Ce serait comme te spoiler la fin d’un bon thriller. Non, non."
-    kami "Je préfère te regarder te torturer tout seul. C’est bien plus divertissant."
-    kami "Et puis le règlement m'interdit de te le dire. Je n'interviens dans aucune de vos manigances."
-
-    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
-    noam colere "Tu prends ton pied avec ça, hein ?"
-    $ bc_hide()
-
+    kami "Ah ! Voilà une question intéressante."
+    noam inquiet "Kami..."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Elle provient d'un accès autorisé à bord du Conclave. Rien de bien exotique."
+    "Je regarde la console. Une ligne vide apparaît là où aurait dû figurer le fichier."
+    noam reflechit "Tu veux dire qu'un des représentants..."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Je n'ai pas dit « un représentant ». J'ai dit « un accès autorisé ». Fais attention, les mots ont un sens."
+    noam colere "Tu sais qui l'a demandé !"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Et même si je le savais, tu voudrais que je te le dise comme ça ? Sans effort ?"
+    noam neutre "Oui."
+    kami "Oh. C'est si décevant."
+    "Je ravale ma colère. Elle attend que je m'emporte, ça se voit."
+    noam reflechit "L'effacement concerne seulement ce créneau ?"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Voilà ! Une question technique ! Tu progresses !"
+    kami "Ce segment est indisponible. Je te laisse regarder le reste du catalogue si ça t'amuse. Je ne peux pas te fabriquer des images qui ne sont plus là."
+    noam inquiet "Il y avait quelque chose sur ces images ?"
+    pause 0.6
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Énormément."
-    kami "Imagine… quelqu’un qui te connaît si bien qu’il arrive à effacer des preuves sous mes propres caméras."
-    kami "C’est presque romantique, non ? Comme un admirateur secret qui veut rester dans l’ombre."
-
-    think "Arrête."
-    think "Arrête de parler comme si tout ça était un jeu."
-
-    $ bc_show("noam", "fatigue", px=-70, py=-50, pz=0.85)
-    noam fatigue "… Pourquoi tu fais ça ?"
-    $ bc_hide()
-
+    kami "Tu aimerais beaucoup que je réponde « oui », n'est-ce pas ?"
+    noam colere "Je veux juste savoir ce que j'ai vu !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Parce que c’est drôle."
-    kami "Parce que vous êtes tous si prévisibles… Disons que ça brise la routine."
-    kami "Et surtout parce que je veux voir jusqu’où tu es prêt à aller pour découvrir la vérité."
-    kami "Tu vas commencer à soupçonner tout le monde maintenant ? Iris ? Sael ? Julian ?"
-    kami "Ou peut-être… ce que tu as vu ?"
-
-    $ bc_show("noam", "peur", px=-70, py=-50, pz=0.85)
-    noam peur "… Tais-toi."
-    $ bc_hide()
-
+    kami "Mais moi aussi, Noam ! C'est ce qui rend notre conversation si palpitante !"
+    "Je ne sais pas si elle plaisante. Le pire, c'est que je crois qu'elle se réjouit sincèrement de ne pas me donner de réponse."
+    noam inquiet "Alors pourquoi tu souris ?"
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Parce que je suis ravissante."
+    noam colere "Arrête !"
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Oh ? Touché ?"
-    kami "Allez, Noam. Va les observer. Va leur poser des questions innocentes."
-    kami "Regarde-les dans les yeux et demande-toi : lequel d’entre eux est capable de faire... ça..."
-    kami "Ce petit jeu va être TELLEMENT amusant."
-
-    $ bc_show("noam", "colere2", px=-70, py=-50, pz=0.85)
-    noam colere "Je te déteste."
-    $ bc_hide()
-
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je sais. Mais je t'aime quand même."
-    kami "Maintenant va te reposer, mon petit détective en herbe."
-    kami "Tu as une sale tête. Et demain, il y a un vote très important."
-    kami "Ce serait dommage que tu t’évanouisses encore… n’est-ce pas ?"
-
-    "Je reste silencieux un long moment, les poings serrés."
-
-    think "Elle joue avec moi… Elle s’amuse."
-    think "Elle ne fait que ça..."
-
+    kami "NON, TOI, ARRÊTE ! Tu viens dans MA salle, tu M'ACCUSES, et tu crois que je vais tout t'expliquer comme une gentille petite assistante !"
+    "Son visage reste figé une fraction de seconde."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Oh, et Noam ?"
-    kami "N'oublie pas de trouver qui c'est. Tu trouveras sans doute plus qu'une seule réponse."
-
-    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
-    noam colere "... Va te faire foutre."
-    $ bc_hide()
-
-    "Je tourne les talons et sors de la salle sans un regard en arrière."
-    "Le rire doux et cristallin de Kami me suit dans le couloir."
-
-    think "Elle joue avec moi..."
-    think "Elle ne fait que ça..."
-    think "Et pourtant..."
-    think "Pourquoi est-ce que j'ai l'impression qu'elle dit la vérité ?"
-
+    kami "Mais je vais quand même te donner quelque chose. Un cadeau."
+    noam reflechit "Quoi ?"
+    kami "Cherche du côté des gens qui avaient accès à ce secteur. Ça te fera une occupation."
+    noam inquiet "Les autres..."
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Les gens qui mangent avec toi. Qui te donnent de l'eau. Qui viennent à ton chevet. Quelle adorable petite communauté !"
+    "Je pense à Iris qui m'a apporté le linge, à Sael, à Julian et à son plateau ridicule."
+    think "Elle essaye de me faire soupçonner tout le monde."
+    noam desaccord "Tu n'as rien prouvé."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Exact. Et toi non plus."
+    "Je reste silencieux."
+    noam reflechit "Si quelqu'un a effacé ces images, il savait ce que j'allais chercher ?"
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Voilà que tu recommences à poser les bonnes questions."
+    noam colere "RÉPONDS !"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Non."
+    pause 0.8
+    noam fatigue "Tu prends vraiment plaisir à ça, hein ?"
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Énormément !"
+    "Elle ne cherche même pas à le nier. Je crois que c'est ce qui me donne le plus envie de hurler."
+    noam colere "Va te faire foutre."
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "LANGAGE !"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Allez, au lit, mon petit détective. Tu as déjà réussi à ne pas t'évanouir pendant une conversation entière. C'est un grand progrès."
+    noam inquiet "Et les images ?"
+    kami "Toujours supprimées. Tu vois ? Certaines choses restent constantes dans ce monde."
+    "Je tourne les talons."
+    kami "Oh, Noam ?"
+    "Je m'arrête malgré moi."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Si tu avais vu quelque chose d'important, tu crois vraiment que quelqu'un aurait pris le risque de laisser les images en place ?"
+    "Je me retourne. L'écran est déjà noir."
+    think "C'est une question. Pas une réponse."
+    "Je quitte la salle avant qu'elle puisse m'en poser une autre."
     stop music fadeout 2.0
-
     jump _11_0_1_1_RETOUR_CHAMBRE
+
 
 label _11_0_1_1_RETOUR_CHAMBRE:
     $ current_period = "Soir"
