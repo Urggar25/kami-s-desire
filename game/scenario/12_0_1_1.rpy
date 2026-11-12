@@ -164,273 +164,176 @@ label _12_0_1_1_recoucher:
 
 
 label _12_0_1_1_CAFETERIA:
-
     $ current_period = "Matin"
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
-
-    "Impossible de me rendormir."
-    "Chaque fois que je ferme les yeux, j’entends ce bruit… ou je crois l’entendre."
-
-    think "Il est encore tôt… à peine 6h30."
-    think "Si je reste ici, je vais devenir fou."
-
-    "Je me lève, enfile un sweat à la hâte et sors de ma chambre sans faire de bruit."
-
+    "Je ne parviens pas à retrouver le sommeil. Au bout d'une heure, je finis par abandonner."
+    noam fatigue "Super. Je vais avoir besoin d'un café assez fort pour réveiller un mort."
+    think "Mauvais choix de mots."
+    "Je m'habille et sors en laissant la chambre exactement comme je l'ai trouvée."
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_52
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-
-    "Les couloirs sont encore déserts. Parfait."
-
-    think "Je ne veux voir personne. Pas maintenant."
-
+    "Les couloirs sont déserts. Il fait enfin frais."
+    think "Un moment sans personne. Ça devrait être agréable."
     call START_EXPLORATION_LIBRE("_12_0_1_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j12_cafeteria
+
 
 label _12_0_1_1_CAFETERIA_ARRIVEE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_53
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play sound sfx_door
-
-    "La cafétéria est vide et silencieuse. Seule la lumière froide des néons automatiques est allumée."
-    "Derrière le comptoir, Goumi est déjà en activité, ses bras mécaniques s’affairant avec précision."
-
-    $ showGroup([
-        ("noam", "fatigue", 0.50),
-    ])
-
-    goumi "Bonjour, Noam. Tu es bien matinal aujourd’hui."
-
-    noam fatigue "Ouais… je n’arrivais plus à dormir."
-
-    goumi "Je comprends. Veux-tu que je te prépare quelque chose pour te rebooster ?"
-
-    noam "Ce que tu peux. Rien de trop lourd."
-
-    goumi "Bien reçu. Je te propose des œufs brouillés, du pain grillé et un yaourt nature. Par contre…"
-
-    "Le robot marque une petite pause, comme s’il consultait ses stocks."
-
-    goumi "Je ne pourrai pas te faire de grosse portion aujourd’hui. Les réserves de nourriture sont plus faibles que prévu. Nous sommes en mode rationnement léger."
-
-    noam hesitation "Comment ça, plus faibles que prévu ?"
-
-    goumi "Les calculs de consommation ont été dépassés ces derniers jours."
-    goumi "Pourtant nos prédictions sont souvent fiables."
-
-    think "Évidemment…"
-
-    noam "Je vois…"
-
-    goumi "Je peux quand même te préparer un repas correct. Tu veux quand même les œufs ?"
-
-    noam "Oui… vas-y."
-
-    "Je m’assois à une table près de la fenêtre, le regard perdu dans le vide."
-
-    think "Même la bouffe commence à manquer… Super."
-
-    pause 1.5
-
-    "Quelques minutes plus tard, j’entends des pas légers et rapides."
-
-
-    $ showGroup([
-        ("noam", "fatigue", 0.50),
-        ("elen", "rire", 0.30),
-    ])
-
-    play music "music/bgm_fallin_love.mp3" fadein 2.0
-
-    elen content "Noooam ! T’es déjà là ?! T’es un lève-tôt maintenant ?!"
-    elen "Depuis quand ??"
-
-    "Elen arrive avec son énergie habituelle, un grand sourire aux lèvres."
-
-    think "Toujours la même."
-    think "Toujours incapable de rester silencieuse plus de trente secondes."
-
-    "Étrangement..."
-
-    think "Ça me rassure un peu."
-
-    noam fatigue "… Salut Elen."
-    $ bc_hide()
-
-    elen "T’as pas l’air en super forme dis donc. Encore fatigué de ton malaise de l'autre jour ?"
-    elen content "En même temps c'est pas étonnant, je te vois jamais venir manger !"
-    elen rire "Tu sais c'est important hein ?!"
-
-    noam "Ouais… un peu."
-
-    elen joie "Crois moi, la cafétéria c’est le meilleur remède ! Goumi, tu me fais la même chose que d’habitude ? Avec double portion de pain s’il te plaît !"
-
-    goumi "Elen… je viens justement d’expliquer à Noam que les réserves sont plus basses que prévu. Je ne peux pas faire de double portion aujourd’hui."
+    $ showGroup([("noam", "fatigue", 0.50)])
+    goumi "Bonjour, Noam. Tu arrives avant le service."
+    noam fatigue "C'est interdit ?"
+    goumi "Non. C'est une donnée statistiquement inhabituelle."
+    noam taquin "Donc je suis suspect ?"
+    goumi "Je n'ai pas dit cela."
+    noam fatigue "Tant mieux. J'ai eu ma dose d'interrogatoires."
+    "Goumi pivote derrière le comptoir. Un de ses bras range des assiettes tandis que l'autre aligne des tranches de pain d'une précision presque insultante."
+    goumi "Que souhaites-tu manger ?"
+    noam neutre "Du pain, des œufs, ce que tu as."
+    goumi "Je peux te servir des œufs. Pour le pain, ce sera une tranche."
+    noam taquin "Une seule ? C'est une punition ?"
+    goumi "Non. Le stock est anormalement bas."
+    noam reflechit "Anormalement ?"
+    goumi "Oui. Nos réserves ont diminué plus vite que prévu. J'ai revu les portions jusqu'à la livraison du quatorzième jour."
     $ investigation_add("manque_nourriture")
-
-    elen "Hein ?! Sérieux ?!"
-    elen colere "Mais tu m'as déjà dit ça hier soir !"
-
-    goumi "Et les stocks n'ont pas changé depuis... Enfin si, ils ont encore diminué."
-    goumi "On ne sera pas livré avant le quatorzième jour."
-
-    "Elle se tourne vers moi, les yeux écarquillés."
-
-    elen decu "Oh non… C’est à cause de moi, c’est ça ?"
-    
-    "Elle croise mon regard vide un moment."
-
-    elen decu "Sérieux ?! Je mange trop ?!"
-
-    noam hesitation "…"
-
-    elen fatigue "Je suis désoléeééé ! Je sais que je mange beaucoup trop ! Mais la nourriture c’est vraiment mon péché mignon ici !"
-    elen taquin "Avec tout ce stress, j’ai besoin de réconfort, tu comprends ?!"
-
-    noam "Ouais… je comprends."
-
-    elen determine "Goumi, tu peux me faire une portion normale alors ? Je vais me retenir, promis ! Croix de bois, croix de fer !"
-
-    goumi "Bien reçu. Une portion normale pour Elen."
-
-    "Elen s’assoit en face de moi sans me demander mon avis, toujours avec son sourire éclatant."
-
-    elen surpris "Du coup, t’as pas réussi à te rendormir ? T’as fait un cauchemar ou quoi ?"
-
-    think "Si seulement c’était juste un cauchemar…"
-    think "Un cauchemar s'arrête quand on ouvre les yeux."
-    think "Là j'ai l'impression que c'est pire quand je suis réveillé."
-
-    noam triste "Quelque chose comme ça."
-
-    elen reflexion "Raconte ! Je suis super bonne pour écouter les cauchemars ! Une fois j’ai rêvé que Kami nous transformait tous en cupcakes et qu’elle nous mangeait un par un. C'était horrible !"
-    elen rire "Je me suis réveillée avec une de ces faim, tu n'imagines même pas !"
-
-    noam surpris "Hein ?! Me dis pas que tu voulais nous bouffer ?!"
-    noam taquin "… Si seulement j'avais fais un rêve comme ça."
-
-    elen rire "Tu m'étonnes ! Et ouais, on avait tous l'air trop trop bons !"
-    elen taquin "Allez, dis-moi ! T’as rêvé de quoi ? Du vote d’aujourd’hui ? D’un truc bizarre ?"
-
-    noam colere "Elen."
-
-    elen reflexion "Quoi ?"
-
-    noam colere "Je n’ai pas trop envie de parler ce matin."
-
-    elen triste "Oh… d’accord."
-
-    "Elle reste silencieuse deux secondes… avant de repartir de plus belle."
-
-    elen determine "Mais tu sais, si tu changes d’avis, je suis là hein ! Je peux même te raconter mes blagues nulles pour te changer les idées !"
-
-    think "Elle ne s’arrête donc jamais…"
-
-    noam "Elen… s’il te plaît."
-
-    elen "Okay okay, je me tais !"
-
-    "Je termine de manger en silence. L'heure tourne doucement."
-
-    think "Qu'est-ce que c'était que ce bruit ?"
-    think "Le fruit de mon imagination ...?"
-
-    "Je termine mon assiette en silence. Elen finit par comprendre que je ne suis pas d’humeur et part rejoindre d’autres personnes après m’avoir fait un petit signe de la main."
-
-    hide elen with dissolve
-    hide noam with dissolve
-
-    think "Enfin seul."
-
-    "Je reste encore quelques minutes à fixer mon plateau vide, puis je me lève."
-
+    noam inquiet "On est douze, pourtant. Enfin, douze représentants..."
+    goumi "Je connais le nombre de représentants, Noam."
+    noam fatigue "Ouais. Pardon."
+    goumi "Je ne connais pas la cause de l'écart."
+    "Je fixe les réserves visibles derrière le comptoir. Le robot a peut-être seulement recalculé les portions. Mais je n'arrive plus à trouver ça banal."
+    noam neutre "Une tranche, ça ira."
+    goumi "Très bien. Et un verre d'eau. Sael m'a indiqué que tu devais t'hydrater régulièrement."
+    noam taquin "Même les robots me surveillent maintenant."
+    goumi "Je sers des repas. Je ne surveille pas tes pensées."
+    noam fatigue "Ça nous change."
+    "Je m'assieds avec mon plateau. Pendant quelques minutes, la cafétéria ressemble enfin à un endroit normal."
+    elen "GOUUUUMI !"
+    "Je sursaute si fort que ma fourchette tape contre l'assiette."
+    $ showGroup([("noam", "fatigue", 0.55), ("elen", "rire", 0.25)])
+    play music "music/bgm_fallin_love.mp3" fadein 2.0
+    elen joie "Noam ?! Mais tu fais quoi debout à cette heure ?"
+    noam fatigue "Je mange."
+    elen taquin "Je vois ça ! Je veux dire : VOLONTAIREMENT ?"
+    noam taquin "Apparemment, je suis devenu une attraction."
+    elen rire "Une attraction qui a failli mourir au Conclave, oui !"
+    "Elle s'arrête brusquement."
+    elen hesitation "Pardon. C'était nul."
+    noam neutre "Un peu."
+    elen fatigue "Tu vas mieux ?"
+    noam sourire "Je tiens debout. C'est déjà pas mal."
+    elen joie "Voilà ! Faut commencer par là ! Goumi, sers-moi le petit-déjeuner de la championne !"
+    goumi "Une portion standard ?"
+    elen content "Deux portions de pain et..."
+    goumi "Une portion standard."
+    elen colere "Attends, tu viens de décider à ma place ?!"
+    goumi "Je t'informe des quantités disponibles."
+    elen desaccord "Mais hier tu m'as déjà servi moins !"
+    goumi "Les stocks ont encore diminué."
+    elen surpris "Encore ?!"
+    noam taquin "Tu as mangé pendant ton sommeil, peut-être."
+    elen colere "HÉ ! J'ai jamais fait ça ! Enfin..."
+    "Elle réfléchit avec beaucoup trop de sérieux."
+    elen hesitation "Une fois, quand j'étais petite. Mais c'était un gâteau. Et on avait laissé la boîte à côté du lit."
+    noam rire "D'accord. L'enquête est close."
+    "Elle se laisse tomber sur la chaise en face de moi, son plateau à peine rempli."
+    elen triste "C'est pas drôle, en fait. Si Goumi doit commencer à compter les tranches de pain..."
+    noam neutre "On sera livrés le quatorzième."
+    elen reflexion "Oui. Je sais. Mais pourquoi il en manque déjà ?"
+    "Je hausse les épaules. Pour une fois, elle ne cherche pas immédiatement une plaisanterie."
+    elen neutre "Tu veux ma portion ?"
+    noam surpris "Quoi ?"
+    elen determine "T'as été malade. Tu devrais manger davantage."
+    noam neutre "Elen, tu as négocié cinq minutes pour avoir deux tranches."
+    elen taquin "C'est vrai. Elles ont une grande valeur sentimentale."
+    noam sourire "Garde-les."
+    "Elle fait mine de protéger son pain de ses deux mains."
+    elen rire "D'accord. Mais je te préviens : si tu t'écroules à nouveau, je dirai que c'est parce que tu as refusé mon offre !"
+    noam taquin "Je prends le risque."
+    "Elle mange en silence pendant quelques bouchées, puis pose brutalement sa fourchette."
+    elen inquiet "Noam ?"
+    noam neutre "Oui ?"
+    elen hesitation "Tu es fâché contre nous ?"
+    "La question me surprend."
+    noam inquiet "Pourquoi tu dis ça ?"
+    elen fatigue "Depuis le malaise, tu te tiens à l'écart. Tu regardes les gens d'une manière bizarre. Et hier..."
+    noam fatigue "Hier, je cherchais des réponses."
+    elen reflechit "Tu peux les chercher avec nous, tu sais."
+    noam neutre "Peut-être."
+    "Elle hoche la tête et reprend son repas. Je m'attendais à devoir lui expliquer pourquoi je voulais être seul. Elle ne me le demande pas."
+    elen taquin "Au fait, tu sais ce que j'ai rêvé cette nuit ?"
+    noam fatigue "Je vais regretter de demander ?"
+    elen rire "Kami était un cupcake géant et elle nous ordonnait de voter pour choisir qui aurait le droit de la manger."
+    noam surpris "Hein ?"
+    elen joie "J'ai voté pour tout le monde. Je voulais pas qu'on se dispute."
+    noam taquin "Et ça s'est terminé comment ?"
+    elen triste "Elle m'a mangée, moi."
+    "Je la regarde. Elen se met à rire, puis s'arrête devant mon expression."
+    elen neutre "C'était qu'un rêve."
+    noam sourire "Ouais."
+    "Nous finissons de manger. Je me surprends à lui raconter que j'ai retrouvé une chaussette sous mon lit, ce qui la lance dans une théorie complètement absurde sur les disparitions de linge."
+    elen joie "Moi je te dis que la station recycle nos affaires en secret !"
+    noam taquin "Un grand complot des chaussettes."
+    elen determine "Exactement !"
+    "Pendant quelques minutes, j'oublie pourquoi je suis venu si tôt."
+    $ hideGroup()
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_54
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-
-    "À peine sorti de la cafétéria, la voix de Kami résonne soudain dans tout le Conclave."
-
-    play music "music/bgm_system_override.mp3" fadein 2.0
-
+    stop music fadeout 0.7
     play sound sfx_announce
     show screen kami_broadcast_ui
-    pause 1.0
-
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Bonjour à tous mes petits disciples chéris~"
-    kami "J’espère que vous avez bien dormi… ou du moins, que certains d’entre vous ont essayé."
-
+    play music "music/bgm_system_override.mp3" fadein 1.0
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "BONJOUR, mes petits représentants !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Petite annonce du jour : le vote sur l’autorisation ou l’interdiction des dispositifs de brouillage aura lieu aujourd’hui à 14h précises."
-    $ unlock_dossier_chapter(4)
-    kami "Je vous conseille vivement d’être présents et en pleine possession de vos moyens."
-    kami "Après tout… ce vote est assez important, n’est-ce pas ?"
-
+    kami "J'espère que vous avez bien dormi ! Enfin, à part ceux qui ont décidé de refaire leur chambre en pleine nuit."
+    "Je m'arrête net."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "N’oubliez pas : vos choix auront des conséquences. Comme toujours."
-    kami "Je compte sur vous pour être raisonnables… ou du moins, divertissants."
-
+    kami "Le vote sur les brouilleurs aura lieu aujourd'hui à QUATORZE HEURES précises."
+    $ unlock_dossier_chapter(4)
+    kami "Ne me forcez pas à aller vous chercher. J'ai un emploi du temps chargé et douze enfants déjà beaucoup trop difficiles à gérer."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Vous pouvez débattre. Vous pouvez même essayer de me convaincre que la vie privée est un besoin essentiel. J'adore vos petites demandes de privilèges."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Sur ce, je vous laisse. Profitez bien de votre matinée."
-
+    kami "Mais n'oubliez pas : si le texte est rejeté, les zones qui utilisent encore ces appareils seront sanctionnées."
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "À tout à l'heure ! Et faites-vous beaux. Votre vote pourrait bien devenir mémorable !"
     hide screen kami_broadcast_ui
-
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    "Le silence retombe dans les couloirs."
-
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
-
-    think "14h…"
-    think "Il ne reste plus que quelques heures avant de décider si on veut vivre sous surveillance permanente ou risquer le chaos."
-
-    "Je serre les poings dans les poches de mon sweat."
-
-    think "Je n’ai envie de parler à personne."
-    think "Ni de répondre à des questions, ni de voir leurs regards inquiets, ni d’entendre Elen essayer de me dérider."
-
-    "Au lieu de prendre le chemin direct, je décide de faire le grand tour par les couloirs extérieurs, ceux qui longent les zones techniques."
-
-    "C’est plus long. Plus vide. Exactement ce qu’il me faut."
-
-    "Alors que je passe devant l'infirmerie, je décide de m'y arrêter une minute."
-
+    think "Elle a parlé de ma chambre. Elle sait que j'étais réveillé."
+    noam fatigue "Évidemment."
+    "Je prends le couloir de l'infirmerie, presque sans réfléchir. Le mal de tête de la veille est revenu."
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_56
     scene bg_infirmerie at adaptive_fullscreen with dissolve
-
-    think "Mon mal de tête n’est toujours pas parti… Il empire même."
-    think "Sans doute à cause de mon manque de sommeil..."
-
-    "Je m’approche de la petite pharmacie et regarde ce qu'il y a de disponible."
-    "Après quelques secondes, je prends quelques comprimés de paracétamol et je les emporte avec moi."
-    "Je prends deux comprimés directement dans ma main et les avale à sec."
-
-    noam faible "..."
-    noam "C'est pas facile à avaler cette merde !"
-
-    think "Ça ne soignera pas ce qui ne va vraiment pas… mais au moins, ma tête arrêtera peut-être de pulser."
-
-    "Je reste un moment devant l'armoire à pharmacie, les yeux dans le vide."
-
-    think "Tout le monde va vouloir discuter du vote."
-    think "Et moi je vais devoir faire semblant d’être normal."
-    think "Faire semblant de ne pas me demander si l’un d’entre eux est celui qui m’a regardé dans les yeux hier soir… avant d’effacer les preuves."
-
-    "Je secoue la tête et reprends ma route, le pas lourd."
-
+    sael "Noam ?"
+    "Je m'arrête devant l'armoire à pharmacie. Sael arrive du fond de la pièce."
+    sael mefiant "Tu cherches quelque chose ?"
+    noam fatigue "J'ai encore mal à la tête."
+    sael inquiet "Tu aurais pu commencer par me le dire."
+    noam taquin "Ça aurait été trop simple."
+    sael neutre "Assieds-toi."
+    "Elle vérifie ma température et me pose quelques questions. Je ne peux pas m'empêcher de regarder vers le couloir."
+    sael reflechit "Tu ne m'écoutes pas."
+    noam hesitation "Si."
+    sael desaccord "Alors qu'est-ce que je viens de dire ?"
+    noam fatigue "Que..."
+    sael neutre "Voilà."
+    "Elle sort une boîte de médicaments et vérifie l'étiquette."
+    sael determine "Si la douleur persiste, on suivra la posologie indiquée. Et tu ne te sers pas au hasard dans l'armoire, compris ?"
+    noam neutre "Compris."
+    sael inquiet "Tu n'as presque pas dormi, c'est ça ?"
+    noam fatigue "Pas beaucoup."
+    sael neutre "Alors repose-toi avant le vote. Tu ne rendras service à personne si tu recommences à tomber."
+    noam sourire "Promis."
+    "Elle n'a pas l'air convaincue, mais me laisse partir."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_57
     scene bg_chambre at adaptive_fullscreen with fade
-
-    "Je referme la porte de ma chambre derrière moi et m’adosse contre elle un long moment."
-
-    think "Je vais juste attendre ici jusqu’à 14h."
-    think "Loin de tout le monde."
-
-    "Je m’allonge sur le lit sans enlever mes chaussures, les yeux rivés au plafond."
-
-    think "Plus que quelques heures avant le vote."
-    think "Et je ne sais même plus ce que je dois choisir…"
-    think "Ni en qui je peux avoir confiance."
-
-    pause 2.0
-
+    "Je m'allonge sur le lit en regardant l'heure défiler."
+    think "Quatorze heures. Un vote pour décider si l'on doit garder les brouilleurs. Et quelque part, quelqu'un sait peut-être ce que j'ai vu."
+    "J'envisage un instant de retourner parler à Elen. Puis je regarde l'endroit vide où reposait le dessin."
+    noam fatigue "Pas maintenant."
     call KD_ROUTE_J12_JULIAN from _call_optional_kd_route_j12_julian
     call OFFER_DAILY_EXPLORATION(
         "_12_0_1_1_ATTENTE_VOTE", 1,
