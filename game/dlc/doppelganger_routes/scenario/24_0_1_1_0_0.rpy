@@ -419,7 +419,7 @@ label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
     "Il sourit enfin, très brièvement."
     tomas hesitation "Si je trouve une vraie raison de voter contre ?"
     noam reflexion "Alors explique-la. Mais faut que ce soit une raison, pas juste une peur."
-    tomas reflechit "Tu me demandes beaucoup, là."
+    tomas reflexion "Tu me demandes beaucoup, là."
     noam raison "Je sais. Et si t'as besoin que je t'aide à parler, je le ferai."
     tomas fatigue "J'ai pas besoin d'une béquille."
     noam sourire "D'accord. Alors je reste à côté, juste au cas où."
