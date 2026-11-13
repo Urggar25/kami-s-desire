@@ -878,8 +878,10 @@ label _26_0_1_1_0_1_BILAN:
         lysa blase "Ça, c'est pas une nouveauté."
     if "nyra" in investigation_pa_completed:
         nyra neutre "Et je t'ai dit que je suis rentrée me coucher. Sans témoin."
-    if "kael" in investigation_pa_completed or "grille" in investigation_pa_completed:
-        noam reflexion "Le verrou était engagé. La grille aussi. Voilà ce qu'on a pu vérifier."
+    if "kael" in investigation_pa_completed:
+        noam reflexion "Elias a dû forcer le verrou. Sur ça, lui et Kael sont formels."
+    if "grille" in investigation_pa_completed:
+        noam reflexion "La plaque sur l'aération est toujours en place. L'air passe, mais pas quelqu'un."
     if "notes" in investigation_pa_completed or "console" in investigation_pa_completed:
         noam fatigue "Et Tomas travaillait encore sur Keyper hier."
         lysa neutre "Il avait toujours un truc à terminer."
