@@ -516,10 +516,10 @@ label _26_0_1_1_0_0_CAMERA:
     noam raison "Iris était là. On l'a photographié nous-mêmes."
     tomas raison "Et vous comptiez montrer ça à Kami sans en parler à Mara ?"
     iris colere "Tu veux qu'on aille demander à une possible copie si elle a tué son original ?!"
-    tomas colere "J'ai pas dit ça ! Je... regardez, c'est une image. On peut fabriquer des images, ici."
+    tomas agace "J'ai pas dit ça ! Je... regardez, c'est une image. On peut fabriquer des images, ici."
     noam desaccord "Tu crois qu'on s'est amusés à faire un faux cadavre ?"
     tomas inquiet "Non ! Mais si on se plante, elle va vivre avec cette accusation. Vous réalisez ?"
-    iris desaccord "On a besoin de vérifier le corps, pas d'un procès sur la photo."
+    iris agace "On a besoin de vérifier le corps, pas d'un procès sur la photo."
     tomas fatigue "D'accord. D'accord, je vous écoute."
 
 
@@ -741,9 +741,9 @@ label _26_0_1_1_0_0_EXPEDITION:
 
     elias fatigue "Douze personnes dans mon conduit ? Vous voulez vraiment tous finir coincés ?"
     ryn colere "C'est pas TON conduit !"
-    elias agace "J'ai passé trois jours à réparer les grilles, donc excuse-moi si je m'y attache !"
-    nyra raison "Trois par groupe. Le premier indique les passages difficiles. Les autres attendent."
-    ryn desaccord "Et si Noam part tout seul et se perd ?"
+    elias fatigue "J'ai passé trois jours à réparer les grilles, donc excuse-moi si je m'y attache !"
+    nyra reflexion "Trois par groupe. Le premier indique les passages difficiles. Les autres attendent."
+    ryn colere "Et si Noam part tout seul et se perd ?"
     noam fatigue "Je suis là, hein."
     elias fatigue "Voilà, et en plus il répond."
 
