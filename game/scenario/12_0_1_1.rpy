@@ -259,23 +259,30 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     noam taquin "Voilà. Même Goumi trouve que tu en fais trop."
     elen taquin "D'accord, d'accord ! Je mange mon pain. Mais si tu tombes dans les pommes, je garde le droit de dire « je te l'avais dit »."
     noam sourire "Marché conclu. Et tu peux arrêter de me regarder mâcher."
-    noam neutre "Elen, tu as négocié cinq minutes pour avoir deux tranches."
-    elen taquin "C'est vrai. Elles ont une grande valeur sentimentale."
-    noam sourire "Garde-les."
-    "Elle fait mine de protéger son pain de ses deux mains."
-    elen rire "D'accord. Mais je te préviens : si tu t'écroules à nouveau, je dirai que c'est parce que tu as refusé mon offre !"
-    noam taquin "Je prends le risque."
+    "Elen protège ses deux tranches comme s'il s'agissait d'un trésor."
+    elen taquin "Je t'en garde quand même une si tu changes d'avis."
+    noam sourire "Je note."
+
     "Elle mange en silence pendant quelques bouchées, puis pose brutalement sa fourchette."
     elen inquiet "Noam ?"
     noam neutre "Oui ?"
     elen hesitation "Tu es fâché contre nous ?"
-    "La question me surprend."
     noam inquiet "Pourquoi tu dis ça ?"
-    elen fatigue "Depuis le malaise, tu te tiens à l'écart. Tu regardes les gens d'une manière bizarre. Et hier..."
-    noam fatigue "Hier, je cherchais des réponses."
-    elen reflechit "Tu peux les chercher avec nous, tu sais."
-    noam neutre "Peut-être."
-    "Elle hoche la tête et reprend son repas. Je m'attendais à devoir lui expliquer pourquoi je voulais être seul. Elle ne me le demande pas."
+    elen fatigue "Parce que tu nous évites. Et quand je te demande comment ça va, tu réponds toujours « ça va »."
+    noam fatigue "Je suis juste fatigué."
+    elen desaccord "Tu vois ?"
+    noam desaccord "Elen, tu peux pas m'obliger à parler si j'ai pas envie."
+    "Elle recule légèrement sur sa chaise."
+    elen triste "Je voulais juste t'aider."
+    noam inquiet "Je sais. Mais..."
+    elen fatigue "Non, t'inquiète. J'ai compris."
+    "Je la regarde reprendre sa fourchette. Elle fait semblant de chercher quelque chose dans son assiette."
+    noam fatigue "Je suis pas fâché contre toi."
+    elen neutre "D'accord."
+    noam hesitation "J'arrive juste pas à expliquer ce qui se passe dans ma tête."
+    elen joie "Alors explique pas. On peut manger, aussi."
+    noam sourire "Ouais. Ça, je sais faire."
+
     elen taquin "Au fait, tu sais ce que j'ai rêvé cette nuit ?"
     noam fatigue "Je vais regretter de demander ?"
     elen rire "Kami était un cupcake géant et elle nous ordonnait de voter pour choisir qui aurait le droit de la manger."
@@ -436,29 +443,43 @@ label _12_0_1_1_ATTENTE_VOTE:
         ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-    mara stress "C'est oui. Pour moi, ça ne devrait même pas se discuter."
+    mara stress "Moi je vote oui. J'en ai marre de devoir baisser la voix quand je vais aux toilettes."
+    julian taquin "La confidentialité de tes conversations avec toi-même est une cause noble."
+    mara taquin "Tu veux un exemple ? Tu vas voir, c'est très intime."
+    julian surpris "Non merci !"
+    elen inquiet "Moi, je veux pouvoir parler dans ma chambre sans me demander si Kami écoute tout."
     $ unlock_dossier_arg("p4_intimite")
-    elen joie "Moi aussi. Je veux pouvoir parler dans ma chambre sans me demander si Kami garde chaque phrase quelque part."
-    julian taquin "Et je tiens particulièrement à pouvoir critiquer ce lieu sans qu'une IA me rappelle mes propos au petit-déjeuner."
-    iris desaccord "Tu le fais déjà."
-    julian "Précisément. Je suis un homme de principes."
-    elias reflechit "Ouais, enfin... ça a aussi des inconvénients."
-    mara agace "Tu peux pas commencer par être d'accord et t'arrêter là, une fois ?"
-    elias fatigue "J'ai essayé. Ça m'a tenu quatre secondes."
-    nyra raison "Il faut distinguer le droit à la vie privée du fait qu'un brouilleur peut compliquer une enquête."
+    iris reflechit "J'aimerais surtout savoir si elle peut encore observer les signaux de brouillage. Parce que techniquement..."
+    ryn colere "Iris, c'est pas un concours pour savoir qui comprend Kami le mieux."
+    iris colere "Je parle d'une faille qui pourrait nous protéger !"
+    kael triste "Moi, j'aurais bien aimé avoir les images du moment où on a pris ma photo."
+    "Un silence tombe, puis Elias pose sa tablette."
+    elias fatigue "Et si quelqu'un profite du brouilleur pour entrer dans une chambre ?"
+    nyra raison "Alors il faut distinguer le droit de se cacher de la possibilité de couvrir un crime."
     $ unlock_dossier_arg("p4_preuves")
-    ryn colere "Donc tu veux que Kami puisse fouiller nos vies dès qu'une affaire tourne mal ?"
-    nyra reflechit "Ce n'est pas ce que j'ai dit."
-    ryn colere "Ça y ressemble."
-    kael calme "Ce serait quand même bien d'avoir les images quand on nous vole quelque chose."
-    "Sa voix est calme. Tout le monde l'a entendue."
+    ryn colere "Tu comptes laisser Kami fouiller les chambres dès qu'il manque une chaussette ?"
+    kael calme "Je demande juste qu'on arrête de me dire que c'est pas grave."
     $ unlock_dossier_arg("p4_voleur")
-    sael mefiant "Tu sais que personne ici ne minimise ce qui t'est arrivé."
-    kael triste "Alors arrêtez de me demander de patienter."
-    "Sael ne répond pas."
-    elen inquiet "Mais si on interdit les brouilleurs, on n'aura jamais la certitude de ce qui s'est passé dans sa chambre..."
-    tomas raison "Pas forcément. Il y a ce délai de sept jours. Les données restent indisponibles pendant cette période, même avec l'appareil en place."
+    sael mefiant "Personne ne dit ça, Kael."
+    tomas raison "Et il y a toujours le délai de sept jours. On ne pourra pas avoir les images tout de suite, brouilleur ou non."
     $ unlock_dossier_arg("p4_delai")
+    julian taquin "Parfait. Sept jours pour que mon prochain grand discours soit oublié."
+    lysa blase "On peut commencer dès maintenant."
+    noam reflexion "Et les couloirs... On sait au moins qui y passe ?"
+    iris inquiet "Noam, pourquoi tu demandes ça ?"
+    noam fatigue "Pour rien. Laissez tomber."
+    lysa blase "Tu veux qu'on t'écoute ou tu veux qu'on devine ?"
+    noam inquiet "J'ai dit laissez tomber."
+    "Elle ne répond pas. Son regard reste posé sur moi un instant de trop."
+    ryn colere "J'en ai marre ! Je veux pouvoir fermer ma porte sans me demander si Kami regarde !"
+    sael neutre "Moi aussi. Mais ça ne rend pas les risques imaginaires."
+    noam inquiet "Et si quelqu'un se sert déjà de ces appareils pour entrer dans nos chambres ?"
+    mara stress "Noam..."
+    noam colere "On en parle depuis des jours, et on n'a toujours rien trouvé !"
+    nyra raison "On n'a surtout pas de preuve que les brouilleurs aient servi à ces disparitions."
+    "Elle le dit doucement. J'ai pourtant l'impression qu'elle vient de me couper la parole."
+
+
     call play_stat_dialogue("j12") from _call_play_stat_dialogue_11
     iris reflechit "On sait déjà tout ça. Kael a essayé d'accéder aux archives."
     kael fatigue "Oui. J'ai essayé."
@@ -510,13 +531,15 @@ label _12_0_1_1_DEBAT_SECURITE:
         ("noam", "fatigue", 0.18), ("kael", "calme", 0.42),
         ("mara", "stress", 0.66), ("nyra", "raison", 0.88),
     ])
-    noam reflexion "Je sais ce que vous allez dire : qu'il faut accepter le risque pour avoir un peu de liberté."
-    mara stress "Si tu veux nous répondre, réponds. Mais nous fais pas le discours à notre place."
-    noam inquiet "Quelqu'un a volé des affaires dans nos chambres, et les caméras ne nous aideront pas avant plusieurs jours."
-    kael calme "Je le sais. Crois-moi."
-    nyra raison "Le problème existe. Autoriser les brouilleurs ne le résoudra pas, mais les interdire n'effacera pas les vols."
-    noam fatigue "Je sais."
-    "Je baisse les yeux. Ce que je voudrais vraiment dire n'a presque rien à voir avec les appareils."
+    noam inquiet "Si on dit oui, les caméras serviront encore à quelque chose ?"
+    kael triste "Pas pour ma chambre. Pas tout de suite."
+    mara stress "Et si on dit non, ça veut dire que Kami pourra nous écouter quand elle veut."
+    noam desaccord "Je sais ! C'est ça qui m'énerve."
+    nyra raison "Il n'y a pas de choix qui efface les deux risques."
+    noam fatigue "Super. On est bien avancés."
+    "Mara cherche une plaisanterie, puis regarde Kael et se tait."
+
+
     jump _12_0_1_1_DEBAT_TRAITRE
 
 
@@ -528,11 +551,14 @@ label _12_0_1_1_DEBAT_LIBERTE:
         ("noam", "fatigue", 0.18), ("ryn", "colere", 0.42),
         ("sael", "mefiant", 0.66), ("lysa", "inquiet", 0.88),
     ])
-    ryn colere "J'ai pas signé pour qu'une IA puisse regarder chez moi quand elle veut !"
-    sael mefiant "Personne ne te demande de lui remettre tes clés."
-    noam reflexion "Je veux aussi qu'elle nous laisse tranquilles. Je sais juste plus si ça suffira à nous protéger."
-    lysa reflechit "Ça ne suffira pas. Mais ça n'en fait pas une mauvaise décision."
-    "Ryn se tait. Moi aussi."
+    ryn colere "J'ai pas signé pour que Kami me regarde dormir !"
+    sael mefiant "Et les personnes à qui l'on a volé quelque chose, elles ont signé pour qu'on ne cherche jamais ?"
+    ryn colere "J'ai pas dit ça."
+    noam reflexion "Moi non plus, je sais plus où mettre la limite."
+    lysa blase "Ça nous change des gens qui savent tout."
+    "Ryn lui lance un regard noir. Elle ne baisse pas les yeux."
+
+
     jump _12_0_1_1_DEBAT_TRAITRE
 
 
