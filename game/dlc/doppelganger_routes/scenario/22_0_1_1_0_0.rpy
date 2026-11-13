@@ -314,7 +314,16 @@ label _22_0_1_1_0_0_MIDI:
 
     julian blase "Merci Elen."
 
-    "La discussion continue quelques minutes, juste assez pour que la journée ressemble à quelque chose de normal. Quand je repars, le silence du couloir me paraît presque plus étrange."
+    elen inquiet "Attendez. Et si Kami nous annonce encore une mauvaise nouvelle avant le départ ?"
+    julian sourire "Nous l'affronterons avec dignité."
+    noam taquin "Tu veux dire avec ta valise déjà prête ?"
+    julian sourire "La dignité n'interdit pas d'être organisé."
+    elen joie "Alors moi aussi, je suis digne !"
+    "Elle tire sur la poignée de son sac. La fermeture éclair s'ouvre d'un coup et un vêtement tombe à mes pieds."
+    julian fatigue "Je retire ce que j'ai dit."
+    elen colere "HÉ ! C'est toi qui as mal fermé !"
+    noam taquin "Je vous laisse régler ça entre grands professionnels du départ."
+    "En quittant la pièce, j'entends encore Julian défendre son honneur contre une fermeture éclair."
 
     $ hideGroup()
 
@@ -350,6 +359,12 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
     noam reflexion "Hier tu disais que ça tiendrait."
 
     elias fatigue "Hier je voulais que ça tienne. C'est pas pareil."
+    noam taquin "Tu pourrais au moins mettre une étiquette. « Protection provisoire, ne pas croire à la protection. »"
+    elias fatigue "Très drôle."
+    noam fatigue "Je plaisante pas vraiment."
+    elias colere "Justement ! Si vous vous faites avoir à cause d'un truc que j'ai fabriqué, c'est moi qui vais y penser toutes les nuits."
+    noam inquiet "Elias..."
+    elias fatigue "Alors non, je vais pas signer au marqueur « c'est bon » sur un morceau de ferraille. Même si ça m'arrangerait."
 
     "Il pose les deux morceaux de métal contre le mur avec un bruit sec."
 
