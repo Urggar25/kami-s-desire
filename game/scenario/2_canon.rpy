@@ -490,7 +490,7 @@ label _2_APRES_MIDI_MARA_SAEL:
 
     mara mefiant "Franchement, toi, tu comptes vraiment voter et rentrer gentiment te coucher ?"
     sael mefiant "Oui. Si je n'ai aucune raison de rester debout."
-    mara rire "Oh, putain. C'est presque mignon."
+    mara sourire "Oh, putain. C'est presque mignon."
     sael neutre "Qu'est-ce qui t'amuse ?"
     mara taquin "Rien. Tu me fais penser à quelqu'un qui ferme sa porte à clé pendant que la maison brûle."
     sael mefiant "Et toi, à quelqu'un qui préfère raconter l'incendie plutôt que d'aller chercher de l'eau."
@@ -498,12 +498,12 @@ label _2_APRES_MIDI_MARA_SAEL:
     mara taquin "T'inquiète, Noam. Pour le moment, elle me fait juste la morale."
     sael raison "Parce que tu essaies de rire au lieu de dire ce qui t'effraie."
     "Mara ouvre la bouche pour répondre, puis se ravise."
-    mara desaccord "Ce qui me fait peur, c'est qu'on croie pouvoir battre Kami avec un bout de papier."
+    mara mefiant "Ce qui me fait peur, c'est qu'on croie pouvoir battre Kami avec un bout de papier."
     sael mefiant "Moi aussi. Mais si on commence à se soupçonner avant le premier vote, elle n'aura même pas besoin d'intervenir."
     mara stress "..."
     mara taquin "Bon. J'vais voir si Elias a une meilleure théorie du complot. Avec des boulons, si possible."
     sael neutre "Essaie de ne pas lui faire peur."
-    mara rire "Promis rien du tout."
+    mara sourire "Promis rien du tout."
 
     $ hideGroup()
     return
@@ -536,11 +536,11 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     elias sourire "Je préfère qu'on garde cette méthode."
     noam inquiet "Lysa, t'as presque rien dit pendant le repas."
     lysa blase "J'essayais de voir combien de temps tu mettrais à le remarquer."
-    noam fatigue "D'accord. Mauvaise question."
+    noam inquiet "D'accord. Mauvaise question."
     elias ecoute "Elle m'a demandé combien de temps il fallait pour recevoir une pièce à Harmonie."
-    lysa desaccord "ELIAS."
+    lysa blase "ELIAS."
     elias gene "Quoi ? C'était pas un secret, si ?"
-    lysa fatigue "Non. Laisse tomber."
+    lysa blase "Non. Laisse tomber."
     noam reflexion "Tu penses qu'on passera encore en dernier si tout se vend ?"
     lysa reflexion "On n'a pas de quoi payer le premier prix. Et on a déjà des pénuries. Tu vois le calcul."
     noam inquiet "Ouais."
@@ -549,7 +549,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     elias rire "Je peux la redécouvrir demain avec des schémas si ça t'arrange."
     "Lysa a un petit sourire. Elle essaie aussitôt de le cacher."
     noam raison "Tu le diras pendant le débat ?"
-    lysa desaccord "Évidemment. Mais je vais essayer de pas commencer par « vous êtes tous des idiots »."
+    lysa blase "Évidemment. Mais je vais essayer de pas commencer par « vous êtes tous des idiots »."
     elias sourire "Ça te laisse pas beaucoup d'options."
     noam taquin "On va les noter avant qu'elle change d'avis."
     "Elias sort déjà sa tablette. Lysa soupire, mais elle ne lui demande pas de la ranger."
@@ -608,7 +608,7 @@ label _2_APRES_MIDI_SAEL:
     noam sourire "Je peux t'aider ?"
     sael neutre "Si tu as envie de les utiliser, oui."
     "Elle me confie la caisse. Elle pèse beaucoup plus lourd que prévu."
-    noam fatigue "Et chez toi, c'est comme ça que tu recrutes les gens ?"
+    noam inquiet "Et chez toi, c'est comme ça que tu recrutes les gens ?"
     sael sourire "Chez moi, personne n'attend qu'on lui promette un salaire pour porter une caisse."
     noam reflexion "Même depuis qu'il n'y a plus vraiment de commerce ?"
     sael raison "On fait ce qu'on peut avec ce qu'on a. Celui qui répare les machines mange. Celui qui travaille aux champs aussi."
@@ -623,7 +623,7 @@ label _2_APRES_MIDI_SAEL:
     sael mefiant "Ce qui m'inquiète, c'est qu'ici on puisse décider qu'un travail vaut plus qu'un autre parce qu'il rapporte davantage."
     noam reflexion "Donc tu voterais contre le commerce ?"
     sael neutre "J'ai pas dit ça. Mais je ne laisserai pas quelqu'un nous expliquer depuis cette station que nos vies valent moins parce qu'on n'a pas de monnaie."
-    noam fatigue "D'accord. C'est plus clair."
+    noam inquiet "D'accord. C'est plus clair."
     sael sourire "Bien. Maintenant, ouvre la porte."
 
     call day2_collect_vote_argument("valeur_travail") from _call_day2_collect_vote_argument_valeur_travail
@@ -684,7 +684,7 @@ label _2_SALLE_OBSERVATION:
 
     noam inquiet "Demain, quatorze heures. On aura jamais le temps de tout vérifier."
     kael fatigue "Même avec un mois, on pourrait pas."
-    noam reflechit "T'es contre le texte ?"
+    noam reflexion "T'es contre le texte ?"
     kael calme "J'en sais rien. On a besoin de pièces, de livraisons... Mais chaque nouveau trajet, c'est un risque."
     noam surpris "Un risque de transport ?"
     kael triste "Sur Orbite, si Kami décide de sanctionner quelqu'un, le tir peut traverser la coque."
@@ -699,7 +699,7 @@ label _2_SALLE_OBSERVATION:
     noam hesitation "T'as dû appuyer sur le bouton ?"
     kael fatigue "J'étais avec ceux qui l'ont fait."
     noam triste "Désolé. Je..."
-    kael desaccord "Fais juste attention quand tu parleras de commerce demain. Une cargaison, c'est pas seulement des marchandises, pour nous."
+    kael mefiant "Fais juste attention quand tu parleras de commerce demain. Une cargaison, c'est pas seulement des marchandises, pour nous."
     "Je regarde la Terre derrière la vitre. Cette fois, je n'ai pas envie de poser une autre question."
 
     call day2_collect_vote_argument("rationnement") from _call_day2_collect_vote_argument_rationnement
