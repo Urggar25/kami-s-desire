@@ -280,7 +280,7 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     noam fatigue "Je suis pas fâché contre toi."
     elen neutre "D'accord."
     noam hesitation "J'arrive juste pas à expliquer ce qui se passe dans ma tête."
-    elen sourire "Alors explique pas. On peut manger, aussi."
+    elen joie "Alors explique pas. On peut manger, aussi."
     noam sourire "Ouais. Ça, je sais faire."
 
     elen taquin "Au fait, tu sais ce que j'ai rêvé cette nuit ?"
