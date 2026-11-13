@@ -464,7 +464,7 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     sael fatigue "Moi aussi."
     noam inquiet "Tu dois en avoir marre qu'on te demande une réponse toutes les trente secondes."
     sael raison "Je préfère que tu me poses une question plutôt que de décider seul qu'il a été empoisonné."
-    noam taquin "C'est une façon polie de me dire de me taire ?"
+    noam fatigue "C'est une façon polie de me dire de me taire ?"
     sael neutre "C'est une façon polie de te demander de réfléchir avant de parler."
     noam fatigue "D'accord. C'était bien ça."
     "Je regarde la tôle devant l'aération. Sael me laisse la photographier sans toucher aux attaches."
