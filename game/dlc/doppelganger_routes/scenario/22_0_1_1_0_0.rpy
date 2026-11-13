@@ -372,32 +372,25 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
     $ unlock_gallery_image("bg_cg060")
     scene bg_cg060 at adaptive_fullscreen with dissolve
 
-    elias raison "J'ai forcé dessus, les attaches bougent. Le métal se tord trop. Si quelqu'un pousse vraiment derrière, ça finit par lâcher."
+    elias raison "Regarde. Rien qu'en tirant là..."
+    "Il attrape le bord de la plaque et secoue la fixation. Un cliquetis sec retentit."
+    noam surpris "C'est censé bouger autant ?"
+    elias fatigue "Non."
+    "Il tire une nouvelle fois. L'attache lâche et la plaque bascule contre sa jambe."
+    elias colere "PUTAIN !"
+    noam inquiet "Ça va ?"
+    elias fatigue "Ouais. Tu vois ? C'est de la merde."
+    noam desaccord "On peut en mettre deux."
+    elias agace "Deux plaques tenues par les mêmes vis ? Ça fera juste deux plaques sur ma jambe."
+    "Je regarde le morceau de métal. Hier encore, j'étais convaincu qu'il suffirait."
+    noam fatigue "Donc on dort avec une fausse protection."
+    elias fatigue "C'est exactement ce que je refuse. Je remets les grilles normales."
+    noam inquiet "Et les vraies plaques ?"
+    elias raison "Livraison du jour vingt-huit. Six jours."
+    noam surpris "Six jours ? Et il nous restera deux jours avant le départ."
+    elias fatigue "Je sais. C'est pour ça que j'en ai marre de bricoler."
+    "Il ramasse la fixation cassée et la glisse dans sa poche, comme s'il lui en voulait personnellement."
 
-    noam desaccord "On peut les doubler. Tu voulais faire ça, non ?"
-
-    elias fatigue "Ouais, mais ça règle pas les fixations. Et j'vais pas passer deux jours à foutre trois couches de métal partout pour faire semblant que c'est solide."
-
-    noam desaccord "Même comme ça, c'est mieux que rien."
-
-    elias raison "Non, parce que vous allez dormir en vous disant que c'est fermé. Moi je sais que ça l'est pas vraiment."
-
-    "Il se frotte le front avec le dos de la main."
-
-    elias fatigue "Franchement, j'en ai marre de bricoler autour de ce truc. On remet les grilles normales, vous bloquez avec vos meubles si vous voulez, et on attend les vraies plaques."
-
-    noam inquiet "Quand ?"
-
-    elias fatigue "Elle arrivera au jour vingt-huit en théorie."
-    elias reflexion "Mais je ne sais même pas si ça vaudra le coup de boucher l'aération pour les deux jours qu'il restera jusqu'au dernier jour..."
-
-    noam surpris "Sérieux ?"
-
-    elias neutre "Ouais. C'est la prochaine livraison où le stock métal revient."
-
-    noam inquiet "Donc ça arrive dans six jours alors."
-
-    "Je regarde les plaques contre le mur. Hier encore, il était prêt à démonter la moitié de la station pour terminer."
 
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -573,43 +566,25 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     "Julian, jusque-là, avait le sourire de quelqu'un qui attendait précisément ce moment."
 
-    julian joie "Enfin !"
+    julian joie "Enfin ! Une proposition sur laquelle on peut tous tomber d'accord !"
+    "Il se lève, tout sourire."
+    julian joie "Je propose qu'on prépare une intervention commune. Une campagne, quelque chose !"
+    iris blase "Une campagne pour convaincre qui ? On est déjà tous d'accord."
+    julian sourire "C'est justement le moment de montrer que nous savons travailler ensemble."
+    mara taquin "Ou le moment de faire une jolie photo avec Julian au milieu."
+    julian agace "Mara ! Je parle d'un vote qui peut donner un toit et de quoi manger à tout le monde !"
+    elen joie "Moi je veux bien préparer quelque chose. Une petite fête si on réussit ?"
+    ryn sourire "Pour une fois, je vais pas dire non."
+    tomas hesitation "Je veux quand même relire la formulation demain."
+    "Julian se fige, son sourire se contracte."
+    julian fatigue "Oui. Évidemment. Mais tu es pour, hein ?"
+    tomas reflexion "Pour le principe, oui."
+    julian sourire "Parfait. C'est donc presque unanime."
+    nyra raison "On n'a pas encore voté."
+    julian fatigue "Vous pourriez me laisser être content au moins dix secondes ?"
+    noam taquin "On a dépassé les dix secondes."
+    julian panne "Noam, je te déteste."
 
-    "Il se lève franchement cette fois, les deux mains à plat sur la table."
-
-    julian joie "Vous vous rendez compte ? Pour une fois on a un texte que personne n'a envie d'étrangler au bout de dix secondes ! Pas de frontière, pas de piège tordu, pas de grande théorie. Un toit, de l'eau, de quoi manger. C'est tout."
-
-    iris fatigue "Tu vas quand même réussir à en faire un spectacle."
-
-    julian sourire "Pour une fois qu'on peut tous défendre le même truc, je compte bien en profiter !"
-
-    "Il se tourne vers les autres avec une énergie presque ridicule, mais contagieuse."
-
-    julian joie "On peut le faire proprement. Tous ensemble, une fois. Pas parce qu'on est coincés ici, pas parce que Kami nous regarde, juste parce que ce texte est... bah, il est évident !"
-
-    ryn sourire "Pour une fois, je vais pas te casser ton délire. Je suis pour."
-
-    elen joie "Moi aussi ! À fond !"
-
-    sael raison "Oui."
-
-    iris neutre "Ouais."
-
-    mara taquin "Je vote pour tant qu'on me garantit un toit assez grand pour recevoir."
-
-    noam blase "Recevoir quoi ?"
-
-    mara rire "Qui."
-
-    noam blase "J'aurais pas dû demander."
-
-    tomas hesitation "M-Moi, oui. Enfin, je veux quand même lire le texte. Mais si c'est bien ça... oui."
-
-    julian joie "Vous voyez ?! Ça, c'est ce que je voulais depuis le début ! Une salle où, pour une fois, on part pas directement du principe qu'on va se détester."
-
-    nyra raison "Ne t'emballe pas. Le vote est dans deux jours."
-
-    julian sourire "Je m'emballe exactement autant que je veux."
 
     "Il attrape son téléphone et commence déjà à taper quelque chose."
 
