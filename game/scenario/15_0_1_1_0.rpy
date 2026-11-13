@@ -239,6 +239,13 @@ label _15_0_1_1_0_COULOIR:
 
     tomas inquiet "Elle n’a pas complètement tort. Sans vouloir te faire la morale, Noam, chaque absence réduit encore nos possibilités de savoir ce que pense réellement le groupe avant le vote."
     tomas raison "Et dans un système où l’unanimité compte... enfin, tu connais déjà le problème. Je vais pas te refaire un cours."
+    elias taquin "Merci. J'ai eu peur que tu nous ressortes le tableau des abstentions."
+    tomas inquiet "Je n'ai pas de tableau des abstentions."
+    lysa blase "Tu as dit ça beaucoup trop vite."
+    tomas inquiet "J'ai un tableau des votes. C'est différent."
+    mara taquin "Ah, tout va bien alors. Le jour où Noam disparaît, Tomas nous fait des statistiques."
+    noam fatigue "Je suis encore là, je vous signale."
+    lysa blase "Pour l'instant. Tu t'entraînes plutôt bien à disparaître."
 
     noam raison "Je le connais. Et je ne vous demande pas de dire que mon choix est raisonnable."
     noam culpabilite "Je sais très bien ce que ça implique."
@@ -293,6 +300,14 @@ label _15_0_1_1_0_COULOIR:
     "Nyra s’avance légèrement, sans colère apparente."
 
     nyra raison "Ne présente pas ça comme quelque chose qui t’arrive. C’est une décision. Tu peux avoir de bonnes raisons, mais elle reste à toi."
+    nyra sourire "Je ne te demande pas de te justifier devant tout le monde. Mais tu comptes prévenir quelqu'un si tes recherches tournent mal ?"
+    noam hesitation "Kael sera avec moi."
+    nyra raison "Alors assure-toi qu'il sache quoi faire si vous devez vous séparer."
+    ryn agace "Tu viens de lui donner un plan pour sécher le vote ?"
+    nyra sourire "Je préfère un mauvais plan avec un moyen de revenir qu'une disparition dont personne ne sait rien."
+    iris desaccord "Ça ne veut pas dire qu'on approuve."
+    noam fatigue "J'avais compris au deuxième reproche."
+    mara taquin "Seulement au deuxième ? Il s'améliore."
 
     "Sa phrase me fait plus mal que les reproches de Mara ou de Ryn, probablement parce qu’elle ne cherche pas à me blesser."
 
