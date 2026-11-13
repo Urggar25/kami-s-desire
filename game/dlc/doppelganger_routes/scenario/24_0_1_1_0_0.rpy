@@ -405,77 +405,31 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
 # Durée : choix majeur, environ 30 s.
 label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
-    noam raison "Alors garde ça pour le débat."
-
-    tomas surpris "Quoi ?"
-
-    noam reflexion "Ton doute."
-
-    tomas fatigue "Je vais pas me lever devant onze personnes pour leur annoncer que quelque chose me gêne sans savoir quoi."
-
-    noam taquin "Tu viens de le faire au petit-déjeuner."
-
-    tomas colere "Et ça s'est très bien passé, comme tu as pu le constater."
-
-    noam sourire "Justement, cette fois je serai préparé."
-
-    tomas reflexion "À quoi ?"
-
-    noam raison "À essayer de comprendre ce que t'essaies de dire au lieu de laisser Ryn te demander toutes les vingt secondes si tu votes pour."
-
-    "Un léger sourire apparaît malgré lui."
-
-    tomas taquin "Ça va être difficile."
-
-    noam sourire "Je suis courageux."
-
-    tomas reflexion "..."
-
-    "Son expression redevient rapidement sérieuse."
-
-    tomas fatigue "Et si je trouve une vraie raison de m'y opposer ?"
-
-    noam neutre "Alors tu l'expliques."
-
-    tomas surpris "Même si ça fait échouer le vote ?"
-
-    noam raison "Si ta raison est assez importante pour qu'on préfère ne pas adopter le Commandement, oui."
-
-    "Il me regarde un instant comme s'il attendait autre chose."
-
-    noam reflexion "Je vais pas te demander de voter pour juste parce que les onze autres trouvent le texte évident."
-
-    tomas neutre "..."
-
-    noam raison "Mais si tu veux bloquer quelque chose qui peut améliorer concrètement la vie des gens, faudra qu'on sache pourquoi."
-
-    tomas reflexion "Ça me paraît raisonnable."
-
-    noam taquin "Ça m'arrive."
-
-    tomas fatigue "Très rarement."
-
-    noam sourire "À tout à l'heure."
-
-    "Je me redresse et me dirige vers la porte."
-
+    noam raison "Bon. Tu vas le dire au débat."
+    tomas surpris "Dire quoi ? « Bonjour, j'ai un problème dont j'ai oublié le nom » ?"
+    noam taquin "Au moins ça changerait de Julian."
+    tomas fatigue "J'aimerais surtout ne pas passer pour l'idiot qui bloque le vote."
+    noam reflexion "Je peux t'aider à formuler ce que t'as trouvé."
+    tomas colere "Tu veux encore m'expliquer ma propre question ?"
+    noam agace "Non ! Mais tu me demandes de t'écouter depuis une heure et dès que je parle, tu me sautes dessus !"
+    "Tomas me dévisage. J'ai envie de récupérer ma phrase et de la remettre dans ma bouche."
+    noam fatigue "Pardon. Je suis aussi crevé que toi."
+    tomas fatigue "Non. T'as raison. Je suis insupportable."
+    noam taquin "Ça, je voulais pas le dire."
+    "Il sourit enfin, très brièvement."
+    tomas hesitation "Si je trouve une vraie raison de voter contre ?"
+    noam reflexion "Alors explique-la. Mais faut que ce soit une raison, pas juste une peur."
+    tomas reflechit "Tu me demandes beaucoup, là."
+    noam raison "Je sais. Et si t'as besoin que je t'aide à parler, je le ferai."
+    tomas fatigue "J'ai pas besoin d'une béquille."
+    noam sourire "D'accord. Alors je reste à côté, juste au cas où."
+    "Je me dirige vers la porte. Il ne me retient pas tout de suite."
     tomas hesitation "Noam."
-
-    "Je me retourne."
-
     noam reflexion "Oui ?"
+    tomas fatigue "Non. Rien."
+    noam blase "Tu vas finir par me rendre dingue."
+    "Il retourne à son écran. Cette fois, il ne cherche plus à répondre."
 
-    tomas reflexion "Tu..."
-
-    "Il s'interrompt et semble chercher ses mots beaucoup plus longtemps que la question ne le justifie."
-
-    tomas fatigue "Non, rien."
-
-    noam blase "Tu fais vraiment ça aujourd'hui ?"
-
-    tomas fatigue "J'ai dit rien."
-
-    noam taquin "D'accord."
 
     "Je le laisse devant ses documents et quitte les Archives."
 
@@ -501,47 +455,37 @@ label _24_0_1_1_0_0_ARCHIVES_PRODUCTION:
     scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     $ showGroup([("tomas", "reflexion", 0.35), ("noam", "neutre", 0.65)])
-    noam reflexion "Attends. On fait peut-être ça à l'envers."
-    tomas surpris "Quoi ?"
-    noam raison "Au lieu de relire le texte, on peut regarder comment Kami compte fournir tout ça."
-    tomas reflexion "Les stocks, la production, les besoins par district ?"
-    noam sourire "Ouais. Voilà."
-    tomas fatigue "Ça va faire beaucoup de chiffres."
-    noam taquin "Je me suis fait à l'idée."
-    "Tomas ouvre les archives logistiques et fait défiler des tableaux."
-    tomas raison "Là, t'as les besoins prévus. Et là, les ressources disponibles."
-    noam surpris "Il manque autant que ça ?"
-    tomas neutre "Bah oui. Si tout le monde doit recevoir quelque chose, faut bien le produire."
-    noam reflexion "Donc elle va augmenter la production."
-    tomas raison "Forcément. Mais je veux voir où."
-    "Il ouvre une projection conditionnelle liée au vote de cet après-midi."
-    tomas surpris "Attends, c'est quoi cette ligne ?"
-    "Sur l'écran, un nouvel encadré apparaît."
+    noam reflexion "Attends. On regarde tout du mauvais côté."
+    tomas surpris "Comment ça ?"
+    noam raison "On cherche des pièges dans les mots. Mais elle doit bien avoir prévu comment donner à manger aux gens."
+    tomas reflexion "Les stocks... ouais. On peut vérifier les projections."
+    "Il ouvre un tableau rempli de chiffres et me laisse le regarder."
+    noam fatigue "Pourquoi il manque autant de ressources ?"
+    tomas raison "Parce qu'il faudrait augmenter la production. Je veux savoir où."
+    "Il remonte rapidement une colonne, puis s'arrête net."
+    tomas surpris "Oh."
+    noam reflexion "Quoi, « oh » ?"
+    "Une ligne apparaît en évidence sur l'écran."
     "KEYPER-IIB — STATION DE PRODUCTION"
     "UNITÉS ÉID-0 — QUOTAS À RÉVISER SI LE COMMANDEMENT EST ADOPTÉ"
-    noam reflexion "Keyper... C'est où ?"
-    tomas hesitation "Aucune idée."
-    noam neutre "Et les unités ÉID-0 ?"
-    tomas reflexion "Je sais pas non plus."
-    noam taquin "On progresse."
-    tomas fatigue "Très drôle."
-    "Tomas tente d'ouvrir le descriptif des unités. Une mention d'accès refusé apparaît."
-    tomas agace "Ah, super. Même ça, c'est verrouillé."
-    noam raison "Peut-être que c'est des machines."
-    tomas inquiet "Peut-être. Mais si c'est autre chose ?"
-    noam reflexion "Quel genre d'autre chose ?"
-    tomas fatigue "J'en sais rien ! Des gens ? Des ouvriers ? Pourquoi ils parlent de quotas ?"
-    noam neutre "Les machines aussi ont des quotas."
-    tomas raison "Oui, je sais. Mais on va voter pour une augmentation sans même savoir de quoi on parle."
-    noam raison "Ça prouve pas que c'est mauvais."
-    tomas inquiet "Non. C'est ça le problème. Ça prouve rien."
-    noam reflexion "Alors garde ce relevé. Tu pourras expliquer ce qui te gêne."
-    tomas fatigue "Je vais essayer de trouver autre chose avant le vote."
-    noam sourire "OK. Mais mange un truc avant, cette fois."
-    tomas fatigue "J'ai mangé."
-    noam taquin "T'as aussi essayé de boire une tasse vide."
-    tomas agace "Deux fois. Pas trois."
-    noam sourire "À tout à l'heure."
+    noam surpris "Keyper-IIB ? C'est où ?"
+    tomas inquiet "Je... aucune idée."
+    noam reflexion "Et ÉID-0 ?"
+    tomas fatigue "Arrête de me poser la question exactement au moment où je me la pose !"
+    "Il tente d'ouvrir le dossier. Accès refusé."
+    tomas colere "Putain. Évidemment."
+    noam raison "Des unités de production, c'est peut-être juste des machines."
+    tomas reflexion "Peut-être. Mais pourquoi des quotas ? Et si c'est des gens ?"
+    noam inquiet "T'as une raison de le penser ?"
+    tomas fatigue "Non. Justement, j'ai RIEN. Et je vais devoir voter avec ça."
+    "Il recommence à chercher. Je lui pousse sa tasse, vide depuis le matin."
+    noam taquin "Tu veux au moins un verre d'eau ? Un vrai, avec quelque chose dedans."
+    tomas fatigue "Ouais. Merci."
+    "Il la regarde une seconde avant de revenir au dossier verrouillé."
+    noam reflexion "On garde les références. On les ressortira si quelqu'un nous pose une question."
+    tomas neutre "Je vais les noter. Je préfère qu'on ne les perde pas."
+
+
     "Tomas conserve une copie des chiffres. Je quitte les archives en le laissant devant sa tablette."
     $ hideGroup()
     jump _24_0_1_1_0_0_AVANT_VOTE
