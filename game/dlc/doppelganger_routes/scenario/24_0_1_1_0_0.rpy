@@ -1518,51 +1518,23 @@ label _24_0_1_1_0_0_APRES_VOTE:
 
     noam reflexion "Ouais."
 
-    iris sourire "T'avais l'air bien pendant le débat."
+    iris sourire "C'était pas mal, tout à l'heure."
+    noam taquin "Mon discours ? Tu veux que je recommence ?"
+    iris agace "N'ose même pas."
+    "Je ris. Elle détourne les yeux vers la partie de Julian."
+    iris neutre "T'avais pas l'air de chercher des fantômes partout, pour une fois."
+    noam fatigue "Sympa."
+    iris inquiet "Je voulais pas dire ça comme ça."
+    noam reflexion "Je sais."
+    "Elle attrape ma boisson et m'en prend une gorgée sans demander."
+    noam surpris "Hé !"
+    iris sourire "Quoi ? Tu surveilles chaque goutte, maintenant ?"
+    noam taquin "Si c'est toi qui me les piques, ouais."
+    "Elle me rend le gobelet avec un air satisfait."
+    iris neutre "Profite un peu. T'as pas besoin de trouver une nouvelle catastrophe avant ce soir."
+    noam fatigue "Je vais essayer."
+    iris sourire "Ce serait déjà un progrès."
 
-    noam taquin "Je pensais qu'on jugeait les arguments, pas la prestation."
-
-    iris agace "Arrête deux secondes."
-
-    noam sourire "D'accord."
-
-    iris reflexion "Depuis plusieurs jours, t'es toujours en train de courir après un truc, de te demander si t'as oublié quelque chose ou si t'as vu quelque chose que personne d'autre a vu."
-
-    "Son ton reste léger, mais suffisamment précis pour faire disparaître une partie de mon sourire."
-
-    iris neutre "Aujourd'hui, t'étais juste... toi."
-
-    noam reflexion "C'est censé être rassurant ?"
-
-    iris sourire "Un peu."
-
-    "Je baisse les yeux vers ma boisson."
-
-    noam reflexion "Ça m'avait manqué."
-
-    iris surpris "Quoi ?"
-
-    noam neutre "Avoir un problème que je peux comprendre."
-
-    "Je cherche mes mots quelques secondes."
-
-    noam reflexion "Tomas n'arrivait pas à expliquer ce qui le bloquait, mais au moins il y avait quelque chose à comprendre. Je pouvais l'écouter, lui poser des questions et essayer de trouver où ça coinçait."
-
-    noam fatigue "C'est quand même plus simple que de se demander si son propre cerveau invente des cadavres."
-
-    iris fatigue "La comparaison aide beaucoup."
-
-    noam sourire "Je trouve aussi."
-
-    iris reflexion "Et tu l'as aidé."
-
-    noam neutre "Ouais."
-
-    iris sourire "Donc profite un peu au lieu de chercher immédiatement pourquoi ça va forcément mal finir."
-
-    "Je tourne la tête vers elle."
-
-    noam taquin "Tu me connais beaucoup trop bien."
 
     iris blase "Malheureusement."
 
