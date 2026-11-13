@@ -293,6 +293,13 @@ label _8_1_0_0_CHAMBRE_IRIS:
     anya_inconnue desaccord "Ne me touche pas."
 
     iris desaccord "D’accord, princesse."
+    anya_inconnue colere "Et arrête de m'appeler comme ça."
+    iris colere "Très bien. Tu préfères quoi ? Majesté ?"
+    noam fatigue "Iris..."
+    iris desaccord "Quoi ? Elle m'a demandé d'arrêter. Je cherche une solution."
+    anya_inconnue desaccord "Vous êtes toujours aussi insupportables, à la télé ?"
+    noam taquin "Ça dépend des jours. Là, elle fait un effort."
+    iris colere "NOAM !"
 
     "Iris recule immédiatement tandis que la fille reste quelques secondes le visage entre les mains."
 
@@ -400,6 +407,15 @@ label _8_1_0_0_CHAMBRE_IRIS:
     "Elle hausse légèrement les épaules."
 
     anya "Pas un refus, rien. Juste... rien."
+    noam "Et t'as continué à remplir leurs formulaires ?"
+    anya "Au début, oui. Puis j'ai commencé à cocher les cases au hasard."
+    noam "Au hasard ?"
+    anya "J'ai demandé un transfert professionnel alors que j'avais plus de boulot. J'ai même coché « déplacement pour raison familiale » avec personne à aller voir."
+    noam "Ils ont répondu ?"
+    anya "Tu sais ce qui est le plus vexant ? Même à mes mensonges, ils ont pas répondu."
+    noam "..."
+    anya "Désolée. C'est pas une histoire très drôle."
+    noam "Non. Mais t'es pas obligée d'en faire une."
 
     "Iris baisse légèrement les yeux."
 
