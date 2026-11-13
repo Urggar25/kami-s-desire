@@ -497,6 +497,14 @@ label _8_0_1_APRES_STABILISATION:
     kael effondre "Merci."
     "Sa réponse est si basse que personne ne cherche à relancer la discussion."
 
+    $ investigation_add("photo_lea_disparue")
+    $ investigation_add("dessin_juliette_disparu")
+    $ investigation_add("materiel_technique_manquant", notify=False)
+    $ investigation_add("cafe_renverse", notify=False)
+    $ investigation_add("livraison_j7", notify=False)
+    $ investigation_add("kami_hors_ligne", notify=False)
+    call play_stat_dialogue("d8") from _call_stat_dialogue_d8
+
     $ hideGroup()
     stop music fadeout 2.0
     scene black with fade
