@@ -309,7 +309,7 @@ label _15_0_1_1_0_COULOIR:
     noam fatigue "J'avais compris au deuxième reproche."
     mara agace "Seulement au deuxième ? Il s'améliore."
 
-    "Sa phrase me fait plus mal que les reproches de Mara ou de Ryn, probablement parce qu’elle ne cherche pas à me blesser."
+    "Nyra ne hausse jamais le ton. Pourtant, sa question me reste en tête : si quelque chose tourne mal, est-ce que j'ai seulement prévu comment prévenir les autres ?"
 
     noam determine "D’accord. Je choisis de ne pas venir au vote."
     noam culpabilite "Et si ça a des conséquences, je les assumerai."
