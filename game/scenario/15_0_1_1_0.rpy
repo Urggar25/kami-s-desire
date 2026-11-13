@@ -368,81 +368,45 @@ label _15_0_1_1_0_RENCONTRE_KAEL:
 
     "Il se dirige immédiatement vers le terminal, mais je reste debout quelques secondes derrière lui."
 
-    noam hesitation "Kael... avant qu’on commence, je peux te demander quelque chose ?"
-    kael calme "Vas-y."
-    noam "Pourquoi moi ?"
+    noam hesitation "Kael... pourquoi moi ?"
+    kael reflechit "Quoi ?"
+    noam raison "Tu sais te servir du terminal tout seul."
+    kael fatigue "Ouais. Et si l'écran me montre quelque chose que j'ai pas envie de voir, je fais quoi ? Je m'en parle à moi-même ?"
+    noam sourire "Avec moi, tu risques pas d'être mieux servi."
+    "Kael s'assoit. Il garde les mains au-dessus du clavier sans y toucher."
+    kael triste "Les autres commencent à m'éviter. Je peux pas vraiment leur en vouloir."
+    noam inquiet "Tu le sais pas, ça."
+    kael fatigue "Si. Mais j'ai pas envie d'en faire une discussion."
+    "Il ouvre les archives."
+    kael reflechit "J'ai regardé la photo de Léa avant de dormir. J'en suis sûr."
+    noam hesitation "La photo que tu gardais sous l'oreiller ?"
+    kael neutre "Ouais."
+    noam neutre "D'accord. On regarde."
+    kael fatigue "Et si je commence à raconter n'importe quoi, tu me le dis."
+    noam taquin "J'avais déjà prévu."
 
-    "Il pose les mains sur le clavier sans taper."
-
-    noam raison "Tu aurais pu faire ça tout seul. Pourquoi tu m’as demandé de venir ?"
-
-    kael reflechit "Parce que si je trouve quelque chose de mauvais, je préfère que quelqu’un d’autre le voie aussi."
-    noam "C’est pas exactement ce que je demandais."
-
-    "Kael souffle doucement et regarde l’écran plutôt que moi."
-
-    kael fatigue "Tu es le seul qui ne m’a pas encore regardé comme si j’avais déjà fait quelque chose de travers."
-    noam "Les autres ne te détestent pas."
-    kael triste "Je sais."
-    noam inquiet "Alors qu’est-ce qui te dérange ?"
-
-    kael fatigue "Qu’ils aient tous une bonne raison de rester à distance."
-    kael "Je les comprends. C’est justement ça qui me fatigue."
-
-    "Il finit par s’asseoir et déverrouille le terminal."
-
-    kael reflechit "Si on trouve quelqu’un sur la vidéo, au moins on aura un fait. Pas une impression, pas un souvenir bancal."
-    noam reflexion "Et si la vidéo est trafiquée ?"
-    kael calme "On le vérifiera."
-    noam "Tu sais faire ça ?"
-    kael sourire "Assez pour repérer une modification grossière. Si quelqu’un a fait mieux, ce sera plus compliqué."
-
-    "Une arborescence d’archives apparaît à l’écran. Kael sélectionne sa chambre, puis le huitième jour."
 
     call play_stat_dialogue("j15") from _call_play_stat_dialogue_14
 
     kael "Je suis rentré vers 19h30. La photo était encore là."
-    noam "Tu en es sûr ?"
-    kael calme "Oui. Je la regarde presque tous les soirs."
+    "Il affiche les ouvertures de porte. Une liste d'heures défile."
+    noam reflexion "Tu comptes vraiment vérifier chaque entrée ?"
+    kael reflechit "Ça m'aide à savoir où je suis."
+    noam fatigue "On est dans la salle d'observation."
+    kael sourire "Merci, Noam."
+    "Il parcourt rapidement les données. Les horaires correspondent à ce dont il se souvient, jusqu'au retour du soir."
+    kael reflechit "Après 19h28, plus d'ouverture de porte enregistrée."
+    noam inquiet "Mais la photo a disparu."
+    kael fatigue "Ouais."
+    "Une coupure d'image apparaît sur la vidéo."
+    noam surpris "Attends. Là."
+    kael inquietude "Je l'ai vue."
+    "Kael revient en arrière. L'horodatage indique 21h17."
+    noam reflexion "T'étais où ?"
+    kael fatigue "Avec Elen, je crois. À la salle de repos. J'étais pas seul toute la soirée."
+    noam inquiet "On peut lui demander."
+    kael inquietude "Après. Regarde d'abord ce qu'il y a là."
 
-    "Je tourne légèrement la tête vers lui, surpris."
-
-    noam hesitation "Tu ne m’avais jamais dit ça."
-    kael calme "Il n’y avait aucune raison de le dire."
-
-    "Il fait défiler le journal d’accès de la porte."
-
-    kael reflechit "08h12, sortie. 08h17, retour. 09h43, sortie... 13h06, retour."
-    noam reflexion "Ça correspond à tes déplacements ?"
-    kael "Oui. À 13h, je suis revenu chercher ma tablette. Ensuite je suis ressorti à 14h02."
-    noam "Et après ?"
-    kael "Retour à 19h28. Puis plus aucune ouverture enregistrée jusqu’à la nuit."
-
-    "Je pointe la ligne du doigt."
-
-    noam inquiet "Donc si quelqu’un est entré après toi, il n’a pas utilisé la porte normalement."
-    kael calme "Ou le journal a été modifié."
-
-    "Il lance la vidéo et accélère l’enregistrement. La pièce défile presque vide pendant plusieurs heures."
-
-    noam "Attends."
-
-    "Une micro-coupure vient de traverser l’image. Kael revient immédiatement en arrière."
-
-    kael inquietude "Je l’ai vue aussi."
-    noam reflexion "Quelle heure ?"
-    kael "21h17."
-    noam inquiet "Tu étais où ?"
-
-    "Il réfléchit quelques secondes, les yeux fermés."
-
-    kael fatigue "Probablement à la salle de repos. J’étais avec Elen une partie de la soirée."
-    noam "Probablement ?"
-    kael fatigue "C’était il y a une semaine, Noam. Je ne peux pas te réciter chaque minute."
-
-    "Je hoche la tête. Il a raison, même si cette imprécision semble l’agacer lui-même."
-
-    kael inquietude "On continue."
 
     jump _15_0_1_1_0_VIDEO_KAEL
 
@@ -466,18 +430,21 @@ label _15_0_1_1_0_VIDEO_KAEL:
     call investigation_video_run("kael_photo", "bg_chambre", False) from _call_investigation_video_kael
 
     kael surpris "... Quoi ?"
+    "Sur l'écran, quelqu'un entre. Il a la même démarche que Kael."
+    "Kael pose brusquement la main sur le bouton de pause."
+    noam inquiet "Kael ?"
+    kael inquietude "Non. Attends..."
+    "Il recule de deux images. Le garçon filmé décroche la photo de Léa."
+    kael colere "TOUCHE PAS À ÇA !"
+    "Je sursaute. Il vient de hurler sur son propre visage."
+    noam inquiet "C'est une vidéo. Il peut pas t'entendre."
+    kael fatigue "Je sais. Je sais, putain..."
+    "Il essaie d'éteindre l'écran, puis s'arrête."
+    kael inquietude "Relance. Non, attends. Je veux pas..."
+    noam hesitation "On peut arrêter."
+    kael colere "Non !"
+    "Le garçon glisse la photo dans sa veste et se tourne vers la caméra."
 
-    "Le garçon filmé traverse la pièce sans hésiter, se dirige vers le mur et s’arrête devant la photo de Léa."
-    "Il la décroche avec précaution, la garde un moment entre ses mains, puis la glisse dans sa veste."
-
-    kael inquietude "Non..."
-
-    "Je tourne la tête vers le vrai Kael. Il ne cligne presque plus des yeux."
-
-    noam inquiet "C’est bien toi ?"
-    kael fatigue "Je..."
-
-    "Sur l’écran, son double se tourne vers la caméra et regarde directement l’objectif."
 
     play sound "audio/sfx_glitch.mp3" volume 0.9
     with glitch_diss
@@ -490,69 +457,27 @@ label _15_0_1_1_0_VIDEO_KAEL:
     ])
 
     kael surpris "Remets-la."
-    noam "Kael..."
-    kael inquietude "Remets la vidéo."
+    noam hesitation "T'es sûr ?"
+    kael inquietude "Je t'ai dit de remettre la vidéo."
+    "Je la relance. Kael ne regarde pas tout de suite. Il attend que le personnage approche de la photo."
+    kael triste "C'est ma veste. C'est comme ça que je la tiens."
+    noam reflexion "Quelqu'un pourrait avoir copié..."
+    kael colere "Même ma façon de marcher ?!"
+    "Il se lève, recule, puis revient devant le terminal."
+    kael triste "J'ai jamais pris cette photo, Noam. Je peux oublier mon dîner, pas ça."
+    noam fatigue "D'accord. Je te crois."
+    kael inquietude "Alors pourquoi je suis là-dessus ?"
+    "Il tape du doigt sur son double jusqu'à laisser une marque sur l'écran."
+    noam reflexion "Attends. On dirait qu'il dit quelque chose."
+    kael surpris "Quoi ?"
+    noam hesitation "Peut-être « désolé ». Je suis pas sûr."
+    kael fatigue "Formidable. Je vole ma photo, puis je m'excuse. Tout va bien."
+    noam inquiet "Il y a peut-être quelqu'un qui te ressemble. Ou... je sais pas."
+    kael triste "Moi non plus."
+    "Un silence passe. Kael tire une chaise et s'y laisse tomber."
+    kael calme "On vérifie le fichier. Si c'est truqué, j'ai besoin de le savoir."
+    noam raison "Ouais. On va commencer par ça."
 
-    "Je la relance. La même scène recommence, intacte jusqu’au moment où le regard se pose sur la caméra."
-
-    kael fatigue "C’est moi."
-    noam hesitation "Ça te ressemble, oui."
-    kael inquietude "Non. C’est pas juste quelqu’un qui me ressemble. C’est ma veste, ma façon de marcher... tout."
-
-    "Il serre les mains contre ses genoux. Sa voix reste basse, mais elle tremble légèrement."
-
-    kael triste "Je n’ai pas pris cette photo."
-    noam raison "Tu es sûr de ton souvenir ?"
-    kael "Oui."
-    noam reflexion "Même après une semaine ?"
-
-    "Kael tourne enfin la tête vers moi."
-
-    kael triste "Je peux oublier où j’étais à 21h17. Je peux oublier ce que j’ai mangé ou à qui j’ai parlé."
-    kael triste "J'aurais pas oublié avoir décroché la seule photo de ma sœur. Pas ça."
-
-    "Je n’ai rien à répondre à ça."
-
-    kael inquietude "Relance encore."
-
-    "Je le fais une troisième fois. L'arrêt sur image confirme le mouvement que j'ai isolé."
-
-    noam reflexion "Attends... il parle."
-    kael surpris "Tu comprends ce qu’il dit ?"
-    noam hesitation "Pas vraiment. Peut-être 'désolé'... ou quelque chose qui ressemble à ça. Je veux pas inventer."
-
-    kael fatigue "Pourquoi je m’excuserais ?"
-    noam "Je ne sais pas."
-    kael triste "Pourquoi je volerais ma propre photo pour ensuite m’excuser devant une caméra ?"
-
-    "Il se lève, fait deux pas dans la pièce, puis revient aussitôt devant l’écran comme s’il était incapable de s’en éloigner."
-
-    kael inquietude "Soit quelqu’un a trafiqué cette vidéo, soit j’ai un trou de mémoire que je ne peux pas expliquer."
-    kael fatigue "Et j’aime aucune des deux options."
-
-    noam raison "Il y en a peut-être une troisième."
-    kael "Laquelle ?"
-
-    "Je pense immédiatement à la silhouette croisée dans le couloir, puis au dessin de Juliette disparu de ma chambre. Les éléments se rapprochent dans ma tête sans former quelque chose de cohérent."
-
-    noam hesitation "Je sais pas encore."
-    kael inquietude "Tu viens de penser à quelque chose."
-    noam "À mon dessin."
-
-    "Il reste silencieux."
-
-    noam reflexion "Le dessin de Juliette a disparu aussi. Et depuis, j’arrête pas de me demander si j’ai raté quelque chose."
-    noam fatigue "Si toi tu peux apparaître sur une vidéo sans te souvenir de ce que tu fais... alors je sais même plus ce que je peux considérer comme fiable."
-
-    kael reflechit "Tu crois que tu as pu enlever ton propre dessin ?"
-    noam hesitation "J’en sais rien. Et c’est justement ça qui me fait peur."
-
-    "Kael regarde l’écran une nouvelle fois."
-
-    kael calme "On vérifie le fichier avant de conclure quoi que ce soit."
-    noam raison "Oui. Pas d’hypothèse avant d’avoir épuisé le plus simple."
-
-    "Pour la première fois depuis le début de la vidéo, il acquiesce sans hésiter."
 
     jump _15_0_1_1_0_ARCHIVES_CROISEES
 
@@ -567,73 +492,38 @@ label _15_0_1_1_0_ARCHIVES_CROISEES:
         ("kael", "inquietude", 0.60),
     ])
 
-    "Kael ouvre plusieurs fenêtres de contrôle et compare les informations du fichier avec les données conservées par le système. Je le laisse travailler quelques minutes sans l’interrompre."
-
-    noam reflexion "Tu trouves quelque chose ?"
-    kael reflechit "Rien d’évident."
-    noam "Ça veut dire quoi, rien d’évident ?"
-
-    kael calme "Le fichier a été créé au bon moment. La source correspond à la caméra de ma chambre. L’empreinte est valide et je ne vois aucune modification enregistrée après coup."
-    noam inquiet "Donc la vidéo est authentique ?"
-    kael reflechit "Je dis seulement que je ne vois pas de trace de montage. C’est pas exactement la même chose."
-
-    "Il vérifie encore une fois les données, puis s’arrête."
-
-    kael fatigue "Mais si quelqu’un l’a trafiquée, il a fait ça proprement. Beaucoup trop proprement."
-
-    "Il relance l’image au ralenti. Sur l’écran, son propre visage se penche sur la photo de Léa avec une douceur qui rend la scène encore plus difficile à regarder."
-
-    kael triste "Je reconnais même la façon dont je la tiens."
-    noam inquiet "Kael..."
-    kael triste "C’est ça le pire. Je pourrais me raconter que quelqu’un s’est déguisé, que l’image est fausse, que j’ai mal vu... mais plus je regarde, plus je me reconnais."
-
-    "Il se frotte le visage et reste quelques secondes comme ça, les coudes sur les genoux."
-
-    kael culpabilite "Et si c’était vraiment moi ?"
-    noam raison "Alors il faut comprendre pourquoi tu ne t’en souviens pas. Ça ne prouve pas que tu as voulu la faire disparaître."
-    kael triste "Ça change pas le fait qu’elle a disparu."
-
-    noam "Non."
-
-    "Je ne cherche pas à le rassurer davantage. Rien de ce que je pourrais dire ne rendrait la photo moins absente."
-
-    kael reflechit "On pourrait regarder les autres caméras autour du couloir."
-    noam "Bonne idée."
-
-    "Il secoue la tête presque aussitôt."
-
-    kael fatigue "J’ai déjà essayé. Il y a un angle mort à cet endroit et aucune autre caméra ne couvre l’entrée de ma chambre assez clairement."
-    noam desaccord "Donc on n’a que ça."
-    kael "Oui."
-
-    "Un silence s’installe. Puis Kael tourne lentement la tête vers moi."
-
-    kael inquietude "Quand tu as parlé de la silhouette dans le couloir l’autre jour... tu avais vu quoi exactement ?"
-
-    noam hesitation "Je ne sais pas."
-    kael "Tu l’as vue ou pas ?"
-    noam inquiet "J’ai vu quelque chose. Une silhouette, un mouvement... mais j’étais fiévreux et j’ai commencé à douter dès le lendemain."
-    noam fatigue "Je pourrais te dire que c’était quelqu’un, sauf que je serais incapable de te dire qui. Et je pourrais te dire que j’ai halluciné, sauf que j’en suis pas sûr non plus."
-
-    kael reflechit "Donc on a deux souvenirs qu’on ne peut pas vérifier et une vidéo qui montre quelque chose qui ne devrait pas exister."
-    noam taquin "Dit comme ça, c’est très rassurant."
-
-    "Kael laisse échapper un souffle qui ressemble presque à un rire, mais il disparaît aussitôt."
-
-    kael triste "Je dois retrouver la photo."
-    noam raison "On va la retrouver. Mais pars pas seul en courant sans réfléchir."
-    kael calme "Je vais juste vérifier ma chambre."
-    noam "Kael..."
-    kael fatigue "Noam, j’ai besoin de chercher quelque chose de concret. Là, je suis juste assis à regarder mon propre visage me dire que ma mémoire vaut rien."
-
-    "Je comprends trop bien ce qu’il veut dire pour insister."
-
-    noam fatigue "D’accord. Je te rejoins après."
-    kael "Merci."
-
+    "Kael ouvre les contrôles du fichier. Je le laisse travailler, jusqu'à ce qu'il se frotte les yeux pour la troisième fois."
+    noam inquiet "Kael, t'as mal ?"
+    kael fatigue "Non. J'ai juste une vidéo qui me donne envie de jeter le terminal par la fenêtre."
+    noam fatigue "On est dans l'espace. Ce serait un gros problème."
+    kael neutre "J'y ai pensé."
+    "Il vérifie la source, l'heure et les traces de modification."
+    kael reflexion "Rien. La caméra correspond. Aucune retouche enregistrée."
+    noam reflexion "Donc c'est vrai ?"
+    kael fatigue "J'ai dit « aucune retouche ». Pas « c'est vrai ». Tu peux me laisser cette différence ?"
+    noam hesitation "Ouais. Pardon."
+    "Il relance l'image au ralenti. Son double serre la photo exactement comme lui l'avait fait en me la montrant."
+    kael triste "Même ça..."
+    "Il ferme brusquement la vidéo."
+    noam surpris "Kael ?"
+    kael fatigue "J'en peux plus de me regarder voler la seule photo de ma sœur."
+    noam raison "On peut vérifier les autres caméras."
+    kael reflexion "Déjà fait. L'entrée est dans un angle mort."
+    noam fatigue "Évidemment."
+    "Il reste les yeux fixés sur l'écran noir."
+    kael inquietude "La silhouette que t'as vue dans le couloir... tu l'as vraiment vue ?"
+    noam hesitation "J'étais malade. J'ai vu un mouvement. Je peux pas te dire si c'était quelqu'un."
+    kael fatigue "Alors on a rien."
+    noam desaccord "On a la vidéo."
+    kael triste "Ouais. Justement."
+    "Il récupère sa tablette."
+    noam inquiet "Tu vas où ?"
+    kael fatigue "Dans ma chambre. J'ai besoin de chercher quelque chose que je peux toucher."
+    noam raison "Vas-y doucement. Je te rejoins."
+    kael neutre "Merci."
     hide kael with dissolve
+    "Il sort sans refermer la vidéo. Je reste seul avec le visage figé sur l'écran."
 
-    "Il quitte la salle rapidement, sans courir, mais avec cette façon de marcher qui dit clairement qu’il ne pense déjà plus à rien d’autre."
 
     jump _15_0_1_1_0_CHAMBRE_NOAM_VIDEO
 
