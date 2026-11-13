@@ -279,7 +279,7 @@ label _26_0_1_1_0_0_SECRET:
     dg_noam raison "Il y a un laboratoire. Les autres s'y retrouvent. Si je te racontais leur version, tu dirais que je mens."
     noam reflexion "Et tu veux que je te suive dans un conduit ?"
     dg_noam neutre "Tu peux entendre ce qu'ils disent quand ils me croient seul."
-    noam surpris "Ils te prennent pour leur copain ?"
+    noam inquiet "Ils te prennent pour leur copain ?"
     dg_noam neutre "Je suis l'un des leurs, Noam. C'est ça le problème."
     noam inquiet "Et ils vont croire que je suis toi ?"
     dg_noam raison "On est identiques. Personne connaît l'entrée parmi les représentants."
