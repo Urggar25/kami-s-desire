@@ -403,11 +403,11 @@ label _26_0_1_1_0_0_SECRET:
     $ flashlight_on(0)
     "Je prétexte la fatigue et retourne dans le conduit. Personne ne cherche à me retenir. Mara me rappelle seulement de ne pas disparaître demain."
     tomas reflechit "On se retrouve tous ici demain matin. Il faut qu'on s'organise pour éviter les loupées."
-    elias taquin "Tu veux encore nous faire un planning ?"
+    elias surpris "Tu veux encore nous faire un planning ?"
     tomas inquiet "Un planning, non. Enfin... j'ai noté les heures possibles."
     mara taquin "Il a fait un planning."
     tomas raison "Une liste ! Il y a une différence."
-    elias taquin "Oui, la liste finit avant minuit."
+    elias surpris "Oui, la liste finit avant minuit."
     tomas inquiet "Vous pourriez juste éviter de me couper deux secondes ?"
     "Son ton nous surprend. Tomas baisse aussitôt les yeux vers sa tablette."
     tomas fatigue "Désolé. Mais si on se trompe de moment, c'est pas une réunion qu'on rate."
