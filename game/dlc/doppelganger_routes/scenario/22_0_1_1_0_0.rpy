@@ -381,7 +381,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
     noam inquiet "Ça va ?"
     elias fatigue "Ouais. Tu vois ? C'est de la merde."
     noam desaccord "On peut en mettre deux."
-    elias agace "Deux plaques tenues par les mêmes vis ? Ça fera juste deux plaques sur ma jambe."
+    elias colere "Deux plaques tenues par les mêmes vis ? Ça fera juste deux plaques sur ma jambe."
     "Je regarde le morceau de métal. Hier encore, j'étais convaincu qu'il suffirait."
     noam fatigue "Donc on dort avec une fausse protection."
     elias fatigue "C'est exactement ce que je refuse. Je remets les grilles normales."
@@ -572,7 +572,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     iris blase "Une campagne pour convaincre qui ? On est déjà tous d'accord."
     julian sourire "C'est justement le moment de montrer que nous savons travailler ensemble."
     mara taquin "Ou le moment de faire une jolie photo avec Julian au milieu."
-    julian agace "Mara ! Je parle d'un vote qui peut donner un toit et de quoi manger à tout le monde !"
+    julian fatigue "Mara ! Je parle d'un vote qui peut donner un toit et de quoi manger à tout le monde !"
     elen joie "Moi je veux bien préparer quelque chose. Une petite fête si on réussit ?"
     ryn sourire "Pour une fois, je vais pas dire non."
     tomas hesitation "Je veux quand même relire la formulation demain."
@@ -583,7 +583,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     nyra raison "On n'a pas encore voté."
     julian fatigue "Vous pourriez me laisser être content au moins dix secondes ?"
     noam taquin "On a dépassé les dix secondes."
-    julian panne "Noam, je te déteste."
+    julian fatigue "Noam, je te déteste."
 
 
     "Il attrape son téléphone et commence déjà à taper quelque chose."
