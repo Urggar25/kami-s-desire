@@ -509,14 +509,19 @@ label _26_0_1_1_0_0_CAMERA:
     "Tomas s'approche de l'écran."
     "Il ne recule pas devant l'image, mais l'observe avec une attention presque excessive, en examinant le contour du visage et les bords de la cloison."
 
-    tomas reflexion "Je ne remets pas en cause le fait que vous soyez tous les deux persuadés d'avoir vu quelque chose."
-    tomas reflexion "En revanche, cette photographie ne suffit pas à établir qu'il s'agit réellement de Mara."
-    tomas reflexion "Vous savez comme moi que les ordinateurs de la salle d'observation permettent de retoucher des images, et même d'en créer de toutes pièces."
-    noam desaccord "On n'a jamais dit que cette photo devait suffire à elle seule ! Mais elle correspond exactement à ce qu'on a vu."
-    noam desaccord "Si tu veux, je peux te donner le fichier original avec les informations de prise de vue."
-    tomas raison "Et les informations d'un fichier peuvent elles aussi être modifiées."
-    tomas raison "Ce que je veux dire, c'est qu'on ne peut pas accuser une représentante sur la base d'une image numérique."
-    tomas raison "Tu imagines les conséquences si on se trompe ?"
+    "Tomas regarde la photo une seconde, puis enfonce les deux mains dans ses poches."
+    tomas inquiet "Oh, putain..."
+    iris inquiet "Ouais."
+    tomas reflexion "Attendez. Vous avez vraiment trouvé ça derrière la maintenance ?"
+    noam raison "Iris était là. On l'a photographié nous-mêmes."
+    tomas raison "Et vous comptiez montrer ça à Kami sans en parler à Mara ?"
+    iris colere "Tu veux qu'on aille demander à une possible copie si elle a tué son original ?!"
+    tomas colere "J'ai pas dit ça ! Je... regardez, c'est une image. On peut fabriquer des images, ici."
+    noam desaccord "Tu crois qu'on s'est amusés à faire un faux cadavre ?"
+    tomas inquiet "Non ! Mais si on se plante, elle va vivre avec cette accusation. Vous réalisez ?"
+    iris desaccord "On a besoin de vérifier le corps, pas d'un procès sur la photo."
+    tomas fatigue "D'accord. D'accord, je vous écoute."
+
 
     "Il ne suffit pas de lui montrer cette photographie. Je dois lui expliquer comment nous en sommes arrivés là, sans perdre le fil de ce que nous avons découvert."
     call j26_preuve_impossible from _call_j26_preuve_impossible
@@ -612,56 +617,44 @@ label _26_0_1_1_0_0_CONFRONTATION:
     ])
 
     elen inquiet "Mais... Mara est juste devant nous."
-    elen inquiet "On a passé l'après-midi ensemble hier, et ce matin encore on mangeait à la même table."
-    elen inquiet "Vous pensez vraiment qu'il y aurait quelqu'un qui lui ressemble au point de pouvoir la remplacer ?"
-    iris colere "Je sais à quel point ça paraît absurde, Elen. Hier encore j'aurais dit exactement la même chose que toi."
-    iris colere "Mais cette image, je sais où on l'a prise. Et ce corps, je l'ai vu."
-    mara desaccord "Donc tu me regardes depuis ce matin en te demandant si je suis une espèce d'imposture ? C'est bien ça ?"
-    mara desaccord "Parce que j'avais remarqué que vous faisiez des têtes bizarres, mais je pensais pas que ça allait jusque-là."
+    iris inquiet "Je sais."
+    mara taquin "Bon, c'est quoi le problème ? Mon sosie m'a piqué ma tête et vous voulez me facturer les droits d'image ?"
+    "Personne ne rit. Mara hausse un sourcil."
+    mara rire "Oh, allez. C'était pas SI nul."
+    elen inquiet "Mara..."
+    mara desaccord "Quoi ? Tu veux que je fasse quoi, moi ? Que je tombe dans les pommes ?"
+    "Elle s'approche de la photographie, puis recule aussitôt."
+    mara agace "Putain. Enlevez ça."
+    iris inquiet "On doit la garder pour vérifier."
+    mara colere "J'AI DIT ENLEVEZ-LA !"
+    "Iris baisse les yeux. Mara se tourne vers moi."
+    mara desaccord "Hier, je t'ai proposé un verre. T'as fait comme si j'avais essayé de t'empoisonner."
+    noam inquiet "Mara, je..."
+    mara agace "Et moi, comme une conne, j'ai passé la soirée à chercher ce que j'avais fait."
+    elen inquiet "Tu pouvais pas savoir..."
+    mara colere "Mais vous, vous saviez ! Enfin, vous pensiez savoir ! Et personne m'a rien dit ?"
+    noam desaccord "On a trouvé quelqu'un avec ton visage derrière un mur. Tu voulais qu'on fasse quoi ?"
+    mara taquin "Bah je sais pas. Me demander si j'ai une jumelle ?"
+    "Elle a un petit rire. Il s'arrête presque aussitôt."
+    mara doute "Non, laisse tomber. C'est débile."
+    iris inquiet "On n'a jamais dit que tu avais fait quelque chose."
+    mara colere "Arrête, Iris. Vous avez passé la journée à me regarder de travers."
+    "Mara fixe Noam, puis l'écran. Ses mains tremblent, alors elle les croise derrière son dos."
+    mara doute "J'étais juste venue te voir, hier. Parce que tu tirais une sale gueule."
+    noam hesitation "Je sais."
+    mara triste "Non. Tu savais pas."
+    "Elen pose la main sur son épaule. Mara fait mine de la repousser, puis renonce."
+    mara fatigue "Ça fait vingt-six jours que je supporte vos tronches. Et vous arrivez encore à me faire ce coup-là."
+    noam inquiet "Je sais pas qui est sur la photo. Je te jure."
+    mara desaccord "Alors regarde-moi."
+    "Je relève les yeux."
+    mara triste "Tu me crois, moi ? Ou tu crois ça ?"
+    "Je pourrais lui mentir. Ce serait même beaucoup plus facile."
+    noam hesitation "Je sais pas, Mara. C'est justement pour ça qu'il faut aller voir."
+    "Elle détourne aussitôt les yeux."
+    mara fatigue "Ouais. Génial. Très rassurant."
+    "Elle reprend sa place sans un mot. Elen s'assoit à côté d'elle."
 
-    "Elle se tourne vers moi. Elle n'a plus du tout l'air de plaisanter."
-
-    mara doute "Noam, hier soir je t'ai demandé si je t'avais fait quelque chose. Tu m'as répondu que tout allait bien."
-    mara doute "Et aujourd'hui tu m'amènes devant tout le monde pour montrer une photo de mon cadavre ?"
-    mara doute "Tu pourrais au moins m'expliquer à quel moment t'as décidé que j'étais plus moi."
-    noam inquiet "Je n'ai jamais dit que je savais exactement ce que tu étais."
-    noam inquiet "J'essaie seulement de comprendre comment on peut avoir trouvé une personne qui te ressemble autant."
-    mara agace "Mais écoute-toi ! Tu parles de moi comme si j'étais un truc à examiner."
-    mara agace "Je suis là depuis le premier jour, j'ai voté avec vous, je vous ai aidés quand ça allait mal..."
-    mara agace "Qu'est-ce que je suis censée faire de plus pour que vous arrêtiez de me regarder comme ça ?"
-
-    "Je cherche quelque chose à lui répondre, mais elle n'attend pas que je trouve."
-    "Elle s'avance jusqu'à l'écran et contemple la photographie pendant un long moment."
-
-    mara triste "Tu sais ce qui est le plus dégueulasse ? C'est même pas cette photo."
-    mara triste "J'ai pas demandé à la voir, et je vais probablement l'avoir dans la tête pendant des semaines."
-    mara triste "Le pire, c'est de me dire que vous avez passé une journée entière avec moi en pensant que je pouvais vous faire du mal."
-    mara triste "Hier, quand je t'ai demandé de venir boire un verre, je voulais simplement qu'on passe un peu de temps ensemble avant de rentrer."
-    mara triste "Je savais que t'allais pas très bien et je m'étais dit qu'une soirée à raconter des conneries te ferait peut-être du bien."
-    mara triste "Maintenant j'apprends que pendant tout ce temps, tu pensais peut-être que j'étais venue pour te tuer."
-
-    "Sa voix n'a rien de théâtral."
-    "Elle paraît surtout fatiguée, comme si elle venait de comprendre pourquoi je l'évitais depuis plusieurs jours."
-    "Elen pose une main sur son épaule, et Mara ne la repousse pas."
-
-    mara doute "Je sais que je fais souvent la conne."
-    mara doute "Je me moque de tout le monde, je dis des trucs déplacés et j'ai sûrement dépassé les bornes plus d'une fois."
-    mara doute "Mais je pensais qu'au moins ici, j'avais fini par avoir quelques amis. C'est ridicule, hein ?"
-    mara doute "Ça fait presque un mois que je vous appelle ma bande de bras cassés. Et maintenant, il suffit d'une photo pour que vous me tourniez le dos ?"
-
-    "Elle me regarde à nouveau, les yeux humides."
-    "Je voudrais lui rappeler le corps derrière la cloison. Mais je repense à nos premières conversations, à ses plaisanteries et aux fois où elle a détendu l'atmosphère."
-
-    mara triste "Alors regarde-moi, Noam. Tu m'as connue pendant vingt-six jours."
-    mara triste "Est-ce que t'es vraiment capable de me dire, là, devant eux, que je suis pas Mara ?"
-
-    "La question me laisse sans voix. Je ne peux pas lui répondre oui, parce que je n'ai aucune explication à ce que nous avons découvert."
-    "Mais lui répondre non reviendrait à ignorer le cadavre que j'ai vu de mes propres yeux."
-
-    noam inquiet "Je ne sais pas qui est la personne qu'on a trouvée. Et je ne sais pas pourquoi elle te ressemble."
-    noam inquiet "Mais je sais que si on refuse de vérifier simplement parce que tu es là devant nous, on risque de passer à côté de quelque chose de beaucoup plus grave."
-
-    "Mara recule d'un pas. Elle secoue la tête, puis reprend sa place sans un mot. Elen s'assoit près d'elle et lui prend la main."
 
     $ hideGroup()
     $ showGroup([
@@ -688,7 +681,9 @@ label _26_0_1_1_0_0_CONFRONTATION:
         ("noam", "reflexion", 0.86),
     ])
 
-    mara triste "Je viens aussi. Si vous comptez examiner un corps avec ma tête, je veux pas attendre ici qu'on décide si j'ai le droit de rentrer chez moi."
+    mara desaccord "Et je viens. Vous avez déjà assez parlé de moi sans moi."
+    "Sael la regarde un instant, puis acquiesce."
+
     sael raison "Si le corps est toujours là, il faudra éviter de déplacer quoi que ce soit avant que je l'aie examiné."
     sael raison "Et je préfère prévenir : avec les moyens de l'infirmerie, je pourrai peut-être déterminer certaines choses, mais certainement pas tout expliquer sur-le-champ."
     elias fatigue "Vous voulez faire passer tout le monde là-dedans ? Y a des endroits où on rampe sur le ventre, et la lumière est pourrie."
@@ -744,18 +739,14 @@ label _26_0_1_1_0_0_EXPEDITION:
         ("ryn", "determine", 0.78),
     ])
 
-    elias fatigue "On va pas entrer à douze dans le même conduit. C'est assez étroit comme ça, et si quelqu'un se coince, tout le monde restera bloqué derrière."
-    nyra reflexion "On peut avancer par groupes de trois, en laissant quelques minutes entre chaque départ. Le premier groupe vérifie le passage et prévient les suivants si nécessaire."
-    ryn determine "D'accord, mais Noam passe devant. C'est lui qui connaît le chemin, et j'ai pas envie qu'on passe la nuit à tourner dans ces foutus tuyaux."
+    elias fatigue "Douze personnes dans mon conduit ? Vous voulez vraiment tous finir coincés ?"
+    ryn colere "C'est pas TON conduit !"
+    elias agace "J'ai passé trois jours à réparer les grilles, donc excuse-moi si je m'y attache !"
+    nyra raison "Trois par groupe. Le premier indique les passages difficiles. Les autres attendent."
+    ryn desaccord "Et si Noam part tout seul et se perd ?"
+    noam fatigue "Je suis là, hein."
+    elias fatigue "Voilà, et en plus il répond."
 
-    "Je commence à répondre, mais Iris me devance en s'avançant d'un pas."
-
-    $ hideGroup()
-    $ showGroup([
-        ("iris", "determine", 0.25),
-        ("noam", "reflexion", 0.50),
-        ("sael", "mefiant", 0.75),
-    ])
 
     iris determine "Dans ce cas, je pars avec lui. Je l'ai accompagné hier et je compte pas le laisser retourner tout seul là-dedans après ce qu'on a trouvé."
     noam reflexion "Je peux quand même me débrouiller pour parcourir quelques mètres sans toi, tu sais."
