@@ -460,6 +460,13 @@ label _26_0_1_1_0_1_INSPECTION_INTRO:
     sael fatigue "J'ai vu. Ça peut avoir plusieurs causes."
     noam neutre "Même avec la porte fermée ?"
     sael raison "Un verrou ne dit pas pourquoi quelqu'un meurt."
+    noam fatigue "Je sais. Mais j'aimerais bien qu'il nous dise au moins comment."
+    sael fatigue "Moi aussi."
+    noam inquiet "Tu dois en avoir marre qu'on te demande une réponse toutes les trente secondes."
+    sael raison "Je préfère que tu me poses une question plutôt que de décider seul qu'il a été empoisonné."
+    noam taquin "C'est une façon polie de me dire de me taire ?"
+    sael neutre "C'est une façon polie de te demander de réfléchir avant de parler."
+    noam fatigue "D'accord. C'était bien ça."
     "Je regarde la tôle devant l'aération. Sael me laisse la photographier sans toucher aux attaches."
     $ hideGroup()
     call j26_photograph("j26_photo_grille", "j26_elen_vide", (0.625, 0.17), 2.9) from _call_j26_grille_photo
@@ -642,6 +649,13 @@ label _26_0_1_1_0_1_PA_ELEN:
     elen fatigue "Non. T'as quelque chose à me demander, je sais."
     noam neutre "Je veux pas t'embêter."
     elen triste "Alors demande. J'en ai marre que tout le monde chuchote quand j'arrive."
+    noam fatigue "On essayait juste de te laisser souffler."
+    elen triste "En me regardant comme si j'allais tomber en morceaux ? Ça aide pas."
+    noam fatigue "Ouais. Désolé."
+    elen triste "Je veux bien qu'on s'inquiète pour moi. Mais j'ai toujours une bouche, vous savez."
+    lysa inquiet "Et tu sais très bien t'en servir."
+    elen fatigue "Alors pose ta question. Et si j'ai pas envie de répondre, je te le dirai."
+    "Elle essaie de sourire, n'y arrive pas, puis attend sans détourner les yeux."
     pause 0.3
     noam reflexion "Hier, quand tu lui as proposé ta chambre... il avait dit quoi ?"
     elen fatigue "Pas grand-chose. Il a demandé si j'étais sûre. Deux fois."
