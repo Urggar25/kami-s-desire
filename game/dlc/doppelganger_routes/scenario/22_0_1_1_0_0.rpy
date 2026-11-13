@@ -586,36 +586,16 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     julian fatigue "Noam, je te déteste."
 
 
-    "Il attrape son téléphone et commence déjà à taper quelque chose."
-
-    iris blase "Tu fais quoi ?"
-
-    julian joie "Je prépare la campagne."
-
-    iris blase "Quelle campagne ? Tout le monde vient de dire oui."
-
-    julian rire "Et alors ? Ça veut dire que j'ai déjà un excellent départ."
-
-    mara taquin "Oh non, il est heureux."
-
-    julian joie "Très."
-
-    "Il relève son téléphone comme s'il venait de recevoir une illumination."
-
-    julian joie "Il faut un slogan."
-
-    ryn fatigue "Bien sûr."
-
-    julian sourire "Quelque chose de simple. Quelque chose qu'on retient. 'Un toit. De l'eau. À manger.'"
-
-    elen content "C'est pas mal !"
-
-    julian joie "C'est parfait."
-
+    "Il attrape son téléphone et commence à taper."
+    julian sourire "Je vais préparer un slogan. Un vrai."
+    iris blase "Tu sais que personne t'a demandé de faire campagne ?"
+    julian joie "Je refuse de laisser passer cette occasion."
+    mara taquin "Quoi, celle d'imprimer ton visage sur un mur ?"
+    julian fatigue "Tu peux arrêter deux secondes ?"
+    elen joie "Moi j'aime bien « Un toit, de l'eau, à manger » !"
     iris blase "C'est littéralement le texte."
-
-    julian sourire "Les meilleures idées sont souvent sous nos yeux."
-
+    julian sourire "Et c'est pour ça qu'il est bon."
+    "Il note la phrase comme s'il venait de l'inventer."
     "Même Ryn sourit. Julian, lui, a déjà gagné sa journée."
 
     "Elias n'a presque rien dit. Quand je me tourne vers lui, il hausse seulement une épaule."
