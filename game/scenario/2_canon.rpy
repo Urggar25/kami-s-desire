@@ -688,6 +688,7 @@ label _2_SALLE_OBSERVATION:
     kael calme "J'en sais rien. On a besoin de pièces, de livraisons... Mais chaque nouveau trajet, c'est un risque."
     noam surpris "Un risque de transport ?"
     kael triste "Sur Orbite, si Kami décide de sanctionner quelqu'un, le tir peut traverser la coque."
+    $ close_up("noam")
     noam peur "Elle ferait ça ? Avec des gens derrière ?"
     kael fatigue "Elle l'a déjà fait."
     "Il tourne le dos à la vitre."
