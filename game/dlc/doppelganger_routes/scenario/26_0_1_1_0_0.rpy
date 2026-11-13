@@ -747,6 +747,14 @@ label _26_0_1_1_0_0_EXPEDITION:
     noam fatigue "Je suis là, hein."
     elias fatigue "Voilà, et en plus il répond."
 
+    "Je commence à répondre, mais Iris me devance en s'avançant d'un pas."
+    $ hideGroup()
+    $ showGroup([
+        ("iris", "determine", 0.25),
+        ("noam", "reflexion", 0.50),
+        ("sael", "mefiant", 0.75),
+    ])
+
 
     iris determine "Dans ce cas, je pars avec lui. Je l'ai accompagné hier et je compte pas le laisser retourner tout seul là-dedans après ce qu'on a trouvé."
     noam reflexion "Je peux quand même me débrouiller pour parcourir quelques mètres sans toi, tu sais."
