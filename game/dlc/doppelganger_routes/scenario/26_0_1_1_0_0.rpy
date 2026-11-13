@@ -396,12 +396,6 @@ label _26_0_1_1_0_0_SECRET:
     noam panne "Oh ça tu peux l'être..."
     mara colere "Eh ! Reviens-là tu vas voir toi si je peux être terrifiante !"
     "Tout le monde se met à rigoler alors que Mara commence à me courrir après."
-    think "Enfin, je ne sais pas si on peut vraiment l'appeler Mara..."
-
-    $ hideGroup()
-    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
-    $ flashlight_on(0)
-    "Je prétexte la fatigue et retourne dans le conduit. Personne ne cherche à me retenir. Mara me rappelle seulement de ne pas disparaître demain."
     tomas reflechit "On se retrouve tous ici demain matin. Il faut qu'on s'organise pour éviter les loupées."
     elias surpris "Tu veux encore nous faire un planning ?"
     tomas inquiet "Un planning, non. Enfin... j'ai noté les heures possibles."
@@ -412,6 +406,13 @@ label _26_0_1_1_0_0_SECRET:
     "Son ton nous surprend. Tomas baisse aussitôt les yeux vers sa tablette."
     tomas fatigue "Désolé. Mais si on se trompe de moment, c'est pas une réunion qu'on rate."
     "Personne ne plaisante cette fois."
+    think "Enfin, je ne sais pas si on peut vraiment l'appeler Mara..."
+
+    $ hideGroup()
+    scene bg_conduit_reseau at adaptive_fullscreen with dissolve
+    $ flashlight_on(0)
+    "Je prétexte la fatigue et retourne dans le conduit. Personne ne cherche à me retenir. Mara me rappelle seulement de ne pas disparaître demain."
+
     "Je retrouve le premier embranchement et m'arrête pour vérifier le trajet dans ma tête."
     "Je regarde mon téléphone : aucun message."
     think "Raah, j'espère qu'il n'est rien arrivé à Iris !"
