@@ -135,6 +135,10 @@ label _8_PNC_TELEVISION:
     $ showGroup([("noam", "inquiet", 0.50)])
     "L'écran mural reste entièrement noir. Je vérifie malgré moi le rebord inférieur et l'espace étroit entre le cadre et le mur."
     noam taquin "Et alors ? Tu peux bien m'aider une fois, non ?"
+    "Un voyant clignote dans le reflet de l'écran. Je me retourne d'un coup."
+    "Ce n'est que ma tablette qui termine sa recharge."
+    noam fatigue "Génial. Maintenant, même une batterie me fait sursauter."
+    noam taquin "T'avais pas besoin d'en rajouter, toi."
     "Le reflet du plafond reste immobile dans l'écran. Je me sens idiot de lui avoir parlé."
     think "Au moins, elle ne pourra pas raconter ça aux autres."
     return
@@ -230,6 +234,11 @@ label _8_FIN_RECHERCHE:
     think "Non. Ça ne suffit pas. J'aurais voulu pouvoir arrêter après avoir trouvé quelque chose."
     "Je repense au bureau tel qu'il était avant que je le vide. La feuille était là. Ou alors je me trompe sur le moment où je l'ai vue pour la dernière fois."
     noam reflechit "Je vais finir par accuser une chaussette de m'avoir volé..."
+    noam fatigue "Et elle aura un meilleur alibi que moi."
+    "Je ramasse une chaussette sous le lit. Ce n'est même pas celle que je cherchais."
+    noam taquin "Toi, je te garde. On aura une petite discussion ce soir."
+    "Je la pose sur le bureau, puis m'arrête. Je viens vraiment de mettre une chaussette en garde à vue."
+    "Le pire, c'est que ça ne me fait pas rire."
     "Mon estomac proteste. Il est déjà tard."
     think "Je vais manger. Ensuite, je pourrai revenir ici avec une tête qui fonctionne."
     "Je récupère ma veste au fond d'une pile de vêtements."

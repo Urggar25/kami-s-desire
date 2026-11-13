@@ -960,6 +960,14 @@ label _24_0_1_1_0_0_CONCLAVE:
     sael raison "Il n'y a rien à discuter sur le principe. Personne ne devrait manquer de ces choses."
 
     nyra sourire "Tout le monde semble être d'accord."
+    julian sourire "Voilà ! Une fois dans notre vie, nous pouvons faire quelque chose sans nous arracher la tête."
+    elen joie "Je propose qu'on fête ça après !"
+    iris blase "On n'a pas encore voté."
+    elen surpris "Ah. Oui."
+    mara taquin "Julian vient d'annoncer la victoire, donc préparez-vous au désastre."
+    julian sourire "Je note votre manque de confiance. Il sera mentionné dans mes mémoires."
+    lysa blase "Fais vite. À ce rythme, tu vas devoir écrire un tome par échec."
+    "Tomas ne rit pas. Il relit la même ligne depuis tout à l'heure."
 
     "Tous les regards se dirigent finalement vers Tomas. Il garde encore quelques secondes les yeux fixés sur sa tablette avant de relever la tête."
 
@@ -978,6 +986,13 @@ label _24_0_1_1_0_0_CONCLAVE:
     "Il s'interrompt."
 
     ryn agace "Et ?"
+    tomas inquiet "Et... j'ai pas terminé."
+    elen inquiet "C'est à cause du mot « suffisamment » ?"
+    tomas reflexion "Entre autres. Ça peut sembler ridicule, mais un mot comme ça..."
+    iris blase "Non, Tomas. Personne n'a dit que c'était ridicule. Respire."
+    mara taquin "Si tu prends une heure pour le mot « suffisamment », on va manquer d'eau avant le vote."
+    tomas colere "Mara, c'est précisément ce que j'essaie d'éviter !"
+    "Mara entrouvre la bouche, surprise. Pour une fois, Tomas ne lui laisse pas le temps de répondre."
 
     tomas colere "Attends !"
 

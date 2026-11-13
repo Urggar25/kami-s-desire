@@ -239,6 +239,13 @@ label _15_0_1_1_0_COULOIR:
 
     tomas inquiet "Elle n’a pas complètement tort. Sans vouloir te faire la morale, Noam, chaque absence réduit encore nos possibilités de savoir ce que pense réellement le groupe avant le vote."
     tomas raison "Et dans un système où l’unanimité compte... enfin, tu connais déjà le problème. Je vais pas te refaire un cours."
+    iris blase "Merci. J'ai eu peur que tu nous ressortes le tableau des abstentions."
+    tomas inquiet "Je n'ai pas de tableau des abstentions."
+    lysa blase "Tu as dit ça beaucoup trop vite."
+    tomas inquiet "J'ai un tableau des votes. C'est différent."
+    mara agace "Ah, tout va bien alors. Le jour où Noam disparaît, Tomas nous fait des statistiques."
+    noam fatigue "Je suis encore là, je vous signale."
+    lysa blase "Pour l'instant. Tu t'entraînes plutôt bien à disparaître."
 
     noam raison "Je le connais. Et je ne vous demande pas de dire que mon choix est raisonnable."
     noam culpabilite "Je sais très bien ce que ça implique."
@@ -293,8 +300,16 @@ label _15_0_1_1_0_COULOIR:
     "Nyra s’avance légèrement, sans colère apparente."
 
     nyra raison "Ne présente pas ça comme quelque chose qui t’arrive. C’est une décision. Tu peux avoir de bonnes raisons, mais elle reste à toi."
+    nyra raison "Je ne te demande pas de te justifier devant tout le monde. Mais tu comptes prévenir quelqu'un si tes recherches tournent mal ?"
+    noam hesitation "Kael sera avec moi."
+    nyra raison "Alors assure-toi qu'il sache quoi faire si vous devez vous séparer."
+    ryn colere "Tu viens de lui donner un plan pour sécher le vote ?"
+    nyra raison "Je préfère un mauvais plan avec un moyen de revenir qu'une disparition dont personne ne sait rien."
+    iris inquiet "Ça ne veut pas dire qu'on approuve."
+    noam fatigue "J'avais compris au deuxième reproche."
+    mara agace "Seulement au deuxième ? Il s'améliore."
 
-    "Sa phrase me fait plus mal que les reproches de Mara ou de Ryn, probablement parce qu’elle ne cherche pas à me blesser."
+    "Nyra ne hausse jamais le ton. Pourtant, sa question me reste en tête : si quelque chose tourne mal, est-ce que j'ai seulement prévu comment prévenir les autres ?"
 
     noam determine "D’accord. Je choisis de ne pas venir au vote."
     noam culpabilite "Et si ça a des conséquences, je les assumerai."
