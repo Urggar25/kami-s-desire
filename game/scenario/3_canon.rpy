@@ -384,7 +384,7 @@ label _3_OPT_KAEL_DIAL:
 
     kael mefiant "On vit grâce à des cargaisons régulières. Si tout le système change du jour au lendemain, je ne peux pas juste croiser les doigts."
 
-    think "Il ne cherche même pas à me convaincre. C'est peut-être ça qui me trouble : il a vraiment peur."
+    think "Kael serre sa tablette si fort que ses doigts blanchissent."
 
     # Déblocage optionnel de l'argument « Risque de dépressurisation » (sinon disponible au Jour 2).
     call day3_collect_vote_argument("orbite") from _call_day3_collect_vote_argument_orbite
@@ -398,7 +398,7 @@ label _3_OPT_KAEL_DIAL:
     kael culpabilite "J'ai déjà dû fermer une porte sur deux personnes pour en sauver d'autres. Je sais ce que coûte une mauvaise décision."
     kael inquiet "Et je déteste que les autres me regardent comme si j'avais toutes les réponses."
 
-    noam "Je comprends. Mais maintenir les règles actuelles, c'est aussi une décision. Et on sait déjà qu'elles font des dégâts."
+    noam "Ouais... Mais si on ne change rien, les pénuries restent. C'est ça qui me rend dingue."
 
     kael calme "Ouais... On verra quand on aura le bulletin devant nous."
     kael sourire "Merci d'être passé. Au moins, j'ai arrêté de fixer ma tablette pendant deux minutes."
@@ -406,7 +406,7 @@ label _3_OPT_KAEL_DIAL:
     hide noam
     hide kael
 
-    think "Il a l'air d'avoir deux opinions contradictoires, et de bonnes raisons pour chacune. J'espère qu'il choisira avant de prendre son bulletin."
+    think "Je le laisse avec sa tablette. Ça m'étonnerait qu'il mange quoi que ce soit ce matin."
 
     pause 0.5
     jump DORTOIR_TP
@@ -668,10 +668,10 @@ label _3_CAFETERIA_ARRIVE:
     mara triste "Je le sais. Mais si ça tourne mal, ceux qui paieront ne seront pas assis à cette table."
     mara triste "Et encore moins Kami."
 
-    noam reflechit "Mara a raison sur un point : si Kami change le sens du texte, on aura passé deux jours à débattre d'une proposition qui n'existe plus."
+    noam reflechit "Attendez... On n'a toujours pas vu la version finale. Elle pourrait changer quoi, exactement ?"
     mara reflechit "Voilà. Je ne confierais déjà pas ma liste de courses à Kami. Alors la vie des gens..."
     elen inquiet "Je voulais juste qu'on se soutienne..."
-    mara triste "Je sais, Elen. Mais nous soutenir, ça veut aussi dire être capables de dire non."
+    mara triste "Je sais. Mais si tu me demandes mon avis, faut aussi accepter qu'il te plaise pas."
     julian colere "Dire non sans raison, c'est condamner tout le monde à attendre !"
     iris desaccord "Et vous êtes repartis. C'était combien, déjà, les cinq minutes de paix ?"
     think "Mara ne sourit plus. Julian, lui, ne regarde même pas Elen."
@@ -680,7 +680,7 @@ label _3_CAFETERIA_ARRIVE:
 
     pause 0.3
 
-    think "Pour la première fois, je réalise que mon optimisme et la prudence de Mara ne sont pas forcément incompatibles. C'est une découverte dérangeante."
+    think "Mara m'a presque convaincu. Je vais éviter de le lui dire, elle serait insupportable."
 
     think "Elen repousse son bol vide, visiblement satisfaite."
 
@@ -709,7 +709,7 @@ label _3_CAFETERIA_ARRIVE:
     "Puis elle sort à son tour."
     hide iris with moveoutleft
 
-    think "La table est presque vide. J'étais entré ici persuadé qu'on pouvait tous s'entendre. Je repars en me demandant si on a seulement entendu les mêmes mots."
+    think "On s'est disputés avant même d'avoir le texte définitif. Ça promet."
 
     stop music fadeout 0.8
 
@@ -763,7 +763,7 @@ label _3_PAUSE_CHAMBRE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_163
     scene couloir_dortoir at adaptive_fullscreen, day3_run_shake with fade
 
-    think "Tomas a envoyé un message à Nyra. Pas à moi. Il savait visiblement qui serait la plus utile."
+    think "Nyra a déjà pris de l'avance. Je la rattrape au virage."
 
     play sound sfx_run
 
@@ -845,20 +845,23 @@ label _3_PAUSE_CHAMBRE:
     julian hesitation "C'est... ce n'est pas ce que je voulais dire."
     noam colere "On était derrière la porte. On t'a entendu lui dicter sa réponse !"
     julian colere "Et toi, tu fais quoi depuis ce matin ? Tu te promènes en espérant que l'unanimité va tomber du plafond ?!"
-    noam colere "Au moins, je ne prends pas les autres pour des bulletins avec des jambes !"
+    noam colere "Tu l'écoutes, au moins ?! Il te dit non depuis tout à l'heure !"
     call cutin("julian") from _call_kd_cutin_3_julian
     julian colere "Tu crois que ça m'amuse ?! UN seul contre et trois jours d'efforts partent en fumée !"
-    noam colere "Alors convaincs-le sur le TEXTE ! Pas sur la jolie photo de groupe que tu veux offrir aux caméras !"
+    noam colere "Alors parle-lui du TEXTE ! Arrête de lui demander de sourire devant les caméras !"
     julian colere "Tu peux jouer les gentils parce que d'autres prennent le risque de défendre ce qu'ils croient juste !"
     tomas inquiet "MAIS VOUS ALLEZ VOUS TAIRE ?!"
     tomas colere "Je suis là ! Je suis pas une chaise qu'on déplace d'un camp à l'autre !"
-    "Je me tourne vers Tomas. Il tremble de colère, et je réalise que je viens aussi de parler à sa place."
-    noam culpabilite "T'as raison. Excuse-moi. J'aurais dû te demander ce que tu voulais au lieu de hurler."
+    "Tomas nous regarde l'un après l'autre. Il tremble de colère."
+    noam colere "Mais je suis venu parce que Julian te laissait pas..."
+    tomas colere "ET TOI, TU FAIS QUOI LÀ ?! Tu réponds encore pour moi !"
+    noam hesitation "..."
+    noam culpabilite "Ouais. Merde. Pardon, Tomas."
     julian hesitation "Tomas, je ne voulais pas..."
     tomas inquiet "NON ! Vous m'écoutez pour une fois !"
     tomas inquiet "J'ai peut-être envie de voter pour, d'accord ? Mais maintenant, j'ai surtout envie de vous envoyer promener tous les deux !"
-    nyra raison "Vous avez terminé ? Alors on va faire quelque chose de révolutionnaire : laisser Tomas réfléchir."
-    nyra neutre "Julian, sors. Noam, reste."
+    nyra raison "Vous avez fini de vous disputer sur le dos de Tomas ?"
+    nyra neutre "Julian, dehors. Noam, attends deux secondes."
     julian colere "Très bien. Mais si une seule hésitation nous fait perdre, rappelez-vous qui aura essayé de l'éviter."
     noam colere "Et rappelle-toi que les gens ont le droit de te dire non !"
     julian colere "Oui. On verra."
@@ -869,7 +872,7 @@ label _3_PAUSE_CHAMBRE:
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
 
     tomas hesitation "Je lui ai dit non à la discussion. Je sais pas pourquoi c'est plus difficile à comprendre qu'un non au vote."
-    noam triste "Je ne t'ai pas beaucoup aidé. J'ai fait exactement ce que je lui reprochais."
+    noam triste "J'étais venu t'aider. J'ai juste crié plus fort que lui. Désolé."
     tomas hesitation "Je veux que les choses changent, moi aussi. Mais si on supprime les rations et que les gens n'ont plus rien, ça va être de ma faute ?"
     nyra neutre "Tu voteras sur le texte. Pas pour faire plaisir à Julian. Pas pour remercier Noam d'être venu."
     tomas inquiet "J'aurais juste voulu avoir peur tranquillement, vous voyez ? Sans que quelqu'un transforme ça en problème."
@@ -877,7 +880,7 @@ label _3_PAUSE_CHAMBRE:
     tomas hoche_la_tete "Ouais. Mais je vous en supplie, ne faites pas encore de moi l'enjeu de votre dispute."
     nyra sourire "Je reste avec lui. Et merci d'être venu sans casser une porte, Noam."
     think "Nyra reste auprès de Tomas. Je repars seul."
-    think "Je m'étais promis de faire mieux que me disputer. Il est à peine midi, et j'ai déjà perdu une partie de ce pari."
+    think "J'ai envie de rattraper Julian pour lui dire ses quatre vérités. Après ce que Tomas vient de me dire, ce serait vraiment malin."
     $ hideGroup()
 
     call START_FREE_TIME("_3_TRANSITION_CONCLAVE") from _call_START_FREE_TIME_3_rewrite
@@ -907,8 +910,8 @@ label _3_TRANSITION_CONCLAVE:
     "Le groupe accélère quand le couloir se resserre. Elle, non. Elle traîne les pieds, exprès."
 
     lysa triste "On marche vers une défaite avec un sérieux admirable."
-    lysa triste "Et demain ? Les mêmes chambres, les mêmes couloirs. Dans trois jours, on rejouera la même pièce."
-    lysa blase "On se prend pour des législateurs et Kami tient les lumières, les portes et la sortie de secours."
+    lysa triste "Et demain ? Rien n'aura bougé. On sera encore là à discuter dans trois jours."
+    lysa blase "De toute façon, Kami peut nous couper les micros quand ça lui chante. Super pouvoir, hein ?"
 
     think "Lysa dit ça sans vraiment attendre de réponse. Elle paraît déjà convaincue qu’on va échouer."
 
@@ -920,24 +923,21 @@ label _3_TRANSITION_CONCLAVE:
     scene bg_cg014 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg014")
 
-    think "Sael s'est laissée glisser à l'arrière du groupe, elle aussi. Volontairement. Elle observe Lysa depuis un moment."
-    "Sans prévenir, sans théâtre, elle attrape Lysa et la serre contre elle."
-
-    sael "Lysa... Tu peux arrêter de faire semblant d'aller bien cinq minutes ?"
-    sael "Tu repères les problèmes avant tout le monde. C'est précieux. Mais si tu passes ton temps à les porter seule, tu vas t'écrouler."
-    sael "On aura besoin de toi là-dedans. Pas de ta pire prédiction."
-
-    "Elle pointe la poitrine de Lysa du doigt. Les épaules de Lysa se relâchent, à peine."
-
-    lysa "Je suis toujours debout. C'est déjà une preuve de bonne santé."
-
-    sael "Alors continue. Mais arrête d'annoncer l'échec avant même qu'on entre."
-
-    lysa "D'accord... Mais tu me devras un café. Un vrai. Pas cette eau brune de station."
-
-    sael sourire "Deux cafés, si tu veux. Et je remplirai les formulaires à ta place."
-
-    lysa blase "Bon. On avance, avant que tu me fasses pleurer devant ces idiots."
+    think "Sael ralentit à hauteur de Lysa. Elle la regarde un instant, puis lui barre doucement le passage."
+    "Avant que Lysa puisse protester, Sael l'attire contre elle."
+    sael "Bon. Viens là."
+    lysa "Hé ! Tu fais quoi ?!"
+    sael "Tu trembles. Et ça fait dix minutes que tu nous annonces la catastrophe."
+    lysa "Je tremble pas. Et c'est une catastrophe parfaitement envisageable."
+    sael "Lysa."
+    lysa "Quoi ?"
+    sael "Tu peux avoir peur. T'es pas obligée de nous le cacher derrière tes piques."
+    "Lysa essaie de se dégager, mais sans grande conviction."
+    lysa "Je vais finir par croire que tu m'apprécies. Très embarrassant pour nous deux."
+    sael "Alors marche avec nous. Et arrête de regarder tes pieds."
+    lysa "D'accord. Mais tu me devras un café. Un vrai, pas leur eau de vaisselle."
+    sael sourire "Je t'en devrai deux si tu cesses de râler."
+    lysa blase "Impossible. Tu me connais vraiment mal."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_167
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1994,7 +1994,7 @@ label _3_VOTE_POUR:
     $ hideGroup()
 
     think "Il est dix-sept heures dix. Julian parle déjà de la prochaine réforme. Ryn passe devant lui sans un mot."
-    think "Je crois que notre première unanimité n'a pas rendu les gens plus proches."
+    think "Derrière moi, Julian essaie encore de faire trinquer quelqu'un. Je n'entends personne accepter."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_184
     scene couloir_dortoir at adaptive_fullscreen with dissolve
@@ -2099,8 +2099,7 @@ label _3_VOTE_CONTRE:
     noam colere "Julian, arrête ! On ne peut pas refaire le scrutin en hurlant plus fort que les autres !"
     nyra neutre "Personne ne changera le résultat aujourd'hui. Sortez, reposez-vous, et évitez de vous accuser tant que vous ne savez rien."
 
-    think "Il est presque dix-sept heures. Nous avions douze sièges autour d'une table. Je me demande combien de personnes accepteront encore de s'y asseoir ensemble."
-    think "Le vote était secret. Mais à voir Julian dévisager les autres, le secret vient de devenir un motif de soupçon."
+    think "Julian examine les visages un à un. Personne ne soutient son regard longtemps."
 
     think "Je me lève sans dire au revoir. Les voix continuent derrière moi. Pour une fois, je n'ai plus envie d'essayer de les réunir."
 
@@ -2108,7 +2107,7 @@ label _3_VOTE_CONTRE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_189
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    think "Le couloir est désert. Mes pas font plus de bruit que les applaudissements qu'on n'aura jamais."
+    think "Le couloir est vide. J'entends encore Julian crier derrière la porte."
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_190
     scene bg_dortoir at adaptive_fullscreen with dissolve
     think "Je traverse le dortoir. La porte de chaque chambre me paraît être une bonne raison de ne parler à personne."
@@ -2117,8 +2116,8 @@ label _3_VOTE_CONTRE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     think "Je m'effondre sur le lit, encore habillé. Je n'ai même pas la force de poser ma tablette."
     think "La voix de Julian me revient. Puis celle de Tomas dans la salle de repos."
-    think "On prétendait vouloir convaincre les autres. Aujourd'hui, on leur a surtout appris à se méfier."
-    think "Dans trois jours, il faudra recommencer. Avec les mêmes personnes, les mêmes règles... et beaucoup moins de confiance."
+    think "J'ai encore la voix de Tomas dans les oreilles. Et celle de Julian, juste après."
+    think "Dans trois jours, on recommence. Je n'ai aucune envie de revoir leurs têtes autour de cette table."
 
     $ phase3_over = True
     $ vote1 = "NON"
