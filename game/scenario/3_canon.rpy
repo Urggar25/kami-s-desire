@@ -304,12 +304,12 @@ label _3_CANON:
 
     pause 0.5
 
-    think "Je suis réveillé avant l'annonce de Kami. Première victoire de la journée : l'IA n'a pas eu besoin de me tirer du lit."
-    think "Deuxième victoire : je n'ai pas encore vomi en pensant à quatorze heures."
+    think "Je me suis réveillé tout seul. Pas de hurlement de Kami, pas d'alarme. C'est presque suspect."
+    think "Quatorze heures. Rien que d'y penser, j'ai l'estomac en vrac."
     scene bg_cg012 at adaptive_fullscreen with fade
     $ blink()
-    think "Un seul non et on repart à zéro. Douze inconnus, une urne et une phrase qui pourrait faire basculer le monde."
-    think "J'aimerais croire que ce sera aussi simple qu'une couleur sur un écran."
+    think "Un seul non. C'est tout ce qu'il faut pour que ça rate."
+    think "Je regarde l'heure. Encore. Elle n'a pas bougé assez vite à mon goût."
     think "Je saisis ma tablette. Hier, elle débordait d'arguments. Aujourd'hui, il va falloir faire quelque chose de tout ça."
 
     play sound sfx_announce
@@ -344,7 +344,7 @@ label _3_CANON:
     think "Même ses menaces n'arrivent pas à gâcher mon envie de réussir. C'est presque inquiétant : je commence à ressembler à Elen."
     scene bg_chambre at adaptive_fullscreen with fade
     think "Je m'habille. Le miroir me renvoie la tête de quelqu'un qui essaie d'avoir l'air sûr de lui."
-    think "Il ne fait pas semblant très bien."
+    think "Bon. Même le miroir n'y croit pas."
     think "D'abord manger. Après, convaincre onze personnes de ne pas faire exploser cette journée."
 
     # Trajet jouable : chambre -> dortoir -> couloir -> cafétéria.
@@ -375,14 +375,14 @@ label _3_OPT_KAEL_DIAL:
 
     noam "Tu descends manger, ou tu as décidé de t'installer dans ce couloir ?"
 
-    kael reflechit "Dans une minute. J'essaie de ne pas penser au vote. Pour l'instant, c'est un échec monumental."
+    kael reflechit "Dans une minute. J'essaie de penser à autre chose qu'au vote. Tu vois comme ça marche bien."
 
     noam "C'est toujours le commerce qui te travaille ?"
 
     kael inquiet "J'en entends qui disent que ça ne changera rien. Et d'autres qui parlent déjà comme si tout était gagné."
     kael inquiet "Sur Orbite, une livraison retardée peut tuer des gens. Et une livraison mal contrôlée aussi. Je suis censé être rassuré par quoi, exactement ?"
 
-    kael mefiant "On vit grâce à des cargaisons régulières. Si tout le système change du jour au lendemain, je ne peux pas juste croiser les doigts."
+    kael mefiant "Nos cargaisons, on les attend pendant des semaines. Si ça change demain, je fais quoi ? Je croise les doigts ?"
 
     think "Kael serre sa tablette si fort que ses doigts blanchissent."
 
@@ -394,8 +394,9 @@ label _3_OPT_KAEL_DIAL:
     noam "Donc... tu penses voter contre ?"
 
     kael surpris "Non ! Enfin... je suis plutôt pour. Sur le principe."
-    kael doute "En pratique, c'est une autre histoire."
-    kael culpabilite "J'ai déjà dû fermer une porte sur deux personnes pour en sauver d'autres. Je sais ce que coûte une mauvaise décision."
+    kael doute "Sauf que... j'en sais rien. C'est bien ça, le problème."
+    kael culpabilite "Je t'ai raconté pour la cloison, hier. Les deux personnes... Enfin, tu sais."
+    kael inquiet "Je veux plus avoir à choisir comme ça. Pas sur un coup de tête."
     kael inquiet "Et je déteste que les autres me regardent comme si j'avais toutes les réponses."
 
     noam "Ouais... Mais si on ne change rien, les pénuries restent. C'est ça qui me rend dingue."
@@ -449,7 +450,7 @@ label _3_CAFETERIA_ARRIVE:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_159
     scene bg_cafeteria at adaptive_fullscreen with dissolve
 
-    think "La cafétéria ressemble à une salle d'attente avant une opération : certains bavardent trop fort, les autres regardent leur plateau comme s'il allait les sauver."
+    think "Ça parle fort à une table, pas du tout à l'autre. On dirait que personne n'a dormi."
     think "J'avais envie d'un petit-déjeuner tranquille. Manifestement, ce n'est pas aujourd'hui."
 
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
@@ -588,11 +589,11 @@ label _3_CAFETERIA_ARRIVE:
 
     elen rire "Bienvenue au club ! Il nous manque une devise et des badges !"
 
-    julian sourire "Évidemment, je suis pour ! Et je constate que ma secrétaire préférée a déjà commencé à rassembler les voix."
+    julian sourire "Évidemment que je suis pour ! Et Elen a déjà commencé à faire campagne à ma place. Je suis presque jaloux !"
 
     iris hesitation "Julian... tu n'es pas obligé d'en faire un spectacle."
 
-    julian reflechit "Je n'en fais pas un spectacle. Je fais preuve de transparence ! Il faut que les gens sachent sur qui compter."
+    julian reflechit "Un spectacle ? Je dis juste ce que je vais voter ! Ça vous dérange, maintenant, qu'on soit francs ?"
 
     think "Plusieurs personnes aux tables voisines nous regardent maintenant. Elen n’a pas l’air de s’en rendre compte."
 
@@ -608,7 +609,7 @@ label _3_CAFETERIA_ARRIVE:
 
     elen colere "Mais j'ai réfléchi ! Arrêtez de me regarder comme si j'avais choisi au hasard !"
 
-    iris fatigue "Vous pouvez parler moins fort ? Un indécis qui se sent interrogé, vous allez surtout réussir à le faire fuir."
+    iris fatigue "Vous pouvez baisser d'un ton ? Kael vient littéralement de fuir la table."
 
     elias "Je penche pour. Mais si ça n'aide pas vraiment les gens à travailler et à obtenir ce qui manque, on aura voté pour quoi ?"
 
@@ -655,7 +656,7 @@ label _3_CAFETERIA_ARRIVE:
     iris reflechit "Et toi, Mara ? Tu as déjà décidé de faire ton numéro contre tout le monde ?"
 
     mara taquin "C'est fou, ça. Je dis bonjour et vous m'attribuez déjà un bulletin."
-    mara reflechit "Je ne suis pas contre le commerce. Je suis contre l'idée de voter les yeux fermés juste pour être applaudis."
+    mara reflechit "J'ai rien contre le commerce. J'aimerais juste voir ce qu'on va signer avant que vous sortiez les confettis."
 
     elen colere "C'est du commerce, pas un plan pour exterminer les bébés pingouins !"
 
@@ -665,8 +666,8 @@ label _3_CAFETERIA_ARRIVE:
 
     elen colere "Et si on attend d'être absolument sûrs, on ne fera rien ! Les gens ont besoin qu'on essaie !"
 
-    mara triste "Je le sais. Mais si ça tourne mal, ceux qui paieront ne seront pas assis à cette table."
-    mara triste "Et encore moins Kami."
+    mara triste "Et si ça tourne mal ? C'est pas nous qui allons manquer un repas demain."
+    mara triste "Kami encore moins."
 
     noam reflechit "Attendez... On n'a toujours pas vu la version finale. Elle pourrait changer quoi, exactement ?"
     mara reflechit "Voilà. Je ne confierais déjà pas ma liste de courses à Kami. Alors la vie des gens..."
@@ -751,10 +752,10 @@ label _3_PAUSE_CHAMBRE:
     nyra stress "Noam, viens. Julian a coincé Tomas dans la salle de repos. Il ne le laisse pas partir."
     noam inquiet "Coincé comment ? Il l'a menacé ?"
     nyra colere "Il veut lui faire promettre un vote pour. Et lui faire dire devant les caméras qu'il le soutient. Tomas a dit qu'il voulait réfléchir seul."
-    noam colere "Et il s'acharne sur Tomas ?! Évidemment. Il pouvait pas commencer par quelqu'un qui lui répondrait non."
-    nyra stress "C'est justement ce qui m'inquiète. Tomas n'ose pas lui tenir tête. Il va finir par dire oui pour avoir la paix... ou non pour se venger."
+    noam colere "Il s'en prend à Tomas ?! Il sait très bien que Tomas va pas lui rentrer dedans !"
+    nyra stress "Tomas m'a écrit parce qu'il n'arrive plus à s'en débarrasser. Il faut y aller, pas lui faire un cours sur le vote."
     noam determine "On y va. Avant qu'ils se mettent à voter pour savoir qui a le droit de quitter la pièce."
-    nyra neutre "Et ne transforme pas ça en duel avec Julian. Tomas n'a pas demandé deux personnes de plus pour décider à sa place."
+    nyra neutre "Et Noam ? On vient chercher Tomas. Pas régler tes comptes avec Julian."
 
     stop music fadeout 0.5
     play music "music/bgm_world_decline.mp3" fadein 0.6
@@ -1655,15 +1656,15 @@ label _3_DEBAT1_PHASE3_INT1:
             ("elen", "joie", 0.98),
         ])
 
-        noam inquiet "Ryn, tu disais que les bons ne suffisaient même plus chez toi. Tu parlais de quelques pénuries... ou de quelque chose de permanent ?"
+        noam inquiet "Ryn, chez toi, les rayons sont vides de temps en temps... ou c'est tout le temps ?"
 
         elias determine "Un bon pour du riz, et l'entrepôt est vide ! On a gagné quoi ? Le droit officiel d'avoir faim ?"
 
-        julian sourire "Si les producteurs peuvent enfin vendre ce qu'ils fabriquent, ils auront une raison d'augmenter la production. On ne peut pas ignorer ça."
+        julian sourire "S'ils peuvent vendre, ils vont produire davantage ! C'est pas compliqué !"
 
-        mara doute "Très bien. Et si les acheteurs les plus riches raflent tout, qui livrera Limen ? Le Père Noël ?"
+        mara doute "Et si les riches achètent tout avant les autres ? Limen aura les cartons vides, c'est ça ?"
 
-        ryn colere "Voilà ! Nexus se remplira les poches et nous, on verra passer les camions sans pouvoir les arrêter !"
+        ryn colere "C'est exactement ce que je dis ! Et Julian va nous expliquer que c'est formidable !"
 
         kael reflechit "Limen, c'est aussi beaucoup de clients potentiels. Certains commerçants voudront peut-être s'y installer."
 
@@ -1722,7 +1723,7 @@ label _3_DEBAT1_PHASE3_INT1:
         kael mefiant "Là-haut, un filtre ou une pièce manquante peut devenir une urgence vitale. On ne peut pas improviser."
         kael triste "On ne peut pas faire comme si une livraison ratée ne coûtait qu'un peu de confort."
 
-        noam "Si les circuits commerciaux changent sans transition, toutes les livraisons pourraient être perturbées."
+        noam "Mais si on chamboule les livraisons d'un coup, on risque de tout bloquer, non ?"
 
         iris inquiet "...Là, ça devient sérieux. On risque des vies pour avoir des rayons mieux remplis ?"
 
@@ -1732,7 +1733,7 @@ label _3_DEBAT1_PHASE3_INT1:
 
         lysa blase "Une seule livraison ratée, et tout un module peut trinquer. Ça devrait suffire à calmer quelques beaux discours."
 
-        nyra stress "Sur Orbite, on ne peut pas attendre trois jours pour corriger une erreur. Le vide n'accorde pas de délai parlementaire."
+        nyra stress "Sur Orbite, on peut pas patienter trois jours pour réparer une erreur ! On risque de perdre des gens avant le prochain vote !"
 
         mara stress "...Génial. On prend notre décision ici, confortablement assis. Et ce sont des inconnus enfermés dans une boîte métallique qui pourraient en payer le prix."
 
@@ -1767,8 +1768,8 @@ label _3_DEBAT1_PHASE3_INT1:
         elen reflechit "Trois pages ! Et j'avais même pas encore demandé les épices ! J'ai cru que j'allais y passer la nuit."
         iris blase "Même procédure absurde pour obtenir une pièce détachée. Et on s'étonne que plus rien n'avance."
         kael calme "Certains dossiers d'équipement prennent plusieurs jours. Pour une urgence, c'est une éternité."
-        nyra raison "Nous sommes donc d'accord sur un constat : l'organisation actuelle entrave même les besoins les plus banals."
-        noam inquiet "Voilà pourquoi j'ai envie de changer les règles. Mais l'amendement qu'on nous propose est-il vraiment la bonne réponse ?"
+        nyra raison "Donc même pour une demande simple, on perd des jours. C'est absurde."
+        noam inquiet "Voilà pourquoi on veut changer les choses. Mais là... ce texte, c'est vraiment ce qu'il nous faut ?"
         $ debat_day3_apply_influence({"elen": 1, "iris": 1, "kael": 1, "nyra": 1})
 
     return
@@ -1796,7 +1797,7 @@ label _3_DEBAT1_PHASE3_INT2:
 
         julian sourire "Le monde d'avant était loin d'être parfait. Mais tu pouvais essayer, échouer, recommencer. Aujourd'hui, on attend qu'une IA autorise le moindre changement."
 
-        mara reflexion "« Choisir »... C'est un très joli mot quand on a les moyens de choisir."
+        mara reflexion "Ouais. Choisir. Quand t'as les moyens, c'est facile."
         mara reflexion "Moi, je me souviens des portes qui se fermaient devant toi quand tu n'avais pas le bon visage, les bons contacts, la bonne façon de sourire."
         mara triste "La liberté d'avant n'avait pas le même prix pour tout le monde. Je suis bien placée pour le savoir."
 
@@ -1804,7 +1805,7 @@ label _3_DEBAT1_PHASE3_INT2:
 
         ryn colere "Les données ? Va expliquer tes statistiques aux gamins de Limen qui grandissaient avec les restes des autres !"
 
-        noam "Avant Kami, l'argent donnait déjà des possibilités aux uns et les retirait aux autres. Ça ne suffit pas de dire qu'on était plus libres."
+        noam "Mais avant, ceux qui avaient pas un sou étaient déjà coincés ! C'était pas la liberté pour tout le monde."
 
         elen joie "Alors... pourquoi on ne pourrait pas garder ce qui marche et changer le reste ?! La liberté, sans laisser les gens mourir de faim !"
 
@@ -1874,7 +1875,7 @@ label _3_DEBAT1_PHASE3_INT2:
 
         mara reflexion "Tiens. Un argument qui ne sort pas d'un joli discours. Ça existe, ça fonctionne parfois. C'est déjà plus convaincant."
 
-        sael determine "Pour l'instant, on survit. Je voudrais qu'on puisse recommencer à vivre."
+        sael determine "J'aimerais surtout qu'on arrête de compter chaque bouchée. Pour une fois."
 
         think "Ryn baisse les yeux. Kael pose quelques questions à Sael sur la façon dont ils organisent les échanges chez elle."
 
@@ -1903,12 +1904,12 @@ label _3_DEBAT1_PHASE3_INT2:
             ("kael", "inquiet", 0.56),
             ("elen", "inquiet", 0.78),
         ])
-        noam "Déjà aujourd'hui, deux familles de deux districts différents n'obtiennent pas du tout les mêmes ressources."
+        noam "Aujourd'hui déjà, selon le district, deux familles n'ont même pas accès aux mêmes choses !"
         lysa blase "Et demain, si on instaure les ventes, ceux qui possèdent déjà quelque chose auront toutes les chances de passer devant les autres."
-        nyra raison "Pas nécessairement. Une augmentation des échanges pourrait aussi favoriser les districts actuellement délaissés. Il faut considérer les deux possibilités."
+        nyra raison "Pas forcément, Lysa. Si les échanges augmentent, certains districts pourraient enfin recevoir plus. On ne sait pas encore."
         kael inquiet "Tout dépendra des circuits d'approvisionnement. Sur Orbite, une livraison ratée ne se corrige pas facilement."
         elen inquiet "Donc... même en y réfléchissant tous ensemble, on ne peut pas savoir si ça va améliorer les choses ?"
-        noam "C'est ça. Et ce n'est pas Kami qui assumera notre choix. Ce sera nous."
+        noam "Non. Et c'est bien ça qui me fait peur."
         $ debat_day3_apply_influence({"lysa": -1, "kael": -1, "nyra": 1, "elen": 1})
 
     return
