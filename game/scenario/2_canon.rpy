@@ -708,12 +708,12 @@ label _2_ROUTE_GYMNASE_MARA_TOMAS:
         ("tomas", "reflechit", 0.66),
     ])
     mara neutre "Bon, et toi ? T'as réussi à dormir dans ta chambre de ministre ?"
-    tomas reflexion "Pas vraiment. Je me suis surtout demandé pourquoi la mienne ne ressemblait pas du tout à celle d'Elias."
+    tomas reflechit "Pas vraiment. Je me suis surtout demandé pourquoi la mienne ne ressemblait pas du tout à celle d'Elias."
     mara taquin "Ah ouais ? T'es allé faire le tour des chambres ? Petit curieux !"
     tomas inquiet "Non ! Il m'a montré la sienne hier. Et puis j'ai aperçu celle d'Elen quand elle a laissé sa porte ouverte."
     tomas raison "Les superficies, les meubles, même les couleurs... Il n'y en a pas deux pareilles. C'est étrange pour une station conçue pour nous accueillir tous en même temps."
     mara rire "Moi, j'ai un lit immense. Si Kami veut acheter mon vote avec ça, elle s'y prend plutôt bien."
-    tomas reflechit "Je me demande si les aménagements correspondent aux préférences de chacun. Mais comment aurait-elle pu les connaître ?"
+    tomas raison "Je me demande si les aménagements correspondent aux préférences de chacun. Mais comment aurait-elle pu les connaître ?"
     mara taquin "Tomas, je te demandais si t'avais bien dormi. Pas de rédiger une thèse sur les oreillers."
     tomas hesitation "Ah. Non. J'ai mal dormi."
     mara rire "Bah voilà ! C'était pas si compliqué !"
@@ -747,7 +747,7 @@ label _2_ROUTE_GYMNASE_ELEN_SAEL:
     elen joie "D'accord ! Juste une dernière question : vous avez des chiens ?"
     sael fatigue "Oui."
     elen surpris "Combien ?!"
-    sael colere "ELEN !"
+    sael desaccord "ELEN !"
     elen inquiet "D'accord, d'accord ! Je te laisse tranquille !"
     think "Sael accélère le pas. Elen tient exactement trois secondes avant de lui emboîter le pas."
     elen content "Mais ils ont des noms, au moins ?"
@@ -866,10 +866,10 @@ label _2_ROUTE_CAFETERIA_SOIR_LYSA:
     scene expression Image(corridor_background("cafeteria")) at adaptive_fullscreen with dissolve
     $ showGroup([
         ("lysa", "neutre", 0.72),
-        ("noam", "fatigue", 0.28),
+        ("noam", "inquiet", 0.28),
     ])
     lysa surpris "Mais... qu'est-ce qui t'est arrivé ? T'as couru depuis la Terre ?"
-    noam fatigue "Pire. J'ai fait du sport avec Elias."
+    noam inquiet "Pire. J'ai fait du sport avec Elias."
     lysa blase "Ah. Mes condoléances."
     noam inquiet "Il m'a dit qu'on allait commencer doucement. Dix minutes plus tard, je négociais avec mes propres bras pour qu'ils continuent à fonctionner."
     lysa taquin "Et t'as perdu la négociation, vu ta tête."
@@ -877,7 +877,7 @@ label _2_ROUTE_CAFETERIA_SOIR_LYSA:
     lysa reflexion "Il t'a forcé ?"
     noam hesitation "Non. Enfin... Iris était là aussi."
     lysa blase "Donc tu t'es laissé convaincre par Elias, avec Iris pour t'encourager. C'était courageux. Ou complètement idiot."
-    noam fatigue "Les deux, probablement. Je transpire encore, et je crois que mes jambes vont porter plainte."
+    noam inquiet "Les deux, probablement. Je transpire encore, et je crois que mes jambes vont porter plainte."
     lysa rire "Si tu tombes avant la cafétéria, je te promets de prévenir quelqu'un."
     noam sourire "Tu pourrais m'aider à me relever, non ?"
     lysa taquin "Faut pas abuser. Je viens de t'offrir un soutien moral exceptionnel."
