@@ -1101,38 +1101,24 @@ label _3_DEBAT1_PHASE2:
 
     mara surpris "Merveilleux. On commande du commerce et on nous livre la fin des rations. La prochaine fois, demandons des serviettes : elle supprimera l'eau."
 
-    noam "Attendez. Personne n'a proposé explicitement de supprimer les rations."
-    noam "Mais c'est ce texte-là qu'on devra accepter ou rejeter. Pas celui qu'on avait en tête."
-
-    nyra reflechit "Si ce texte passe, la distribution gratuite s'arrête partout. Pas seulement là où le commerce peut fonctionner immédiatement."
-
-    kael inquiet "Sans les rations... il faut revoir toute la chaîne d'approvisionnement. Immédiatement."
-
-    ryn colere "À Limen, les bons sont peut-être nuls, mais c'est parfois le seul repas garanti ! On l'enlève et on leur dit de se débrouiller ?!"
-
-    lysa reflechit "Le pire... c'est que je comprends son raisonnement."
-
-    noam surpris "Logique ? Des gens vont perdre la seule nourriture qu'on leur assure !"
-
-    lysa blase "Si on rétablit les ventes, il faut pouvoir payer. Et pour payer, il faut des revenus."
-    lysa reflechit "Kami coupe les rations pour forcer les gens à entrer dans le jeu. Sur le papier, ça se tient."
-    lysa colere "Sur le papier. Surtout pas dans une assiette vide."
-
-    nyra reflechit "La transition prendrait normalement des mois. Là, on parle de demain. Même une bonne idée peut provoquer un désastre si on l'applique d'un coup."
-
-    sael triste "On a déjà enterré trop de gens pour des règles décidées loin de chez nous."
-    sael reflechit "Kami. Une seule réponse : est-ce que l'un de nous a réellement proposé tout ce qui figure ici ?"
-
-    think "Kami ne répond pas. Ryn répète sa question, puis Tomas commence à protester lui aussi. L’écran reste inchangé."
-
-    lysa blase "Elle n'a aucune raison de répondre. On ne sait pas qui a écrit quoi. On n'a que sa parole."
-    lysa colere "Si elle déforme une proposition, comment on la contredit ? On va demander au coupable de se dénoncer ?"
-
-    ryn reflechit "Attends... tu veux dire qu'elle pourrait inventer un texte entier ?"
-
-    lysa salut "Qu'on n'a aucun moyen de vérifier. Et qu'on devrait peut-être arrêter de la croire sur parole."
-
-    noam inquiet "Peut-être qu'elle nous manipule. Mais ce texte est devant nous, et c'est nous qui porterons la décision."
+    noam surpris "Attends. La suppression des bons, c'était dans la proposition d'hier ?"
+    tomas inquiet "NON ! J'ai tout relu ! Il n'y avait pas ça !"
+    nyra reflechit "Et là, c'est partout. Même dans les districts qui n'ont aucun commerce prêt à prendre le relais."
+    ryn colere "Donc à Limen, demain, tu retires les bons et tu dis aux gens de se débrouiller ?!"
+    kael inquiet "Demain ? Mais les cargaisons sont déjà programmées ! On peut pas changer toute la chaîne en une nuit !"
+    lysa reflechit "Attendez... Je crois que je vois ce qu'elle essaie de faire."
+    noam surpris "Quoi ?!"
+    lysa blase "Tu veux vendre ? Alors il faut acheter. Pour acheter, il faut des revenus. Elle nous force à entrer dans son nouveau système."
+    ryn colere "Et ceux qui n'ont rien, ils font quoi en attendant ?!"
+    lysa colere "Justement, Ryn ! C'est ça le problème !"
+    nyra reflechit "Il nous faudrait des mois pour organiser la transition. Pas quelques heures."
+    sael triste "Des mois qu'on n'a pas. Et les gens, eux, devront manger dès demain."
+    sael reflechit "Kami ! Qui a demandé la fin des rations ? Donne-nous un nom !"
+    "L'écran ne change pas."
+    ryn colere "HÉ ! On te parle !"
+    tomas inquiet "On ne peut pas vérifier qui a proposé quoi... C'est vraiment autorisé, ça ?"
+    lysa blase "Apparemment, oui. Pratique, hein ?"
+    noam inquiet "Alors on fait quoi ? On vote sur un texte qu'on n'a jamais demandé ?"
 
     # ── Mini-jeu buzzer (Objection Protocol) : influence l'adhésion des PNJ ──
     pause 0.4
@@ -1476,7 +1462,7 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    noam inquiet "On a compris ce qu'elle a ajouté. Mais on fait quoi, maintenant ? On ne peut pas décider ça entre deux cris."
+    noam inquiet "On peut se calmer deux secondes ? Je n'arrive même plus à entendre ce qu'on dit !"
 
     julian colere "Entre deux cris ?! Ça fait un an que les gens manquent de tout ! Tu veux leur demander d'attendre encore combien de temps ?"
 
@@ -1491,12 +1477,13 @@ label _3_DEBAT1_PHASE3:
     elen joie "Mais imaginez ! Acheter quelque chose sans devoir raconter pourquoi on en a besoin à un distributeur !"
 
     # (combinaison « lysa raison » ajoutée dans images.rpy)
-    lysa raison "Pour acheter, il faut de l'argent, Elen. Une vitrine pleine ne nourrit personne quand ton portefeuille est vide."
-
-    tomas hesitation "Je... j'ai regardé les chiffres de production. Dans certains secteurs, on fabrique presque quatre fois moins qu'avant."
-    tomas inquiet "Alors oui, continuer comme ça me fait peur aussi."
-
-    nyra reflechit "Ce n'est pas étonnant. Quand produire davantage n'apporte aucune possibilité supplémentaire, le système encourage souvent à se limiter au minimum."
+    lysa raison "Et tu paies comment, Elen ? Avec ton fameux sourire irrésistible ?"
+    elen surpris "Oh, ça va ! Je parle pas de tout acheter d'un coup !"
+    tomas hesitation "Lysa a pas complètement tort... Mais hier, j'ai regardé les chiffres à la Forge. On produit parfois quatre fois moins qu'avant."
+    ryn colere "Tu veux dire que les gens travaillent quatre fois moins ?!"
+    tomas inquiet "Non ! Enfin... pas exactement ! On manque de pièces, de commandes, de tout !"
+    nyra reflechit "Et quand produire davantage ne sert à rien, on finit aussi par ralentir. C'est une partie du problème."
+    mara taquin "Fantastique. Même nos problèmes ont des problèmes."
 
     # Cadrage de Kami : moins clownesque, plus prédatrice.
     show screen kami_broadcast_ui
@@ -1516,15 +1503,13 @@ label _3_DEBAT1_PHASE3:
 
     scene bg_conclave at adaptive_fullscreen with dissolve
 
-    elias "Moi je comprends qu'on ait peur. Mais à la Forge, on remplit plus de formulaires qu'on ne répare de machines ! On peut pas appeler ça un système qui marche !"
-
-    sael "Chez nous, on s'aide déjà sans attendre les bons."
-    sael determine "Je ne dis pas que le changement sera simple. Je dis qu'on a fini par dépendre d'une permission pour tout."
-
-    lysa blase "Vous êtes très enthousiastes, mais il manque toujours un détail : l'argent."
-    lysa reflechit "D'où viennent les premiers salaires ? On fait comment pour acheter quoi que ce soit quand personne n'a reçu le moindre paiement ?"
-
-    noam inquiet "Kami ! Tu as prévu des revenus dès le premier jour ou il faudra apprendre à manger des promesses ?"
+    elias "À la Forge, on remplit plus de formulaires qu'on répare de machines ! J'en peux plus !"
+    sael "Chez nous, on échange déjà des services. Mais dès qu'on manque d'un outil, il faut supplier Kami."
+    lysa blase "Très bien. Et l'argent, il vient d'où ?"
+    elias reflechit "Bah... du travail, non ?"
+    lysa blase "Quel travail ? Payé par qui ?"
+    elias inquiet "Je sais pas, moi ! C'est pas moi qui ai rédigé le texte !"
+    noam inquiet "Kami ! Tu comptes les payer quand, les gens ? Parce que s'ils doivent attendre leur premier salaire pour manger..."
 
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -1555,15 +1540,20 @@ label _3_DEBAT1_PHASE3:
         ("elias", "reflechit", 1.19),
     ])
 
-    elen inquiet "Mais... les gens malades ? Les personnes qui ne peuvent pas travailler ? Ils vont manger quoi ?"
-    ryn colere "Et les vieux ?! Et ceux qui ont déjà plus la force de se lever ?! C'est quoi, le programme, on les laisse crever ?!"
-    sael determine "Chez nous, personne n'est abandonné parce qu'il ne peut pas travailler. La solidarité, ça ne se mesure pas à la quantité produite."
-    mara colere "Attendez ! Elle supprime les rations ET décide quels contrats existent. C'est elle qui contrôle les deux côtés de l'équation !"
-    julian reflexion "Au moins, le travail redeviendra une manière de gagner quelque chose. On ne peut pas rester éternellement coincés avec les anciens bons."
-    lysa blase "Et si tous les contrats sont à Nexus ? Les habitants des autres districts vont payer le trajet avec leurs bonnes intentions ?"
-    elias reflechit "Moi, je trouverais sûrement à réparer des choses. Mais un type sans formation, sans outil et sans moyen de transport, il commence comment ?"
-    tomas inquiet "Et le premier salaire, il tombe quand ? Aujourd'hui ? Dans une semaine ? Les gens ne peuvent pas mettre leur faim sur pause !"
-    nyra raison "Kami, précise au moins le calendrier. À partir de quand ces contrats seront-ils disponibles, et comment seront assurées les livraisons ?"
+    elen inquiet "Mais... ceux qui peuvent pas travailler ? Ils mangent quoi ?"
+    julian reflexion "On ne peut pas rester avec les bons pour toujours ! Au moins, les gens pourront gagner leur vie !"
+    ryn colere "Ah ouais ? Et les vieux, ils vont faire quoi ?! Tu les envoies travailler ?!"
+    julian colere "Mais j'ai JAMAIS dit ça !"
+    ryn colere "Alors réponds !"
+    elias reflechit "Il y aura peut-être des petits travaux... enfin, si on peut encore travailler..."
+    mara taquin "Merci, Elias. Tu viens d'inventer le travail pour ceux qui ne peuvent pas travailler."
+    elias colere "Je cherche une solution, moi !"
+    sael determine "Chez nous, quand quelqu'un n'a plus la force, on l'aide. On va pas le laisser crever au bord du champ !"
+    lysa blase "Et si Kami met tous ses contrats à Nexus, vous faites quoi ? Vous payez le trajet avec des cailloux ?"
+    julian colere "Vous pouvez me laisser finir au lieu de me faire dire n'importe quoi ?!"
+    mara colere "JULIAN ! C'est Kami qui choisit les contrats ! Tu le comprends ? Elle enlève les rations et elle décide qui aura un salaire !"
+    tomas inquiet "E-Et le salaire... Il tombe quand ? Si quelqu'un commence demain, il mange demain aussi ?"
+    nyra raison "C'est précisément ce que j'essaie de demander depuis tout à l'heure ! Kami, on aura les contrats à quelle date ? Et les livraisons, qui les organise ?!"
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Contrats disponibles dès l'entrée en vigueur ! Pour l'approvisionnement, vous découvrirez les joies de l'organisation humaine. Après tout, vous vouliez reprendre les choses en main !"
@@ -1582,10 +1572,9 @@ label _3_DEBAT1_PHASE3:
         ("lysa", "reflexion", 1.06),
         ("elias", "reflechit", 1.19),
     ])
-    iris colere "Magnifique ! Elle distribue les contrats et nous laisse gérer les conséquences ! Même son service après-vente est une blague !"
-    kael inquiet "Sur Orbite, il suffit de manquer une livraison critique pour perdre des vies. Ce n'est pas un désagrément administratif."
-    noam inquiet "Au départ, on voulait pouvoir obtenir ce qui manque. Maintenant, on doit décider si on supprime le filet qui protège encore des familles."
-    noam inquiet "Je ne peux pas faire comme si ces deux décisions étaient identiques."
+    iris colere "Ah bah voilà ! Elle choisit qui travaille et nous laisse nous débrouiller avec le reste !"
+    kael inquiet "Sur Orbite, on peut pas se permettre de rater une livraison. Pas une seule."
+    noam inquiet "Mais on voulait autoriser les échanges ! Quand est-ce qu'on a demandé de retirer la nourriture aux gens ?!"
     sael neutre "Nous devrons choisir quand même. Mais personne ne devra prétendre qu'il n'avait pas compris les risques."
 
     play sound "audio/trailer/trl_impact_deep.wav"
@@ -1966,25 +1955,28 @@ label _3_VOTE_POUR:
         ("mara", "rire_profond", 0.84),
     ])
 
-    julian joie "ON A RÉUSSI ! NOTRE PREMIER AMENDEMENT ! Vous vous rendez compte ?! On a vraiment changé quelque chose !"
-    elen joie "OUAAAAAIS ! Tout le monde a dit oui ! Enfin... personne n'a dit non, c'est pareil, non ?"
-    mara taquin "Doucement avec les confettis. On vient aussi de supprimer les rations de tout le monde."
-
-    ryn jaloux "Ouais... Quelle victoire."
-    ryn inquiet "Chez moi, les gens vont morfler tant que les échanges ne seront pas en place. J'espère que vous en avez conscience."
-
-    noam sourire "On a réussi à adopter un texte. Je voudrais fêter ça... mais je n'arrive pas à oublier ceux qui vont perdre leurs bons demain."
-
-    mara rire_profond "Enfin, du choix ! Des magasins ! Des prix ! Des vendeurs qui vous expliqueront que leur soupe est exceptionnelle !"
-    mara taquin "Et si on doit crever de faim, au moins on pourra choisir la sauce. Quel progrès."
+    julian joie "ON A RÉUSSI ! VOUS VOUS RENDEZ COMPTE ?! C'est notre premier amendement !"
+    elen joie "OUAAAAAIS ! Personne a dit non ! C'est pareil que tout le monde oui, hein ?"
+    julian rire "Elen, viens là ! Ryn ! Vous avez vu ? On a réussi !"
+    ryn jaloux "Me touche pas."
+    julian surpris "Oh, allez ! Même toi, tu peux être content cinq minutes !"
+    ryn inquiet "Content ? Chez moi, y en a qui vont se retrouver sans rien à bouffer demain."
+    mara taquin "Doucement, monsieur le vainqueur. La fête, c'est toi qui paies ?"
+    julian colere "On vient de changer le monde et tu trouves encore moyen de te moquer ?!"
+    mara rire_profond "Je me moque pas ! Je demande si on a encore des bons pour les petits fours."
+    elen inquiet "Hé... Ryn ? Tu crois vraiment que ça va être aussi dur ?"
+    ryn inquiet "J'en sais rien. C'est ça le pire."
+    noam inquiet "Julian... laisse-le. On pourra fêter ça quand on saura ce qui se passe dehors."
+    julian hesitation "Vous êtes incroyables. On a gagné, et j'ai l'impression d'être le seul à avoir le droit d'être heureux."
+    mara taquin "Personne t'interdit de sourire. On te demande juste de pas écraser les pieds des autres en dansant."
 
     $ showGroup([
         ("elen", "joie", 0.30),
         ("kael", "mefiant", 0.70),
     ])
 
-    kael mefiant "Orbite pourra tenir... si les procédures de sécurité restent intactes. Il faut juste qu'on ne rompe aucun maillon."
-    kael triste "Si."
+    kael mefiant "Il faut que les livraisons continuent. Même une seule cargaison perdue..."
+    kael triste "Non. Ça va aller. Il le faut."
 
     think "Julian sourit aux caméras. Elen cherche quelqu'un à serrer dans ses bras. Ryn détourne le regard."
     think "Kael murmure quelque chose à Nyra. Elle ne lui répond pas."
@@ -2080,9 +2072,9 @@ label _3_VOTE_CONTRE:
     elen triste "Je... j'étais sûre qu'on y arriverait. Même juste pour une fois."
     elen triste "Je l'avais presque promis aux gens qui nous regardent..."
 
-    kael doute "On a évité une transition dont on ne connaissait pas les dangers. Mais on garde les problèmes actuels. Ce n'est pas vraiment une victoire."
+    kael doute "Je suis soulagé pour les livraisons. Enfin... non, pas vraiment. Les pénuries sont toujours là."
 
-    nyra raison "Arrêtez ! On ne sait pas qui a voté contre, ni pourquoi. Vous allez accuser onze personnes au hasard ?"
+    nyra raison "Stop ! Vous savez même pas qui a voté non ! Vous allez vous hurler dessus tous les douze ?!"
 
     think "Julian frappe brusquement la table. Elen sursaute et Tomas lui demande de se calmer, mais il ne l’écoute pas."
 
