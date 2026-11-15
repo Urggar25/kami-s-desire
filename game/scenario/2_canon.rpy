@@ -1,3 +1,7 @@
+default day2_route_gym_mara_tomas_seen = False
+default day2_route_gym_elen_sael_seen = False
+default day2_route_dinner_lysa_seen = False
+
 label _2_CANON:
 
     $ unlock_codex_page("propositions_amendement", with_notification=False)
@@ -689,7 +693,66 @@ label _2_SALLE_OBSERVATION:
     think "La Terre semble si tranquille derrière la vitre. Je revois Kael fermer une cloison, deux personnes de l'autre côté. Il n'a pas raconté leurs visages. Je les imagine quand même."
     think "Au détour du couloir, j'entends Elias compter, puis Iris lui aboyer dessus. Pour une fois, une dispute serait presque rassurante."
 
-    jump _2_GYMNASE
+    # Laisser le joueur rejoindre le gymnase à son rythme.
+    $ day2_route_gym_mara_tomas_seen = False
+    $ day2_route_gym_elen_sael_seen = False
+    $ current_scene_active = "_2_ROUTE_GYMNASE"
+    $ corridor_current = "cafeteria"
+    jump OPEN_CONCLAVE_MAP
+
+label _2_ROUTE_GYMNASE_MARA_TOMAS:
+    $ day2_route_gym_mara_tomas_seen = True
+    scene expression Image(corridor_background("dortoir")) at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("mara", "neutre", 0.20),
+        ("tomas", "reflechit", 0.66),
+    ])
+    mara neutre "Bon, et toi ? T'as réussi à dormir dans ta chambre de ministre ?"
+    tomas reflexion "Pas vraiment. Je me suis surtout demandé pourquoi la mienne ne ressemblait pas du tout à celle d'Elias."
+    mara taquin "Ah ouais ? T'es allé faire le tour des chambres ? Petit curieux !"
+    tomas inquiet "Non ! Il m'a montré la sienne hier. Et puis j'ai aperçu celle d'Elen quand elle a laissé sa porte ouverte."
+    tomas raison "Les superficies, les meubles, même les couleurs... Il n'y en a pas deux pareilles. C'est étrange pour une station conçue pour nous accueillir tous en même temps."
+    mara rire "Moi, j'ai un lit immense. Si Kami veut acheter mon vote avec ça, elle s'y prend plutôt bien."
+    tomas reflechit "Je me demande si les aménagements correspondent aux préférences de chacun. Mais comment aurait-elle pu les connaître ?"
+    mara taquin "Tomas, je te demandais si t'avais bien dormi. Pas de rédiger une thèse sur les oreillers."
+    tomas hesitation "Ah. Non. J'ai mal dormi."
+    mara rire "Bah voilà ! C'était pas si compliqué !"
+    think "Ils reprennent leur chemin sans m'avoir remarqué. Tomas a déjà recommencé à parler du mobilier."
+    $ hideGroup()
+    return
+
+label _2_ROUTE_GYMNASE_ELEN_SAEL:
+    $ day2_route_gym_elen_sael_seen = True
+    scene expression Image(corridor_background("infirmerie")) at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("elen", "joie", 0.24),
+        ("sael", "neutre", 0.73),
+    ])
+    elen joie "Attends, Sael ! Et le village, il est grand ? Vous êtes combien ?"
+    sael neutre "Assez pour que tout le monde se connaisse. Pas assez pour qu'on puisse se cacher longtemps."
+    elen surpris "Oh ! Et vous avez des fêtes ? Des marchés ? Des animaux ?!"
+    sael fatigue "Des fêtes, oui. Des animaux, aussi. Les marchés, moins."
+    elen content "Et tu vis dans une maison ? Elle ressemble à quoi ? Il y a des fleurs ?"
+    sael mefiant "Elen... Tu comptes me poser toutes les questions du monde aujourd'hui ?"
+    elen inquiet "Désolée ! C'est juste que j'arrive pas à imaginer ton village. Tu parles toujours de la terre et des montagnes..."
+    sael reflechit "Les maisons sont serrées contre la pente. Le matin, quand le brouillard descend, on ne voit parfois même plus le champ d'à côté."
+    elen joie "C'est magnifique ! Et quand il neige ?!"
+    sael fatigue "Quand il neige, on a froid."
+    elen surpris "Oui, mais... beaucoup ?!"
+    sael mefiant "Énormément."
+    elen joie "Et vous faites des bonshommes de neige ?"
+    sael fatigue "On essaie surtout de dégager les chemins."
+    elen content "Ah ! Et les enfants, ils t'appellent comment ? Cheffe ? Madame Sael ?"
+    sael mefiant "Ils m'appellent Sael. Comme toi. Maintenant, je dois vraiment aller à l'infirmerie."
+    elen joie "D'accord ! Juste une dernière question : vous avez des chiens ?"
+    sael fatigue "Oui."
+    elen surpris "Combien ?!"
+    sael colere "ELEN !"
+    elen inquiet "D'accord, d'accord ! Je te laisse tranquille !"
+    think "Sael accélère le pas. Elen tient exactement trois secondes avant de lui emboîter le pas."
+    elen content "Mais ils ont des noms, au moins ?"
+    $ hideGroup()
+    return
 
 # Durée : 2m15
 # Totale : 1h 20m 25s
@@ -793,7 +856,34 @@ label _2_GYMNASE:
     scene couloir_infirmerie at adaptive_fullscreen with dissolve
     think "Mon estomac me rappelle qu'il existe encore une activité physique à ma portée : manger."
 
-    jump _2_CAFETERIA_SOIR
+    $ day2_route_dinner_lysa_seen = False
+    $ current_scene_active = "_2_ROUTE_CAFETERIA_SOIR"
+    $ corridor_current = "infirmerie"
+    jump OPEN_CONCLAVE_MAP
+
+label _2_ROUTE_CAFETERIA_SOIR_LYSA:
+    $ day2_route_dinner_lysa_seen = True
+    scene expression Image(corridor_background("cafeteria")) at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("lysa", "neutre", 0.72),
+        ("noam", "fatigue", 0.28),
+    ])
+    lysa surpris "Mais... qu'est-ce qui t'est arrivé ? T'as couru depuis la Terre ?"
+    noam fatigue "Pire. J'ai fait du sport avec Elias."
+    lysa blase "Ah. Mes condoléances."
+    noam inquiet "Il m'a dit qu'on allait commencer doucement. Dix minutes plus tard, je négociais avec mes propres bras pour qu'ils continuent à fonctionner."
+    lysa taquin "Et t'as perdu la négociation, vu ta tête."
+    noam desaccord "Ne fais jamais de sport avec lui. Je te le dis en ami."
+    lysa reflexion "Il t'a forcé ?"
+    noam hesitation "Non. Enfin... Iris était là aussi."
+    lysa blase "Donc tu t'es laissé convaincre par Elias, avec Iris pour t'encourager. C'était courageux. Ou complètement idiot."
+    noam fatigue "Les deux, probablement. Je transpire encore, et je crois que mes jambes vont porter plainte."
+    lysa rire "Si tu tombes avant la cafétéria, je te promets de prévenir quelqu'un."
+    noam sourire "Tu pourrais m'aider à me relever, non ?"
+    lysa taquin "Faut pas abuser. Je viens de t'offrir un soutien moral exceptionnel."
+    think "Elle repart en ricanant. J'essaie de lui répondre, mais même hausser les épaules me paraît ambitieux."
+    $ hideGroup()
+    return
 
 # Durée : 1m50
 # Totale : 1h 22m 15s
