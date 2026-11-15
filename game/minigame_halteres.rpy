@@ -3,9 +3,9 @@ default stat_physique = 0
 
 # --- Config réutilisable (modifiée par minijeu_halteres_run) ---
 default mg_title = "ENTRAÎNEMENT AUX HALTÈRES"
-default mg_subtitle = "Marque un maximum de points en 60 secondes. Parfait : +2, bien : +1."
+default mg_subtitle = "40 secondes. Enchaîne les réussites pour multiplier tes points, mais la cible rétrécit."
 default mg_bg = "bg_gymnase"
-default mg_duration = 60.0
+default mg_duration = 40.0
 default mg_base_speed = 0.9
 # Repère de performance pour les récompenses ; ne limite plus les coups.
 default mg_target_reps = 10
@@ -18,7 +18,7 @@ default mg_speed = 0.9
 default mg_done = False
 default mg_feedback = ""
 default mg_feedback_color = "#f5f5f5"
-default mg_time_left = 60.0
+default mg_time_left = 40.0
 default mg_zone_start = 0.40
 default mg_zone_end = 0.60
 default mg_perfect_margin = 0.05
@@ -27,6 +27,7 @@ default mg_was_success = False
 default mg_quick_menu_prev = True
 default mg_combo = 0
 default mg_combo_max = 0
+default mg_multiplier = 1
 default mg_perfects = 0
 default mg_misses = 0
 default mg_flash = 0.0
@@ -49,12 +50,12 @@ init python:
             return "fonts/Orbitron-Regular.ttf"
         return "fonts/day_font.ttf"
 
-    def mg_configure(target_reps=10, duration=60.0, base_speed=0.9, title=None, subtitle=None, bg=None):
+    def mg_configure(target_reps=10, duration=40.0, base_speed=0.9, title=None, subtitle=None, bg=None):
         store.mg_target_reps = target_reps
-        store.mg_duration = 60.0  # Défi d'une minute, quelle que soit la config précédente.
+        store.mg_duration = max(1.0, float(duration))
         store.mg_base_speed = float(base_speed)
         if title: store.mg_title = title
-        store.mg_subtitle = "Marque un maximum de points en 60 secondes. Parfait : +2, bien : +1."
+        store.mg_subtitle = subtitle if subtitle is not None else "40 secondes. Enchaîne les réussites pour multiplier tes points, mais la cible rétrécit."
         # Décor déclaré dans images.rpy ; on évite l'ancien gym_bg.png absent.
         store.mg_bg = bg if bg and renpy.has_image(bg) else "bg_gymnase"
 
@@ -73,6 +74,7 @@ init python:
         store.mg_zone_end = 0.60
         store.mg_combo = 0
         store.mg_combo_max = 0
+        store.mg_multiplier = 1
         store.mg_perfects = 0
         store.mg_misses = 0
         store.mg_flash = 0.0
@@ -111,15 +113,19 @@ init python:
         if store.mg_time_left <= 0 or store.mg_energy <= 0:
             store.mg_done = True
 
+    def mg_combo_multiplier(combo):
+        # Les trois premiers coups maintiennent x1 ; les séries longues
+        # montent progressivement jusqu'à x5, sans score exponentiel.
+        return min(5, 1 + max(0, combo - 1) // 3)
+
     def mg_relocate_zone():
-        # La difficulté progresse avec le temps et reste bornée même si
-        # le joueur réussit un grand nombre de coups.
-        difficulty = 1.0 - max(0.0, min(1.0, store.mg_time_left / 60.0))
-        width = max(0.11, 0.22 - difficulty * 0.09)
-        center = renpy.random.uniform(0.22 + width, 0.78 - width)
+        difficulty = 1.0 - max(0.0, min(1.0, store.mg_time_left / max(1.0, store.mg_duration)))
+        # La zone rétrécit à mesure que le combo progresse, puis s'élargit
+        # après un raté. Un minimum préserve la jouabilité.
+        width = max(0.075, 0.22 - difficulty * 0.035 - min(store.mg_combo, 16) * 0.008)
+        center = renpy.random.uniform(0.15 + width / 2.0, 0.85 - width / 2.0)
         store.mg_zone_start = center - width / 2.0
         store.mg_zone_end = center + width / 2.0
-        # Vitesse croissante
         store.mg_speed = store.mg_base_speed + difficulty * 0.45
 
     def mg_click():
@@ -132,23 +138,27 @@ init python:
             center = (store.mg_zone_start + store.mg_zone_end) / 2.0
             store.mg_combo += 1
             store.mg_combo_max = max(store.mg_combo_max, store.mg_combo)
-            # Le combo est un défi annexe, sans bonus de score.
-            if abs(val - center) <= store.mg_perfect_margin:
+            store.mg_multiplier = mg_combo_multiplier(store.mg_combo)
+            perfect_margin = min(store.mg_perfect_margin, (store.mg_zone_end - store.mg_zone_start) * 0.22)
+            if abs(val - center) <= perfect_margin:
                 store.mg_perfects += 1
-                store.mg_progress += 2
-                store.mg_feedback = kd_tr("PARFAIT ! +2")
+                gained = 2 * store.mg_multiplier
+                store.mg_progress += gained
+                store.mg_feedback = kd_tr("PARFAIT ! +%d (x%d)" % (gained, store.mg_multiplier))
                 store.mg_feedback_color = "#5ad45a"
                 store.mg_flash = 0.18
                 renpy.play("audio/sfx_clap.mp3", channel="sound")
             else:
-                store.mg_progress += 1
-                store.mg_feedback = kd_tr("BIEN ! +1")
+                gained = store.mg_multiplier
+                store.mg_progress += gained
+                store.mg_feedback = kd_tr("BIEN ! +%d (x%d)" % (gained, store.mg_multiplier))
                 store.mg_feedback_color = "#f2c94c"
                 store.mg_flash = 0.14
                 renpy.play("audio/sfx_beep.mp3", channel="sound")
         else:
             store.mg_misses += 1
             store.mg_combo = 0
+            store.mg_multiplier = 1
             store.mg_energy = max(0.0, store.mg_energy - 0.15)
             store.mg_feedback = kd_tr("RATÉ ! ÉNERGIE -15 %")
             store.mg_feedback_color = "#ff6b6b"
@@ -329,7 +339,7 @@ screen minijeu_halteres():
                 xpos 28 ypos 539
                 size 36 color "#64E8AF"
                 font "fonts/Rajdhani-SemiBold.ttf"
-            text "PARFAIT : +2   /   BIEN : +1":
+            text "BASE : PARFAIT +2 / BIEN +1 (MULTIPLIÉS)":
                 xpos 180 ypos 548
                 size 19 color "#9CC7D7"
                 font "fonts/Rajdhani-SemiBold.ttf"
@@ -343,7 +353,7 @@ screen minijeu_halteres():
         fixed:
             xysize (726, 578)
 
-            text "SCORE  //  60 SECONDES":
+            text "SCORE  //  [int(mg_duration)] SECONDES":
                 xpos 12 ypos 4
                 size 23 color "#8DBCCF"
                 font "fonts/Rajdhani-SemiBold.ttf"
@@ -354,7 +364,7 @@ screen minijeu_halteres():
                 font "fonts/Rajdhani-SemiBold.ttf"
 
             if mg_combo >= 2:
-                text "COMBO x[mg_combo]" at mg_hud_pulse:
+                text "COMBO [mg_combo]  •  SCORE x[mg_multiplier]" at mg_hud_pulse:
                     xpos 320 ypos 59
                     size 30 color "#68E3AC"
                     font "fonts/Rajdhani-SemiBold.ttf"
@@ -486,8 +496,9 @@ screen tuto_halteres(as_overlay=False):
     use mk_tuto_chrome("RYTHME D'ENTRAÎNEMENT", [
         ("Observe le curseur", "Le curseur blanc balaye la barre de rythme en continu."),
         ("Frappe dans la zone verte", "Clique (ou ↑/↓) quand le curseur traverse la zone. Au centre exact : PARFAIT."),
-        ("Marque des points", "Parfait : +2 points. Bien : +1 point. Les combos comptent pour les défis bonus."),
-        ("Tiens une minute", "Chaque raté retire 15 % d'énergie. À zéro, la partie s'arrête."),
+        ("Multiplie ton score", "Parfait : 2 points de base. Bien : 1 point. Tous les trois coups réussis, le multiplicateur augmente, jusqu'à x5."),
+        ("Maîtrise le combo", "Plus le combo monte, plus la zone verte rétrécit. Un raté remet le combo à zéro et retire 15 % d'énergie."),
+        ("Tiens 40 secondes", "Enchaîne les coups jusqu'à la fin du chrono, sans épuiser ton énergie."),
     ], "tuto_halteres", as_overlay):
 
         fixed:
@@ -527,7 +538,7 @@ screen tuto_halteres(as_overlay=False):
 #   call minijeu_halteres_run(mg_id="halteres", title=..., target_reps=..,
 #                             duration=.., base_speed=.., with_scene=True)
 # ------------------------------------------------------------
-label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None, target_reps=10, duration=60.0, base_speed=0.9, with_scene=True):
+label minijeu_halteres_run(mg_id="halteres", title=None, subtitle=None, bg=None, target_reps=10, duration=40.0, base_speed=0.9, with_scene=True):
     $ mg_quick_menu_prev = quick_menu
     $ quick_menu = False
     $ mg_configure(target_reps=target_reps, duration=duration, base_speed=base_speed, title=title, subtitle=subtitle, bg=bg)
