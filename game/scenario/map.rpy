@@ -156,6 +156,24 @@ init python:
                 )
             return False
 
+        if getattr(store, "current_scene_active", None) == "_2_ROUTE_GYMNASE":
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) == ("corridor", "dortoir")
+            if corridor_key == "dortoir":
+                return target_type == "corridor" and target_key in ("cafeteria", "infirmerie")
+            if corridor_key == "infirmerie":
+                return (target_type, target_key) == ("room", "gymnase") or (target_type == "corridor" and target_key == "dortoir")
+            return False
+
+        if getattr(store, "current_scene_active", None) == "_2_ROUTE_CAFETERIA_SOIR":
+            if corridor_key == "infirmerie":
+                return (target_type, target_key) == ("corridor", "dortoir")
+            if corridor_key == "dortoir":
+                return target_type == "corridor" and target_key in ("infirmerie", "cafeteria")
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) == ("room", "cafeteria") or (target_type == "corridor" and target_key == "dortoir")
+            return False
+
         if getattr(store, "current_scene_active", None) == "_2_ROUTE_OBSERVATION":
             return target_type == "corridor" or (
                 target_type == "room" and target_key in ("cafeteria", "observation")
@@ -286,6 +304,39 @@ screen conclave_corridor(corridor_key=None):
                 unhovered SetVariable("corridor_ui_target", None)
                 action Return("_2_APRES_MIDI_SAEL")
 
+    if shown_corridor == "dortoir" and current_scene_active == "_2_ROUTE_GYMNASE" and not day2_route_gym_mara_tomas_seen:
+        imagebutton:
+            idle Transform(character_image("mara", "neutre"), zoom=1.00)
+            hover Transform(character_image("mara", "taquin"), zoom=1.00)
+            focus_mask True
+            xalign 0.48
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Écouter Mara et Tomas")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_2_ROUTE_GYMNASE_MARA_TOMAS")
+
+    if shown_corridor == "infirmerie" and current_scene_active == "_2_ROUTE_GYMNASE" and not day2_route_gym_elen_sael_seen:
+        imagebutton:
+            idle Transform(character_image("elen", "joie"), zoom=1.00)
+            hover Transform(character_image("elen", "content"), zoom=1.00)
+            focus_mask True
+            xalign 0.48
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Écouter Elen et Sael")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_2_ROUTE_GYMNASE_ELEN_SAEL")
+
+    if shown_corridor == "cafeteria" and current_scene_active == "_2_ROUTE_CAFETERIA_SOIR" and not day2_route_dinner_lysa_seen:
+        imagebutton:
+            idle Transform(character_image("lysa", "neutre"), zoom=1.00)
+            hover Transform(character_image("lysa", "taquin"), zoom=1.00)
+            focus_mask True
+            xalign 0.55
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Parler à Lysa")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_2_ROUTE_CAFETERIA_SOIR_LYSA")
+
     frame:
         xalign 0.02
         yalign 0.03
@@ -350,7 +401,7 @@ screen conclave_corridor(corridor_key=None):
                     size 26
                     color "#A6D8FF"
 
-    elif current_scene_active == "_2_ROUTE_OBSERVATION":
+    elif current_scene_active in ("_2_ROUTE_GYMNASE", "_2_ROUTE_CAFETERIA_SOIR", "_2_ROUTE_OBSERVATION"):
         frame:
             xalign 0.03
             yalign 0.97
@@ -362,7 +413,7 @@ screen conclave_corridor(corridor_key=None):
                 text "OBJECTIF":
                     size 18
                     color "#6FA6C6"
-                text "Rejoindre la salle d'observation":
+                text ("Rejoindre le gymnase" if current_scene_active == "_2_ROUTE_GYMNASE" else "Rejoindre la cafétéria" if current_scene_active == "_2_ROUTE_CAFETERIA_SOIR" else "Rejoindre la salle d'observation"):
                     size 26
                     color "#A6D8FF"
 
@@ -459,6 +510,14 @@ label EXIT_ROOM_TO_CORRIDOR:
 label OPEN_CONCLAVE_MAP:
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_2
     $ _open_room_label = corridor_room_label(_return)
+
+    if current_scene_active == "_2_ROUTE_GYMNASE" and _return == "gymnase":
+        $ current_scene_active = None
+        jump _2_GYMNASE
+
+    if current_scene_active == "_2_ROUTE_CAFETERIA_SOIR" and _return == "cafeteria":
+        $ current_scene_active = None
+        jump _2_CAFETERIA_SOIR
 
     if _open_room_label is not None:
         jump expression _open_room_label
