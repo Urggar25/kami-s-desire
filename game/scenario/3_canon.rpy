@@ -1217,205 +1217,6 @@ label day3_before_objection_protocol_minigame:
 
     jump _3_DEBAT1_PHASE3
 
-# ============================================================================
-init -1:
-    transform p3_arg_button_idle:
-        alpha 0.92
-        zoom 1.0
-    transform p3_arg_button_hover:
-        alpha 1.0
-        zoom 1.04
-    transform p3_arg_glow:
-        alpha 0.35
-        linear 0.6 alpha 0.75
-        linear 0.6 alpha 0.35
-        repeat
-    transform p3_arg_float:
-        yoffset 0
-        linear 1.2 yoffset -6
-        linear 1.2 yoffset 0
-        repeat
-
-
-init 4 python:
-    DEBATE_ARGUMENT_PHASES = {
-        1: ["rationnement", "approvisionnement", "monde_avant", "derogations_complexes", "valeur_travail"],
-        2: ["enonce_precis", "orbite", "rationnement", "approvisionnement", "echanges_discrets"],
-        3: ["monde_avant", "enonce_precis", "echanges_discrets", "valeur_travail", "derogations_complexes"],
-    }
-    DEBATE_ARGUMENT_NOAM_LINES = {
-        "rationnement": "Les bons ne nourrissent personne quand les rayons sont vides.",
-        "approvisionnement": "Les districts ne partent pas avec les mêmes réserves ni les mêmes pénuries.",
-        "monde_avant": "Le monde d'avant prouve que la circulation libre peut exister, pas qu'elle est juste.",
-        "derogations_complexes": "Si la moindre demande utile exige une dérogation, le système étouffe déjà.",
-        "valeur_travail": "Une société tient aussi parce que chacun contribue quand il le peut.",
-        "enonce_precis": "Le texte exact compte plus que nos impressions.",
-        "orbite": "Sur Orbite, une erreur logistique ne coûte pas seulement cher. Elle tue.",
-        "echanges_discrets": "Les échanges existent déjà en cachette. La vraie question, c'est ce qu'on en fait.",
-    }
-    DEBATE_ARGUMENT_ICONS = {
-        "rationnement": "RT",
-        "approvisionnement": "ID",
-        "orbite": "OR",
-        "derogations_complexes": "DG",
-        "valeur_travail": "VT",
-        "monde_avant": "MA",
-        "enonce_precis": "TX",
-        "echanges_discrets": "EX",
-    }
-    DEBATE_ARGUMENT_COLORS = ["#4CB7FF", "#F0BF4A", "#B681FF", "#6BD98A", "#FF6B7C"]
-
-    def debate_argument_is_unlocked(arg_id):
-        if "dossier_arg_unlocked" in globals() and dossier_arg_unlocked(arg_id):
-            return True
-        if arg_id in getattr(store, "j2_vote_arguments", []):
-            return True
-        data = DAY2_VOTE_ARGUMENTS.get(arg_id, {}) if "DAY2_VOTE_ARGUMENTS" in globals() else {}
-        title = data.get("title")
-        return bool(title and title in getattr(store, "arguments", []))
-
-    def debate_argument_option(arg_id, phase=1, idx=0):
-        data = DAY2_VOTE_ARGUMENTS.get(arg_id, {}) if "DAY2_VOTE_ARGUMENTS" in globals() else {}
-        if not data and arg_id in DAY3_VOTE_ARGUMENTS:
-            data = DAY3_VOTE_ARGUMENTS[arg_id]
-        color = DEBATE_ARGUMENT_COLORS[idx % len(DEBATE_ARGUMENT_COLORS)]
-        return {"id": arg_id, "title": data.get("title", arg_id), "desc": data.get("summary", "Argument à découvrir."), "noam": DEBATE_ARGUMENT_NOAM_LINES.get(arg_id, "Je dois choisir l'angle qui aura le plus d'impact."), "icon": DEBATE_ARGUMENT_ICONS.get(arg_id, "--"), "color": color, "unlocked": debate_argument_is_unlocked(arg_id)}
-
-    def debate_argument_options_for_phase(phase):
-        return [debate_argument_option(arg_id, phase, i) for i, arg_id in enumerate(DEBATE_ARGUMENT_PHASES.get(phase, []))]
-
-    def debate_argument_unlocked_count():
-        ids = []
-        for phase_ids in DEBATE_ARGUMENT_PHASES.values():
-            for arg_id in phase_ids:
-                if arg_id not in ids:
-                    ids.append(arg_id)
-        return sum(1 for arg_id in ids if debate_argument_is_unlocked(arg_id)), len(ids)
-
-    def debate_argument_fallback_index(options):
-        for i, opt in enumerate(options):
-            if opt.get("unlocked", False):
-                return i
-        return None
-
-label day3_choose_debate_argument(phase=1, prompt="Choisissez un argument pour orienter le débat."):
-    $ restore_unlocked_arguments()
-    $ day3_vote_bootstrap()
-    $ day2_sync_argument_titles()
-    $ _debate_arg_options = debate_argument_options_for_phase(phase)
-    $ _debate_arg_pick = renpy.call_screen("argument_menu_ui", options=_debate_arg_options, phase=phase, prompt=prompt)
-    if _debate_arg_pick is None:
-        return
-    $ selected_argument_id = _debate_arg_options[_debate_arg_pick]["id"]
-    $ selected_argument_noam_line = _debate_arg_options[_debate_arg_pick]["noam"]
-    noam "[selected_argument_noam_line]"
-    return
-
-screen argument_menu_ui(options, prompt="Choisissez un argument pour orienter le débat.", phase=1):
-    modal True
-    zorder 250
-    default selected_idx = debate_argument_fallback_index(options)
-
-    add Solid("#02070CEE")
-    add "bg_conclave" at adaptive_fullscreen:
-        alpha 0.16
-
-    $ unlocked_count, total_count = debate_argument_unlocked_count()
-
-    fixed:
-        xfill True
-        yfill True
-        hbox:
-            xpos 56
-            ypos 42
-            spacing 22
-            text "//" size 42 color "#D7E1EA" font "fonts/Rajdhani-SemiBold.ttf"
-            vbox:
-                spacing 2
-                text "CHOIX DU THÈME" size 34 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
-                text "PHASE ARGUMENTATIVE" size 18 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
-        hbox:
-            xpos 1365
-            ypos 50
-            spacing 14
-            text "PHASE [phase]/3" size 21 color "#8A94A0" font "fonts/Rajdhani-SemiBold.ttf"
-            for pi in range(1, 4):
-                add Solid("#4CB7FF" if pi <= phase else "#27313A", xsize=22, ysize=22)
-        frame:
-            xpos 46 ypos 132 xsize 1828 ysize 280
-            background Solid("#071018E8")
-            padding (0, 0)
-            fixed:
-                add Solid("#6F849A66", xsize=1828, ysize=1)
-                frame:
-                    xpos 0 ypos 0 xsize 450 ysize 280
-                    background Solid("#0B1824E8")
-                    padding (0, 0)
-                    add Transform(character_image("noam", "neutre"), zoom=0.85):
-                        xysize (450, 450)
-                        yalign 0.28
-                        alpha 0.72
-                vbox:
-                    xpos 530 ypos 70 spacing 18
-                    text "NOAM" size 30 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
-                    text "Quel angle aborder pour cette discussion ?\nJe dois choisir l'argument qui aura le plus d'impact." size 29 color "#F0F4F7" font "fonts/Barlow-Light.ttf" line_spacing 8
-        vbox:
-            xpos 0 ypos 460 xsize 1920 spacing 10
-            text "SÉLECTIONNEZ LE THÈME DE LA DISCUSSION" xalign 0.5 size 31 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
-            text kd_tr(prompt) xalign 0.5 size 22 color "#AEB8C2" font "fonts/Barlow-Light.ttf"
-        hbox:
-            xpos 44 ypos 548 spacing 22
-            for i, opt in enumerate(options):
-                $ unlocked = opt.get("unlocked", False)
-                $ selected = (selected_idx == i)
-                $ col = opt.get("color", "#4CB7FF")
-                $ card_bg = (col + "33") if selected and unlocked else ("#07131DDD" if unlocked else "#050A0FCC")
-                button:
-                    xsize 282 ysize 382 padding (18, 14)
-                    background Solid(card_bg)
-                    hover_background Solid((col + "44") if unlocked else "#050A0FCC")
-                    sensitive unlocked
-                    action SetScreenVariable("selected_idx", i)
-                    vbox:
-                        xfill True spacing 10
-                        text "[i + 1]" size 22 color (col if unlocked else "#59636B") font "fonts/Rajdhani-SemiBold.ttf"
-                        text opt.get("icon", "--") xalign 0.5 size 48 color (col if unlocked else "#666666") font "fonts/Rajdhani-SemiBold.ttf"
-                        text kd_tr(opt.get("title", "ARGUMENT")) xalign 0.5 text_align 0.5 size 22 color (col if unlocked else "#6F747A") font "fonts/Rajdhani-SemiBold.ttf" xmaximum 238
-                        text kd_tr(opt.get("desc", "")) xalign 0.5 text_align 0.5 size 16 color ("#D6DDE4" if unlocked else "#555D65") font "fonts/Barlow-Light.ttf" xmaximum 238 line_spacing -1
-                        null height 2
-                        text ("DISPONIBLE" if unlocked else "VERROUILLÉ") xalign 0.5 size 15 color (col if unlocked else "#5F666D") font "fonts/Rajdhani-SemiBold.ttf"
-                        if not unlocked:
-                            text "Débloquez cet argument pour l'utiliser." xalign 0.5 text_align 0.5 size 14 color "#555D65" font "fonts/Barlow-Light.ttf" xmaximum 238
-        frame:
-            xpos 50 ypos 950 xsize 770 ysize 62 background Solid("#071018DD") padding (22, 10)
-            hbox:
-                spacing 22
-                text "//" size 28 color "#8AB9E8" font "fonts/Rajdhani-SemiBold.ttf"
-                vbox:
-                    spacing 2
-                    text "VOS ARGUMENTS DÉBLOQUÉS" size 18 color "#4CB7FF" font "fonts/Rajdhani-SemiBold.ttf"
-                    text "[unlocked_count] / [total_count]" size 25 color "#EAF3FA" font "fonts/Rajdhani-SemiBold.ttf"
-        frame:
-            xpos 900 ypos 950 xsize 770 ysize 62 background Solid("#071018DD") padding (22, 13)
-            text "INFO  Chaque thème influence les réactions des représentants. Choisissez judicieusement." size 18 color "#B8C2CC" font "fonts/Barlow-Light.ttf" xmaximum 720
-        textbutton "CONFIRMER LE THÈME":
-            xpos 470 ypos 1022 xsize 980 ysize 52
-            text_size 24
-            text_color "#EAF3FA"
-            text_font "fonts/Rajdhani-SemiBold.ttf"
-            background Solid("#102A46EE")
-            hover_background Solid("#174D7CEE")
-            sensitive selected_idx is not None
-            action Return(selected_idx)
-        if selected_idx is None:
-            textbutton "CONTINUER SANS THÈME":
-                xpos 470 ypos 1022 xsize 980 ysize 52
-                text_size 22
-                text_color "#7D8994"
-                background Solid("#111820EE")
-                hover_background Solid("#1A2530EE")
-                action Return(None)
-
 label _3_DEBAT1_PHASE3:
 
     # Réinjecte les arguments débloqués globalement avant d'afficher les choix.
@@ -1425,24 +1226,6 @@ label _3_DEBAT1_PHASE3:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
     show screen kami_broadcast_ui
-
-    python:
-        store.p3_round_options = [
-            [
-                debate_argument_option("rationnement", 1, 0),
-                debate_argument_option("approvisionnement", 1, 1),
-                debate_argument_option("orbite", 1, 2),
-                debate_argument_option("valeur_travail", 1, 3),
-                debate_argument_option("derogations_complexes", 1, 4),
-            ],
-            [
-                debate_argument_option("monde_avant", 3, 0),
-                debate_argument_option("enonce_precis", 3, 1),
-                debate_argument_option("echanges_discrets", 3, 2),
-                debate_argument_option("rationnement", 3, 3),
-                debate_argument_option("approvisionnement", 3, 4),
-            ],
-        ]
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.5
@@ -1493,19 +1276,24 @@ label _3_DEBAT1_PHASE3:
     kami "Je vous rappelle que ce petit monstre est né de VOTRE imagination. Moi, je n'ai fait que lui donner des dents."
     kami "Continuez ! La peur vous rend tellement éloquents. Et puis je trouve que la rougeur vous va très bien."
 
-    play sound "audio/trailer/trl_impact_deep.wav"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[0], phase=3, prompt="Premier échange — Quel argument présenter ?")
-    if p3_pick is not None and p3_round_options[0][p3_pick]["unlocked"]:
-        $ p3_argument_one = p3_round_options[0][p3_pick]["id"]
-        call _3_DEBAT1_PHASE3_INT1 from _call__3_DEBAT1_PHASE3_INT1
-    else:
-        $ p3_argument_one = None
-        think "J'ai des opinions. Beaucoup trop. Pas encore un argument que je pourrais défendre devant tout le monde."
-
+    hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("kael", "calme", -0.11),
+        ("iris", "fatigue", 0.02),
+        ("sael", "determine", 0.15),
+        ("elen", "inquiet", 0.28),
+        ("julian", "sourire", 0.41),
+        ("mara", "neutre", 0.54),
+        ("ryn", "reflechit", 0.67),
+        ("nyra", "triste", 0.80),
+        ("tomas", "hesitation", 0.93),
+        ("lysa", "reflexion", 1.06),
+        ("elias", "reflechit", 1.19),
+    ])
 
-    elias "À la Forge, on remplit plus de formulaires qu'on répare de machines ! J'en peux plus !"
-    sael "Chez nous, on échange déjà des services. Mais dès qu'on manque d'un outil, il faut supplier Kami."
+    elias colere "À la Forge, on remplit plus de formulaires qu'on répare de machines ! J'en peux plus !"
+    sael reflechit "Chez nous, on échange déjà des services. Mais dès qu'on manque d'un outil, il faut supplier Kami."
     lysa blase "Très bien. Et l'argent, il vient d'où ?"
     elias reflechit "Bah... du travail, non ?"
     lysa blase "Quel travail ? Payé par qui ?"
@@ -1578,16 +1366,46 @@ label _3_DEBAT1_PHASE3:
     noam inquiet "Mais on voulait autoriser les échanges ! Quand est-ce qu'on a demandé de retirer la nourriture aux gens ?!"
     sael neutre "Nous devrons choisir quand même. Mais personne ne devra prétendre qu'il n'avait pas compris les risques."
 
-    play sound "audio/trailer/trl_impact_deep.wav"
-    $ p3_pick = renpy.call_screen("argument_menu_ui", options=p3_round_options[1], phase=3, prompt="Dernier échange — Quel argument présenter ?")
-    if p3_pick is not None and p3_round_options[1][p3_pick]["unlocked"]:
-        $ p3_argument_two = p3_round_options[1][p3_pick]["id"]
-        call _3_DEBAT1_PHASE3_INT2 from _call__3_DEBAT1_PHASE3_INT2
-    else:
-        $ p3_argument_two = None
-        think "J'aurais aimé trouver une phrase capable de les rassurer. Je n'en connais aucune qui soit honnête."
+    # ── Mini-jeu « Entretiens individuels » : un représentant à la fois ──
+    play sound sfx_announce
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "Pause ! Pause, pause, PAUSE ! Vous parlez tous en même temps. Mes micros saturent, et mes spectateurs aussi."
 
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Je vous accorde une suspension de séance. Allez chuchoter, supplier, marchander. Un pupitre à la fois."
+    kami "Petite règle, parce que j'adore les règles : une seule conversation par personne. On ne harcèle pas les indécis. Enfin... pas deux fois."
+
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Noam, mon chéri, toi qui adores parler aux gens... C'est ton moment. Ne me déçois pas."
+
+    hide screen kami_broadcast_ui
+    play sound "audio/trailer/trl_impact_deep.wav"
+    call j3_persuasion_run from _call_j3_persuasion_run
+
+    play sound sfx_announce
+    show screen kami_broadcast_ui
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "FIN DE LA RÉCRÉ ! Tout le monde à son pupitre !"
+
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Ceux qui ont changé d'avis, gardez-le pour vous. Ceux qui n'ont pas bougé... gardez-le aussi. J'adore les surprises."
+
+    hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("kael", "calme", -0.11),
+        ("iris", "fatigue", 0.02),
+        ("sael", "determine", 0.15),
+        ("elen", "inquiet", 0.28),
+        ("julian", "sourire", 0.41),
+        ("mara", "neutre", 0.54),
+        ("ryn", "reflechit", 0.67),
+        ("nyra", "triste", 0.80),
+        ("tomas", "hesitation", 0.93),
+        ("lysa", "reflexion", 1.06),
+        ("elias", "reflechit", 1.19),
+    ])
     pause 0.3
 
     noam inquiet "On peut discuter encore des heures. On ne saura pas tout. À un moment, il faudra choisir en acceptant cette incertitude."
@@ -1633,286 +1451,6 @@ label _3_DEBAT1_PHASE3:
     kami "J'ai tellement hâte de compter. Et ne vous inquiétez pas : je sais compter jusqu'à douze."
 
     jump vote_phase3_final
-
-# ============================================================================
-# PHASE 3 — Interventions selon l'argument choisi (influence l'adhésion PNJ)
-# ============================================================================
-
-label _3_DEBAT1_PHASE3_INT1:
-    $ selected = p3_argument_one
-
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    if selected == "approvisionnement":
-
-        # Tous les locuteurs de la branche sont dans le showGroup (aucun sprite parasite).
-        $ showGroup([
-            ("elias", "determine", 0.02),
-            ("julian", "sourire", 0.18),
-            ("mara", "doute", 0.34),
-            ("ryn", "colere", 0.50),
-            ("kael", "reflechit", 0.66),
-            ("sael", "neutre", 0.82),
-            ("elen", "joie", 0.98),
-        ])
-
-        noam inquiet "Ryn, chez toi, les rayons sont vides de temps en temps... ou c'est tout le temps ?"
-
-        elias determine "Un bon pour du riz, et l'entrepôt est vide ! On a gagné quoi ? Le droit officiel d'avoir faim ?"
-
-        julian sourire "S'ils peuvent vendre, ils vont produire davantage ! C'est pas compliqué !"
-
-        mara doute "Et si les riches achètent tout avant les autres ? Limen aura les cartons vides, c'est ça ?"
-
-        ryn colere "C'est exactement ce que je dis ! Et Julian va nous expliquer que c'est formidable !"
-
-        kael reflechit "Limen, c'est aussi beaucoup de clients potentiels. Certains commerçants voudront peut-être s'y installer."
-
-        ryn reflechit "...Peut-être. Encore faut-il qu'on ait quelque chose à leur donner."
-
-        sael neutre "Chez moi, on partage, mais ça ne fait pas apparaître de la nourriture par magie. Je comprends qu'on cherche autre chose."
-
-        elen joie "Et si ça permettait enfin aux gens de trouver ce qu'il leur manque ? Même juste une fois sans supplier Kami ?"
-
-        # Montre que le système actuel ne nourrit pas : pousse doucement les hésitants.
-        $ debat_day3_apply_influence({"ryn": 1, "kael": 1, "mara": -1, "julian": 1, "elen": 1})
-
-    elif selected == "rationnement":
-
-        $ showGroup([
-            ("tomas", "raison", 0.05),
-            ("iris", "colere", 0.23),
-            ("ryn", "colere", 0.41),
-            ("mara", "reflexion", 0.59),
-            ("elias", "determine", 0.77),
-            ("elen", "joie", 0.95),
-        ])
-
-        noam inquiet "On a des bons censés garantir le nécessaire, mais certains rentrent les mains vides. On peut vraiment dire que ça fonctionne ?"
-
-        tomas raison "J'ai regardé les statistiques... Dans certains secteurs, les ruptures touchent plus de la moitié des produits sur de longues périodes."
-
-        iris colere "Tu peux avoir un bon parfaitement valable et attendre toute la journée devant un stock vide. Le papier ne nourrit personne."
-
-        ryn colere "À Limen, le lait arrive parfois déjà tourné. Les médicaments sont périmés avant même qu'on puisse les distribuer !"
-        ryn triste "Et après on nous explique qu'on devrait être reconnaissants d'avoir des tickets. Des tickets pour des choses qui n'arrivent pas."
-
-        mara reflexion "Le système est nul. Je le sais. Mais le supprimer d'un coup, sans savoir par quoi le remplacer, c'est une autre folie."
-
-        elias determine "Et on reçoit les mêmes refus, qu'on passe la journée à réparer des machines ou qu'on reste chez soi ! Ça finit par dégoûter les gens."
-
-        elen joie "Moi, j'aimerais juste que personne n'ait besoin de se disputer pour trois pommes et un paquet de riz ! C'est trop demander ?"
-
-        # L'argument le plus efficace pour rallier les pauvres (Ryn) : preuve vécue.
-        $ debat_day3_apply_influence({"ryn": 2, "mara": 1, "kael": 1, "tomas": 1, "iris": 1})
-
-    elif selected == "orbite":
-
-        $ showGroup([
-            ("nyra", "raison", 0.02),
-            ("kael", "mefiant", 0.18),
-            ("iris", "inquiet", 0.34),
-            ("tomas", "raison", 0.50),
-            ("julian", "hesitation", 0.66),
-            ("lysa", "blase", 0.82),
-            ("mara", "stress", 0.98),
-        ])
-
-        nyra raison "Vous parlez des pénuries au sol. Mais une erreur logistique sur Orbite ne se rattrape pas avec une livraison le lendemain."
-
-        kael mefiant "Là-haut, un filtre ou une pièce manquante peut devenir une urgence vitale. On ne peut pas improviser."
-        kael triste "On ne peut pas faire comme si une livraison ratée ne coûtait qu'un peu de confort."
-
-        noam "Mais si on chamboule les livraisons d'un coup, on risque de tout bloquer, non ?"
-
-        iris inquiet "...Là, ça devient sérieux. On risque des vies pour avoir des rayons mieux remplis ?"
-
-        tomas raison "Il y a relativement peu de morts sur Orbite. Il faut peut-être admettre que certaines règles protègent vraiment."
-
-        julian hesitation "Je comprends le danger. Mais si on renonce à tout changement dès qu'il comporte un risque, on ne sortira jamais de ce système."
-
-        lysa blase "Une seule livraison ratée, et tout un module peut trinquer. Ça devrait suffire à calmer quelques beaux discours."
-
-        nyra stress "Sur Orbite, on peut pas patienter trois jours pour réparer une erreur ! On risque de perdre des gens avant le prochain vote !"
-
-        mara stress "...Génial. On prend notre décision ici, confortablement assis. Et ce sont des inconnus enfermés dans une boîte métallique qui pourraient en payer le prix."
-
-        think "Nyra et Kael échangent un regard bref, tendu. Personne n'insiste."
-
-        # Argument « danger » : refroidit fortement les hésitants (surtout Kael).
-        $ debat_day3_apply_influence({"kael": -2, "nyra": -1, "mara": -1, "ryn": -1, "julian": -1, "lysa": -1})
-
-    elif selected == "valeur_travail":
-        $ showGroup([
-            ("sael", "neutre", 0.12),
-            ("elias", "reflechit", 0.33),
-            ("mara", "doute", 0.55),
-            ("ryn", "reflechit", 0.77),
-        ])
-        noam "Sael, tu nous as parlé de ton village. Chez toi, personne ne reste sans aide quand il ne peut plus travailler ?"
-        sael neutre "Non. On aide ceux qui en ont besoin. Ceux qui peuvent participer le font. C'est ce qui permet au village de tenir."
-        elias reflechit "Je comprends. Mais les contrats de Kami, ils prévoient quoi pour ceux qui ne peuvent pas travailler ?"
-        mara doute "Voilà. On parle de liberté comme si tout le monde partait avec les mêmes chances."
-        noam inquiet "Et ceux qui sont incapables de signer un contrat, ils deviennent quoi dans ce nouveau système ?"
-        ryn reflechit "Enfin une question qui ne vient pas d'un catalogue de belles promesses."
-        $ debat_day3_apply_influence({"sael": 1, "elias": 1, "mara": -1, "ryn": 1})
-
-    elif selected == "derogations_complexes":
-        $ showGroup([
-            ("elen", "reflechit", 0.16),
-            ("iris", "blase", 0.38),
-            ("kael", "calme", 0.60),
-            ("nyra", "raison", 0.82),
-        ])
-        noam sourire "Elen a failli devoir organiser un référendum pour commander des fraises. Vous trouvez ça raisonnable ?"
-        elen reflechit "Trois pages ! Et j'avais même pas encore demandé les épices ! J'ai cru que j'allais y passer la nuit."
-        iris blase "Même procédure absurde pour obtenir une pièce détachée. Et on s'étonne que plus rien n'avance."
-        kael calme "Certains dossiers d'équipement prennent plusieurs jours. Pour une urgence, c'est une éternité."
-        nyra raison "Donc même pour une demande simple, on perd des jours. C'est absurde."
-        noam inquiet "Voilà pourquoi on veut changer les choses. Mais là... ce texte, c'est vraiment ce qu'il nous faut ?"
-        $ debat_day3_apply_influence({"elen": 1, "iris": 1, "kael": 1, "nyra": 1})
-
-    return
-
-label _3_DEBAT1_PHASE3_INT2:
-    $ selected = p3_argument_two
-
-    scene bg_conclave at adaptive_fullscreen with dissolve
-
-    if selected == "monde_avant":
-
-        $ showGroup([
-            ("iris", "reflechit", 0.05),
-            ("elen", "joie", 0.23),
-            ("julian", "sourire", 0.41),
-            ("mara", "reflexion", 0.59),
-            ("tomas", "raison", 0.77),
-            ("ryn", "colere", 0.95),
-        ])
-
-        iris reflechit "Avant Kami, les prix augmentaient parfois plus vite que les salaires. Vous avez oublié ça ?"
-        iris reflechit "Mais quand quelque chose manquait, on pouvait chercher ailleurs. Ça nous laissait au moins une chance."
-
-        elen joie "Voilà ! Tu pouvais acheter des chaussures sans devoir prouver qu'elles étaient vraiment trouées !"
-
-        julian sourire "Le monde d'avant était loin d'être parfait. Mais tu pouvais essayer, échouer, recommencer. Aujourd'hui, on attend qu'une IA autorise le moindre changement."
-
-        mara reflexion "Ouais. Choisir. Quand t'as les moyens, c'est facile."
-        mara reflexion "Moi, je me souviens des portes qui se fermaient devant toi quand tu n'avais pas le bon visage, les bons contacts, la bonne façon de sourire."
-        mara triste "La liberté d'avant n'avait pas le même prix pour tout le monde. Je suis bien placée pour le savoir."
-
-        tomas raison "Et il y avait des guerres. Des destructions énormes. Avec Kami, les affrontements de cette ampleur ont diminué... enfin, d'après les données."
-
-        ryn colere "Les données ? Va expliquer tes statistiques aux gamins de Limen qui grandissaient avec les restes des autres !"
-
-        noam "Mais avant, ceux qui avaient pas un sou étaient déjà coincés ! C'était pas la liberté pour tout le monde."
-
-        elen joie "Alors... pourquoi on ne pourrait pas garder ce qui marche et changer le reste ?! La liberté, sans laisser les gens mourir de faim !"
-
-        think "Mara détourne le regard et ne répond plus. Je crois qu’elle n’avait pas envie de parler de ça devant tout le monde."
-
-        # Galvanise les convaincus, mais réveille les blessures de Mara et l'amertume de Ryn.
-        $ debat_day3_apply_influence({"julian": 1, "elen": 1, "iris": 1, "mara": -1, "ryn": -1})
-
-    elif selected == "enonce_precis":
-
-        $ showGroup([
-            ("ryn", "colere", 0.05),
-            ("elias", "determine", 0.23),
-            ("kael", "triste", 0.41),
-            ("lysa", "blase", 0.59),
-            ("mara", "stress", 0.77),
-            ("sael", "determine", 0.95),
-        ])
-
-        ryn colere "Lisez les mots ! « Suppression des bons. Fin de la distribution. » C'est écrit. Noir sur blanc !"
-        ryn colere "Pas un mot pour ceux qui ne peuvent pas payer. Pas de délai. Pas de minimum vital. RIEN !"
-
-        elias determine "Mais si on garde les bons, on reste dépendants de la permission de Kami pour chaque pièce, chaque outil, chaque repas !"
-
-        noam inquiet "On ne peut même pas proposer de maintenir les bons quelques semaines. On nous demande de tout supprimer, ou de ne rien changer."
-
-        kael triste "Sur Orbite, couper les circuits actuels sans savoir par quoi les remplacer, ça pourrait nous tuer. On ne change pas une livraison vitale du jour au lendemain."
-
-        lysa blase "Le mot est « supprimer ». Pas « aménager ». Si on vote oui, il faudra assumer ce qu'il signifie."
-
-        ryn colere "Sans les bons, à Limen, on crèvera en silence pendant que vous organiserez votre jolie économie !"
-        ryn colere "Et les gens trop vieux ou trop malades pour bosser ? Ils font quoi ? Ils meurent en attendant un emploi ?!"
-
-        mara stress "...Au moins, cette fois, ce sera notre responsabilité. On ne pourra pas prétendre qu'on n'avait pas lu."
-
-        sael determine "Les gens échangent déjà ce qu'ils peuvent. Ce n'est pas Kami qui les a inventés, ces échanges."
-
-        think "Ryn frappe du poing. Sael ne cille pas."
-
-        # Brutalité du texte : durcit les hésitants (Ryn surtout), galvanise Sael et Elias.
-        $ debat_day3_apply_influence({"ryn": -2, "kael": -1, "mara": -1, "elias": 1, "sael": 2})
-
-    elif selected == "echanges_discrets":
-
-        $ showGroup([
-            ("ryn", "surpris", 0.05),
-            ("sael", "reflechit", 0.23),
-            ("kael", "doute", 0.41),
-            ("julian", "sourire", 0.59),
-            ("lysa", "blase", 0.77),
-            ("mara", "reflexion", 0.95),
-        ])
-
-        ryn surpris "Attends... tu veux dire qu'il y a déjà des échanges en douce chez nous ?"
-
-        sael reflechit "Depuis toujours. Un peu de nourriture contre une réparation. Du tissu contre un service. Quand les rations manquent, c'est parfois ce qui fait tenir les familles."
-
-        noam "Entre voisins, ça peut fonctionner. Mais à l'échelle de tous les districts, c'est autre chose."
-
-        kael doute "Si les gens le font déjà malgré les interdictions, il y a peut-être moyen d'organiser ces échanges sans tout bouleverser d'un coup."
-
-        julian sourire "Voilà ! Les gens ont déjà commencé à se débrouiller. On ne fait que leur rendre le droit de le faire ouvertement."
-
-        lysa blase "Et il y aura toujours quelqu'un pour se faire payer très cher le passage d'un sac de riz."
-
-        ryn reflechit "...Si ça sauve déjà des gens, peut-être qu'on pourrait en faire quelque chose de plus grand. Sans devoir se cacher pour survivre."
-
-        mara reflexion "Tiens. Un argument qui ne sort pas d'un joli discours. Ça existe, ça fonctionne parfois. C'est déjà plus convaincant."
-
-        sael determine "J'aimerais surtout qu'on arrête de compter chaque bouchée. Pour une fois."
-
-        think "Ryn baisse les yeux. Kael pose quelques questions à Sael sur la façon dont ils organisent les échanges chez elle."
-
-        # Rassure les hésitants avec une preuve concrète : le levier de l'unanimité.
-        $ debat_day3_apply_influence({"ryn": 2, "kael": 2, "mara": 1, "sael": 1, "julian": 1})
-
-    elif selected == "rationnement":
-        $ showGroup([
-            ("ryn", "colere", 0.12),
-            ("mara", "doute", 0.34),
-            ("iris", "blase", 0.56),
-            ("tomas", "hesitation", 0.78),
-        ])
-        noam "On parle de supprimer les bons. Mais aujourd'hui, certains districts en reçoivent sans jamais pouvoir les utiliser."
-        ryn colere "À Limen, tu peux faire la queue toute la journée et rentrer sans une miette !"
-        iris blase "Deux options : garder un système défaillant ou supprimer sa dernière protection. Quelle magnifique conception du choix."
-        tomas hesitation "On... on devrait au moins avoir une période de transition. Quelque chose pour éviter que les gens se retrouvent sans rien."
-        mara doute "Mais on ne peut pas ajouter un mot au texte. C'est le piège depuis le début."
-        noam inquiet "Même si on adopte cet amendement, il restera des problèmes. Peut-être même des problèmes plus graves."
-        $ debat_day3_apply_influence({"ryn": -1, "mara": -1, "tomas": -1, "iris": 1})
-
-    elif selected == "approvisionnement":
-        $ showGroup([
-            ("lysa", "blase", 0.12),
-            ("nyra", "raison", 0.34),
-            ("kael", "inquiet", 0.56),
-            ("elen", "inquiet", 0.78),
-        ])
-        noam "Aujourd'hui déjà, selon le district, deux familles n'ont même pas accès aux mêmes choses !"
-        lysa blase "Et demain, si on instaure les ventes, ceux qui possèdent déjà quelque chose auront toutes les chances de passer devant les autres."
-        nyra raison "Pas forcément, Lysa. Si les échanges augmentent, certains districts pourraient enfin recevoir plus. On ne sait pas encore."
-        kael inquiet "Tout dépendra des circuits d'approvisionnement. Sur Orbite, une livraison ratée ne se corrige pas facilement."
-        elen inquiet "Donc... même en y réfléchissant tous ensemble, on ne peut pas savoir si ça va améliorer les choses ?"
-        noam "Non. Et c'est bien ça qui me fait peur."
-        $ debat_day3_apply_influence({"lysa": -1, "kael": -1, "nyra": 1, "elen": 1})
-
-    return
 
 # ============================================================================
 # ISSUES DU VOTE

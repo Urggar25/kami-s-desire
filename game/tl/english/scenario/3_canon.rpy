@@ -1926,12 +1926,6 @@ translate english day3_before_objection_protocol_minigame_5704ede8:
     # noam "On garde la tête froide. On finit ce qu'on a commencé, mais on le finit lucides."
     noam "We keep our heads. We finish what we started, but we finish it with clear minds."
 
-# game/scenario/3_canon.rpy:1360
-translate english day3_choose_debate_argument_64fa398c:
-
-    # noam "[selected_argument_noam_line]"
-    noam "[selected_argument_noam_line]"
-
 # game/scenario/3_canon.rpy:1515
 translate english day3_choose_debate_argument_7fb83f71:
 

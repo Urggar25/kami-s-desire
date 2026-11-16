@@ -1926,12 +1926,6 @@ translate chinese day3_before_objection_protocol_minigame_5704ede8:
     # noam "On garde la tête froide. On finit ce qu'on a commencé, mais on le finit lucides."
     noam "保持冷静。把已经开始的事情做完，但要清醒地做完。"
 
-# game/scenario/3_canon.rpy:1360
-translate chinese day3_choose_debate_argument_64fa398c:
-
-    # noam "[selected_argument_noam_line]"
-    noam "[selected_argument_noam_line]"
-
 # game/scenario/3_canon.rpy:1515
 translate chinese day3_choose_debate_argument_7fb83f71:
 
