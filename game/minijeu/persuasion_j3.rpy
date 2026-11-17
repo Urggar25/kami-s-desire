@@ -572,10 +572,9 @@ label j3_persuasion_run:
         $ _j3p_pick = renpy.call_screen("j3_persuasion_screen")
         if _j3p_pick == "end" or _j3p_pick not in J3P_ORDER or j3p_actions_left() == 0:
             return
-        if _j3p_pick in j3p_done:
-            continue
-        $ _j3p_label = "j3p_" + _j3p_pick
-        call expression _j3p_label from _call_j3p_talk_expression
+        if _j3p_pick not in j3p_done:
+            $ _j3p_label = "j3p_" + _j3p_pick
+            call expression _j3p_label from _call_j3p_talk_expression
         if j3p_actions_left() == 0:
             return
 
