@@ -19,6 +19,9 @@ default j3p_dir = 1
 default j3p_done = []
 default j3p_last_fragment = None
 
+# Une conversation = une action, au maximum trois pendant cette suspension.
+define J3P_MAX_ACTIONS = 3
+
 init 5 python:
     J3P_ORDER = ["ryn", "sael", "kael", "nyra", "mara", "elias", "julian", "iris", "elen", "tomas", "lysa"]
 
@@ -36,6 +39,8 @@ init 5 python:
         "lysa": _("Représentante d'Harmonie"),
     }
 
+    # Combos = (réplique ciblée, fragment). Chaque représentant possède
+    # au moins un combo favorable et un combo défavorable, parfois plusieurs.
     # Fragment gagnant -> variation d'adhésion (positif = pour, négatif = contre).
     J3P_DELTA = 3
     J3P_EFFECTS = {
@@ -51,6 +56,13 @@ init 5 python:
         "tomas": {"rationnement": J3P_DELTA, "enonce_precis": -J3P_DELTA},
         "lysa": {"echanges_discrets": J3P_DELTA, "approvisionnement": -J3P_DELTA},
     }
+
+    # Conserve les deux issues de chaque dialogue quand on ajoute des combos.
+    for _j3p_who, _j3p_effects in J3P_EFFECTS.items():
+        if not any(_v > 0 for _v in _j3p_effects.values()):
+            raise ValueError("J3 persuasion: combo POUR manquant pour " + _j3p_who)
+        if not any(_v < 0 for _v in _j3p_effects.values()):
+            raise ValueError("J3 persuasion: combo CONTRE manquant pour " + _j3p_who)
 
     J3P_STRESS_EXPR = {"mara": "stress", "nyra": "stress", "tomas": "stress"}
     J3P_DONE_MATRIX = BrightnessMatrix(-0.30) * SaturationMatrix(0.35)
@@ -99,9 +111,14 @@ init 5 python:
     def j3p_can_win(who):
         return any(j3p_arg_unlocked(a) for a in J3P_EFFECTS.get(who, {}))
 
+    def j3p_actions_left():
+        return max(0, J3P_MAX_ACTIONS - len(store.j3p_done))
+
     def j3p_resolve(who, result):
         """Marque l'entretien comme mené et renvoie pour / contre / echec / sans_argument."""
         if who not in store.j3p_done:
+            if j3p_actions_left() <= 0:
+                return "echec"
             store.j3p_done.append(who)
         store.j3p_last_fragment = None
         if result is None:
@@ -354,8 +371,8 @@ screen j3_persuasion_screen():
     $ done = who in j3p_done
     $ col = kd_char_color(who)
     $ args_ok, args_total = j3p_unlocked_count()
-    $ remaining = len(J3P_ORDER) - len(j3p_done)
-    $ end_action = Confirm(_("Reprendre la séance ? Les entretiens non menés seront perdus."), Return("end")) if remaining > 0 else Return("end")
+    $ remaining = j3p_actions_left()
+    $ end_action = Confirm(_("Reprendre la séance ? Les actions restantes seront perdues."), Return("end")) if remaining > 0 else Return("end")
 
     key "rollback" action NullAction()
     key "rollforward" action NullAction()
@@ -409,7 +426,7 @@ screen j3_persuasion_screen():
                 size 20
                 color RF_CYAN
                 kerning 2
-    text _("Observe les visages. Un seul entretien par représentant."):
+    text _("Choisis : trois entretiens maximum, un par représentant."):
         font "fonts/Rajdhani-SemiBold.ttf"
         size 22
         color "#8fb4c8"
@@ -438,12 +455,12 @@ screen j3_persuasion_screen():
         padding (30, 14)
         vbox:
             spacing 0
-            text _("ENTRETIENS MENÉS"):
+            text _("ACTIONS UTILISÉES"):
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 20
                 color RF_CYAN
                 kerning 2
-            text ("%d / %d" % (len(j3p_done), len(J3P_ORDER))):
+            text ("%d / %d" % (len(j3p_done), J3P_MAX_ACTIONS)):
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 46
                 color "#eef7ff"
@@ -489,7 +506,7 @@ screen j3_persuasion_screen():
                 size 20
                 color RF_CYAN
                 kerning 2
-            text (_("//  ENTRETIEN TERMINÉ") if done else _("//  ENTRETIEN DISPONIBLE")):
+            text (_("//  ENTRETIEN TERMINÉ") if done else (_("//  ACTIONS ÉPUISÉES") if remaining == 0 else _("//  ENTRETIEN DISPONIBLE"))):
                 font "fonts/Rajdhani-SemiBold.ttf"
                 size 20
                 color ("#6f8ba0" if done else RF_AMBER)
@@ -503,9 +520,9 @@ screen j3_persuasion_screen():
         background Frame("gui/main_menu_kami/button_idle.png", 30, 20)
         hover_background Frame("gui/main_menu_kami/button_hover.png", 30, 20)
         insensitive_background Frame(RF_ASSETS + "frag_idle.png", 30, 26)
-        sensitive (not done)
+        sensitive (not done and remaining > 0)
         action Return(who)
-        text (_("ENTRETIEN TERMINÉ") if done else _("OUVRIR L'ENTRETIEN")):
+        text (_("ENTRETIEN TERMINÉ") if done else (_("ACTIONS ÉPUISÉES") if remaining == 0 else _("OUVRIR L'ENTRETIEN"))):
             font "fonts/Rajdhani-SemiBold.ttf"
             size 30
             kerning 3
@@ -529,7 +546,7 @@ screen j3_persuasion_screen():
             hover_color "#ffffff"
             yalign 0.5
 
-    text _("← / →  CHANGER DE REPRÉSENTANT     •     UN ENTRETIEN PAR PERSONNE"):
+    text _("← / →  CHANGER DE REPRÉSENTANT     •     3 ACTIONS MAXIMUM  •  1 PAR PERSONNE"):
         font "fonts/Rajdhani-SemiBold.ttf"
         size 20
         color "#8fb4c8"
@@ -553,10 +570,14 @@ label j3_persuasion_run:
     while True:
         scene bg_conclave at adaptive_fullscreen with dissolve
         $ _j3p_pick = renpy.call_screen("j3_persuasion_screen")
-        if _j3p_pick == "end" or _j3p_pick not in J3P_ORDER:
+        if _j3p_pick == "end" or _j3p_pick not in J3P_ORDER or j3p_actions_left() == 0:
             return
+        if _j3p_pick in j3p_done:
+            continue
         $ _j3p_label = "j3p_" + _j3p_pick
         call expression _j3p_label from _call_j3p_talk_expression
+        if j3p_actions_left() == 0:
+            return
 
     return
 

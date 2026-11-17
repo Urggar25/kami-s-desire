@@ -59,6 +59,19 @@ init python:
         # Vote du joueur (Noam).
         results.append(("Noam", player_vote))
 
+        # TEMPORAIRE (Jour 3 uniquement) : la route adoptée reste inachevée.
+        # Garantir un NON chez un représentant que Noam n'a pas sollicité.
+        # Cela préserve les trois résultats des entretiens, sans révéler
+        # l'identité du votant pendant le dépouillement secret.
+        # À RETIRER dès que la route du vote adopté sera terminée.
+        if getattr(store, "day3_force_rejection_temporary", False):
+            untouched = [name for key, name in display_names.items()
+                         if key not in getattr(store, "j3p_done", [])]
+            if untouched:
+                blocker = untouched[0]
+                results = [(name, "contre" if name == blocker else vote)
+                           for name, vote in results]
+
         random.shuffle(results)
         return results
 
@@ -505,6 +518,7 @@ label vote_phase3_final:
     $ vote_phase3_current_name = ""
     $ vote_phase3_current_vote = None
     $ vote_phase3_results = vote_phase3_build_results(vote_phase3_player_choice)
+    $ day3_force_rejection_temporary = False
     $ vote_phase3_pending_votes = list(vote_phase3_results)
     $ vote_phase3_tally_index = 0
     $ vote_phase3_tally_done = False

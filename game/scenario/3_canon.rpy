@@ -36,6 +36,8 @@ default day3_cafeteria_route_kael_seen = False
 default day3_cafeteria_route_julian_seen = False
 # Empêche de créditer plusieurs fois la récompense de la réfutation de Julian.
 default day3_julian_clash_rewarded = False
+# TEMPORAIRE : imposer un NON au Jour 3 jusqu'à la fin de la route adoptée.
+default day3_force_rejection_temporary = False
 # Course des 3 virages : nombre de réussites + malus/bonus d'influence sur Tomas,
 # appliqué au vote après la remise à zéro des adhésions (phase 1 du débat).
 default day3_corridor_success = 0
@@ -1450,6 +1452,8 @@ label _3_DEBAT1_PHASE3:
     kami "Alors... PLACE AU VOTE ! Pour, contre, abstention : il est temps de voir ce que vous valez quand plus personne ne vous entend."
     kami "J'ai tellement hâte de compter. Et ne vous inquiétez pas : je sais compter jusqu'à douze."
 
+    # TEMPORAIRE : la route adoptée n'est pas encore complètement jouable.
+    $ day3_force_rejection_temporary = True
     jump vote_phase3_final
 
 # ============================================================================
