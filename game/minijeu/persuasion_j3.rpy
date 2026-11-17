@@ -39,6 +39,8 @@ init 5 python:
         "lysa": _("Représentante d'Harmonie"),
     }
 
+    # Combos = (réplique ciblée, fragment). Chaque représentant possède
+    # au moins un combo favorable et un combo défavorable, parfois plusieurs.
     # Fragment gagnant -> variation d'adhésion (positif = pour, négatif = contre).
     J3P_DELTA = 3
     J3P_EFFECTS = {
@@ -54,6 +56,13 @@ init 5 python:
         "tomas": {"rationnement": J3P_DELTA, "enonce_precis": -J3P_DELTA},
         "lysa": {"echanges_discrets": J3P_DELTA, "approvisionnement": -J3P_DELTA},
     }
+
+    # Conserve les deux issues de chaque dialogue quand on ajoute des combos.
+    for _j3p_who, _j3p_effects in J3P_EFFECTS.items():
+        if not any(_v > 0 for _v in _j3p_effects.values()):
+            raise ValueError("J3 persuasion: combo POUR manquant pour " + _j3p_who)
+        if not any(_v < 0 for _v in _j3p_effects.values()):
+            raise ValueError("J3 persuasion: combo CONTRE manquant pour " + _j3p_who)
 
     J3P_STRESS_EXPR = {"mara": "stress", "nyra": "stress", "tomas": "stress"}
     J3P_DONE_MATRIX = BrightnessMatrix(-0.30) * SaturationMatrix(0.35)
