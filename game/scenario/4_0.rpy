@@ -476,7 +476,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     "La phrase tombe d'un coup. Sael se fige, comme si elle avait elle-même entendu quelqu'un d'autre parler."
     ryn triste "Oui. Ils le savent."
     ryn triste "Et ils y vont quand même. Tu crois qu'ils font ça pour le plaisir ?"
-    sael hesitation "Ryn, je..."
+    sael triste "Ryn, je..."
     ryn colere "Laisse tomber. Maintenant, au moins, je sais ce que tu penses."
     sael colere "NON ! Tu sais ce que j'ai dit parce que j'ai peur ! Ne décide pas à ma place de ce que je pense !"
     mara agace "Vous faites exactement ce que Kami attend de vous. Ça vous rend pas malades ?"
@@ -488,11 +488,11 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     call day4_thread_debate_game from _call_day4_thread_debate_game
 
     if j4_frontieres_result == "pont":
-        jump _4_0_DEBAT_APAISÉ
+        jump _4_0_DEBAT_APAISE
     else:
         jump _4_0_DEBAT_ROMPU
 
-label _4_0_DEBAT_APAISÉ:
+label _4_0_DEBAT_APAISE:
     "Personne ne bouge. Ryn a baissé les yeux vers ses mains."
     sael reflechit "J'ai dit que ceux qui traversaient savaient ce qui les attendait."
     sael triste "C'était ignoble. Je n'aurais pas dû dire ça."
