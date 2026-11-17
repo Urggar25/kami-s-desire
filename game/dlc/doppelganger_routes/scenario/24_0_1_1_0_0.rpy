@@ -186,134 +186,31 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Sa réponse est immédiate, mais il retourne presque aussitôt vers sa tablette sans rien ajouter."
 
-    noam reflexion "Il y a un « mais »."
+    noam taquin "T'as failli dire « techniquement ». J'ai vu tes lèvres bouger."
+    tomas colere "J'ai rien dit !"
+    elias rire "C'est vrai, il l'a pensé très fort."
+    iris blase "Laissez-le avaler quelque chose, déjà."
+    "Tomas essaye de boire. Sa tasse est vide."
+    mara taquin "Et voilà. Même sa tasse est contre lui."
+    tomas fatigue "Vous pouvez arrêter deux minutes ?"
+    ryn desaccord "Bah parle alors ! Ça fait depuis ce matin que tu regardes ce texte comme s'il t'avait insulté."
+    tomas stress "Parce que je suis POUR ! Mais..."
+    "Il s'arrête. La salle entière attend la suite."
+    julian sourire "Mesdames et messieurs, nous assistons à la naissance d'un « mais » historique."
+    tomas colere "Julian, ferme-la !"
+    elen inquiet "Tomas, t'as dormi combien de temps ?"
+    tomas fatigue "Je sais pas. Pas assez."
+    noam reflexion "Tu veux nous montrer ce qui bloque ?"
+    tomas fatigue "Si je savais, je l'aurais déjà montré."
+    sael raison "Alors mange et arrête de te torturer devant nous."
+    tomas reflexion "C'est pas si simple."
+    elen content "Je peux te faire un truc ! Un vrai petit-déjeuner."
+    tomas inquiet "Non ! Enfin... merci. Mais non."
+    "Il replie sa tablette, puis la rouvre aussitôt. Je commence à comprendre pourquoi il a l'air épuisé."
+    tomas fatigue "Je vais aux archives. Il me manque quelque chose, j'en suis sûr."
+    nyra raison "Si tu trouves, viens au débat avec des faits, pas juste une intuition."
+    tomas neutre "Ouais."
 
-    tomas fatigue "Pourquoi il y aurait forcément un mais ?"
-
-    noam taquin "Parce que t'as exactement la tête que tu fais avant de commencer une phrase par « techniquement »."
-
-    elias rire "C'est vrai."
-
-    tomas colere "Vous avez tous décidé de m'emmerder ce matin ?"
-
-    iris blase "Non, mais maintenant que tu proposes..."
-
-    tomas fatigue "Super."
-
-    "Je prends une bouchée avant de reprendre, sans insister davantage sur le ton."
-
-    noam reflexion "Tu es favorable au texte, mais quelque chose te gêne."
-
-    tomas reflexion "Je..."
-
-    "Il regarde l'écran devant lui, puis lève les yeux vers nous."
-
-    tomas hesitation "Je crois."
-
-    ryn surpris "Tu crois ?"
-
-    tomas stress "Oui, Ryn. Je crois."
-
-    ryn desaccord "Comment tu peux ne pas savoir si quelque chose te gêne ?"
-
-    tomas colere "Parce que j'essaie encore de comprendre ce que c'est !"
-
-    "Le ton monte suffisamment vite pour couper quelques conversations autour de nous."
-
-    ryn agace "D'accord, tranquille."
-
-    tomas fatigue "Je suis tranquille."
-
-    iris blase "Non, pas vraiment."
-
-    noam raison "Attendez, laissez-le expliquer. On a tous déjà vu que ça ne sert à rien de se brusquer."
-
-    "Tomas inspire lentement puis fait défiler le texte sur sa tablette."
-
-    tomas reflexion "Le principe est évidemment bon. Je ne discute même pas de ça. Toute personne doit avoir de quoi manger, boire et un endroit où vivre, très bien."
-    tomas raison "Ce qui me dérange, c'est peut-être... Enfin, je sais pas, est-ce que c'est seulement possible tout ça ?!"
-
-    nyra reflexion "Comment produire assez pour fournir tout le monde ?"
-
-    tomas hesitation "Ouais... Je ne sais pas encore. Y'a quelque chose qui me semble bizarre dans cette proposition."
-    tomas colere "Mais j'arrive pas à mettre le doigt dessus."
-
-    ryn fatigue "On est bien avancés."
-
-    noam reflexion "« En quantité suffisante » ? C'est ça qui te semble bizarre ?"
-
-    "Cette fois il hésite plus longtemps."
-
-    tomas reflexion "Peut-être aussi."
-
-    elen inquiet "Mais suffisante, ça veut juste dire suffisamment pour manger normalement, non ?"
-
-    tomas raison "Dans le langage courant, oui. Juridiquement, ça dépend de ce qu'on met derrière. Enfin... juridiquement, c'est pas exactement le bon terme puisque les Commandements sont leur propre système normatif, mais vous voyez ce que je veux dire."
-
-    "Il s'interrompt brusquement."
-
-    tomas reflexion "Non. C'est pas ça."
-
-    noam reflexion "Qu'est-ce qui n'est pas ça ?"
-
-    tomas fatigue "Mon problème."
-
-    julian hesitation "Tu avais pourtant commencé ton exposé habituel."
-
-    tomas reflexion "Je sais."
-
-    julian neutre "Et tu ne sais plus ?"
-
-    "Un court silence tombe autour de lui."
-    "Tomas baisse les yeux vers son écran et relit plusieurs fois la même ligne, les lèvres légèrement entrouvertes comme s'il attendait que le raisonnement lui revienne tout seul."
-
-    elen inquiet "T'as bien dormi cette nuit ?"
-
-    "Il relève la tête presque brutalement."
-
-    tomas surpris "Pourquoi tu me demandes ça ?"
-
-    elen surpris "Bah... parce que t'as l'air fatigué."
-
-    tomas reflexion "Ah."
-
-    pause 0.3
-
-    tomas fatigue "Non. Pas très bien."
-
-    elen sourire "Ça doit être ça alors."
-
-    tomas neutre "Probablement."
-
-    "Il reprend sa tasse et la porte machinalement à ses lèvres avant de constater une deuxième fois qu'elle est vide."
-
-    "Je croise le regard d'Iris. Elle hausse très légèrement un sourcil."
-
-    think "D'accord. Même elle a remarqué."
-
-    noam reflexion "Tu veux qu'on reprenne tranquillement ?"
-
-    tomas fatigue "Non, laisse tomber."
-
-    noam raison "Si tu as une vraie réserve sur le texte, autant la comprendre avant le débat."
-
-    tomas fatigue "Je viens de te dire que j'arrive pas à la formuler."
-
-    noam neutre "Justement."
-
-    tomas colere "Noam, j'ai dit laisse tomber."
-
-    "La réponse sort beaucoup plus sèchement que prévu. Tomas détourne immédiatement les yeux, visiblement conscient de son propre ton."
-
-    tomas fatigue "Désolé."
-
-    noam neutre "C'est pas grave."
-
-    tomas reflexion "Je vais relire le texte aux Archives. Il y a peut-être quelque chose que j'ai raté."
-
-    nyra raison "Si tu trouves une objection concrète, il faudra la présenter cet après-midi."
-
-    tomas neutre "Oui."
 
     call play_stat_dialogue("j24") from _call_play_stat_dialogue_3
 
@@ -468,98 +365,34 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
     "Il ferme la copie qu'il a rédigée, hésite, puis la rouvre presque immédiatement."
 
     noam reflexion "Tu cherches quoi exactement ?"
+    tomas fatigue "Je sais pas ! Tu vas me demander ça combien de fois ?"
+    noam fatigue "D'accord. Mauvaise question."
+    "Il pointe une ligne du texte, puis une autre. Son doigt tremble légèrement."
+    tomas raison "Là. « Disposer ». Un puits à vingt kilomètres, c'est disposer d'eau ?"
+    noam reflexion "Pas pour celui qui doit faire l'aller-retour."
+    tomas reflexion "Voilà. Et pour manger ? « Suffisamment », ça veut dire quoi ? Assez pour tenir debout ?"
+    noam taquin "Je connais au moins une personne qui mourrait si on rationnait les desserts."
+    tomas colere "NOAM !"
+    noam fatigue "Pardon."
+    tomas fatigue "C'est pas le mot. Enfin si, le mot est mauvais, mais c'est pas ça..."
+    "Il passe d'une fenêtre à l'autre. Trois exemplaires du même texte. J'ai envie de lui arracher la tablette des mains."
+    noam agace "Tu fais trois fois le même travail."
+    tomas reflexion "Parce que si je rate une différence..."
+    noam fatigue "Il n'y en a pas. Tu me l'as dit."
+    tomas colere "Tu comprends pas !"
+    "Sa voix résonne dans les archives. Il s'immobilise aussitôt."
+    tomas fatigue "Excuse-moi. J'ai dormi trois heures. J'arrive même plus à finir une idée."
+    noam inquiet "Ça, j'avais remarqué."
+    tomas neutre "Merci."
+    noam reflexion "Écoute. On peut arrêter de relire la même phrase. Soit tu vas jusqu'au bout de ton doute, soit tu vas manger."
+    tomas fatigue "Tu viens de me proposer deux choses que j'arrive pas à faire."
+    noam sourire "Ouais. Je sais."
+    "Il regarde les documents une dernière fois et finit par fermer l'un des trois."
+    tomas reflexion "Bon. On essaie autrement."
+    noam reflexion "Le texte te fait peur, ou ce que Kami pourrait en faire ?"
+    tomas hesitation "Je... c'est peut-être la même chose."
+    "Pour la première fois depuis mon arrivée, il ne cherche pas immédiatement à me corriger."
 
-    tomas fatigue "Si je le savais, j'aurais probablement déjà terminé."
-
-    noam neutre "Logique."
-
-    tomas reflexion "Le problème, c'est que plus je relis le texte, moins je vois ce qui me gêne. Et pourtant, j'ai toujours cette impression qu'il y a quelque chose."
-
-    noam raison "Quelque chose qui permettrait à Kami de contourner le Commandement ?"
-
-    tomas hesitation "Peut-être."
-
-    noam reflexion "Ou quelque chose qui pourrait avoir un effet pervers ?"
-
-    tomas reflexion "C'est ce que je pensais au début, mais je ne trouve aucun mécanisme évident."
-
-    "Il fait défiler le texte jusqu'à la phrase centrale."
-
-    tomas raison "« Toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante. »"
-
-    tomas reflexion "Regarde « disposer » par exemple. Est-ce qu'on parle d'un accès immédiat ? D'un accès raisonnable ? D'une simple disponibilité théorique ?"
-
-    noam raison "Si tu dois marcher vingt kilomètres pour avoir de l'eau, j'aurais du mal à dire que t'en disposes réellement."
-
-    tomas reflexion "Moi aussi, mais le texte ne le dit pas."
-
-    noam neutre "D'accord."
-
-    tomas raison "Et « alimentation suffisante », ça veut dire quoi ? Suffisante pour ne pas mourir ? Suffisante pour être en bonne santé ? Est-ce qu'on parle de quantité, de qualité, d'apports nutritionnels ?"
-
-    noam reflexion "Là, on commence à retrouver ton problème."
-
-    tomas hesitation "Oui..."
-
-    "Il garde les yeux sur l'écran quelques secondes puis secoue lentement la tête."
-
-    tomas fatigue "Non."
-
-    noam surpris "Non ?"
-
-    tomas fatigue "C'est pas ça."
-
-    noam reflexion "Pourtant, tu viens de donner deux objections assez précises."
-
-    tomas reflexion "Ce sont des imprécisions. Elles me gênent, évidemment, mais ce n'est pas ce que j'essayais de comprendre depuis ce matin."
-
-    noam neutre "Et tu sais toujours pas ce que c'était ?"
-
-    tomas fatigue "Non."
-
-    "Son visage se ferme légèrement. Il passe une main sur son front et reste un moment immobile devant les trois documents."
-
-    noam inquiet "Ça t'arrive souvent d'oublier une idée en plein milieu ?"
-
-    tomas fatigue "Évidemment que oui."
-
-    noam reflexion "À ce point-là ?"
-
-    tomas colere "Noam."
-
-    noam neutre "Je demande."
-
-    tomas fatigue "J'ai mal dormi, je suis fatigué et ça fait vingt-quatre jours qu'on vit dans une station avec une IA qui transforme chaque phrase en potentiel piège juridique. Donc oui, aujourd'hui je suis un peu moins efficace que d'habitude."
-
-    noam taquin "Un peu."
-
-    tomas fatigue "Merci."
-
-    "Je m'adosse à la table à côté de lui."
-
-    noam raison "Bon. On reprend autrement."
-
-    tomas reflexion "Comment ?"
-
-    noam reflexion "Tu es pour le principe."
-
-    tomas neutre "Oui."
-
-    noam reflexion "Tu ne veux pas empêcher les gens d'avoir un toit, de l'eau ou à manger."
-
-    tomas fatigue "Évidemment que non."
-
-    noam reflexion "Donc ton doute ne porte pas sur l'objectif."
-
-    tomas raison "Non."
-
-    noam reflexion "Il porte soit sur la façon dont c'est écrit, soit sur ce que Kami pourra en faire."
-
-    "Tomas reste silencieux, puis acquiesce lentement."
-
-    tomas neutre "Probablement."
-
-    "Tomas regarde encore ses trois documents. Je sais pas trop quoi lui conseiller."
 
     menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"On ne peut pas attendre un texte parfait.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRINCIPE"},"Vérifions ce que Kami devra produire.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRODUCTION"}}):
         "Que conseiller à Tomas ?"
@@ -572,77 +405,31 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
 # Durée : choix majeur, environ 30 s.
 label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
-    noam raison "Alors garde ça pour le débat."
-
-    tomas surpris "Quoi ?"
-
-    noam reflexion "Ton doute."
-
-    tomas fatigue "Je vais pas me lever devant onze personnes pour leur annoncer que quelque chose me gêne sans savoir quoi."
-
-    noam taquin "Tu viens de le faire au petit-déjeuner."
-
-    tomas colere "Et ça s'est très bien passé, comme tu as pu le constater."
-
-    noam sourire "Justement, cette fois je serai préparé."
-
-    tomas reflexion "À quoi ?"
-
-    noam raison "À essayer de comprendre ce que t'essaies de dire au lieu de laisser Ryn te demander toutes les vingt secondes si tu votes pour."
-
-    "Un léger sourire apparaît malgré lui."
-
-    tomas taquin "Ça va être difficile."
-
-    noam sourire "Je suis courageux."
-
-    tomas reflexion "..."
-
-    "Son expression redevient rapidement sérieuse."
-
-    tomas fatigue "Et si je trouve une vraie raison de m'y opposer ?"
-
-    noam neutre "Alors tu l'expliques."
-
-    tomas surpris "Même si ça fait échouer le vote ?"
-
-    noam raison "Si ta raison est assez importante pour qu'on préfère ne pas adopter le Commandement, oui."
-
-    "Il me regarde un instant comme s'il attendait autre chose."
-
-    noam reflexion "Je vais pas te demander de voter pour juste parce que les onze autres trouvent le texte évident."
-
-    tomas neutre "..."
-
-    noam raison "Mais si tu veux bloquer quelque chose qui peut améliorer concrètement la vie des gens, faudra qu'on sache pourquoi."
-
-    tomas reflexion "Ça me paraît raisonnable."
-
-    noam taquin "Ça m'arrive."
-
-    tomas fatigue "Très rarement."
-
-    noam sourire "À tout à l'heure."
-
-    "Je me redresse et me dirige vers la porte."
-
+    noam raison "Bon. Tu vas le dire au débat."
+    tomas surpris "Dire quoi ? « Bonjour, j'ai un problème dont j'ai oublié le nom » ?"
+    noam taquin "Au moins ça changerait de Julian."
+    tomas fatigue "J'aimerais surtout ne pas passer pour l'idiot qui bloque le vote."
+    noam reflexion "Je peux t'aider à formuler ce que t'as trouvé."
+    tomas colere "Tu veux encore m'expliquer ma propre question ?"
+    noam agace "Non ! Mais tu me demandes de t'écouter depuis une heure et dès que je parle, tu me sautes dessus !"
+    "Tomas me dévisage. J'ai envie de récupérer ma phrase et de la remettre dans ma bouche."
+    noam fatigue "Pardon. Je suis aussi crevé que toi."
+    tomas fatigue "Non. T'as raison. Je suis insupportable."
+    noam taquin "Ça, je voulais pas le dire."
+    "Il sourit enfin, très brièvement."
+    tomas hesitation "Si je trouve une vraie raison de voter contre ?"
+    noam reflexion "Alors explique-la. Mais faut que ce soit une raison, pas juste une peur."
+    tomas reflexion "Tu me demandes beaucoup, là."
+    noam raison "Je sais. Et si t'as besoin que je t'aide à parler, je le ferai."
+    tomas fatigue "J'ai pas besoin d'une béquille."
+    noam sourire "D'accord. Alors je reste à côté, juste au cas où."
+    "Je me dirige vers la porte. Il ne me retient pas tout de suite."
     tomas hesitation "Noam."
-
-    "Je me retourne."
-
     noam reflexion "Oui ?"
+    tomas fatigue "Non. Rien."
+    noam blase "Tu vas finir par me rendre dingue."
+    "Il retourne à son écran. Cette fois, il ne cherche plus à répondre."
 
-    tomas reflexion "Tu..."
-
-    "Il s'interrompt et semble chercher ses mots beaucoup plus longtemps que la question ne le justifie."
-
-    tomas fatigue "Non, rien."
-
-    noam blase "Tu fais vraiment ça aujourd'hui ?"
-
-    tomas fatigue "J'ai dit rien."
-
-    noam taquin "D'accord."
 
     "Je le laisse devant ses documents et quitte les Archives."
 
@@ -668,47 +455,37 @@ label _24_0_1_1_0_0_ARCHIVES_PRODUCTION:
     scene bg_archive at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     $ showGroup([("tomas", "reflexion", 0.35), ("noam", "neutre", 0.65)])
-    noam reflexion "Attends. On fait peut-être ça à l'envers."
-    tomas surpris "Quoi ?"
-    noam raison "Au lieu de relire le texte, on peut regarder comment Kami compte fournir tout ça."
-    tomas reflexion "Les stocks, la production, les besoins par district ?"
-    noam sourire "Ouais. Voilà."
-    tomas fatigue "Ça va faire beaucoup de chiffres."
-    noam taquin "Je me suis fait à l'idée."
-    "Tomas ouvre les archives logistiques et fait défiler des tableaux."
-    tomas raison "Là, t'as les besoins prévus. Et là, les ressources disponibles."
-    noam surpris "Il manque autant que ça ?"
-    tomas neutre "Bah oui. Si tout le monde doit recevoir quelque chose, faut bien le produire."
-    noam reflexion "Donc elle va augmenter la production."
-    tomas raison "Forcément. Mais je veux voir où."
-    "Il ouvre une projection conditionnelle liée au vote de cet après-midi."
-    tomas surpris "Attends, c'est quoi cette ligne ?"
-    "Sur l'écran, un nouvel encadré apparaît."
+    noam reflexion "Attends. On regarde tout du mauvais côté."
+    tomas surpris "Comment ça ?"
+    noam raison "On cherche des pièges dans les mots. Mais elle doit bien avoir prévu comment donner à manger aux gens."
+    tomas reflexion "Les stocks... ouais. On peut vérifier les projections."
+    "Il ouvre un tableau rempli de chiffres et me laisse le regarder."
+    noam fatigue "Pourquoi il manque autant de ressources ?"
+    tomas raison "Parce qu'il faudrait augmenter la production. Je veux savoir où."
+    "Il remonte rapidement une colonne, puis s'arrête net."
+    tomas surpris "Oh."
+    noam reflexion "Quoi, « oh » ?"
+    "Une ligne apparaît en évidence sur l'écran."
     "KEYPER-IIB — STATION DE PRODUCTION"
     "UNITÉS ÉID-0 — QUOTAS À RÉVISER SI LE COMMANDEMENT EST ADOPTÉ"
-    noam reflexion "Keyper... C'est où ?"
-    tomas hesitation "Aucune idée."
-    noam neutre "Et les unités ÉID-0 ?"
-    tomas reflexion "Je sais pas non plus."
-    noam taquin "On progresse."
-    tomas fatigue "Très drôle."
-    "Tomas tente d'ouvrir le descriptif des unités. Une mention d'accès refusé apparaît."
-    tomas agace "Ah, super. Même ça, c'est verrouillé."
-    noam raison "Peut-être que c'est des machines."
-    tomas inquiet "Peut-être. Mais si c'est autre chose ?"
-    noam reflexion "Quel genre d'autre chose ?"
-    tomas fatigue "J'en sais rien ! Des gens ? Des ouvriers ? Pourquoi ils parlent de quotas ?"
-    noam neutre "Les machines aussi ont des quotas."
-    tomas raison "Oui, je sais. Mais on va voter pour une augmentation sans même savoir de quoi on parle."
-    noam raison "Ça prouve pas que c'est mauvais."
-    tomas inquiet "Non. C'est ça le problème. Ça prouve rien."
-    noam reflexion "Alors garde ce relevé. Tu pourras expliquer ce qui te gêne."
-    tomas fatigue "Je vais essayer de trouver autre chose avant le vote."
-    noam sourire "OK. Mais mange un truc avant, cette fois."
-    tomas fatigue "J'ai mangé."
-    noam taquin "T'as aussi essayé de boire une tasse vide."
-    tomas agace "Deux fois. Pas trois."
-    noam sourire "À tout à l'heure."
+    noam surpris "Keyper-IIB ? C'est où ?"
+    tomas inquiet "Je... aucune idée."
+    noam reflexion "Et ÉID-0 ?"
+    tomas fatigue "Arrête de me poser la question exactement au moment où je me la pose !"
+    "Il tente d'ouvrir le dossier. Accès refusé."
+    tomas colere "Putain. Évidemment."
+    noam raison "Des unités de production, c'est peut-être juste des machines."
+    tomas reflexion "Peut-être. Mais pourquoi des quotas ? Et si c'est des gens ?"
+    noam inquiet "T'as une raison de le penser ?"
+    tomas fatigue "Non. Justement, j'ai RIEN. Et je vais devoir voter avec ça."
+    "Il recommence à chercher. Je lui pousse sa tasse, vide depuis le matin."
+    noam taquin "Tu veux au moins un verre d'eau ? Un vrai, avec quelque chose dedans."
+    tomas fatigue "Ouais. Merci."
+    "Il la regarde une seconde avant de revenir au dossier verrouillé."
+    noam reflexion "On garde les références. On les ressortira si quelqu'un nous pose une question."
+    tomas neutre "Je vais les noter. Je préfère qu'on ne les perde pas."
+
+
     "Tomas conserve une copie des chiffres. Je quitte les archives en le laissant devant sa tablette."
     $ hideGroup()
     jump _24_0_1_1_0_0_AVANT_VOTE
@@ -1057,167 +834,55 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     ryn neutre "..."
 
-    noam reflexion "On va arrêter deux secondes de chercher à savoir si tu votes pour ou contre."
+    noam agace "Bon, arrêtez de lui demander s'il est pour ! Il l'a dit trois fois."
+    ryn colere "Et nous on attend quoi, exactement ?"
+    tomas colere "J'en sais rien ! C'est ça qui me rend dingue !"
+    noam reflexion "Attends... tout à l'heure, t'as parlé d'un puits à vingt kilomètres."
+    tomas surpris "Hein ?"
+    noam raison "Tu disais que Kami pouvait prétendre donner de l'eau à quelqu'un sans qu'il puisse réellement aller la chercher."
+    elen inquiet "Mais elle ferait vraiment ça ?"
+    iris desaccord "Elen, c'est Kami. Elle pourrait appeler une flaque « accès universel à l'eau » juste pour nous voir râler."
+    tomas raison "Exactement ! On va peut-être lui offrir un moyen de dire que tout va bien alors que des gens crèvent encore."
+    sael raison "Chez moi, une source qui reste inaccessible n'a jamais nourri personne."
+    julian sourire "Épatant. Nous avons donc découvert que les mots peuvent mentir. Peut-on voter ?"
+    tomas colere "Tu vois ? C'est pour ça que je voulais pas en parler !"
+    noam agace "Julian, tu peux arrêter de faire le présentateur deux secondes ?"
+    julian fatigue "Je... oui. Bon."
+    "Tomas regarde ses mains. Il a l'air plus soulagé qu'heureux qu'on ait enfin compris."
+    tomas fatigue "Je veux pas être celui qui aura laissé passer ça."
+    noam reflexion "Ouais. Là, je comprends."
+
+
+    noam reflexion "Si on refuse le texte aujourd'hui, qu'est-ce qu'on améliore ?"
+    tomas reflexion "Rien. Mais si on l'accepte tel quel..."
+    ryn desaccord "Attends. Chez moi, des gens ont même pas de quoi boire. Tu préfères qu'ils n'aient rien ?"
+    tomas colere "J'AI PAS DIT ÇA !"
+    noam fatigue "Ryn, laisse-le finir. S'il te plaît."
+    ryn fatigue "Ouais, bon..."
+    noam hesitation "J'aime pas non plus ce texte. Enfin... je l'aime bien, mais pas comme il est écrit."
+    iris blase "C'est très clair, Noam."
+    noam fatigue "Je sais. Je fais de mon mieux."
+    tomas reflexion "Tu trouves aussi qu'il manque quelque chose ?"
+    noam raison "Ouais. Sauf qu'on a pas de texte de remplacement. Et les gens qui ont faim aujourd'hui, ils attendent pas qu'on trouve le mot parfait."
+    sael raison "Ça, je peux le comprendre. Mais une promesse vide peut faire plus de mal qu'une absence de promesse."
+    elen inquiet "Et quelqu'un qui n'a pas mangé depuis hier, on lui dit quoi ? Qu'on recommence dans trois jours ?"
+    "Sael ne répond pas tout de suite."
+    tomas fatigue "Vous croyez que j'ai pas pensé à ces gens ?"
+    noam agace "Personne dit ça. C'est justement pour eux que tu t'acharnes."
+    nyra raison "On ne peut pas réécrire la proposition ici. C'est ce texte-là ou rien."
+    julian neutre "Alors la question, c'est : ce rien, on en fait quoi ?"
+    noam reflexion "Tomas... si Kami applique le Commandement au strict minimum, est-ce que ça aide quand même quelqu'un ?"
+    tomas hesitation "Peut-être. Au moins ceux qui n'ont absolument rien."
+    noam raison "Voilà. C'est ce qui me fait pencher pour."
+    tomas reflexion "Et si dans une semaine on découvre qu'elle distribue juste de quoi survivre ?"
+    noam fatigue "Alors tu pourras me le rappeler. Très fort, même. Je sais que tu sais faire."
+    "Quelques rires nerveux passent autour de la table. Tomas, lui, ne sourit pas."
+    noam hesitation "Je peux pas te promettre que ça se passera bien. Franchement, ça me fout la trouille."
+    noam raison "Mais j'ai encore plus peur de dire non et de rentrer chez moi en sachant qu'on pouvait au moins leur donner ça."
+    tomas fatigue "Tu sais que ça me rassure pas ?"
+    noam sourire "Ouais. Moi non plus."
+    "Tomas revient au texte. Cette fois, il le lit sans le faire défiler."
 
-    tomas surpris "Quoi ?"
-
-    noam raison "Depuis ce matin, tout le monde te pose la même question et, à chaque fois, tu réponds que tu es pour avant de recommencer à chercher ce qui te gêne."
-
-    noam reflexion "Donc le problème est probablement ailleurs."
-
-    tomas reflexion "..."
-
-    noam raison "Oublie le vote une minute. Qu'est-ce que tu crains concrètement si le texte est adopté ?"
-
-    "Tomas ouvre la bouche, puis reste silencieux suffisamment longtemps pour que je commence à croire que ma question n'a rien arrangé."
-
-    tomas hesitation "Que..."
-
-    "Il baisse les yeux."
-
-    tomas reflexion "Que ça ne change rien."
-
-    pause 0.4
-
-    noam reflexion "Explique."
-
-    tomas raison "Qu'on adopte un Commandement qui donne l'impression de protéger tout le monde, mais dont les mots permettent quand même une application minimale."
-
-    "Il semble retrouver progressivement le fil."
-
-    tomas raison "Une quantité de nourriture suffisante pour survivre, mais pas pour être réellement en bonne santé. Un toit, oui, mais dans quelles conditions ? De l'eau potable, oui, mais combien et à quelle distance ?"
-
-    tomas reflexion "On pourrait voter aujourd'hui en pensant qu'on garantit des conditions de vie dignes alors que le texte garantit peut-être simplement la survie."
-
-    noam reflexion "D'accord."
-
-    "Je prends quelques secondes pour reprendre son raisonnement."
-
-    noam raison "Donc tu n'as pas peur que le Commandement impose quelque chose de mauvais."
-
-    tomas neutre "Non."
-
-    noam reflexion "Tu as peur qu'on se satisfasse d'un texte insuffisant parce qu'il sonne bien."
-
-    "Tomas me regarde."
-
-    tomas surpris "Oui."
-
-    "Sa réponse sort presque immédiatement."
-
-    tomas raison "Voilà. C'est ça."
-
-    noam reflexion "Et que Kami puisse ensuite nous répondre qu'elle respecte le Commandement même si son application est volontairement minimale."
-
-    tomas raison "Exactement."
-
-    "Il se redresse légèrement, comme si le simple fait d'avoir enfin réussi à formuler son problème venait de retirer une partie de la tension qu'il accumule depuis le matin."
-
-    julian sourire "Il fallait donc un traducteur de Tomas."
-
-    tomas fatigue "C'est ce que j'essaye de vous dire depuis ce matin."
-
-    "Quelques rires circulent, mais je garde les yeux sur Tomas."
-
-    noam raison "Ta réserve est légitime."
-
-    ryn desaccord "Oh non..."
-
-    noam agace "Tu peux attendre trente secondes ?"
-
-    ryn neutre "Vas-y."
-
-    noam reflexion "Le texte est vague et je pense que personne ici peut sérieusement garantir que Kami l'appliquera exactement comme nous l'imaginons."
-
-    nyra raison "C'est vrai."
-
-    noam reflexion "Mais il y a une chose que j'essaie de comprendre."
-
-    tomas neutre "Quoi ?"
-
-    noam raison "Si on refuse le texte aujourd'hui, qu'est-ce qu'on améliore ?"
-
-    "Tomas ne répond pas tout de suite."
-
-    tomas reflexion "Rien."
-
-    noam reflexion "Les gens qui n'ont pas suffisamment à manger ?"
-
-    tomas neutre "Ils n'obtiennent rien."
-
-    noam reflexion "Ceux qui n'ont pas d'eau potable ?"
-
-    tomas fatigue "Rien non plus."
-
-    noam reflexion "Et ceux qui n'ont pas de logement ?"
-
-    tomas neutre "Pareil."
-
-    noam raison "Donc aujourd'hui, la situation actuelle ne leur garantit même pas cette version minimale qui t'inquiète."
-
-    tomas reflexion "Oui, mais—"
-
-    noam raison "Je sais."
-
-    "Je lève légèrement la main avant qu'il continue."
-
-    noam reflexion "Je ne dis pas que ton problème disparaît."
-
-    noam raison "Je dis simplement qu'on est peut-être en train de comparer un texte imparfait à un texte parfait qui n'existe pas."
-
-    "Tomas reste silencieux."
-
-    noam reflexion "En fait nous n'avons qu'une seule question à nous poser : est-ce que ça va dans le bon sens ?"
-    noam raison "On ne pourra jamais avoir de grandes réussites avec ce fonctionnement."
-
-    nyra raison "Oui, on ne peut même pas proposer des modifications aux amendements."
-    nyra reflexion "Si on le pourrait ça serait très différents, mais..."
-
-    noam sourire "Cette proposition c'est à prendre ou à laisser. Est-ce que pour toi ça va dans le bon sens ou pas ?"
-
-    "Il semble surpris par ma réponse."
-
-    tomas surpris "Tu admets ça ? Que c'est imparfait ?"
-
-    noam taquin "Tu préfères que je mente pour gagner le débat ?"
-
-    tomas reflexion "Non. C'est hônnete."
-
-    noam raison "Je peux pas te garantir que ce texte sera appliqué parfaitement. Je peux pas non plus te garantir qu'on aura l'occasion de l'améliorer."
-
-    noam reflexion "Par contre, je peux regarder ce qu'il y a aujourd'hui."
-
-    "Je désigne le texte affiché au centre de la salle."
-
-    noam raison "Aujourd'hui, rien n'oblige Kami à garantir ces trois choses."
-
-    noam raison "Après le vote, si on l'adopte, ce sera le cas."
-
-    tomas reflexion "Même avec une interprétation minimale."
-
-    noam neutre "Même avec une interprétation minimale."
-
-    tomas reflexion "..."
-
-    noam raison "Si quelqu'un n'a absolument rien à manger aujourd'hui et qu'après ce vote Kami est obligée de lui garantir au moins de quoi survivre, c'est insuffisant."
-
-    noam reflexion "Mais c'est mieux que rien."
-
-    "Tomas baisse légèrement les yeux."
-
-    noam reflexion "Et si quelqu'un dort dehors sans aucun abri, je préfère lui garantir un toit imparfait maintenant plutôt que de lui expliquer qu'on a refusé parce qu'on espérait écrire quelque chose de mieux plus tard."
-
-    "Cette fois, personne n'intervient."
-
-    noam raison "Tu as raison de vouloir éviter qu'on se contente du minimum."
-
-    noam raison "Mais je pense qu'on se tromperait si, pour éviter un minimum insuffisant, on refusait aussi ce minimum à ceux qui n'ont rien."
-
-    pause 0.5
-
-    "Tomas reste encore quelques secondes immobile devant sa tablette. Son regard passe du texte à moi, puis aux autres représentants."
-
-    tomas reflexion "..."
 
     tomas fatigue "C'est agaçant."
 
@@ -1625,13 +1290,11 @@ label _24_0_1_1_0_0_RESULTAT:
 
     noam colere "Arrêtez avec ça."
 
-    nyra raison "Tu as surtout fait ce que tu fais le mieux."
+    nyra neutre "Tu l'as laissé parler quand plus personne voulait l'écouter. C'était pas gagné."
+    noam taquin "Ça me fait une ligne sur mon CV ?"
+    nyra sourire "Pas avant qu'on voie si le vote tient trois jours."
+    noam fatigue "Merci pour la confiance."
 
-    noam reflexion "C'est-à-dire ?"
-
-    nyra neutre "Tu as écouté quelqu'un que le reste de la salle commençait à considérer comme un obstacle et tu as compris que son problème n'était pas celui qu'il essayait lui-même d'expliquer."
-
-    "La formulation me prend suffisamment au dépourvu pour que je ne trouve rien à répondre immédiatement."
 
     ryn sourire "En gros, t'as été utile."
 
@@ -1855,51 +1518,23 @@ label _24_0_1_1_0_0_APRES_VOTE:
 
     noam reflexion "Ouais."
 
-    iris sourire "T'avais l'air bien pendant le débat."
+    iris sourire "C'était pas mal, tout à l'heure."
+    noam taquin "Mon discours ? Tu veux que je recommence ?"
+    iris agace "N'ose même pas."
+    "Je ris. Elle détourne les yeux vers la partie de Julian."
+    iris neutre "T'avais pas l'air de chercher des fantômes partout, pour une fois."
+    noam fatigue "Sympa."
+    iris inquiet "Je voulais pas dire ça comme ça."
+    noam reflexion "Je sais."
+    "Elle attrape ma boisson et m'en prend une gorgée sans demander."
+    noam surpris "Hé !"
+    iris sourire "Quoi ? Tu surveilles chaque goutte, maintenant ?"
+    noam taquin "Si c'est toi qui me les piques, ouais."
+    "Elle me rend le gobelet avec un air satisfait."
+    iris neutre "Profite un peu. T'as pas besoin de trouver une nouvelle catastrophe avant ce soir."
+    noam fatigue "Je vais essayer."
+    iris sourire "Ce serait déjà un progrès."
 
-    noam taquin "Je pensais qu'on jugeait les arguments, pas la prestation."
-
-    iris agace "Arrête deux secondes."
-
-    noam sourire "D'accord."
-
-    iris reflexion "Depuis plusieurs jours, t'es toujours en train de courir après un truc, de te demander si t'as oublié quelque chose ou si t'as vu quelque chose que personne d'autre a vu."
-
-    "Son ton reste léger, mais suffisamment précis pour faire disparaître une partie de mon sourire."
-
-    iris neutre "Aujourd'hui, t'étais juste... toi."
-
-    noam reflexion "C'est censé être rassurant ?"
-
-    iris sourire "Un peu."
-
-    "Je baisse les yeux vers ma boisson."
-
-    noam reflexion "Ça m'avait manqué."
-
-    iris surpris "Quoi ?"
-
-    noam neutre "Avoir un problème que je peux comprendre."
-
-    "Je cherche mes mots quelques secondes."
-
-    noam reflexion "Tomas n'arrivait pas à expliquer ce qui le bloquait, mais au moins il y avait quelque chose à comprendre. Je pouvais l'écouter, lui poser des questions et essayer de trouver où ça coinçait."
-
-    noam fatigue "C'est quand même plus simple que de se demander si son propre cerveau invente des cadavres."
-
-    iris fatigue "La comparaison aide beaucoup."
-
-    noam sourire "Je trouve aussi."
-
-    iris reflexion "Et tu l'as aidé."
-
-    noam neutre "Ouais."
-
-    iris sourire "Donc profite un peu au lieu de chercher immédiatement pourquoi ça va forcément mal finir."
-
-    "Je tourne la tête vers elle."
-
-    noam taquin "Tu me connais beaucoup trop bien."
 
     iris blase "Malheureusement."
 

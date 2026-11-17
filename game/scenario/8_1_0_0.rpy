@@ -364,108 +364,46 @@ label _8_1_0_0_CHAMBRE_IRIS:
 
     anya reflexion "Enfin... plus ou moins."
 
-    iris reflexion "Et toi, tu viens d’où exactement ?"
-
-    anya "Nexus."
-
-    noam surpris "Nexus ?"
-
-    "Elle acquiesce."
-
-    anya reflexion "Je suis née là-bas. J’y ai toujours vécu."
-
-    "Elle marque une pause."
-
-    anya triste "Enfin... jusqu’à l’année dernière."
-
-    "Son regard descend vers le sol."
-
-    anya "J’étais à Limen quand Kami a pris le contrôle."
-
-    noam reflexion "Tu étais juste de passage ?"
-
-    anya "Je devais rester trois jours."
-
-    iris inquiet "..."
-
-    anya "Trois jours."
-
-    "Elle laisse échapper un petit rire sans joie."
-
-    anya "J’avais emporté trois sous-vêtements, une tablette et même pas mon chargeur principal parce que je pensais que ce serait rapide."
-
-    anya fatigue "Très bonne préparation pour passer plus d’un an coincée dans un autre district."
-
-    noam "Tu n’as jamais pu rentrer ?"
-
-    anya "J’ai fait plein de demandes."
-
-    anya colere "Transfert exceptionnel. Regroupement familial. Retour vers le district d’origine. Déplacement professionnel. Tout ce que je pouvais cocher dans leurs formulaires."
-
-    anya triste "Jamais de réponse."
-
-    "Elle hausse légèrement les épaules."
-
-    anya "Pas un refus, rien. Juste... rien."
-    noam "Et t'as continué à remplir leurs formulaires ?"
-    anya "Au début, oui. Puis j'ai commencé à cocher les cases au hasard."
-    noam "Au hasard ?"
-    anya "J'ai demandé un transfert professionnel alors que j'avais plus de boulot. J'ai même coché « déplacement pour raison familiale » avec personne à aller voir."
-    noam "Ils ont répondu ?"
-    anya "Tu sais ce qui est le plus vexant ? Même à mes mensonges, ils ont pas répondu."
-    noam "..."
-    anya "Désolée. C'est pas une histoire très drôle."
-    noam "Non. Mais t'es pas obligée d'en faire une."
-
-    "Iris baisse légèrement les yeux."
-
-    anya reflexion "Au début je pensais que ça durerait quelques semaines, puis quelques mois. Et après..."
-
-    "Elle souffle."
-
-    anya fatigue "J’ai arrêté de compter."
-
-    noam reflexion "Et depuis le retour du commerce..."
-
-    "Elle relève les yeux vers moi."
-
-    anya "Les conteneurs."
-
-    noam "C’est ça."
-
-    anya "Depuis que les districts recommencent à échanger des marchandises, il y en a partout : des camions, des dépôts, des zones de chargement..."
-
-    anya reflexion "Et forcément, quand quelque chose commence à circuler..."
-
-    iris reflexion "... les gens cherchent à circuler avec."
-
-    anya "Exactement."
-
-    "Elle hésite légèrement."
-
-    anya "J’ai trouvé quelqu’un à Limen."
-
-    noam reflexion "Un passeur ?"
-
-    anya desaccord "Un réseau. Je savais pas qui ils étaient et je voulais pas savoir."
-
-    anya "Ils m’ont expliqué qu’un conteneur devait partir vers Nexus, sans être inspecté au départ ni ouvert pendant le trajet."
-
-    iris desaccord "Et tu les as crus ?"
-
-    anya colere "J’étais enfermée à Limen depuis plus d’un an !"
-
-    "Iris ne répond rien."
-
-    anya fatigue "... Oui. Je les ai crus."
-
+    iris reflexion "Et toi, tu viens d'où exactement ?"
+    "Anya redresse immédiatement la tête."
+    anya desaccord "Pourquoi ? Vous allez me renvoyer là-bas ?"
+    noam surpris "Non ! On essaie juste de comprendre."
+    anya fatigue "Nexus. Je viens de Nexus."
+    iris reflexion "Et le conteneur venait de Limen ?"
+    anya desaccord "Oui."
+    noam reflexion "T'étais à Limen pour quoi ?"
+    anya colere "Pour trois jours ! J'y allais pour trois jours, d'accord ?"
+    "Elle me montre trois doigts, comme si j'avais du mal à compter."
+    anya fatigue "J'avais même pas pris de chargeur. Trois sous-vêtements, un sac... Voilà."
+    noam inquiet "Et quand Kami a fermé les frontières..."
+    anya triste "J'y suis restée. Plus d'un an."
+    iris inquiet "Ils t'ont refusé le retour ?"
+    anya colere "J'aurais préféré ! Au moins j'aurais eu un refus à encadrer."
+    noam reflexion "Ils répondaient pas ?"
+    anya fatigue "Jamais. J'ai tout demandé. Retour à Nexus, famille, boulot... À la fin, je cochais même des cases qui avaient rien à voir."
+    noam surpris "Comme quoi ?"
+    anya "Un déplacement familial. J'avais personne à aller voir. Je me suis dit qu'au moins ils vérifieraient."
+    iris desaccord "Et toujours rien."
+    anya triste "Rien."
+    "Elle baisse les yeux. Iris cesse de lui demander quoi que ce soit."
+    noam hesitation "Tu peux t'arrêter là si tu veux."
+    anya desaccord "Non. T'as demandé. Je vais finir."
+    "Elle se frotte les bras, puis reprend."
+    anya reflexion "Quand le commerce est revenu, il y avait des conteneurs partout. Des camions qui repartaient, des caisses qu'on ouvrait plus..."
+    iris reflexion "Et tu t'es dit que tu pouvais partir avec."
+    anya desaccord "Je me suis surtout dit que j'allais devenir folle si je restais."
+    noam reflexion "T'as trouvé un passeur ?"
+    anya inquiet "Un réseau. Je connais pas les noms. Me les demande pas."
+    noam "Je te les demande pas."
+    anya reflexion "Ils ont juré que ça partait pour Nexus. Qu'on ouvrirait pas le conteneur en route."
+    iris desaccord "Tu les as crus ?"
+    anya colere "T'aurais fait quoi, toi ? Attendre encore un an dans ma chambre ?"
+    "Iris ouvre la bouche, puis la referme."
+    iris fatigue "Je sais pas."
+    anya fatigue "Moi non plus, je savais plus."
     "Elle ramène ses jambes contre elle."
-
-    anya reflexion "Je suis entrée dedans pendant le chargement. Il y avait de quoi respirer, de l’eau, une couverture... Ils m’avaient dit quelques heures."
-
-    "Elle regarde ses mains."
-
-    anya triste "Après un moment, il a commencé à faire froid."
+    anya reflexion "Y avait de l'air, de l'eau, une couverture. On m'avait dit quelques heures."
+    anya triste "Après, il a fait froid. Vraiment froid."
 
     noam inquiet "Tu te souviens de quelque chose après ça ?"
 
@@ -512,62 +450,33 @@ label _8_1_0_0_CHAMBRE_IRIS:
     "Un silence un peu absurde s’installe, puis Anya regarde de nouveau vers la porte."
 
     anya reflexion "Pourquoi je suis cachée ?"
-
-    "Cette fois, personne ne plaisante."
-
-    noam "Parce que Kami ne sait pas que tu es ici."
-
-    anya surpris "..."
-
-    noam "Et on aimerait que ça reste comme ça."
-
-    anya inquiet "Pourquoi ?"
-
-    iris reflexion "Parce qu’on n’a aucune idée de ce qu’elle ferait de toi."
-
-    noam "Tu n’es pas représentante, tu n’étais pas censée être dans cette livraison et, surtout, tu n’étais pas censée entrer dans le Conclave."
-
-    anya inquiet "Elle pourrait me tuer ?"
-
-    "Je ne réponds pas immédiatement."
-
-    iris desaccord "On préfère ne pas vérifier."
-
-    anya "..."
-
-    noam determine "C’est pour ça qu’on doit être extrêmement prudents. Il y a des caméras et des micros dans presque toutes les pièces ; cette salle de bain est l’un des rares endroits où on peut parler tranquillement."
-
-    anya reflexion "Et votre chambre ?"
-
-    iris "Brouilleur."
-
-    anya "..."
-
-    anya inquiet "Combien de personnes savent que je suis ici ?"
-
-    noam "Quatre : Iris, Nyra, Tomas et moi."
-
-    anya "Personne d’autre ?"
-
-    noam "Personne."
-
-    "Elle acquiesce lentement."
-
-    anya reflexion "Donc si quelqu’un entre..."
-
-    iris determine "Tu ne fais aucun bruit."
-
-    anya desaccord "J’avais compris."
-
-    iris desaccord "Vu le réveil que tu viens de m’offrir, je préfère préciser."
-
-    anya colere "Tu veux vraiment qu’on recommence ?"
-
-    iris colere "Essaie."
-
-    noam fatigue "..."
-
-    think "Elles se connaissent depuis environ dix minutes. Ça promet."
+    noam hesitation "Parce que Kami sait pas que t'es ici."
+    anya surpris "Attends... vous l'avez pas prévenue ?"
+    iris desaccord "Tu tiens vraiment à rencontrer son canon ?"
+    anya colere "Je tiens à savoir ce que vous comptez faire de moi !"
+    noam inquiet "On n'en sait rien. T'es pas représentante et t'étais pas censée être dans la livraison."
+    anya inquiet "Donc elle peut me tuer."
+    iris fatigue "On veut surtout éviter de lui donner l'occasion."
+    anya desaccord "Super. Et je reste enfermée ici jusqu'à quand ?"
+    noam fatigue "On cherche une solution."
+    anya colere "Vous êtes douze à voter sur le sort du monde et vous savez pas quoi faire d'une fille dans une salle de bain ?"
+    noam taquin "Dit comme ça..."
+    iris colere "Noam, c'est pas le moment !"
+    noam fatigue "Ouais, je sais."
+    anya reflexion "Il y a des caméras ?"
+    noam determine "Presque partout. Et des micros. Ici, c'est un des rares endroits tranquilles."
+    anya inquiet "Et dans la chambre ?"
+    iris reflexion "On a un brouilleur."
+    anya desaccord "Je vous demande de me cacher et vous m'expliquez que votre IA écoute même les chambres. Ça donne envie de dormir."
+    noam reflexion "Pour l'instant, on est quatre à savoir : Iris, Nyra, Tomas et moi."
+    anya reflexion "Et si quelqu'un ouvre la porte ?"
+    iris determine "Tu fais pas de bruit."
+    anya colere "Je sais. J'ai compris !"
+    iris desaccord "Après ton réveil, je préfère vérifier."
+    anya desaccord "T'étais en train de m'étouffer !"
+    iris colere "J'ESSAYAIS DE T'EMPÊCHER DE CRIER !"
+    noam fatigue "Vous pouvez vous détester un peu moins fort ? Ça va finir par nous faire repérer."
+    "Les deux me fusillent du regard. Au moins, elles sont d'accord sur quelque chose."
 
     play sound "audio/sfx_beep.mp3"
 
@@ -678,18 +587,18 @@ label _8_1_0_0_APRES_MIDI:
     noam "Ah."
 
     tomas "On disait juste que ça ne devrait pas poser énormément de problèmes."
-
-    noam reflexion "Je pense aussi."
-
-    julian taquin "Cinq personnes d’accord ? Attention, ça ressemble dangereusement à un regroupement."
-
-    mara desaccord "Tu comptes faire cette blague jusqu’au vote ?"
-
-    julian sourire "Absolument."
-
-    elen rire "Moi je l’aime bien."
-
-    mara fatigue "Évidemment."
+    noam reflexion "Ouais. Pour une fois, ça a l'air simple."
+    julian sourire "Enfin ! Nous allons pouvoir célébrer la victoire avant même le vote."
+    mara desaccord "T'as vraiment besoin d'organiser une fête pour chaque phrase que tu prononces ?"
+    julian taquin "Ça s'appelle avoir le sens de l'événement."
+    elen sourire "Moi je veux bien une fête ! On pourrait faire un gâteau."
+    tomas reflexion "On n'a pas encore les résultats."
+    elen sourire "Alors on fait le gâteau avant, pour gagner du temps !"
+    mara fatigue "Julian, je te préviens : si tu fais un discours devant le gâteau, je le mange pendant que tu parles."
+    julian surpris "Vous ne respectez absolument rien."
+    noam taquin "Même le gâteau ?"
+    julian surpris "Surtout le gâteau."
+    "Tomas sourit à peine. Il sait qu'Anya est là, et pourtant il arrive à parler de pâtisserie comme si de rien n'était."
 
     "La conversation continue encore quelques minutes. Personne ne semble particulièrement inquiet et, après les derniers votes, ça fait presque étrange."
 
