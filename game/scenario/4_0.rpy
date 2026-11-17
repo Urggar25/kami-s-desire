@@ -1,5 +1,7 @@
 default j4_cafeteria_ryn_talked = False
 default j4_cafeteria_julian_talked = False
+# Résultat du débat : la question du vote reste entière, les relations non.
+default j4_frontieres_result = "non_joue"
 
 screen day4_cafeteria_tv_pnc():
     modal True
@@ -54,50 +56,45 @@ screen day4_cafeteria_tv_pnc():
 
 label _4_0_REVEIL_CHAMBRE:
 
-    scene bg_cg012 at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.5
     $ current_day = 4
+    $ j4_frontieres_result = "non_joue"
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "medium"
-
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 1.5
     call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_2
-    $ blink()
-    think "J'ai dû dormir deux heures. Peut-être trois, si je compte les moments où je regardais le plafond en essayant de ne pas penser au vote."
-    think "Raté, évidemment."
-    think "On a perdu. Un seul « non » a suffi."
-    think "Le pire, c'est que je ne sais toujours pas si ce « non » nous a sauvés d'une catastrophe."
 
-    "Sur mon bureau, le cadre avec la photo de mes amis a légèrement glissé. Je le redresse."
+    play sound sfx_drop
+    "Un bruit de métal heurte le sol dans le couloir. Un juron suit, aussitôt étouffé."
+    think "Ça, au moins, c'est un réveil qui ne parle pas de politique."
+    "Je tends l'oreille. Des pas s'éloignent. Pas un cri, pas une alarme. Simplement quelqu'un qui a dû perdre une bataille contre sa valise."
+    scene bg_cg012 at adaptive_fullscreen with dissolve
+    think "Cette nuit, j'ai rêvé de l'urne. Chaque fois que j'essayais d'y glisser un bulletin, une main le ressortait."
+    think "Un seul non, et tout s'est arrêté. J'aimerais pouvoir prétendre que je sais si c'est une bonne nouvelle."
+
     scene bg_cg029 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg029")
-    think "On avait pris cette photo avant mon départ. On avait mis une éternité à se mettre d'accord sur qui se plaçait où."
-    think "À l'époque, ça me semblait être le pire débat de ma vie."
-    think "Ils ont dû voir le résultat. Qu'est-ce qu'ils en pensent ?"
-    think "J'aimerais leur poser la question. Je n'ai même pas le droit de passer un appel."
-    "Je repose le cadre. Mon reflet dans la vitre a une tête à faire fuir le petit-déjeuner."
+    "Le cadre sur mon bureau a glissé de travers."
+    think "Sur la photo, Juliette fait une grimace derrière mon épaule. On avait dû la recommencer quatre fois parce qu'elle refusait de rester sérieuse."
+    think "Je pourrais lui raconter ce qui s'est passé. Sauf que je n'ai pas le droit de l'appeler."
+    "Je redresse le cadre. Juliette continue de me tirer la langue."
 
     play sound sfx_announce
-    pause 1.0
-
+    pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    play music "music/bgm_system_override.mp3" fadein 1.0
-
-    kami "Booooonjour, mes petits représentants ! Alors ? Bien dormi après votre magnifique première défaite ?"
-    kami "Les rations restent gratuites, les frontières fermées, et personne n'aura besoin de réapprendre à faire les courses. Quelle audace ! Quel souffle révolutionnaire !"
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    kami "Bonjour, mes petits perdants ! J'ai une excellente nouvelle : vous avez tous survécu à votre premier exercice de démocratie."
+    kami "Et une moins bonne : le monde est toujours exactement comme hier. Quelle débauche de progrès !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Ne boudez pas ! Il y aura d'autres votes. Pour l'instant, j'ai ajusté quelques livraisons : puisque vous tenez tant à la distribution gratuite, autant en faire profiter la Terre !"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Allez donc prendre votre petit-déjeuner. Je sens qu'Elen va adorer le menu de ce matin. Rien que d'y penser, je suis ravie !"
-
+    kami "Puisque vous avez conservé la distribution gratuite, j'ai fait partir quelques provisions supplémentaires sur Terre. Vous allez être très fiers de vous."
+    kami "Elen, je te conseille de prendre ton petit-déjeuner tôt. Pour une fois, je ne plaisante pas."
+    hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.5
-
-    pause 0.3
-    play sound sfx_drop
-    "Un fracas éclate dans le couloir, suivi d'un juron. Quelqu'un vient probablement de commencer sa journée aussi bien que moi."
-    think "Je m'habille et j'attrape ma tablette. Kami a insisté sur le petit-déjeuner. Ça ne m'inspire aucune confiance."
+    play music "music/bgm_quiet_routine.mp3" fadein 1.0
+    think "Quand Kami prend soin de préciser qu'elle ne plaisante pas, c'est généralement qu'elle prépare quelque chose de particulièrement drôle pour elle."
+    "J'attrape ma tablette, passe ma veste et sors avant qu'elle décide de me réveiller une seconde fois."
 
     jump _4_0_NAVIGATION_CAFETERIA
 
@@ -107,9 +104,11 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ corridor_current = "dortoir"
 
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
-    "Je sors. Dans le dortoir, tout le monde semble avoir adopté la même stratégie : ne regarder personne dans les yeux."
-    think "Elias me salue en passant. Il ouvre la bouche comme pour me dire quelque chose, puis se ravise."
-    think "Même lui ne sait plus comment entamer une conversation. Voilà qui promet."
+    "En sortant, je croise Elias accroupi devant un casier ouvert. Un outil roule jusqu'à ma chaussure."
+    elias gene "Ah ! Merci. Je répare rien, hein. Je vérifie juste que... enfin, ça s'est ouvert tout seul."
+    noam sourire "Tu t'es fait attaquer par une boîte à outils ?"
+    elias inquiet "Moque-toi. Cette boîte, au moins, elle ne me demandera pas comment j'ai voté."
+    "Il récupère l'outil, referme brutalement le casier et file avant que je trouve quoi répondre."
 
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
     $ current_scene_active = None
@@ -148,14 +147,14 @@ label _4_0_CAFETERIA_ECRANS:
     elias reflechit "Ah. Bon. On survivra, alors. Dommage que la survie ait un goût de carton."
     nyra reflechit "Un instant. Réaffectées à quelles distributions ? Et qu'est-ce qui a été retiré exactement ?"
     goumi "Provisions non essentielles uniquement. Réapprovisionnement du Conclave prévu au jour 7."
-    elen colere "Mais c'est une punition ! On a refusé le commerce et maintenant on doit vivre comme si la gourmandise était un crime !"
+    elen colere "Mais c'est une punition ! J'ai voté pour le commerce, et c'est ma cannelle qu'on condamne !"
     play sound sfx_announce
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
     kami "Ooooh, Elen ! Si tu savais comme tu es mignonne quand tu menaces un robot pour un pot de cannelle !"
-    kami "Vous avez gardé les rations gratuites. J'envoie donc les provisions superflues là où elles peuvent servir. Les habitants de la Terre passent avant mes douze petits pensionnaires."
+    kami "J'envoie les provisions superflues là où elles peuvent servir. Et avant que vous me demandiez : oui, les sacs sont déjà partis. Les habitants de la Terre passent avant mes douze petits pensionnaires."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Rassurez-vous, personne ne mourra de faim à bord. Enfin, pas à cause de la cannelle. Vous aurez simplement un peu moins de choix jusqu'au prochain ravitaillement."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -178,18 +177,22 @@ label _4_0_CAFETERIA_ECRANS:
         ("iris", "desaccord"),
         ("noam", "neutre"),
     ])
-    mara taquin "On vient d'assister à la première insurrection de pâtisserie de l'histoire. Je suis presque émue."
-    iris colere "Arrête. C'est pas la cannelle, le problème. C'est que Kami retire nos provisions quand ça lui chante et appelle ça une leçon de morale."
-    julian colere "Voilà ! Hier, on aurait pu changer ça ! Mais quelqu'un a préféré qu'on continue à demander la permission pour une pincée de poivre !"
-    ryn colere "Tu vas nous ressortir ton discours à chaque petit-déjeuner ? On a voté, bordel !"
-    julian taquin "Tant qu'on trouvera normal de supplier une machine pour assaisonner un repas, oui. Tu veux que je parle moins fort ?"
-    lysa blase "Il a raison sur le fond. Voilà, je l'ai dit, j'ai honte. Mais engueuler Ryn ne va pas faire réapparaître le commerce."
-    ryn colere "ET POURQUOI TU ME REGARDES ?! Vous en savez rien ! Personne ne sait qui a voté contre !"
-    noam inquiet "Personne ne sait. Et si on commence à traquer un bulletin anonyme, autant demander à Kami de filmer les isoloirs."
-    mara colere "Vous vous disputez pour savoir à qui reprocher une pénurie d'épices. Pendant ce temps, Kami se marre derrière son écran. Beau travail."
-    kael reflechit "On peut peut-être vérifier ce qu'elle raconte. Les écrans diffusent les distributions sur Terre. Si les stocks ont bougé, ça devrait laisser une trace."
-    lysa neutre "Bonne idée. Une information vérifiable, pour changer. J'avais presque oublié ce que ça faisait."
-    noam neutre "Allons voir. Si les gens ont toujours faim malgré les livraisons, Kami ne pourra pas balayer ça d'une plaisanterie."
+    mara taquin "Un pot de cannelle, et voilà notre premier mouvement révolutionnaire. J'espère qu'Elen a prévu un drapeau."
+    iris colere "Tu peux rire, mais elle vient de déplacer nos provisions sans consulter personne."
+    julian decu "On aurait pu lui enlever ce pouvoir hier."
+    ryn colere "Hier, on votait sur un texte qui supprimait aussi les rations. Tu as oublié ce détail ?"
+    julian colere "Non. Et je n'ai pas oublié que quelqu'un a décidé à notre place de ne rien tenter."
+    lysa blase "Incroyable. Il a réussi à accuser un bulletin de vote sans même le voir."
+    ryn colere "Arrête de tourner autour de moi et dis-le si t'as quelque chose à dire !"
+    julian neutre "Je n'ai prononcé aucun nom."
+    "Ryn repousse son plateau. Mara attrape aussitôt sa tasse pour la mettre à l'abri."
+    mara neutre "Vous voulez rejouer le dépouillement ? Parce qu'on avait déjà une excellente ambiance hier."
+    noam inquiet "Julian, laisse tomber. Tu ne sais même pas combien de personnes ont voté contre."
+    julian decu "C'est bien le problème."
+    kael reflechit "Vous pourriez vous battre après avoir vérifié les livraisons ? La télévision diffuse les distributions depuis une heure."
+    iris desaccord "Ça ne nous dira pas si Kami avait le droit de nous priver de nourriture."
+    kael calme "Non. Mais on saura au moins si quelqu'un l'a reçue."
+    "Ryn regarde l'écran. Julian fait semblant de ne pas voir que Ryn regarde."
 
     $ j4_cafeteria_ryn_talked = False
     $ j4_cafeteria_julian_talked = False
@@ -205,7 +208,7 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "reflexion"),
     ])
 
-    think "Je m'installe enfin avec mon plateau. Lysa n'a pas quitté l'écran des yeux. Je sens venir une question dont je n'aimerai pas la réponse."
+    think "Je m'installe enfin. Lysa a les yeux sur le sachet oublié près de l'écran. Je me demande si elle a faim ou si elle prépare encore une question désagréable."
     lysa blase "Alors, Noam ? Tu regrettes le résultat ou tu regrettes surtout de ne pas avoir gagné ?"
     menu:
         "Dire que oui.":
@@ -220,7 +223,7 @@ label _4_0_CAFETERIA_ECRANS:
     iris fatigue "Vous comptez faire le procès du petit-déjeuner jusqu'à ce soir ? Parce que mon pain refroidit. Enfin... il sèche. C'est pire."
     mara taquin "Patience, Iris. À midi, on débattra du sel. Et à seize heures, on votera sur l'existence du dessert."
     "J'essaie de manger. Elias propose de ramollir les barres dans de l'eau chaude. Iris lui demande s'il compte aussi les réparer avec un tournevis."
-    think "On n'est d'accord sur rien. Mais entendre une dispute à propos de céréales me repose presque."
+    think "Elen a cessé de réclamer sa cannelle. C'est un changement plus étrange que l'annonce de Kami."
 
     jump _4_0_TEMPS_LIBRE_1
 
@@ -244,26 +247,34 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     scene bg_cg034 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg034")
 
-    "Sur l'écran, des bénévoles remplissent des sacs de nourriture. La file s'étend hors du cadre."
-    think "Je ne reconnais pas le district. Je reconnais les regards de ceux qui attendent."
-    elias inquiet "Bon... les livraisons continuent. C'est toujours ça. J'avais peur de voir des entrepôts vides."
-    kael reflechit "On voit des sacs distribués, pas les stocks. Ça prouve que le système fonctionne encore. Pas qu'il fonctionne mieux."
-    iris fatigue "Donc voilà où est partie la cannelle d'Elen. Enfin, j'espère qu'ils n'ont pas prévu de nourrir la file entière avec ça."
-    ryn colere "Regardez cette queue ! On va nous expliquer qu'ils ont tous été servis, mais la moitié attend encore dehors !"
-    noam inquiet "Au moins, ils reçoivent quelque chose. Mais on ne voit pas ceux qui repartiront les mains vides."
-    lysa blase "On a peut-être évité un désastre. Ça ne transforme pas les pénuries actuelles en réussite."
-    "Une femme explique à la caméra qu'elle a attendu toute la matinée. Le journaliste lui demande ce qu'elle pense du vote."
-    "Elle répond qu'elle aurait aimé que les représentants trouvent une solution, mais qu'elle est soulagée de ne pas perdre ses bons."
-    mara reflechit "Elle a peur de perdre ses bons, mais elle voudrait aussi que les choses changent. Pas facile de lui donner tort."
-    iris desaccord "On nous a demandé de choisir entre deux risques sans nous laisser prévoir une transition. On était censés faire quel miracle, exactement ?"
-    julian colere "On aurait pu essayer ! À force de refuser chaque risque, on va continuer à regarder les mêmes images pendant trente jours !"
-    ryn colere "TU VAS ME FIXER COMME ÇA ENCORE LONGTEMPS ?! Le vote était secret ! T'as pas un détecteur de traîtres dans les yeux !"
-    julian decu "Je n'ai pas prononcé ton nom."
-    ryn colere "JUSTEMENT ! T'AS PAS BESOIN !"
-    nyra neutre "Vous êtes en train de fabriquer une accusation à partir d'un regard. Le secret du vote n'est pas un indice. C'est une règle."
-    julian decu "Très bien. Je vous laisse avec vos certitudes. Moi, je vais essayer de manger."
-    "Julian s'éloigne, son plateau à peine entamé. Ryn le suit des yeux sans ajouter un mot."
-    think "C'est presque plus inquiétant que s'il avait crié."
+    "Sur l'écran, des bénévoles remplissent des sacs de nourriture. Une petite fille saute pour voir par-dessus les adultes."
+    elias inquiet "Bon... les livraisons continuent. Je m'attendais presque à voir un entrepôt vide."
+    kael reflechit "On voit des sacs, pas les stocks. Mais il y a au moins quelque chose à distribuer."
+    "Une bénévole ouvre un carton. Plusieurs sachets portent le même marquage que ceux de notre cafétéria."
+    elen "Hé ! C'est nos sachets !"
+    "Je me retourne. Elen était censée avoir quitté la pièce pour toujours. Elle a manifestement revu ses conditions."
+    iris taquin "Tu es revenue pour identifier le cadavre de ta cannelle ?"
+    elen desaccord "Non ! Je voulais voir si Goumi mentait. Et puis... attends."
+    "Sur l'écran, la petite fille reçoit un sachet, l'ouvre et plonge aussitôt le nez dedans."
+    elen surpris "Mais... elle sourit."
+    ryn neutre "Bien sûr qu'elle sourit. Tu crois qu'ils ont souvent le droit à ça, là-bas ?"
+    elen inquiet "C'était juste de la cannelle, pour moi."
+    "La journaliste tend son micro à une femme derrière la fillette."
+    "Elle remercie les bénévoles, puis demande quand arriveront les prochains sacs. On lui répond qu'aucune date n'est confirmée."
+    lysa blase "Une bonne livraison. Et aucune garantie pour demain. Les deux peuvent être vrais."
+    nyra reflechit "Si Kami veut nous montrer qu'elle distribue mieux, il faudrait les chiffres d'avant et d'après. Pas seulement une caméra."
+    mara neutre "Laisse-lui au moins la joie de se féliciter elle-même. Elle ne fait que ça depuis hier."
+    elen triste "Bon... Si elle les a vraiment reçus, tant mieux."
+    iris reflechit "Ça ne rend pas la décision de Kami correcte."
+    elen desaccord "J'ai pas dit ça ! Je peux être contente pour elle ET en colère pour moi, non ?!"
+    elias sourire "Ça, je pense qu'on peut tous voter pour."
+    "Personne ne rit longtemps."
+    "Julian ne regarde pas la fillette. Il regarde Ryn."
+    ryn colere "Quoi ?! T'as toujours pas fini avec moi ?!"
+    julian decu "Je ne t'ai rien demandé."
+    ryn colere "T'as pas besoin d'ouvrir la bouche pour m'accuser !"
+    nyra neutre "Vous êtes en train de transformer un regard en résultat de scrutin. Arrêtez."
+    "Julian emporte son plateau presque intact. Ryn s'assoit. Cette fois, il ne touche plus à son repas."
     return
 
 label _4_0_CAFETERIA_PNC_RYN:
@@ -334,7 +345,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.8
 
-    think "J'ai croisé Elias avec des outils, puis Elen poursuivant Goumi pour savoir si le chocolat faisait partie des denrées essentielles."
+    think "J'ai croisé Elias avec ses outils, puis Elen demandant à Goumi si une tablette de chocolat pouvait être considérée comme un traitement d'urgence."
     think "L'ambiance s'est presque normalisée. C'est précisément le moment que choisit Kami pour intervenir."
     play sound sfx_announce
     pause 0.4
@@ -363,15 +374,14 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("nyra", "raison"),
     ])
 
-    ryn colere "ON REVIENT ENCORE ICI ?! Hier on y a passé la moitié de la journée, c'était pas suffisant ?!"
-    kael inquiet "Ça risque surtout de commencer sans tout le monde. Julian m'a dit qu'il resterait dans sa chambre. Il n'avait pas l'air d'humeur à discuter."
-    mara taquin "Julian qui renonce à une caméra ?! Vous avez vérifié qu'il respirait ? Normalement, elles le suivent naturellement."
-    tomas hesitation "Il avait vraiment l'air mal. Je crois que le résultat lui reste en travers de la gorge... même si j'ai pas très envie d'aller lui demander."
-    mara agace "Après la façon dont il t'a traité hier, tu vas quand même t'inquiéter pour lui ? Tomas, tu as un problème avec le fait de dire non."
-    tomas inquiet "Je peux être en colère contre ce qu'il a fait sans vouloir qu'il aille mal ! C'est pas incompatible, si ?"
-    nyra reflechit "Non, ce n'est pas incompatible. Kael, il t'a dit s'il participerait au prochain vote ?"
-    kael calme "Il m'a dit qu'il viendrait quand ce serait nécessaire. Pour le reste, j'ai pas insisté."
-    ryn colere "Bon, on va faire l'appel toute la journée ou elle peut nous annoncer ce fichu texte ?!"
+    ryn colere "ON REVIENT ENCORE ICI ?! Hier on y a passé la moitié de la journée !"
+    kael inquiet "Julian a prévenu qu'il ne viendrait pas. J'ai cru qu'il plaisantait."
+    mara taquin "Julian qui fuit une caméra ? Vous avez vérifié qu'il était vivant ?"
+    tomas hesitation "Il avait vraiment l'air mal. Je lui ai écrit, mais j'ai effacé le message avant de l'envoyer."
+    mara agace "Tomas, tu n'as pas à t'excuser d'être fâché contre lui."
+    tomas colere "Je sais ! Mais je n'ai pas dit que je souhaitais qu'il reste seul !"
+    "Mara ouvre la bouche, surprise. Tomas baisse déjà les yeux vers sa tablette."
+    nyra neutre "On peut lui laisser une journée. On aura assez de raisons de nous disputer sans aller le chercher."
 
     play sound sfx_announce
     pause 1.0
@@ -428,176 +438,253 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("tomas", "hesitation"),
         ("elen", "triste"),
     ])
-    elen surpris "Attendez ! Là on parle de sortir des districts ? Genre... aller voir quelqu'un sans demander la permission ?"
-    ryn sourire "ENFIN ! Un vrai texte ! Là, oui, je signe avec mes deux mains !"
-    lysa blase "Tu veux qu'on te donne déjà un bulletin, ou tu peux attendre que Kami finisse sa phrase ?"
-    ryn colere "Parce que je sais ce que ça veut dire ! À Limen, quelqu'un franchit la ligne et Kami l'abat. Et c'est nous qui allons ramasser ce qui reste !"
+    elen surpris "Attendez ! Ça veut dire que je pourrais aller rendre visite à quelqu'un sans demander la permission ?"
+    ryn sourire "ENFIN ! Un texte qui sert à quelque chose !"
+    lysa blase "Tu l'as adopté en quatre secondes. Nouveau record."
+    ryn colere "À Limen, on ramasse des gens qui ont tenté de rejoindre leur famille. Alors oui, j'ai pas besoin d'une semaine pour réfléchir !"
     $ unlock_dossier_arg("p2_frontiere_limen")
-    iris desaccord "Je suis contre les exécutions aux frontières, évidemment. Mais si tout le monde peut circuler sans contrôle dès demain, comment on gère les risques ?"
-    ryn colere "DONC ON CONTINUE À LES TUER ?! C'est ça, ton idée ?!"
-    iris colere "MAIS NON ! Tu pourrais m'écouter jusqu'au bout avant de me faire dire le contraire ?!"
-    elias reflechit "Moi, j'imaginais juste... pouvoir aller voir quelqu'un dans un autre district. Un ami, de la famille. Sans avoir l'impression de préparer une évasion."
-    kael calme "Orbite est un cas particulier. On a déjà des contrôles d'accès propres à la station. Ça ne se résume pas aux frontières terrestres."
+    iris reflechit "Et les contrôles ? Sans rien pour organiser les passages, on pourrait avoir d'autres problèmes."
+    ryn colere "Donc on les laisse se faire abattre ?!"
+    iris colere "J'ai dit qu'il fallait réfléchir aux contrôles ! Pas tirer sur les gens !"
+    elias reflechit "Moi, j'aimerais juste pouvoir aller voir des amis sans remplir un dossier. Ça fait si longtemps que..."
+    "Elias se tait. Personne ne lui demande de finir."
+    kael calme "Sur Orbite, les accès sont déjà surveillés. La situation est différente."
     $ unlock_dossier_arg("p2_orbite")
-    sael desaccord "Moi, je voterai contre."
-    elen inquiet "Déjà ?! Mais... on vient à peine de découvrir le texte ! Tu peux nous laisser au moins une discussion ?"
-    sael determine "Je suis prête à vous écouter. Mais ça n'effacera pas ce que j'ai vu avant la fermeture des frontières."
-    ryn colere "Vous avez entendu ?! Elle a déjà décidé ! Alors à quoi bon faire semblant de débattre ?!"
-    sael mefiant "Tu m'as demandé pourquoi j'avais peur ? Une seule fois ?"
-    ryn colere "Alors explique ! Explique-moi pourquoi tu préfères qu'on continue à se faire descendre aux frontières !"
-    sael colere "JE N'AI PAS DIT ÇA ! Tu vas me laisser terminer une phrase, oui ?!"
-    nyra reflechit "Sael. Hier, tu as parlé des attaques contre ton village. Est-ce que tu peux nous expliquer ce qui s'est passé ?"
-    sael triste "Avant la fermeture, des hommes armés entraient chez nous. Ils prenaient la nourriture. Parfois, ils frappaient les gens."
-    sael triste "Quand quelqu'un refusait de leur ouvrir, il y avait des blessés. Et parfois pire."
-    sael determine "Depuis que les passages sont fermés, ils ne sont pas revenus."
-    sael determine "Je ne vais pas risquer de les voir de nouveau devant nos maisons pour prouver que je suis généreuse."
-    elen triste "Je... je savais pas que c'était arrivé chez toi."
-    ryn colere "Et moi, je relève des corps à la frontière ! Des gens qui voulaient rejoindre leurs proches ! Tu crois que je peux continuer à les regarder mourir ?!"
-    sael mefiant "Non. Je sais que c'est insupportable. Mais si on ouvre tout, comment tu garantis qu'aucune bande armée ne traversera ?"
-    ryn colere "Je suis Gardien de Limen ! Surveiller les frontières, c'est mon métier ! On peut les surveiller sans assassiner tous ceux qui approchent !"
-    $ unlock_codex_page("frontieres_limen", with_notification=False)
-    $ unlock_codex_page("mont_kensen", with_notification=False)
-    $ unlock_codex_page("gardiens_limen", with_notification=False)
-    mara agace "On est en train de faire comme s'il n'existait que deux méthodes : ouvrir en grand ou fusiller les passants. Vous trouvez ça normal ?"
-    sael determine "Peut-être qu'on pourrait organiser des passages sûrs. Mais ce n'est PAS ce que dit ce texte. Il dit qu'on ouvre les frontières. Toutes. Sans autre garantie."
-    sael determine "Alors c'est non."
-    tomas inquiet "On pourrait peut-être faire des demandes pour visiter un proche ? Un système d'autorisations, sans... sans risques ?"
-    lysa blase "Magnifique. On remplacera les frontières mortelles par des formulaires. Je suis sûre que Kami adore."
-    iris desaccord "Des autorisations éviteraient peut-être des morts. Mais il faudrait aussi permettre de déménager, de travailler, de circuler. Pas seulement rendre visite à sa grand-mère."
-    ryn colere "VOUS COMPRENEZ PAS ?! On devrait pouvoir quitter notre district sans se faire tirer dessus ! C'est quand même pas une demande de fou !"
-    sael colere "ET CHEZ MOI, ON DEVRAIT POUVOIR DORMIR SANS AVOIR PEUR DE LES VOIR REVENIR !"
-    "Ryn se lève brusquement. Sael ne recule pas. Je vois Nyra déplacer sa chaise pour pouvoir intervenir si la dispute dégénère."
-    noam inquiet "Ryn ! Sael ne défend pas les exécutions. Elle essaie de protéger son village. Ça n'efface pas ce qui se passe à Limen."
-    ryn colere "JE LE SAIS ! Mais elle s'apprête à dire non au seul texte qui pourrait empêcher ces morts ! Tu veux que je réagisse comment ?!"
-    sael determine "Oui, je voterai contre. Je refuse de mettre mon village en danger. Et me hurler dessus ne me fera pas changer d'avis."
-    "Elen essaie d'intervenir, mais Ryn parle en même temps qu'elle. Nyra me regarde brièvement, comme pour me demander d'essayer quelque chose."
-
+    sael mefiant "Et les villages qui ne disposent pas de votre surveillance ?"
+    ryn colere "On peut surveiller les routes ! On a déjà des gardiens !"
+    sael neutre "On en a moins que toi, Ryn."
+    "Elle laisse passer quelques secondes, les doigts serrés sur le bord de la table."
+    sael neutre "Avant la fermeture, des hommes armés venaient chez nous. Ils prenaient la nourriture, les outils. Parfois ils repartaient avec quelqu'un."
+    elen triste "Avec... quelqu'un ?"
+    sael triste "On espérait qu'il revienne. On finissait par arrêter de regarder le chemin."
+    "Le sourire de Ryn disparaît. Même Mara ne trouve rien à ajouter."
+    sael mefiant "Depuis la fermeture, ils ne viennent plus. Vous pouvez trouver ça injuste. Moi, je me souviens de la première nuit où les enfants ont dormi sans sursauter."
+    ryn triste "Chez moi, il y a des enfants qui n'ont plus personne à attendre."
+    sael triste "Je sais."
+    ryn colere "Non. Je crois pas que tu saches !"
+    sael colere "Parce que tu es le seul à avoir ramassé un corps, peut-être ?"
+    "Ryn se lève, puis se rassoit brutalement."
+    nyra raison "Sael, Ryn, personne ne vous demande de comparer vos morts."
+    tomas hesitation "On pourrait faire des passages autorisés, avec des gardiens, une liste..."
+    ryn colere "Une liste ?! Tu veux savoir combien de noms on a déjà sur nos listes, Tomas ?!"
+    tomas peur "Non, je... je parlais de la sécurité, pas..."
+    sael mefiant "Une liste n'empêchera pas les bandes armées de franchir les passages."
+    iris desaccord "Alors qu'est-ce que tu proposes ? On ne peut pas dire que les tirs sont abominables et les conserver pour toujours."
+    sael colere "Ceux qui s'approchent savent pourtant ce qui les attend !"
+    "La phrase tombe d'un coup. Sael se fige, comme si elle avait elle-même entendu quelqu'un d'autre parler."
+    ryn triste "Oui. Ils le savent."
+    ryn triste "Et ils y vont quand même. Tu crois qu'ils font ça pour le plaisir ?"
+    sael triste "Ryn, je..."
+    ryn colere "Laisse tomber. Maintenant, au moins, je sais ce que tu penses."
+    sael colere "NON ! Tu sais ce que j'ai dit parce que j'ai peur ! Ne décide pas à ma place de ce que je pense !"
+    mara agace "Vous faites exactement ce que Kami attend de vous. Ça vous rend pas malades ?"
+    ryn colere "Si ! Et alors ? Ça va faire revenir ceux que j'ai enterrés ?!"
+    sael determine "Je ne peux pas approuver une ouverture sans garantie pour mon village. Pas avec ce texte."
+    elen inquiet "Attendez... On pourrait peut-être en discuter ? On a encore deux jours..."
+    sael triste "Discuter, oui. Mais je ne vous mentirai pas pour vous faire plaisir."
+    "Ryn détourne la tête. Nyra me regarde : pas comme si j'avais une réponse, plutôt comme si j'étais le dernier à ne pas avoir crié."
     call day4_thread_debate_game from _call_day4_thread_debate_game
 
-    sael determine "Je vous ai écoutés. Je sais ce que vous voulez empêcher."
-    sael determine "Mais ouvrir toutes les frontières sans garantie, c'est prendre un risque que je ne peux pas imposer à mon village."
-    ryn colere "ET TU SAIS CE QUE ÇA VEUT DIRE POUR NOUS ?! On va continuer à ramasser des cadavres !"
-    sael triste "Oui, je sais."
-    sael triste "Et je déteste que notre sécurité repose sur la mort d'autres personnes. Mais je ne vais pas mettre les miens en danger pour faire semblant d'être courageuse."
-    sael determine "Alors je voterai contre. Je vous le dis maintenant, parce que je refuse de vous laisser espérer une voix que vous n'aurez pas."
-    "Sael se lève. Ryn ouvre la bouche, puis la referme. Pour une fois, aucun d'eux n'a de quoi répondre."
-    hide sael
-    with moveoutright
-    play sound "audio/sfx_door.mp3"
-    "La porte se referme derrière Sael. Personne ne la rappelle."
-    mara agace "Bon. Voilà. Une voix contre annoncée avant même le vote. On peut maintenant arrêter de lui hurler dessus ?"
-    ryn colere "FACILE À DIRE ! C'est pas toi qui ramasses les gens morts en traversant une frontière !"
-    mara colere "Et toi, tu sais ce qu'elle a dû vivre pour arriver à dire ça ?! Elle vient de te raconter ce qui s'est passé dans son village, et tu n'as entendu que son bulletin !"
-    ryn colere "JE L'AI ÉCOUTÉE ! Et elle a dit non ! Alors on est censés faire quoi ? Se réjouir de sa franchise ?!"
-    mara agace "Très bien. Continue à crier sur ceux qui ne partagent pas ton avis. Ça a merveilleusement fonctionné jusqu'ici."
-    "Mara reprend sa tablette et s'éloigne à grands pas."
-    think "Elle a presque l'air plus en colère contre Ryn que contre le texte."
-    hide mara
-    with moveoutright
-    play sound "audio/sfx_door.mp3"
-    tomas inquiet "Je... j'ai l'impression qu'on vient de perdre le vote avant même d'avoir reçu nos bulletins."
-    elen triste "On pourrait peut-être lui reparler ? Je veux dire... pas pour lui forcer la main, mais pour comprendre..."
-    nyra reflechit "Pas aujourd'hui. Elle vient de nous expliquer quelque chose de personnel. Revenir à la charge maintenant serait la meilleure manière de lui donner raison de se méfier."
-    ryn triste "C'était la première proposition qui pouvait sauver des gens à Limen."
-    ryn triste "Et je crois qu'on vient de la voir mourir avant même le vote."
-    think "Un seul « non » suffit."
-    think "Hier, cette règle m'a paru injuste. Aujourd'hui, j'ai entendu la personne qui pourrait la faire jouer."
-    think "Et je ne sais toujours pas comment lui dire qu'elle a tort."
+    if j4_frontieres_result == "pont":
+        jump _4_0_DEBAT_APAISE
+    else:
+        jump _4_0_DEBAT_ROMPU
+
+label _4_0_DEBAT_APAISE:
+    "Personne ne bouge. Ryn a baissé les yeux vers ses mains."
+    sael reflechit "J'ai dit que ceux qui traversaient savaient ce qui les attendait."
+    sael triste "C'était ignoble. Je n'aurais pas dû dire ça."
+    ryn triste "Non. Tu n'aurais pas dû."
+    sael triste "Je ne peux pas te promettre un vote pour. Mais si tu veux me parler des passages surveillés... je t'écouterai."
+    ryn neutre "Alors je te parlerai. Quand j'aurai arrêté d'avoir envie de te hurler dessus."
+    mara sourire "Une discussion sans hurlements ? Je prends une photo, personne ne me croira."
+    sael neutre "Mara. Pas maintenant."
+    mara agace "Oui, bon. Je sais."
+    sael determine "Pour l'amendement présenté, je suis contre. Pour le reste, ma porte n'est pas fermée."
+    "Elle quitte la salle. Ryn attend que la porte se referme avant de souffler."
+    $ showGroup([
+        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
+        ("kael", "calme"), ("ryn", "triste"), ("nyra", "raison"),
+        ("mara", "agace"), ("tomas", "hesitation"), ("elen", "triste")
+    ])
+    ryn triste "J'ai cru qu'elle allait me dire que ça n'avait pas compté."
+    noam calme "Elle l'a reconnu. Ça ne change pas tout."
+    ryn neutre "Non. Mais ça change quelque chose."
+    tomas sourire "Alors... il y a encore une conversation possible."
+    "Personne n'applaudit. Il n'y a rien à célébrer. Mais Ryn range sa chaise au lieu de la pousser."
+    jump _4_0_APRES_CLASH_PRE_FETE
+
+label _4_0_DEBAT_ROMPU:
+    sael colere "Vous voulez que je promette quoi ? Que les hommes qui nous ont attaqués ne reviendront pas ?!"
+    ryn colere "Je veux que tu regardes en face les gens qu'on tue en prétendant protéger les autres !"
+    sael colere "Et moi, je refuse de te donner mon village comme preuve de bonne volonté !"
+    "Tomas recule sa chaise. Le bruit fait sursauter Elen."
+    tomas inquiet "Sael, je crois que personne ne te demande..."
+    sael mefiant "Tomas, s'il te plaît. Pas toi aussi."
+    sael determine "Je voterai contre. Et je ne discuterai plus de ça aujourd'hui."
+    "La porte se referme derrière elle avant que Ryn ait trouvé de quoi répondre."
+    $ showGroup([
+        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
+        ("kael", "calme"), ("ryn", "colere"), ("nyra", "raison"),
+        ("mara", "agace"), ("tomas", "hesitation"), ("elen", "triste")
+    ])
+    mara colere "Tu l'as entendue parler de son village, oui ou non ?!"
+    ryn colere "Je l'ai entendue dire non !"
+    mara agace "Ouais. Ça, on avait remarqué."
+    ryn colere "Tu vas me faire la morale aussi ? Tu sais pas ce que c'est !"
+    mara neutre "Non. Et je ne vais pas prétendre le contraire."
+    mara colere "Mais toi, tu prétends savoir ce qu'elle pense, alors que tu n'as même pas écouté la moitié de ses phrases."
+    "Mara part à son tour. Ryn ne la rappelle pas."
+    $ showGroup([
+        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
+        ("kael", "calme"), ("ryn", "triste"), ("nyra", "raison"),
+        ("tomas", "hesitation"), ("elen", "triste")
+    ])
+    ryn triste "Je voulais juste que quelqu'un dise que ce n'était pas normal."
+    iris triste "Personne n'a dit que c'était normal."
+    ryn colere "Alors pourquoi ça continue ?!"
+    "Cette fois, personne ne cherche à répondre à sa place."
+    jump _4_0_APRES_CLASH_PRE_FETE
 
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label day4_thread_debate_game:
-
-    think "Ryn parle de ceux qui meurent en voulant traverser. Sael parle de ceux qui risqueraient de mourir si tout le monde pouvait entrer."
-    think "Je cherche une phrase qui ne demande à aucun des deux d'oublier ses morts."
-
-    call refutation_run("j4_frontieres")
-    $ _return = _return[0]
-
-    if _return == "success":
+    think "Je cherche une phrase qui ne demande ni à Ryn d'oublier les morts aux frontières, ni à Sael de rouvrir la porte à ceux qui l'ont terrorisée."
+    call refutation_run("j4_frontieres") from _call_day4_frontieres_refutation
+    if _return[0] == "success":
         call day4_thread_debate_success from _call_day4_thread_debate_success
     else:
         call day4_thread_debate_failure from _call_day4_thread_debate_failure
-
     return
 
 label day4_thread_debate_success:
-    $ j4_argument_circulation_cadre = True
-    noam inquiet "Attendez ! Vous parlez de deux catastrophes différentes. Ryn veut arrêter les exécutions aux frontières. Sael veut empêcher le retour de ceux qui attaquaient son village."
-    noam neutre "Il doit bien exister un moyen de contrôler les passages sans tirer sur tous ceux qui approchent. Pas forcément dans ce texte, mais... un moyen."
-    iris reflechit "Ça paraît déjà plus sensé. Mais il faudrait des contrôles, des garanties... pas juste écrire « on ouvre » et croiser les doigts."
-    ryn inquiet "Moi, tant que les gens peuvent arrêter de mourir pour avoir voulu rejoindre leur famille, je suis prêt à en discuter."
-    sael determine "C'est une piste, Noam. Mais elle ne figure pas dans le texte."
-    sael determine "Je voterai sur ce qui est écrit. Et ce qui est écrit ne protège pas mon village."
-    nyra reflechit "Au moins, on voit enfin où se trouve le désaccord. Si un autre amendement peut traiter les deux risques, il faudra l'envisager."
-    think "Ryn finit par se rasseoir. Sael n'a pas changé d'avis. Lui non plus."
-    think "Mais ils ont au moins réussi à s'écouter jusqu'au bout. Ça ressemble à un progrès minuscule, et presque ridicule."
+    $ j4_frontieres_result = "pont"
+    noam determine "Ryn, tu peux lui reprocher de refuser le texte. Pas de vouloir qu'on tue des gens."
+    ryn colere "Et je suis censé faire quoi de ceux qui meurent ?!"
+    noam inquiet "Ne les abandonne pas. Mais écoute ce qu'elle a vécu avant de lui demander de te suivre."
+    sael reflechit "Je ne veux pas qu'on tue qui que ce soit. Je ne veux pas non plus retrouver ces hommes chez nous."
+    ryn triste "Alors il faut surveiller les passages. Pas les fermer avec des tirs."
+    sael mefiant "Tu peux me garantir que ce sera possible ?"
+    ryn neutre "Non."
+    "Sael relève enfin les yeux vers lui."
+    ryn neutre "Je peux te promettre d'y travailler. C'est tout."
+    sael reflechit "C'est la première chose que tu me dis aujourd'hui sans décider à ma place."
+    $ unlock_dossier_arg("p2_dialogue_possible")
     return
 
 label day4_thread_debate_failure:
-    noam inquiet "Attendez ! Peut-être qu'on pourrait... enfin, ouvrir seulement certains passages..."
-    ryn colere "Lesquels ?! Ceux qui ne t'arrangent pas ?! Tu vois bien que tu ne sais pas toi-même ce que tu proposes !"
-    sael desaccord "Noam, je ne peux pas accepter des promesses vagues sur la sécurité. J'ai déjà cru des gens qui m'assuraient qu'il n'y avait aucun risque."
-    iris fatigue "Stop. On est en train de demander à des gens terrifiés de nous expliquer calmement pourquoi ils ont peur. Ça ne marchera pas maintenant."
-    think "J'ai essayé d'improviser une solution. J'ai surtout donné à chacun une nouvelle raison de se braquer."
-    think "Sael reste contre. Ryn a l'air prêt à se battre avec sa chaise."
+    $ j4_frontieres_result = "rupture"
+    noam inquiet "Il doit bien y avoir une solution... des contrôles, une exception, quelque chose !"
+    ryn colere "QUELLE exception ?! Tu comprends même pas pourquoi on se dispute !"
+    sael mefiant "Tu nous demandes encore de te faire confiance sans rien proposer de précis."
+    noam hesitation "Je voulais juste éviter que vous..."
+    sael colere "Que nous quoi ? Que nous ayons peur ? Ça te dérange tant que ça ?"
+    iris fatigue "Noam, arrête. Là, tu leur demandes de se calmer pour qu'on se sente mieux, nous."
+    "J'essaie de reprendre la parole, mais Ryn et Sael se regardent sans plus m'écouter."
+    $ unlock_dossier_arg("p2_confiance_brisee")
     return
 
 label _4_0_APRES_CLASH_PRE_FETE:
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_world_decline.mp3" fadein 1.0
+    if j4_frontieres_result == "pont":
+        elen inquiet "Alors... c'est une mauvaise nouvelle et une petite bonne nouvelle ? Je ne sais pas quoi faire de mes mains."
+        lysa blase "Essaie de ne pas lancer une campagne de soutien. Juste pour aujourd'hui."
+        ryn neutre "On n'a rien gagné. Mais demain, j'essaierai de parler à Sael sans gueuler."
+        iris taquin "Prends un chronomètre. Je veux voir combien de secondes tu tiens."
+        ryn colere "Oh, ça va !"
+    else:
+        tomas inquiet "Je... je crois qu'on devrait les laisser tranquilles."
+        elen triste "Même Ryn ? Il a l'air tellement mal."
+        lysa blase "Surtout Ryn. À moins que tu aies envie de servir de punching-ball à sa mauvaise humeur."
+        ryn colere "Je suis encore là, vous savez !"
+        iris fatigue "On sait. Tout le couloir doit savoir."
+    "Elias se lève, pousse sa chaise, puis se ravise en voyant tout le monde sursauter."
+    elias gene "Je voulais juste aller manger. Pardon."
+    iris sourire "Excellente idée. Et ce soir, salle de repos. Interdiction de prononcer les mots vote, frontière et amendement."
+    elen joie "Même si c'est pour proposer une soirée vraiment géniale ?!"
+    lysa taquin "Surtout si c'est toi qui la proposes."
+    elen desaccord "Mais j'ai même pas commencé !"
+    kael calme "Je vous rejoindrai après. J'ai un petit service à demander dans le dortoir."
+    think "Pour une fois, personne ne lui demande lequel."
+    jump _4_0_SOIREE_SANS_VOTE
 
-    play music "music/bgm_world_decline.mp3" fadein 2.0
-
-    ryn colere "Bon. Bravo à tous. On n'a même pas encore voté et on a déjà réussi à se foutre sur la gueule."
-    elias reflechit "Moi, je vais manger. Je refuse de mourir d'épuisement pendant une discussion où personne ne m'a demandé mon avis."
-    iris sourire "Étonnamment, Elias vient d'avoir une bonne idée. On pourrait se retrouver en salle de repos ce soir. Et je propose une règle : pas un mot de politique."
-    lysa blase "Très bien. Mais on confisque le droit de parole à Ryn avant d'entrer."
-    ryn colere "OH, ÇA VA ! Je suis parfaitement capable de passer une soirée sans parler des frontières !"
-    elen joie "MOI JE VIENS ! Et s'il reste du chocolat quelque part, je le retrouve. Faites-moi confiance !"
-    kael calme "Je passerai peut-être après. J'ai encore un détail à vérifier avant de pouvoir me détendre."
-    nyra neutre "Très bien. Et demain, si on pouvait attendre au moins cinq minutes avant de hurler, ce serait un progrès mesurable."
-    "Iris et Elen commencent aussitôt à débattre des activités autorisées en salle de repos. Ryn s'éloigne en protestant qu'il n'a jamais eu besoin qu'on surveille ses conversations."
-    think "J'entends presque la même dispute qu'il y a cinq minutes. Elle me paraît pourtant beaucoup moins grave."
-    think "Sael a annoncé qu'elle votera contre. Une seule voix suffit, et nous avons déjà cette voix."
-    think "Je n'ai pas envie de lui en vouloir. C'est presque ce qui me fait le plus peur."
-
+label _4_0_SOIREE_SANS_VOTE:
+    $ current_period = "Soir"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_4_0_evening
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 1.0
+    "En arrivant devant la salle de repos, j'entends Elen réclamer un arbitre. Puis un deuxième."
+    think "Elle a donc réussi à organiser un conflit sans employer aucun des mots interdits."
+    call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_4_0_lounge
+    scene bg_repos at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("elen", "joie"), ("iris", "taquin"), ("lysa", "blase"),
+        ("elias", "sourire"), ("tomas", "sourire"), ("ryn", "neutre"),
+        ("noam", "neutre")
+    ])
+    elen joie "Noam ! Viens ! Elias prétend qu'il a gagné, mais il a triché !"
+    elias colere "J'ai pas triché ! J'ai juste rattrapé le dé avant qu'il tombe !"
+    iris taquin "Tu as rattrapé le dé et choisi la face. À ce niveau-là, autant écrire le résultat au marqueur."
+    tomas sourire "On pourrait recommencer la manche ? Sans toucher au dé cette fois."
+    lysa blase "Il faudrait déjà qu'Elen arrête de changer les règles quand elle perd."
+    elen desaccord "Je les change pas ! Je les améliore !"
+    "Iris éclate de rire. Elen lui lance un coussin ; il frappe Tomas, qui n'avait rien demandé."
+    tomas surpris "Moi ?! Mais j'étais de ton côté !"
+    elen peur "Pardon ! C'était une attaque diplomatique ratée !"
+    ryn sourire "Pour une fois, j'ai rien à voir avec la bagarre. Notez bien la date."
+    elias taquin "Tu veux qu'on fasse un compte rendu ?"
+    ryn colere "Je vais te faire un compte rendu, moi !"
+    iris sourire "Attention. Trois mots interdits et tu sors."
+    ryn surpris "J'en ai dit combien ?!"
+    lysa sourire "Zéro. Mais on aime te voir paniquer."
+    "Je me surprends à rire. Une vraie partie a enfin commencé, sans que personne puisse en annoncer le vainqueur à l'avance."
+    if j4_frontieres_result == "pont":
+        "Ryn attrape un coussin tombé à terre, le pose près de Tomas et se rassoit."
+        ryn neutre "Je crois que j'ai été un peu con, tout à l'heure."
+        tomas hesitation "Tu veux une réponse honnête ?"
+        ryn sourire "Non. C'était une erreur de ma part."
+        "Tomas sourit sans rien ajouter."
+    else:
+        "Elen tend un dé à Ryn. Il le regarde sans le prendre."
+        elen inquiet "Tu n'aimes pas jouer ?"
+        ryn triste "Si. Pas ce soir."
+        "Il se lève. Elias fait mine de le retenir, puis renonce."
+        lysa neutre "Laisse-le. Il reviendra quand il aura envie de nous insulter à nouveau."
+    "Kael apparaît à la porte, les mains dans les poches."
+    kael calme "J'ai raté quoi ?"
+    elen joie "La plus belle injustice de l'histoire des jeux de société !"
+    kael sourire "Parfait. J'ai passé ma journée à réparer des choses, j'aimerais bien en casser une."
+    iris taquin "Assieds-toi, on a justement besoin de quelqu'un pour expliquer à Elias comment fonctionne un dé."
+    elias colere "VOUS ALLEZ ME LÂCHER AVEC CE DÉ ?!"
+    "Personne ne prononce les trois mots interdits. Pourtant, la place vide de Sael, et celle de Julian, finissent par se remarquer."
     jump _4_0_FIN_SOIREE
 
-# Durée : 2m30
-
 label _4_0_FIN_SOIREE:
-
-    $ current_period = "Soir"
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_204
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+    play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
-    "Je récupère un morceau de pain à la cafétéria. Rien d'extraordinaire. Aujourd'hui, personne ne s'est battu pour le pain. C'est déjà ça."
     "Une lumière filtre sous la porte de Julian."
-    think "Je pourrais frapper. Il m'a demandé de le laisser tranquille ce matin."
-    think "Je reste une seconde devant sa chambre, puis je repars. Je ne suis pas sûr de lui rendre service en insistant."
+    think "Je pourrais frapper. Mais il m'a demandé de le laisser tranquille, et je n'ai pas envie de recommencer à décider pour les autres."
+    "Plus loin, j'aperçois un morceau de tissu sombre noué à une poignée. Sael doit déjà être rentrée."
+    if j4_frontieres_result == "pont":
+        think "Ryn lui reparlera peut-être. Ce n'est pas une victoire ; je n'aurais pas cru qu'un simple peut-être puisse me soulager autant."
+    else:
+        think "Ryn n'a pas passé la soirée avec nous. Je ne sais pas s'il est rentré dans sa chambre ou s'il cherche encore les mots qu'il aurait voulu dire."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je pose le pain sur mon bureau. Je ne sais même plus pourquoi je l'ai pris."
-    think "Ce matin, je voulais oublier le vote d'hier."
-    think "Ce soir, je connais déjà une personne qui votera contre le prochain. Et pour des raisons que je n'arrive pas à balayer."
-    think "Ryn veut empêcher de nouvelles morts. Sael aussi."
-    think "C'est peut-être la chose la plus absurde de cette journée : ils se sont presque battus en voulant protéger les autres."
-    "Un éclat de rire me parvient du couloir. Elen, sans doute. Une seconde plus tard, quelqu'un lui demande de parler moins fort."
-    think "Au moins, la station ressemble encore parfois à un endroit où l'on peut simplement vivre."
+    "Je retrouve la photo sur le bureau. Juliette me tire toujours la langue."
+    think "Ce matin, je voulais savoir si un non pouvait être une bonne nouvelle."
+    think "Ce soir, j'ai surtout découvert qu'on pouvait vouloir sauver les mêmes personnes et finir par ne plus pouvoir se parler."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
-    think "Demain, je pourrai peut-être parler à Sael sans lui demander de choisir entre son village et les morts de Limen."
-    think "J'espère surtout réussir à poser une question avant de proposer une solution."
+    "Un éclat de rire résonne derrière la cloison. Elen, évidemment. Puis une voix lui demande de baisser le ton."
+    think "Au moins, ils ont continué la partie sans moi."
     $ blink()
-    "Je ferme les yeux."
-    think "Un non a déjà été annoncé. Le vote n'aura lieu que dans deux jours."
-    think "Il reste du temps. Je ne sais pas encore si c'est une chance, ou une façon de prolonger l'attente."
-
+    "Je ferme les yeux. Demain, je pourrai essayer d'écouter Sael sans lui demander de justifier son bulletin."
     $ current_day = 5
     pause 1.5
-
     call end_day("5", sleeping=True) from _call_end_day_5
     jump _5_0_REVEIL_CHAMBRE
 
-# Total estimé journée 4_0 : ~8m
-# Total jour 0-4 : 1h33
