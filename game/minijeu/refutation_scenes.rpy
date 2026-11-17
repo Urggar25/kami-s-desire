@@ -31,7 +31,7 @@ init python:
     )
 
     refutation_register(
-        "j4_frontieres", title=_("FRONTIÈRES — DEUX PEURS"), bg="bg_repos",
+        "j4_frontieres", title=_("FRONTIÈRES — DEUX PEURS"), bg="bg_conclave",
         statements=[
             ("ryn", "colere", _("Tu votes contre, donc [[tu veux qu'on reste enfermés]] !")),
             ("sael", "determine", _("Je veux protéger mon village. [[Ouvrir sans contrôle]] serait dangereux.")),
