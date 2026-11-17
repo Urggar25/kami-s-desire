@@ -919,11 +919,12 @@ label _3_TRANSITION_CONCLAVE:
 
     "Lysa fait une moue déconfite alors qu'on approche de la porte du Conclave."
 
+    think "Sael ralentit à hauteur de Lysa. Elle la regarde un instant, puis lui barre doucement le passage."
+    "Avant que Lysa puisse protester, Sael l'attire contre elle."
+
     scene bg_cg014 at adaptive_fullscreen with fade
     $ unlock_gallery_image("bg_cg014")
 
-    think "Sael ralentit à hauteur de Lysa. Elle la regarde un instant, puis lui barre doucement le passage."
-    "Avant que Lysa puisse protester, Sael l'attire contre elle."
     sael "Bon. Viens là."
     lysa "Hé ! Tu fais quoi ?!"
     sael "Tu trembles. Et ça fait dix minutes que tu nous annonces la catastrophe."
@@ -1169,7 +1170,7 @@ label day3_before_objection_protocol_minigame:
     kami "Justement. J'ai pensé que vous débattiez un peu trop dans le vide."
     kami "Alors regardez. En direct. Ce n'est pas une rediffusion."
 
-    scene bg_cg003 at adaptive_fullscreen,memory_idle with dissolve
+    scene bg_cg034 at adaptive_fullscreen,memory_idle with dissolve
     "Les écrans du Conclave basculent sur un plan de Limen. Une file devant un centre de distribution. Des gens qui poussent. Des cartons vides."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
