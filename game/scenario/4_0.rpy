@@ -277,8 +277,6 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     "Julian emporte son plateau presque intact. Ryn s'assoit. Cette fois, il ne touche plus à son repas."
     return
 
-label _4_0_CAFETERIA_PNC_RYN:    return
-
 label _4_0_CAFETERIA_PNC_RYN:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
