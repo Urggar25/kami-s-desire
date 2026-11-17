@@ -423,6 +423,11 @@ label _5_0_CHERCHE_SAEL:
     $ showGroup([("sael", "mefiant", 0.65), ("noam", "reflexion", 0.30)])
     sael mefiant "Noam."
     sael mefiant "Tu veux parler des frontières, je suppose."
+    if j4_frontieres_result == "pont":
+        sael reflechit "J'ai repensé à ce que Ryn a dit. Pour la première fois, j'ai eu envie de lui répondre autrement qu'en criant."
+    elif j4_frontieres_result == "rupture":
+        sael mefiant "Si tu viens me dire de me calmer, la porte est juste derrière toi."
+        noam inquiet "Non. Hier, j'ai déjà suffisamment parlé à votre place."
     noam inquiet "Un peu. Mais je peux aussi juste te dire bonjour et repartir. Ce serait une rencontre très réussie."
     sael neutre "Tu as fait tout ce chemin pour me dire bonjour ?"
     sael neutre "Entre. Au moins, ici, on pourra terminer nos phrases."
