@@ -274,14 +274,6 @@ label day3_collect_vote_argument(arg_id):
 
 # Transforms d'ambiance du Jour 3.
 init -1:
-    # Mise en avant ponctuelle d'un personnage (déclaration de vote d'Elen).
-    transform day3_vote_pop:
-        xcenter 0.5
-        yalign 1.0
-        zoom 1.0
-        easein 0.14 zoom 1.16
-        easeout 0.26 zoom 1.06
-
     # Secousse « course » appliquée au décor de couloir pendant que les persos courent.
     transform day3_run_shake:
         subpixel True
@@ -555,15 +547,19 @@ label _3_CAFETERIA_ARRIVE:
     noam calme "J'ai peur de ce qu'on risque de supprimer. Mais j'ai aussi peur de ce qui arrivera si on ne change jamais rien."
     elen joie "Voilà ! C'est exactement ce que je voulais dire ! Alors écoutez bien..."
 
-    # Mise en avant d'Elen : elle se lève et s'avance (recentrage + pop de zoom).
-    show elen joie at day3_vote_pop zorder 60
+    # Gros plan sur Elen via showGroup : le sprite reste suivi par le système
+    # d'autofocus du jeu (caméra bgcam + master), sans "show" concurrent.
+    # Les autres sortent du cadre, Elen passe au centre, puis la caméra
+    # effectue son recadrage habituel dès sa réplique.
+    $ showGroup([("elen", "joie", 0.5)])
     elen joie "Moi, je voterai POUR !"
 
     pause 0.4
 
     think "Elle parle si fort que les voisins de table se retournent. Iris lui fait signe de baisser le ton, mais Elen continue de sourire."
 
-    # Elen se rassoit : on restaure le groupe attablé.
+    # Retour au plan collectif : showGroup replace Elen et les autres,
+    # puis l'autofocus se recadre sur Iris à sa prochaine réplique.
     $ showGroup([
         ("elen", "joie"),
         ("iris", "reflechit"),
