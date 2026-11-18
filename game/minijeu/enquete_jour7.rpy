@@ -516,11 +516,14 @@ label j701_investigation:
     scene black
     play sound "audio/sfx_minigame_start.mp3"
     call screen j701_investigation_intro
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "audio/music/bgm_world_decline.mp3" fadein 1.0
+    $ showGroup([("nyra", "neutre", 0.25), ("elias", "inquiet", 0.55), ("noam", "reflechit", 0.85)])
     "Elias veut courir dans toutes les salles. Nyra refuse qu'on éparpille les recherches avant d'avoir vérifié ce qui manque réellement."
     nyra neutre "On commence par les emplacements vides et l'atelier. Ensuite, chacun pourra poursuivre la piste qui lui paraît la plus inquiétante."
     elias inquiet "Mes batteries ont disparu ! Toutes les pistes sont inquiétantes !"
     nyra neutre "C'est précisément pour ça qu'il faut commencer quelque part."
+    $ hideGroup()
     call j701_clue_counterweight from _call_j701_core_counterweight
     $ j701_investigation_collect("counterweight")
     call screen j701_investigation_evidence("counterweight")
