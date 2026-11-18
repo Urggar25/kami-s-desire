@@ -690,7 +690,7 @@ label _4_0_FIN_SOIREE:
     "Je m'apprête à passer quand Mara apparaît au bout du couloir. Elle s'arrête devant la porte de Sael, sans sa plaisanterie habituelle."
     noam inquiet "Tu vas lui parler du vote ?"
     mara neutre "Je vais surtout lui demander ce qu'elle essaie de protéger. On a tous entendu sa colère. Pas grand monde a écouté le reste."
-    noam reflechit "Ryn ne sera pas ravi de savoir que tu es venue."
+    noam reflexion "Ryn ne sera pas ravi de savoir que tu es venue."
     mara agace "Alors ne lui raconte pas une histoire que t'as pas entendue. J'ai pas encore dit ce que j'en pensais."
     "Mara frappe. Sael ouvre juste assez pour la reconnaître, puis la laisse entrer."
     "La porte se referme. De l'autre côté, leurs voix restent basses. Je n'en distingue pas un mot."
