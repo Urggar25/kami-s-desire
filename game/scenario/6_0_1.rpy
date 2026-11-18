@@ -3,6 +3,8 @@
 # Style THL - version dialoguée, rythmée
 
 default j601_border_news_seen = False
+default j601_signal_stabilized = False
+default j601_fracture_trace_saved = False
 
 transform j601_sael_vote_strip:
     xalign 0.5
@@ -20,11 +22,10 @@ label _6_0_1_REVEIL_CHAMBRE:
 
     $ blink()
     "Je cherche ma tablette dans les draps avant de comprendre qu'elle est sous mon coude."
-    think "Deuxième vote. Après notre échec du jour 3, il ne reste plus beaucoup de place pour les belles promesses."
-    think "Hier, Sael m'a expliqué pourquoi elle dirait non. Et Ryn m'a expliqué pourquoi il ne supporterait pas qu'elle le fasse."
-    think "J'aimerais leur trouver un compromis. À défaut, j'ai une marque d'oreiller sur la joue. C'est moins utile."
-    think "Je les ai refaites vingt fois, leurs phrases. Aucune de mes réponses imaginaires n'a convaincu qui que ce soit."
-    "J'attrape ma tablette. Quatorze heures. Il nous reste quelques heures pour nous convaincre de ce qu'on sait déjà."
+    "Le rappel du vote s'affiche sur ma tablette : quatorze heures, libre circulation entre les districts."
+    think "La marque d'oreiller sur ma joue constitue pour l'instant ma seule contribution au débat."
+    "Hier, Sael m'a laissé entrer dans sa chambre. J'ai surtout appris que comprendre quelqu'un ne suffit pas à le faire changer d'avis."
+    "Je relis l'horaire. Il reste quelques heures avant que Ryn et elle ne se retrouvent à la même table."
 
     play sound sfx_announce
     pause 0.5
@@ -41,6 +42,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Vous pouvez encore discuter avant le scrutin ! Une dernière occasion de... de..."
     pause 0.7
+    "Je tends l'oreille. Le son vient-il de se couper ?"
     kami "...De vous mettre d'accord. Oui. C'est bien ça."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "La cafétéria est ouverte ! Profitez de vos délicieuses rations. Le ravitaillement est prévu demain matin."
@@ -194,6 +196,7 @@ label _6_0_1_TV_FRONTIERES:
     "La caméra survole un poste de contrôle. Des sacs au sol. Des enfants assis sur des valises. Des adultes qui scrutent les barrières comme si elles pouvaient s'ouvrir à force de les regarder."
     "JOURNALISTE — Des familles se sont rassemblées dès l'aube devant plusieurs passages de Limen. Elles attendent le résultat du vote sur la libre circulation."
     "UNE FEMME — Mon frère est juste de l'autre côté. Je sais où il habite. Je sais qu'il est vivant."
+    "UNE FEMME — Il déteste le thé que je lui apporte à chaque anniversaire. J'en ai quand même gardé une boîte pour lui."
     "UNE FEMME — Mais je peux pas aller le voir. Alors oui, je suis venue. J'avais envie qu'il sache que j'attendais encore."
     "Un homme intervient derrière elle."
     "UN HOMME — Et ceux qui venaient piller nos villages, vous allez les laisser passer aussi ? Qui va les arrêter, cette fois ?"
@@ -273,18 +276,20 @@ label _6_0_1_CONCLAVE_START:
     "Julian tire sa chaise avec un bruit exagéré. Personne ne lui offre les applaudissements espérés."
     think "À l'autre bout de la table, Ryn fixe Sael avec une intensité qui ne présage absolument rien de bon."
     $ showGroup([("ryn", "colere", 0.20), ("iris", "fatigue", 0.48), ("sael", "neutre", 0.78)])
-    ryn colere "Bon. Avant qu'on vote, j'aimerais qu'on m'explique encore une fois pourquoi des familles devraient rester derrière ces foutues barrières !"
-    sael determine "Je t'ai répondu hier. Tu n'étais pas d'accord, mais ça ne signifie pas que tu ne m'as pas entendue."
-    ryn colere "JE T'AI ENTENDUE ! Mais il y a des gens qui meurent MAINTENANT ! Pas il y a dix ans, pas dans tes souvenirs !"
-    elen inquiet "Ryn, tu pourrais peut-être..."
-    ryn colere "NON ! Je vais pas encore écouter une leçon sur les bonnes manières !"
-    elen colere "J'allais te demander de me laisser parler !"
-    "Ryn se fige. Une seconde plus tard, Elen paraît elle-même surprise d'avoir haussé le ton."
-    iris desaccord "Ryn, arrête de lui faire dire qu'elle se fiche des morts. Tu sais très bien que c'est faux."
-    ryn colere "Alors pourquoi elle peut nous faire perdre le vote à elle toute seule ?!"
-    noam inquiet "Parce qu'on nous demande de tout ouvrir sans prévoir ce qu'on fera ensuite. On en revient toujours au même problème."
-    sael neutre "Et je refuse qu'on transforme cette incertitude en pari sur la vie de mon village."
-    "Ryn s'apprête à répliquer. Le grand écran s'allume avant qu'il puisse reprendre son souffle."
+    ryn colere "Une question, Sael. Une seule. Si on vote non, tu diras quoi aux gens qui attendent devant les barrières ?"
+    sael determine "La vérité. Que je n'accepterai pas de faire courir ce risque à mon village."
+    ryn colere "Et tu penses que ça va leur suffire ?!"
+    sael mefiant "Non. Mais je préfère une vérité qu'ils détesteront à une promesse que je ne peux pas tenir."
+    elen inquiet "Ryn, laisse-moi..."
+    ryn colere "PAS MAINTENANT !"
+    elen colere "J'allais dire que je suis d'accord avec toi !"
+    "Ryn reste bouche ouverte. Elen en profite avant qu'il retrouve sa voix."
+    elen determine "Je veux qu'ils puissent passer. Mais je ne sais pas non plus comment protéger les villages."
+    kael reflechit "Et je ne peux pas vous promettre que les convois et les points de contrôle seront prêts demain."
+    ryn colere "Donc on ne fait rien ? Voilà notre grand plan ?!"
+    noam inquiet "Non. Mais le texte nous demande de prendre une décision sur ce qu'on fait aujourd'hui."
+    "Ryn serre les poings. Cette fois, il ne trouve pas immédiatement de réplique."
+    "Le grand écran s'allume."
     think "Kami vient peut-être de nous sauver d'un deuxième round. C'est la première fois que j'envisage de la remercier."
 
     show screen kami_broadcast_ui
@@ -307,9 +312,8 @@ label _6_0_1_CONCLAVE_START:
         ("nyra", "raison"),
     ])
     elen inquiet "Moi... j'aimerais que les gens puissent revoir leurs proches sans risquer leur vie."
-    elen inquiet "C'est vraiment impossible de contrôler les passages sans laisser Kami tirer sur ceux qui approchent ?"
-    mara agace "Bien sûr qu'on pourrait imaginer autre chose. Mais ce n'est pas ce qu'on vote."
-    mara doute "Le texte dit « ouvrir ». Pas « réfléchir à un système de contrôle ». Et c'est une sacrée différence."
+    mara agace "On peut l'espérer. Mais entre un passage ouvert et un passage sûr, il y a quelques détails."
+    mara doute "Et ce sont précisément les détails que le texte ne contient pas."
     tomas inquiet "J'aurais peut-être dû demander la définition exacte d'« ouvrir »..."
     iris colere "Tomas, ne commence pas une bataille de dictionnaire !"
     tomas gene "Je... je faisais simplement remarquer..."
@@ -317,25 +321,20 @@ label _6_0_1_CONCLAVE_START:
     noam neutre "On peut éviter de se battre aussi sur les guillemets ?"
     lysa blase "Trop tard. Le débat vient de perdre toute dignité."
     ryn colere "À Limen, ça fait des années qu'on regarde mourir des gens devant des passages qu'on surveille nous-mêmes !"
-    ryn colere "Vous voulez qu'on leur dise quoi ? « Encore un peu de patience, on cherche une formulation élégante » ?!"
-    kael inquiet "Même si tout le monde veut traverser pacifiquement, le réseau de transport n'est pas prêt."
-    kael reflechit "Les contrôles, les convois, les points de passage... On ne remet pas tout ça en route avec un bouton."
+    ryn colere "Et pendant qu'on parle logistique, eux, ils continuent d'attendre !"
+    kael inquiet "Je le sais. Mais si tu veux que je t'organise des convois, il me faut autre chose qu'une date et de la bonne volonté."
     lysa blase "Évidemment qu'il manque des détails. Il manquera toujours des détails."
     lysa reflechit "La vraie question, c'est combien de temps on accepte de garder les gens enfermés en attendant un plan sans défaut."
-    nyra reflechit "Attendez. Vous êtes presque tous d'accord pour dire que les sanctions sont insupportables."
-    nyra raison "Sael, si on ajoutait des contrôles aux passages, ce serait suffisant pour toi ?"
-    sael determine "Non."
-    sael mefiant "Même avec des contrôles, la réouverture rendrait le retour des groupes armés plus facile."
-    sael determine "J'ai passé des années à faire en sorte que mon village puisse enfin dormir. Je ne vais pas l'exposer à nouveau."
-    ryn colere "MON VILLAGE AUSSI A SOUFFERT !"
-    sael neutre "Je le sais."
-    ryn colere "Alors arrête de me répondre comme si je n'avais jamais vu un mort !"
-    sael mefiant "Je n'ai pas dit ça."
-    ryn colere "C'est ce que j'entends !"
-    "Personne ne trouve de réponse qui puisse arranger les choses."
-    ryn colere "ALORS ON FAIT QUOI ?! On attend que toutes les familles soient mortes pour ne plus avoir de problème de frontières ?!"
-    sael colere "ARRÊTE ! Je ne suis pas Kami ! Je n'ai écrit aucun de ses Commandements !"
-    sael colere "Et pourtant, à t'entendre, chaque mort à la frontière serait déjà de ma faute !"
+    nyra reflechit "Attendez. Le scrutin ne porte pas sur un dispositif de contrôle, mais sur une autorisation générale."
+    nyra raison "Sael, même si nous ajoutions des garanties, accepterais-tu de les étudier ?"
+    sael neutre "Je les étudierais. Ça ne veut pas dire que j'accepterais."
+    ryn colere "Et moi, je les attendrais pendant combien d'années, tes garanties ?!"
+    sael mefiant "Tu m'as demandé hier pourquoi je refusais. Je t'ai répondu."
+    ryn colere "Tu m'as parlé de ton village. Je te parle de tous ceux qui n'ont plus de village où rentrer !"
+    sael colere "Et tu voudrais que je me comporte comme si le mien ne comptait pas ?!"
+    ryn colere "Je n'ai pas dit ça !"
+    sael colere "C'est ce que j'entends, moi !"
+    "Ryn ouvre la bouche, puis la referme. Pendant une seconde, il paraît comprendre la formule qu'elle vient de lui renvoyer."
     "Iris frappe la table du plat de la main."
     iris colere "Vous pouvez vous parler SANS vous hurler dessus deux secondes ?!"
     "Une voix sort des haut-parleurs avant que quelqu'un réponde."
@@ -343,12 +342,10 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.6
     kami "Vos arguments sont tous... tous très..."
-    kami "Il faudrait peut-être que vous..."
     pause 0.7
-    "Le visage de Kami se fige."
-    "Un grésillement coupe le silence."
-    think "La phrase ne vient pas. Pour la première fois, elle a l'air incapable de trouver une méchanceté à ajouter."
-    kami "Continuez. Poursuivez... poursuivez le débat. Je vous écoute."
+    "L'image s'immobilise, mais aucun son ne grésille. Je tends l'oreille."
+    kami "Continuez. Poursuivez le débat. Je vous écoute."
+    think "Aucune pique sur Ryn, aucune remarque sur Sael. C'est presque plus inquiétant que son silence."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
@@ -363,19 +360,18 @@ label _6_0_1_CONCLAVE_START:
     "Le silence s'étire. Sa bouche reste ouverte une seconde de trop."
     think "Personne ne plaisante. Même Mara fixe l'écran sans sourire."
     kami "Vous n'avez pas terminé."
-    kami "Il faut... il faut continuer."
+    kami "Il faut continuer."
     julian hesitation "Je ne voudrais pas être désagréable, mais je crois que notre présidente de séance est en train de..."
     iris colere "NE FINIS PAS CETTE PHRASE !"
     julian peur "Très bien ! Je ne la finis pas !"
-    mara mefiant "Pour une fois, elle a raison. Kami, qu'est-ce que tu nous caches ?"
     mara mefiant "Pourquoi « il faut » ?"
-    mara colere "Qu'est-ce qu'on doit continuer exactement ? Notre débat, ou un spectacle que tu refuses d'arrêter ?"
-    kami "Le débat doit..."
-    kami "Il faut que vous... continuiez. Oui. Continuez."
+    mara colere "Ce vote est censé être notre décision, pas un spectacle que tu refuses d'arrêter."
+    "Kami ne lui répond pas. Son sourire reste à l'écran alors que Mara attend une riposte."
+    iris inquiet "C'est la première fois qu'elle laisse passer une occasion pareille."
     play sound "audio/sfx_glitch.mp3"
-    "« Continuez. Continuez. Conti... »"
-    "L'image se dédouble. La dernière syllabe se répète comme un disque rayé."
-    think "Quelque chose ne va pas. Et cette fois, je ne crois plus à une mise en scène."
+    "Un quadrillage traverse l'écran. Pendant un instant, l'heure du scrutin disparaît et revient avec dix minutes d'écart."
+    elen peur "Elle vient de changer l'heure ENCORE ?!"
+    kael inquiet "Ce n'est plus seulement la voix. Les données de séance ne restent pas synchronisées."
     elias inquiet "Kael ! C'est pas les haut-parleurs ! Le son décroche en même temps que l'image !"
     kael inquiet "Je vois. Et ses messages arrivent avec du retard sur ma tablette."
     kael reflechit "C'est comme si la transmission entière perdait des morceaux."
@@ -434,32 +430,42 @@ label _6_0_1_SIGNAL_INSTABLE:
     iris inquiet "Attends, Kami est censée contrôler toute la station. Comment elle peut perdre sa propre connexion ?"
     kael reflechit "Je n'en sais rien. Et inventer une explication maintenant nous ferait plus de mal que de bien."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "La séance... doit continuer normalement."
-    kami "Je vais régler... cela. Je vais le régler."
-    "Toutes les tablettes s'éteignent presque en même temps."
-    elen peur "HÉ ! J'AI PLUS RIEN !"
-    "Les écrans se rallument."
-    lysa blase "Génial. Le monde entier est géré par une machine qui redémarre comme un vieux grille-pain."
-    noam inquiet "On devrait arrêter le vote jusqu'à ce qu'on soit sûrs que les systèmes fonctionnent !"
+    kami "Je vais rétablir le canal de la séance."
+    "Sur ma tablette, le dossier de vote se ferme sans que j'aie touché l'écran."
+    "À sa place apparaît une ligne technique : « SESSION LOCALE — CANAL D'URGENCE »."
+    elen peur "HÉ ! MON DOSSIER A DISPARU !"
+    lysa blase "Une démocratie qui range les bulletins avant le scrutin. Quel gain de temps."
+    noam inquiet "Kami, on doit suspendre la séance !"
     scene bg_diffusion_colere at adaptive_fullscreen
     kami "Non."
-    kami "Attendre... attendre n'est pas nécessaire."
+    pause 0.4
+    kami "Restez ici."
+    kami "Je vous en prie."
+    "Plus personne ne bouge. Elle n'a jamais eu besoin de nous supplier pour nous garder dans une pièce."
     play sound "audio/sfx_static.mp3"
     "Un grésillement traverse la salle. Je plaque mes mains sur mes oreilles."
     "Devant moi, des caractères défilent à toute vitesse."
     elias inquiet "Noam ! Regarde ton écran ! Il y a quelque chose à faire, je crois !"
     call j601_play_signal_instable from _call_j601_play_signal_instable
+    $ j601_signal_stabilized = bool(_return)
     stop sound fadeout 0.5
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_low_tension.mp3" fadein 1.0
-    "Le son s'arrête aussi brusquement qu'il avait commencé."
-    "Plusieurs écrans reviennent à la normale. Celui de Tomas continue d'afficher une ligne d'erreur."
-    think "C'est la première fois que le silence de Kami me donne envie de l'entendre revenir."
+    if j601_signal_stabilized:
+        "La ligne d'erreur de ma tablette disparaît. J'arrive à rouvrir le dossier de vote, mais les écrans des autres répondent encore avec du retard."
+        noam surpris "Le mien est revenu !"
+        kael reflechit "Tu as stabilisé ton canal local. Pas celui de Kami. Ne prends pas ça pour une réparation."
+        think "J'aurais préféré qu'il me laisse savourer ma victoire quelques secondes."
+    else:
+        "Ma tablette revient à l'écran d'accueil. Le dossier de vote refuse toujours de s'ouvrir."
+        noam inquiet "J'ai essayé de récupérer le canal, mais je n'y arrive pas !"
+        elias inquiet "C'est pas toi. Les écrans perdent la connexion les uns après les autres."
+        kael inquiet "On va éviter de nouvelles manipulations. Personne ne doit valider un texte qu'il ne peut pas lire."
     elen inquiet "C'est terminé ? Dites-moi que c'est terminé..."
-    elen inquiet "Je préfère quand elle nous insulte, c'est dire."
-    kael inquiet "Non. Les connexions ne sont pas toutes rétablies. Certaines répondent avec plusieurs secondes de retard."
+    mara neutre "On n'a même pas encore commencé à voter, Elen."
+    elen fatigue "C'est bien ça qui m'inquiète."
     ryn colere "Et on est censés mettre nos bulletins dans ÇA ?! Autant tirer au sort !"
     nyra reflechit "On ne vote pas avant de savoir si le scrutin peut être enregistré correctement. C'est le minimum."
     ryn colere "Je voulais voter pour. Mais là ? Elle pourrait nous faire approuver une exécution collective à la place !"
@@ -508,6 +514,19 @@ label _6_0_1_FRACTURE_QTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     "Les caractères se stabilisent enfin."
     "Le texte sur les frontières est revenu. Même formulation. Mêmes boutons."
+    if j601_fracture_result:
+        $ j601_fracture_trace_saved = True
+        "Une dernière ligne subsiste sur ma tablette : « DÉCALAGE ENTRE CANAL DE SÉANCE ET CONTRÔLE LOCAL — TRACE CONSERVÉE »."
+        noam inquiet "Kael, regarde. J'ai réussi à garder une trace de l'erreur."
+        kael reflechit "Ne l'efface surtout pas. Ce n'est pas une preuve que le vote est falsifié, mais on pourra comparer les journaux."
+        elias inquiet "Donc... on a peut-être un moyen de vérifier après ?"
+        kael calme "Un point de départ. Pas encore une réponse."
+    else:
+        $ j601_fracture_trace_saved = False
+        "Je tente de retrouver la ligne qui a remplacé le texte. Elle a disparu, et la tablette ne me propose aucun historique."
+        noam inquiet "J'ai perdu l'erreur. Je sais ce que j'ai vu, mais je ne peux pas le montrer."
+        nyra reflechit "Alors nous ne prétendrons pas avoir identifié une modification. Nous savons seulement que l'affichage a été instable."
+        think "C'est peut-être la différence la plus pénible : avoir eu peur de quelque chose sans pouvoir dire exactement quoi."
     think "Personne n'a envie d'être le premier à toucher son écran."
     show screen kami_broadcast_ui
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -527,7 +546,14 @@ label _6_0_1_FRACTURE_QTE:
     kael doute "Ça ne veut pas dire qu'il est défectueux. Mais je ne peux pas vous garantir qu'il ne l'est pas."
     ryn colere "Ça suffit pour moi. Je voterai contre. Pas contre les gens aux frontières : contre ce cirque !"
     elen triste "Ryn..."
-    ryn colere "ME REGARDE PAS COMME ÇA ! Je sais ce que je voulais ce matin !"
+    ryn colere "JE SAIS ! Je sais ce que je voulais ce matin."
+    "Il baisse les yeux vers son écran. Derrière le bouton « POUR », le texte a enfin cessé de trembler."
+    ryn triste "J'ai passé trois jours à demander qu'on ouvre ces foutues frontières."
+    ryn triste "Et maintenant, je peux même pas garantir à ceux qui attendent que c'est bien leur liberté que je suis en train de voter."
+    sael triste "Ryn..."
+    ryn colere "Ne me console pas. Surtout pas toi."
+    "Sael détourne les yeux. Pour une fois, elle le laisse finir."
+    ryn triste "C'est moi qui vais leur dire que j'ai voté non. Personne d'autre."
     lysa reflechit "C'est justement ce qui me fait peur. Je voulais voter pour aussi."
     lysa blase "Mais quand l'urne électronique essaie de nous manger les mains, je préfère garder mes deux bras."
     nyra raison "Rejeter la proposition ne répare pas le système. Ça empêche au moins d'engager immédiatement un changement qu'on ne contrôle plus."
@@ -643,8 +669,9 @@ label _6_0_1_VOTE:
     "Les votes défilent sur l'écran."
     "Un contre. Puis un autre. Encore un."
     think "Je savais qu'il n'y aurait pas d'unanimité. Mais voir les refus s'accumuler donne à la défaite un tout autre poids."
-    "Le texte est rejeté. Le nom de Sael apparaît parmi les votes contre."
-    think "Elle avait promis de ne pas mentir sur son choix. Elle a tenu parole."
+    "Le texte est rejeté. L'écran n'indique que les totaux ; aucun nom n'accompagne les bulletins."
+    think "Sael a annoncé son intention de voter contre. Je n'ai aucun moyen de connaître son bulletin, ni celui de Ryn."
+    think "Je repense à sa promesse, et au regard que Ryn a posé sur son propre écran."
     if player_vote == "pour":
         think "J'ai voté pour."
         think "Pas parce que j'ignorais les risques. Parce que je n'arrivais plus à accepter que des familles soient condamnées à attendre derrière une barrière."
@@ -661,7 +688,7 @@ label _6_0_1_VOTE:
     call j601_sael_vote_animation from _call_j601_sael_vote_animation
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.0
-    think "Le visage de Sael disparaît de l'écran. Ce n'est plus son refus qui me surprend. Ce sont tous les autres."
+    think "L'animation de Sael disparaît. Elle rappelle ce qu'elle a annoncé, pas ce que l'urne a révélé."
     think "Ryn n'a pas détourné les yeux une seule fois."
     think "Je voudrais lui dire quelque chose. Pour une fois, je n'ai aucune phrase qui me paraît utile."
 
@@ -710,8 +737,13 @@ label _6_0_1_VOTE:
     ryn triste "Mais je me demande comment je vais expliquer ce résultat à ceux qui attendaient."
     tomas inquiet "Euh... excusez-moi, mais on vient vraiment de voter alors que Kami ne tenait pas sa connexion ?!"
     tomas inquiet "On sait au moins si nos douze votes ont tous été enregistrés ?"
-    kael reflechit "Douze votes sont affichés. Les vérifications de base ne montrent pas d'anomalie."
-    kael inquiet "Mais ça ne nous explique pas pourquoi Kami a perdu le signal. Ni ce qui arriverait si elle le reperdait."
+    kael reflechit "Douze bulletins sont comptabilisés. Ça correspond au nombre de représentants."
+    if j601_fracture_trace_saved:
+        kael inquiet "Mais le décalage que Noam a conservé n'est pas expliqué. Je vais comparer sa trace aux journaux de la station."
+        nyra raison "Cela ne permet pas de déduire le vote de qui que ce soit. Et c'est très bien ainsi."
+    else:
+        kael inquiet "Mais sans trace de la perturbation sur les tablettes, je ne peux pas vérifier ce qui s'est passé pendant la coupure."
+        nyra reflechit "Alors nous devons reconnaître ce que nous ignorons, au lieu de prétendre que l'absence de preuve suffit à nous rassurer."
     iris inquiet "Attendez... C'est pas juste le vote qui m'inquiète."
     iris inquiet "La seule chose qui gère les sanctions, nos repas et jusqu'aux portes vient de décrocher en pleine séance. Et on n'a aucun moyen de savoir pourquoi ?"
     elias fatigue "Kael et moi, on peut inspecter les systèmes locaux."
@@ -798,29 +830,27 @@ label _6_0_1_FIN_JOURNEE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     "Je m'assieds sur mon lit. La station est silencieuse."
-    think "J'ai l'impression que toutes les conversations de la journée continuent de tourner dans ma tête."
-    think "Kami a perdu le fil de ses propres phrases. Les écrans se sont éteints, les ordres ont bégayé."
-    think "Et elle a continué à nous demander de voter. Comme si terminer la séance comptait plus que tout le reste."
-    think "Je repense au café d'Elias, aux fils endommagés et à la porte qui refusait de s'ouvrir."
-    think "Une simple panne locale peut-elle atteindre Kami ? Kael en doute. Moi, je ne sais même pas par où commencer pour comprendre."
-    "Ma tablette affiche encore le résultat du vote : « REJETÉ »."
-    "En dessous, une ligne confirme que les frontières resteront fermées."
-    think "La femme du reportage attendait devant les barrières pour revoir son frère."
-    think "Demain, les barrières seront toujours là. Je me demande si elle attendra encore."
-    "Je pose la tablette face contre le bureau. J'éteins la lumière et me couche."
-    think "Je pourrais accuser Kami. Ce serait confortable. Je n'ai pourtant pas eu besoin qu'elle me tienne la main pour voter."
-    pause 0.5
-    play sound "audio/sfx_glitch.mp3"
-    "L'écran mural s'allume."
-    "Une fraction de seconde. Pas de visage, pas de message."
-    "Puis le noir."
-    think "Je me redresse si vite que j'envoie ma couverture au sol."
-    think "J'attends."
-    think "Pas de voix. Pas de rire de Kami. Rien."
-    think "Ce matin, son silence me paraissait préférable à ses plaisanteries. Je ne suis plus aussi sûr."
+    "Ma tablette affiche toujours le résultat du vote : « REJETÉ »."
+    think "La femme du reportage avait gardé une boîte de thé pour son frère. Demain, elle devra encore la conserver."
+    think "Ryn a demandé qu'on ouvre les frontières pendant trois jours. Aujourd'hui, il a annoncé qu'il voterait contre."
+    think "Je pourrais lui en vouloir. Mais devant ma propre tablette, j'avais peur moi aussi."
+    if j601_fracture_trace_saved:
+        "Une petite icône signale la trace d'incident conservée dans mon dossier."
+        think "Kael a promis de la regarder. Ce serait presque rassurant si je savais ce qu'on cherchait."
+    else:
+        "Je cherche la ligne étrange apparue au Conclave. Rien. Pas même un message d'erreur."
+        think "Impossible de raconter exactement ce que j'ai vu. Il ne reste que ma mémoire, et elle n'a jamais été très utile devant un tribunal."
+    "Je pose la tablette sur mon bureau. Pour une fois, je n'ai pas envie de regarder le prochain bulletin de vote."
+    "L'écran s'allume tout seul."
+    "Pas la grande diffusion de Kami. Juste une notification discrète, sans logo ni sonnerie."
+    "« FIN DE SESSION IMPOSSIBLE — PARTICIPANTS REQUIS »"
+    think "Des participants ? À cette heure-ci ?"
+    "Je tends le doigt vers la notification. Avant que je la touche, elle disparaît."
+    "Je consulte le journal des alertes. Il est vide."
+    "J'attends quelques secondes, puis j'éteins la tablette. Cette fois, je vérifie qu'elle est bien éteinte."
+    think "Kami nous avait demandé de rester au Conclave. Et si sa séance n'était pas terminée pour elle ?"
     $ blink()
-    "Je finis par fermer les yeux."
-    think "Et j'espère que demain, si Kami nous parle, ce sera vraiment elle qui nous répondra."
+    "Je finis par fermer les yeux. La question, elle, refuse de me laisser dormir."
 
     $ kami_grant_chapter_2_reward()
 
