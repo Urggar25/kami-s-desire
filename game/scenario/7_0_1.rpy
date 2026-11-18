@@ -1,3 +1,5 @@
+default j701_table_choice = "aucun"
+default j701_tomas_secret_kept = True
 default j701_plate_step = 0
 default j701_plate_score = 0
 default j701_plate_errors = 0
@@ -1161,7 +1163,9 @@ label _7_0_1_REVEIL_CHAMBRE:
     scene black
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 7
-    $ noam_has_juliette_drawing = False
+    $ noam_has_juliette_drawing = True
+    $ j701_table_choice = "aucun"
+    $ j701_tomas_secret_kept = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
     $ blink()
@@ -1223,6 +1227,14 @@ label _7_0_1_REVEIL_CHAMBRE:
     noam sourire "Au moins, elle nous laisse tranquilles."
     lysa sourire "Voilà. C'est ce que je me dis depuis ce matin."
     lysa blase "Et plus je me le répète, moins j'y crois."
+    noam reflechit "Hier soir, ma tablette a affiché une dernière notification. Après le vote."
+    lysa reflechit "Quelle notification ?"
+    noam inquiet "« FIN DE SESSION IMPOSSIBLE — PARTICIPANTS REQUIS ». Et puis elle a disparu du journal."
+    lysa blase "Magnifique. On n'a plus de présidente de séance, mais sa réunion refuse de se terminer."
+    noam reflechit "Tu as reçu la même chose ?"
+    lysa neutre "Non. J'avais éteint ma tablette. J'espérais même que Kami m'enverrait une lettre d'excuses."
+    noam inquiet "Je devrais en parler aux autres ?"
+    lysa reflechit "À Kael, peut-être. Pas à tout le monde avant le déjeuner. J'aimerais une seule journée sans panique collective."
     "Elle regarde les vêtements éparpillés par terre."
     lysa taquin "Tu vas rester habillé comme ça pour célébrer notre liberté ?"
     noam colere "SORS !"
@@ -1328,6 +1340,10 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     elias colere "Vous allez me la ressortir combien de temps, cette histoire ?!"
     mara taquin "Jusqu'à ce que tu inventes un café qui tienne tout seul."
     "Même moi, je ris. Puis je réalise que personne n'a regardé l'écran depuis plusieurs minutes."
+    "Ryn passe derrière la porte vitrée sans entrer. Sael le remarque aussi, mais ne l'appelle pas."
+    elen triste "Je lui avais gardé une part..."
+    mara neutre "Tu pourras la lui donner plus tard."
+    "Julian fait glisser le morceau de gâteau qu'il avait prétendu sauver vers l'assiette vide. Pour une fois, il ne cherche pas à attirer l'attention."
     iris reflechit "Bon. Le truc vraiment étrange, c'est que tout fonctionne encore."
     julian sourire "Étrange ? Moi, j'appelle ça des vacances."
     iris colere "Je parle des portes, des livraisons, de nos tablettes ! Kami n'a pas répondu une seule fois et les automatismes continuent !"
@@ -1356,15 +1372,45 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     julian surpris "Tu n'as même pas organisé de vote !"
     lysa rire "Tu vois ? On progresse déjà."
     "Une minute plus tard, le ton remonte. Elen a décidé qu'on devait porter un toast à quelque chose, sans parvenir à trouver quoi."
-    call j701_play_plate from _call_j701_play_plate
-    "Le plateau finit au centre de la table. Une petite victoire dont personne ne sait trop qui doit se vanter."
+    elen joie "Au silence ! Non, ça fait triste. À la liberté ? Ça fait trop officiel !"
+    julian joie "Un petit discours pourrait régler ce problème."
+    iris blase "Si tu prononces plus de cinq mots, je retire ton verre."
+    julian surpris "Cinq ?! Mais c'est un assassinat de l'éloquence !"
+    mara taquin "Moi, j'aurais proposé deux."
+    "Elias passe le plateau au-dessus de la table. Tout le monde s'écarte d'un même mouvement."
+    elias colere "JE SAIS PORTER UN PLATEAU !"
+    kael calme "C'est effectivement une hypothèse à tester."
+    "Je récupère le plateau avant qu'Elias ne transforme l'hypothèse en expérience."
     elias sourire "Cette fois, je n'ai rien cassé."
     mara taquin "Garde cette phrase pour ta pierre tombale."
     iris colere "Mara !"
-    "J'ai presque l'impression d'avoir retrouvé un repas ordinaire."
-    call j701_play_calm from _call_j701_play_calm
-    "La conversation se dissout en plaisanteries et en disputes minuscules."
-    "Pour une fois, elles n'ont pas besoin de nous conduire quelque part."
+    lysa reflechit "On a vraiment le droit d'être heureux cinq minutes ?"
+    menu:
+        "Proposer une minute sans parler de Kami.":
+            $ j701_table_choice = "complicite"
+            noam sourire "Une minute sans prononcer son nom. Le premier qui craque débarrasse la table."
+            julian joie "Une règle aussi simple ne me posera aucun problème."
+            mara taquin "Tu viens de créer le seul concours que Julian peut perdre en parlant."
+            iris sourire "J'ADORE."
+            "Elen compte sur ses doigts. Julian tient onze secondes avant de protester contre l'arbitrage."
+            lysa sourire "Tu vois ? On peut rire même sans son aide."
+        "Admettre que son silence fait peur.":
+            $ j701_table_choice = "inquietude"
+            noam reflechit "Moi aussi, j'ai peur. Mais j'aimerais finir ce repas sans regarder l'écran toutes les trente secondes."
+            lysa neutre "Merci. Je commençais à croire que j'étais la seule."
+            iris inquiet "Je veux savoir ce qui lui arrive. Et j'aimerais aussi dormir cette nuit."
+            mara neutre "Les deux sont compatibles. Mangez."
+            elen sourire "Demain, on cherchera ensemble. Aujourd'hui... on finit le gâteau."
+        "Laisser Julian prononcer son discours.":
+            $ j701_table_choice = "julian"
+            noam taquin "Allez, Julian. Ton grand discours. Trois mots."
+            julian sourire "Trois ? Pour un orateur de ma qualité ?"
+            iris colere "DEUX, ALORS !"
+            julian joie "Vive... nous !"
+            "Elen éclate de rire. Même Mara applaudit, mais juste une fois."
+            mara sourire "C'était presque touchant. Ne recommence pas."
+            julian sourire "Vous reconnaissez enfin mon génie."
+    "Les voix reprennent. Certaines plaisanteries n'ont ni but ni importance, et cela me fait plus de bien que prévu."
     $ hideGroup()
     jump _7_0_1_TEMPS_LIBRE_1
 
@@ -1387,6 +1433,12 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     tomas gene "Non, ce n'est pas... enfin, ça touche peut-être aux frontières, indirectement."
     noam desaccord "Tomas..."
     tomas inquiet "J'ai trouvé un chiffre qui n'a rien à faire là."
+    if j601_fracture_trace_saved:
+        tomas reflechit "Kael examine déjà la trace du vote que tu as conservée hier. Mais j'ai trouvé autre chose."
+    else:
+        tomas reflechit "Kael essaie encore de reconstituer l'incident d'hier sans les données perdues. Mais j'ai trouvé autre chose."
+    noam inquiet "Un autre problème ?"
+    tomas gene "C'est justement ce que je ne sais pas."
     noam reflechit "Quel chiffre ?"
     tomas hesitation "Je préfère que tu le voies avant que je t'explique. Sinon je vais encore commencer à..."
     noam taquin "À écrire un livre ?"
@@ -1438,7 +1490,25 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     noam reflechit "Tu vas prévenir tout le monde ?"
     tomas hesitation "Pas avant d'avoir vérifié davantage. Imagine ce que Ryn ferait s'il croyait soudain que les frontières ne sont plus surveillées."
     noam inquiet "Ou ce que Sael ferait pour l'en empêcher."
-    tomas neutre "Voilà."
+    tomas triste "Imagine maintenant que ce soit vrai."
+    tomas triste "Je viens peut-être de découvrir que des gens ne sont plus exécutés. Et mon premier réflexe, c'est de demander qu'on n'en parle à personne."
+    noam reflechit "Tu veux éviter que quelqu'un tente de franchir une frontière sur une supposition."
+    tomas colere "JE LE SAIS ! Je le sais, Noam ! Mais combien de temps on peut cacher une bonne nouvelle pour protéger les gens d'une mauvaise ?!"
+    "Il s'interrompt et regarde la porte comme s'il venait de crier beaucoup trop fort."
+    tomas gene "Pardon. Je n'avais pas prévu de m'énerver."
+    noam neutre "Ça prouve au moins que tu sais ce que ça représente."
+    tomas inquiet "Tu me laisses une nuit pour vérifier ?"
+    menu:
+        "Promettre de garder le secret pour cette nuit.":
+            $ j701_tomas_secret_kept = True
+            noam neutre "Une nuit. Après, il faudra qu'on décide quoi faire."
+            tomas sourire "Merci. Si je me défile, rappelle-le-moi."
+        "Exiger qu'on prépare une annonce au groupe.":
+            $ j701_tomas_secret_kept = False
+            noam determine "Je ne vais pas l'annoncer derrière ton dos. Mais on doit préparer ce qu'on dira aux autres."
+            tomas inquiet "D'accord. Une dernière vérification, puis on leur en parle ensemble."
+            noam reflechit "Demain. Pas dans trois jours."
+            tomas neutre "Demain."
     "Je regarde encore le zéro. Il ressemble à une bonne nouvelle. Je n'arrive pas à lui faire confiance."
     $ hideGroup()
     jump _7_0_1_SOIREE_TENSION_LEGERE
@@ -1512,6 +1582,13 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     elen rire "Je viens !"
     iris fatigue "Moi aussi. Mais si quelqu'un a déplacé tout ça sans prévenir, je l'étrangle."
     kael reflechit "On peut commencer par la liste de Nyra."
+    if j601_fracture_trace_saved:
+        noam reflechit "Et la trace que j'ai conservée hier ? Ça pourrait être lié ?"
+        kael inquiet "Je n'ai pas de preuve pour l'instant. Mais je comparerai les anomalies. Ne supprime rien."
+        lysa reflechit "Pourvu que le journal n'efface pas lui-même les preuves."
+    else:
+        noam reflechit "J'ai perdu la trace de l'erreur d'hier. Cette fois, il faut conserver une copie des relevés."
+        kael reflechit "Exactement. On sauvegarde avant de toucher aux systèmes."
     elias fatigue "Merci. Enfin."
     $ hideGroup()
     call j701_investigation from _call_j701_investigation
@@ -1519,14 +1596,18 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
 
 
 label _7_0_1_FIN_JOURNEE:
-    "On compare les stocks, on retourne les caisses et on refait le chemin de la livraison. Personne ne retrouve les batteries."
+    "Après les vérifications, chacun regagne son couloir avec davantage de questions qu'en arrivant. Les batteries restent introuvables."
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_288
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ showGroup([("noam", "neutre", 0.50)])
     think "On a passé la soirée à chercher des objets que quelqu'un aurait pu déplacer par erreur. C'est presque rassurant de pouvoir encore imaginer une explication aussi bête."
-    think "Je n'ai parlé à personne du compteur d'exécutions. Tomas m'a demandé de me taire, et je lui ai promis."
-    noam reflechit "Espérons qu'il ait raison de vouloir attendre."
+    if j701_tomas_secret_kept:
+        think "Je n'ai parlé à personne du compteur d'exécutions. J'ai promis à Tomas une nuit pour vérifier."
+        noam reflechit "J'espère qu'on ne regrettera pas cette promesse."
+    else:
+        think "Je n'ai pas annoncé le zéro à la cafétéria. Tomas et moi avons promis de préparer une explication après une dernière vérification."
+        noam reflechit "Une nuit. Pas une de plus."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_289
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je jette ma veste sur la chaise. L'écran mural est toujours noir."
@@ -1537,20 +1618,17 @@ label _7_0_1_FIN_JOURNEE:
     "Je tends la main vers le dessin posé sur le bureau."
     "Mes doigts rencontrent le plateau vide."
     noam surpris "Hein ?"
-    "Je tire un tiroir. Puis le deuxième."
-    "Le dessin n'est ni dans la pochette, ni sous la tablette."
-    noam inquiet "Non... Je l'ai laissé là."
-    call fouille_bureau_run from _call_fouille_bureau_run
-    scene bg_chambre at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "inquiet", 0.50)])
-    "Je vérifie une dernière fois sous le bureau. Les papiers que j'ai déplacés sont là. Pas son dessin."
-    noam desaccord "Ça n'a aucun sens. Je l'ai vu hier."
-    think "J'ai dû le ranger sans m'en souvenir. Peut-être en me changeant, peut-être avant le vote."
-    "Je ramasse un vêtement par terre. Rien."
-    "Je repense aux batteries absentes du stockage."
-    think "Non. Ça n'a aucun rapport. Une feuille de papier et du matériel de maintenance. Je suis en train de me faire peur tout seul."
-    "Je pose les mains sur le bureau pour les empêcher de fouiller encore."
-    noam triste "Je continuerai demain, Juliette. Promis."
+    "Je déplace la tablette, puis le cadre posé à côté. Le dessin n'est pas là."
+    noam inquiet "Attends... Je l'avais laissé ici."
+    "J'ouvre le premier tiroir. Rien. Le second contient les vêtements que j'y ai fourrés ce matin."
+    noam desaccord "Ne me dis pas que j'ai perdu ça."
+    "Je retourne sa pochette. Vide, elle aussi."
+    "Je revois Juliette me faire promettre de ne pas corner la feuille avant de l'emporter jusque dans l'espace."
+    noam triste "Tu vas te moquer de moi, Juliette."
+    "Ma main revient au même endroit, comme si le papier allait finir par réapparaître."
+    "Je pense aux batteries disparues. Pourquoi quelqu'un aurait-il pris le dessin de ma sœur ?"
+    noam triste "Demain, je fouille tout. Promis."
+    $ noam_has_juliette_drawing = False
     $ hideGroup()
     "Je me couche. Le Conclave ne fait aucun bruit."
     pause 0.5
