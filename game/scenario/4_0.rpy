@@ -66,133 +66,189 @@ label _4_0_REVEIL_CHAMBRE:
     call show_chapter_title("Début du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_2
 
     play sound sfx_drop
-    "Un bruit de métal heurte le sol dans le couloir. Un juron suit, aussitôt étouffé."
-    think "Ça, au moins, c'est un réveil qui ne parle pas de politique."
-    "Je tends l'oreille. Des pas s'éloignent. Pas un cri, pas une alarme. Simplement quelqu'un qui a dû perdre une bataille contre sa valise."
+    "Un objet métallique tombe dans le couloir, suivi d'un juron qu'on essaie beaucoup trop tard de rendre discret."
+    think "J'avais demandé cinq minutes de sommeil supplémentaires. Je n'avais rien précisé concernant les travaux publics."
     scene bg_cg012 at adaptive_fullscreen with dissolve
-    think "Cette nuit, j'ai rêvé de l'urne. Chaque fois que j'essayais d'y glisser un bulletin, une main le ressortait."
-    think "Un seul non, et tout s'est arrêté. J'aimerais pouvoir prétendre que je sais si c'est une bonne nouvelle."
-
-    scene bg_cg029 at adaptive_fullscreen with dissolve
-    $ unlock_gallery_image("bg_cg029")
-    "Le cadre sur mon bureau a glissé de travers."
-    think "Sur la photo, Juliette fait une grimace derrière mon épaule. On avait dû la recommencer quatre fois parce qu'elle refusait de rester sérieuse."
-    think "Je pourrais lui raconter ce qui s'est passé. Sauf que je n'ai pas le droit de l'appeler."
-    "Je redresse le cadre. Juliette continue de me tirer la langue."
+    "Je reste étendu un moment, les yeux ouverts. J'ai encore rêvé de l'urne. Sauf que, cette fois, c'était moi qui devais compter les bulletins et ils n'arrêtaient pas de se multiplier."
+    think "Quelle idée, aussi, de laisser mon cerveau organiser des élections pendant mon sommeil."
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Sur le bureau, une feuille dépasse du dessous de ma tablette. Elle s'est recourbée pendant la nuit."
+    "Je la dégage avec précaution. C'est le dessin de Juliette."
+    "Elle m'a représenté avec une tête immense, deux yeux verts de tailles différentes et des bras assez longs pour toucher le sol. À côté, elle a écrit mon nom, puis l'a barré pour en inventer un autre."
+    think "Elle soutenait que les bras, c'était pour que je puisse lui attraper des choses sur les étagères. Et que la tête... non, elle n'avait pas voulu expliquer la tête."
+    "Je me souviens lui avoir demandé pourquoi j'avais six doigts à une main."
+    think "« C'est pour les jours où t'en perds un. » Elle avait répondu ça sans même lever les yeux de ses feutres."
+    "Je lisse un coin de la feuille. Il reste une toute petite tache violette près de mon épaule."
+    think "Je me demande ce qu'elle dessine en ce moment."
+    "Je repose le dessin bien à plat, loin du bord du bureau. Pas question de le laisser tomber derrière un meuble."
 
     play sound sfx_announce
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
-    kami "Bonjour, mes petits perdants ! J'ai une excellente nouvelle : vous avez tous survécu à votre premier exercice de démocratie."
-    kami "Et une moins bonne : le monde est toujours exactement comme hier. Quelle débauche de progrès !"
+    kami "Bonjour, mes petits perdants ! Félicitations : vous avez tous survécu à votre premier exercice de démocratie."
+    kami "Le monde, lui, est resté exactement comme hier. Ce qui est une manière très économique de faire de la politique, il faut le reconnaître."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Puisque vous avez conservé la distribution gratuite, j'ai fait partir quelques provisions supplémentaires sur Terre. Vous allez être très fiers de vous."
-    kami "Elen, je te conseille de prendre ton petit-déjeuner tôt. Pour une fois, je ne plaisante pas."
+    kami "Puisque la distribution gratuite est maintenue, j'ai envoyé quelques provisions supplémentaires sur Terre. Vous allez adorer la démonstration."
+    kami "Elen, mon trésor, un conseil : prends ton petit-déjeuner avant de découvrir les nouveautés. C'est pour ton bien."
     hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    think "Quand Kami prend soin de préciser qu'elle ne plaisante pas, c'est généralement qu'elle prépare quelque chose de particulièrement drôle pour elle."
-    "J'attrape ma tablette, passe ma veste et sors avant qu'elle décide de me réveiller une seconde fois."
-
+    think "Pourquoi j'ai l'impression qu'elle vient de prévenir une personne en particulier d'un désastre concernant le petit-déjeuner ?"
+    "J'enfile ma veste, vérifie une dernière fois que le dessin ne risque pas de glisser et prends ma tablette."
     jump _4_0_NAVIGATION_CAFETERIA
 
 label _4_0_NAVIGATION_CAFETERIA:
 
     $ current_scene_active = "_4_0_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
-
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
-    "En sortant, je croise Elias accroupi devant un casier ouvert. Un outil roule jusqu'à ma chaussure."
-    elias gene "Ah ! Merci. Je répare rien, hein. Je vérifie juste que... enfin, ça s'est ouvert tout seul."
-    noam sourire "Tu t'es fait attaquer par une boîte à outils ?"
-    elias inquiet "Moque-toi. Cette boîte, au moins, elle ne me demandera pas comment j'ai voté."
-    "Il récupère l'outil, referme brutalement le casier et file avant que je trouve quoi répondre."
-
+    "Dans le couloir, Elias est à genoux devant un casier entrouvert. Autour de lui, trois outils, une vis et quelque chose qui ressemble à un ressort forment un petit périmètre de catastrophe."
+    noam sourire "C'est toi, le bruit de tout à l'heure ?"
+    elias gene "Quel bruit ?"
+    noam neutre "Un bruit métallique. Un juron. Quelqu'un qui a brièvement perdu confiance en l'univers."
+    elias inquiet "Ah. Celui-là."
+    "Il essaie de repousser le ressort du bout du doigt. Le ressort roule jusqu'à ma chaussure."
+    noam sourire "Tu veux de l'aide ?"
+    elias reflechit "Non. Enfin... si tu peux ramasser ça, ce serait gentil. Mais ne touche pas à la porte."
+    noam surpris "Pourquoi ?"
+    elias gene "Parce qu'elle tient."
+    "Je regarde la porte. Elle semble parfaitement normale."
+    noam neutre "Et avant que tu t'en occupes ?"
+    elias inquiet "Elle tenait aussi, mais avec une petite résistance. Maintenant elle ferme toute seule."
+    "Elias pousse la porte du casier. Elle se ferme. Puis elle se rouvre immédiatement."
+    elias colere "C'EST PAS POSSIBLE !"
+    noam sourire "C'est impressionnant. Tu as réussi à inventer un casier qui refuse qu'on l'abandonne."
+    elias gene "Sur Terre, j'ai déjà réparé un distributeur entier, tu sais. Les gens étaient ravis."
+    noam neutre "Il distribuait quoi ?"
+    elias reflechit "Rien, justement. C'était son problème."
+    noam surpris "Et après ?"
+    elias gene "Après... des sachets. Mais tous à la fois. Enfin, pas longtemps."
+    "Il ramasse les derniers outils en évitant soigneusement mon regard."
+    elias inquiet "Tu ne raconteras pas ça, hein ? Il y en a déjà assez qui me regardent de travers depuis hier."
+    noam calme "Promis. Pour le distributeur, en tout cas."
+    elias sourire "Merci. Je crois."
+    "Nous avançons de quelques pas. Derrière nous, le casier claque enfin. Elias s'arrête, écoute, puis décide de ne surtout pas aller vérifier."
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
     $ current_scene_active = None
-
-    "J'arrive devant la cafétéria. Avant même d'ouvrir la porte, j'entends une voix familière."
+    "Devant la cafétéria, une voix familière couvre presque le bruit des plateaux."
     jump _4_0_CAFETERIA_ELEN
 
 label _4_0_CAFETERIA_ELEN:
 
     $ decouverte_cafeteria = True
-
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_193
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
-
-    "Elen semble mener un interrogatoire serré. Son suspect : un robot de service. Je connais déjà le perdant."
+    "Elen est penchée sur le comptoir. Goumi lui fait face avec la tranquillité d'une machine qui ignore jusqu'au concept de mauvaise humeur."
+    think "Je crois qu'elle a trouvé quelqu'un de plus têtu qu'elle. Ce qui est franchement ambitieux."
     jump _4_0_CAFETERIA_ECRANS
 
 label _4_0_CAFETERIA_ECRANS:
 
     scene cafeteria2 at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
-
     pause 0.8
-
-    "Elen frappe du plat de la main sur le comptoir. Goumi ne bronche pas. C'est probablement ce qui l'énerve le plus."
-
-    scene bg_cg022 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
+    scene bg_cg022 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg022")
+    elen colere "GOUMI ! Regarde-moi bien. Hier, tu avais de la cannelle."
+    goumi "Je ne possède pas de dispositif permettant de détourner le regard."
+    elen surpris "C'est PAS ce que je te demande !"
+    elias inquiet "Il reste du pain au moins ? Parce que j'aimerais éviter un petit-déjeuner composé uniquement d'eau chaude."
+    goumi "Les apports nutritionnels nécessaires sont maintenus. Provisions non essentielles réaffectées aux distributions terrestres."
+    elen colere "Non essentielles ?! Depuis quand la cannelle est devenue un objet de luxe ?!"
+    nyra reflechit "La liste des produits réaffectés est consultable ?"
+    goumi "Oui."
+    nyra neutre "Alors affiche-la."
+    goumi "Affichage indisponible sur le comptoir de préparation. Consultation possible sur la tablette commune."
+    nyra reflechit "D'accord. C'est déjà une réponse."
+    elen desaccord "Mais moi je veux une réponse qui se mange !"
+    noam sourire "Tu veux que je te trouve un panneau de réclamation ?"
+    elen colere "Ne commence pas, Noam. Tu ne peux pas comprendre."
+    noam neutre "J'ai déjà perdu une chaussette dans une machine. Je crois connaître la douleur."
+    elen desaccord "Je parle sérieusement !"
 
-    elen colere "GOUMI ! Hier, tu avais de la cannelle ! Hier ! Est-ce que quelqu'un a cambriolé le rayon des épices pendant la nuit ?!"
-    goumi "Demande refusée. Provisions non essentielles réaffectées aux distributions terrestres."
-    elen surpris "NON ESSENTIELLES ?! C'est de la cannelle, pas un lustre en or !"
-    elias inquiet "Euh... juste pour savoir, les repas normaux sont encore là ? Ou je dois apprendre à cuisiner les emballages ?"
-    goumi "Apports nutritionnels nécessaires maintenus. Repas standards disponibles."
-    elias reflechit "Ah. Bon. On survivra, alors. Dommage que la survie ait un goût de carton."
-    nyra reflechit "Un instant. Réaffectées à quelles distributions ? Et qu'est-ce qui a été retiré exactement ?"
-    goumi "Provisions non essentielles uniquement. Réapprovisionnement du Conclave prévu au jour 7."
-    elen colere "Mais c'est une punition ! J'ai voté pour le commerce, et c'est ma cannelle qu'on condamne !"
     play sound sfx_announce
     pause 0.5
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
-    kami "Ooooh, Elen ! Si tu savais comme tu es mignonne quand tu menaces un robot pour un pot de cannelle !"
-    kami "J'envoie les provisions superflues là où elles peuvent servir. Et avant que vous me demandiez : oui, les sacs sont déjà partis. Les habitants de la Terre passent avant mes douze petits pensionnaires."
+    kami "Ooooh, Elen ! Tu as réussi à organiser un sommet international sur une épice. Je suis émue."
+    kami "Les sacs sont déjà partis vers la Terre. Vous avez conservé les distributions gratuites ; j'ai décidé de les approvisionner davantage. C'est beau, la cohérence."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Rassurez-vous, personne ne mourra de faim à bord. Enfin, pas à cause de la cannelle. Vous aurez simplement un peu moins de choix jusqu'au prochain ravitaillement."
+    kami "Pas d'inquiétude. Vous mangerez tous à votre faim jusqu'au ravitaillement du jour 7. Simplement, vous aurez moins d'occasions de faire les difficiles."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "C'est ça, la solidarité ! Vous avez choisi de conserver le système, je vous montre à quel point votre choix est généreux. Tu devrais me remercier !"
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    kami "Et comme je sais à quel point vous adorez discuter de mes décisions, j'ai laissé les images de la distribution sur votre télévision. De rien !"
     hide screen kami_broadcast_ui
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
+    elen colere "JE NE SUIS PAS DIFFICILE !"
+    elias reflechit "Tu as quand même crié pendant trois minutes à cause de..."
+    elen colere "ELIAS."
+    elias inquiet "Oui. Rien."
+    "Elen emporte son plateau vide comme une personne qui vient de perdre un procès et quitte la cafétéria."
+    "À peine la porte refermée, quelqu'un déplace sa tasse pour l'empêcher de tomber du comptoir."
 
-    elen colere "MAIS MOI, J'AVAIS DIT OUI ! Et depuis quand les gens sur Terre ont besoin de MA cannelle pour survivre ?!"
-    elias neutre "Techniquement... c'est un produit alimentaire."
-    elen colere "ELIAS ! C'EST PAS LE MOMENT D'ÊTRE TECHNIQUE !"
-    elias inquiet "Désolé ! Je pensais que ça comptait comme un soutien..."
-    "Elen repose son plateau avec une dignité blessée, puis quitte la cafétéria en annonçant qu'elle n'a plus faim. Personne ne la croit vraiment."
     $ showGroup([
-        ("mara", "agace"),
-        ("julian", "decu"),
-        ("ryn", "colere"),
-        ("lysa", "determine"),
-        ("kael", "calme"),
-        ("iris", "desaccord"),
-        ("noam", "neutre"),
+        ("mara", "agace"), ("julian", "decu"), ("ryn", "colere"),
+        ("lysa", "determine"), ("kael", "calme"), ("iris", "desaccord"),
+        ("noam", "neutre")
     ])
-    mara taquin "Un pot de cannelle, et voilà notre premier mouvement révolutionnaire. J'espère qu'Elen a prévu un drapeau."
-    iris colere "Tu peux rire, mais elle vient de déplacer nos provisions sans consulter personne."
-    julian decu "On aurait pu lui enlever ce pouvoir hier."
-    ryn colere "Hier, on votait sur un texte qui supprimait aussi les rations. Tu as oublié ce détail ?"
-    julian colere "Non. Et je n'ai pas oublié que quelqu'un a décidé à notre place de ne rien tenter."
-    lysa blase "Incroyable. Il a réussi à accuser un bulletin de vote sans même le voir."
-    ryn colere "Arrête de tourner autour de moi et dis-le si t'as quelque chose à dire !"
-    julian neutre "Je n'ai prononcé aucun nom."
-    "Ryn repousse son plateau. Mara attrape aussitôt sa tasse pour la mettre à l'abri."
-    mara neutre "Vous voulez rejouer le dépouillement ? Parce qu'on avait déjà une excellente ambiance hier."
-    noam inquiet "Julian, laisse tomber. Tu ne sais même pas combien de personnes ont voté contre."
-    julian decu "C'est bien le problème."
-    kael reflechit "Vous pourriez vous battre après avoir vérifié les livraisons ? La télévision diffuse les distributions depuis une heure."
-    iris desaccord "Ça ne nous dira pas si Kami avait le droit de nous priver de nourriture."
-    kael calme "Non. Mais on saura au moins si quelqu'un l'a reçue."
-    "Ryn regarde l'écran. Julian fait semblant de ne pas voir que Ryn regarde."
+    mara taquin "Je donne dix minutes avant qu'elle revienne annoncer une grève de la faim."
+    iris colere "Tu rigoles, mais Kami a décidé toute seule de ce qu'on pouvait garder."
+    mara neutre "Je peux trouver ça inquiétant et trouver Elen ridicule. J'ai le droit aux deux."
+    "Lysa essaie de casser une tranche de pain. Elle n'y parvient pas et la repose comme si elle n'avait jamais eu l'intention de la manger."
+    kael reflechit "Le pain n'a pas survécu au voyage ?"
+    lysa blase "Si. C'est nous qui risquons de ne pas y survivre."
+    noam sourire "Tu sais quoi faire avec ça, toi ?"
+    lysa neutre "Oui."
+    iris surpris "Ah ?"
+    lysa blase "Quoi, ah ?"
+    iris taquin "Rien. C'est juste que tu as répondu sans nous dire qu'on était tous idiots. C'est nouveau."
+    lysa blase "Ne t'habitue pas."
+    kael calme "Non, mais sérieusement. On peut utiliser ce pain pour cuisiner ?"
+    lysa reflechit "Pour faire des miettolunes, oui. C'est presque fait pour."
+    noam surpris "Des quoi ?"
+    lysa neutre "Des miettolunes."
+    mara taquin "Il faut prononcer ça en regardant la lune, ou ça marche en plein jour ?"
+    lysa blase "Tu pourrais essayer de te taire, on verrait déjà si ça améliore le goût."
+    kael reflechit "Je n'ai jamais entendu ce nom. C'est une spécialité d'où ?"
+    lysa neutre "De chez moi. Enfin, de ma cuisine. Tu émiettes du pain un peu sec, tu ajoutes une pincée de sucre, juste assez d'eau chaude pour que ça tienne et tu fais dorer deux petites galettes. C'est tout."
+    kael surpris "C'est tout ? Pas de poudre levante ? Pas d'extrait aromatique ?"
+    lysa blase "Tu veux que je te donne aussi le numéro de série de la poêle ?"
+    kael calme "Non. Mais je serais curieux de goûter."
+    lysa surpris "Pourquoi ?"
+    kael sourire "Parce que tu en parles comme si c'était délicieux et que, pour l'instant, ça ressemble à du pain mouillé."
+    lysa blase "Évidemment que c'est délicieux. Enfin... c'est pas mauvais."
+    iris taquin "Attendez. Lysa fait des pâtisseries ?"
+    lysa colere "J'ai dit que je savais faire une galette. Détendez-vous."
+    noam sourire "Une galette que tu viens de défendre avec plus d'énergie que la moitié des décisions d'hier."
+    lysa blase "Encore un mot, et je t'apprends la recette avec ton plateau."
+    "Kael reprend un morceau de pain et l'examine avec le sérieux de quelqu'un qui vient de découvrir un nouveau matériau."
+    kael reflechit "Ça fonctionnerait avec une cuisson moins forte ?"
+    lysa neutre "Tu essaies déjà de l'améliorer, alors que tu n'y as jamais goûté."
+    kael calme "C'est une question."
+    lysa blase "Et ma réponse, c'est non."
+    "Iris a un sourire qu'elle prend à peine la peine de cacher."
+    julian decu "Amusant. On est en train de discuter d'un dessert, alors qu'on aurait pu retirer à Kami ce pouvoir hier."
+    "Le morceau de pain reste immobile dans les mains de Kael."
+    ryn colere "Hier, le texte supprimait aussi les rations. C'est pas un détail."
+    julian neutre "Je n'ai pas dit que c'en était un."
+    ryn colere "Mais tu le penses assez fort pour que tout le monde entende."
+    lysa blase "J'avais presque réussi à parler d'autre chose. C'était trop demander, visiblement."
+    julian decu "Je n'empêche personne de parler de ses gâteaux."
+    lysa colere "T'as vraiment décidé d'être pénible jusqu'au dernier repas ?"
+    julian neutre "On a le droit de parler de ce qu'on a perdu."
+    ryn colere "Et de ce qu'on aurait pu perdre en votant oui, non ?"
+    "Ryn repousse son plateau. Mara retire sa tasse du bord sans interrompre son geste."
+    mara agace "Vous voulez refaire toute la journée d'hier ici ? Dites-le, que je trouve un endroit où manger."
+    noam inquiet "On ne sait même pas qui a voté contre, Julian."
+    julian decu "Je sais. C'est bien ce qui m'agace."
+    kael reflechit "On pourrait au moins regarder la distribution. L'écran diffuse les images depuis tout à l'heure."
+    iris desaccord "Une caméra ne nous dira pas si Kami a pris la bonne décision."
+    kael calme "Non. Mais j'aimerais savoir où sont arrivées les provisions."
+    "Lysa repousse sa tranche de pain sans un mot. Kael la regarde encore une seconde, puis se tourne vers l'écran."
 
     $ j4_cafeteria_ryn_talked = False
     $ j4_cafeteria_julian_talked = False
@@ -200,31 +256,30 @@ label _4_0_CAFETERIA_ECRANS:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
-        ("mara", "triste"),
-        ("ryn", "colere"),
-        ("lysa", "triste"),
-        ("kael", "calme"),
-        ("iris", "hesitation"),
-        ("noam", "reflexion"),
+        ("mara", "triste"), ("ryn", "colere"), ("lysa", "triste"),
+        ("kael", "calme"), ("iris", "hesitation"), ("noam", "reflexion")
     ])
-
-    think "Je m'installe enfin. Lysa a les yeux sur le sachet oublié près de l'écran. Je me demande si elle a faim ou si elle prépare encore une question désagréable."
-    lysa blase "Alors, Noam ? Tu regrettes le résultat ou tu regrettes surtout de ne pas avoir gagné ?"
+    "Je récupère un morceau de pain. Il est moins dur que celui de Lysa, mais pas de beaucoup."
+    lysa neutre "T'as l'air épuisé."
+    noam neutre "Je n'ai même pas encore commencé à le mâcher."
+    lysa blase "Je parlais d'hier. Enfin, peu importe."
     menu:
-        "Dire que oui.":
-            noam triste "Un peu. J'aurais voulu qu'on arrive à faire quelque chose ensemble. Même si la version de Kami me terrifiait."
-            lysa neutre "Au moins, tu sais ce que tu regrettes. C'est déjà mieux que certains."
-        "Dire qu'il était trop risqué.":
-            noam inquiet "Quand j'ai lu « suppression des rations », j'ai pensé à ceux qui n'auraient aucun moyen de payer leur premier repas."
-            lysa reflechit "Oui. Et on ne peut pas traiter cette peur comme une preuve de lâcheté."
-        "Admettre que tu ne sais pas.":
-            noam neutre "Je ne sais même pas ce que j'espérais. Hier matin, j'étais sûr qu'on pourrait changer les choses. Aujourd'hui, j'ai l'impression qu'on ne pouvait que se tromper."
-            lysa blase "Bienvenue au club des gens qui ne savent plus si leur prudence est une victoire."
-    iris fatigue "Vous comptez faire le procès du petit-déjeuner jusqu'à ce soir ? Parce que mon pain refroidit. Enfin... il sèche. C'est pire."
-    mara taquin "Patience, Iris. À midi, on débattra du sel. Et à seize heures, on votera sur l'existence du dessert."
-    "J'essaie de manger. Elias propose de ramollir les barres dans de l'eau chaude. Iris lui demande s'il compte aussi les réparer avec un tournevis."
-    think "Elen a cessé de réclamer sa cannelle. C'est un changement plus étrange que l'annonce de Kami."
-
+        "Dire que le résultat te travaille.":
+            noam triste "J'arrête pas de me demander si on aurait pu trouver un meilleur texte."
+            lysa neutre "Peut-être. Mais ce n'est pas nous qui l'avons rédigé."
+        "Dire que le texte était trop risqué.":
+            noam inquiet "Supprimer les rations d'un seul coup... je pouvais pas faire comme si ça n'avait aucune importance."
+            lysa reflechit "Ça n'en avait pas aucune. Le reste non plus."
+        "Admettre que tu n'en sais rien.":
+            noam neutre "J'en sais rien. Je pensais être soulagé ce matin. C'est raté."
+            lysa blase "Au moins, ça nous fait un point commun."
+    iris fatigue "Vous avez prévu de manger ce pain avant le prochain ravitaillement ?"
+    noam sourire "J'essaie de déterminer par quel côté l'attaquer."
+    kael reflechit "Lysa, pour les miettolunes..."
+    lysa colere "NON."
+    kael calme "Je n'ai encore rien demandé."
+    lysa blase "Tu allais le faire."
+    "Cette fois, je commence à rire. Même Lysa détourne la tête pour cacher un sourire."
     jump _4_0_TEMPS_LIBRE_1
 
 label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
