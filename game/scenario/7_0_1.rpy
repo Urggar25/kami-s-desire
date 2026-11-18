@@ -1420,6 +1420,20 @@ label _7_0_1_TEMPS_LIBRE_1:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     noam sourire "Je crois que j'avais oublié à quel point ils pouvaient être insupportables quand ils ne sont pas terrifiés."
     think "Et pourtant, ça m'avait manqué."
+    $ showGroup([("kael", "reflechit", 0.32), ("noam", "neutre", 0.70)])
+    kael reflechit "Noam ? Lysa m'a dit que ta tablette avait reçu un message après la séance."
+    noam inquiet "« FIN DE SESSION IMPOSSIBLE — PARTICIPANTS REQUIS ». Il a disparu avant que je puisse le sauvegarder."
+    kael inquiet "Je n'ai pas retrouvé cette notification dans le journal local. Ça ne veut pas dire qu'elle n'a jamais existé."
+    if j601_fracture_trace_saved:
+        kael reflechit "Et pour le décalage de connexion que tu as conservé hier, je n'ai toujours pas trouvé d'origine certaine."
+        noam reflechit "Ça fait deux anomalies et pas une réponse."
+    else:
+        kael reflechit "Sans la trace de ta tablette d'hier, je n'ai pour l'instant aucun élément fiable auquel comparer ce message."
+        noam reflechit "Super. J'ai l'impression de collectionner les problèmes qui refusent de rester écrits."
+    kael calme "Continue de me signaler ce genre de choses. Mais ne conclus rien trop vite."
+    noam taquin "Rappelle-moi pourquoi j'ai demandé de l'aide à la personne la moins rassurante de cette station ?"
+    kael sourire "Parce que je ne te raconte pas d'histoires."
+    $ hideGroup()
     call START_FREE_TIME("_7_0_1_APRES_MIDI_TOMAS_CANON") from _call_START_FREE_TIME_7_0_1
 
 
