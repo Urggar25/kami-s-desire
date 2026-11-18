@@ -1,5 +1,5 @@
 # Jour 7 - Enquête sur le matériel disparu
-# Dix pistes sont disponibles, mais une partie n'en laissera examiner que cinq.
+# Deux découvertes structurantes garanties ; trois pistes complémentaires choisies par le joueur.
 
 default j701_investigation_found = []
 default j701_investigation_turn = 0
@@ -188,14 +188,14 @@ screen j701_investigation_intro():
             outlines [(5, "#07111F", 0, 0), (9, "#FF3355", 0, 0)]
             xalign 0.5
 
-        text "5 TOURS  /  10 PISTES  /  UNE SEULE NUIT":
+        text "2 PREUVES DE BASE  /  3 PISTES AU CHOIX  /  UNE NUIT":
             font "fonts/Rajdhani-SemiBold.ttf"
             size 31
             color "#8EEAFF"
             kerning 3
             xalign 0.5
 
-    text "Choisis où consacrer ton temps. Les pistes abandonnées seront perdues.":
+    text "Le vol est établi. Choisis maintenant quelles pistes approfondir.":
         font "fonts/Barlow-Light.ttf"
         size 25
         color "#D7E8F4"
@@ -517,7 +517,18 @@ label j701_investigation:
     play sound "audio/sfx_minigame_start.mp3"
     call screen j701_investigation_intro
     play music "audio/music/bgm_world_decline.mp3" fadein 1.0
-
+    "Elias veut courir dans toutes les salles. Nyra refuse qu'on éparpille les recherches avant d'avoir vérifié ce qui manque réellement."
+    nyra neutre "On commence par les emplacements vides et l'atelier. Ensuite, chacun pourra poursuivre la piste qui lui paraît la plus inquiétante."
+    elias inquiet "Mes batteries ont disparu ! Toutes les pistes sont inquiétantes !"
+    nyra neutre "C'est précisément pour ça qu'il faut commencer quelque part."
+    call j701_clue_counterweight from _call_j701_core_counterweight
+    $ j701_investigation_collect("counterweight")
+    call screen j701_investigation_evidence("counterweight")
+    call j701_clue_negative_blueprint from _call_j701_core_blueprint
+    $ j701_investigation_collect("negative_blueprint")
+    call screen j701_investigation_evidence("negative_blueprint")
+    "À présent, nous savons que le matériel a été volé avec méthode et qu'une partie a déjà été assemblée. Reste à comprendre qui a préparé ce coup, et dans quel but."
+    noam reflechit "On ne pourra pas tout vérifier cette nuit. Il faut choisir ce qu'on cherche."
     while len(j701_investigation_found) < J701_INVESTIGATION_MAX_TURNS:
         $ _j701_selected_room = renpy.call_screen("j701_investigation_locations")
         $ j701_investigation_prepare_room(_j701_selected_room)
@@ -530,7 +541,7 @@ label j701_investigation:
 
     scene black with fade
     "Quand je relève enfin la tête, les lumières du couloir ont basculé en mode nocturne."
-    think "Cinq pistes. Et cinq autres que je n'aurai pas le temps de suivre."
+    think "Deux certitudes et trois pistes que nous avons choisi d'approfondir. Le reste attendra, si le reste nous attend."
     call screen j701_investigation_dossier
     jump j701_investigation_debrief
 
@@ -796,14 +807,14 @@ label j701_investigation_debrief:
     ])
 
     elias colere "Alors ? On a un nom ?"
-    noam fatigue "On a cinq morceaux. Pas une histoire complète."
-
-    if "counterweight" in j701_investigation_found:
-        lysa reflexion "Les contrepoids prouvent que ce vol était préparé avant cette nuit. Mais pas par qui."
-    elif "negative_blueprint" in j701_investigation_found:
-        lysa reflexion "On sait qu'un adaptateur a été fabriqué. On ignore toujours à quoi il sert et qui l'a emporté."
-    else:
-        lysa reflexion "Chaque piste ouvre deux explications nouvelles. On ne réduit pas la liste, on l'agrandit."
+    noam fatigue "On a établi que les batteries ont été remplacées par des contrepoids, et qu'un adaptateur a été fabriqué à l'atelier."
+    elias colere "Donc CE N'ÉTAIT PAS UN SIMPLE RANGEMENT RATÉ !"
+    mara neutre "Non. Et celui qui a fait ça connaissait très bien la station."
+    lysa reflexion "Ce qui est moins rassurant que de chercher un idiot ayant mal étiqueté une caisse."
+    elias fatigue "Je vais finir par regretter les erreurs d'étiquettes."
+    if "elias_testimony" in j701_investigation_found:
+        noam reflechit "Elias a vu les pièces à leur place à 23 h 47. Le matériel a été retiré après son passage."
+        elias colere "MERCI ! Une phrase qui ne commence pas par « et si Elias avait renversé quelque chose » !"
 
     if "maintenance_log" in j701_investigation_found:
         julian inquiet "Donc la maintenance s'ouvre à 2 h 34, sans nom, et personne ne trouve ça terrifiant ?"
@@ -812,7 +823,14 @@ label j701_investigation_debrief:
     if "kael_database" in j701_investigation_found:
         iris reflexion "Et Kael qui fouille les caméras en douce, on en parle ?"
         kael mefiant "J'ai tenté l'accès que j'ai moi-même proposé devant vous. Si je voulais le cacher, je n'aurais pas laissé l'historique."
-        noam reflechit "C'est suspect. Ce n'est pas une preuve de vol."
+        iris colere "Tu n'as pas répondu à la question ! Pourquoi ton ancien identifiant fonctionne encore ici ?"
+        kael colere "Il est reconnu. Pas accepté. Tu veux que je te montre les six refus ?"
+        mara mefiant "Moi, je veux surtout savoir pourquoi Noam a dû te surprendre pour qu'on l'apprenne."
+        noam reflechit "C'est une raison de te poser des questions. Pas une preuve que tu as pris les batteries."
+        kael mefiant "Alors posons les questions. Mais arrêtons de jouer au procès avec des bouts de code."
+    elif "blank_receipt" in j701_investigation_found:
+        noam doute "Le reçu autorise le retrait à une identité que le terminal ne sait pas afficher."
+        nyra reflechit "Ce n'est pas un nom. Personne ne doit inventer un suspect à partir d'un carré blanc."
 
     if "brown_hair" in j701_investigation_found:
         mara reflexion "Le cheveu brun a été coupé. Il désigne trop de monde et ne place personne dans la salle."
@@ -823,17 +841,28 @@ label j701_investigation_debrief:
         iris reflexion "Justement. C'est une fausse piste parfaite. Trop personnelle pour être ignorée, trop commune pour prouver quoi que ce soit."
 
     if "blank_receipt" in j701_investigation_found or "impossible_echo" in j701_investigation_found:
-        kael reflechit "Les systèmes ont accepté des données impossibles. Quelqu'un sait leur faire prendre une copie pour un original."
-
-    elias inquiet "Donc quelqu'un prend mon matériel, falsifie les systèmes, se balade la nuit... et on va juste dormir ?"
+        kael reflechit "Les systèmes ont accepté des données impossibles. Quelqu'un a réussi à leur faire prendre une copie pour un original."
+        elen inquiet "Comme Kami hier ?"
+        kael inquiet "Peut-être. Mais une ressemblance n'est pas une explication."
+    if "vertical_tracks" in j701_investigation_found:
+        iris inquiet "Et quelqu'un a fait grimper une cargaison le long d'une porte. Ce n'est vraiment plus un simple vol."
+        mara taquin "J'ignorais que les batteries avaient autant d'ambition."
+        iris colere "MARA !"
+        mara neutre "Je sais. C'est grave."
+    elias inquiet "Donc quelqu'un prend mon matériel, fabrique un truc inconnu et le cache dans la station... et on va juste dormir ?"
     mara fatigue "On va surtout éviter de désigner un coupable au hasard parce qu'on est crevés."
-    kael reflechit "On verrouille ce qui reste. Demain, on reprend avec les journaux d'accès complets."
-    lysa inquiet "À condition que Kami ne revienne pas avant."
-
-    "Le nom de Kami suffit à éteindre les dernières protestations."
-    "Personne n'est convaincu. Personne n'est accusé. Un à un, nous finissons pourtant par quitter la table."
-    think "On a trouvé des indices. Pas le coupable."
-    think "Et quelque part dans le Conclave, le matériel sert peut-être déjà à quelque chose."
+    if "kael_database" in j701_investigation_found:
+        kael reflechit "Je mettrai à disposition les relevés de mes tentatives d'accès. Vous pourrez vérifier par vous-mêmes."
+        lysa mefiant "Voilà déjà une bonne idée. La confiance, ça se vérifie aussi."
+    else:
+        kael reflechit "On verrouille ce qui reste. Demain, on reprend avec les journaux d'accès complets."
+    elen inquiet "Et si la personne a seulement pris le matériel pour réparer quelque chose ?"
+    elias colere "ALORS POURQUOI ELLE A TOUT CACHÉ ?!"
+    "Personne n'a de réponse. Elen repose sur la table la grue de papier abîmée, si nous l'avons retrouvée."
+    lysa inquiet "Et si Kami revient demain, est-ce qu'elle nous aidera à chercher... ou est-ce qu'on devra lui cacher cette histoire ?"
+    "Le nom de Kami suffit à éteindre les protestations."
+    think "La seule chose que nous partageons vraiment, c'est l'impression que la station nous regarde sans vouloir nous répondre."
+    "Nous quittons la table sans avoir décidé à qui faire confiance."
 
     $ hideGroup()
     stop music fadeout 1.0
