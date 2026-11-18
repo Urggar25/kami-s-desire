@@ -807,6 +807,8 @@ label j701_investigation_debrief:
         ("kael", "reflechit", 0.59),
         ("elias", "colere", 0.76),
         ("mara", "doute", 0.91),
+        ("elen", "inquiet"),
+        ("nyra", "reflechit"),
     ])
 
     elias colere "Alors ? On a un nom ?"
