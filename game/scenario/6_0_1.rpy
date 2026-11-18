@@ -465,7 +465,7 @@ label _6_0_1_SIGNAL_INSTABLE:
         kael inquiet "On va éviter de nouvelles manipulations. Personne ne doit valider un texte qu'il ne peut pas lire."
     elen inquiet "C'est terminé ? Dites-moi que c'est terminé..."
     mara neutre "On n'a même pas encore commencé à voter, Elen."
-    elen fatigue "C'est bien ça qui m'inquiète."
+    elen inquiet "C'est bien ça qui m'inquiète."
     ryn colere "Et on est censés mettre nos bulletins dans ÇA ?! Autant tirer au sort !"
     nyra reflechit "On ne vote pas avant de savoir si le scrutin peut être enregistré correctement. C'est le minimum."
     ryn colere "Je voulais voter pour. Mais là ? Elle pourrait nous faire approuver une exécution collective à la place !"
@@ -685,11 +685,11 @@ label _6_0_1_VOTE:
         think "Deux décisions m'effrayaient. Je n'ai pas su choisir laquelle j'étais prêt à assumer."
         think "Je sais qu'il y a des gens qui appelleraient ça de la prudence. D'autres, de la lâcheté."
     $ hideGroup()
-    call j601_sael_vote_animation from _call_j601_sael_vote_animation
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.0
-    think "L'animation de Sael disparaît. Elle rappelle ce qu'elle a annoncé, pas ce que l'urne a révélé."
-    think "Ryn n'a pas détourné les yeux une seule fois."
+    "Au bout de la table, Sael fixe les résultats. Je ne peux rien lire sur son visage."
+    "Ryn, lui, n'a pas détourné les yeux une seule fois."
+    think "Le vote est secret. Cela n'empêche personne d'imaginer le bulletin de son voisin."
     think "Je voudrais lui dire quelque chose. Pour une fois, je n'ai aucune phrase qui me paraît utile."
 
     show screen kami_broadcast_ui
