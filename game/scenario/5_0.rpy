@@ -19,6 +19,8 @@ default j50_wire_lives = 3
 default j50_wire_failed = False
 default j50_wire_completed = False
 default j50_wire_failure_has_consequences = False
+default j50_kael_alert_sent = False
+default j50_observation_circuit_status = "inconnu"
 default j50_wire_feedback = "Sélectionne un câble à gauche."
 
 init python:
@@ -373,15 +375,17 @@ label _5_0_REVEIL_CHAMBRE:
     $ j45_vote_codex_active = True
     $ unlock_dossier_chapter(2)
     $ cafeteria_food_level = "medium"
+    $ j50_kael_alert_sent = False
+    $ j50_observation_circuit_status = "inconnu"
 
     $ blink()
     think "Huit heures. J'ai pourtant l'impression d'avoir passé la nuit entière à fixer le plafond."
-    think "Sael a dit non avant même qu'on vote. Et Ryn a réagi comme si elle avait personnellement appuyé sur la gâchette de chaque sanction."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    think "J'aimerais parler à Sael. Pas pour lui extorquer un oui."
-    think "Hier, tout le monde voulait obtenir une réponse. Personne n'a vraiment pris le temps d'écouter sa question."
-    think "Et Julian... Lui qui se précipitait d'habitude devant la moindre caméra a disparu des discussions."
+    "Ma tablette vibre. Pas un message : un rappel pour le vote de demain. J'avais presque réussi à oublier qu'on avait encore un scrutin à perdre."
+    think "Sael a déjà annoncé son non. Hier soir, j'ai vu Mara entrer dans sa chambre, sans entendre ce qu'elles se sont dit."
+    think "Et Julian... lui qui se jetterait devant une caméra pour annoncer qu'il a retrouvé une chaussette n'a pas reparu."
     think "Je ne sais pas ce qui m'inquiète le plus : qu'il prépare un discours ou qu'il n'en prépare plus."
+    "Je repose la tablette. Aujourd'hui, je vais commencer par quelqu'un qui n'a pas besoin de public."
 
     play sound sfx_announce
     pause 0.5
@@ -460,21 +464,28 @@ label _5_0_CHERCHE_SAEL:
     noam inquiet "Mais quand Ryn parle des corps à la frontière... je crois qu'il ne sait plus comment demander de l'aide sans s'énerver."
     sael determine "Je l'ai compris, Noam. Je n'ai pas besoin qu'on m'explique ce qu'est un mort."
     sael triste "Chez nous aussi, il y en a eu. Pas seulement parmi les hommes qui venaient nous attaquer."
-    noam inquiet "Les groupes armés ? Ceux dont tu nous as parlé hier ?"
-    sael triste "Ils venaient pour les récoltes, les outils, parfois juste pour montrer qu'ils pouvaient venir."
-    sael triste "À force, on n'avait plus peur de perdre nos affaires. On se demandait qui serait le prochain à ne pas revenir."
-    sael neutre "Depuis la fermeture, on peut retourner dans les champs sans guetter chaque bruit de moteur."
-    sael triste "Je sais ce que Kami fait aux frontières. Je sais que des familles sont séparées."
-    sael mefiant "Mais la dernière fois qu'on nous a promis des passages sûrs, ce sont d'autres hommes qui sont arrivés chez nous."
+    "Elle se penche pour ramasser un petit outil tombé près du matelas. Sa main reste un instant refermée dessus."
+    noam inquiet "C'est un objet de ton village ?"
+    sael mefiant "Tu es venu pour inspecter mes affaires ou pour parler ?"
+    noam gene "Pour parler. Désolé."
+    sael neutre "Il servait à réparer les clôtures. On les réparait sans arrêt, avant."
+    noam inquiet "À cause des groupes armés ?"
+    sael triste "Ils entraient par les champs. Les premières fois, on cherchait surtout à récupérer les outils volés."
+    sael triste "Après, on cherchait ceux qui n'étaient pas rentrés."
+    "Elle pose l'outil sur la table, loin de moi."
+    sael neutre "Depuis la fermeture, les enfants peuvent retourner dehors sans qu'on les surveille à chaque instant."
+    noam reflechit "Et ceux qui ont de la famille derrière la frontière ?"
+    sael mefiant "Je sais. Je les ai entendus, hier. Je ne suis pas sourde parce que je ne suis pas d'accord."
     noam reflechit "À Harmonie, on parle surtout des familles séparées. Je n'avais pas imaginé ce que l'ouverture pouvait signifier pour toi."
     $ unlock_dossier_arg("p2_familles")
     sael mefiant "Et tu voudrais que je mette mon village en danger pour réparer ce que ces familles subissent ?"
-    noam inquiet "Non ! Je ne te demande pas de choisir entre deux groupes de victimes."
-    noam inquiet "Justement... je n'ai pas de solution qui protège tout le monde."
-    sael reflechit "Ryn non plus n'en a pas. Pourtant, il me parlait comme si j'avais personnellement signé chaque sanction."
-    sael triste "Je ne lui demande pas d'oublier ses morts. J'aimerais simplement qu'il ne m'oblige pas à oublier les miens."
-    noam calme "Il se sent abandonné. Ça n'excuse pas la façon dont il t'a parlé."
-    noam calme "Et tu n'avais aucune raison de lui confier tout ça devant les autres."
+    noam inquiet "Non ! Je voulais juste comprendre ce que le texte te demandait de risquer."
+    sael reflechit "Alors arrête d'essayer de me trouver une réponse avant que j'aie fini de parler."
+    "Je referme la bouche. Pour une fois, c'est peut-être la contribution la plus utile que je puisse apporter."
+    sael triste "Ryn n'a pas inventé ses morts. Moi non plus."
+    noam neutre "Tu pourrais lui dire ça."
+    sael mefiant "Quand il me laissera placer trois mots sans me traiter de lâche, peut-être."
+    noam gene "Oui. Ce serait un début."
     sael neutre "Je lui reparlerai quand il sera capable de m'écouter."
     sael determine "Mais le scrutin, lui, n'attendra pas notre réconciliation."
     noam inquiet "Et si on trouvait une surveillance qui empêche les groupes armés de revenir ?"
@@ -502,8 +513,8 @@ label _5_0_CHERCHE_SAEL:
     scene bg_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
     think "Sael votera non. Je le savais avant de frapper."
-    think "Mais maintenant je sais au moins pourquoi elle accepte d'être détestée pour ce choix."
-    think "Mara hésite peut-être moins que je l'imaginais. Ça ne fait pas d'elle une alliée automatique de Sael."
+    "J'ai encore en tête le petit outil qu'elle a posé hors de ma portée. Je ne lui ai pas demandé à qui il appartenait."
+    think "Mara est venue hier. Sael dit qu'elle aussi a des réserves. Il faudra que je lui parle, sans inventer leur vote à leur place."
     think "Une chose est sûre : je n'ai toujours pas envie de me transformer en Julian."
 
     $ j2_vote_codex_unlocked = True
@@ -670,6 +681,7 @@ label _5_0_0_JULIAN:
             $ j50_julian_fissure += 1
             noam neutre "Et Tomas ? Tu pourrais lui présenter des excuses. Pas devant les caméras, pour une fois."
             julian decu "Oui... Je sais. Mais je préférerais ne pas faire ça devant tout le monde."
+            julian hesitation "Je sais ce que je dois lui dire. C'est le moment de le dire qui me manque."
         "Lui dire qu'il se complique la vie.":
             $ j50_julian_fissure -= 1
             noam sourire "Tu travailles incroyablement dur pour un type qui prétend que tout lui vient naturellement."
@@ -800,75 +812,126 @@ label _5_0_1_OBSERVATION_ARRIVEE:
         "Kamyz bonus obtenus : [j50_kamyz_bonus]"
 
     if j50_wire_completed:
-        elias rire "OUI ! ÇA MARCHE ! Noam, t'as réussi ! Le secours est revenu !"
-        "Les voyants virent au vert. Une notification confirme que la maintenance a reçu notre demande d'ouverture."
-        noam sourire "Super ! Alors on sort ?!"
-        elias inquiet "Pas encore ! Le verrouillage doit être levé de l'extérieur. Mais la ventilation est stable et notre signal est passé !"
-    elif j50_wire_success >= 5:
-        elias inquiet "C'est pas parfait, mais on a récupéré une partie du secours ! La ventilation tient !"
-        elias inquiet "La porte, en revanche... elle s'en fiche complètement."
-        "Elias profite du peu de batterie restant pour envoyer une alerte manuelle."
-        noam inquiet "Donc on attend ? Ici ? Avec l'odeur de grille-pain brûlé ?"
-        elias reflechit "Ouais. Mais notre signal est parti. Ça devrait suffire à les faire venir."
+        $ j50_observation_circuit_status = "secours_partiel"
+        elias rire "OUI ! ÇA MARCHE ! Tu vois ? Je te l'avais dit !"
+        "Les voyants passent au vert. Un message apparaît : « ALIMENTATION SECONDAIRE RÉTABLIE — ACCÈS TOUJOURS VERROUILLÉ »."
+        noam surpris "Ça marche ? Elias, la porte n'a pas bougé !"
+        elias sourire "Parce qu'il reste une étape ! Si je relance le contrôle local, on pourra l'ouvrir sans déranger personne."
+        "Je soulève ma tablette."
+        noam inquiet "Ou alors on écrit à Kael. Il est ingénieur, lui."
+        elias inquiet "Non ! Attends, s'il te plaît ! Je sais d'où vient la panne, je peux la réparer."
+        noam reflechit "Et si tu te trompes ?"
+        elias gene "Alors... là, tu pourras lui écrire. Mais laisse-moi juste essayer."
+        "Il a les mains qui tremblent encore. Pourtant, il a déjà retiré le panneau de protection."
+        noam neutre "D'accord. Je garde la tablette allumée."
+        elias sourire "Marché conclu ! Et si ça marche, tu racontes à Kael que j'ai tout réparé."
+        noam sourire "Je lui raconterai surtout que tu m'as interdit de l'appeler."
+        elias gene "Pas interdit ! Conseillé avec beaucoup de conviction !"
+        call show_custom_title("Un long moment plus tard") from _call_show_custom_title_j50_wait
+        scene bg_observation at adaptive_fullscreen with dissolve
+        "La lumière de la console s'est éteinte deux fois. Elias a changé de tournevis, de position, puis de théorie."
+        "La porte, elle, n'a pas changé d'avis."
+        noam neutre "Ça fait combien de temps que tu dis « encore une minute » ?"
+        elias fatigue "Ça dépend. On compte les minutes où je réfléchis ?"
+        noam neutre "Celles où tu parles aussi."
+        elias gene "Alors beaucoup trop."
+        "Il tente une dernière fois de relancer le boîtier. Un voyant clignote, puis s'éteint."
+        elias fatigue "Bon."
+        noam inquiet "Bon... ?"
+        elias fatigue "Tu peux écrire à Kael."
+        noam surpris "Pardon ? J'ai mal entendu ?"
+        elias gene "Je t'autorise officiellement à demander de l'aide. Avec toute la dignité qui me reste."
+        noam sourire "Tu veux que je note ça dans le procès-verbal ?"
+        elias inquiet "Non ! Et ne lui dis pas que j'ai attendu aussi longtemps... Enfin, si. Il faut lui expliquer ce qui s'est passé."
+        elias fatigue "Je croyais vraiment pouvoir nous sortir de là."
+        noam calme "Tu as empêché le boîtier de lâcher complètement. Mais on a besoin d'un coup de main."
+        call _5_0_MESSAGE_KAEL from _call_j50_message_kael_success
     else:
-        elias panique "Merde ! Plus de batterie ! Le boîtier est mort !"
-        "Elias isole les circuits encore accessibles et me fait reculer."
-        "Le souffle de la ventilation principale continue. La porte, elle, ne donne aucun signe de vie."
-        noam peur "On peut appeler quelqu'un ?! Un humain ? Un robot ? N'importe quoi ?!"
-        elias inquiet "Je vais tenter le communicateur d'urgence. S'il dépend du même circuit... eh bien, je n'ai pas encore de plan B."
-        "Elias appelle une fois. Deux fois. À la troisième, un bip de confirmation répond enfin."
-        think "Un seul bip. Ça vient de devenir mon bruit préféré."
-        elias fatigue "L'appel est parti... Je crois."
-        elias fatigue "Désolé. J'ai réussi à mettre une salle entière en panne avec un café."
+        $ j50_observation_circuit_status = "panne_totale"
+        elias panique "Merde ! Le boîtier est mort ! Même le voyant de secours ne répond plus !"
+        "La ventilation principale continue de fonctionner, mais la porte reste bloquée."
+        noam inquiet "On arrête. Je vais écrire à Kael."
+        elias inquiet "Attends, je peux encore tester le..."
+        "Il s'arrête devant les connecteurs noircis."
+        elias fatigue "Non. Tu as raison. Si je touche encore à ça, je risque d'empirer les choses."
+        noam neutre "Et pour une fois, je préférerais qu'on soit deux à reconnaître une mauvaise idée."
+        elias gene "J'en ai déjà eu une très bonne avec le café, ça suffit."
+        call _5_0_MESSAGE_KAEL from _call_j50_message_kael_failure
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
-    "Nous nous installons loin de la console. L'odeur de café a disparu, remplacée par celle de composants grillés."
-    think "Je ne savais pas qu'un café pouvait sentir aussi cher."
-    noam inquiet "Dis... tu crois que la réparation va coûter combien ?"
-    elias fatigue "Je préfère ne pas le savoir. Kael va me rappeler cette histoire jusqu'à la fin de nos jours."
-    elias gene "Et je ne pourrai même pas lui donner tort."
-    noam sourire "Je peux toujours dire que c'est moi qui t'ai bousculé."
-    elias inquiet "Surtout pas ! C'est moi qui l'ai renversée !"
-    elias reflechit "Et s'il ne sait pas comment la panne a commencé, il risque de réparer le mauvais circuit. On ne va pas empirer ça pour sauver ma fierté."
-    "Nous attendons. Toutes les trente secondes, Elias jette un regard au voyant."
-    think "J'aimerais qu'il arrête. Chaque fois qu'il vérifie, je me demande ce qu'il vient de remarquer."
-    elias neutre "Bon... tant qu'on est coincés ici, je peux te poser une question ?"
-    elias neutre "Tu as parlé à Sael, finalement ?"
-    noam reflechit "Oui. Elle m'a raconté un peu plus ce qui s'était passé dans son village."
-    noam triste "Elle votera contre demain. Et je n'ai pas envie de la traiter comme une ennemie pour ça."
-    elias triste "Ah..."
-    elias reflechit "Je m'y attendais. J'aurais juste aimé qu'on trouve une solution qui ne mette personne en danger."
-    noam inquiet "Le texte dit seulement qu'on ouvre. Il ne dit pas comment empêcher des groupes armés de traverser."
-    noam inquiet "Et si on vote non, les familles resteront séparées. Ça ne ressemble pas à un choix."
-    elias reflechit "C'est fou. Même après avoir lu tout ce qu'on peut, on finit toujours par devoir choisir entre deux dégâts."
-    elias gene "Je sais pas encore ce que je vais voter."
-    noam neutre "Moi non plus. Et notre situation actuelle ne m'inspire pas beaucoup de solutions politiques."
-    elias sourire "Je propose un premier amendement : interdire les cafés à moins de deux mètres d'une console."
-
-    call show_custom_title("Un peu plus tard") from _call_show_custom_title
-    scene bg_observation at adaptive_fullscreen with dissolve
-    if j50_wire_completed:
-        "L'alarme s'interrompt d'un coup. La maintenance a réussi à déverrouiller la porte à distance."
-        "Sur la console, les écrans restent noirs."
-        elias sourire "OUI ! Ils ont ouvert !"
-        elias sourire "Je n'ai jamais été aussi heureux de voir une porte fonctionner normalement."
-    else:
-        "Après plusieurs appels, la maintenance répond enfin. Le verrou est levé depuis le couloir."
-        "Une voix nous ordonne de nous éloigner de la console et de ne plus rien toucher."
-        think "Sur ce dernier point, je suis entièrement d'accord."
-        elias fatigue "Ils vont changer le contrôleur entier..."
-        elias gene "Je vais peut-être finir par prendre mon café en dehors du Conclave."
+    "Nous nous éloignons du panneau. Les voyants ont cessé de clignoter ; ça ne rend pas le silence plus rassurant."
+    noam inquiet "Dis, Elias... tu n'as pas peur que Kael te passe un savon ?"
+    elias fatigue "Si. Énormément. Je l'entends déjà me dire de ne jamais boire au-dessus d'un circuit."
+    noam sourire "Je peux prétendre que je t'ai bousculé."
+    elias inquiet "Surtout pas !"
+    noam surpris "Oh. C'était une plaisanterie."
+    elias gene "Ah. Oui. Désolé."
+    elias neutre "Mais même pour rire, ne fais pas ça. Si Kael croit que la panne a commencé autrement, il pourrait chercher au mauvais endroit."
+    "Il frotte machinalement une petite tache de café sur sa manche. Elle ne part pas."
+    elias fatigue "J'aime bien réparer les choses. Quand j'y arrive, je peux au moins me dire que j'ai servi à quelque chose."
+    noam inquiet "Tu viens de t'enfermer dans une pièce en voulant réparer quelque chose."
+    elias sourire "Voilà. C'est pour ça que je préfère généralement les objets aux gens."
+    "Je ris. Il essaie de faire pareil, sans vraiment y parvenir."
+    elias neutre "Je sais que tout le monde me prend pour le type qui renverse son verre. Parfois, je me demande s'ils me laisseraient toucher à une console s'ils n'avaient pas besoin de moi."
+    noam neutre "Tu as vu le défaut et tu as essayé de l'isoler. Moi, je n'aurais même pas su par où commencer."
+    elias gene "Tu dis ça pour me remonter le moral ?"
+    noam sourire "Oui. Mais c'est vrai aussi."
+    "Elias baisse les yeux. Puis il tend son gobelet vide vers la poubelle, le regarde une seconde, et le pose très loin de la console."
+    elias reflechit "Tu as parlé à Sael, finalement ?"
+    noam inquiet "Oui. Elle ne changera pas d'avis."
+    elias triste "Je m'en doutais. C'est compliqué de lui demander de prendre un risque depuis une salle où il suffit d'un café pour qu'on panique."
+    noam reflexion "Tu te moques de nous ou de la station ?"
+    elias sourire "Je sais pas. Un peu des deux."
     play sound "audio/sfx_door.mp3"
-    "La porte s'ouvre. Je sors presque trop vite. Elias, lui, s'arrête devant la console une dernière fois."
-    elias inquiet "Je vais prévenir Kael tout de suite. S'il voit le contrôleur sans savoir ce qui l'a endommagé, il va croire à une panne plus grave."
-    noam sourire "Très bien. Et la prochaine fois... essaie de boire loin des circuits électriques."
-    elias rire "Promis !"
-    elias gene "...Je vais au moins changer de table."
-    think "J'étais venu chercher des réponses sur la Terre. J'ai surtout appris qu'une tasse de café pouvait mettre une salle entière hors service."
-    think "Les relevés sont coupés. Et je ne sais pas encore si cette panne s'arrête vraiment à une console."
+    "Un bruit de métal résonne derrière la porte. Puis deux coups brefs."
+    kael "Elias ? Noam ? Éloignez-vous du panneau !"
+    elias sourire "KAEL ! On est là !"
+    nyra "On le sait. Votre message mentionnait précisément la salle d'observation."
+    "Un autre cliquetis. Le verrou résiste, puis cède enfin."
+    scene bg_observation at adaptive_fullscreen with dissolve
+    $ showGroup([("kael", "calme", 0.23), ("nyra", "reflechit", 0.48), ("elias", "gene", 0.74), ("noam", "reflexion", 0.91)])
+    kael reflechit "Personne ne touche plus à rien. J'ai isolé le contrôleur depuis le couloir, Nyra a coupé l'autorisation de verrouillage."
+    nyra reflechit "La sécurité pensait protéger la salle. C'était une décision parfaitement logique, fondée sur une information complètement fausse."
+    noam sourire "C'est rassurant de savoir que même une porte peut se tromper avec autant d'assurance."
+    kael inquiet "Vous n'êtes pas blessés ? Vous avez respiré de la fumée ?"
+    elias gene "Non. La ventilation a tenu. Enfin... à ce que j'ai vu."
+    nyra reflechit "Et pourquoi le signal d'alerte automatique ne nous est-il pas parvenu ?"
+    if j50_wire_completed:
+        kael reflechit "Le secours était rétabli, mais la liaison de contrôle est restée isolée. J'ai dû contourner le verrou depuis l'extérieur."
+        nyra neutre "Nous aurions pu être ici plus tôt."
+        elias fatigue "Oui. J'ai voulu finir sans déranger Kael. C'était idiot."
+        kael neutre "Idiot, non. Dangereux de garder l'information pour toi, oui."
+    else:
+        kael reflechit "Le contrôleur a perdu son alimentation. Heureusement, le message de Noam est passé par la tablette."
+        elias fatigue "J'ai cru que je pouvais encore raccorder un fil. Noam m'a arrêté."
+        nyra raison "Pour une fois, la décision la plus utile n'était pas de réparer, mais d'arrêter."
+    noam inquiet "Vous pourrez remettre les relevés en marche ?"
+    kael reflechit "La console locale, oui. Mais le verrou d'accès et les relevés ne répondent pas au même circuit. Je veux comprendre pourquoi l'un a entraîné l'autre."
+    nyra reflechit "Je vais consigner l'incident. Ne touchez pas aux données de la salle avant qu'on ait identifié ce qui a été interrompu."
+    elias inquiet "Vous pensez que le café a touché autre chose ?"
+    kael reflechit "Je ne vais pas inventer une panne plus grande pour te faire peur. Je vais vérifier."
+    "Nyra sort la première. Kael reste un instant devant le panneau, puis se retourne vers Elias."
+    kael neutre "La prochaine fois, tu m'appelles avant de démonter la moitié de la station."
+    elias sourire "Promis !"
+    elias gene "Je vais peut-être commencer par changer de tasse."
+    kael neutre "Commence par changer de table."
+    think "Je suis entré ici pour chercher des informations sur la Terre. J'en repars avec une question beaucoup plus proche : pourquoi une simple panne a-t-elle suffi à nous couper du reste du Conclave ?"
 
     jump _5_0_FIN_JOURNEE
+
+
+label _5_0_MESSAGE_KAEL:
+    $ j50_kael_alert_sent = True
+    "J'ouvre la messagerie de ma tablette. Même derrière une porte verrouillée, le réseau personnel semble répondre."
+    if j50_wire_completed:
+        call messenger_play("j5_observation_secours", "kael", [("noam", "Kael ? On est bloqués avec Elias dans la salle d'observation. Le secours fonctionne, mais la porte reste verrouillée."), ("kael", "Vous êtes blessés ? Le panneau chauffe encore ?"), ("noam", "Non. Ventilation active. Elias a tenté le contrôle local, sans résultat."), ("kael", "Ne touchez plus au boîtier. J'arrive avec Nyra pour isoler l'accès depuis le couloir.")], objective_text="Envoyer un appel à l'aide à Kael", notify=False) from _call_messenger_j50_secours
+    else:
+        call messenger_play("j5_observation_panne", "kael", [("noam", "KAEL ! On est enfermés avec Elias dans la salle d'observation. Court-circuit, boîtier de secours hors service."), ("kael", "Respirez calmement. Vous voyez de la fumée ? La ventilation fonctionne ?"), ("noam", "Plus de fumée. Ventilation active, mais la porte ne répond plus."), ("kael", "Ne touchez plus au panneau. Nyra et moi arrivons. Restez loin des connecteurs.")], objective_text="Demander immédiatement l'aide de Kael", notify=False) from _call_messenger_j50_panne
+    "Je relève les yeux de la tablette. Elias attend ma réaction comme si c'était moi qui devais lui annoncer sa note."
+    noam neutre "Ils arrivent. Kael et Nyra."
+    elias fatigue "Super. On va être sauvés par deux personnes qui vont me regarder comme si j'avais essayé de faire du café dans le réacteur."
+    return
 
 
 label _5_0_FIN_JOURNEE:
@@ -886,8 +949,9 @@ label _5_0_FIN_JOURNEE:
         think "Je laisse Julian seul avec ses caméras. Au moins, aujourd'hui, il a accepté de me parler sans public."
         think "Je ne sais pas si c'est un progrès. Je préfère le croire."
     else:
-        think "En rentrant, je repense à Elias. Il a eu peur, mais il a réagi."
-        think "J'espère que Kael réparera tout ça avant que quelqu'un découvre ce qu'on ne peut plus surveiller."
+        think "Elias avait tellement peur de déranger Kael qu'il a préféré rester enfermé. Puis il a fini par demander de l'aide."
+        think "Kael et Nyra ont ouvert la porte. Ils n'ont pas promis que les contrôles fonctionnaient à nouveau."
+        think "Un verrou qui nous protège en nous enfermant : je commence à comprendre pourquoi le mot sécurité ne rassure pas tout le monde."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_241
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -1006,11 +1070,12 @@ label _5_0_NUIT_ECOUTER:
         think "Julian. Il répète des excuses dans un couloir vide."
         think "Je n'aurais jamais cru qu'il aurait besoin de s'entraîner pour prononcer ces mots."
     else:
-        elias fatigue "Kael ? Ouais... j'ai vérifié. L'erreur est toujours là."
+        elias fatigue "Kael ? Ouais, c'est Elias. Je sais que tu viens à peine de rentrer..."
         pause 0.3
-        elias inquiet "Non, le panneau est coupé. Il ne devrait plus alimenter le circuit, mais... ouais, faudrait vérifier demain."
-        think "Elias téléphone sûrement à Kael. Il continue de s'inquiéter pour le panneau."
-        think "Au moins, il ne fait pas semblant de croire que tout est réparé."
+        elias inquiet "Non, j'ai compris pour le contrôleur. C'est pas ça. Tu as vérifié les relevés qui étaient affichés avant la coupure ?"
+        elias reflechit "D'accord. Je t'attends demain. Je toucherai plus à rien."
+        think "Les relevés ? Je pensais que son inquiétude s'arrêtait à la porte."
+        think "Je pourrais sortir lui demander ce qu'il a remarqué. Mais Elias a déjà repris sa marche, et la chambre est redevenue silencieuse."
     "Les pas reprennent. La voix disparaît au bout du couloir."
     think "Je n'ai pas bougé. J'ai pourtant l'impression d'avoir assisté à une conversation à laquelle je n'étais pas invité."
     jump _5_0_NUIT_RETOUR
