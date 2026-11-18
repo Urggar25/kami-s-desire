@@ -863,7 +863,8 @@ label _4_0_SOIREE_SANS_VOTE:
     iris reflechit "Oui. Mais ne va pas frapper chez eux ce soir pour leur faire goûter."
     elen desaccord "J'allais pas faire ça !"
     mara taquin "C'est bien pour ça que tu as déjà une assiette à la main."
-    "Mara vient d'apparaître à l'entrée. Elen cache aussitôt l'assiette derrière son dos."\n    $ showGroup([("mara", "taquin"), ("elen", "joie"), ("lysa", "blase"), ("ryn", "neutre"), ("tomas", "hesitation"), ("noam", "neutre")])
+    "Mara vient d'apparaître à l'entrée. Elen cache aussitôt l'assiette derrière son dos."
+    showGroup([("mara", "taquin"), ("elen", "joie"), ("lysa", "blase"), ("ryn", "neutre"), ("tomas", "hesitation"), ("noam", "neutre")])
     elen inquiet "C'est pour demain."
     mara sourire "Bien sûr."
     if j4_frontieres_result == "pont":
