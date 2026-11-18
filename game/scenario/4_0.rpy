@@ -275,6 +275,9 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     ryn colere "T'as pas besoin d'ouvrir la bouche pour m'accuser !"
     nyra neutre "Vous êtes en train de transformer un regard en résultat de scrutin. Arrêtez."
     "Julian emporte son plateau presque intact. Ryn s'assoit. Cette fois, il ne touche plus à son repas."
+    "Au moment de passer la porte, Julian ralentit. Il regarde vers moi, puis vers Tomas, comme s'il attendait qu'on le rappelle."
+    "Personne ne dit rien. Il sort sans un mot."
+    think "C'est la première fois que je vois Julian renoncer à avoir le dernier mot."
     return
 
 label _4_0_CAFETERIA_PNC_RYN:
@@ -510,6 +513,7 @@ label _4_0_DEBAT_APAISE:
     ryn triste "J'ai cru qu'elle allait me dire que ça n'avait pas compté."
     noam calme "Elle l'a reconnu. Ça ne change pas tout."
     ryn neutre "Non. Mais ça change quelque chose."
+    ryn neutre "Je lui parlerai demain. Pas devant tout le monde."
     tomas sourire "Alors... il y a encore une conversation possible."
     "Personne n'applaudit. Il n'y a rien à célébrer. Mais Ryn range sa chaise au lieu de la pousser."
     jump _4_0_APRES_CLASH_PRE_FETE
@@ -544,6 +548,7 @@ label _4_0_DEBAT_ROMPU:
     iris triste "Personne n'a dit que c'était normal."
     ryn colere "Alors pourquoi ça continue ?!"
     "Cette fois, personne ne cherche à répondre à sa place."
+    think "J'ai voulu éviter une dispute. Maintenant, Ryn me regarde comme si je lui avais demandé d'oublier les siens."
     jump _4_0_APRES_CLASH_PRE_FETE
 
     jump _4_0_APRES_CLASH_PRE_FETE
@@ -559,6 +564,7 @@ label day4_thread_debate_game:
 
 label day4_thread_debate_success:
     $ j4_frontieres_result = "pont"
+    think "Je ne cherche pas à faire changer Sael de camp. Si elle et Ryn arrivent simplement à s'écouter, ce sera déjà un début."
     noam determine "Ryn, tu peux lui reprocher de refuser le texte. Pas de vouloir qu'on tue des gens."
     ryn colere "Et je suis censé faire quoi de ceux qui meurent ?!"
     noam inquiet "Ne les abandonne pas. Mais écoute ce qu'elle a vécu avant de lui demander de te suivre."
@@ -574,6 +580,7 @@ label day4_thread_debate_success:
 
 label day4_thread_debate_failure:
     $ j4_frontieres_result = "rupture"
+    think "J'ouvre la bouche trop vite. Je veux absolument trouver une solution, et je n'ai même pas demandé ce qu'ils attendaient de moi."
     noam inquiet "Il doit bien y avoir une solution... des contrôles, une exception, quelque chose !"
     ryn colere "QUELLE exception ?! Tu comprends même pas pourquoi on se dispute !"
     sael mefiant "Tu nous demandes encore de te faire confiance sans rien proposer de précis."
@@ -658,6 +665,14 @@ label _4_0_SOIREE_SANS_VOTE:
     iris taquin "Assieds-toi, on a justement besoin de quelqu'un pour expliquer à Elias comment fonctionne un dé."
     elias colere "VOUS ALLEZ ME LÂCHER AVEC CE DÉ ?!"
     "Personne ne prononce les trois mots interdits. Pourtant, la place vide de Sael, et celle de Julian, finissent par se remarquer."
+    elen inquiet "Vous pensez qu'ils auraient voulu venir ?"
+    iris fatigue "Sael avait peut-être juste besoin de calme. Pour Julian, j'en sais rien."
+    if j4_frontieres_result == "pont":
+        ryn neutre "J'ai dit que j'irais lui parler. Pas que j'allais débarquer dans sa chambre avec un dé."
+    else:
+        tomas inquiet "Je pourrais au moins leur garder une part de gâteau."
+        lysa blase "Garde-la. On verra demain s'ils ont faim."
+    "Elen pousse une assiette de côté. Personne n'y touche, même quand la partie reprend."
     jump _4_0_FIN_SOIREE
 
 label _4_0_FIN_SOIREE:
@@ -671,18 +686,32 @@ label _4_0_FIN_SOIREE:
     if j4_frontieres_result == "pont":
         think "Ryn lui reparlera peut-être. Ce n'est pas une victoire ; je n'aurais pas cru qu'un simple peut-être puisse me soulager autant."
     else:
-        think "Ryn n'a pas passé la soirée avec nous. Je ne sais pas s'il est rentré dans sa chambre ou s'il cherche encore les mots qu'il aurait voulu dire."
+        think "Ryn a quitté la salle sans même essayer de me regarder. Demain, il faudra que je fasse mieux que lui demander de se calmer."
+    "Je m'apprête à passer quand Mara apparaît au bout du couloir. Elle s'arrête devant la porte de Sael, sans sa plaisanterie habituelle."
+    noam inquiet "Tu vas lui parler du vote ?"
+    mara neutre "Je vais surtout lui demander ce qu'elle essaie de protéger. On a tous entendu sa colère. Pas grand monde a écouté le reste."
+    noam reflechit "Ryn ne sera pas ravi de savoir que tu es venue."
+    mara agace "Alors ne lui raconte pas une histoire que t'as pas entendue. J'ai pas encore dit ce que j'en pensais."
+    "Mara frappe. Sael ouvre juste assez pour la reconnaître, puis la laisse entrer."
+    "La porte se referme. De l'autre côté, leurs voix restent basses. Je n'en distingue pas un mot."
+    think "Au Conclave, un bulletin peut rester secret. Une conversation entre deux portes, beaucoup moins."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je retrouve la photo sur le bureau. Juliette me tire toujours la langue."
-    think "Ce matin, je voulais savoir si un non pouvait être une bonne nouvelle."
-    think "Ce soir, j'ai surtout découvert qu'on pouvait vouloir sauver les mêmes personnes et finir par ne plus pouvoir se parler."
+    think "Ce matin, je me demandais si un non pouvait être une bonne nouvelle. Maintenant, je ne sais même plus ce que ce mot signifie pour ceux qui vivent de l'autre côté des frontières."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
     "Un éclat de rire résonne derrière la cloison. Elen, évidemment. Puis une voix lui demande de baisser le ton."
-    think "Au moins, ils ont continué la partie sans moi."
+    "J'allais fermer les yeux quand ma tablette s'allume : le dossier du deuxième vote vient d'être actualisé."
+    think "Douze représentants. Une seule voix peut tout arrêter. Et Sael a déjà annoncé ce qu'elle ferait de la sienne."
+    if j4_frontieres_result == "pont":
+        think "Elle a accepté de reparler à Ryn. Pourtant, même cette promesse ne change rien au texte que nous devons voter."
+    else:
+        think "Je n'ai pas su les écouter. Si je retourne demain avec les mêmes arguments, il n'y aura plus personne pour me répondre."
+    think "Mara est encore chez Sael. Julian refuse de sortir. Ryn attend une réponse que personne n'est capable de lui donner."
+    think "Demain, je devrai choisir à qui parler en premier. Et surtout, ce que je serai prêt à entendre."
     $ blink()
-    "Je ferme les yeux. Demain, je pourrai essayer d'écouter Sael sans lui demander de justifier son bulletin."
+    "Je pose la tablette face contre le bureau. Le vote est dans deux jours. Pour la première fois, ça me paraît terriblement proche."
     $ current_day = 5
     pause 1.5
     call end_day("5", sleeping=True) from _call_end_day_5
