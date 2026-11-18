@@ -853,12 +853,15 @@ label j701_investigation_debrief:
     mara fatigue "On va surtout éviter de désigner un coupable au hasard parce qu'on est crevés."
     if "kael_database" in j701_investigation_found:
         kael reflechit "Je mettrai à disposition les relevés de mes tentatives d'accès. Vous pourrez vérifier par vous-mêmes."
-        lysa mefiant "Voilà déjà une bonne idée. La confiance, ça se vérifie aussi."
+        lysa reflechit "Voilà déjà une bonne idée. La confiance, ça se vérifie aussi."
     else:
         kael reflechit "On verrouille ce qui reste. Demain, on reprend avec les journaux d'accès complets."
     elen inquiet "Et si la personne a seulement pris le matériel pour réparer quelque chose ?"
     elias colere "ALORS POURQUOI ELLE A TOUT CACHÉ ?!"
-    "Personne n'a de réponse. Elen repose sur la table la grue de papier abîmée, si nous l'avons retrouvée."
+    if "foil_crane" in j701_investigation_found:
+        "Personne n'a de réponse. Elen reprend sa petite grue abîmée et la garde dans sa paume."
+    else:
+        "Personne n'a de réponse. Elen croise les bras sur la table sans oser reprendre la parole."
     lysa inquiet "Et si Kami revient demain, est-ce qu'elle nous aidera à chercher... ou est-ce qu'on devra lui cacher cette histoire ?"
     "Le nom de Kami suffit à éteindre les protestations."
     think "La seule chose que nous partageons vraiment, c'est l'impression que la station nous regarde sans vouloir nous répondre."
