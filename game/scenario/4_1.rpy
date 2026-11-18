@@ -40,6 +40,7 @@ label _4_1_REVEIL_CHAMBRE:
     kami "Mais pourquoi est-ce que je vous raconte tout ? Les écrans de la cafétéria vous montreront les résultats en direct !"
     kami "Allez donc admirer votre toute première victoire. Vous l'avez bien mérité !"
 
+    hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.5
 
@@ -63,17 +64,18 @@ label _4_1_CAFETERIA_ECRANS:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
 
     $ showGroup([
-        ("lysa", "determine"),
-        ("kael", "calme"),
-        ("ryn", "colere"),
-        ("julian", "detendu"),
-        ("mara", "joie"),
-        ("tomas", "hesitation"),
-        ("elen", "joie"),
-        ("iris", "desaccord"),
-        ("nyra", "raison"),
-        ("noam", "raison"),
-        ("sael", "mefiant"),
+        ("lysa", "determine", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "colere", 0.207),
+        ("julian", "detendu", 0.291),
+        ("mara", "joie", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "desaccord", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "raison", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
 
     think "La plupart des représentants sont déjà installés devant les écrans. Je prends une ration et m'assieds avec eux."
@@ -164,6 +166,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Il est temps de préparer le prochain vote. Alors dépêchez-vous, nos téléspectateurs ne vont pas attendre la fin de vos siestes digestives !"
 
+    hide screen kami_broadcast_ui
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
     $ showGroup([("noam", "fatigue", 0.50)])
@@ -173,19 +176,21 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_world_decline.mp3" fadein 1.0
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_trial_intro_kv2_4_1
 
     $ showGroup([
-        ("julian", "determine"),
-        ("ryn", "colere"),
-        ("elen", "inquiet"),
-        ("mara", "agace"),
-        ("tomas", "hesitation"),
-        ("iris", "desaccord"),
-        ("kael", "triste"),
-        ("nyra", "raison"),
-        ("noam", "raison"),
-        ("lysa", "blase"),
-        ("sael", "mefiant"),
+        ("lysa", "blase", 0.040),
+        ("kael", "triste", 0.124),
+        ("ryn", "colere", 0.207),
+        ("julian", "determine", 0.291),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "desaccord", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "raison", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
 
     think "Nous sommes presque tous installés lorsque Julian vérifie une dernière fois les sièges."
@@ -247,17 +252,18 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     play music "music/bgm_world_decline.mp3" fadein 1.0
 
     $ showGroup([
-        ("ryn", "colere"),
-        ("kael", "triste"),
-        ("sael", "mefiant"),
-        ("lysa", "blase"),
-        ("noam", "determine"),
-        ("julian", "determine"),
-        ("elias", "determine"),
-        ("iris", "desaccord"),
-        ("mara", "agace"),
-        ("nyra", "raison"),
-        ("tomas", "hesitation"),
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "triste"), 0.124),
+        ("ryn", kd_current_expr("ryn", "colere"), 0.207),
+        ("julian", kd_current_expr("julian", "determine"), 0.291),
+        ("mara", kd_current_expr("mara", "agace"), 0.375),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "inquiet"), 0.542),
+        ("iris", kd_current_expr("iris", "desaccord"), 0.625),
+        ("nyra", kd_current_expr("nyra", "raison"), 0.709),
+        ("noam", kd_current_expr("noam", "determine"), 0.793),
+        ("sael", kd_current_expr("sael", "mefiant"), 0.876),
+        ("elias", kd_current_expr("elias", "determine"), 0.960),
     ])
 
     think "Le mot « frontières » suffit à changer l'attitude de Ryn. Il se penche immédiatement vers son micro."
@@ -294,10 +300,12 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     iris desaccord "Donc quoi ? On garde tout le monde enfermé parce qu'une partie pourrait devenir violente ?"
 
+    call cutin("sael", expr="mefiant") from _call_cutin_kv2_4_1_sael
     sael mefiant "Je voterai contre."
 
     ryn surpris "Quoi ? Après tout ce que je viens de dire ?"
 
+    $ close_up("sael")
     sael determine "Mon peuple vit près du Mont Kensen. Avant Kami, les groupes armés de Limen traversaient régulièrement nos terres."
     sael triste "J'ai vu ce que ces déplacements transportaient avec eux. Des armes, de la colère et des morts."
     sael mefiant "Pour vous, cette proposition ouvre des routes. Pour moi, elle rouvre celles que la guerre empruntait."
@@ -314,8 +322,19 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     sael triste "Tu ne sais rien de ce que cette route a déjà coûté aux miens."
 
-    hide sael
-    with moveoutright
+    $ showGroup([
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "calme"), 0.124),
+        ("ryn", kd_current_expr("ryn", "neutre"), 0.207),
+        ("julian", kd_current_expr("julian", "neutre"), 0.291),
+        ("mara", kd_current_expr("mara", "neutre"), 0.375),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "inquiet"), 0.542),
+        ("iris", kd_current_expr("iris", "neutre"), 0.625),
+        ("nyra", kd_current_expr("nyra", "neutre"), 0.709),
+        ("noam", kd_current_expr("noam", "neutre"), 0.793),
+        ("elias", kd_current_expr("elias", "neutre"), 0.960),
+    ])
 
     play sound sfx_door volume 8.0
     "Sael se lève d’un coup. Elle tourne les talons et quitte la salle en claquant la porte."
@@ -324,8 +343,18 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     mara surpris "Sael, attends !"
     mara colere "Putain, vous pouviez pas discuter deux minutes sans lui sauter à la gorge ?"
 
-    hide mara
-    with moveoutright
+    $ showGroup([
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "calme"), 0.124),
+        ("ryn", kd_current_expr("ryn", "neutre"), 0.207),
+        ("julian", kd_current_expr("julian", "neutre"), 0.291),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "inquiet"), 0.542),
+        ("iris", kd_current_expr("iris", "neutre"), 0.625),
+        ("nyra", kd_current_expr("nyra", "neutre"), 0.709),
+        ("noam", kd_current_expr("noam", "neutre"), 0.793),
+        ("elias", kd_current_expr("elias", "neutre"), 0.960),
+    ])
 
     play sound sfx_door volume 8.0
     "Mara se lève et la suit en courant hors de la pièce."
@@ -350,8 +379,17 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     "Iris se lève à son tour et quitte la pièce."
 
-    hide iris
-    with moveoutleft
+    $ showGroup([
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "calme"), 0.124),
+        ("ryn", kd_current_expr("ryn", "neutre"), 0.207),
+        ("julian", kd_current_expr("julian", "neutre"), 0.291),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "inquiet"), 0.542),
+        ("nyra", kd_current_expr("nyra", "neutre"), 0.709),
+        ("noam", kd_current_expr("noam", "neutre"), 0.793),
+        ("elias", kd_current_expr("elias", "neutre"), 0.960),
+    ])
 
     think "Le débat vient à peine de commencer et Sael a déjà annoncé son vote contre. Une seule voix suffira à rejeter le texte."
 
@@ -366,10 +404,15 @@ label _4_1_APRES_CLASH_PRE_FETE:
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
 
     $ showGroup([
-        ("julian", "decu"),
-        ("elen", "joie"),
-        ("noam", "raison"),
-        ("nyra", "surpris"),
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "calme"), 0.124),
+        ("ryn", kd_current_expr("ryn", "neutre"), 0.207),
+        ("julian", kd_current_expr("julian", "decu"), 0.291),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "joie"), 0.542),
+        ("nyra", kd_current_expr("nyra", "surpris"), 0.709),
+        ("noam", kd_current_expr("noam", "raison"), 0.793),
+        ("elias", kd_current_expr("elias", "neutre"), 0.960),
     ])
 
     think "Après le départ d'Iris, personne ne semble savoir si la réunion est réellement terminée. Elen finit par se lever."
@@ -395,8 +438,16 @@ label _4_1_APRES_CLASH_PRE_FETE:
 
     nyra reflexion "Je vais essayer. Mais je ne te garantis pas qu'elles accepteront."
 
-    hide nyra
-    with moveoutright
+    $ showGroup([
+        ("lysa", kd_current_expr("lysa", "blase"), 0.040),
+        ("kael", kd_current_expr("kael", "calme"), 0.124),
+        ("ryn", kd_current_expr("ryn", "neutre"), 0.207),
+        ("julian", kd_current_expr("julian", "neutre"), 0.291),
+        ("tomas", kd_current_expr("tomas", "hesitation"), 0.458),
+        ("elen", kd_current_expr("elen", "inquiet"), 0.542),
+        ("noam", kd_current_expr("noam", "neutre"), 0.793),
+        ("elias", kd_current_expr("elias", "neutre"), 0.960),
+    ])
 
     think "Nyra quitte la salle à la suite de Mara et Sael."
 
@@ -490,14 +541,18 @@ label _4_1_APRES_CLASH_PRE_FETE:
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
 
     $ showGroup([
-        ("elen", "content"),
-        ("julian", "sourire"),
-        ("ryn", "fatigue"),
-        ("nyra", "neutre"),
-        ("mara", "neutre"),
-        ("sael", "mefiant"),
-        ("iris", "neutre"),
-        ("noam", "neutre"),
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "fatigue", 0.207),
+        ("julian", "sourire", 0.291),
+        ("mara", "neutre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "content", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
 
     think "Elen a déjà sorti les rations alcoolisées. Julian sert les verres pendant que Nyra arrive avec Mara et Sael."
@@ -519,13 +574,18 @@ label _4_1_FETE_IMPROVISEE:
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
 
     $ showGroup([
-        ("elen", "content"),
-        ("iris", "fatigue"),
-        ("julian", "sourire"),
-        ("elias", "reflechit"),
-        ("lysa", "blase"),
-        ("mara", "neutre"),
-        ("noam", "neutre"),
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "sourire", 0.291),
+        ("mara", "neutre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "content", 0.542),
+        ("iris", "fatigue", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "reflechit", 0.960),
     ])
 
     "Elen a suspendu quelques tissus devant les veilleuses et installé une enceinte au milieu de la salle."
@@ -556,6 +616,7 @@ label _4_1_FETE_IMPROVISEE:
     play music "music/bgm_system_override.mp3" fadein 0.8
 
     kami "Vous n'alliez quand même pas organiser une fête sans m'inviter ? Moi qui fournis l'alcool, la salle et même la surveillance !"
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
     kami "Trinquons donc à votre courage. Ou à votre inconscience, je n'ai pas encore terminé l'analyse."
     kami "Amusez-vous bien, mes petits représentants. Je regarderai tout !"
 
@@ -564,13 +625,18 @@ label _4_1_FETE_IMPROVISEE:
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.5
 
     $ showGroup([
-        ("mara", "ivre"),
-        ("tomas", "hesitation"),
-        ("iris", "desaccord"),
-        ("lysa", "blase"),
-        ("elen", "joie"),
-        ("ryn", "fatigue"),
-        ("noam", "neutre"),
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "fatigue", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "ivre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "desaccord", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
 
     elen joie "Bon ! Si même notre geôlière trinque avec nous, on a officiellement le droit de monter le son !"
@@ -626,7 +692,20 @@ label _4_1_JEU_BOUTEILLE:
     scene bg_repos_fete at adaptive_fullscreen with dissolve
     play music "music/bgm_fallin_love.mp3" fadein 1.5
 
-    $ showGroup([("mara", "ivre", 0.50), ("noam", "surpris", 0.88), ("lysa", "blase", 0.12)])
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "ivre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "surpris", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
+    ])
     mara ivre "Premier tour ! Choisis bien, petite bouteille, j'ai une réputation à tenir."
 
     "La bouteille tourne au milieu de la table, ralentit, puis s'arrête devant moi."
@@ -657,12 +736,18 @@ label _4_1_JEU_BOUTEILLE:
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
-        ("julian", "joie"),
-        ("elen", "joie"),
-        ("lysa", "gene"),
-        ("mara", "ivre"),
-        ("tomas", "gene"),
-        ("sael", "mefiant"),
+        ("lysa", "gene", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "joie", 0.291),
+        ("mara", "ivre", 0.375),
+        ("tomas", "gene", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
     julian joie "Un premier tour particulièrement convaincant. Je valide totalement le concept."
 
@@ -700,12 +785,18 @@ label _4_1_JEU_BOUTEILLE:
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
     $ showGroup([
-        ("elen", "joie"),
-        ("julian", "taquin"),
-        ("tomas", "gene"),
-        ("mara", "ivre"),
-        ("kael", "surpris"),
-        ("elias", "jaloux"),
+        ("lysa", "blase", 0.040),
+        ("kael", "surpris", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "taquin", 0.291),
+        ("mara", "ivre", 0.375),
+        ("tomas", "gene", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "jaloux", 0.960),
     ])
     elen joie "Sael ! C'était tellement doux ! Tomas, tu respires encore ?"
 
@@ -749,7 +840,20 @@ label _4_1_JEU_BOUTEILLE:
 
     scene bg_repos_fete at adaptive_fullscreen with dissolve
 
-    $ showGroup([("mara", "ivre", 0.12), ("kael", "gene", 0.50)])
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "gene", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "ivre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
+    ])
 
     mara ivre "Je retire tout ce que j'ai dit : cette bouteille est une artiste. On remet ça demain ?"
 

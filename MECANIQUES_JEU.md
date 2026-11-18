@@ -305,3 +305,9 @@ Pour chaque ajout ou modification future :
 | Bande-annonce du DLC « Les autres vies » | Cinématique publique sans spoilers, lançable depuis le catalogue DLC. | `game/dlc_doppelganger_trailer.rpy` | `call kd_dlc_doppelganger_trailer` |
 
 | Lien Steam du dossier DLC | Ouvre une recherche Steam sur Kami's Desires tant que l'URL définitive du produit n'est pas connue. | `game/dlc_manager.rpy` | `Function(renpy.open_url, KD_DLC_STEAM_URL)` |
+
+## Outils de contrôle de la refonte J4+
+
+| Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
+|---|---|---|---|
+| Contrats de continuité de la refonte | Compare les flags, conditions, labels et appels suivis des 50 fichiers de journées au commit de départ ; signale les écarts à examiner sans remplacer le lint Ren'Py. | `tools/refonte_inventory.py`, `docs/refonte/baseline.json` | `python tools/refonte_inventory.py --check` |

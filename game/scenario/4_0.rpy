@@ -105,6 +105,10 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ corridor_current = "dortoir"
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
     "Dans le couloir, Elias est à genoux devant un casier entrouvert. Autour de lui, trois outils, une vis et quelque chose qui ressemble à un ressort forment un petit périmètre de catastrophe."
+    $ showGroup([
+        ("noam", "neutre", 0.30),
+        ("elias", "neutre", 0.70),
+    ])
     noam sourire "C'est toi, le bruit de tout à l'heure ?"
     elias gene "Quel bruit ?"
     noam neutre "Un bruit métallique. Un juron. Quelqu'un qui a brièvement perdu confiance en l'univers."
@@ -183,6 +187,19 @@ label _4_0_CAFETERIA_ECRANS:
     hide screen kami_broadcast_ui
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "neutre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     elen colere "JE NE SUIS PAS DIFFICILE !"
     elias reflechit "Tu as quand même crié pendant trois minutes à cause de..."
     elen colere "ELIAS."
@@ -191,9 +208,16 @@ label _4_0_CAFETERIA_ECRANS:
     "À peine la porte refermée, quelqu'un déplace sa tasse pour l'empêcher de tomber du comptoir."
 
     $ showGroup([
-        ("mara", "agace"), ("julian", "decu"), ("ryn", "colere"),
-        ("lysa", "determine"), ("kael", "calme"), ("iris", "desaccord"),
-        ("noam", "neutre")
+        ("lysa", "determine", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "colere", 0.207),
+        ("julian", "decu", 0.291),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("iris", "desaccord", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     mara taquin "Je donne dix minutes avant qu'elle revienne annoncer une grève de la faim."
     iris colere "Tu rigoles, mais Kami a décidé toute seule de ce qu'on pouvait garder."
@@ -256,8 +280,16 @@ label _4_0_CAFETERIA_ECRANS:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
-        ("mara", "triste"), ("ryn", "colere"), ("lysa", "triste"),
-        ("kael", "calme"), ("iris", "hesitation"), ("noam", "reflexion")
+        ("lysa", "triste", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "colere", 0.207),
+        ("mara", "triste", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "hesitation", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "reflexion", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     "Je récupère un morceau de pain. Il est moins dur que celui de Lysa, mais pas de beaucoup."
     lysa neutre "T'as l'air épuisé."
@@ -352,9 +384,16 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     elen joie "EXACTEMENT ! GOUMI !"
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
-        ("elen", "joie"), ("lysa", "blase"), ("kael", "calme"),
-        ("iris", "hesitation"), ("noam", "neutre"), ("mara", "agace"),
-        ("ryn", "triste"), ("tomas", "hesitation")
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "triste", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "hesitation", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     goumi "Je vous écoute."
     elen joie "Prépare des miettolunes pour TOUT LE MONDE ! On va se faire un énorme petit-déjeuner !"
@@ -396,7 +435,18 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
 label _4_0_CAFETERIA_PNC_RYN:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "reflexion", 0.28), ("ryn", "colere", 0.70)])
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "colere", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "neutre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "reflexion", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     noam inquiet "Tu comptes manger ce plateau ou lui demander ce qu'il pense du vote ?"
     ryn colere "Très drôle."
     noam neutre "J'essayais."
@@ -425,7 +475,18 @@ label _4_0_CAFETERIA_PNC_RYN:
 label _4_0_CAFETERIA_PNC_JULIAN:
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "reflexion", 0.28), ("julian", "neutre", 0.70)])
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("julian", "neutre", 0.291),
+        ("mara", "neutre", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("iris", "neutre", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "reflexion", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     noam neutre "Julian, tu vas manger ton pain ou continuer à le punir ?"
     julian decu "Pas faim."
     noam sourire "Il n'a pourtant rien fait."
@@ -470,6 +531,10 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.8
     "En revenant vers le dortoir, je croise Elen avec une assiette soigneusement recouverte d'une serviette."
+    $ showGroup([
+        ("elen", "inquiet", 0.30),
+        ("noam", "neutre", 0.70),
+    ])
     noam surpris "C'est pour quoi ?"
     elen joie "Pour ce soir."
     noam neutre "Il y a quoi dessous ?"
@@ -492,10 +557,19 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     hide screen kami_broadcast_ui
     play music "music/bgm_world_decline.mp3" fadein 1.0
-    pause 1.0
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_trial_intro_kv2_4_0
     $ showGroup([
-        ("ryn", "colere"), ("kael", "inquiet"), ("mara", "agace"),
-        ("tomas", "hesitation"), ("nyra", "raison")
+        ("lysa", "blase", 0.040),
+        ("kael", "inquiet", 0.124),
+        ("ryn", "colere", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "neutre", 0.960),
     ])
     ryn colere "ON REVIENT ENCORE ICI ?! Hier, on y a passé la moitié de la journée !"
     kael inquiet "Julian a dit qu'il ne viendrait pas. J'ai cru qu'il plaisantait."
@@ -544,10 +618,17 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     play music "music/bgm_world_decline.mp3" fadein 1.0
     "Ryn se redresse. Sael, au contraire, reste immobile. Elle a serré ses mains sur ses genoux."
     $ showGroup([
-        ("lysa", "blase"), ("iris", "desaccord"), ("elias", "determine"),
-        ("kael", "inquiet"), ("ryn", "colere"), ("sael", "mefiant"),
-        ("nyra", "raison"), ("mara", "agace"), ("tomas", "hesitation"),
-        ("elen", "triste")
+        ("lysa", "blase", 0.040),
+        ("kael", "inquiet", 0.124),
+        ("ryn", "colere", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "triste", 0.542),
+        ("iris", "desaccord", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "neutre", 0.793),
+        ("sael", "mefiant", 0.876),
+        ("elias", "determine", 0.960),
     ])
     elen surpris "Attendez. Je pourrais aller voir quelqu'un dans un autre district sans autorisation ?"
     ryn sourire "ENFIN !"
@@ -565,6 +646,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn colere "On a déjà des gardiens. On peut surveiller les routes."
     sael neutre "Pas partout. Tu le sais aussi bien que moi."
     "Ryn s'appuie sur la table. Sael ne le regarde pas."
+    $ close_up("sael")
     sael neutre "Avant la fermeture, des groupes armés passaient par chez nous. Ils prenaient de la nourriture, des outils. Et parfois des gens."
     elen inquiet "Des gens ?"
     sael triste "On attendait qu'ils reviennent. Des jours. Après, on arrêtait de demander."
@@ -588,6 +670,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ryn colere "Et ils y vont quand même. Tu te demandes jamais pourquoi ?"
     sael triste "Ryn, je..."
     ryn colere "Laisse tomber. Je sais ce que tu penses."
+    $ punch_in(0.08)
     sael colere "NON ! Tu sais ce que j'ai dit parce que j'ai peur. Ça te donne pas le droit de décider ce que je pense !"
     mara agace "Vous êtes en train de vous déchirer pour le plaisir de Kami. Vous vous rendez compte ?"
     ryn colere "Et alors ?! Ça va faire revenir ceux que j'ai enterrés ?!"
@@ -618,9 +701,16 @@ label _4_0_DEBAT_APAISE:
     sael determine "Peut-être. Si on est capables de s'écouter."
     "Elle quitte la salle."
     $ showGroup([
-        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
-        ("kael", "calme"), ("ryn", "triste"), ("nyra", "raison"),
-        ("mara", "agace"), ("tomas", "hesitation"), ("elen", "triste")
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "triste", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "triste", 0.542),
+        ("iris", "reflechit", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     mara neutre "Bon. Personne n'a jeté de chaise. C'est déjà ça."
     iris fatigue "Mara..."
@@ -642,9 +732,16 @@ label _4_0_DEBAT_ROMPU:
     sael determine "Je voterai contre. Et je ne discuterai plus de ça aujourd'hui."
     "La porte se referme avant que Ryn ait trouvé quoi répondre."
     $ showGroup([
-        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
-        ("kael", "calme"), ("ryn", "colere"), ("nyra", "raison"),
-        ("mara", "agace"), ("tomas", "hesitation"), ("elen", "triste")
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "colere", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "triste", 0.542),
+        ("iris", "reflechit", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     mara colere "Tu l'as entendue parler de son village, oui ou non ?!"
     ryn colere "Je l'ai entendue dire non !"
@@ -654,9 +751,15 @@ label _4_0_DEBAT_ROMPU:
     mara colere "Mais toi, tu prétends savoir ce qu'elle pense, alors que tu n'as même pas écouté la moitié de ses phrases."
     "Mara s'en va. Ryn la regarde partir sans rien dire."
     $ showGroup([
-        ("lysa", "blase"), ("iris", "reflechit"), ("elias", "neutre"),
-        ("kael", "calme"), ("ryn", "triste"), ("nyra", "raison"),
-        ("tomas", "hesitation"), ("elen", "triste")
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "triste", 0.207),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "triste", 0.542),
+        ("iris", "reflechit", 0.625),
+        ("nyra", "raison", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
     ])
     ryn triste "Je voulais juste que quelqu'un dise que c'était pas normal."
     iris triste "Personne n'a dit que c'était normal."
@@ -678,6 +781,7 @@ label day4_thread_debate_success:
 
     $ j4_frontieres_result = "pont"
     think "Je ne vais pas les mettre d'accord sur un texte en deux phrases. Peut-être qu'ils peuvent au moins arrêter de se parler comme s'ils s'étaient toujours détestés."
+    call cutin("noam", expr="determine") from _call_cutin_kv2_4_0_noam
     noam determine "Ryn, elle refuse le texte. Elle n'a pas dit qu'elle voulait qu'on tire sur les gens."
     ryn colere "Et moi, je suis censé faire quoi de ceux qui meurent ?!"
     noam inquiet "Rien oublier. Mais écoute pourquoi elle a peur avant de lui répondre."
@@ -706,7 +810,7 @@ label day4_thread_debate_failure:
 
 label _4_0_APRES_CLASH_PRE_FETE:
 
-    scene bg_conclave at adaptive_fullscreen with dissolve
+    # Continuité du débat : le groupe exact est déjà posé par chaque issue.
     play music "music/bgm_world_decline.mp3" fadein 1.0
     if j4_frontieres_result == "pont":
         elen inquiet "Est-ce qu'on peut considérer que ça s'est mieux terminé que prévu ?"
@@ -749,9 +853,13 @@ label _4_0_SOIREE_SANS_VOTE:
     call MAYBE_PLAY_SCRIPTED_DOOR("repos", "bg_repos") from _call_MAYBE_PLAY_SCRIPTED_DOOR_4_0_lounge
     scene bg_repos at adaptive_fullscreen with dissolve
     $ showGroup([
-        ("elen", "joie"), ("iris", "taquin"), ("lysa", "blase"),
-        ("elias", "sourire"), ("tomas", "sourire"), ("ryn", "neutre"),
-        ("noam", "neutre")
+        ("lysa", "blase", 0.040),
+        ("ryn", "neutre", 0.207),
+        ("tomas", "sourire", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "taquin", 0.625),
+        ("noam", "neutre", 0.793),
+        ("elias", "sourire", 0.960),
     ])
     elen joie "Noam ! Viens ! On est à deux doigts de disqualifier Elias."
     elias colere "J'ai RIEN FAIT !"
@@ -802,6 +910,16 @@ label _4_0_SOIREE_SANS_VOTE:
     tomas hesitation "Je croyais qu'on jouait pour décider qui allait chercher les assiettes."
     elen inquiet "Oui, bon. Ça aussi."
     "Quelqu'un frappe au cadre de la porte. Kael nous observe, l'air satisfait de découvrir que rien n'a encore brûlé."
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     kael calme "J'ai raté quoi ?"
     iris taquin "Les règles, mais nous aussi."
     kael sourire "Parfait. Je déteste arriver au milieu d'une partie que tout le monde comprend."
@@ -833,6 +951,16 @@ label _4_0_SOIREE_SANS_VOTE:
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     "Goumi nous autorise le comptoir. Lysa émiette le pain, ajoute un peu de sucre puis l'humidifie juste assez pour former deux petites galettes."
     "Tout se fait à la main. C'est terminé avant que Kael ait sorti la première de ses questions."
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "inquiet", 0.542),
+        ("iris", "neutre", 0.625),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     elen surpris "Mais c'est tout ?"
     lysa neutre "C'est tout."
     elen desaccord "On aurait pu faire ça ce matin !"
@@ -864,7 +992,17 @@ label _4_0_SOIREE_SANS_VOTE:
     elen desaccord "J'allais pas faire ça !"
     mara taquin "C'est bien pour ça que tu as déjà une assiette à la main."
     "Mara vient d'apparaître à l'entrée. Elen cache aussitôt l'assiette derrière son dos."
-    $ showGroup([("mara", "taquin"), ("elen", "joie"), ("lysa", "blase"), ("ryn", "neutre"), ("tomas", "hesitation"), ("noam", "neutre")])
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "neutre", 0.207),
+        ("mara", "taquin", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "neutre", 0.625),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     elen inquiet "C'est pour demain."
     mara sourire "Bien sûr."
     if j4_frontieres_result == "pont":
@@ -873,6 +1011,16 @@ label _4_0_SOIREE_SANS_VOTE:
     else:
         ryn triste "Gardez-la. Moi, j'ai pas très faim."
         "Il dépose son morceau et sort sans ajouter un mot."
+        $ showGroup([
+            ("lysa", "blase", 0.040),
+            ("kael", "calme", 0.124),
+            ("mara", "neutre", 0.375),
+            ("tomas", "hesitation", 0.458),
+            ("elen", "inquiet", 0.542),
+            ("iris", "neutre", 0.625),
+            ("noam", "neutre", 0.793),
+            ("elias", "neutre", 0.960),
+        ])
         tomas inquiet "Je lui en mettrai une de côté."
     "Personne ne relance la discussion sur les frontières. Elen recommence simplement à raconter sa victoire au jeu, avec trois manches de plus que tout à l'heure."
     jump _4_0_FIN_SOIREE
@@ -886,6 +1034,10 @@ label _4_0_FIN_SOIREE:
     think "Je pourrais frapper. Il m'a demandé de le laisser tranquille, pourtant. Pour une fois, je vais essayer de l'écouter."
     "Un peu plus loin, un morceau de tissu sombre est noué à une poignée. Sael est déjà rentrée."
     "Mara arrive derrière moi, les mains dans les poches."
+    $ showGroup([
+        ("mara", "neutre", 0.30),
+        ("noam", "neutre", 0.70),
+    ])
     noam inquiet "Tu vas la voir ?"
     mara neutre "Ouais."
     noam neutre "Pour reparler du vote ?"
