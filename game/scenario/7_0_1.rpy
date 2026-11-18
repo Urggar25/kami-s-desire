@@ -1507,7 +1507,7 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     tomas triste "Imagine maintenant que ce soit vrai."
     tomas triste "Je viens peut-être de découvrir que des gens ne sont plus exécutés. Et mon premier réflexe, c'est de demander qu'on n'en parle à personne."
     noam reflechit "Tu veux éviter que quelqu'un tente de franchir une frontière sur une supposition."
-    tomas colere "JE LE SAIS ! Je le sais, Noam ! Mais combien de temps on peut cacher une bonne nouvelle pour protéger les gens d'une mauvaise ?!"
+    tomas inquiet "JE LE SAIS ! Je le sais, Noam ! Mais combien de temps on peut cacher une bonne nouvelle pour protéger les gens d'une mauvaise ?!"
     "Il s'interrompt et regarde la porte comme s'il venait de crier beaucoup trop fort."
     tomas gene "Pardon. Je n'avais pas prévu de m'énerver."
     noam neutre "Ça prouve au moins que tu sais ce que ça représente."
