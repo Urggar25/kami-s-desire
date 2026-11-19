@@ -153,6 +153,7 @@ label _14_0_1_1_0_CAFETERIA_REJET:
     ])
 
     elen joie "Noam !! REGARDE !!"
+    call kd_vn_reaction("elen", "joie", "#ff9c55")
 
     "Elen me fait signe avec une tranche de pain à moitié mangée. Elle a l'air absurdement heureuse."
 
