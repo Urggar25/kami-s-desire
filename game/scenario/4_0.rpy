@@ -1135,7 +1135,6 @@ label _4_0_ROUTE_SOIR_LYSA:
 
 label _4_0_RETOUR_CHAMBRE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_204
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
     "La porte de Julian est fermée. Une ligne de lumière passe dessous."
