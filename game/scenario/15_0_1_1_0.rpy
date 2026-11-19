@@ -437,6 +437,7 @@ label _15_0_1_1_0_VIDEO_KAEL:
     kael inquietude "Non. Attends..."
     "Il recule de deux images. Le garçon filmé décroche la photo de Léa."
     kael inquietude "TOUCHE PAS À ÇA !"
+    call kd_vn_reaction("kael", "inquietude", "#ff9c55")
     "Je sursaute. Il vient de hurler sur son propre visage."
     noam inquiet "C'est une vidéo. Il peut pas t'entendre."
     kael fatigue "Je sais. Je sais, putain..."
