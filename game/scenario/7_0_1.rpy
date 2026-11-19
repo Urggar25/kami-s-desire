@@ -1278,6 +1278,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     noam "Et pourquoi tu me le dis avec cet air-là ?"
     lysa taquin "Tu comprendras."
     $ hideGroup()
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg025 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg025")
     pause 0.6
