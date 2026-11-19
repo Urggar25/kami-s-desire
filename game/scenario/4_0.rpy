@@ -58,6 +58,8 @@ label _4_0_REVEIL_CHAMBRE:
 
     $ current_day = 4
     $ j4_frontieres_result = "non_joue"
+    $ j4_soir_lysa_discussion = False
+    $ j4_route_optional_met = False
     $ noam_has_juliette_drawing = True
     $ current_period = "Matin"
     $ cafeteria_food_level = "medium"
@@ -657,9 +659,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     $ unlock_codex_page("empire_veyron", with_notification=False)
     $ unlock_codex_page("technocratie_nessaire", with_notification=False)
     $ unlock_codex_page("terres_ravagees", with_notification=False)
-    ryn mefiant "Arrête de parler comme si tout le monde pensait pareil."
+    ryn neutre "Arrête de parler comme si tout le monde pensait pareil."
     sael colere "Et toi, t'as pardonné ?"
-    ryn surpris "Quoi ?"
+    ryn neutre "Quoi ?"
     sael "Aux Veyroniens. Aux Nessairois. À ceux qui ont transformé nos terres en désert. Tu leur as pardonné, toi ?"
     "Ryn cherche sa réponse. Il ne la trouve pas tout de suite."
     ryn neutre "Je ne sais pas si j'ai pardonné."
@@ -1084,7 +1086,7 @@ label _4_0_ROUTE_SOIR_LYSA:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("lysa", "neutre", 0.30), ("noam", "neutre", 0.70)])
     noam sourire "Attends. Finalement, c'était comment, ta soirée ?"
-    lysa surpris "Tu me poses vraiment la question ?"
+    lysa reflechit "Tu me poses vraiment la question ?"
     noam "Oui."
     lysa blase "Étrange."
     noam "Je peux repartir."
