@@ -77,6 +77,7 @@ label _27_0_1_1_0_0_1_REVEIL:
     tomas triste "Si tu veux vraiment monter dans cette navette, tu n'as pas vraiment le choix..."
     tomas reflexion "Sinon, tu finiras sur Keyper. En tout cas vraisemblablement..."
     noam colere "STOP ! Je préfère qu'on arrête de parler comme si sa vie était un programme qu'on devait régler !"
+    call kd_vn_reaction("noam", "colere", "#ff5d75")
     "Elias repose lentement son tournevis. J'ai parlé trop vite."
     elias reflexion "Attends... Pourquoi tu réagis comme ça ?"
     noam inquiet "Parce que... Parce que j'ai pas envie qu'on décide de le tuer à ma place, c'est tout !"
