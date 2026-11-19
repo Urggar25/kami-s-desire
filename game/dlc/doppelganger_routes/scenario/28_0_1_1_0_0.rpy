@@ -93,6 +93,7 @@ label _28_0_1_1_0_0_REVEIL:
     ryn fatigue "C'est moi."
     noam surpris "Quoi ?"
     ryn colere "C'EST MOI, PUTAIN ! C'est moi qui l'ai frappée ! Tu voulais que je le dise ? Ben voilà, c'est dit !"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
 
     "Je reste debout devant lui, incapable de comprendre comment nous sommes passés de ses accusations contre Tomas à ces quelques mots."
     "Iris se rapproche du lit, mais Ryn détourne la tête avant même qu'elle ait pu parler."
