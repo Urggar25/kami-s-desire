@@ -948,7 +948,7 @@ label _6_0_1_FIN_JOURNEE:
 
 label _6_0_1_SOIREE_CARTES:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_277
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_j601_soiree_cafeteria
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
     $ showGroup([("elen", "sourire", 0.18), ("tomas", "sourire", 0.39), ("lysa", "blase", 0.61), ("mara", "taquin", 0.81)])
