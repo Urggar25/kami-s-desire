@@ -234,6 +234,7 @@ label _29_0_1_1_0_0_1_1_JULIAN:
     scene black with vpunch
     "Je me jette vers eux, mais Mara me retient par le bras. Je me débats et je lui demande de me lâcher."
     noam peur "LÂCHE-MOI !"
+    call kd_vn_reaction("noam", "peur", "#ff9c55")
     mara colere "Arrête de bouger !"
     julian peur "Qu'est-ce que vous faites ?! Noam !"
     "J'entends sa voix, puis des bruits étouffés. Sael me tourne le dos."
