@@ -1060,6 +1060,79 @@ label _4_0_SOIREE_SANS_VOTE:
 
 label _4_0_FIN_SOIREE:
 
+    $ current_scene_active = "_4_0_ROUTE_CHAMBRE_SOIR"
+    $ corridor_current = "cafeteria"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_j4_sortie_cafeteria
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 1.2
+    "Lysa sort derrière moi avec un petit morceau de miettolune enveloppé dans une serviette."
+    lysa neutre "Il en reste, si tu as encore faim."
+    noam sourire "Tu gardes les restes pour toi ?"
+    lysa blase "Je garde les restes pour éviter qu'Elen décide d'organiser une deuxième fête."
+    "Elle s'éloigne lentement vers le croisement. Je peux la rejoindre avant de rentrer."
+    call CORRIDOR_NAVIGATION(corridor_current) from _call_j4_retour_manuel_dortoir
+    $ current_scene_active = None
+    $ corridor_current = "dortoir"
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    "Je retrouve enfin le couloir des chambres."
+    jump _4_0_RETOUR_CHAMBRE
+
+
+label _4_0_ROUTE_SOIR_LYSA:
+
+    $ j4_soir_lysa_discussion = True
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([("lysa", "neutre", 0.30), ("noam", "neutre", 0.70)])
+    noam sourire "Attends. Finalement, c'était comment, ta soirée ?"
+    lysa surpris "Tu me poses vraiment la question ?"
+    noam "Oui."
+    lysa blase "Étrange."
+    noam "Je peux repartir."
+    lysa "Non, reste. C'est juste..."
+    "Elle regarde le petit morceau de galette qu'elle tient encore."
+    lysa neutre "J'avais oublié que je savais faire ça pour d'autres gens."
+    noam "Cuisiner ?"
+    lysa "Non. Leur faire plaisir."
+    "Elle se renfrogne immédiatement."
+    lysa "Et avant que tu fasses une blague, oui, je sais, c'est très inquiétant."
+    noam sourire "Je n'allais rien dire."
+    lysa "C'est encore pire."
+    noam "Tu faisais souvent des miettolunes, chez toi ?"
+    lysa reflechit "Souvent ? Quand on n'avait plus de pain frais, oui. Donc assez souvent."
+    noam "Avec de la confiture ?"
+    lysa "Quand ma mère avait réussi à en garder. Sinon juste avec du lait et du sucre. Parfois rien d'autre."
+    noam "Tu les préparais avec elle ?"
+    lysa neutre "Elle me laissait mélanger. Et elle disait que je mettais toujours trop de lait."
+    noam "C'était vrai ?"
+    lysa sourire "Oui. Mais elle n'avait pas besoin de me le répéter."
+    "Elle sourit encore un instant, puis relève les yeux."
+    lysa reflechit "Par contre, j'aurais préféré qu'on termine la journée sans se hurler dessus au Conclave."
+    if j4_frontieres_result == "pont":
+        noam neutre "Au moins, Ryn et Sael se sont parlé."
+        lysa "Ils se sont écoutés deux minutes. C'est déjà plus que d'habitude."
+        noam "Tu crois qu'ils vont recommencer ?"
+        lysa blase "Je ne suis pas voyante."
+    else:
+        noam neutre "Ça s'est mal passé."
+        lysa "Oui."
+        noam "Tu crois qu'on aurait dû faire quelque chose ?"
+        lysa reflechit "Je crois surtout qu'on aurait dû leur laisser un peu d'air."
+    lysa neutre "Enfin. La soirée, elle, était bien."
+    noam sourire "Tu vois. Tu arrives à le dire."
+    lysa blase "Ne t'habitue pas."
+    "Elle me donne la moitié de son dernier morceau."
+    noam surpris "Tu partages, maintenant ?"
+    lysa "C'est juste pour que tu arrêtes de parler."
+    "Je prends le morceau. Elle attend que je goûte."
+    noam sourire "C'est bon."
+    lysa "Je sais."
+    "Elle s'éloigne vers le dortoir. Je peux la suivre, mais je préfère finir de manger avant."
+    $ hideGroup()
+    return
+
+
+label _4_0_RETOUR_CHAMBRE:
+
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_204
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
