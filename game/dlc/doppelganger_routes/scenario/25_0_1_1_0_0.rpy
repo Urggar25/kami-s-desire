@@ -544,6 +544,7 @@ label _25_0_1_1_0_0_SALLE_GOUMI:
     pause 0.5
 
     $ unlock_gallery_image("bg_cg040")
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg040 at adaptive_fullscreen with signal_stutter
     $ doppelganger_reveal(screamer=False, duration=0.80, restore_volume=0.65)
     play music "music/bgm_horror_pulse.mp3" fadein 0.6
