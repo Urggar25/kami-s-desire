@@ -968,6 +968,7 @@ label _2_CAFETERIA_SOIR:
 
     think "Je file sous la douche avant que mes bras ne refusent définitivement de bouger."
 
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg011 at adaptive_fullscreen with fade
 
     think "L'eau chaude calme mes épaules. Mais l'histoire de Kael revient. Une porte qu'on ferme. Deux personnes de l'autre côté."
