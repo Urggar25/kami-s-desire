@@ -228,6 +228,7 @@ label _27_0_1_1_0_1_CAFETERIA:
     elen triste "Je lui avais proposé cet échange pour qu'il se repose. Je pensais lui rendre service..."
     noam inquiet "Tu pouvais pas prévoir ce qui allait se passer."
     elen colere "C'est ce que tout le monde me répète. Mais personne n'en sait rien !"
+    call kd_vn_reaction("elen", "colere", "#ff9c55")
     pause 0.4
     nyra raison "Je peux accompagner Noam. On photographie les documents et on remet tout en place."
     noam neutre "D'accord."
