@@ -306,6 +306,28 @@ Pour chaque ajout ou modification future :
 
 | Lien Steam du dossier DLC | Ouvre une recherche Steam sur Kami's Desires tant que l'URL définitive du produit n'est pas connue. | `game/dlc_manager.rpy` | `Function(renpy.open_url, KD_DLC_STEAM_URL)` |
 
+
+## Animations expressives de visual novel — kit VN Video Motion (19 novembre 2026)
+
+**Source :** `game/kd_vn_video_motion.rpy`. Ces effets sont **ponctuels** (opt-in) et viennent compléter `showGroup`, l'autofocus, `close_up`, `cutin`, `reactions` et les animations de ponctuation : ne pas les déclencher à chaque réplique.
+
+| Effet | Usage narratif | Appel |
+|---|---|---|
+| Entrée gauche (`kd_vn_slide_left`) | Arrivée brusque d'un intervenant depuis la gauche | `call kd_vn_entrance("lysa", "neutre", "left")` |
+| Entrée droite (`kd_vn_slide_right`) | Réponse / arrivée depuis la droite | `call kd_vn_entrance("elias", "neutre", "right")` |
+| Apparition pop (`kd_vn_pop`) | Personnage qui surgit au centre, surprise comique | `call kd_vn_entrance("elen", "joie", "center")` |
+| Rebond vertical (`kd_vn_bounce`) | Petit sursaut comique ; transform réutilisable sur une image | `show elen joie at kd_vn_bounce` |
+| Gros plan réaction (`kd_vn_reaction`) | Surprise, colère, panique ; isoler une réaction méritée | `call kd_vn_reaction("ryn", "colere", "#ff9c55")` |
+| Impact / flash CG (`kd_vn_cg_impact`) | Rupture brutale juste **avant** une CG déterminante | `call kd_vn_cg_impact("#ffffff")` |
+
+**Directives d'intégration :**
+- Choisir **1 ou 2 accents maximum par séquence importante**, et jamais un effet à chaque réplique. Préserver les scènes calmes, les silences et les moments d'horreur fondés sur l'absence de mouvement.
+- Faire l'entrée **avant** le `showGroup` du personnage ; l'entrée utilise un overlay temporaire puis le système de groupe reprend les sprites. Ne pas la lancer lorsque le personnage est déjà à l'écran.
+- Le gros plan doit correspondre à une expression existante du personnage et à une réaction effectivement marquante ; éviter les répliques ordinaires et les simples points d'exclamation.
+- Placer l'impact CG avant une vraie rupture de cadrage ou une révélation, jamais sur chaque changement de décor. La scène suivante reste explicitement pilotée par le scénario.
+- Les labels d'effet court-circuitent le saut de texte (`renpy.is_skipping()`), n'altèrent ni les flags, ni les choix, ni la caméra. Ne pas déclencher ces effets au milieu des mini-jeux ou des écrans interactifs.
+- Les animations sont prévues pour Ren'Py 8.3.x ; **lint et test en jeu indispensables** après chaque passe d'intégration. Les appels doivent conserver l'indentation des labels et branches existants.
+
 ## Outils de contrôle de la refonte J4+
 
 | Nom | Description en une ligne | Fichier source | Exemple d'appel en une ligne |
