@@ -90,7 +90,7 @@ init python:
             store.j50_wire_done.append(idx)
             store.j50_wire_right_done.append(connector_idx)
             store.j50_wire_connections.append((idx, connector_idx))
-            store.j50_wire_time_left = 9.0
+            store.j50_wire_time_left = 11.0
             store.j50_wire_feedback = "CONNEXION VERROUILLÉE — chronomètre réinitialisé."
             renpy.sound.play("audio/sfx_qte_hit.wav")
             if store.j50_wire_success >= len(J50_WIRE_COLORS):
@@ -112,14 +112,14 @@ init python:
             store.j50_wire_lives = max(0, store.j50_wire_lives - 1)
             store.j50_wire_errors += 1
             store.j50_wire_selected = None
-            store.j50_wire_time_left = 9.0
+            store.j50_wire_time_left = 11.0
             renpy.sound.play("audio/sfx_qte_miss.wav")
 
             if store.j50_wire_lives <= 0:
                 store.j50_wire_failed = True
                 store.j50_wire_feedback = "ÉCHEC — alimentation de secours interrompue."
             else:
-                store.j50_wire_feedback = "TEMPS ÉCOULÉ — reprise d'urgence : 8,0 s."
+                store.j50_wire_feedback = "TEMPS ÉCOULÉ — reprise d'urgence : 11,0 s."
 
         renpy.restart_interaction()
 
@@ -391,6 +391,8 @@ label _5_0_REVEIL_CHAMBRE:
     $ j50_observation_circuit_status = "inconnu"
     $ j50_night_memory = "aucun"
     $ j50_julian_relation = 0
+    $ j50_julian_fissure = 0
+    $ j50_observation_followup = False
 
     $ blink()
     think "Je me réveille avec quelque chose de dur sous la joue."
@@ -714,7 +716,7 @@ label _5_0_0_JULIAN:
         "Jouer le jeu et improviser.":
             $ j50_julian_fissure += 1
             $ j50_julian_relation += 1
-            noam hesitation "Euh... bonjour. Alors, hier, ça s'est mal passé."
+            noam inquiet "Euh... bonjour. Alors, hier, ça s'est mal passé."
             julian "Continue."
             noam "On a essayé. On a perdu. Et je... voilà."
             julian "Tu viens de dire « voilà » à des millions de personnes."
@@ -749,7 +751,7 @@ label _5_0_0_JULIAN:
     noam neutre "Je sais."
     julian "Non. Tu crois que tu sais. J'ai passé des jours à dire aux gens que ça pouvait marcher."
     noam "Et Tomas ?"
-    julian mefiant "Quoi, Tomas ?"
+    julian neutre "Quoi, Tomas ?"
     noam "Tu l'as coincé dans la salle de repos."
     julian colere "Je voulais qu'il écoute !"
     noam "Il écoutait. Il voulait juste que tu le laisses sortir."
