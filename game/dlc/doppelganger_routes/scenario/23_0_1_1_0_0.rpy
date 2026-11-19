@@ -409,6 +409,7 @@ label _23_0_1_1_0_0_IRM:
 
     $ hideGroup()
     $ unlock_gallery_image("bg_cg061")
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg061 at adaptive_fullscreen with dissolve
 
     iris blase "Voilà. T'es courageux. On peut avancer ?"
