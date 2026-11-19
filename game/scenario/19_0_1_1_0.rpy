@@ -125,6 +125,7 @@ label _19_0_1_1_0_REVEIL_CHAMBRE:
     noam inquiet "Mara, baisse d'un ton."
 
     mara colere "Non mais attends, tu veux VRAIMENT me faire croire que t'es allé te balader derrière les chambres cette nuit ?!"
+    call kd_vn_reaction("mara", "colere", "#ff9c55")
 
     noam "Avec toi !"
 
