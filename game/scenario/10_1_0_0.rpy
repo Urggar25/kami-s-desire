@@ -78,6 +78,7 @@ label _10_1_0_0_CAFETERIA:
     tomas reflexion "Aucune autorisation."
 
     elen desaccord "Mais on vient littéralement de voter pour ça !"
+    call kd_vn_reaction("elen", "desaccord", "#ff9c55")
 
     mara "On a voté pour autoriser les regroupements, pas pour te nommer ministre des festivals."
 
