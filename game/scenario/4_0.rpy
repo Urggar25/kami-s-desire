@@ -643,11 +643,41 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     elias reflechit "Moi, ça me plairait juste de pouvoir aller voir des amis. Ça fait longtemps que..."
     "Il s'arrête. Personne ne lui demande de finir."
     kael calme "Sur Orbite, les accès sont déjà surveillés. On ne peut pas comparer tous les districts."
+    mara neutre "Et les usines d'Axiome ne régleront pas le problème en fabriquant des barrières. Manupolis a déjà passé des siècles à vendre des armes sans jamais déclarer la guerre à personne."
+    $ unlock_codex_page("manupolis", with_notification=False)
     $ unlock_dossier_arg("p2_orbite")
     sael mefiant "Et les villages qui n'ont pas vos moyens de surveillance ?"
     ryn colere "On a déjà des gardiens. On peut surveiller les routes."
     sael neutre "Pas partout. Tu le sais aussi bien que moi."
-    "Ryn s'appuie sur la table. Sael ne le regarde pas."
+    ryn colere "Alors on demande des renforts. Ça se prépare !"
+    sael mefiant "Tu parles comme si les gens attendaient seulement une autorisation pour se serrer la main."
+    ryn "C'est pas ce que j'ai dit."
+    sael colere "Tu crois que les vieux de mon village ont oublié ce que les Veyroniens et les Nessairois ont fait chez nous ?"
+    sael "Tu les as entendus, toi. Tu sais ce qu'ils disent quand quelqu'un vient d'un autre territoire."
+    $ unlock_codex_page("empire_veyron", with_notification=False)
+    $ unlock_codex_page("technocratie_nessaire", with_notification=False)
+    $ unlock_codex_page("terres_ravagees", with_notification=False)
+    ryn mefiant "Arrête de parler comme si tout le monde pensait pareil."
+    sael colere "Et toi, t'as pardonné ?"
+    ryn surpris "Quoi ?"
+    sael "Aux Veyroniens. Aux Nessairois. À ceux qui ont transformé nos terres en désert. Tu leur as pardonné, toi ?"
+    "Ryn cherche sa réponse. Il ne la trouve pas tout de suite."
+    ryn neutre "Je ne sais pas si j'ai pardonné."
+    ryn "Mais je ne vais pas condamner leurs enfants pour ce qu'ils ont fait."
+    sael mefiant "Tu crois que tous les autres auront cette patience ?"
+    ryn colere "Non. Mais je refuse de décider à leur place qu'ils se détestent pour toujours."
+    "Sael se lève à moitié, puis se rassied."
+    sael "Chez nous, il reste des gens qui n'ont jamais posé le pied hors des Terres ravagées. Ils ont grandi avec les ruines et les histoires de leurs parents."
+    sael "Tu ouvres les frontières demain, et tu crois qu'ils vont tous aller faire du tourisme ? Ils vont se jeter les uns sur les autres."
+    ryn "Ou ils vont simplement partir."
+    sael mefiant "Voilà. Partir."
+    sael "Les jeunes d'abord. Ceux qui savent travailler, ceux qui peuvent encore faire quelque chose de leur vie. Et les autres restent là, avec les tombes."
+    elen inquiet "Mais on ne peut pas obliger les gens à rester..."
+    sael colere "Je ne veux obliger personne, Elen !"
+    "Elen recule légèrement. Sael baisse la voix."
+    sael neutre "Mais si tout le monde quitte Limen, qu'est-ce qui restera ? Nos villages ? Nos langues ? Ce que nos parents ont réussi à garder ?"
+    sael "J'ai peur qu'on nous demande encore de disparaître, mais cette fois en nous disant que c'est pour notre bien."
+    "Ryn s'appuie sur la table. Il ne la regarde plus de la même manière."
     $ close_up("sael")
     sael neutre "Avant la fermeture, des groupes armés passaient par chez nous. Ils prenaient de la nourriture, des outils. Et parfois des gens."
     elen inquiet "Des gens ?"
@@ -676,9 +706,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     sael colere "NON ! Tu sais ce que j'ai dit parce que j'ai peur. Ça te donne pas le droit de décider ce que je pense !"
     mara agace "Vous êtes en train de vous déchirer pour le plaisir de Kami. Vous vous rendez compte ?"
     ryn colere "Et alors ?! Ça va faire revenir ceux que j'ai enterrés ?!"
-    sael determine "Je ne peux pas approuver une ouverture sans garanties pour mon village. Pas avec ce texte."
+    sael determine "Même avec des gardiens, je voterai contre. Pas seulement contre ce texte. Contre l'ouverture des frontières. Je ne veux pas de ça."
     elen inquiet "Mais... on a encore deux jours. On peut peut-être en parler autrement ?"
-    sael neutre "En parler, oui. Je ne vais pas te promettre de voter pour."
+    sael neutre "On peut en parler. Mais pas pour me faire changer mon vote. Je suis contre. Et je le resterai."
     "Ryn détourne la tête. J'ai envie d'intervenir, mais chaque phrase qui me vient sonne comme un reproche adressé à l'un des deux."
     call day4_thread_debate_game from _call_day4_thread_debate_game
     if j4_frontieres_result == "pont":
@@ -693,14 +723,14 @@ label _4_0_DEBAT_APAISE:
     "Elle s'arrête, agacée de ne pas trouver ses mots."
     sael triste "C'était pas juste. J'aurais pas dû le dire comme ça."
     ryn triste "Non."
-    sael mefiant "Mais je suis toujours contre ce texte. Ça, ça ne change pas."
+    sael mefiant "Et je suis toujours contre l'ouverture. Pas seulement contre cette formulation. Je veux que tu le comprennes."
     ryn neutre "Je t'ai entendue."
-    sael neutre "Si tu veux m'expliquer comment tu organiserais des passages surveillés... pas ici. Pas devant tout le monde."
+    sael neutre "Si tu veux me raconter ce qui s'est passé chez toi, je t'écouterai. Mais je ne veux pas que tu prennes ça pour une négociation."
     ryn colere "Tu pourrais commencer par me laisser finir deux phrases la prochaine fois."
     sael colere "Tu pourrais éviter de m'accuser de vouloir des morts !"
     "Ils se regardent un instant. Ni l'un ni l'autre ne semble prêt à ajouter quoi que ce soit."
     ryn neutre "Demain. On en parlera demain."
-    sael determine "Peut-être. Si on est capables de s'écouter."
+    sael determine "On peut s'écouter. Ça ne veut pas dire qu'on sera d'accord."
     "Elle quitte la salle."
     $ showGroup([
         ("lysa", "blase", 0.040),
@@ -731,7 +761,7 @@ label _4_0_DEBAT_ROMPU:
     "Tomas recule sa chaise. Le bruit fait sursauter Elen."
     tomas inquiet "Sael, je crois que personne ne te demande..."
     sael mefiant "Tomas, s'il te plaît. Pas toi aussi."
-    sael determine "Je voterai contre. Et je ne discuterai plus de ça aujourd'hui."
+    sael determine "Je voterai contre. Même si vous changez le texte, ce sera non. Et je ne discuterai plus de ça aujourd'hui."
     "La porte se referme avant que Ryn ait trouvé quoi répondre."
     $ showGroup([
         ("lysa", "blase", 0.040),
@@ -787,13 +817,14 @@ label day4_thread_debate_success:
     noam determine "Ryn, elle refuse le texte. Elle n'a pas dit qu'elle voulait qu'on tire sur les gens."
     ryn colere "Et moi, je suis censé faire quoi de ceux qui meurent ?!"
     noam inquiet "Rien oublier. Mais écoute pourquoi elle a peur avant de lui répondre."
-    sael reflechit "Je ne veux pas qu'on tue des gens. Je ne veux pas non plus revoir ces hommes chez nous."
+    sael reflechit "Je ne veux pas qu'on tue des gens. Mais je ne vais pas ouvrir mon village à ceux dont on a encore peur."
     ryn triste "Alors on surveille les passages. On ne les ferme pas à coups de tirs."
     sael mefiant "Tu peux me garantir que ça marchera ?"
     ryn neutre "Non."
-    "Sael relève les yeux, surprise."
-    ryn neutre "Mais je peux chercher avec toi. C'est pas la même chose."
-    sael reflechit "Non. C'est pas la même chose."
+    "Sael lève les yeux. Il ne cherche pas à se rattraper."
+    ryn neutre "Je ne te demande pas de voter oui aujourd'hui. Je veux seulement que tu saches pourquoi je refuse d'abandonner."
+    sael neutre "Je sais. Et moi, je voterai non. Tu peux accepter au moins ça ?"
+    ryn triste "Je peux l'entendre."
     $ unlock_dossier_arg("p2_dialogue_possible")
     return
 

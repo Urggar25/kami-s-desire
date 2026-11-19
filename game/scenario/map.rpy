@@ -146,6 +146,16 @@ init python:
                 return (target_type, target_key) == ("room", "cafeteria")
             return False
 
+        if getattr(store, "current_scene_active", None) == "_4_0_ROUTE_CHAMBRE_SOIR":
+            if corridor_key == "cafeteria":
+                return (target_type, target_key) == ("corridor", "dortoir")
+            if corridor_key == "dortoir":
+                return (target_type, target_key) in (
+                    ("room", "dortoir"),
+                    ("corridor", "cafeteria"),
+                )
+            return False
+
         if getattr(store, "current_scene_active", None) == "_4_0_ROUTE_CAFETERIA":
             if corridor_key == "dortoir":
                 return (target_type, target_key) == ("corridor", "cafeteria")
@@ -337,6 +347,17 @@ screen conclave_corridor(corridor_key=None):
             unhovered SetVariable("corridor_ui_target", None)
             action Return("_2_ROUTE_CAFETERIA_SOIR_LYSA")
 
+    if shown_corridor == "cafeteria" and current_scene_active == "_4_0_ROUTE_CHAMBRE_SOIR" and not j4_soir_lysa_discussion:
+        imagebutton:
+            idle Transform(character_image("lysa", "neutre"), zoom=1.00)
+            hover Transform(character_image("lysa", "sourire"), zoom=1.00)
+            focus_mask True
+            xalign 0.55
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Discuter avec Lysa")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_4_0_ROUTE_SOIR_LYSA")
+
     frame:
         xalign 0.02
         yalign 0.03
@@ -384,6 +405,17 @@ screen conclave_corridor(corridor_key=None):
                     text "Zones visitées : [len(exploration_libre_seen_rooms)]/[exploration_libre_required_visits]":
                         size 20
                         color "#DCE8F7"
+
+    elif current_scene_active == "_4_0_ROUTE_CHAMBRE_SOIR":
+        frame:
+            xalign 0.03
+            yalign 0.97
+            background Solid("#0b1118d0")
+            padding (16, 12)
+            vbox:
+                spacing 5
+                text "OBJECTIF" size 18 color "#6FA6C6"
+                text "Rejoindre sa chambre" size 26 color "#A6D8FF"
 
     elif current_scene_active in ("_4_0_ROUTE_CAFETERIA", "_6_0_1_ROUTE_CAFETERIA"):
         frame:
