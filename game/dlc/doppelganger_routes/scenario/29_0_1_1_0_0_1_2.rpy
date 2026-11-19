@@ -272,6 +272,7 @@ label _29_0_1_1_0_0_1_2_REVELATION:
     iris reflexion "Mmh... Bon, y a encore des bugs, apparemment. Ça, je devrais pouvoir le régler."
     noam surpris "Attends, quoi ? Tu sais te servir de cette machine ?"
     iris colere "MAIS ENFIN, J'AI PARTICIPÉ À LA CRÉATION DE CETTE MACHINE, ÉVIDEMMENT !"
+    call kd_vn_reaction("iris", "colere", "#ff9c55")
     $ hideGroup()
     stop music fadeout 0.2
     scene black with fade
