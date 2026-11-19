@@ -179,7 +179,7 @@ label _6_0_1_CAFETERIA:
     elen "Et... pour cet après-midi ?"
     sael mefiant "Je sais, Elen."
     elen "Je demandais si on avait le droit de manger ensemble après."
-    sael surpris "Ah."
+    sael neutre "Ah."
     elen "Parce que la dernière fois, tout le monde est parti en faisant la tête."
     sael "Je viendrai, si j'ai faim."
     mara taquin "Voilà un programme politique que je peux soutenir."
@@ -188,7 +188,7 @@ label _6_0_1_CAFETERIA:
     elen "EH ! Le couvercle !"
     elias "Je vais juste boire avant la deuxième version."
     elen "D'accord, mais ne le renverse pas."
-    elias blase "..."
+    elias fatigue "..."
     "Je lui adresse un regard compatissant."
 
     "L'écran du comptoir s'allume. Une carte de Limen apparaît."
@@ -289,7 +289,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
     elen "Garde-la. On verra si elle sonne."
     "Il la désactive tout de même."
     noam neutre "Allez. Si on arrive en avance, Julian pourra nous faire un discours d'accueil."
-    elen fatigue "Tu voulais nous rassurer ?"
+    elen inquiet "Tu voulais nous rassurer ?"
     "Au croisement, Ryn et Sael arrivent de deux directions opposées. Ils se laissent passer sans se regarder."
     "Tomas accélère un peu. Personne ne le lui fait remarquer."
     jump _6_0_1_CONCLAVE_START
@@ -352,7 +352,7 @@ label _6_0_1_CONCLAVE_START:
     ryn "Tu n'as pas besoin d'être agressive."
     sael colere "Pardon ?"
     "Ryn se rend compte de ce qu'il vient de dire. Il se frotte le front."
-    ryn fatigue "Non. Désolé. J'aurais pas dû dire ça."
+    ryn triste "Non. Désolé. J'aurais pas dû dire ça."
     "Sael lui laisse quelques secondes."
     sael neutre "Je ne sais pas comment te faire comprendre. Mon village est petit. Les gens qui arrivaient en armes, on connaissait certains de leurs noms."
     ryn triste "J'ai vécu de l'autre côté de ces barrières. Il y avait des gens qui essayaient juste de rentrer."
@@ -394,7 +394,7 @@ label _6_0_1_CONCLAVE_START:
     tomas inquiet "On pourrait peut-être ajouter un calendrier de mise en œuvre..."
     sael "Pas aujourd'hui. Pas dans ce texte."
     noam neutre "Ce que je voudrais savoir, c'est ce qu'on est capables de garantir avant de repartir."
-    ryn fatigue "On n'est capables de rien garantir. C'est bien ça, le problème."
+    ryn triste "On n'est capables de rien garantir. C'est bien ça, le problème."
     "Il se lève pour récupérer de l'eau. Il se trompe de verre, le repose aussitôt."
     tomas gene "Euh... celui-là, c'était le mien."
     ryn "Désolé."
@@ -603,7 +603,7 @@ label _6_0_1_FRACTURE_QTE:
     nyra "Non. Mais ça nous empêche d'être certains du contraire."
     mara mefiant "Et donc ? On part et on revient quand elle sera remise ?"
     elen inquiet "On ne peut pas laisser les gens attendre en disant juste qu'on verra plus tard."
-    ryn fatigue "On leur fera attendre trois jours de plus, quoi qu'on décide."
+    ryn triste "On leur fera attendre trois jours de plus, quoi qu'on décide."
     elen "Non. Si on vote, au moins on aura essayé."
     ryn "Et si quelqu'un décide qu'on a voté autre chose ?"
     "Elen s'arrête."
@@ -651,7 +651,7 @@ label _6_0_1_FRACTURE_QTE:
     elen inquiet "Ça veut dire quoi ?"
     kael reflechit "Que si nous quittons la salle, les restrictions restent. Et le prochain créneau est dans trois jours."
     mara "Alors je préfère sortir."
-    ryn fatigue "Et rentrer chez nous avec quoi ? Un « on verra » ?"
+    ryn triste "Et rentrer chez nous avec quoi ? Un « on verra » ?"
     mara "Tu préférerais un résultat dont personne ne peut répondre ?"
     ryn "Non."
     "Il semble lui-même surpris d'avoir répondu si vite."
@@ -670,7 +670,7 @@ label _6_0_1_FRACTURE_QTE:
     "Il regarde les boutons apparus sur sa tablette."
     ryn "Je le veux encore."
     elen "Alors fais-le."
-    ryn fatigue "Je ne sais pas ce que Kami en fera."
+    ryn triste "Je ne sais pas ce que Kami en fera."
     "Sael le regarde, mais n'intervient pas."
     ryn "Je ne veux pas qu'un oui de ma part serve à ouvrir des passages sans que les villages sachent comment se défendre."
     mara "Tu vas voter contre ?"
@@ -782,207 +782,268 @@ label _6_0_1_VOTE:
 
     pause 0.8
 
+
     $ amendement_passe = False
+    $ j601_vote_pressure = player_vote
 
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-
-    "Les votes défilent sur l'écran."
-    "Un contre. Puis un autre. Encore un."
-    think "Je savais qu'il n'y aurait pas d'unanimité. Mais voir les refus s'accumuler donne à la défaite un tout autre poids."
-    "Le texte est rejeté. L'écran n'indique que les totaux ; aucun nom n'accompagne les bulletins."
-    think "Sael a annoncé son intention de voter contre. Je n'ai aucun moyen de connaître son bulletin, ni celui de Ryn."
-    think "Je repense à sa promesse, et au regard que Ryn a posé sur son propre écran."
-    if player_vote == "pour":
-        think "J'ai voté pour."
-        think "Pas parce que j'ignorais les risques. Parce que je n'arrivais plus à accepter que des familles soient condamnées à attendre derrière une barrière."
-        think "Ça ne rend pas les peurs de Sael moins réelles."
-    elif player_vote == "contre":
-        think "J'ai voté contre."
-        think "Je n'ai pas réussi à accepter une ouverture immédiate, sans garantie pour ceux qui vivent près des passages."
-        think "Ça ne m'empêchera pas de revoir le visage de la femme à la télévision."
-    else:
-        think "Je me suis abstenu."
-        think "Deux décisions m'effrayaient. Je n'ai pas su choisir laquelle j'étais prêt à assumer."
-        think "Je sais qu'il y a des gens qui appelleraient ça de la prudence. D'autres, de la lâcheté."
+    "Les résultats défilent. Le premier « CONTRE » apparaît, puis un deuxième."
+    "Tomas se penche en avant pour compter. Julian ne regarde plus l'écran."
+    "Le nombre de votes contre augmente encore."
+    think "Je cherche presque un nom à côté de chaque bulletin. Il n'y en a pas. Heureusement."
+    "L'écran affiche les totaux, puis un seul mot : « REJETÉ »."
     $ hideGroup()
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    play music "music/bgm_world_decline.mp3" fadein 1.0
-    "Au bout de la table, Sael fixe les résultats. Je ne peux rien lire sur son visage."
-    "Ryn, lui, n'a pas détourné les yeux une seule fois."
-    think "Le vote est secret. Cela n'empêche personne d'imaginer le bulletin de son voisin."
-    think "Je voudrais lui dire quelque chose. Pour une fois, je n'ai aucune phrase qui me paraît utile."
 
+    if player_vote == "pour":
+        "Je garde le doigt posé sur l'endroit où se trouvait le bouton « POUR »."
+        think "Je voulais qu'on essaie. J'avais peur du système, mais je l'ai fait quand même."
+        "Elen me regarde une seconde. Je ne sais pas si elle devine."
+    elif player_vote == "contre":
+        "Je repose ma tablette avant que l'écran affiche les résultats."
+        think "J'ai voté contre. La peur de ce qui pourrait se passer aux passages a été plus forte."
+        think "Je vais devoir vivre avec ça. Personne ne m'a obligé."
+    else:
+        "Je garde ma tablette sur les genoux, écran éteint."
+        think "Je me suis abstenu. Ça semblait être le seul choix que je pouvais faire sans mentir."
+        think "Maintenant que je vois le résultat, je ne sais plus si je suis soulagé."
+    "Personne ne demande le détail des bulletins."
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Résultat... du scrutin."
-    kami "Absence d'unanimité. La libre circulation entre les districts... est rejetée."
+    play music "music/bgm_system_override.mp3" fadein 0.6
+    kami "Résultat du scrutin. Douze bulletins comptabilisés."
+    kami "Unanimité non atteinte. La libre circulation entre les districts est rejetée."
     $ interject("REJETÉ", color="#FF4D6D")
     pause 0.4
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Les restrictions restent en vigueur."
-    kami "Nous nous retrouverons pour... pour le prochain vote."
-    kami "Merci de... votre participation."
-    "Son image disparaît sans musique de conclusion, sans sarcasme, sans la moindre remarque supplémentaire."
-    think "Je crois que c'est la première fois que Kami annonce une défaite sans avoir l'air de savourer le résultat."
+    "Je m'attends au rire habituel."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Fin de séance."
+    "L'image s'efface. Pas de fanfare. Pas même un « à bientôt »."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_world_decline.mp3" fadein 1.2
 
     $ showGroup([
-        ("ryn", "colere"),
+        ("ryn", "triste"),
         ("sael", "neutre"),
-        ("iris", "fatigue"),
+        ("iris", "inquiet"),
         ("mara", "doute"),
         ("tomas", "inquiet"),
         ("julian", "decu"),
         ("elias", "fatigue"),
         ("lysa", "fatigue"),
     ])
-    ryn colere "C'EST TOUT ?!"
-    elen triste "Ryn, tu as voté contre, toi aussi..."
-    ryn colere "JE SAIS !"
-    ryn triste "Je sais très bien ce que j'ai fait."
-    "Sael détourne la tête. Elle pourrait lui répondre. Elle ne le fait pas."
-    ryn colere "Les gens qui attendaient ce matin vont rentrer chez eux. Encore. Et nous, on va faire quoi ? Se féliciter d'avoir débattu proprement ?!"
-    iris fatigue "Personne ne se félicite, Ryn."
-    ryn colere "J'ai pas demandé ton avis !"
-    iris colere "Eh bien, tu l'as !"
-    julian hesitation "On pourrait peut-être éviter..."
-    lysa blase "Non, Julian. Pas maintenant."
-    sael triste "Ryn..."
-    sael triste "Je sais ce que ce vote signifie pour toi. Je ne te demande pas de m'approuver."
-    ryn colere "ALORS ME DEMANDE RIEN !"
-    ryn triste "Parce que là... j'y arriverais pas."
-    mara agace "Elle t'avait prévenu, Ryn. Elle n'a pas changé son vote en douce juste pour te faire mal."
-    ryn triste "Je sais."
-    ryn triste "Mais je me demande comment je vais expliquer ce résultat à ceux qui attendaient."
-    tomas inquiet "Euh... excusez-moi, mais on vient vraiment de voter alors que Kami ne tenait pas sa connexion ?!"
-    tomas inquiet "On sait au moins si nos douze votes ont tous été enregistrés ?"
-    kael reflechit "Douze bulletins sont comptabilisés. Ça correspond au nombre de représentants."
-    if j601_fracture_trace_saved:
-        kael inquiet "Mais le décalage que Noam a conservé n'est pas expliqué. Je vais comparer sa trace aux journaux de la station."
-        nyra raison "Cela ne permet pas de déduire le vote de qui que ce soit. Et c'est très bien ainsi."
+    "Ryn ne bouge pas. Les autres commencent à ranger leurs tablettes."
+    elen triste "Ils vont tous voir ça, là-bas."
+    "Personne ne répond."
+    elen "La femme du reportage... Je sais que c'est idiot, mais j'arrête pas de penser à son thé."
+    mara neutre "C'est pas idiot."
+    elen "Je sais même pas ce que je pourrais lui dire."
+    sael triste "Moi non plus."
+    ryn triste "Vous n'avez pas à leur dire."
+    elen "Ryn ?"
+    ryn "C'est à moi de le faire."
+    sael "Ryn..."
+    ryn colere "Ne commence pas."
+    "Sael referme la bouche."
+    ryn triste "Je vais devoir appeler les gens qui m'ont cru. Ceux qui pensaient que j'allais défendre l'ouverture."
+    noam neutre "Tu peux leur dire ce qui s'est passé."
+    ryn "Que j'ai changé d'avis devant une tablette ?"
+    noam "Que tu n'avais pas confiance."
+    ryn "Ça ne va pas les aider à rentrer chez eux."
+    "Il s'essuie les yeux d'un geste brusque, avant de se lever."
+    sael neutre "Je peux venir avec toi, si tu veux."
+    ryn colere "Non."
+    "Sael hoche la tête. Il attend peut-être une réplique. Elle n'en donne pas."
+    "Ryn quitte la salle."
+    elen triste "Je voulais juste..."
+    mara "Je sais."
+    "Julian se lève à son tour, puis se rassied."
+    if j601_julian_echo:
+        julian decu "J'avais préparé quelque chose pour après le vote."
+        noam "Je me doute."
+        julian "Je ne crois pas que ce soit le moment."
+        noam "Non."
+        "Il plie son brouillon et le garde dans sa poche."
     else:
-        kael inquiet "Mais sans trace de la perturbation sur les tablettes, je ne peux pas vérifier ce qui s'est passé pendant la coupure."
-        nyra reflechit "Alors nous devons reconnaître ce que nous ignorons, au lieu de prétendre que l'absence de preuve suffit à nous rassurer."
-    iris inquiet "Attendez... C'est pas juste le vote qui m'inquiète."
-    iris inquiet "La seule chose qui gère les sanctions, nos repas et jusqu'aux portes vient de décrocher en pleine séance. Et on n'a aucun moyen de savoir pourquoi ?"
-    elias fatigue "Kael et moi, on peut inspecter les systèmes locaux."
-    elias gene "Ça me permettra aussi de vérifier que je n'ai pas laissé une catastrophe derrière moi avec mon café."
-    julian decu "Deux votes. Deux échecs."
-    julian decu "Et maintenant, on découvre que notre arbitre peut s'interrompre au milieu d'une phrase. On est censés rassurer qui, exactement ?"
-    lysa blase "Pour une fois, tu as résumé nos problèmes sans ajouter que tu aurais personnellement sauvé le monde."
-    julian taquin "Ne t'y habitue pas. Je prépare une déclaration officielle sur mon incroyable modestie."
-    "Un rire discret parcourt la table. Il s'éteint presque aussitôt."
-    "Ryn se lève et quitte la salle sans saluer personne."
-    think "Personne ne tente de le retenir."
-    think "Ce matin, Ryn voulait forcer la porte. Cet après-midi, il a lui-même voté pour qu'elle reste fermée."
-    think "Je ne sais pas lequel des deux lui fait le plus mal."
-
+        julian decu "On devrait au moins préparer une déclaration."
+        lysa blase "Pas maintenant."
+        julian neutre "D'accord."
+        "Il ne sort pas son brouillon."
+    tomas inquiet "Vous êtes sûrs qu'il y a bien eu douze bulletins ?"
+    kael reflechit "C'est le total qui s'affiche. Je ne peux pas te garantir autre chose."
+    tomas "Je sais que tu peux pas, mais..."
+    kael "On va vérifier ce qu'on peut vérifier."
+    nyra raison "Et personne ne cherchera à reconstituer les votes individuels. Les résultats restent secrets."
+    tomas gene "Je demandais juste pour le nombre."
+    nyra "C'est bien ce que je te réponds."
+    "Iris ne regarde pas le résultat. Elle fixe l'écran noir au-dessus de la table."
+    iris inquiet "Kami ?"
+    "Rien."
+    iris "Kami, la séance est terminée. Tu peux me répondre ?"
+    elias inquiet "Peut-être qu'elle a désactivé le canal."
+    iris colere "Je sais !"
+    "Elle range sa tablette sans ajouter un mot."
+    nyra reflechit "Nous devrions conserver les relevés locaux de la panne."
+    if j601_fracture_trace_saved:
+        kael calme "Noam, transfère-moi la trace quand tu pourras. Je veux comparer les horaires."
+        noam neutre "D'accord."
+        elias sourire "Ça, au moins, on l'a récupéré."
+        $ j601_repair_note = True
+    else:
+        kael reflechit "On n'aura que les heures approximatives et les données des autres consoles."
+        elias fatigue "Je vais reprendre ce qu'on a gardé de l'observatoire."
+        $ j601_repair_note = False
+    mara agace "Je veux surtout savoir si les portes, les livraisons et les sanctions fonctionnent encore."
+    kael "Je vais vérifier les systèmes de la station."
+    mara "Et si tu n'y as pas accès ?"
+    kael "Je te le dirai."
+    "Mara l'observe quelques secondes, puis acquiesce."
+    "Les chaises raclent le sol. La table se vide sans que personne ait vraiment déclaré la réunion terminée."
     jump _6_0_1_FIN_JOURNEE
 
-# Durée : ~3m00
+
 
 label _6_0_1_FIN_JOURNEE:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_274
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
+    $ showGroup([("lysa", "fatigue"), ("mara", "doute"), ("elen", "inquiet"), ("iris", "fatigue"), ("tomas", "inquiet")])
+    elen inquiet "On ne va quand même pas tous aller se coucher à cette heure-ci."
+    lysa "J'y pensais."
+    elen "Lysa !"
+    lysa blase "J'ai le droit d'être fatiguée."
+    elen "Je voulais proposer quelque chose de normal. Un jeu, par exemple."
+    mara taquin "Et tu as choisi de demander à Lysa si elle voulait être heureuse."
+    lysa "Je n'ai pas dit non."
+    elen surpris "Ah bon ?"
+    lysa "Je n'ai encore rien dit."
+    tomas sourire "On pourrait faire une partie de cartes. Je crois qu'il y en a dans la salle de repos."
+    iris fatigue "Pas moi."
+    elen "Iris, s'il te plaît."
+    iris "Je dois regarder les messages de Kami."
+    lysa blase "Elle ne répond pas aux questions depuis tout à l'heure."
+    iris colere "Je sais."
+    "Elle s'éloigne. Elen la regarde partir."
+    elen triste "Je voulais pas l'embêter."
+    mara neutre "Elle a juste besoin d'être seule."
+    elen "Bon. Qui vient ?"
+    tomas "Moi."
+    lysa "Une partie."
+    mara "Je viendrai voir si Tomas connaît les règles."
+    tomas gene "Je les connais."
+    mara "Alors je viendrai vérifier que tu ne les inventes pas."
+    "Elen se tourne vers moi."
+    menu:
+        "Accepter une petite partie de cartes.":
+            jump _6_0_1_SOIREE_CARTES
+        "Rentrer directement se reposer.":
+            noam neutre "Je vais passer mon tour. Je suis crevé."
+            elen inquiet "D'accord. Tu nous rejoindras une autre fois."
+            lysa "On pourra s'en remettre."
+            jump _6_0_1_DORTOIR
 
-    $ showGroup([
-        ("lysa", "fatigue"),
-        ("mara", "doute"),
-        ("elen", "inquiet"),
-        ("kael", "fatigue"),
-        ("iris", "fatigue"),
-        ("tomas", "inquiet"),
-    ])
-    elen inquiet "Vous croyez que Kami sera... redevenue normale demain ?"
-    mara taquin "On pourrait lui offrir une carte de rétablissement. « Reviens vite, tes humiliations nous manquent »."
-    tomas gene "Les cartes de rétablissement sont plutôt destinées à..."
-    iris blase "Tomas, c'était une blague."
-    tomas inquiet "Je sais. Je cherchais juste... enfin, laisse tomber."
-    elen sourire "Je pourrais quand même en fabriquer une."
-    mara surpris "NON ! Elen, s'il te plaît, ne l'encourage pas !"
-    elen inquiet "Je ne pensais pas dire ça un jour, mais ses insultes me manquent presque."
-    iris reflechit "Elle est insupportable, mais d'habitude ses réactions suivent une logique."
-    iris inquiet "Aujourd'hui, elle avait l'air de lutter pour terminer ses propres phrases."
-    mara agace "Moi, j'aimerais surtout savoir ce qu'on fait si elle s'éteint pour de bon."
-    mara mefiant "On a un plan ? Une trousse de secours pour intelligence artificielle ? Ou on s'assoit et on attend le prochain bip ?"
-    kael reflechit "Je vais regarder les journaux d'erreurs de la station. Et vérifier le panneau de l'observatoire."
-    kael calme "Je ne pense pas qu'un café renversé puisse provoquer ça, mais je préfère éliminer cette possibilité plutôt que deviner."
-    lysa blase "Bonne chance pour demander à Kami l'accès aux fichiers qui prouvent qu'elle n'a aucun problème."
-    lysa taquin "Je sens qu'elle va adorer."
-    kael calme "Pas aux siens. Aux systèmes de la station, peut-être."
-    kael reflechit "Et si même ça nous est refusé, ce sera déjà une information."
-    tomas inquiet "Et si vous trouvez quelque chose..."
-    tomas inquiet "Vous nous prévenez ? Même si c'est une mauvaise nouvelle ?"
-    iris sourire "Bien sûr."
-    mara taquin "Et si on découvre que Kami nous espionne, on lui fera un compte rendu détaillé de nos soupçons."
-    kael calme "Mara, il nous faut les journaux de la station. Pas une nouvelle dispute."
-    mara sourire "Tu me retires mes deux seuls loisirs."
-    iris blase "On n'a pas l'intention d'organiser une fête-surprise avec une panne mondiale."
-    "Elen propose une partie de cartes pour éviter que tout le monde s'enferme dans sa chambre."
-    elen sourire "Sans débat ! Promis !"
-    mara taquin "Tu dis ça comme si une partie de cartes ne pouvait pas déclencher une guerre."
-    "Quelques-uns acceptent. Je préfère rentrer."
+
+label _6_0_1_SOIREE_CARTES:
+
+    call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_277
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    play music "music/bgm_quiet_routine.mp3" fadein 1.5
+    $ showGroup([("elen", "sourire", 0.18), ("tomas", "sourire", 0.39), ("lysa", "blase", 0.61), ("mara", "taquin", 0.81)])
+    "Les cartes ont finalement été retrouvées dans une boîte près de la cafétéria. Il en manque trois."
+    tomas inquiet "Sans les trois cartes, on ne peut pas jouer à ce jeu-là."
+    elen "Alors on en choisit un autre."
+    mara "Tu connais un jeu où on enlève les cartes avant de commencer ?"
+    lysa "Le poker de Tomas, apparemment."
+    tomas "C'était une question."
+    noam sourire "On pourrait faire un tour simple. Celui qui a la carte la plus haute gagne."
+    lysa blase "Je me suis déplacée pour ça ?"
+    elen sourire "Je trouve ça bien, moi."
+    mara "Évidemment. C'est difficile de perdre avec des règles aussi ambitieuses."
+    "Tomas distribue. Il donne deux cartes à Lysa, aucune à Elen."
+    elen colere "TOMAS."
+    tomas inquiet "Attends, j'ai décalé le paquet."
+    mara "Il a inventé un jeu où il choisit les gagnants."
+    lysa "Enfin une idée qui me plaît."
+    noam "Recommence. Lentement."
+    "La deuxième distribution se passe mieux. Lysa gagne, puis gagne encore."
+    elen "Tu triches !"
+    lysa "Je ne sais même pas comment on pourrait tricher à ce jeu."
+    mara "Je crois que c'est ce qui rend la situation humiliante."
+    tomas sourire "Attendez, cette fois, c'est moi !"
+    "Il montre fièrement sa carte. Mara en pose une plus haute."
+    tomas fatigue "Ah."
+    mara sourire "C'était une très belle tentative."
+    "Elen éclate de rire. Tomas finit par sourire lui aussi."
+    "Pendant un moment, nous ne parlons ni du vote ni de Kami."
+    elen sourire "Encore une ?"
+    lysa "Non. Là, ça suffit."
+    elen "Tu avais dit une partie !"
+    lysa "J'en ai fait quatre."
+    elen "Parce qu'il en manquait trois !"
+    mara "C'est une interprétation admirable des règles."
+    "Elen range les cartes dans la boîte. Elle compte celles qui restent, puis recommence pour être sûre."
+    jump _6_0_1_DORTOIR
+
+
+label _6_0_1_DORTOIR:
 
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_275
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    $ showGroup([("julian", "decu", 0.25), ("elias", "fatigue", 0.55), ("ryn", "colere", 0.85)])
-    julian decu "Ryn... Je sais que ça s'est mal passé. Mais Sael avait prévenu qu'elle voterait contre."
-    ryn colere "Et moi, je me suis présenté comme son contraire toute la journée. Pour finir par voter exactement comme elle."
-    julian hesitation "Oui... je sais. C'est justement..."
-    ryn colere "Non, tu ne sais pas."
-    julian hesitation "Je veux dire... tu ne pouvais pas vraiment t'attendre à autre chose."
-    ryn colere "Julian. Pas maintenant."
-    ryn triste "S'il te plaît."
-    julian neutre "Je voulais juste essayer de..."
-    julian hesitation "Bon. D'accord."
-    elias fatigue "Laisse-le tranquille."
-    elias gene "Je sais que tu veux arranger les choses, mais... pas comme ça."
-    julian decu "Je n'insiste pas."
-    julian decu "Bonne soirée, Ryn."
-    "Ryn s'éloigne."
-    "Julian fait un pas dans sa direction, puis s'arrête. Elias lui adresse un petit signe et rejoint Kael."
-    think "Hier, Julian aurait probablement insisté jusqu'à obtenir une réponse. Ce soir, il laisse Ryn partir."
-
+    play music "music/bgm_world_decline.mp3" fadein 1.2
+    $ showGroup([("julian", "decu", 0.23), ("elias", "fatigue", 0.53), ("ryn", "triste", 0.80)])
+    "Julian et Elias discutent à voix basse près des chambres. Ryn arrive dans le couloir et cherche ses clés."
+    julian decu "Ryn. Tu veux que je..."
+    ryn "Non."
+    julian "Je voulais seulement te dire que..."
+    ryn "Julian, non."
+    "Julian baisse la tête."
+    if j50_julian_relation >= 1:
+        julian neutre "D'accord. Je te laisse."
+        "Il se décale pour le laisser passer."
+        ryn triste "Merci."
+    else:
+        julian hesitation "Je voulais simplement aider."
+        elias fatigue "Laisse-le rentrer."
+        julian neutre "Oui. D'accord."
+        "Julian s'écarte."
+    "Ryn repart sans se retourner. Elias se penche vers Julian."
+    elias "Il n'a pas envie qu'on le console."
+    julian "Je sais."
+    elias "C'est juste que tu avais l'air..."
+    julian "Je sais, Elias."
+    "Ils restent là une seconde sans trouver quoi dire. Elias finit par lui souhaiter bonne nuit."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_276
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
-    "Je m'assieds sur mon lit. La station est silencieuse."
-    "Ma tablette affiche toujours le résultat du vote : « REJETÉ »."
-    think "La femme du reportage avait gardé une boîte de thé pour son frère. Demain, elle devra encore la conserver."
-    think "Ryn a demandé qu'on ouvre les frontières pendant trois jours. Aujourd'hui, il a annoncé qu'il voterait contre."
-    think "Je pourrais lui en vouloir. Mais devant ma propre tablette, j'avais peur moi aussi."
-    if j601_fracture_trace_saved:
-        "Une petite icône signale la trace d'incident conservée dans mon dossier."
-        think "Kael a promis de la regarder. Ce serait presque rassurant si je savais ce qu'on cherchait."
+    "Je m'assieds sur le lit et retrouve le pain sur mon bureau."
+    noam neutre "Toujours là, toi."
+    "Je le déplace pour poser ma tablette."
+    "L'écran indique simplement le résultat de l'après-midi. Je le ferme."
+    if player_vote == "pour":
+        think "J'ai voté pour. Je pense que je le referais. Mais j'aurais préféré ne pas me poser la question en regardant des boutons qui changeaient tout seuls."
+    elif player_vote == "contre":
+        think "J'ai voté contre. Je sais pourquoi. Ça ne rend pas la soirée plus agréable."
     else:
-        "Je cherche la ligne étrange apparue au Conclave. Rien. Pas même un message d'erreur."
-        think "Impossible de raconter exactement ce que j'ai vu. Il ne reste que ma mémoire, et elle n'a jamais été très utile devant un tribunal."
-    "Je pose la tablette sur mon bureau. Pour une fois, je n'ai pas envie de regarder le prochain bulletin de vote."
-    "L'écran s'allume tout seul."
-    "Pas la grande diffusion de Kami. Juste une notification discrète, sans logo ni sonnerie."
-    "« FIN DE SESSION IMPOSSIBLE — PARTICIPANTS REQUIS »"
-    think "Des participants ? À cette heure-ci ?"
-    "Je tends le doigt vers la notification. Avant que je la touche, elle disparaît."
-    "Je consulte le journal des alertes. Il est vide."
-    "J'attends quelques secondes, puis j'éteins la tablette. Cette fois, je vérifie qu'elle est bien éteinte."
-    think "Kami nous avait demandé de rester au Conclave. Et si sa séance n'était pas terminée pour elle ?"
+        think "Je me suis abstenu. J'y ai réfléchi tout l'après-midi et ça ne m'a pas rendu plus sûr de moi."
+    if j601_fracture_trace_saved:
+        "Dans mes fichiers, la trace de la panne attend encore d'être transférée à Kael."
+        $ j601_repair_note = True
+        think "Je vais la lui envoyer demain. Pourvu qu'il puisse en tirer quelque chose."
+    else:
+        "Je vérifie le journal des alertes. Rien sur la panne. Pas même une heure précise."
+        think "Il va falloir qu'on se souvienne de ce qu'on a vu."
+    "J'ouvre la messagerie."
+    "Aucun nouveau message de Kami. Rien sur l'état du Conclave."
+    "Je tape son nom dans la barre de recherche, juste pour voir. Aucun canal disponible."
+    think "D'habitude, elle n'attend pas qu'on l'appelle pour venir se moquer de nous."
+    "J'éteins la tablette."
+    "De l'autre côté de la porte, quelqu'un rit dans le couloir, puis le bruit s'éloigne."
     $ blink()
-    "Je finis par fermer les yeux. La question, elle, refuse de me laisser dormir."
-
     $ kami_grant_chapter_2_reward()
-
     call show_chapter_title("Fin du chapitre 2", "Chapitre 2 — Les lignes qui nous séparent") from _call_show_chapter_title_3
-
     pause 1.0
-
-    #jump patreon_ending
-
     call end_day("7", sleeping=True) from _call_end_day_10
     jump _7_0_1_REVEIL_CHAMBRE
-
-# total : 8m
-# Total jour 0-6 : 1h49
