@@ -239,6 +239,7 @@ label _7_1_0_SAS_DECOUVERTE:
     nyra raison "Regarde ici. Sous la bâche grise."
     nyra colere "Mais ne l'enlève pas, il ne faut pas que Kami voit ça aux caméras."
 
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg037 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg037")
 
