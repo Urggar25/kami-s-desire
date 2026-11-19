@@ -109,6 +109,7 @@ label _27_0_1_1_0_0_REVEIL:
 
     "Elen essaie de passer entre Iris et moi. Julian la retient pour l'empêcher de heurter Sael, mais elle se retourne contre lui avec une violence qui nous surprend tous."
     elen colere "LÂCHE-MOI !"
+    call kd_vn_reaction("elen", "colere", "#ff9c55")
 
     "Elle lui frappe l'avant-bras, puis s'immobilise en voyant qu'il n'essaie même plus de la retenir."
     "Julian a le teint livide. Il fixe la blessure de Nyra sans paraître comprendre pourquoi Elen lui crie dessus."
