@@ -1,4 +1,11 @@
 default j701_table_choice = "aucun"
+default j701_lysa_worry = False
+default j701_iris_defense = False
+default j701_tomas_informed = False
+default j701_nyra_sorting = "standard"
+default j701_plate_result = -1
+default j701_julian_rapport = "neutre"
+default j701_evidence_note = False
 default j701_tomas_secret_kept = True
 default j701_plate_step = 0
 default j701_plate_score = 0
@@ -1159,142 +1166,198 @@ label j701_play_search_drawing:
 
 label _7_0_1_REVEIL_CHAMBRE:
     call show_chapter_title("Début du chapitre 3", "Chapitre 3 — La confiance ne suffit pas") from _call_show_chapter_title_25
-
     scene black
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 7
     $ noam_has_juliette_drawing = True
     $ j701_table_choice = "aucun"
     $ j701_tomas_secret_kept = True
+    $ j701_lysa_worry = False
+    $ j701_iris_defense = False
+    $ j701_tomas_informed = False
+    $ j701_nyra_sorting = "standard"
+    $ j701_plate_result = -1
+    $ j701_julian_rapport = "neutre"
+    $ j701_evidence_note = False
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
     $ blink()
-
-    play sound sfx_knock volume 4.0
-    "BAM ! BAM ! BAM !"
-    scene bg_cg012 at adaptive_fullscreen with dissolve
-    $ blink()
-    think "Quoi ?! Qu'est-ce qui..."
+    "Un bruit sourd me tire du sommeil. Je me retourne et essaie de me rendormir."
     play sound sfx_knock volume 4.0
     lysa "Noam !"
-    think "Lysa ? Si elle cogne à cette heure-ci, il s'est passé quelque chose."
-    "Je saute du lit, me prends un pied dans la couette et traverse la chambre en essayant de ne pas m'étaler."
+    think "Il est quelle heure... ?"
+    "Je tire la couverture sur ma tête."
+    lysa "Je sais que t'es là."
+    noam "Non."
+    lysa "Ah. Pardon. J'avais cru entendre quelqu'un répondre."
+    "Je rouvre les yeux."
+    noam "Lysa, qu'est-ce que tu veux ?"
+    lysa "Que tu ouvres."
+    noam "Pourquoi ?"
+    lysa "Parce que je commence à parler à une porte et que ça me déprime."
+    "Je cherche mes chaussettes en tâtonnant au pied du lit. J'en retrouve une. L'autre a disparu."
+    noam "Attends."
+    lysa "Tu as dit ça il y a une minute."
+    noam "J'ai besoin de deux minutes."
+    lysa "Il va falloir négocier une prolongation."
+    "Je finis par ouvrir, toujours en t-shirt de nuit."
     scene bg_chambre at adaptive_fullscreen with dissolve
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_278
     scene bg_dortoir at adaptive_fullscreen with dissolve
-    $ showGroup([("lysa", "neutre", 0.75), ("noam", "surpris", 0.25)])
-    noam inquiet "Qu'est-ce qu'il y a ? Quelqu'un est blessé ?"
-    lysa surpris "..."
-    noam inquiet "Lysa ?!"
-    lysa taquin "Non. Mais maintenant, j'ai une nouvelle raison de m'inquiéter."
-    noam surpris "Hein ?"
-    lysa sourire "Tu as toujours cette tête au réveil ?"
-    think "Je baisse les yeux. T-shirt froissé, pantalon de nuit, une chaussette qui a disparu."
-    noam colere "TU AS FAILLI DÉFONCER MA PORTE !"
-    lysa blase "Et toi, tu viens de m'agresser avec ta coiffure."
-    noam desaccord "On dirait que tu annonçais la fin du monde !"
-    lysa reflechit "Justement. Je ne sais pas si c'est la fin du monde."
-    noam inquiet "Quoi ?"
-    lysa neutre "Il est presque midi. Et Kami n'a toujours rien dit."
-    "Je cherche des yeux l'écran au fond de ma chambre. Pas une image."
-    noam hesitation "Pas d'annonce du matin ?"
-    lysa neutre "Pas d'annonce. Pas de commentaire sur notre petit-déjeuner. Pas même un « bande d'incapables »."
-    noam reflechit "Depuis quand ?"
-    lysa reflechit "Depuis le vote d'hier. J'ai attendu un peu avant de venir."
-    noam desaccord "Et tu as attendu jusqu'à midi pour me prévenir ?!"
-    lysa blase "Je te rappelle que monsieur le héros dormait."
-    noam colere "Tu pouvais me réveiller plus tôt !"
-    lysa taquin "Je viens de le faire. Tu m'as engueulée."
-    noam panne "..."
-    lysa sourire "Tu devrais entrer, tu vas attraper froid."
-    noam surpris "C'est MA chambre !"
-    lysa rire "Ah. Oui. C'est vrai."
-
+    $ showGroup([("lysa", "neutre", 0.74), ("noam", "surpris", 0.28)])
+    lysa sourire "Ah."
+    noam fatigue "Quoi ?"
+    lysa "Tu dors avec les cheveux comme ça ?"
+    noam "Je les range dans un tiroir, normalement. Mais il était fermé."
+    lysa rire "Pas mal."
+    noam "Merci. Maintenant dis-moi ce qui se passe."
+    "Lysa jette un regard par-dessus mon épaule."
+    lysa neutre "Tu n'as pas remarqué ?"
+    noam "Quoi ?"
+    lysa "Depuis tout à l'heure."
+    noam "Tu m'as réveillé. Forcément que je n'ai rien remarqué."
+    lysa "Écoute."
+    "J'écoute. Des portes claquent au fond du couloir. Quelqu'un fait rouler un chariot. Une voix se plaint que le petit-déjeuner est déjà terminé."
+    noam reflechit "On a perdu Goumi ?"
+    lysa blase "Non."
+    noam "La ventilation ?"
+    lysa "Elle marche."
+    noam "Alors aide-moi un peu."
+    lysa neutre "Il est presque midi."
+    noam surpris "Quoi ?!"
+    lysa "Voilà. Première chose que tu aurais dû remarquer."
+    noam "Pourquoi tu m'as laissé dormir jusque-là ?"
+    lysa "Parce que je ne suis pas ta mère."
+    noam "Ça, j'avais remarqué."
+    lysa "Et parce que personne n'a annoncé le réveil."
+    "Je regarde l'écran mural au bout du couloir. Il est noir."
+    noam inquiet "Kami ?"
+    "Je laisse passer quelques secondes."
+    noam "Kami, si tu comptes faire une blague, on peut directement passer au moment où tu te moques de moi."
+    "L'écran ne réagit pas."
+    lysa neutre "J'ai essayé ça aussi. Beaucoup mieux formulé, évidemment."
+    noam "Elle ne répond pas du tout ?"
+    lysa "Depuis hier. Elen l'a appelée une dizaine de fois, Iris encore plus."
+    noam "Et les autres ?"
+    lysa "Ils sont occupés à vérifier si les distributeurs fonctionnent."
+    noam "Et ?"
+    lysa sourire "Ils fonctionnent."
+    "Un petit sourire m'échappe."
+    noam "Au moins, une bonne nouvelle."
+    lysa "Tu peux te réjouir. Personne ne m'en voudra."
+    "Elle baisse les yeux vers mes pieds."
+    lysa taquin "Tu devrais peut-être te réjouir avec deux chaussettes."
+    noam desaccord "Je te rappelle que tu m'as réveillé en frappant comme si quelqu'un était mort."
+    lysa neutre "C'était peut-être un peu excessif."
+    noam "Un peu ?"
+    lysa "J'avais vraiment besoin de parler à quelqu'un."
+    "Elle le dit simplement. J'allais répondre quelque chose de désagréable, mais je m'arrête."
+    menu:
+        "Lui proposer de discuter quelques minutes.":
+            $ j701_lysa_worry = True
+            noam neutre "Tu veux entrer ? Je vais m'habiller, mais on peut parler après."
+            lysa taquin "Je vais rester dehors. On tient tous à certaines frontières."
+            noam sourire "Très drôle."
+            lysa neutre "Merci."
+            lysa "Je voulais juste vérifier que tu allais bien."
+            noam "Je vais bien. Je suis juste en retard sur ma journée."
+            lysa "D'accord."
+            "Elle ne repart pas tout de suite."
+            lysa reflechit "J'ai essayé de me dire que j'allais profiter du calme. Mais j'ai passé toute la matinée à attendre une insulte."
+            noam "C'est une mauvaise habitude."
+            lysa "Ouais."
+        "La taquiner sur sa soudaine inquiétude.":
+            noam sourire "Tu t'inquiètes pour moi ? Tu devrais te faire examiner."
+            lysa blase "Je t'ai réveillé pour avoir quelqu'un à insulter. C'est tout."
+            noam "Ah. Là, je te reconnais."
+            lysa "Tu vois ? Tout va bien."
+            "Elle sourit, mais continue à regarder l'écran."
+    lysa neutre "Bon. Va te changer. Nyra cherchait des volontaires pour les livraisons."
+    noam "Des volontaires ?"
+    lysa "C'est le mot qu'elle a utilisé."
+    noam "Et pourquoi tu me le dis avec cet air-là ?"
+    lysa taquin "Tu comprendras."
     $ hideGroup()
     scene bg_cg025 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg025")
-    pause 1.0
-    lysa reflechit "D'habitude, ça m'aurait fait plaisir de ne pas entendre sa voix."
-    noam neutre "Et aujourd'hui ?"
-    lysa blase "Aujourd'hui, je me demande ce que les gens font quand la seule chose qui leur donne des ordres s'arrête brusquement."
-    noam taquin "Ils font la grasse matinée, apparemment."
-    lysa sourire "Excellent choix de société. Tu devrais le proposer au prochain vote."
-    noam inquiet "Tu as vérifié avec les autres ?"
-    lysa neutre "Quelques chambres. Personne ne l'a entendue. D'ailleurs, une partie des représentants dort encore."
-    noam reflechit "Les écrans du Conclave fonctionnent ?"
-    lysa reflechit "Ceux que j'ai vus, oui. Elle, non."
-    "Je voudrais trouver une bonne raison de me réjouir. Je n'en trouve pas, puis j'en trouve une, et j'en ai presque honte."
-    noam sourire "Au moins, elle nous laisse tranquilles."
-    lysa sourire "Voilà. C'est ce que je me dis depuis ce matin."
-    lysa blase "Et plus je me le répète, moins j'y crois."
-    noam reflechit "Hier soir, ma tablette a affiché une dernière notification. Après le vote."
-    lysa reflechit "Quelle notification ?"
-    noam inquiet "« FIN DE SESSION IMPOSSIBLE — PARTICIPANTS REQUIS ». Et puis elle a disparu du journal."
-    lysa blase "Magnifique. On n'a plus de présidente de séance, mais sa réunion refuse de se terminer."
-    noam reflechit "Tu as reçu la même chose ?"
-    lysa neutre "Non. J'avais éteint ma tablette. J'espérais même que Kami m'enverrait une lettre d'excuses."
-    noam inquiet "Je devrais en parler aux autres ?"
-    lysa reflechit "À Kael, peut-être. Pas à tout le monde avant le déjeuner. J'aimerais une seule journée sans panique collective."
-    "Elle regarde les vêtements éparpillés par terre."
-    lysa taquin "Tu vas rester habillé comme ça pour célébrer notre liberté ?"
-    noam colere "SORS !"
-    lysa rire "Je t'attends dehors. Prends ton temps. Pas trop, hein : j'aimerais déjeuner avant la prochaine décennie."
-    scene bg_chambre at adaptive_fullscreen with dissolve
-    "La porte se referme."
-    think "Hier, Kami suppliait presque qu'on termine le vote. Ce matin, elle ne prend même plus la peine de nous insulter."
-    "J'ouvre la bouche pour lui lancer une question, par habitude."
-    "Rien ne vient."
+    pause 0.6
+    "Lysa finit par s'éloigner. Je ferme la porte et retrouve enfin ma deuxième chaussette sous le bureau."
+    "Le dessin de Juliette est toujours là. Je le soulève pour vérifier qu'aucun vêtement n'a glissé derrière."
+    noam sourire "Toi, au moins, t'es à l'heure."
+    "Je le remets à sa place."
     $ unlock_gallery_image("bg_cg026")
     scene bg_cg026 at adaptive_fullscreen with dissolve
-    "Un peu d'eau sur le visage. Mes cheveux refusent de coopérer."
-    think "Je vais finir par croire que Lysa avait raison."
+    "Mes cheveux ont effectivement décidé de faire ce qu'ils veulent."
     scene bg_cg026_1 at adaptive_fullscreen with dissolve
     window hide
     $ chibi_montage_play(CHIBI_MONTAGE_J701_NOAM)
     window auto
-    think "Bon. Si je n'ai toujours aucune réponse, au moins j'ai retrouvé ma deuxième chaussette."
+    "Je prends ma tablette, ma veste, puis repars chercher ma tablette que j'avais reposée sans m'en rendre compte."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je récupère ma veste et sors."
-
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_281
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    $ showGroup([("nyra", "neutre", 0.80), ("lysa", "blase", 0.50), ("noam", "neutre", 0.22)])
-    nyra colere "Ah ! Vous voilà enfin."
-    noam surpris "Nyra ?"
-    nyra neutre "Lysa, tu lui as dit ?"
-    lysa taquin "Que Kami est muette, ou qu'il dort comme une pierre ?"
-    nyra fatigue "Je parle des caisses."
-    noam reflexion "Quelles caisses ?"
-    "Nyra réajuste un carton sur sa hanche. Une boîte en dépasse dangereusement."
-    nyra colere "La livraison ! Elle est arrivée ce matin. Sans prévenir. Sans bon de répartition. Et j'ai trouvé du matériel médical entre deux cartons de nourriture !"
-    lysa blase "Une véritable insurrection des fournitures."
-    nyra determine "Si tu veux plaisanter, tu peux le faire en portant une caisse."
-    lysa taquin "Ça, c'est une proposition qui me ressemble."
-    noam inquiet "Attends. Le ravitaillement s'est fait normalement, alors que Kami n'a rien annoncé ?"
-    nyra reflechit "Les commandes étaient probablement programmées. Je n'en sais rien."
-    lysa blase "Au moins, les cartons ne bégaient pas."
-    nyra neutre "Pour l'instant."
-    "Elle nous tend deux caisses. La mienne est beaucoup plus lourde que prévu."
-    noam surpris "Il y a quoi là-dedans ? Des briques ?!"
-    nyra taquin "Non. Les briques sont dans l'autre."
-    noam desaccord "C'était une blague !"
-    nyra neutre "Moi aussi."
-    lysa rire "Oh. Elle apprend."
-    nyra determine "Cafétéria, infirmerie, maintenance ou stockage. On trie correctement, on ferme les caisses et on les amène à leur destination. Pas d'improvisation."
-    noam taquin "Et si on improvise ?"
-    nyra neutre "Je vous fais tout recommencer."
-    lysa blase "Voilà, Noam. On avait gagné une matinée sans dictature."
+    $ showGroup([("nyra", "neutre", 0.80), ("lysa", "blase", 0.51), ("noam", "neutre", 0.21)])
+    nyra colere "Enfin !"
+    noam surpris "Quoi encore ?"
+    nyra "Il me manque deux personnes pour le tri."
+    lysa taquin "Tu en as trouvé une."
+    noam "Tu avais dit des volontaires."
+    nyra neutre "Oui."
+    noam "Mais je n'ai pas..."
+    nyra "Les volontaires portent les caisses. Les autres font l'inventaire. Tu préfères lequel ?"
+    noam "C'est un choix parfaitement injuste."
+    nyra "Les caisses, alors."
+    lysa sourire "Tu vois, tu t'en sors très bien."
+    "Nyra nous tend un carton à chacun. Celui qu'elle me donne semble rempli de pièces métalliques."
+    noam inquiet "C'est lourd !"
+    nyra "C'est marqué sur l'étiquette."
+    noam "Il n'y a pas d'étiquette."
+    nyra "Justement. Ce sont les colis non identifiés."
+    lysa blase "Formidable organisation."
+    nyra colere "Parce que toi, tu as mieux à proposer ?"
+    lysa "Oui. On ouvre les cartons avant de les porter."
+    "Nyra s'arrête."
+    nyra reflechit "C'est... raisonnable."
+    lysa sourire "Merci."
+    noam "C'était donc une possibilité depuis le début."
+    nyra "On a reçu le ravitaillement sans aucune feuille de répartition. Je fais avec ce que j'ai."
+    noam "Tu veux que je t'aide avec les catégories ?"
+    nyra "Tu connais la différence entre du matériel médical et des assiettes ?"
+    noam "Généralement."
+    nyra "Alors oui."
+    "On commence à ouvrir les caisses. Une boîte de pansements se retrouve avec les épices."
+    noam sourire "Celle-là, c'est facile."
+    lysa "Ça dépend de la qualité du repas."
+    nyra neutre "Lysa."
+    lysa "Pardon."
+    "Nyra me confie une petite pile de colis presque identiques."
+    menu:
+        "Vérifier les étiquettes avec Nyra avant de tout ranger.":
+            $ j701_nyra_sorting = "inventaire"
+            noam neutre "Attends. Si les numéros manquent, on devrait écrire ce qu'on trouve."
+            nyra neutre "Oui. C'est ce que j'essaie de faire depuis vingt minutes."
+            noam "Tu pouvais me le dire."
+            nyra "Je viens de le faire."
+            "On prend le temps de noter plusieurs numéros illisibles avant de ranger les colis."
+        "Terminer rapidement le rangement pour rejoindre les autres.":
+            $ j701_nyra_sorting = "rapide"
+            noam sourire "On commence par les plus faciles. Le reste, on le laisse à part."
+            nyra mefiant "À part où ?"
+            noam "Là. Dans le couloir."
+            nyra colere "Pas dans le couloir !"
+            lysa "Pour une fois, je suis avec elle."
+            "On déplace les cartons dans un coin du stockage. Nyra ajoute une note pour y revenir."
     $ hideGroup()
     call rangement_play from _call_rangement_day7
-    "Je repose enfin la dernière caisse."
-    noam fatigue "Je crois que mes bras viennent de déposer une demande de congé."
-    nyra reflechit "J'en profiterai pour vérifier les inventaires. Il manque déjà des numéros sur deux étiquettes."
-    lysa neutre "On est nourris, et on a encore le droit de se plaindre. Journée historiquement réussie."
-    nyra neutre "À condition que personne n'ait mélangé les médicaments avec les sauces."
-    noam surpris "C'est arrivé ?!"
-    nyra taquin "Je vérifie justement."
+    "Quand je dépose enfin le dernier carton, Lysa s'est déjà assise sur une caisse vide."
+    noam fatigue "Je veux une médaille."
+    nyra neutre "Tu veux ton déjeuner."
+    noam "Les deux, ce n'est pas possible ?"
+    nyra "On verra quand j'aurai fini les inventaires."
+    lysa taquin "Ne l'encourage pas. Elle est capable de créer un formulaire de demande de médaille."
+    nyra "Je pourrais."
+    noam "Bon. Je vais manger avant que vous en parliez sérieusement."
     jump _7_0_1_CAFETERIA
-
 
 label _7_0_1_CAFETERIA:
     call KD_ROUTE_J7_ELIAS from _call_optional_kd_route_j7_elias
