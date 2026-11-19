@@ -378,6 +378,7 @@ label _22_0_1_1_0_0_ELIAS_REVIENT:
     elias fatigue "Non."
     "Il tire une nouvelle fois. L'attache lâche et la plaque bascule contre sa jambe."
     elias colere "PUTAIN !"
+    call kd_vn_reaction("elias", "colere", "#ff9c55")
     noam inquiet "Ça va ?"
     elias fatigue "Ouais. Tu vois ? C'est de la merde."
     noam desaccord "On peut en mettre deux."
