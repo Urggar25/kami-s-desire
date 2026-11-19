@@ -76,6 +76,7 @@ label _30_0_1_1_0_0_1_1_CHOIX:
     # CG 074 : les deux Noam face au dessin de Juliette, au moment du choix final.
     if renpy.loadable("images/background/cg/bg_cg074.png"):
         $ unlock_gallery_image("bg_cg074")
+        call kd_vn_cg_impact("#e4f0ff")
         scene bg_cg074 at adaptive_fullscreen with dissolve
     menu (screen="critical_choice", noam_expr="hesitation", cc_targets={"Retourner sur Terre":{"label":"_30_0_1_1_0_0_1_1_RETOUR"},"Aller sur Keyper-IIB":{"label":"_30_0_1_1_0_0_1_1_KEYPER"}}):
         "QU'EST-CE QUE JE DÉCIDE ?"
