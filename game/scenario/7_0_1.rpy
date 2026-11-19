@@ -1997,44 +1997,95 @@ label _7_0_1_SOIREE_TENSION_LEGERE:
     call j701_investigation from _call_j701_investigation
     jump _7_0_1_FIN_JOURNEE
 
+
 label _7_0_1_FIN_JOURNEE:
-    "Après les vérifications, chacun regagne son couloir avec davantage de questions qu'en arrivant. Les batteries restent introuvables."
+    "Nous finissons par ranger les dernières caisses. Les batteries ne sont toujours pas là."
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir_dortoir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_288
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+    play music "music/bgm_quiet_routine.mp3" fadein 1.5
     $ showGroup([("noam", "neutre", 0.50)])
-    think "On a passé la soirée à chercher des objets que quelqu'un aurait pu déplacer par erreur. C'est presque rassurant de pouvoir encore imaginer une explication aussi bête."
+    "Je croise Elen près des chambres. Elle tient une petite assiette recouverte d'un mouchoir."
+    noam sourire "Qu'est-ce que tu transportes ?"
+    elen sourire "La part de Ryn."
+    noam "Il n'est toujours pas venu la prendre ?"
+    elen "Non. Je pensais la laisser devant sa porte."
+    noam "Sans lui demander ?"
+    elen "C'est un gâteau, Noam. Pas un ultimatum."
+    noam sourire "Vu ce qui s'est passé avec Julian, je ne suis pas si sûr."
+    "Elen sourit, puis regarde l'assiette."
+    elen neutre "Je ne veux pas qu'il croie qu'on l'a oublié."
+    noam "Tu peux lui écrire un mot."
+    elen "J'ai essayé. J'ai écrit « Bon courage ». C'était nul."
+    noam "Écris juste « J'ai gardé une part »."
+    elen "C'est mieux ?"
+    noam "Je crois."
+    "Elle réfléchit, puis sourit."
+    elen "D'accord. Merci."
+    "Elle part vers la chambre de Ryn avec son assiette. Je reste une seconde dans le couloir."
     if j701_tomas_secret_kept:
-        think "Je n'ai parlé à personne du compteur d'exécutions. J'ai promis à Tomas une nuit pour vérifier."
-        noam reflechit "J'espère qu'on ne regrettera pas cette promesse."
+        "Ma tablette vibre. Tomas m'a envoyé un message : « Je vais revérifier demain matin. Bonne nuit. »"
+        "Je réponds : « Bonne nuit. Dors pour de vrai. »"
+        "Il m'envoie un pouce levé presque immédiatement."
+        think "Je ne crois pas qu'il dormira beaucoup."
     else:
-        think "Je n'ai pas annoncé le zéro à la cafétéria. Tomas et moi avons promis de préparer une explication après une dernière vérification."
-        noam reflechit "Une nuit. Pas une de plus."
+        "Ma tablette vibre. Tomas m'écrit : « J'ai envoyé les relevés à Kael. Il les regardera demain. »"
+        "Je réponds : « Merci. Ne passe pas la nuit dessus. »"
+        "Tomas commence à écrire, s'arrête, puis répond simplement : « D'accord. »"
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_289
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je jette ma veste sur la chaise. L'écran mural est toujours noir."
-    think "Toute la journée, j'ai rêvé qu'elle se remette à parler. Pas parce qu'elle me manquait. Parce que j'aurais voulu savoir ce que son silence signifiait."
-    "Je m'assieds au bureau."
-    think "Juliette, elle, se moquerait de moi pour ça. Elle dirait qu'il faut profiter des bonnes choses quand elles arrivent."
-    noam sourire "Tu aurais sûrement adoré voir ce matin..."
-    "Je tends la main vers le dessin posé sur le bureau."
-    "Mes doigts rencontrent le plateau vide."
-    noam surpris "Hein ?"
-    "Je déplace la tablette, puis le cadre posé à côté. Le dessin n'est pas là."
-    noam inquiet "Attends... Je l'avais laissé ici."
-    "J'ouvre le premier tiroir. Rien. Le second contient les vêtements que j'y ai fourrés ce matin."
-    noam desaccord "Ne me dis pas que j'ai perdu ça."
-    "Je retourne sa pochette. Vide, elle aussi."
-    "Je revois Juliette me faire promettre de ne pas corner la feuille avant de l'emporter jusque dans l'espace."
-    noam triste "Tu vas te moquer de moi, Juliette."
-    "Ma main revient au même endroit, comme si le papier allait finir par réapparaître."
-    "Je pense aux batteries disparues. Pourquoi quelqu'un aurait-il pris le dessin de ma sœur ?"
-    noam triste "Demain, je fouille tout. Promis."
+    play music "music/bgm_quiet_routine.mp3" fadein 2.0
+    "Je pose la tablette sur le bureau et retire ma veste."
+    "Il y a encore une chaussette sous le lit. Ce matin, j'étais persuadé de les avoir toutes les deux."
+    noam neutre "Il faut vraiment que je range cette chambre."
+    "J'ouvre le tiroir, y fourre la chaussette et cherche le dessin de Juliette pour le déplacer avant de nettoyer."
+    "Il n'est pas à côté du cadre."
+    noam surpris "Tiens."
+    "Je soulève ma tablette. Rien dessous."
+    "Je regarde derrière le cadre, puis sous les feuilles posées près de la lampe."
+    noam neutre "Je l'ai mis où, encore ?"
+    "Je retrouve une vieille note, une étiquette arrachée à un carton, un sachet vide. Pas le dessin."
+    "Je repousse la chaise et me baisse pour regarder sous le bureau."
+    noam inquiet "Non. Il était là ce matin."
+    "Je vérifie ma poche intérieure, puis la poche extérieure de la veste. Un mouchoir, deux petits papiers, rien d'autre."
+    "Je reprends le tiroir depuis le début."
+    noam "Allez..."
+    "Je vide les affaires sur le lit. Des vêtements, un chargeur, la boîte qui contenait le dessin pendant le voyage."
+    "Je l'ouvre."
+    "Vide."
+    "Je la secoue, même si je vois bien qu'il n'y a rien dedans."
+    noam inquiet "Mais c'est pas possible."
+    "Je m'assieds sur le bord du lit, la boîte ouverte dans les mains."
+    "Juliette avait insisté pour que je ne le plie pas. Je lui avais même promis de le poser quelque part où je le verrais tous les jours."
+    "Je me relève et inspecte l'espace entre le bureau et le mur. J'y glisse les doigts jusqu'au fond."
+    "Toujours rien."
+    noam colere "Putain !"
+    "J'ouvre brusquement l'armoire. Une pile de vêtements bascule sur le sol."
+    "Je reste devant, incapable de me rappeler ce que je cherchais exactement à cet endroit."
+    noam fatigue "Bon. D'accord."
+    "Je ramasse les vêtements. Puis je recommence à chercher."
+    "À force de déplacer les affaires, je ne sais même plus ce qui était à sa place au départ."
+    "Je me souviens pourtant l'avoir soulevé ce matin. Je lui ai parlé, même. C'était idiot, mais je l'ai fait."
+    "Je m'arrête au milieu de la chambre."
+    noam triste "Juliette..."
+    "Je regarde vers la porte. Je pourrais aller demander à Lysa si elle l'a vu. Elle n'est entrée qu'un instant, au réveil."
+    "Et puis, qu'est-ce que je lui dirais ? Que j'ai perdu une feuille sur mon propre bureau ?"
+    menu:
+        "Reprendre une dernière fois la recherche.":
+            "Je vérifie sous le matelas, derrière les coussins, puis dans le tiroir que j'ai déjà vidé deux fois."
+            "Rien."
+            noam fatigue "D'accord. Ça suffit."
+        "S'asseoir et essayer de se souvenir.":
+            "Je ferme les yeux et revois ma main poser le dessin près de la lampe ce matin."
+            "Ensuite, j'ai pris ma veste. Ma tablette. J'ai quitté la chambre."
+            "Je n'ai aucun souvenir de l'avoir déplacé."
+            noam inquiet "Je comprends pas."
     $ noam_has_juliette_drawing = False
+    "Je remets les objets à leur place, un par un. Je laisse seulement la boîte vide sur le bureau."
+    "Au moment d'éteindre la lampe, je rouvre encore le tiroir."
+    "Toujours rien."
+    noam triste "Demain, je demanderai aux autres."
     $ hideGroup()
-    "Je me couche. Le Conclave ne fait aucun bruit."
-    pause 0.5
-    "Pour la première fois, j'aimerais presque entendre la voix de Kami se moquer de moi."
+    "Je me couche. Au bout d'un moment, les bruits du dortoir s'éteignent."
     scene black with fade
     call end_day("8", sleeping=True) from _call_end_day_11
     jump _8_1_0_0_CANON
