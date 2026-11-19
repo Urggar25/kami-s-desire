@@ -1162,6 +1162,7 @@ label _17_0_1_1_DANS_VENTILATION:
     "Une marque longue, fraîche, comme si un objet lourd avait été déplacé récemment."
 
     $ unlock_gallery_image("bg_cg043")
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg043 at adaptive_fullscreen with creep_diss
     $ cam_move(fx=0.43, fy=0.43, z=1.14, t=7.0)
     play sound "audio/sfx_duct_scrape.wav" volume 0.82
