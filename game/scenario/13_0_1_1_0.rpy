@@ -15,6 +15,7 @@ label _13_0_1_1_0_REVEIL_CHAMBRE:
     "Je me redresse encore à moitié endormi et aperçois un petit robot de maintenance devant le brouilleur de ma chambre."
     "Deux de ses bras retiennent déjà le boîtier pendant qu'un troisième dévisse tranquillement sa fixation."
 
+    call kd_vn_cg_impact("#dbe9ff")
     scene bg_cg032 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg032")
 
