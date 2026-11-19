@@ -220,6 +220,7 @@ label _6_0_1_TV_FRONTIERES:
 
     $ j601_border_news_seen = True
     $ unlock_gallery_image("bg_cg035")
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg035 at adaptive_fullscreen with dissolve
     "À l'écran, des gens se sont installés devant un poste-frontière. Certains ont amené des chaises pliantes. Un enfant joue avec le ruban qui entoure une valise."
     "JOURNALISTE — Vous êtes là depuis ce matin ?"
