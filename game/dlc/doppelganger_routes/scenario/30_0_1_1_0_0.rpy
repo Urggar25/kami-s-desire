@@ -247,6 +247,7 @@ label _30_0_1_1_0_0_FIN_NAVETTE:
     "Nous restons une seconde stupéfaits devant le couloir vide. Après deux jours à regarder cette porte, je ne pensais plus revoir l'extérieur."
 
     iris determine "BOUGE !"
+    call kd_vn_reaction("iris", "determine", "#ff9c55")
 
     $ hideGroup()
     scene couloir_dortoir at adaptive_fullscreen with dissolve
