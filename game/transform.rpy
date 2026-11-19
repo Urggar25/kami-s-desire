@@ -473,60 +473,57 @@ transform broadcast_glass:
     alpha 0.10
 
 
-# Diffusion Kami : séquence très courte de connexion et extinction.
-# Animations autonomes : aucun appel à modifier dans les journées existantes.
-transform kd_kami_signal_boot:
-    alpha 0.0
-    pause 0.04
-    linear 0.06 alpha 0.36
-    linear 0.07 alpha 0.05
-    linear 0.08 alpha 0.20
-    easeout 0.28 alpha 0.0
+# Ouverture / fermeture des diffusions de Kami.
+# Le voile noir est au-dessus de la CG : contrairement à un HUD seul,
+# l'image ne peut donc pas apparaître brutalement à la première frame.
+transform kd_kami_black_reveal:
+    alpha 1.0
+    pause 0.16
+    linear 0.18 alpha 0.91
+    linear 0.18 alpha 0.72
+    linear 0.23 alpha 0.37
+    easeout 0.25 alpha 0.0
 
 transform kd_kami_boot_label:
     alpha 0.0
-    yoffset 10
-    easein 0.12 alpha 1.0 yoffset 0
-    pause 0.34
-    easeout 0.25 alpha 0.0 yoffset -8
+    yoffset 14
+    pause 0.09
+    easeout 0.26 alpha 1.0 yoffset 0
+    pause 0.35
+    easeout 0.24 alpha 0.0 yoffset -8
 
 transform kd_kami_hud_appear:
     alpha 0.0
-    xoffset 26
-    pause 0.12
-    easeout 0.26 alpha 1.0 xoffset 0
+    xoffset 24
+    pause 0.35
+    easeout 0.42 alpha 1.0 xoffset 0
 
 transform kd_kami_live_pulse:
-    alpha 0.35
-    linear 0.75 alpha 1.0
-    linear 0.75 alpha 0.35
+    alpha 0.45
+    linear 0.7 alpha 1.0
+    linear 0.7 alpha 0.45
     repeat
 
-transform kd_kami_signal_out:
+transform kd_kami_black_close:
     alpha 0.0
-    linear 0.05 alpha 0.36
-    linear 0.06 alpha 0.06
-    linear 0.08 alpha 0.28
-    easeout 0.13 alpha 0.0
+    linear 0.12 alpha 0.26
+    linear 0.16 alpha 0.63
+    easein 0.22 alpha 1.0
 
-screen kd_kami_broadcast_outro():
-    zorder 221
-    add Solid("#09202b") at kd_kami_signal_out
-    timer 0.32 action Hide("kd_kami_broadcast_outro")
+screen kd_kami_broadcast_closing():
+    zorder 230
+    add Solid("#000000") at kd_kami_black_close
 
 screen kami_broadcast_ui():
     zorder 200
 
-    # L'écran de diffusion existant reste intact. L'habillage apparaît
-    # au début et s'efface automatiquement quand la diffusion se termine.
-    on "hide" action Show("kd_kami_broadcast_outro")
+    # Recouvre *réellement* le décor de diffusion avant de le révéler en 1 s.
+    add Solid("#000000") at kd_kami_black_reveal
 
-    add Solid("#75ddff") at kd_kami_signal_boot
-
-    text "CONNEXION AU FLUX DE KAMI...":
-        xpos 0.68
+    text "ÉTABLISSEMENT DE LA CONNEXION...":
+        xpos 0.64
         ypos 0.075
-        size 20
+        size 21
         color "#DEF5FF"
         outlines [(2, "#05131acc", 0, 0)]
         at kd_kami_boot_label
@@ -548,7 +545,6 @@ screen kami_broadcast_ui():
             color "#D0F4FF"
             outlines [(1, "#07121f", 0, 0)]
 
-    # Ligne de contrôle basse, sans masquer la bouche ni le cadrage.
     add Solid("#45c8e040") xpos 0.12 ypos 0.946 xsize 0.76 ysize 2 at kd_kami_hud_appear
 
     # Tout l'UI Kami n'apparaît QUE s'il y a un personnage en diffusion
@@ -585,6 +581,23 @@ screen kami_broadcast_ui():
                 xpos 70
                 ypos (bh - 40)
                 at Transform(rotate=tilt, anchor=(0.0, 1.0))
+
+
+# À appeler après avoir affiché la première bg_diffusion.
+# Le son d'annonce doit être joué AVANT, comme dans les scripts existants.
+label KAMI_BROADCAST_WAIT_OPEN:
+    $ renpy.pause(1.0, hard=True)
+    return
+
+# La fermeture prend 0,5 s et masque le BG jusqu'au dernier instant.
+# On prépare une scène noire avant de retirer le voile pour empêcher le flash.
+label KAMI_BROADCAST_CLOSE:
+    show screen kd_kami_broadcast_closing
+    $ renpy.pause(0.5, hard=True)
+    scene black
+    hide screen kami_broadcast_ui
+    hide screen kd_kami_broadcast_closing
+    return
 
 init python:
     def bc_portrait_dd(st, at):
