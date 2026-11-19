@@ -475,6 +475,7 @@ label _8_1_0_0_CHAMBRE_IRIS:
     iris desaccord "Après ton réveil, je préfère vérifier."
     anya desaccord "T'étais en train de m'étouffer !"
     iris colere "J'ESSAYAIS DE T'EMPÊCHER DE CRIER !"
+    call kd_vn_reaction("iris", "colere", "#ff9c55")
     noam fatigue "Vous pouvez vous détester un peu moins fort ? Ça va finir par nous faire repérer."
     "Les deux me fusillent du regard. Au moins, elles sont d'accord sur quelque chose."
 
