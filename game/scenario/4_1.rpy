@@ -497,6 +497,7 @@ label _4_1_APRES_CLASH_PRE_FETE:
     think "Je m'assieds à l'autre bout du lit en laissant suffisamment d'espace entre nous."
 
     $ hideGroup()
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg018 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg018")
 
