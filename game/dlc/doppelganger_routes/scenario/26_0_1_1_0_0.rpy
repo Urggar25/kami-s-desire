@@ -610,6 +610,7 @@ label _26_0_1_1_0_0_CONFRONTATION:
     mara agace "Putain. Enlevez ça."
     iris inquiet "On doit la garder pour vérifier."
     mara colere "J'AI DIT ENLEVEZ-LA !"
+    call kd_vn_reaction("mara", "colere", "#ff9c55")
     "Iris baisse les yeux. Mara se tourne vers moi."
     mara desaccord "Hier, je t'ai proposé un verre. T'as fait comme si j'avais essayé de t'empoisonner."
     noam inquiet "Mara, je..."
