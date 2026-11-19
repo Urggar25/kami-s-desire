@@ -96,6 +96,7 @@ label _28_0_1_1_0_0_1_REUNION:
     mara agace "Ouais, bah ça fait un moment que ça bloque, justement."
     kael neutre "Mara..."
     mara colere "Quoi ? On va encore faire semblant que c'est pas sa faute ?!"
+    call kd_vn_reaction("mara", "colere", "#ff5d75")
     noam inquiet "Qu'est-ce que tu veux dire ?"
     mara agace "Putain, Noam ! On aurait pu régler cette histoire depuis deux semaines !"
     noam surpris "Deux semaines... ?"
