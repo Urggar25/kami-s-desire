@@ -364,6 +364,7 @@ label _6_1_0_RYN_SAEL:
 
     sael raison "Alors cette conversation ne sert à rien."
 
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg036 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg036")
 
