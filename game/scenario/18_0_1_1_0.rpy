@@ -202,6 +202,7 @@ label _18_0_1_1_SALLE_ROBOTS:
 
     $ unlock_gallery_image("bg_cg046")
     $ hideGroup()
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg046 at adaptive_fullscreen with flash_white
 
     $ investigation_add("salle_goumi")
