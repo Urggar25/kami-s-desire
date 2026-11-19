@@ -538,6 +538,7 @@ label _3_CAFETERIA_ARRIVE:
     elen desaccord "Vous êtes insupportables ! C'est VOUS qui ne savez pas manger !"
     elias sourire "Avec ça, tu auras faim dans une heure. Moi, j'ai pris des œufs et du poulet. Des vraies protéines !"
     elen surpris "DU POULET ?! À CETTE HEURE-CI ?! Mais tu es fou !"
+    call kd_vn_reaction("elen", "surpris", "#ff9c55")
     iris taquin "Je ne pensais pas dire ça, mais... Elen a raison."
     elias colere "Quoi ?! Le poulet, c'est parfaitement normal ! Vous avez un problème avec les poulets ?!"
     elen sourire "Bon ! Vous êtes officiellement interdits de commenter mon assiette. Et le vote aussi. Juste cinq minutes !"
