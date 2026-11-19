@@ -167,6 +167,7 @@ label _5_1_KAEL_NYRA:
 
     think "Kael est assis contre le mur, les yeux fixés sur sa tablette. Nyra reste debout près de lui."
 
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg023 at adaptive_fullscreen with dissolve  # CG spéciale de la scène au comptoir
     $ unlock_gallery_image("bg_cg023")
 
