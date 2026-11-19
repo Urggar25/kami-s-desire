@@ -823,6 +823,7 @@ label _24_0_1_1_0_0_CONCLAVE:
     ryn colere "Bah explique-la alors !"
 
     tomas colere "J'ESSAIE !"
+    call kd_vn_reaction("tomas", "colere", "#ff9c55")
 
     "Le ton claque suffisamment fort pour que toute la salle se taise."
 
