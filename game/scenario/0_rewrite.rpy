@@ -747,6 +747,7 @@ label d0_memory_lysa:
     # Le prenom et la fiche se debloquent des son souvenir au prologue.
     $ unlock_character_name("lysa")
 
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg006 at adaptive_fullscreen with dissolve
     "Deux caissons étaient disposés côte à côte. Lysa s'était arrêtée devant le sien, les bras croisés, sans avoir l'air particulièrement pressée d'y entrer."
     # Retour aux sprites pendant les echanges ; les CG restent sans sprites.
