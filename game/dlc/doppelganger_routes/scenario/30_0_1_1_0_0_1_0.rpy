@@ -47,6 +47,7 @@ label _30_0_1_1_0_0_1_0_CONDUIT:
     julian peur "Non... Non, recule !"
     noam inquiet "Quoi ? Mais qu'est-ce qui t'arrive ?"
     julian colere "T'ÉTAIS DANS MA CHAMBRE ! Je t'ai vu !"
+    call kd_vn_reaction("julian", "colere", "#ff9c55")
     noam surpris "Attends... Ta chambre ?"
     julian peur "Y avait Mara ! Et Sael ! Elle m'a piqué avec un truc, et après je me suis réveillé entouré de..."
     "Mon estomac se serre. Ce n'est pas le double de Julian. C'est lui. Celui que j'ai vu allongé, sans bouger."
