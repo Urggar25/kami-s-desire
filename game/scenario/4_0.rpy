@@ -86,15 +86,16 @@ label _4_0_REVEIL_CHAMBRE:
 
     play sound sfx_announce
     pause 0.5
+    scene bg_diffusion_taquin at adaptive_fullscreen with None
     show screen kami_broadcast_ui
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_1
     play music "music/bgm_system_override.mp3" fadein 0.8
     kami "Bonjour, mes petits perdants ! Félicitations : vous avez tous survécu à votre premier exercice de démocratie."
     kami "Le monde, lui, est resté exactement comme hier. Ce qui est une manière très économique de faire de la politique, il faut le reconnaître."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Puisque la distribution gratuite est maintenue, j'ai envoyé quelques provisions supplémentaires sur Terre. Vous allez adorer la démonstration."
     kami "Elen, mon trésor, un conseil : prends ton petit-déjeuner avant de découvrir les nouveautés. C'est pour ton bien."
-    hide screen kami_broadcast_ui
+    call KAMI_BROADCAST_CLOSE from _call_kami_close_j4_1
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     noam "Si Kami a modifié les règles du petit-déjeuner, j'en connais une qui va être d'une humeur massacrante..."
@@ -181,8 +182,9 @@ label _4_0_CAFETERIA_ECRANS:
 
     play sound sfx_announce
     pause 0.5
+    scene bg_diffusion_taquin at adaptive_fullscreen with None
     show screen kami_broadcast_ui
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_2
     play music "music/bgm_system_override.mp3" fadein 0.8
     kami "Ooooh, Elen ! Tu as réussi à organiser un sommet international sur une épice. Je suis émue."
     kami "Les sacs sont déjà partis vers la Terre. Vous avez conservé les distributions gratuites ; j'ai décidé de les approvisionner davantage. C'est beau, la cohérence."
@@ -190,7 +192,7 @@ label _4_0_CAFETERIA_ECRANS:
     kami "Pas d'inquiétude. Vous mangerez tous à votre faim jusqu'au ravitaillement du jour 7. Simplement, vous aurez moins d'occasions de faire les difficiles."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Et comme je sais à quel point vous adorez discuter de mes décisions, j'ai laissé les images de la distribution sur votre télévision. De rien !"
-    hide screen kami_broadcast_ui
+    call KAMI_BROADCAST_CLOSE from _call_kami_close_j4_2
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
     $ showGroup([
@@ -548,18 +550,19 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     "Elle disparaît avant que j'aie le temps de répondre."
     play sound sfx_announce
     pause 0.4
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    scene bg_diffusion_zen at adaptive_fullscreen with None
     show screen kami_broadcast_ui
+    call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_3
     play music "music/bgm_system_override.mp3" fadein 1.0
     kami "Mes petits représentants ! Rendez-vous au Conclave. Votre deuxième proposition vous attend."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Je sais, je sais, vous avez mieux à faire. Personnellement, je trouve votre emploi du temps admirablement vide."
-    hide screen kami_broadcast_ui
+    call KAMI_BROADCAST_CLOSE from _call_kami_close_j4_3
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     "Ryn passe près de moi en maugréant qu'il n'a même pas pu terminer sa sieste."
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_202
+    call KAMI_BROADCAST_CLOSE from _call_kami_close_j4_4
     scene bg_conclave at adaptive_fullscreen with dissolve
-    hide screen kami_broadcast_ui
     play music "music/bgm_world_decline.mp3" fadein 1.0
     call trial_intro(subtitle=_("JOUR [current_day]")) from _call_trial_intro_kv2_4_0
     $ showGroup([
@@ -592,8 +595,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     play sound sfx_announce
     pause 1.0
     stop music fadeout 1.0
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    scene bg_diffusion_zen at adaptive_fullscreen with None
     show screen kami_broadcast_ui
+    call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_4
     play music "music/bgm_system_override.mp3" fadein 1.0
     kami "Oh ! Un siège vide ! Julian, mon chéri, tu boudes ? Pourtant, j'avais réservé ton meilleur angle de caméra."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
@@ -618,7 +622,6 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Alors ? Deux possibilités seulement. Ne dites pas que je ne vous facilite jamais les choses."
     scene bg_conclave at adaptive_fullscreen with dissolve
-    hide screen kami_broadcast_ui
     play music "music/bgm_world_decline.mp3" fadein 1.0
     "Ryn se redresse. Sael, au contraire, reste immobile. Elle a serré ses mains sur ses genoux."
     $ showGroup([
