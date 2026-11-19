@@ -330,6 +330,7 @@ label _8_0_1_CAFETERIA_ARRIVEE:
     elias fatigue "Vous allez encore finir par m'accuser d'avoir renversé un café."
     julian sourire "Le héros du Conclave ! Celui qui a vaincu l'IA avec un mug !"
     elias colere "C'ÉTAIT PAS VOLONTAIRE !"
+    call kd_vn_reaction("elias", "colere", "#ff9c55")
     lysa blase "C'est ça qui rend ton sacrifice si beau."
     "Même Tomas laisse échapper un rire avant de regarder son compteur une nouvelle fois."
     elen inquiet "Et si les gens se mettent à désobéir parce qu'ils pensent que c'est fini ?"
