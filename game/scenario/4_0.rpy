@@ -70,6 +70,7 @@ label _4_0_REVEIL_CHAMBRE:
     play sound sfx_drop
     "Un objet métallique tombe dans le couloir, suivi d'un juron qu'on essaie beaucoup trop tard de rendre discret."
     noam "Cinq minutes de sommeil supplémentaire, c'est trop demandé ...?"
+    call kd_vn_cg_impact("#b9dfff")
     scene bg_cg012 at adaptive_fullscreen with dissolve
     "Je reste étendu un moment, les yeux ouverts. J'ai encore rêvé de l'urne. Sauf que, cette fois, c'était moi qui devais compter les bulletins et ils n'arrêtaient pas de se multiplier."
     think "Quelle idée, aussi, de laisser mon cerveau organiser des élections pendant mon sommeil."
@@ -108,6 +109,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ corridor_current = "dortoir"
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
     "Dans le couloir, Elias est à genoux devant un casier entrouvert. Autour de lui, trois outils, une vis et quelque chose qui ressemble à un ressort forment un petit périmètre de catastrophe."
+    call kd_vn_entrance("elias", "neutre", "right")
     $ showGroup([
         ("noam", "neutre", 0.30),
         ("elias", "neutre", 0.70),
@@ -126,6 +128,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     elias inquiet "Elle tenait aussi, mais avec une petite résistance. Maintenant elle ferme toute seule."
     "Elias pousse la porte du casier. Elle se ferme. Puis elle se rouvre immédiatement."
     elias colere "C'EST PAS POSSIBLE !"
+    call kd_vn_reaction("elias", "colere", "#ff9c55")
     noam sourire "C'est impressionnant. Mais... J'ai peur de la réponse."
     noam reflechit "Pourquoi tu es en train de bricoler sur cette porte en fait ?!"
     elias inquiet "Elle grinçait trop hier quand on l'utilisait... Alors jeme suis dis que j'allais réparer ça !"
