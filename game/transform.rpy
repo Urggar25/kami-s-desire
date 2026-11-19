@@ -472,8 +472,84 @@ transform broadcast_portrait:
 transform broadcast_glass:
     alpha 0.10
 
+
+# Diffusion Kami : séquence très courte de connexion et extinction.
+# Animations autonomes : aucun appel à modifier dans les journées existantes.
+transform kd_kami_signal_boot:
+    alpha 0.0
+    pause 0.04
+    linear 0.06 alpha 0.36
+    linear 0.07 alpha 0.05
+    linear 0.08 alpha 0.20
+    easeout 0.28 alpha 0.0
+
+transform kd_kami_boot_label:
+    alpha 0.0
+    yoffset 10
+    easein 0.12 alpha 1.0 yoffset 0
+    pause 0.34
+    easeout 0.25 alpha 0.0 yoffset -8
+
+transform kd_kami_hud_appear:
+    alpha 0.0
+    xoffset 26
+    pause 0.12
+    easeout 0.26 alpha 1.0 xoffset 0
+
+transform kd_kami_live_pulse:
+    alpha 0.35
+    linear 0.75 alpha 1.0
+    linear 0.75 alpha 0.35
+    repeat
+
+transform kd_kami_signal_out:
+    alpha 0.0
+    linear 0.05 alpha 0.36
+    linear 0.06 alpha 0.06
+    linear 0.08 alpha 0.28
+    easeout 0.13 alpha 0.0
+
+screen kd_kami_broadcast_outro():
+    zorder 221
+    add Solid("#09202b") at kd_kami_signal_out
+    timer 0.32 action Hide("kd_kami_broadcast_outro")
+
 screen kami_broadcast_ui():
     zorder 200
+
+    # L'écran de diffusion existant reste intact. L'habillage apparaît
+    # au début et s'efface automatiquement quand la diffusion se termine.
+    on "hide" action Show("kd_kami_broadcast_outro")
+
+    add Solid("#75ddff") at kd_kami_signal_boot
+
+    text "CONNEXION AU FLUX DE KAMI...":
+        xpos 0.68
+        ypos 0.075
+        size 20
+        color "#DEF5FF"
+        outlines [(2, "#05131acc", 0, 0)]
+        at kd_kami_boot_label
+
+    fixed:
+        xalign 0.97
+        yalign 0.045
+        xsize 245
+        ysize 42
+        at kd_kami_hud_appear
+
+        add Solid("#061520ce")
+        add Solid("#6CDCF5") xpos 9 ypos 10 xsize 5 ysize 22
+        add Solid("#0DECC1") xpos 23 ypos 15 xsize 12 ysize 12 at kd_kami_live_pulse
+        text "KAMI // EN DIRECT":
+            xpos 45
+            ypos 9
+            size 19
+            color "#D0F4FF"
+            outlines [(1, "#07121f", 0, 0)]
+
+    # Ligne de contrôle basse, sans masquer la bouche ni le cadrage.
+    add Solid("#45c8e040") xpos 0.12 ypos 0.946 xsize 0.76 ysize 2 at kd_kami_hud_appear
 
     # Tout l'UI Kami n'apparaît QUE s'il y a un personnage en diffusion
     if broadcast_char is not None:
