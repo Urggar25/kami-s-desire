@@ -114,6 +114,7 @@ label _29_0_1_1_0_0_REVEIL:
     "Iris ne relâche pas immédiatement la poignée. Elle reste penchée contre la porte, les deux mains crispées, tandis qu'Elias frappe contre le bois avec son autre bras."
 
     elias peur "AAAAH ! PUTAIN ! OUVRE ! OUVRE, MERDE !"
+    call kd_vn_reaction("elias", "peur", "#ff9c55")
     iris colere "RETIRE TON BRAS !"
     elias peur "J'PEUX PAS ! TU M'AS PÉTÉ LE—"
 
