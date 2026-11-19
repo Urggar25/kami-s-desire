@@ -129,6 +129,7 @@ label noam_garde_secret:
     iris desaccord "Te fais pas d'idées. Je t'apporte de quoi éviter que tu t'écroules une deuxième fois."
     noam sourire "C'est presque romantique."
     iris colere "J'AI DIT DE PAS TE FAIRE D'IDÉES !"
+    call kd_vn_reaction("iris", "colere", "#ff9c55")
     "Elle se dirige vers la porte. Juste avant de sortir, elle jette un dernier regard vers moi."
     iris gene "Si tu as vraiment quelque chose en tête... tu peux m'en parler. Plus tard."
     noam fatigue "D'accord."
