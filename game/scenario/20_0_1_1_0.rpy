@@ -1183,6 +1183,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     "Le couteau tombe quelque part au sol."
 
     noam colere "DÉGAGE !"
+    call kd_vn_reaction("noam", "colere", "#ff9c55")
 
     play sound "audio/sfx_thud.mp3" volume 0.90
     call impact_fx("light", direction="left") from _call_impact_fx_15
