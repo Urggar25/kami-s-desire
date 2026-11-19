@@ -80,6 +80,7 @@ label kd_dlc_la_peau_des_autres:
     "Quelque chose flotte à l'intérieur."
 
     $ unlock_gallery_image("bg_cg054")
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg054 at adaptive_fullscreen with creep_diss
 
     pause 0.7
