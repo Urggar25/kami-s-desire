@@ -157,6 +157,7 @@ label _21_0_1_1_0_REVEIL:
     mara sourire "Chut."
 
     noam desespoir "ENLÈVE ÇA !"
+    call kd_vn_reaction("noam", "desespoir", "#ff9c55")
 
     "Je recommence à tirer sur les sangles."
 
