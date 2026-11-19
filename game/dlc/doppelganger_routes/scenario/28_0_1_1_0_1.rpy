@@ -201,6 +201,7 @@ label _28_0_1_1_0_1_LIVRAISON:
     "Près du sas, Elias et Elen empilent des caisses. Goumi attend avec le chariot, parfaitement immobile. Évidemment, lui n'a aucun problème à faire comme si tout allait bien."
     $ showGroup([("elias", "fatigue", 0.080), ("elen", "reflexion", 0.360), ("noam", "neutre", 0.640), ("lysa", "blase", 0.920)])
     elias fatigue "Hé ! Pas celle-là, elle est lourde !"
+    call kd_vn_reaction("elias", "fatigue", "#ff9c55")
     "Elen soulève la caisse et manque de la lâcher. Elias la retient par un coin."
     elen peur "Putain ! Pardon..."
     elias fatigue "Mais dis-le si t'arrives pas à la porter !"
