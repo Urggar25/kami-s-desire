@@ -60,6 +60,7 @@ label _26_0_1_1_0_1_CAFETERIA:
     elen inquiet "Oui. Il arrêtait pas de regarder derrière lui. Il m'a demandé s'il pouvait prendre ma chambre."
     mara taquin "Oh. Vous avez dormi ensemble ?"
     elen colere "Non ! On a échangé nos chambres !"
+    call kd_vn_reaction("elen", "colere", "#ff9c55")
     mara rire "Ah, tout de suite, c'est moins intéressant."
     elen fatigue "Il avait peur de retourner chez lui. Quelqu'un tambourinait encore à sa porte, hier soir."
     noam surpris "Quelqu'un ? Tu l'as vu ?"
