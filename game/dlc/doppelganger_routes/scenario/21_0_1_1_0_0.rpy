@@ -125,6 +125,7 @@ label _21_0_1_1_0_0_SAS:
     nyra "Je préfère ça à te mentir."
 
     ryn colere "KAMI !"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
     "Sa voix claque dans le sas."
     nyra raison "Elle t'entend."
     ryn "Alors qu'elle réponde."
