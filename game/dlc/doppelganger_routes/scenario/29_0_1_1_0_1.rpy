@@ -475,6 +475,7 @@ label _29_0_1_1_0_1_PA_GRILLE:
 label _29_0_1_1_0_1_PA_ELEN:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.7
+    call kd_vn_entrance("elen", "triste", "left")
     $ showGroup([("elen", "triste", 0.35), ("noam", "neutre", 0.69)])
     noam inquiet "Elen, je peux te demander une dernière fois pour l'échange des chambres ?"
     elen fatigue "Encore ?"
