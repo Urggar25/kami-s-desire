@@ -81,6 +81,7 @@ label _25_0_1_1_0_1_CAFETERIA:
     ryn colere "Et tu penses toujours que t'as eu raison ?"
     tomas hesitation "C'est pas... Je sais pas encore."
     julian colere "Tu sais pas ?!"
+    call kd_vn_reaction("julian", "colere", "#ff9c55")
     tomas fatigue "J'essaie de savoir ce que c'est, Keyper. C'est tout."
     julian agace "Pendant ce temps-là, y'a des gens dehors qui avaient besoin de ce Commandement !"
     noam raison "On sait. Lui aussi, il sait."
