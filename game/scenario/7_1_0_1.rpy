@@ -66,6 +66,7 @@ label _7_1_0_DECLARER_PLACEHOLDER:
     iris colere "Évidemment qu'elle nous a entendus. Elle fait durer."
 
     noam colere "Kami ! Elle est en hypothermie. Si tu veux discuter, fais-le maintenant."
+    call kd_vn_reaction("noam", "colere", "#ff9c55")
 
     stop music fadeout 0.5
     play sound sfx_announce
