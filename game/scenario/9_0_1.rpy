@@ -100,6 +100,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
         ("mara", "stress", 0.75), ("elen", "peur", 0.92),
     ])
     iris colere "JE REFUSE !"
+    call kd_vn_reaction("iris", "colere", "#ff9c55")
     mara taquin "Ah. Voilà une excellente manière de commencer le vote."
     iris colere "Je refuse qu'elle appelle ça une maintenance ! Une maintenance, ça se planifie ! Ça se documente !"
     lysa blase "Tu veux qu'elle t'envoie son agenda ?"
