@@ -183,6 +183,7 @@ label _30_0_1_1_0_1_AVEU:
     elen colere "Tu savais qu'il dormait dans MA chambre ?!"
     nyra neutre "J'ai entendu quand vous en avez parlé."
     elen colere_noire "Et t'as passé les jours suivants à ME CONSOLER ?!"
+    call kd_vn_reaction("elen", "colere_noire", "#ff9c55")
     nyra triste "Elen..."
     elen colere "Non, mais ferme-la ! Il t'avait fait quoi, Tomas ?!"
     nyra fatigue "Rien."
