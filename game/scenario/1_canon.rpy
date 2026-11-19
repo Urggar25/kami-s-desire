@@ -1138,6 +1138,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "TU VAS VRAIMENT APPLAUDIR ?!"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
     $ bc_hide()
     $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "Mais non ! Je demandais !"
