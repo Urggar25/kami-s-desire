@@ -121,6 +121,7 @@ label _10_0_1_1_CAFETERIA_ELIAS:
     ryn colere "Donc une phrase pour nous dire de nous féliciter."
     elias inquiet "Ça veut peut-être dire qu'une majorité s'est sauvée."
     ryn colere "OU ÇA VEUT DIRE QU'ILS SONT MORTS !"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
     "Elias se fige. Même Mara ne bouge plus."
     nyra raison "Les deux restent possibles. On ne peut pas déduire le bilan de cette phrase."
     ryn colere "T'es sérieuse, là ? Tu vas encore m'expliquer comment lire un écran ?"
