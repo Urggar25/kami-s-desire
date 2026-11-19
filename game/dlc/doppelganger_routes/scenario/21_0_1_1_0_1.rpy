@@ -810,6 +810,7 @@ label _21_0_1_1_0_1_QTE:
     "Je lui attrape le poignet avant que la lame descende."
 
     noam colere "LÂCHE ÇA !"
+    call kd_vn_reaction("noam", "colere", "#ff9c55")
 
     dg_noam "ARRÊTE DE BOUGER !"
 
