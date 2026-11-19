@@ -899,6 +899,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     else:
         "Je manque le gobelet. Il frappe la console et se vide sur les connecteurs."
         elias panique "NON ! LES CONNECTEURS !"
+        call kd_vn_reaction("elias", "panique", "#ff9c55")
     "Elias tire son chiffon de sa poche et reste pétrifié, sans oser l'approcher du circuit."
     noam inquiet "Tu veux que j'essuie ?"
     elias "NON !"
