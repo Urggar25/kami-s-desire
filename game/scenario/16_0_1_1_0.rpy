@@ -488,6 +488,7 @@ label _16_0_1_1_ARCHIVES_SAEL_CLIFFHANGER:
     $ unlock_gallery_image("bg_cg042")
     $ investigation_add("m16")
     $ hideGroup()
+    call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg042 at adaptive_fullscreen with memory_rip
     $ cam_move(fx=0.50, fy=0.70, z=1.10, t=5.5)
     $ horror_music_slow(fadeout=0.35, fadein=0.75)
