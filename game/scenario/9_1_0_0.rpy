@@ -129,6 +129,7 @@ label _9_1_0_0_REVEIL:
     noam "Ryn."
 
     iris surpris "Ryn ?"
+    call kd_vn_reaction("iris", "surpris", "#78d9ff")
 
     noam "Je l'ai vu sortir de ta chambre."
 
