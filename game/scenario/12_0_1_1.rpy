@@ -491,6 +491,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     ryn colere "Je vote pour, et c'est tout ! Je suis pas venu jusqu'ici pour demander à une caméra la permission d'aller pisser."
     mara taquin "Ça te ferait pas de mal de demander la permission avant certaines choses."
     ryn colere "QUOI, ENCORE ?!"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
     sael determine "On peut être favorables au texte sans nier les risques. Et on peut parler des risques sans vouloir condamner ceux qui utilisent ces appareils."
     elias reflechit "Merci. C'est à peu près ce que j'essayais de dire."
     iris taquin "En beaucoup moins clair."
