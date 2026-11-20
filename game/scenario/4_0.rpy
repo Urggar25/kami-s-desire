@@ -110,7 +110,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ current_scene_active = "_4_0_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
     scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
-    "Dans le couloir, Elias est à genoux devant un casier entrouvert. Autour de lui, trois outils, une vis et quelque chose qui ressemble à un ressort forment un petit périmètre de catastrophe."
+    "Dans le couloir, Elias est à genoux devant un casier entrouvert. Autour de lui, trois outils, une vis et quelque chose qui ressemble à un ressort forment un petit périmètre de catastrophe. Une tasse de café tient en équilibre sur le bord du casier."
     call kd_vn_entrance("elias", "neutre", "right")
     $ showGroup([
         ("noam", "neutre", 0.30),
@@ -122,6 +122,11 @@ label _4_0_NAVIGATION_CAFETERIA:
     elias inquiet "Ah. Celui-là."
     "Il essaie de repousser le ressort du bout du doigt. Le ressort roule jusqu'à ma chaussure."
     noam sourire "Tu veux de l'aide ?"
+    "Je tends la main vers sa tasse pour la mettre à l'abri."
+    elias panique "Hé ! Pas le café !"
+    noam surpris "Je voulais juste le poser par terre."
+    elias gene "Ah. Oui, vas-y. Mais pas près de la vis, là."
+    noam "Tu protèges plus ton café que ta réparation."
     elias reflechit "Non. Enfin... si tu peux ramasser ça, ce serait gentil. Mais ne touche pas à la porte."
     noam surpris "Pourquoi ?"
     elias gene "Parce qu'elle tient."
