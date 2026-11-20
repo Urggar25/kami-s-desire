@@ -325,21 +325,24 @@ label _6_0_1_TRANSITION_CONCLAVE:
     tomas "Moi, treize heures cinquante."
     "Elen approche sa tablette de la mienne, comme si cela pouvait les mettre d'accord."
     elen "Attends. La mienne vient de changer."
-    "L'écran mural s'allume sans sonnerie. Le portrait de Kami apparaît."
+    "L'écran mural s'allume sans sonnerie. Le portrait de Kami apparaît, avec une bande d'image décalée sur son visage."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
     kami "Eh bien, quelle jolie réunion ! Vous avez l'heure, vous avez vos jambes, alors utilisez-les !"
     tomas inquiet "Kami, certaines tablettes indiquent treize heures cinquante et d'autres quatorze heures."
     kami "Je le sais, Tomas."
     noam "Tu peux nous dire quel horaire est le bon ?"
-    kami "Bien sûr !"
-    pause 0.2
-    kami "Venez maintenant."
+    kami "Bien sûr ! Bien... sûr."
+    play sound "audio/sfx_glitch.mp3"
+    with hpunch
+    kami "Venez main... maintenant."
     elen "Et pourquoi ça a changé ?"
-    kami "Parce que j'en ai décidé ainsi, évidemment ! Tu veux aussi un justificatif signé ?"
+    kami "Parce que j'en ai... j'en ai décidé ainsi, évidemment ! Tu veux aussi un justificatif si... signé ?"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Vous êtes attendus au Conclave. Merci."
+    kami "Vous êtes attendus au Conclave. Merci. Mer... ci."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 0.9
@@ -617,7 +620,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
     noam inquiet "Iris, elle t'entend."
     iris "J'espère bien ! Je veux qu'elle me dise ce qui se passe, pas qu'elle récite une réponse toute faite !"
-    kami "Alors laisse-les poser des questions."
+    iris "Alors laisse-les poser des questions."
     kami "Bien sûr, Iris."
     "L'écran s'éteint une nouvelle fois. Cette fois, les haut-parleurs émettent un souffle sourd."
     hide screen j601_kami_glitch
