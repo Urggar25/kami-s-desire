@@ -76,6 +76,14 @@
 - **À ne pas dévoiler prématurément :** la participation d'Iris au programme de Reus, son auto-enregistrement et l'ancienneté des données doivent rester un secret d'auteur jusqu'à la route dédiée.
 - **Point de continuité à arbitrer :** la fiche actuelle donne à Iris environ **19 ans** et la présente comme passionnée exclusivement par l'IA. Une collaboration scientifique antérieure de plusieurs années sur la duplication biologique doit recevoir une chronologie crédible et une fonction cohérente avec sa spécialité (par exemple le volet modélisation/restitution des souvenirs), sans modifier silencieusement son âge ni effacer son projet d'IA éducative.
 
+## 5 bis. Trait récurrent — le café (consignes d'écriture)
+
+- **En temps normal :** Elias reste chaleureux, débrouillard et techniquement compétent. Sa dépendance se lit dans de petits gestes (gobelet toujours à portée, recherche d'eau chaude, café froid avalé sans protester) et dans sa manière de justifier sa consommation.
+- **Comédie :** réserves absurdes, calcul impossible du nombre de tasses, dispute pratique avec Kael sur les boissons près des circuits, tentative maladroite d'obtenir une ration supplémentaire. Ne pas faire de chaque apparition d'Elias une blague sur le café.
+- **Rapports aux autres :** Kael privilégie la sécurité des équipements ; Elen peut s'inquiéter ou vouloir l'aider ; Noam le taquine puis remarque ce qui se cache derrière la manie ; Kami peut exploiter sa dépendance aux livraisons, sans que cela devienne automatiquement une intrigue de manipulation.
+- **Versant grave :** une pénurie peut laisser apparaître fatigue, irritabilité et crainte d'être inutile. Ne pas assimiler dépendance et incompétence ; ne pas créer de catastrophe simplement parce qu'il manque une tasse.
+- **Progression :** installer les habitudes tôt, varier les scènes ordinaires, ne révéler l'origine dans les Forges que lorsque la conversation s'y prête, puis laisser de possibles échos émotionnels dans les routes plus sombres.
+
 ## 6. Relations initiales avec les autres représentants
 
 Il s'agit du **ressenti de Noam au début**, et non d'un bilan de leurs relations futures.
@@ -316,8 +324,9 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - **Concret :** raisonne surtout à partir de faits vécus plutôt que de principes abstraits.
 - **Complexé :** sait qu'on le prend parfois pour un idiot et veut montrer qu'il est capable.
 - **Optimiste :** croit volontiers que l'effort et la bonne volonté peuvent arranger les choses.
+- **Dépendant au café :** en boit très souvent, parfois sans même apprécier le goût ; garde des réserves de secours, surveille les approvisionnements et minimise sa consommation. Ce besoin n'efface ni sa compétence ni ses autres préoccupations.
 
-**Contradiction centrale :** Elias est sincèrement bienveillant, mais son manque de recul peut l'amener à défendre des décisions profondément injustes.
+**Contradiction centrale :** Elias est sincèrement bienveillant, mais son manque de recul peut l'amener à défendre des décisions profondément injustes. Il sait réparer et sécuriser des équipements exigeants, mais peine à prendre soin de lui : travailler malgré la fatigue est devenu une fierté autant qu'une mauvaise habitude.
 
 ## 3. Façon de s'exprimer
 
@@ -332,6 +341,7 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - Préfère les exemples pratiques aux grands principes.
 - Quand il est embarrassé, se justifie beaucoup et peut tourner en rond.
 - Quand il est profondément triste, devient plus silencieux et peine à trouver ses mots.
+- À propos du café, minimise avec une mauvaise foi spontanée : il prétend pouvoir arrêter quand il veut, négocie ce qui compte comme « une tasse » et répond parfois très sérieusement à des plaisanteries.
 
 **Particularité :** Elias peut poser une question très naïve au beau milieu d'une discussion politique particulièrement grave. Son langage décontracté contraste avec son apparence toujours soignée.
 
@@ -353,7 +363,10 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - A vu la sécurité s'améliorer après la prise de pouvoir de Kami.
 - En a conçu une reconnaissance sincère envers elle, qu'il associe à la fin des violences.
 - A évolué dans un environnement largement favorable à Kami, dont il questionne peu les opinions.
-- Travaille volontairement dans les usines d'Axiome.
+- Travaille volontairement dans les usines d'Axiome, notamment aux Forges d'Axiome.
+- Lors de journées physiquement éprouvantes dans les Forges, a commencé à boire du café pour rester éveillé et tenir le rythme ; la consommation est devenue quotidienne puis compulsive. Aujourd'hui, il s'en sert aussi pour repousser la fatigue et la sensation de ne pas en faire assez.
+- Il conserve volontiers des réserves discrètes et boit plusieurs tasses tout au long de la journée. Il ne se considère pas comme dépendant, et la perspective de manquer de café l'inquiète davantage qu'il ne veut l'admettre.
+- Lors d'une privation prolongée, peut souffrir de maux de tête, d'irritabilité, de fatigue et de difficultés de concentration ; jamais le présenter comme automatiquement délirant ou dangereux. Une erreur grave éventuelle doit résulter aussi du contexte, de son épuisement et de ses choix.
 - Possède un talent réel pour les tâches manuelles, malgré sa maladresse dans la vie quotidienne.
 - Est connu dans son quartier pour sa bonne volonté et son goût du travail.
 - A été moqué pour ses maladresses et ses difficultés à suivre certains raisonnements. **(Fantôme : peur d'être jugé incapable.)**
