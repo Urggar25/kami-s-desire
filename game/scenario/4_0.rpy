@@ -178,7 +178,7 @@ label _4_0_ROUTE_MATIN_NYRA:
     nyra "Je crois surtout qu'elle ne comprend pas les restrictions de stock."
     "Un cri indigné traverse la porte de la cafétéria. Nyra tourne la tête."
     noam "Je pense que tu vas avoir ta réponse."
-    nyra fatigue "Ça promet."
+    nyra reflechit "Ça promet."
     $ hideGroup()
     return
 
