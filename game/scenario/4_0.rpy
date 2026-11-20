@@ -1,5 +1,7 @@
 default j4_cafeteria_ryn_talked = False
 default j4_cafeteria_julian_talked = False
+default j4_route_optional_met = False
+default j4_soir_lysa_discussion = False
 # Résultat du débat : la question du vote reste entière, les relations non.
 default j4_frontieres_result = "non_joue"
 
@@ -148,6 +150,39 @@ label _4_0_NAVIGATION_CAFETERIA:
     "Devant la cafétéria, une voix familière couvre presque le bruit des plateaux."
     jump _4_0_CAFETERIA_ELEN
 
+label _4_0_ROUTE_MATIN_NYRA:
+
+    $ j4_route_optional_met = True
+    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([("nyra", "neutre", 0.30), ("noam", "neutre", 0.70)])
+    "Nyra tente de faire passer un chariot dans le couloir. Deux cartons dépassent de chaque côté et bloquent le virage."
+    noam sourire "Tu prépares un déménagement ?"
+    nyra reflechit "Les couverts du petit-déjeuner. Le chariot est plus large que l'espace entre les deux angles."
+    noam "Il a peut-être maigri depuis tout à l'heure."
+    nyra neutre "Non."
+    noam "Je peux aider ?"
+    nyra reflechit "Si tu tiens la caisse du haut pendant que je tourne, oui."
+    "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."
+    nyra colere "Pas comme ça. Tu inclines la caisse."
+    noam surpris "Je fais ce que je peux !"
+    nyra "Alors incline-la dans l'autre sens."
+    "Le chariot finit par franchir le passage sans rien renverser."
+    noam "On aurait pu enlever les caisses avant."
+    "Nyra regarde successivement le chariot et les cartons."
+    nyra reflechit "Oui. On aurait pu."
+    "Elle soupire, puis reprend la poignée."
+    nyra neutre "Merci. Au fait, tu sais pourquoi Elen a demandé trois fois plus de cannelle que prévu ?"
+    noam reflechit "Aucune idée."
+    nyra "Sa demande fait trois pages."
+    noam sourire "Tu crois qu'elle prépare une révolution ?"
+    nyra "Je crois surtout qu'elle ne comprend pas les restrictions de stock."
+    "Un cri indigné traverse la porte de la cafétéria. Nyra tourne la tête."
+    noam "Je pense que tu vas avoir ta réponse."
+    nyra fatigue "Ça promet."
+    $ hideGroup()
+    return
+
+
 label _4_0_CAFETERIA_ELEN:
 
     $ decouverte_cafeteria = True
@@ -242,12 +277,19 @@ label _4_0_CAFETERIA_ECRANS:
     mara surpris "Hein ?! Cuisiner ? TOI ?!"
     kael calme "Non, mais sérieusement. On peut utiliser ce pain pour cuisiner ?"
     lysa reflechit "Pour faire des miettolunes, oui. C'est presque fait pour."
+    $ unlock_codex_page("miettolunes", with_notification=False)
     noam surpris "Des quoi ?"
     lysa neutre "Des miettolunes."
     mara taquin "Il faut prononcer ça en regardant la lune, ou ça marche en plein jour ?"
     lysa blase "Tu pourrais essayer de te taire, on verrait déjà si ça améliore le goût."
     kael reflechit "Je n'ai jamais entendu ce nom. C'est une spécialité d'où ?"
-    lysa neutre "De chez moi. Enfin, de ma cuisine. Tu émiettes du pain un peu sec, tu ajoutes une pincée de sucre, juste assez d'eau chaude pour que ça tienne et tu fais dorer deux petites galettes. C'est tout."
+    lysa neutre "C'est devenu très courant à Harmonie depuis Kami. Tu prends du pain sec, tu l'émiettes et tu le ramollis avec un peu de lait."
+    noam reflechit "Et après ?"
+    lysa neutre "Tu ajoutes ce que tu as : du sucre, une cuillère de confiture... Un œuf quand il y en a. Ça tient mieux à la cuisson."
+    kael reflechit "Tu formes de petites galettes et tu les fais dorer ?"
+    lysa neutre "Voilà. Quelques condiments pour le goût et c'est prêt. Ça coûte presque rien."
+    mara taquin "J'étais persuadée que tu gardais un ingrédient secret."
+    lysa blase "Oui. Ne pas laisser Mara toucher à la poêle."
     kael reflechit "C'est tout ? Pas de poudre levante ? Pas d'extrait aromatique ?"
     lysa blase "Tu veux que je te donne aussi le numéro de série de la poêle ?"
     kael calme "Non. Mais je serais curieux de goûter."
@@ -379,6 +421,20 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     "Ryn se rassoit si brusquement qu'une cuillère tombe sur le sol. Personne ne la ramasse."
     "L'écran continue à diffuser des images de sacs alignés. Pendant quelques secondes, on entend seulement les commentaires de la journaliste."
     "Une porte s'ouvre derrière nous."
+    # L'annonce d'Elen se déroule au présent, dans la cafétéria, pas sur la CG télévisée.
+    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    $ showGroup([
+        ("lysa", "blase", 0.040),
+        ("kael", "calme", 0.124),
+        ("ryn", "triste", 0.207),
+        ("mara", "agace", 0.375),
+        ("tomas", "hesitation", 0.458),
+        ("elen", "joie", 0.542),
+        ("iris", "hesitation", 0.625),
+        ("nyra", "neutre", 0.709),
+        ("noam", "neutre", 0.793),
+        ("elias", "neutre", 0.960),
+    ])
     elen joie "BON ! J'AI DÉCIDÉ QU'ON ALLAIT FAIRE QUELQUE CHOSE DE FORMIDABLE !"
     "Je me retourne. Elen a les bras levés et un air parfaitement ravi, comme si elle n'avait pas quitté la pièce en déclarant la guerre à un robot."
     iris hesitation "Tu as retrouvé ta cannelle ?"
@@ -391,7 +447,6 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     elen inquiet "J'étais juste... devant la porte. Et ça résonne très bien, ici."
     kael reflechit "En théorie, avec les ingrédients qui restent, on pourrait en préparer."
     elen joie "EXACTEMENT ! GOUMI !"
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
         ("lysa", "blase", 0.040),
         ("kael", "calme", 0.124),
@@ -410,9 +465,9 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     elen surpris "Comment ça, introuvable ?!"
     goumi "Aucune recette référencée sous la dénomination « miettolunes »."
     kael reflechit "Lysa, tu pourrais lui dicter les proportions ?"
-    lysa blase "Je viens de le faire. C'est du pain, du sucre et un peu d'eau."
-    goumi "Précisez la quantité d'eau."
-    lysa neutre "Un peu."
+    lysa blase "Je viens de le dire. Du pain sec, du lait et, selon les stocks, du sucre, de la confiture ou un œuf."
+    goumi "Précisez la quantité de lait."
+    lysa neutre "Un peu. Juste assez pour ramollir le pain, pas pour le noyer."
     goumi "Unité de mesure non reconnue."
     lysa determine "Oh, ça va ! Assez pour que ça colle. Tu vas pas leur faire passer un examen d'hydratation !"
     elen joie "Lysa, viens ! Tu peux lui montrer !"
@@ -990,8 +1045,8 @@ label _4_0_SOIREE_SANS_VOTE:
     kael calme "Je m'en doutais."
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
-    "Goumi nous autorise le comptoir. Lysa émiette le pain, ajoute un peu de sucre puis l'humidifie juste assez pour former deux petites galettes."
-    "Tout se fait à la main. C'est terminé avant que Kael ait sorti la première de ses questions."
+    "Goumi nous autorise le comptoir. Lysa émiette le pain sec dans un saladier, puis verse un peu de lait pour l'assouplir. Elle ajoute une pincée de sucre : ce soir, il n'y a ni confiture ni œufs disponibles."
+    "Elle mélange, attend que le pain absorbe le lait, puis façonne deux petites galettes à la main. Kael observe les gestes avec une attention qui commence déjà à l'agacer."
     $ showGroup([
         ("lysa", "blase", 0.040),
         ("kael", "calme", 0.124),
@@ -1003,7 +1058,7 @@ label _4_0_SOIREE_SANS_VOTE:
         ("elias", "neutre", 0.960),
     ])
     elen surpris "Mais c'est tout ?"
-    lysa neutre "C'est tout."
+    lysa neutre "Aujourd'hui, oui. Avec de la confiture ou un œuf, c'est meilleur. Mais le principe, c'est de faire avec ce qu'on a."
     elen desaccord "On aurait pu faire ça ce matin !"
     lysa blase "Ce matin, tu étais occupée à menacer Goumi."
     goumi "Menace enregistrée. Aucun dommage constaté."
