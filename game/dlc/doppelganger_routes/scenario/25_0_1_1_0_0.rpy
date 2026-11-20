@@ -906,7 +906,7 @@ label _25_0_1_1_0_0_APRES_MIDI:
     iris neutre "On peut essayer, je crois avoir compris les règles."
 
     "Elle me tend le paquet. Je prends la première carte, mais mes yeux reviennent aussitôt vers Mara."
-    "Elle rapproche sa chaise de celle d'Elias et lui demande de poser sa tasse ailleurs pour ne pas mouiller les cartes. Sa voix n'a pas changé. Elle s'agace exactement comme ce matin."
+    "Elle rapproche sa chaise de celle d'Elias et lui demande de poser sa tasse ailleurs pour ne pas mouiller les cartes. Elias regarde sa tasse, puis le bord de la table, et la décale de quelques centimètres seulement. Mara la pousse aussitôt plus loin. Sa voix n'a pas changé. Elle s'agace exactement comme ce matin."
 
     iris reflexion "Noam ? T'es... Tu es prêt ?"
 
