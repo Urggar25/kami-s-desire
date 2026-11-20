@@ -47,19 +47,51 @@ init python:
         "day4_tray_pnc",
     )
 
+    # Le HUD se trouve sur le layer overlay (zorder 240) : sans exclusion
+    # explicite il passe DEVANT les menus et certains minijeux, malgré modal True.
+    # Toute nouvelle interface plein écran / minijeu doit être ajoutée ici.
     DAY_PERIOD_HUD_BLOCKING_SCREENS = (
-        "tablet_home",
-        "tablet_stats",
-        "tablet_profiles",
-        "tablet_codex",
-        "tablet_succes",
-        "messenger_conversation",
-        "vote_dossier",
-        "investigation_dossier",
-        "system_menu",
-        "game_menu",
-        "roadmap_menu",
-        "main_menu",
+        # Tablette et sous-menus.
+        "tablet_home", "tablet_stats", "tablet_profiles", "tablet_codex",
+        "tablet_succes", "messenger_conversation", "vote_dossier",
+        "investigation_dossier", "codex_menu", "story_map_menu",
+        "roadmap_menu", "system_menu", "game_menu", "main_menu",
+        "preferences", "save", "load", "history", "help",
+        "file_slots", "about",
+        # Débats, votes et minijeux.
+        "refutation_screen", "debat_phase1_opening", "tuto_debat_phase1",
+        "noam_consent_screen", "vote_screen", "vote_phase3_choice_card",
+        "vote_phase3_tally_screen", "vote_phase3_count_card",
+        "objection_protocol", "critical_choice",
+        "j3_persuasion_screen", "amend_board", "amend_input",
+        "tuto_rangement", "rangement_game",
+        "minijeu_halteres", "tuto_halteres",
+        "camera_browser", "camera_feed_overlay", "camera_doppel_reveal",
+        "fouille_bureau_game", "j601_fracture_screen",
+        "j601_signal_instable_screen", "j701_investigation_intro",
+        "j701_investigation_locations", "j701_investigation_pointclick",
+        "j701_investigation_evidence", "j701_investigation_dossier",
+        "j801_stabilisation_screen", "j901_hack_howto",
+        "j901_hack_screen", "j901_hack_retry",
+        "j901_signal_vivant_screen", "j901_signal_vivant_bilan",
+        "j901_sv_howto", "j11012_7jours_mind_map",
+        "j12_trolley_intro", "j12_trolley_briefing",
+        "j12_trolley_round_screen", "j12_trolley_outcome",
+        "j12_trolley_result", "j13_sept_differences_screen",
+        "j25_veste_screen", "_j25_veste_screen",
+        "_j25_photo_screen", "_j25_knock_screen",
+        "j26_preuve_screen", "j26_photo_transfer",
+        "j26_projector_preview", "trace_qte",
+        "trace_qte_sequence_beat", "tuto_trace_qte",
+        # Inspection et consultation de contenus (masquer aussi les boutons).
+        "investigation_pa_room", "investigation_pa_confirm",
+        "investigation_evidence_photo_preview", "j26_photo_saved_preview",
+        "j26_photo_manual", "investigation_video",
+        "investigation_image_inspection", "investigation_room_inspection",
+        "conduit_exploration", "day1_rules_guided_reading",
+        # Cadres d'aide, de résultat et de transition interactifs.
+        "mk_tuto_chrome", "mk_fail_retry_screen", "mk_results_screen",
+        "day4_cafeteria_tv_pnc",
     )
 
     def day_period_hud_is_pnc_active():
