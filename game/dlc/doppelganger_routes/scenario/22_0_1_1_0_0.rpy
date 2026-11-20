@@ -202,7 +202,12 @@ label _22_0_1_1_0_0_CAFETERIA_ARRIVEE:
     elias fatigue "Ouais. J'vais finir essayer de bricoler des plaques de fortune aujourd'hui."
     elias fatigue "C'est pour ça que j'ai récupéré du matériel jusqu'à tard dans la nuit."
 
-    "Il boit son café, pousse son plateau et se lève."
+    "Il boit son café, pousse son plateau et se lève. Je remarque deux autres gobelets vides près de son assiette."
+    noam inquiet "T'en as bu combien, aujourd'hui ?"
+    elias fatigue "J'en sais rien. Pourquoi ?"
+    noam "Parce que t'as l'air crevé."
+    elias "Bah ouais, j'ai bossé toute la nuit. C'est pas le café qui va percer les plaques à ma place."
+    "Il récupère sa caisse à outils avant même que je puisse répondre."
 
     noam reflexion "Tu veux que je vienne ?"
 
