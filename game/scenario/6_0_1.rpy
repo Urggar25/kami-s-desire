@@ -17,6 +17,38 @@ transform j601_sael_vote_strip:
     yalign 0.5
     xysize (720, 1080)
 
+# Brouillage indépendant du portrait de diffusion : ne modifie aucun asset Kami.
+transform j601_kami_scanline:
+    alpha 0.0
+    pause 0.35
+    alpha 0.70
+    xoffset -18
+    linear 0.07 xoffset 24
+    alpha 0.0
+    xoffset 0
+    pause 1.1
+    repeat
+
+transform j601_kami_ghost:
+    alpha 0.0
+    pause 0.65
+    alpha 0.55
+    xoffset 24
+    linear 0.06 xoffset -12
+    alpha 0.0
+    xoffset 0
+    pause 2.0
+    repeat
+
+screen j601_kami_glitch():
+    zorder 199
+    # Stries CRT discontinues : aucun bouton, aucun blocage de l'interface.
+    add Solid("#85faff99", xysize=(1920, 5)) xpos 0 ypos 198 at j601_kami_scanline
+    add Solid("#ff5b9299", xysize=(1920, 8)) xpos 0 ypos 455 at j601_kami_ghost
+    add Solid("#dffcff77", xysize=(1920, 3)) xpos 0 ypos 708 at j601_kami_scanline
+    add Solid("#07131dcc", xysize=(1920, 12)) xpos 0 ypos 559 at j601_kami_ghost
+
+
 label _6_0_1_REVEIL_CHAMBRE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -145,6 +177,26 @@ label _6_0_1_CAFETERIA:
     elen "Hé !"
     elias "C'est le point le plus éloigné de moi."
     "Même Sael sourit."
+    "Mara récupère la ficelle, la boîte percée et deux petites attaches."
+    mara sourire "Attends, attends. Le problème, c'est que ton truc tient pas. Il faut une sangle."
+    elen surpris "Tu veux m'aider ?!"
+    mara "Je veux surtout voir si ça marche. Passe-moi ça."
+    "Elles bricolent côte à côte. Mara raccourcit les attaches, Elen noue une bande de tissu autour de la boîte."
+    elias inquiet "Pourquoi vous mesurez mes épaules ?"
+    mara taquin "Parce que c'est un collier. Bouge pas."
+    elias "Un collier pour le café ?"
+    elen joie "Voilà ! Tu passes la sangle, et le gobelet se glisse dans le support. Comme ça, tu gardes les mains libres !"
+    noam inquiet "C'est pas un peu risqué de mettre du café brûlant là-dedans ?"
+    mara "On fait l'essai à vide, évidemment. Je tiens à ce qu'Elias conserve sa peau."
+    "Mara lui passe la sangle sur les épaules et ajuste le support contre son torse. Un gobelet vide tient enfin sans basculer."
+    elen joie "ÇA MARCHE !"
+    elias surpris "Hé... ça tient vraiment !"
+    mara rire "Et regardez-moi ses PECS de ouf !"
+    elias gene "MARA ! C'est le support qui fait ça !"
+    noam sourire "T'es sûr ?"
+    elias colere "Mais oui ! Arrêtez de regarder !"
+    elen content "Je vais chercher un vrai couvercle. Et après, promis, tu pourras boire dedans."
+    "Elias essaie de se retourner. Le gobelet vide ne bouge pas d'un millimètre. Il sourit malgré lui."
 
     "Goumi apporte une dernière petite assiette de fruits en conserve. Elen tend aussitôt la main."
     elen joie "Oh ! Il en restait !"
@@ -210,9 +262,7 @@ label _6_0_1_CAFETERIA:
     goumi "Je peux vous proposer les mêmes rations."
     elen joie "Parfait !"
     "Son sourire tient un peu trop longtemps, mais personne ne la contredit. Iris, elle, continue de regarder l'écran éteint."
-    "Sur la table, la boîte percée attend toujours. Elias la retourne entre ses mains."
-    elias reflechit "Attendez... si on la retourne..."
-    mara taquin "Là, je crois que j'ai une idée pour ton gobelet."
+    "Elias garde le support vide contre son torse. Même après le reportage, il semble réticent à l'enlever."
     jump _6_0_1_TEMPS_LIBRE
 
 label _6_0_1_TEMPS_LIBRE:
@@ -309,18 +359,27 @@ label _6_0_1_CONCLAVE_START:
     play music "music/bgm_low_tension.mp3" fadein 1.5
     call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_6_0_1
 
-    "La table est presque pleine. Ryn est arrivé avant tout le monde. Il a rapproché sa chaise de celle de Sael, mais il ne lui parle pas."
-    $ showGroup([("julian", "sourire"), ("lysa", "blase"), ("tomas", "inquiet"), ("noam", "neutre")])
-    julian sourire "Je vous demanderais de prendre place rapidement, s'il vous plaît. Nous avons un scrutin important."
-    lysa blase "Nous le savons."
-    julian "Je tenais surtout à préciser que..."
-    iris blase "Assieds-toi."
-    julian hesitation "Vous pourriez au moins me laisser finir ma phrase."
-    tomas inquiet "Pardon, c'est ma place, là ?"
-    julian "Non, Tomas, tu étais ici hier."
-    tomas "Oui, mais je crois que quelqu'un a déplacé..."
-    lysa "C'est une chaise, Tomas. Pas un poste-frontière."
-    "Tomas s'assied. Julian rapproche son siège de la table et cherche à reprendre la parole."
+    "Le débat commence avant même que tout le monde ait atteint sa chaise. Ryn tient sa tablette à bout de bras devant Sael ; Mara essaie de l'écarter du passage."
+    $ showGroup([("ryn", "colere"), ("sael", "mefiant"), ("mara", "agace"), ("julian", "inquiet"), ("lysa", "blase"), ("tomas", "inquiet"), ("noam", "neutre"), ("elen", "inquiet"), ("iris", "reflechit")])
+    ryn colere "Lis ça ! Là, en bas ! Ils ont commencé à refuser les laissez-passer cette nuit !"
+    sael mefiant "Ryn, j'ai lu le rapport."
+    ryn "Alors tu sais qu'ils vont encore passer la nuit dehors !"
+    mara agace "Baissez d'un ton ! On entend plus rien !"
+    julian inquiet "Je vous demanderais de prendre place rapidement, s'il vous plaît."
+    lysa blase "Julian, personne ne t'écoute."
+    julian "Justement !"
+    "Une tablette tombe sur la table. Tomas se baisse pour la ramasser pendant que Ryn cherche Sael du regard."
+    tomas inquiet "Attention, le coin est fissuré..."
+    ryn "J'en ai rien à foutre du coin !"
+    elen inquiet "Ryn ! Arrête, s'il te plaît !"
+    iris reflechit "Quelqu'un a remarqué que l'écran central affiche deux horaires différents ?"
+    mara "Pas maintenant, Iris !"
+    iris "Si. Maintenant. On nous demande de voter avec ce truc !"
+    "Mara s'interrompt et regarde brièvement l'écran. L'heure saute d'une minute, puis revient."
+    mara agace "Putain... C'est quoi encore, ça ?"
+    julian "Bon. Si je pouvais au moins commencer..."
+    lysa "Assieds-toi, Julian."
+    "Julian ouvre la bouche pour protester, puis finit par s'asseoir."
     if j50_julian_relation >= 1:
         julian sourire "Noam. Tu veux faire mon introduction, peut-être ?"
         noam sourire "Je préfère laisser les professionnels travailler."
@@ -379,6 +438,7 @@ label _6_0_1_CONCLAVE_START:
     elen "C'est bon."
     sael "Non. Pas vraiment."
     "La discussion s'arrête. Mara ouvre son dossier."
+    $ showGroup([("mara", "neutre"), ("ryn", "colere"), ("sael", "neutre"), ("iris", "reflechit"), ("noam", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet")])
     mara neutre "Ce qui me gêne, c'est le mot « libre ». On enlève les interdictions, mais qui surveille les routes le lendemain ?"
     ryn "Les autorités locales."
     mara "Les mêmes qui n'ont plus de personnel ?"
@@ -410,18 +470,30 @@ label _6_0_1_CONCLAVE_START:
     "Ryn se rassied sans boire."
 
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.9
-    kami "Vous avez l'air particulièrement en forme ! J'avais prévu un discours d'ouverture, mais je crois que je vais vous épargner cette torture."
+    kami "Vous avez l'air particulièrement... particulièrement en forme ! J'avais prévu un discours d'ouverture, mais je vais... je vais..."
     julian taquin "J'avais justement préparé..."
-    kami "Non, Julian."
-    "Quelques rires."
+    kami "Non, Julian. Non, Julian."
+    play sound "audio/sfx_glitch.mp3"
+    with hpunch
+    "Sa voix se répète avec un décalage. Personne ne rit."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Le texte soumis au vote porte sur la libre circulation des personnes entre les districts. Les conditions de son adoption restent inchangées : l'unanimité."
-    kami "Vous pouvez poursuivre vos échanges. Je lancerai le scrutin quand vous aurez terminé."
+    kami "Vous pouvez poursuivre vos échanges. Je... je lancerai le scrutin quand..."
+    play sound "audio/sfx_glitch.mp3"
+    "L'image se fige, puis disparaît."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
+    $ showGroup([("mara", "mefiant"), ("ryn", "colere"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "reflechit"), ("kael", "reflechit"), ("elen", "inquiet"), ("lysa", "blase"), ("noam", "surpris")])
+    iris inquiet "Elle a recommencé. C'est exactement ce qu'elle a fait ce matin."
+    kael "Je vais vérifier le flux."
+    iris "Pas seulement le flux ! Elle a répété Julian mot pour mot, avec le même délai !"
+    mara "Iris, on a déjà compris qu'elle déconne !"
+    iris colere "Et moi, je veux comprendre POURQUOI !"
 
     "Le débat repart, plus désordonné. Elen parle à Nyra ; Tomas essaie de comprendre le calendrier avec Kael ; Ryn ne regarde plus Sael."
     lysa neutre "Bon. Est-ce que quelqu'un a une proposition concrète ?"
@@ -437,7 +509,7 @@ label _6_0_1_CONCLAVE_START:
     noam surpris "Kami ?"
     kami "Je vous écoute."
     "Iris relève la tête, attentive."
-    iris reflechit "C'est bon, elle intervient dans les conversations. Elle fait souvent ça."
+    iris inquiet "Non, attendez. Le rire s'est coupé avant la fin. C'est pas normal du tout."
     mara mefiant "On ne lui a rien demandé."
     kami "Vous avez parlé de sécurité. C'est un sujet important."
     nyra "Kami, tu voulais ajouter quelque chose ?"
@@ -448,7 +520,7 @@ label _6_0_1_CONCLAVE_START:
     "Une seconde passe."
     kami "Très bien."
     "Le deuxième « très bien » est prononcé avec exactement la même intonation."
-    iris neutre "Il y a de l'écho dans le système."
+    iris reflechit "Ce n'est PAS un écho. Elle a reproduit la même intonation, sans réaction à ce qu'on lui disait."
     kael reflechit "Peut-être."
     "Kael jette un coup d'œil à sa tablette. Il ne dit rien."
     mara "On parlait des contrôles."
@@ -477,6 +549,7 @@ label _6_0_1_CONCLAVE_START:
     elias "Je sais."
     "Un silence. Puis le sourire de Kami envahit l'écran principal, sans annonce."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Je vous rappelle que le scrutin commencera à quatorze heures."
     noam "On sait."
@@ -490,11 +563,15 @@ label _6_0_1_CONCLAVE_START:
     "Le sourire reste fixe."
     kami "Je vais lancer la procédure."
     iris "Non. Attends."
-    kami "Je vais lancer la procédure."
+    kami "Je vais lancer la procé... procé... procédure."
     iris colere "Kami ! Arrête !"
-    "L'écran de Kami devient noir."
+    play sound "audio/sfx_glitch.mp3"
+    with hpunch
+    "Le portrait se décale brutalement en bandes, puis l'écran devient noir."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("mara", "colere"), ("ryn", "inquiet"), ("sael", "mefiant"), ("iris", "peur"), ("nyra", "raison"), ("kael", "inquiet"), ("elen", "peur"), ("elias", "inquiet"), ("noam", "peur")])
     stop music fadeout 0.25
     "Les lumières restent allumées. Le ventilateur au-dessus de la table continue de tourner."
     "Puis les douze tablettes vibrent ensemble."
@@ -512,6 +589,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     kael reflechit "Ne touchez à rien. Je vais regarder les commandes locales."
     "L'écran principal se rallume."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.5
     kami "Merci de votre patience ! Un simple ajustement de connexion. Ça arrive même aux meilleurs."
@@ -536,11 +614,16 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "De..."
     "Le sourire de Kami se contracte. Le bord de son visage reste immobile alors que sa bouche continue de bouger."
     kami "Je n'ai pas besoin de vérification. Je suis opérationnelle."
-    iris "Alors laisse-les poser des questions."
+    iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
+    noam inquiet "Iris, elle t'entend."
+    iris "J'espère bien ! Je veux qu'elle me dise ce qui se passe, pas qu'elle récite une réponse toute faite !"
+    kami "Alors laisse-les poser des questions."
     kami "Bien sûr, Iris."
     "L'écran s'éteint une nouvelle fois. Cette fois, les haut-parleurs émettent un souffle sourd."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("mara", "mefiant"), ("ryn", "neutre"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "reflechit"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet"), ("elias", "neutre")])
     stop music fadeout 0.2
     mara mefiant "On reporte."
     ryn neutre "Oui."
@@ -584,6 +667,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     "Mais personne ne la suit."
     "La voix de Kami revient, beaucoup plus basse que d'habitude."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Tout va bien. Le système a retrouvé sa stabilité."
     iris inquiet "Kami ?"
@@ -596,8 +680,10 @@ label _6_0_1_SIGNAL_INSTABLE:
     "Il n'y a ni rire ni musique après sa phrase."
     "Iris baisse lentement sa tablette."
     iris fatigue "Ne faites rien. Pas encore."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("mara", "mefiant"), ("ryn", "inquiet"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet")])
     jump _6_0_1_FRACTURE_QTE
 
 label _6_0_1_FRACTURE_QTE:
@@ -646,9 +732,10 @@ label _6_0_1_FRACTURE_QTE:
         kael "On notera l'heure approximative. Pas plus."
     "Kami réapparaît sans bruit."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.6
-    kami "Le texte est disponible. Le scrutin peut commencer."
+    kami "Le texte est disponible. Le scrutin peut... peut commencer."
     mara colere "Non. Pas tant que tu ne nous auras pas expliqué ce qui s'est passé."
     kami "Je suis opérationnelle."
     mara "Ça ne répond pas à ma question."
@@ -702,8 +789,10 @@ label _6_0_1_FRACTURE_QTE:
     "Iris tourne la tête. Elle ne reprend pas la parole."
     $ j601_iris_confiance = -1
 
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("mara", "doute"), ("ryn", "triste"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "triste"), ("noam", "inquiet"), ("tomas", "inquiet")])
     play music "music/bgm_low_tension.mp3" fadein 0.8
     "Nous pouvons quitter la pièce. Nous pouvons aussi voter. Rien ne garantit que ça se passera normalement."
     "Kael vérifie une dernière fois que le texte affiché sur les tablettes est identique."
@@ -817,17 +906,20 @@ label _6_0_1_VOTE:
         think "Maintenant que je vois le résultat, je ne sais plus si je suis soulagé."
     "Personne ne demande le détail des bulletins."
     show screen kami_broadcast_ui
+    show screen j601_kami_glitch
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.6
-    kami "Résultat du scrutin. Douze bulletins comptabilisés."
+    kami "Résultat du scrutin. Douze... douze bulletins comptabilisés."
     kami "Unanimité non atteinte. La libre circulation entre les districts est rejetée."
     $ interject("REJETÉ", color="#FF4D6D")
     pause 0.4
-    kami "Les restrictions restent en vigueur."
+    kami "Les restrictions restent... restent en vigueur."
+    play sound "audio/sfx_glitch.mp3"
     "Je m'attends au rire habituel."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Fin de séance."
     "L'image s'efface. Pas de fanfare. Pas même un « à bientôt »."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.2
@@ -841,6 +933,8 @@ label _6_0_1_VOTE:
         ("julian", "decu"),
         ("elias", "fatigue"),
         ("lysa", "fatigue"),
+        ("elen", "triste"),
+        ("noam", "triste"),
     ])
     "Ryn ne bouge pas. Les autres commencent à ranger leurs tablettes."
     elen triste "Ils vont tous voir ça, là-bas."
