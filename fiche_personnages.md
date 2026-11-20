@@ -340,6 +340,7 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - Préfère les exemples pratiques aux grands principes.
 - Quand il est embarrassé, se justifie beaucoup et peut tourner en rond.
 - Quand il est profondément triste, devient plus silencieux et peine à trouver ses mots.
+- Dans ses messages écrits, multiplie les fautes, les abréviations et les tournures phonétiques (« g », « tkt », « jsp », « pr », « pcq », « mdr ») ; sa messagerie est nettement moins soignée que ses paroles.
 - À propos du café, minimise avec une mauvaise foi spontanée : il prétend pouvoir arrêter quand il veut, négocie ce qui compte comme « une tasse » et répond parfois très sérieusement à des plaisanteries.
 
 **Particularité :** Elias peut poser une question très naïve au beau milieu d'une discussion politique particulièrement grave. Son langage décontracté contraste avec son apparence toujours soignée.
