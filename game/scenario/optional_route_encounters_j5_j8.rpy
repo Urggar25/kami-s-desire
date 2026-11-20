@@ -42,23 +42,40 @@ label KD_ROUTE_J5_LYSA:
             pass
     return
 
+screen j601_elen_clic_couloir():
+    modal True
+    zorder 180
+    imagebutton:
+        idle Transform(character_image("elen", "joie"), zoom=0.85)
+        hover Transform(character_image("elen", "content"), zoom=0.88)
+        xalign 0.72
+        yalign 1.0
+        focus_mask True
+        action Return(True)
+    frame:
+        xalign 0.5
+        yalign 0.08
+        background Solid("#071822cc")
+        padding (20, 10)
+        text "Clique sur Elen pour lui parler" size 26 color "#ffffff"
+
 label KD_ROUTE_J6_ELEN:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Elen sort des dortoirs au moment où je prends la direction de la cafétéria."
-    menu:
-        "Dire bonjour à Elen.":
-            $ showGroup([("elen", "content", 0.35), ("noam", "fatigue", 0.65)])
-            elen content "Noam ! T'as dormi un peu, au moins ?"
-            noam "Assez pour tenir debout."
-            elen inquiet "C'est pas une réponse très rassurante."
-            noam taquin "Tu veux un rapport détaillé de ma nuit ?"
-            elen "Non, mais tu pourrais essayer de manger quelque chose avant de tomber dans les pommes."
-            noam sourire "C'est justement là que je vais."
-            elen joie "Parfait ! Goumi aura peut-être gardé les bons petits pains."
-            noam "Avec un programme aussi ambitieux, je suis obligé de te suivre."
-            $ hideGroup()
-        "Poursuivre vers la cafétéria.":
-            pass
+    "Elen sort des dortoirs au moment où je prends la direction de la cafétéria. Elle me fait de grands signes."
+    call screen j601_elen_clic_couloir
+    $ showGroup([("elen", "content", 0.35), ("noam", "fatigue", 0.65)])
+    elen content "Noam ! Hé ! T'as dormi ?"
+    noam fatigue "Un peu. Enfin... pas beaucoup."
+    elen surpris "Oh non ! Mais t'as mangé au moins ?"
+    noam "Elen, je viens de me lever."
+    elen joie "Alors on va manger ! Ça va te faire du bien, tu vas voir !"
+    noam surpris "Attends, je comptais justement..."
+    "Elle m'attrape par le poignet et commence déjà à marcher."
+    elen content "Allez, viens ! Goumi doit avoir préparé quelque chose. Tu réfléchiras mieux le ventre plein !"
+    noam "Je sais marcher tout seul !"
+    elen rire "Je sais ! Mais là, tu marches pas assez vite."
+    $ hideGroup()
+    $ j601_with_elen = True
     return
 
 label KD_ROUTE_J6_JULIAN:
