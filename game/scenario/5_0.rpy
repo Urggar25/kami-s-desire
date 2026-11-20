@@ -916,11 +916,19 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     scene bg_cg027 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg027")
     play sound sfx_drop
-    pause 0.28
+    elias peur "NON ! NON, RATTRAPE-LE !"
+    noam surpris "Moi ?!"
+    elias "Oui, toi ! J'ai les mains prises !"
+    noam "Mais il tombe de ton côté !"
+    elias "Je le vois bien !"
+    "Le gobelet glisse sur le rebord de la console."
+    noam inquiet "Ne bouge pas, tu vas l'envoyer dans le panneau !"
+    elias panique "Il va tomber dans le panneau !"
+    noam "C'est ce que je viens de dire !"
+    elias "Alors fais quelque chose !"
+    "Je me jette en avant, sans savoir si je dois attraper le gobelet ou protéger la trappe."
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([("elias", "peur", 0.74), ("noam", "surpris", 0.25)])
-    elias peur "NON !"
-    think "Le café bascule vers le panneau ouvert."
     call screen trace_qte(path_type="arc", time_limit=2.4, wait_time=0.15, tolerance=70, max_errors=3, anchor_x=960, anchor_y=620, start_radius=120)
     $ j50_coffee_trace_score = tq_progress
     if j50_coffee_trace_score >= 0.82:
@@ -1035,10 +1043,20 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
-    pause 0.32
+    "Nous restons loin du panneau. La ventilation ronronne au-dessus de nos têtes."
+    noam inquiet "Je crois qu'on va attendre un moment."
+    elias fatigue "Ouais."
+    noam "Tu veux t'asseoir ?"
+    elias "Pas près du panneau."
+    noam "Non, évidemment."
+    "On s'installe contre le mur, en gardant les yeux sur la porte."
+    elias fatigue "Tu crois que Kael va gueuler ?"
+    noam "Peut-être un peu."
+    elias "Je lui dirai que c'était ma faute."
+    noam "Il va surtout vérifier qu'on respire encore."
+    elias "Ouais... t'as raison."
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([("elias", "fatigue", 0.74), ("noam", "inquiet", 0.25)])
-    "Nous restons loin du panneau. La ventilation ronronne au-dessus de nos têtes."
     noam "Tu veux t'asseoir ?"
     elias fatigue "Ouais... d'accord."
     "Il s'assied près de moi, les mains encore tremblantes."
@@ -1115,8 +1133,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     kael calme "Elias, tu restes avec moi pour regarder le contrôleur. Pas de réparation solitaire."
     elias "D'accord."
     kael "Et tu poses ton prochain café dans le couloir."
-    elias sourire "Je pensais plutôt arrêter le café."
-    kael "Ce serait une première."
+    elias sourire "Je vais surtout prendre une tasse avec un couvercle."
+    kael "Et la boire loin des consoles."
     "Elias se penche déjà vers les relevés interrompus."
     nyra reflechit "Ne touche plus aux données. Pas avant qu'on ait tout sauvegardé."
     elias inquiet "Oui. Pardon."
@@ -1281,11 +1299,17 @@ label _5_0_NUIT_ECOUTER:
         julian decu "Salut. T'as une minute ?"
         "Il soupire et reprend sa marche."
     else:
-        "Les pas s'arrêtent juste devant ma porte. Un léger son de notification retentit, puis le silence revient."
-        think "Elias ? Je reconnaîtrais presque sa façon de traîner les pieds."
-        "Un second bip. Quelqu'un tape rapidement sur un écran tactile."
-        think "Il écrit à quelqu'un... mais je ne peux évidemment pas savoir à qui, ni ce qu'il raconte."
-        "Quelques secondes plus tard, ses pas s'éloignent."
+        "Les pas s'éloignent dans le couloir. Un peu plus loin, deux voix de femmes me parviennent, étouffées par la porte."
+        nyra "Et à Nexus, vous vous connaissiez déjà ?"
+        iris "Qui, Julian ?"
+        "Une porte coulisse quelque part. Je perds la réponse d'Iris."
+        nyra "Je demandais juste si vous aviez travaillé ensemble."
+        iris "Non, enfin... pas vraiment. Il était surtout..."
+        "Un chariot passe en grinçant. La fin de sa phrase disparaît sous le bruit des roues."
+        nyra "Ah. D'accord."
+        iris "Pourquoi ?"
+        nyra "Pour rien. Bonne nuit, Iris."
+        "Je n'entends plus que des pas. Je n'ai même pas compris ce qui les intéressait tant chez Julian."
     jump _5_0_NUIT_RETOUR
 
 
