@@ -926,6 +926,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     elias panique "Il va tomber dans le panneau !"
     noam "C'est ce que je viens de dire !"
     elias "Alors fais quelque chose !"
+    noam panique "J'essaie !"
     "Je me jette en avant, sans savoir si je dois attraper le gobelet ou protéger la trappe."
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([("elias", "peur", 0.74), ("noam", "surpris", 0.25)])
