@@ -227,6 +227,12 @@ label _13_0_1_1_CAFETERIA_ARRIVEE:
     noam fatigue "Alors juste un café."
 
     goumi "Une tasse. Pas deux. Je préfère le préciser avant que quelqu'un décide qu'un demi-litre de café est un droit fondamental."
+    noam surpris "Quelqu'un a déjà essayé ?"
+    goumi "Trois fois depuis ce matin."
+    noam "Elias ?"
+    goumi "Je n'ai donné aucun nom."
+    noam "C'est Elias."
+    goumi "Je n'ai toujours donné aucun nom."
 
     julian hesitation "Je retire officiellement ma proposition d'en faire un droit fondamental."
 
