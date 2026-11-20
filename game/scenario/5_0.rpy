@@ -911,6 +911,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     "Elias veut attraper une fiche derrière la console. Son coude heurte le gobelet."
     "Pendant une fraction de seconde, il reste debout sur le bord."
     elias gene "Oh."
+    elias peur "Non... non, non, non ! PAS LUI !"
+    noam surpris "Elias ?!"
     scene bg_cg027 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg027")
     play sound sfx_drop
@@ -925,14 +927,17 @@ label _5_0_1_OBSERVATION_ARRIVEE:
         "Je rattrape le gobelet juste avant qu'il touche le sol."
         noam sourire "Je l'ai !"
         "Du café coule entre mes doigts, directement dans la trappe."
-        elias peur "MAIS PAS LE CAFÉ !"
+        elias peur "MAIS PAS LE CAFÉ ! C'ÉTAIT MON DERNIER !"
+        noam inquiet "On a un problème un peu plus gros, là !"
     elif j50_coffee_trace_score >= 0.35:
         "Mes doigts accrochent le gobelet. Il rebondit sur la console."
         "Une grande éclaboussure disparaît sous le capot."
-        elias panique "Merde, merde, merde !"
+        elias panique "NON ! Mon café ! Putain, mon café !"
+        noam inquiet "Elias, la console !"
     else:
         "Je manque le gobelet. Il frappe la console et se vide sur les connecteurs."
-        elias panique "NON ! LES CONNECTEURS !"
+        elias panique "MON CAFÉ ! NON, LES CONNECTEURS ! PUTAIN !"
+        noam peur "Recule !"
         call kd_vn_reaction("elias", "panique", "#ff9c55")
     "Elias tire son chiffon de sa poche et reste pétrifié, sans oser l'approcher du circuit."
     noam inquiet "Tu veux que j'essuie ?"
