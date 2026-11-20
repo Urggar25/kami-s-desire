@@ -246,6 +246,19 @@ screen conclave_corridor(corridor_key=None):
             unhovered SetVariable("corridor_ui_target", None)
             action Return((target_type, target_key))
 
+    # Rencontre du jour 4 réellement facultative : le joueur clique sur Nyra
+    # avant d'entrer en cafétéria, comme les rencontres du jour 2 et du jour 3.
+    if shown_corridor == "cafeteria" and current_scene_active == "_4_0_ROUTE_CAFETERIA" and not j4_route_optional_met:
+        imagebutton:
+            idle Transform(character_image("nyra", "neutre"), zoom=1.00)
+            hover Transform(character_image("nyra", "reflechit"), zoom=1.00)
+            focus_mask True
+            xalign 0.53
+            yalign 1.00
+            hovered SetVariable("corridor_ui_target", "Aider Nyra avec les provisions")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("_4_0_ROUTE_MATIN_NYRA")
+
     if shown_corridor == "dortoir" and current_scene_active == "FIRST_CONCLAVE_ELEN_INTERACT":
         imagebutton:
             idle Transform(character_image("elen", "joie"), zoom=1.00)
