@@ -81,7 +81,7 @@
 - **En temps normal :** Elias reste chaleureux, débrouillard et techniquement compétent. Sa dépendance se lit dans de petits gestes (gobelet toujours à portée, recherche d'eau chaude, café froid avalé sans protester) et dans sa manière de justifier sa consommation.
 - **Comédie :** réserves absurdes, calcul impossible du nombre de tasses, dispute pratique avec Kael sur les boissons près des circuits, tentative maladroite d'obtenir une ration supplémentaire. Ne pas faire de chaque apparition d'Elias une blague sur le café.
 - **Rapports aux autres :** Kael privilégie la sécurité des équipements ; Elen peut s'inquiéter ou vouloir l'aider ; Noam le taquine puis remarque ce qui se cache derrière la manie ; Kami peut exploiter sa dépendance aux livraisons, sans que cela devienne automatiquement une intrigue de manipulation.
-- **Progression :** installer les habitudes tôt et varier les scènes ordinaires. Le manque de café et ses conséquences éventuelles restent à définir au moment de l'écriture des scènes concernées.
+- **Progression :** installer les habitudes tôt et varier les scènes ordinaires. Ne pas anticiper de conséquences médicales ou dramatiques : elles seront décidées uniquement lors de l'écriture des scènes concernées.
 
 ## 6. Relations initiales avec les autres représentants
 
