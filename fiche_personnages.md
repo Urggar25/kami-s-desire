@@ -81,8 +81,7 @@
 - **En temps normal :** Elias reste chaleureux, débrouillard et techniquement compétent. Sa dépendance se lit dans de petits gestes (gobelet toujours à portée, recherche d'eau chaude, café froid avalé sans protester) et dans sa manière de justifier sa consommation.
 - **Comédie :** réserves absurdes, calcul impossible du nombre de tasses, dispute pratique avec Kael sur les boissons près des circuits, tentative maladroite d'obtenir une ration supplémentaire. Ne pas faire de chaque apparition d'Elias une blague sur le café.
 - **Rapports aux autres :** Kael privilégie la sécurité des équipements ; Elen peut s'inquiéter ou vouloir l'aider ; Noam le taquine puis remarque ce qui se cache derrière la manie ; Kami peut exploiter sa dépendance aux livraisons, sans que cela devienne automatiquement une intrigue de manipulation.
-- **Versant grave :** une pénurie peut laisser apparaître fatigue, irritabilité et crainte d'être inutile. Ne pas assimiler dépendance et incompétence ; ne pas créer de catastrophe simplement parce qu'il manque une tasse.
-- **Progression :** installer les habitudes tôt, varier les scènes ordinaires, ne révéler l'origine dans les Forges que lorsque la conversation s'y prête, puis laisser de possibles échos émotionnels dans les routes plus sombres.
+- **Progression :** installer les habitudes tôt et varier les scènes ordinaires. Le manque de café et ses conséquences éventuelles restent à définir au moment de l'écriture des scènes concernées.
 
 ## 6. Relations initiales avec les autres représentants
 
@@ -366,7 +365,6 @@ Il s'agit de **ce que Mara ressent au début du Conclave**, pas de l'évolution 
 - Travaille volontairement dans les usines d'Axiome, notamment aux Forges d'Axiome.
 - Lors de journées physiquement éprouvantes dans les Forges, a commencé à boire du café pour rester éveillé et tenir le rythme ; la consommation est devenue quotidienne puis compulsive. Aujourd'hui, il s'en sert aussi pour repousser la fatigue et la sensation de ne pas en faire assez.
 - Il conserve volontiers des réserves discrètes et boit plusieurs tasses tout au long de la journée. Il ne se considère pas comme dépendant, et la perspective de manquer de café l'inquiète davantage qu'il ne veut l'admettre.
-- Lors d'une privation prolongée, peut souffrir de maux de tête, d'irritabilité, de fatigue et de difficultés de concentration ; jamais le présenter comme automatiquement délirant ou dangereux. Une erreur grave éventuelle doit résulter aussi du contexte, de son épuisement et de ses choix.
 - Possède un talent réel pour les tâches manuelles, malgré sa maladresse dans la vie quotidienne.
 - Est connu dans son quartier pour sa bonne volonté et son goût du travail.
 - A été moqué pour ses maladresses et ses difficultés à suivre certains raisonnements. **(Fantôme : peur d'être jugé incapable.)**
