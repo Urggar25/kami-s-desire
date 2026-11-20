@@ -849,6 +849,11 @@ label _1_PNC_CONCLAVE_ELIAS:
     noam reflexion "Tu préfères les machines aux gens, c'est ça ?"
     elias reflechit "Les machines, au moins, elles font le même bruit quand elles ont un problème."
     think "Je me demande si je dois me sentir visé."
+    elias fatigue "Bon... un café ferait pas de mal, là."
+    noam surpris "Un café ? Maintenant ?"
+    elias "Bah ouais. On a passé la matinée à se demander où on était. Moi, j'ai toujours pas pris mon petit-déj."
+    noam sourire "Tu me diras si tu trouves la machine."
+    elias sourire "Compte sur moi !"
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
