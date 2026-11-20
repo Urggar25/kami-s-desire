@@ -520,7 +520,7 @@ label _3_CAFETERIA_ARRIVE:
 
     iris fatigue "Non. Pour une fois, je vais te laisser tranquille."
 
-    think "Elias arrive juste au moment où la conversation devient presque touchante. Il pose son plateau et regarde le bol."
+    think "Elias arrive juste au moment où la conversation devient presque touchante. Il pose son plateau, cale sa tasse de café contre son assiette et regarde le bol."
 
     # On quitte le CG (où les persos sont déjà dessinés) et on regroupe TOUS les
     # locuteurs présents dans un seul showGroup, complété à chaque nouvelle arrivée.
@@ -534,6 +534,7 @@ label _3_CAFETERIA_ARRIVE:
     elias sourire "Salut ! Euh... tu as perdu un pari, Elen ?"
     elen joie "C'est mon petit-déjeuner de championne ! Tu veux goûter ?"
     elias peur "Oh, non merci. Moi, je mise sur les protéines. J'ai un programme, tu comprends."
+    "Il prend une longue gorgée de café avant de se pencher sur le bol d'Elen."
     iris taquin "Enfin un témoin ! Je commençais à croire que j'étais la seule à voir ce bol."
     elen desaccord "Vous êtes insupportables ! C'est VOUS qui ne savez pas manger !"
     elias sourire "Avec ça, tu auras faim dans une heure. Moi, j'ai pris des œufs et du poulet. Des vraies protéines !"
@@ -1293,6 +1294,15 @@ label _3_DEBAT1_PHASE3:
     ])
 
     elias colere "À la Forge, on remplit plus de formulaires qu'on répare de machines ! J'en peux plus !"
+    elias "Et puis j'en ai marre de boire toujours le même café !"
+    iris surpris "Hein ?"
+    elias reflechit "Bah quoi ? Si le commerce reprend, on pourra en acheter d'ailleurs, non ? Du vrai, avec des goûts différents !"
+    lysa blase "C'est donc pour ça que tu défends le commerce mondial ?"
+    elias colere "Pas QUE pour ça ! Mais oui, ça compte ! Vous avez déjà goûté celui d'ici ?"
+    noam sourire "Tu le bois pourtant tous les matins."
+    elias "Parce que j'ai pas le choix !"
+    iris taquin "T'as surtout pas essayé l'eau."
+    elias inquiet "Mais l'eau, c'est pas du café !"
     sael reflechit "Chez nous, on échange déjà des services. Mais dès qu'on manque d'un outil, il faut supplier Kami."
     lysa blase "Très bien. Et l'argent, il vient d'où ?"
     elias reflechit "Bah... du travail, non ?"
