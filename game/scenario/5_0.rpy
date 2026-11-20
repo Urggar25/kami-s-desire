@@ -27,6 +27,7 @@ default j50_kael_alert_sent = False
 default j50_observation_circuit_status = "inconnu"
 default j50_wire_feedback = "Sélectionne un câble à gauche."
 
+
 init python:
     J50_SAEL_HOTSPOTS = {
         "lit": "images/background/interact/chambre_sael/lit.png",
@@ -129,6 +130,29 @@ init python:
         store.j50_wire_selected = None
         store.j50_wire_feedback = "CONNEXION ABANDONNÉE."
         renpy.restart_interaction()
+
+# Panne J5 : pulsations d'alerte irrégulières, sans timer bloquant ni hasard
+# recalculé au rafraîchissement de l'interface. L'éclairage reste actif
+# pendant le mini-jeu et la discussion, puis s'arrête à l'ouverture.
+transform j50_emergency_red_pulse:
+    alpha 0.10
+    linear 0.18 alpha 0.34
+    pause 0.56
+    linear 0.07 alpha 0.02
+    pause 0.22
+    linear 0.14 alpha 0.29
+    pause 0.83
+    linear 0.05 alpha 0.0
+    pause 0.42
+    linear 0.23 alpha 0.37
+    pause 0.19
+    linear 0.09 alpha 0.09
+    pause 0.71
+    repeat
+
+screen j50_emergency_lighting():
+    zorder 85
+    add Solid("#ff101c") at j50_emergency_red_pulse
 
 screen j50_sael_room_pnc():
     modal True
@@ -395,18 +419,16 @@ label _5_0_REVEIL_CHAMBRE:
     $ j50_observation_followup = False
 
     $ blink()
-    think "Je me réveille avec quelque chose de dur sous la joue."
-    "Un morceau de pain. Celui que j'ai rapporté hier soir."
-    think "J'ai dormi sur mon petit-déjeuner. Je crois que ça ne m'était jamais arrivé."
+    think "J'ai encore du mal à croire que le vote d'hier soit terminé. Demain, on recommence."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "Je le ramasse, l'examine et tente d'en casser un bout. Rien."
-    noam neutre "Formidable."
+    "Je récupère ma tablette sur le bureau. Rien de neuf, à part le rappel du prochain scrutin."
+    noam neutre "Déjà..."
     play sound sfx_knock
     noam surpris "Oui ?"
     elen "Noam ? T'es réveillé ?"
     noam neutre "Techniquement."
     elen "Tu peux ouvrir ? Juste deux secondes."
-    "Je pose le pain sur le bureau avant d'ouvrir."
+    "J'ouvre la porte, encore à moitié endormi."
     $ showGroup([("elen", "sourire", 0.70), ("noam", "neutre", 0.28)])
     elen sourire "Salut ! J'ai un service à te demander."
     noam inquiet "Il est huit heures."
@@ -424,17 +446,13 @@ label _5_0_REVEIL_CHAMBRE:
     noam sourire "Tu fais du porte-à-porte pour une épice."
     elen "C'est pas une épice quelconque."
     noam "Ah."
-    "Elle se penche et aperçoit le pain."
-    elen "Oh ! Tu n'as pas mangé le tien non plus ?"
-    noam inquiet "Je ne suis même pas sûr qu'il soit comestible."
-    elen "T'as essayé de le chauffer ?"
-    noam "C'est du pain, pas une pièce de métal."
-    elen "Tu pourrais au moins essayer avant de critiquer."
-    "Je lui tends le morceau. Elle essaie de le briser, insiste, puis me le rend."
-    elen "D'accord. Garde-le. On peut toujours en faire quelque chose."
-    noam "Tu dis ça pour le pain ou pour moi ?"
-    elen "Pour le pain."
-    noam "Merci."
+    elen "Je voulais juste donner un peu de goût au petit-déjeuner. J'en ai marre que tout ait le même goût."
+    noam "Tu comptes mettre de la cannelle sur quoi ?"
+    elen "Je trouverai. C'est pas le problème."
+    noam sourire "Ça ressemble pourtant au principal problème."
+    elen "Tu m'aides ou tu fais ton intéressant ?"
+    noam "Je n'ai pas de cannelle, Elen."
+    elen "Bon. Au moins, c'est clair."
     elen "Bon, si tu trouves de la cannelle..."
     noam "Je te préviens immédiatement. Priorité absolue."
     elen "Tu te moques, mais je note."
@@ -443,8 +461,9 @@ label _5_0_REVEIL_CHAMBRE:
 
     play sound sfx_announce
     pause 0.4
+    scene bg_diffusion_taquin at adaptive_fullscreen
     show screen kami_broadcast_ui
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    call KAMI_BROADCAST_WAIT_OPEN from _call_kami_broadcast_wait_open_j50
     play music "music/bgm_system_override.mp3" fadein 1.0
     kami "BOOOONJOUR ! Quel bonheur de vous savoir si actifs dès le matin !"
     kami "Petit rappel : la prochaine livraison est prévue au jour 7. Jusque-là, inutile de marchander avec Goumi."
@@ -454,14 +473,15 @@ label _5_0_REVEIL_CHAMBRE:
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Demain, nouveau scrutin. Vous avez encore toute une journée pour changer d'avis. Ou pour vous persuader que vous aviez raison depuis le début."
     kami "Personnellement, j'apprécie les deux spectacles."
+    call KAMI_BROADCAST_CLOSE from _call_kami_broadcast_close_j50
     scene bg_chambre at adaptive_fullscreen with dissolve
-    hide screen kami_broadcast_ui
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
 
     "Ma tablette vibre : rappel du vote de demain."
     think "Sael a dit non. Ryn n'a pas arrêté d'en parler. Et Julian... ça fait un moment que personne ne l'a vraiment vu."
     "Je retrouve mon dessin de Juliette sur le bureau et le glisse soigneusement sous la tablette."
     think "Je vais parler à Sael. Pas pour lui arracher un oui. J'aimerais au moins arrêter de deviner ce qu'elle pense."
+    # Le déplacement utilise l'animation de sortie de chambre existante.
     jump _5_0_CHERCHE_SAEL
 
 
@@ -487,11 +507,19 @@ label _5_0_CHERCHE_SAEL:
     sael mefiant "Si tu viens me parler des frontières, je te préviens..."
     noam neutre "Je peux commencer par autre chose."
     sael "Comme quoi ?"
-    noam reflechit "Pourquoi il y a un bout de lit dans le couloir ?"
-    "Sael regarde derrière elle."
-    sael neutre "Ah. Celui-là."
-    noam "Il y en a plusieurs ?"
-    sael "Entre."
+    "La porte d'à côté s'ouvre. Elias en ressort avec une longue planche sur l'épaule, qu'il manque de coincer contre l'encadrement."
+    $ showGroup([("elias", "gene", 0.18), ("noam", "surpris", 0.44), ("sael", "neutre", 0.78)])
+    noam surpris "Elias ? Qu'est-ce que tu fiches avec ça ?"
+    elias gene "Ah ! Salut, Noam. Je... je donne un coup de main."
+    noam "En déménageant le lit ?"
+    elias "Pas le lit entier ! Juste... cette partie."
+    sael neutre "Elias, fais attention au mur."
+    elias "Oui ! Pardon. Je la pose où ?"
+    sael "À l'atelier. Comme prévu."
+    elias "C'est vrai. Oui. Bon, à plus !"
+    "Il repart en tenant sa planche à deux mains. Sael s'écarte pour me laisser passer."
+    $ showGroup([("sael", "neutre", 0.69), ("noam", "reflechit", 0.29)])
+    sael "Entre. Je t'expliquerai."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_232
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
     "Son matelas est par terre. Les planches du sommier s'alignent contre le mur. À côté, des morceaux de bois, des cordes, de petits outils."
@@ -499,21 +527,20 @@ label _5_0_CHERCHE_SAEL:
     sael sourire "Non. Les murs sont toujours là."
     noam neutre "Très rassurant."
     sael neutre "Le lit était trop haut. Je dors mal dessus."
-    noam reflechit "Tu aurais pu demander un autre matelas."
-    sael mefiant "À qui ?"
-    noam "..."
-    sael sourire "Voilà."
-    noam sourire "Kael doit être ravi."
-    sael "Il est passé hier. Il a voulu récupérer mes vis."
-    noam "Évidemment."
-    sael "Il m'a expliqué pendant dix minutes qu'il avait besoin de savoir où elles étaient."
-    noam "Et tu lui as dit ?"
-    sael neutre "Oui. Dans un petit sac."
-    noam "Tu lui as donné le sac ?"
-    sael "Non."
-    "Je regarde la pile d'objets, puis elle."
-    sael "Quoi ?"
-    noam "Rien. J'imagine très bien sa tête."
+    noam inquiet "Attends... on a le droit de démonter des meubles ici ?"
+    sael reflechit "Pourquoi on n'aurait pas le droit ?"
+    noam "Parce que dégrader volontairement les biens du Conclave, c'est interdit. Tu sais, le règlement ?"
+    sael neutre "Je sais. J'ai demandé à Kami avant de toucher au lit."
+    noam surpris "Et elle a accepté ?"
+    sael "Oui. Du moment que je garde tout et que je puisse le remonter."
+    noam "C'est presque raisonnable, venant d'elle."
+    sael sourire "Elle m'a quand même demandé si je comptais construire une catapulte."
+    noam "Tu lui as répondu quoi ?"
+    sael neutre "Que j'aurais demandé davantage de planches."
+    noam "Ah."
+    sael "Elias m'aide à porter celles qui m'encombrent. Il a insisté."
+    noam "Il avait surtout l'air de regretter."
+    sael "Il a aussi insisté pour commencer par la plus lourde."
     sael "Tu peux regarder, mais fais attention. Et ne touche pas aux objets accrochés au mur."
     noam "Compris."
     $ j50_sael_pnc_score = 0
@@ -824,12 +851,11 @@ label _5_0_1_OBSERVATION:
 
 label _5_0_1_OBSERVATION_ARRIVEE:
 
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_237
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    play music "music/bgm_world_decline.mp3" fadein 1.5
+    # START_EXPLORATION_LIBRE conduit déjà à la salle d'observation :
+    # ne pas relancer les portes/couloirs une seconde fois.
     $ doplleganger = 1
-    call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_238
     scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_cold_metadata.mp3" fadein 1.4
     $ showGroup([("elias", "neutre", 0.75), ("noam", "neutre", 0.25)])
     "Elias est penché sur une console. Devant lui, un gobelet de café et trois petits morceaux de papier."
     elias sourire "Noam ! Attends, ne bouge pas."
@@ -854,7 +880,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     noam "Je suis allé voir Sael. Je voudrais comprendre ce qui se passe aux frontières."
     elias reflechit "Ça dépend de ce que tu appelles « ce qui se passe »."
     noam "Ce que les gens font. Ce qu'ils risquent. Les sanctions."
-    elias "Ah ! Ça, j'ai."
+    elias "Ah ! Ça, j'ai. Assieds-toi, ce sera plus simple."
+    "Je m'installe devant la console. Elias tire une chaise à côté de la mienne et s'assied."
     "Il ouvre un registre : vols près de dépôts, passages interdits, bagarres, distributions interrompues."
     elias inquiet "Certains noms reviennent plusieurs fois."
     noam "Tout ça, c'est pour cette semaine ?"
@@ -876,13 +903,20 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     "Il porte le gobelet à ses lèvres, grimace, le repose."
     elias "Froid."
     noam "Le minuteur ne fait pas de miracles."
-    elias "Non, mais j'avais l'espoir."
+    elias "Non, mais j'avais l'espoir. Et puis, ici, il fait vraiment froid."
+    noam "Tu trouves ?"
+    elias "Comparé aux Forges d'Axiome ? Là-bas, on transpire rien qu'en entrant. Ici, j'ai toujours les mains gelées."
+    noam "Tu vas finir par demander une chaudière dans la salle d'observation."
+    elias sourire "Non, non. Juste du café qui reste chaud deux minutes."
     "Elias veut attraper une fiche derrière la console. Son coude heurte le gobelet."
     "Pendant une fraction de seconde, il reste debout sur le bord."
     elias gene "Oh."
     scene bg_cg027 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg027")
     play sound sfx_drop
+    pause 0.28
+    scene bg_observation at adaptive_fullscreen with dissolve
+    $ showGroup([("elias", "peur", 0.74), ("noam", "surpris", 0.25)])
     elias peur "NON !"
     think "Le café bascule vers le panneau ouvert."
     call screen trace_qte(path_type="arc", time_limit=2.4, wait_time=0.15, tolerance=70, max_errors=3, anchor_x=960, anchor_y=620, start_radius=120)
@@ -909,6 +943,8 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     noam "C'est grave ?"
     elias "Je... recule, s'il te plaît."
     stop music fadeout 0.3
+    play music "music/bgm_horror_pulse.mp3" fadein 0.6
+    show screen j50_emergency_lighting
     play sound sfx_beep
     with hpunch
     "CLAC."
@@ -967,6 +1003,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
                 call show_custom_title("Quelques minutes plus tard") from _call_show_custom_title_j50_wait
                 scene bg_observation at adaptive_fullscreen with dissolve
                 "Elias essaie un nouveau raccordement. Le contrôleur clignote puis s'éteint."
+                $ showGroup([("elias", "fatigue", 0.74), ("noam", "inquiet", 0.25)])
                 elias fatigue "Bon. Appelle-le."
                 noam "Tu me l'avais dit."
                 elias "Je sais. Et tu peux me le rappeler quand on sera sortis."
@@ -976,6 +1013,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
                 elias inquiet "Je peux encore..."
                 noam "Je te crois. Mais ce n'est pas le moment de le prouver."
                 "Elias regarde les fils, puis repose son outil."
+                $ showGroup([("elias", "fatigue", 0.74), ("noam", "neutre", 0.25)])
                 elias fatigue "D'accord. Écris-lui."
         call _5_0_MESSAGE_KAEL from _call_j50_message_kael_success
     else:
@@ -992,10 +1030,14 @@ label _5_0_1_OBSERVATION_ARRIVEE:
 
     scene bg_cg028 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg028")
+    pause 0.32
+    scene bg_observation at adaptive_fullscreen with dissolve
+    $ showGroup([("elias", "fatigue", 0.74), ("noam", "inquiet", 0.25)])
     "Nous restons loin du panneau. La ventilation ronronne au-dessus de nos têtes."
     noam "Tu veux t'asseoir ?"
-    elias fatigue "Je préfère rester debout."
-    noam "D'accord."
+    elias fatigue "Ouais... d'accord."
+    "Il s'assied près de moi, les mains encore tremblantes."
+    noam "Ça va aller."
     pause 0.4
     elias "Je croyais que j'allais pouvoir arranger ça avant que Kael le sache."
     noam "Il allait bien finir par voir la porte bloquée."
@@ -1022,6 +1064,9 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     elias sourire "OUI !"
     nyra "On vous entend. Éloignez-vous du panneau."
     "Un cliquetis, puis le verrou cède."
+    hide screen j50_emergency_lighting
+    stop music fadeout 0.5
+    play music "music/bgm_low_tension.mp3" fadein 1.1
     scene bg_observation at adaptive_fullscreen with dissolve
     $ showGroup([("kael", "calme", 0.23), ("nyra", "reflechit", 0.48), ("elias", "gene", 0.74), ("noam", "reflexion", 0.91)])
     kael inquiet "Vous avez respiré de la fumée ? Quelqu'un est blessé ?"
@@ -1106,9 +1151,6 @@ label _5_0_FIN_JOURNEE:
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_241
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je pose la tablette et retire mes chaussures."
-    "Sur le bureau, le pain de ce matin attend toujours."
-    noam neutre "Ah. Toi."
-    "Je le dépose dans un coin. J'en ferai quelque chose demain. Ou jamais."
     "J'éteins la lumière."
     scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
@@ -1147,6 +1189,7 @@ label _5_0_SAEL_PNC:
     $ _j50_sael_choice = renpy.call_screen("j50_sael_room_pnc")
     if _j50_sael_choice == "sortir":
         return
+    $ showGroup([("sael", "neutre", 0.73), ("noam", "reflechit", 0.25)])
     if _j50_sael_choice == "lit":
         $ j50_sael_mark_seen("lit")
         think "Le matelas repose sur le sol, soigneusement plié au pied. Les planches ont été empilées contre le mur."
@@ -1233,12 +1276,11 @@ label _5_0_NUIT_ECOUTER:
         julian decu "Salut. T'as une minute ?"
         "Il soupire et reprend sa marche."
     else:
-        elias fatigue "Kael ? Désolé de t'écrire si tard."
-        pause 0.3
-        elias "Tu as gardé la copie des relevés ? Ceux d'avant la panne ?"
-        pause 0.4
-        elias "D'accord. On regardera demain."
-        "Ses pas s'éloignent."
+        "Les pas s'arrêtent juste devant ma porte. Un léger son de notification retentit, puis le silence revient."
+        think "Elias ? Je reconnaîtrais presque sa façon de traîner les pieds."
+        "Un second bip. Quelqu'un tape rapidement sur un écran tactile."
+        think "Il écrit à quelqu'un... mais je ne peux évidemment pas savoir à qui, ni ce qu'il raconte."
+        "Quelques secondes plus tard, ses pas s'éloignent."
     jump _5_0_NUIT_RETOUR
 
 
