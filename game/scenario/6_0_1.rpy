@@ -10,6 +10,7 @@ default j601_vote_verification = False
 default j601_iris_confiance = 0
 default j601_repair_note = False
 default j601_julian_echo = False
+default j601_with_elen = False
 
 transform j601_sael_vote_strip:
     xalign 0.5
@@ -32,53 +33,47 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ j601_iris_confiance = 0
     $ j601_repair_note = False
     $ j601_julian_echo = False
+    $ j601_with_elen = False
 
     $ blink()
-    "La première chose que je vois, c'est ma tablette. La deuxième, c'est un morceau de pain posé dessus."
-    think "Ah oui. Le pain indestructible."
-    "J'essaie de le casser contre le rebord du bureau. Il tient bon."
-    noam neutre "Je pourrais l'utiliser pour bloquer la porte."
-    "Je le repose à côté du dessin de Juliette. Elle aurait probablement trouvé une utilisation plus intelligente."
-    "Un message d'Elias attend dans ma boîte de réception, envoyé tard hier soir."
+    "Ma tablette est restée sur le bureau. L'icône de la messagerie clignote : Elias m'a écrit tard hier soir."
     if j50_observation_circuit_status == "secours_partiel":
-        "« Le boîtier a tenu. Kael veut quand même revérifier les accès. Et j'ai acheté une tasse avec couvercle. Enfin, façon de parler, on n'a rien acheté. »"
+        call messenger_play("j6_elias_secours", "elias", [("elias", "Le boitier a tenu ! Kael veut qd mm reverif les acces..."), ("elias", "Jme suis trouvé une tasse avc couvercle mdr. Enfin c gratuit ici donc bon"), ("noam", "Content que ça aille. Tu me dois un café, dans un gobelet fermé."), ("elias", "Tkt j'arrete PAS le café ! Juste les bains de console 😂"), ("elias", "Jte dois un café, promis.")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_secours
     else:
-        "« Kael a récupéré le boîtier. La porte est de nouveau fonctionnelle. Il veut que je note tout ce que j'ai touché. Ça va être une longue liste. »"
-    noam sourire "Au moins, il est encore capable d'écrire des messages beaucoup trop longs."
-    "Je tape « Content que ça aille », puis je me ravise."
-    "J'écris à la place : « Tu me dois un café. Dans un gobelet fermé. »"
-    "La réponse arrive aussitôt."
-    elias "Je pensais plutôt arrêter le café."
-    noam "Alors tu me dois un jus."
-    elias "On verra ce qu'il reste demain."
+        call messenger_play("j6_elias_panne", "elias", [("elias", "Kael a recup le boitier, la porte remarche !"), ("elias", "Mtn il veut que jnote tt ce que g touché... ca va etre LONG"), ("noam", "Tant mieux pour la porte. Tu me dois un café, dans un gobelet fermé."), ("elias", "Mdr tkt. Jvais continuer le café, mais loin des fils promis"), ("elias", "Enfin jvais essayer 😅")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_panne
+    noam sourire "Il n'a visiblement pas perdu son sens des priorités."
     "Sur la tablette, une alerte m'annonce le vote à quatorze heures."
     "Libre circulation entre les districts."
     think "Sael ne changera pas d'avis. Ryn le sait. J'espère qu'ils ne vont pas passer tout le repas à se le rappeler."
     play sound sfx_announce
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show screen j601_kami_glitch
     play music "music/bgm_system_override.mp3" fadein 0.8
-    kami "Debout, bande de privilégiés ! Dans quelques heures, vous déciderez si des millions de personnes ont le droit de rendre visite à leurs voisins !"
-    kami "Et moi qui pensais que le sujet du jour serait la mystérieuse disparition du sel à la cafétéria."
+    kami "Debout, bande de pri... pri... privilégiés ! Dans quelques heures, vous déciderez si..."
+    play sound "audio/sfx_glitch.mp3"
+    with hpunch
+    kami "Si des millions de personnes ont le droit de rendre visite à leurs voisins !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Rendez-vous au Conclave à quatorze heures. Pas une minute en retard."
-    kami "Je vous rappelle que l'unanimité est..."
-    pause 0.2
-    kami "Enfin. Vous connaissez la suite."
+    kami "Rendez-vous au Conclave à quatorze heures. Pas une minute en ret... en ret..."
+    kami "Quatorze heures. Quatorze heures. Quatorze heures."
+    noam surpris "Kami ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "À tout à l'heure !"
+    kami "Je vous rappelle que l'unanimité est... est..."
+    play sound "audio/sfx_glitch.mp3"
+    kami "Ah ! Bon ! Vous connaissez la suite, mes petits... mes petits..."
+    "Sa voix grésille, puis la diffusion s'arrête au milieu d'un rire."
+    hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
-    "J'attends la dernière pique. Il n'y en a pas."
-    noam neutre "Elle était pressée, aujourd'hui."
-    "Je me prépare, vérifie deux fois ma tablette et laisse le pain sur le bureau."
+    noam inquiet "Elle avait pas l'air pressée. Elle avait surtout l'air... coincée."
+    "Je me prépare, vérifie ma tablette et sors de la chambre."
     $ current_scene_active = "_6_0_1_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
-    scene expression Image(corridor_background(corridor_current)) at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     call KD_ROUTE_J6_ELEN from _call_optional_kd_route_j6_elen
-    tuto "(Rejoins la cafétéria.)"
-    call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_6_0_1_CAFETERIA
+    # Elen entraîne Noam : pas de navigation manuelle supplémentaire.
     $ current_scene_active = None
     jump _6_0_1_CAFETERIA
 
@@ -90,13 +85,28 @@ label _6_0_1_CAFETERIA:
     $ showGroup([
         ("elias", "fatigue"),
         ("mara", "neutre"),
-        ("elen", "sourire"),
         ("lysa", "blase"),
         ("iris", "fatigue"),
         ("sael", "neutre"),
+        ("noam", "fatigue"),
     ])
-
-    "Elen est debout au milieu de la table, une boîte de ration à la main. Elias tient son gobelet le plus loin possible de lui."
+    if j601_with_elen:
+        $ showGroup([("elias", "fatigue"), ("mara", "neutre"), ("lysa", "blase"), ("iris", "fatigue"), ("sael", "neutre"), ("noam", "fatigue"), ("elen", "joie")])
+        "Elen me tire jusqu'au comptoir. Goumi lève les yeux de ses plateaux."
+        elen joie "Goumi ! Deux petits-déjeuners ! Et mets-lui quelque chose de bon, il a presque pas dormi !"
+        goumi "Les rations sont identiques pour tous."
+        elen content "Alors deux rations identiques, mais avec beaucoup d'enthousiasme !"
+        noam fatigue "Elen, je peux commander moi-même..."
+        elen "Oui, oui. Mais là, c'est déjà fait !"
+        "Elle récupère nos plateaux et m'accompagne jusqu'à la table."
+    else:
+        "Je prends ma ration auprès de Goumi et commence à manger. Quelques minutes plus tard, Elen arrive au comptoir."
+        $ showGroup([("elias", "fatigue"), ("mara", "neutre"), ("lysa", "blase"), ("iris", "fatigue"), ("sael", "neutre"), ("noam", "fatigue"), ("elen", "joie")])
+        elen joie "Goumi ! Tu me gardes un plateau ? J'ai faim !"
+        goumi "Il reste votre ration, Elen."
+        elen "Parfait !"
+        "Elle rejoint la table avec son plateau."
+    "Elen a déjà récupéré une boîte vide et un morceau de ficelle. Elias tient son gobelet le plus loin possible d'elle."
     elen sourire "Ne bouge plus. Je vais juste faire deux petits trous."
     elias inquiet "Mais pourquoi deux ?"
     elen "Pour la ficelle."
@@ -136,43 +146,31 @@ label _6_0_1_CAFETERIA:
     elias "C'est le point le plus éloigné de moi."
     "Même Sael sourit."
 
-    "Goumi passe avec les dernières rations. Iris attrape le premier petit pain."
-    iris colere "C'est quoi ce truc ?"
-    mara "Du pain."
-    iris "Il a des angles !"
-    noam sourire "J'en ai un exemplaire dans ma chambre. J'envisage de le léguer à Juliette."
-    iris blase "Tu vas offrir une arme à ta sœur ?"
-    noam "Je vais l'encadrer."
-    sael neutre "Chez moi, on faisait ramollir le pain dur dans de l'eau chaude."
-    noam "C'est de la cuisine ou une opération de sauvetage ?"
-    sael sourire "Les deux, parfois."
-    mara sourire "Ma grand-mère le mettait au fond de la marmite. Celui qui le récupérait à la fin avait gagné."
-    lysa "Gagné quoi ?"
-    mara "Le droit de laver la marmite."
-    elen rire "C'est horrible !"
-    mara "Ça a marché jusqu'à ce que mon frère comprenne."
-    elias sourire "Il a fait quoi ?"
-    mara "Il a prétendu être allergique au fond de marmite."
-    "Mara s'interrompt pour essayer de casser un bout de son pain. Elle le rend à Goumi."
-    mara "Non. Pas celui-là."
-    lysa blase "Ce que j'aime dans cette station, c'est qu'on arrive à perdre la guerre contre une boulangerie."
+    "Goumi apporte une dernière petite assiette de fruits en conserve. Elen tend aussitôt la main."
+    elen joie "Oh ! Il en restait !"
+    goumi "Pour la table. Pas uniquement pour vous."
+    elen gene "Oui, oui, je partage !"
+    mara taquin "Tu as déjà pris la moitié."
+    elen content "Parce que je distribue ! Tiens, Elias !"
+    elias sourire "Merci !"
+    iris fatigue "On pourrait finir un repas sans opération de sauvetage, aujourd'hui ?"
 
     "Elen lève les yeux vers l'écran éteint au-dessus du comptoir."
     elen neutre "Au fait. La diffusion de ce matin..."
-    iris reflechit "Quoi ?"
-    elen "Kami n'a pas terminé sa phrase."
-    iris "Elle a écourté son annonce."
-    elen "Tu trouves pas ça bizarre ?"
-    iris "Elle écourte parfois ses annonces."
-    lysa taquin "C'est dommage. J'aimais bien la version de Kami qui aime s'entendre parler."
-    iris colere "Je dis simplement que ça ne prouve rien."
-    elias inquiet "Je voulais justement demander à Kael si ça pouvait venir de..."
-    iris "Non. Elias, tu n'as pas endommagé Kami avec ton café."
-    elias gene "J'allais dire « la connexion ». Mais merci."
-    mara sourire "Une tasse a failli vaincre notre maîtresse du monde. Quel honneur."
-    iris colere "Il n'y a rien de drôle à ça !"
-    "Elle a parlé un peu trop fort. Elen replie lentement son carton."
-    iris fatigue "Pardon. J'ai mal dormi."
+    iris reflechit "Elle a répété l'heure trois fois. Et sa voix a sauté. Vous avez entendu ?"
+    elen "Oui ! Justement !"
+    iris inquiet "Mais c'est impossible ! Enfin, pas impossible d'avoir une panne de haut-parleur. Mais Kami..."
+    lysa taquin "Elle a peut-être avalé le café d'Elias."
+    iris colere "Non ! IM-PO-SSI-BLE ! Vous croyez vraiment qu'une tasse renversée sur une console va casser une IA pareille ?!"
+    elias gene "J'allais demander à Kael pour la connexion..."
+    iris "Kami gère le monde entier ! Elle peut pas se mettre à bégayer parce qu'Elias a mouillé trois câbles ! Ça n'a aucun sens !"
+    mara sourire "C'est peut-être pour ça qu'on lui demande de faire la vaisselle."
+    iris colere "Mara ! Je suis sérieuse !"
+    noam inquiet "Tu penses qu'elle a un problème ?"
+    iris reflechit "Je sais pas. J'aimerais voir ses diagnostics. Ses journaux, ses sauvegardes, tout !"
+    elen sourire "Tu pourrais lui demander !"
+    iris "J'ai essayé. Elle n'a pas répondu à la question."
+    "Iris fixe l'écran éteint, oubliant jusqu'à sa ration."
     noam neutre "On n'a pas de diagnostic. On peut attendre avant de s'engueuler."
     sael neutre "Oui."
     "Sael reprend son repas. Elle n'a pas touché au sujet du vote."
@@ -180,7 +178,7 @@ label _6_0_1_CAFETERIA:
     sael mefiant "Je sais, Elen."
     elen "Je demandais si on avait le droit de manger ensemble après."
     sael neutre "Ah."
-    elen "Parce que la dernière fois, tout le monde est parti en faisant la tête."
+    elen "Parce que j'aimerais bien qu'on mange ensemble, même si le vote se passe mal."
     sael "Je viendrai, si j'ai faim."
     mara taquin "Voilà un programme politique que je peux soutenir."
     elen "Je prends note. C'est déjà une personne."
@@ -196,16 +194,25 @@ label _6_0_1_CAFETERIA:
     call _6_0_1_TV_FRONTIERES from _call_6_0_1_TV_FRONTIERES_matinale
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
-    $ showGroup([("sael", "neutre"), ("elen", "triste"), ("mara", "neutre"), ("noam", "inquiet")])
+    $ showGroup([("sael", "neutre"), ("elen", "triste"), ("mara", "neutre"), ("noam", "inquiet"), ("elias", "fatigue"), ("iris", "inquiet"), ("lysa", "blase")])
     elen triste "Je crois que je n'ai plus faim."
     sael neutre "Moi non plus."
-    "Sael ramasse pourtant son plateau et l'apporte à Goumi avant de sortir."
-    elen inquiet "J'ai dit quelque chose de travers ?"
-    noam "Non."
-    mara neutre "Laisse-lui un peu d'air."
-    "Sur la table, Elen a abandonné sa boîte percée. Elias l'examine une dernière fois."
-    elias reflechit "En fait... si on la retourne..."
-    iris blase "Elias. Mange."
+    mara fatigue "Moi non plus, franchement."
+    elias fatigue "Ouais... pareil."
+    lysa blase "Je vais laisser mon plateau."
+    noam "Je crois qu'on a tous compris."
+    "Sael ramasse son plateau et se lève sans rien dire."
+    elen joie "BON ! GOUMI ! TU PEUX NOUS REMETTRE UNE ASSIETTE ?!"
+    noam surpris "Elen ? Tu viens de dire que tu n'avais plus faim."
+    elen sourire "J'ai changé d'avis ! Allez, on va pas rester avec ces têtes-là toute la journée !"
+    mara reflechit "Tu vas vraiment remanger ?"
+    elen "Si vous mangez aussi !"
+    goumi "Je peux vous proposer les mêmes rations."
+    elen joie "Parfait !"
+    "Son sourire tient un peu trop longtemps, mais personne ne la contredit. Iris, elle, continue de regarder l'écran éteint."
+    "Sur la table, la boîte percée attend toujours. Elias la retourne entre ses mains."
+    elias reflechit "Attendez... si on la retourne..."
+    mara taquin "Là, je crois que j'ai une idée pour ton gobelet."
     jump _6_0_1_TEMPS_LIBRE
 
 label _6_0_1_TEMPS_LIBRE:
@@ -1019,9 +1026,7 @@ label _6_0_1_DORTOIR:
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_276
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
-    "Je m'assieds sur le lit et retrouve le pain sur mon bureau."
-    noam neutre "Toujours là, toi."
-    "Je le déplace pour poser ma tablette."
+    "Je m'assieds sur le lit et dégage une place sur le bureau pour ma tablette."
     "L'écran indique simplement le résultat de l'après-midi. Je le ferme."
     if player_vote == "pour":
         think "J'ai voté pour. Je pense que je le referais. Mais j'aurais préféré ne pas me poser la question en regardant des boutons qui changeaient tout seuls."
