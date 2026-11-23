@@ -15,10 +15,7 @@ default kd_anime_shock_serial = 0
 transform kd_blue_shock_tint(intensity="normal"):
     # Le filtre appartient au sprite, pas aux autres personnages.
     matrixcolor IdentityMatrix()
-    easeout 0.13 matrixcolor (
-        SaturationMatrix(0.44 if intensity == "light" else (0.25 if intensity == "extreme" else 0.32))
-        * TintMatrix("#9cbae0" if intensity == "light" else ("#4779b9" if intensity == "extreme" else "#739bcc"))
-    )
+    easeout 0.13 matrixcolor SaturationMatrix(0.44 if intensity == "light" else (0.25 if intensity == "extreme" else 0.32)) * TintMatrix("#9cbae0" if intensity == "light" else ("#4779b9" if intensity == "extreme" else "#739bcc"))
 
 transform kd_blue_shock_overlay_anim(duration=1.4, intensity="normal"):
     # Les SVG sont dessines sur la toile source des personnages : 1024x1536,
@@ -66,6 +63,11 @@ init python:
         layer = state.get("layer", "master")
         if not renpy.showing(tag, layer=layer):
             return
+        # Un dialogue peut changer d'expression pendant l'effet :
+        # ne jamais remettre l'ancienne expression au moment du nettoyage.
+        attrs = renpy.get_attributes(tag, layer=layer) or ()
+        if attrs:
+            state["expr"] = attrs[0]
         # La mise en forme courante est reproduite par restyle_char.
         mode = state.get("mode", "restore")
         if mode not in ("focus", "dim", "restore"):
