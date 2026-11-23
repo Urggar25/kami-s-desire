@@ -73,6 +73,37 @@ init python:
         state["mode"] = None
         restyle_char(tag, mode)
 
+    def kd_anime_shock_sync_overlay(tag):
+        """Garde les lignes collees au sprite apres showGroup/showP/repositionnement."""
+        entry = kd_anime_shock_active(tag)
+        if entry is None:
+            return
+        state = store.char_state.get(tag)
+        if not state:
+            return
+        x = state.get("x", 0.5)
+        y = state.get("y", 1.0)
+        layer = state.get("layer", "master")
+        if x == entry.get("x") and y == entry.get("y") and layer == entry.get("layer"):
+            return
+
+        import time
+        remaining = max(0.1, entry.get("expires", 0.0) - time.time())
+        old_layer = entry.get("layer", layer)
+        renpy.hide(kd_anime_shock_overlay_tag(tag), layer=old_layer)
+        entry["x"], entry["y"], entry["layer"] = x, y, layer
+        renpy.show(
+            kd_anime_shock_overlay_tag(tag),
+            what=KD_BLUE_SHOCK_ASSETS[entry["intensity"]],
+            tag=kd_anime_shock_overlay_tag(tag),
+            at_list=[
+                Position(xalign=x, yalign=y),
+                kd_blue_shock_overlay_anim(remaining, entry["intensity"]),
+            ],
+            layer=layer,
+            zorder=700 + int(state.get("zorder", 0)),
+        )
+
     def blue_shock(tag, intensity="normal", duration=1.4, sound=False):
         """Effet local anime, non bloquant, sur un personnage visible.
 
@@ -101,6 +132,8 @@ init python:
             "expires": time.time() + duration,
             "generation": generation,
             "layer": layer,
+            "x": state.get("x", 0.5),
+            "y": state.get("y", 1.0),
         }
         kd_anime_shock_refresh(tag)
         # Affiche les lignes et l'ombre exactement aux coordonnees du sprite.
