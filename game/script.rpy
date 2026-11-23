@@ -526,6 +526,8 @@ init python:
         renpy.show(img, tag=tag, layer=layer, at_list=[exit_tr])
         renpy.pause(0.24, hard=True)
         renpy.hide(tag, layer=layer)
+        if kd_anime_shock_active(tag):
+            blue_shock_clear(tag)
 
         store.char_pos.pop(tag, None)
         store.char_state.pop(tag, None)
@@ -543,7 +545,9 @@ init python:
         expr = store.char_state[tag]["expr"]
         img = f"{tag} {expr}"
         renpy.show(img, tag=tag, layer="master",
-                  at_list=[Position(xalign=x, yalign=y), MoveTransition(t)])
+                   at_list=kd_anime_sprite_at_list(
+                       tag, [Position(xalign=x, yalign=y), MoveTransition(t)]))
+        kd_anime_shock_sync_overlay(tag)
 
 init python:
     def restyle_char(tag, mode="restore"):
