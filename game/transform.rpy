@@ -144,7 +144,10 @@ init python:
             else:
                 at = char_group_enter(x, y)
                 entered = True
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[at], layer=layer, zorder=zorder + idx)
+            renpy.show(f"{tag} {expr}", tag=tag,
+                       at_list=kd_anime_sprite_at_list(tag, [at]),
+                       layer=layer, zorder=zorder + idx)
+            kd_anime_shock_sync_overlay(tag)
 
         if entered:
             renpy.pause(GROUP_ENTER_TIME, hard=True)
