@@ -482,7 +482,7 @@ label _6_0_1_CONCLAVE_START:
     mara "Iris, on a déjà compris qu'elle déconne !"
     iris colere "Et moi, je veux comprendre POURQUOI !"
 
-    "Le débat repart, plus désordonné. Elen parle à Nyra ; Tomas essaie de comprendre le calendrier avec Kael ; Ryn ne regarde plus Sael."
+    "Peu après le débat repart de plus belle."
     lysa neutre "Bon. Est-ce que quelqu'un a une proposition concrète ?"
     elen inquiet "Je ne veux pas que les familles attendent trois jours de plus."
     mara "Personne ne veut ça."
