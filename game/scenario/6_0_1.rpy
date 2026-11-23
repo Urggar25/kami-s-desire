@@ -70,9 +70,9 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ blink()
     "Ma tablette est restée sur le bureau. L'icône de la messagerie clignote : Elias m'a écrit tard hier soir."
     if j50_observation_circuit_status == "secours_partiel":
-        call messenger_play("j6_elias_secours", "elias", [("elias", "Le boitier a tenu ! Kael veut qd mm reverif les acces..."), ("elias", "Jme suis trouvé une tasse avc couvercle mdr. Enfin c gratuit ici donc bon"), ("noam", "Content que ça aille. Tu me dois un café, dans un gobelet fermé."), ("elias", "Tkt j'arrete PAS le café ! Juste les bains de console 😂"), ("elias", "Jte dois un café, promis.")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_secours
+        call messenger_play("j6_elias_secours", "elias", [("elias", "Le boitier a tenu ! Kael veut qd mm reverif les acces..."), ("elias", "Jme suis trouvé une tasse avc couvercle mdr. Enfin c gratuit ici donc bon"), ("noam", "Content que ça aille. Tu me dois un café, dans un gobelet fermé."), ("elias", "Tkt j'arrete PAS le café ! Juste d'le renverser sur les console 😂"), ("elias", "Jte dois un café, promis.")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_secours
     else:
-        call messenger_play("j6_elias_panne", "elias", [("elias", "Kael a recup le boitier, la porte remarche !"), ("elias", "Mtn il veut que jnote tt ce que g touché... ca va etre LONG"), ("noam", "Tant mieux pour la porte. Tu me dois un café, dans un gobelet fermé."), ("elias", "Mdr tkt. Jvais continuer le café, mais loin des fils promis"), ("elias", "Enfin jvais essayer 😅")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_panne
+        call messenger_play("j6_elias_panne", "elias", [("elias", "Kael a recup le boitier, la porte remarche !"), ("elias", "Mtn il veut que jnote tt ce que g touché... ca va etre LONG"), ("noam", "Tant mieux pour la porte. Tu me dois un café, et tu éviteras de le renverser celui-là."), ("elias", "Mdr tkt. Jvais continuer le café, mais loin des fils promis"), ("elias", "Enfin jvais essayer 😅")], objective_text="Lire les messages d'Elias", notify=False) from _call_j601_messenger_panne
     noam sourire "Il n'a visiblement pas perdu son sens des priorités."
     "Sur la tablette, une alerte m'annonce le vote à quatorze heures."
     "Libre circulation entre les districts."
@@ -99,7 +99,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
-    noam inquiet "Elle avait pas l'air pressée. Elle avait surtout l'air... coincée."
+    noam inquiet "Elle avait pas l'air pressée. Elle avait surtout l'air... bizarre."
     "Je me prépare, vérifie ma tablette et sors de la chambre."
     $ current_scene_active = "_6_0_1_ROUTE_CAFETERIA"
     $ corridor_current = "dortoir"
@@ -126,10 +126,10 @@ label _6_0_1_CAFETERIA:
         $ showGroup([("elias", "fatigue"), ("mara", "neutre"), ("lysa", "blase"), ("iris", "fatigue"), ("sael", "neutre"), ("noam", "fatigue"), ("elen", "joie")])
         "Elen me tire jusqu'au comptoir. Goumi lève les yeux de ses plateaux."
         elen joie "Goumi ! Deux petits-déjeuners ! Et mets-lui quelque chose de bon, il a presque pas dormi !"
-        goumi "Les rations sont identiques pour tous."
-        elen content "Alors deux rations identiques, mais avec beaucoup d'enthousiasme !"
+        goumi "Je vais faire au mieux avec le stock restant."
+        elen content "Héhé, merci !"
         noam fatigue "Elen, je peux commander moi-même..."
-        elen "Oui, oui. Mais là, c'est déjà fait !"
+        elen "Oui, oui. Mais là, je l'ai déjà fait pour toi ! Alors garde le sourire pour réussir !"
         "Elle récupère nos plateaux et m'accompagne jusqu'à la table."
     else:
         "Je prends ma ration auprès de Goumi et commence à manger. Quelques minutes plus tard, Elen arrive au comptoir."
@@ -138,6 +138,9 @@ label _6_0_1_CAFETERIA:
         goumi "Il reste votre ration, Elen."
         elen "Parfait !"
         "Elle rejoint la table avec son plateau."
+
+    call show_custom_title("Un peu plus tard...")
+
     "Elen a déjà récupéré une boîte vide et un morceau de ficelle. Elias tient son gobelet le plus loin possible d'elle."
     elen sourire "Ne bouge plus. Je vais juste faire deux petits trous."
     elias inquiet "Mais pourquoi deux ?"
@@ -146,7 +149,7 @@ label _6_0_1_CAFETERIA:
     mara taquin "Celle qui t'attachera les mains dans le dos, j'espère."
     elen colere "MARA !"
     noam sourire "Qu'est-ce que vous fabriquez ?"
-    elias fatigue "Une invention qui devait empêcher mon café de tomber. Pour l'instant, elle menace mon gobelet."
+    elias fatigue "Une invention qui devait empêcher mon café de tomber. Mais j'ai peu d'espoir..."
     elen joie "Noam ! Parfait ! Tiens ça."
     "Elle me tend le couvercle de sa boîte."
     noam inquiet "Attends, je viens juste de..."
@@ -157,7 +160,7 @@ label _6_0_1_CAFETERIA:
     lysa taquin "Je propose qu'on lui donne une heure et un budget. Ça lui fera une petite carrière."
     elen sourire "Merci !"
     lysa blase "Ce n'était pas un compliment."
-    elen "Je le prends quand même."
+    elen "Mais si ! Mais si ! Sois positive un peu !!"
     "Elias approche timidement son gobelet."
     elias "Et si ça bloque l'ouverture ? Je pourrai plus boire."
     mara taquin "Tu découvriras une autre forme d'hydratation : la prudence."
@@ -254,7 +257,6 @@ label _6_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
     $ showGroup([("sael", "neutre"), ("elen", "triste"), ("mara", "neutre"), ("noam", "inquiet"), ("elias", "fatigue"), ("iris", "inquiet"), ("lysa", "blase")])
-    elen triste "Je crois que je n'ai plus faim."
     sael neutre "Moi non plus."
     mara fatigue "Moi non plus, franchement."
     elias fatigue "Ouais... pareil."
@@ -262,8 +264,7 @@ label _6_0_1_CAFETERIA:
     noam "Je crois qu'on a tous compris."
     "Sael ramasse son plateau et se lève sans rien dire."
     elen joie "BON ! GOUMI ! TU PEUX NOUS REMETTRE UNE ASSIETTE ?!"
-    noam surpris "Elen ? Tu viens de dire que tu n'avais plus faim."
-    elen sourire "J'ai changé d'avis ! Allez, on va pas rester avec ces têtes-là toute la journée !"
+    elen sourire "Allez, on va pas rester avec ces têtes-là toute la journée !"
     mara reflechit "Tu vas vraiment remanger ?"
     elen "Si vous mangez aussi !"
     goumi "Je peux vous proposer les mêmes rations."
