@@ -496,7 +496,9 @@ init python:
                 enter = char_enter_center(xp=x)
             at_list = [enter] + extra_at
 
+        at_list = kd_anime_sprite_at_list(tag, at_list)
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=zorder)
+        kd_anime_shock_sync_overlay(tag)
 
 
     def hideP(tag, layer="master"):
@@ -572,7 +574,8 @@ init python:
         else:
             at_list.append(char_restore)
 
-        renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
+        renpy.show(img, tag=tag, layer=layer,
+                   at_list=kd_anime_sprite_at_list(tag, at_list), zorder=z)
 
 init python:
     def cam_x_for_edge_safe_char(tag, zoom=None):
