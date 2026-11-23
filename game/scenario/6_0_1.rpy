@@ -810,129 +810,165 @@ label _6_0_1_SIGNAL_INSTABLE:
 
 label _6_0_1_APRES_COUPURE:
 
-    stop music
+    stop music fadeout 0.3
     scene bg_conclave at adaptive_fullscreen with Dissolve(1.2)
     window show
-
+    $ showGroup([("iris", "peur"), ("elias", "peur"), ("tomas", "inquiet"), ("elen", "peur"), ("kael", "fatigue"), ("noam", "fatigue"), ("nyra", "inquiet")])
+    "Personne ne dit rien. J'entends seulement les ventilateurs et quelqu'un qui respire trop vite derrière moi."
+    "Ma tablette est toujours ouverte sur le filtre du canal. J'ai beau regarder les chiffres, je ne sais même plus à quoi ils correspondent."
+    noam fatigue "C'est... terminé ?"
+    "Kael regarde la console. Ses doigts restent suspendus au-dessus de l'écran."
+    kael fatigue "La connexion a été coupée."
+    elias peur "Coupée comment ?"
+    kael "Le relais extérieur. Il ne répond plus."
+    elias "Je te demande pas ce qui répond plus ! Je te demande si elle est toujours là !"
+    "Kael n'arrive pas à lui répondre immédiatement."
     if j601_hack_success:
-        "Les haut-parleurs ne crachent plus rien."
-        "Pas un souffle. Pas un grésillement."
-        "Juste le ventilateur au-dessus de la table."
-        $ showGroup([("elen", "peur"), ("kael", "fatigue"), ("iris", "inquiet"), ("elias", "choc"), ("mara", "stress"), ("lysa", "neutre"), ("noam", "fatigue")])
-        elen peur "Elle est... morte ?"
-        kael fatigue "Non. Déconnectée. Le noyau tourne toujours."
-        kael "C'est elle qui a ouvert le relais. On l'a juste aidée à tenir."
+        kael "Le noyau est encore actif. Elle a essayé de couper le lien depuis son côté."
         if j601_hack_result.get("late_cut", False):
-            kael "Enfin. J'ai fini à la main. Ce truc résistait jusqu'au bout."
-            noam inquiet "Désolé, j'ai pas..."
-            kael calme "Ça a coupé. C'est ce qui compte."
-        "Iris fixe l'écran noir. Elle a posé les deux mains à plat sur sa tablette, comme si elle avait peur qu'elle s'envole."
-        iris fatigue "Elle l'a dit. Elle a dit qu'elle était piratée."
-        iris "Elle avait peur, je crois."
-        lysa neutre "Les IA ont peur, maintenant ?"
-        iris colere "J'en sais rien, Lysa ! Elle avait peur, c'est tout !"
-        lysa "...D'accord."
-        "Lysa n'ajoute rien. C'est peut-être la première fois que je la vois reculer."
-        elias content "Par contre... j'ai tout enregistré. Les deux signatures, les commandes qu'il a essayé de passer. Tout."
-        kael reflechit "Montre."
-        "Kael se penche sur l'écran d'Elias. Il ne dit rien pendant un long moment."
-        kael "C'est propre. Horodaté. On a une vraie trace."
-        elias sourire "Tu peux le dire que je suis génial, hein."
-        kael "On a une vraie trace, Elias."
-        elias "C'est pareil, dans ta langue."
+            kael "J'ai dû finir à la main. Mais le relais est bien fermé."
+        else:
+            kael "On a tenu assez longtemps pour qu'elle le ferme."
         if j601_hack_rank in ("S", "A"):
-            mara sourire "Pas mal, le technicien."
-            noam sourire "Je prends."
-            mara "Profites-en. Je le redirai pas."
+            mara neutre "Noam a réussi à bloquer presque toutes les commandes."
+            noam "J'ai surtout appuyé partout où on me disait d'appuyer."
         if j601_hack_result.get("executed", 0) > 0:
-            tomas inquiet "Et les commandes qui sont passées ? Elle a parlé de... verrouiller les portes ?"
-            "Mara se lève pour aller vérifier. La porte s'ouvre normalement sous sa main."
-            mara neutre "Bon. Au moins, on peut sortir."
-            elen "C'est déjà ça."
+            tomas inquiet "Il y a des commandes qui sont passées. J'ai vu « portes ». C'était vraiment les portes ?"
+            kael "Je vérifie. Attends."
         $ j601_iris_confiance = 1
         $ award_stat_xp("observation", 1)
         $ award_stat_xp("sang_froid", 1)
     else:
-        "Je n'arrive plus à suivre. Les lignes défilent trop vite."
-        "Kael arrache le capot de la console murale et tire sur quelque chose. Un claquement sec."
-        play sound "audio/sfx_metal_clank.mp3"
-        "Tous les écrans s'éteignent en même temps."
-        $ showGroup([("kael", "inquiet"), ("iris", "peur"), ("elias", "fatigue"), ("mara", "stress"), ("elen", "peur"), ("noam", "triste")])
-        kael inquiet "Voilà. Coupé."
-        iris peur "Tu lui as fait mal ?!"
-        kael "Je ne sais pas. Je ne sais même pas si ça se dit, pour elle."
-        iris "Tu ne sais pas ?!"
-        kael "Non, Iris. Je ne sais pas."
-        "Iris se rassoit sans le quitter des yeux."
-        elias fatigue "Il a eu le temps d'effacer derrière lui. J'ai plus rien. Pas une ligne."
-        noam triste "Désolé. J'ai pas réussi à le suivre."
-        elias "Personne l'a suivi, Noam."
-        "La porte du Conclave émet un double bip. Personne n'a essayé de sortir."
-        tomas inquiet "C'est quoi, ce bruit ?"
-        "Mara se lève pour aller vérifier. La porte s'ouvre normalement sous sa main."
-        mara neutre "Bon. Au moins, on peut sortir."
-        elen "C'est déjà ça."
-        "Mais personne ne la suit."
+        "Kael ouvre le boîtier mural et vérifie le relais qu'il vient de couper manuellement."
+        kael "J'ai dû le couper moi-même. On n'arrivait plus à suivre."
+        elias inquiet "Et les commandes qu'on a vues passer ?"
+        kael "Je ne sais pas encore ce qu'elles ont changé."
+        noam triste "Désolé. J'ai essayé..."
+        kael "Je sais. Moi aussi."
         $ j601_iris_confiance = -1
-
-    $ showGroup([("mara", "doute"), ("ryn", "triste"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet"), ("tomas", "inquiet")])
-    play music "music/bgm_low_tension.mp3" fadein 1.5
-    nyra reflechit "La séance n'est pas levée."
-    mara agace "Tu rigoles ? Il n'y a plus personne pour la lever."
-    nyra "Justement. Sans Kami, c'est le protocole de secours qui prend le relais."
-    elen inquiet "Le protocole de quoi ?"
-    kael reflechit "Une procédure locale. Elle n'est reliée à rien, ni à Kami, ni à l'extérieur. Elle ouvre le scrutin à l'heure prévue et compte les bulletins."
-    nyra "Si nous quittons la salle, les restrictions restent. Le prochain créneau est dans trois jours."
-    lysa blase "Donc on vote avec un répondeur."
-    kael "Avec des annonces préenregistrées. Sa voix, découpée en morceaux."
-    lysa "Un répondeur."
-    if j601_hack_success:
-        kael "Pour une fois, c'est peut-être le moment le plus sûr pour voter. Il n'y a plus personne entre nous et les bulletins."
-    else:
-        kael "Je ne peux pas certifier ce qu'il a eu le temps de toucher. Le protocole, lui, est séparé. C'est tout ce que je peux dire."
-    mara "Alors je préfère sortir."
-    ryn triste "Et rentrer chez nous avec quoi ? Un « on verra » ?"
-    mara "Tu préférerais un résultat dont personne ne peut répondre ?"
-    ryn "Non."
-    "Il semble lui-même surpris d'avoir répondu si vite."
-    tomas inquiet "On peut voter contre, pour laisser une trace de notre refus ?"
-    nyra "On peut. Mais ça ne rendra pas le matériel plus fiable."
-    tomas "Je sais. Je voudrais juste ne pas laisser un écran vide parler à ma place."
-    lysa blase "Je comprends l'idée. Je ne dis pas que je l'aime."
-    elen triste "Et si je vote pour ?"
-    sael neutre "Tu voteras pour. Personne ne t'en empêche."
-    elen "Tu ne m'en voudras pas ?"
-    sael "Non."
-    elen "Même après ce matin ?"
-    sael "Elen, je ne vais pas commencer à t'en vouloir pour une chose que tu m'as déjà dite."
-    "Elen hoche la tête."
-    ryn neutre "Moi, je voulais voter pour."
-    "Il regarde les boutons apparus sur sa tablette."
-    ryn "Je le veux encore."
-    elen "Alors fais-le."
-    ryn triste "Il y a cinq minutes, quelqu'un a essayé de valider nos bulletins à notre place."
-    "Sael le regarde, mais n'intervient pas."
-    ryn "Je ne veux pas qu'un oui de ma part serve à ouvrir des passages sans que les villages sachent comment se défendre. Pas aujourd'hui. Pas comme ça."
-    mara "Tu vas voter contre ?"
-    ryn "Oui."
-    elen triste "Ryn..."
-    ryn "Je sais. Je sais ce que je dis."
-    "Il se rassied et laisse sa tablette sur la table."
-    "Iris ne regarde pas la tablette. Elle regarde l'écran noir au-dessus de la table."
-    iris inquiet "Kami ?"
-    "Rien."
-    if j601_hack_success:
-        iris fatigue "Tu reviens après, hein ?"
-        "L'écran reste noir. Iris hoche la tête quand même, comme si on lui avait répondu."
-    else:
-        iris "..."
-        "Elle n'ajoute rien."
-    "Nous pouvons quitter la pièce. Nous pouvons aussi voter. Rien ne garantit que ça se passera normalement."
-    "Kael vérifie une dernière fois que le texte affiché sur les tablettes est identique."
-    kael "La formulation est la même sur les douze écrans. Je ne peux pas certifier ce qui se passera après."
-    nyra "Chacun décide en connaissance de cause."
-    "Les sièges grincent. Personne ne se lève."
+    iris peur "Elle a dit qu'il y avait quelqu'un..."
+    "Iris fixe l'écran éteint. Sa voix est si basse que je l'entends à peine."
+    iris "Elle a dit qu'on lui prenait sa voix."
+    lysa neutre "C'est ce qu'on a tous entendu."
+    iris colere "Non, on n'a pas entendu la même chose ! Elle a eu peur. Vous l'avez entendue avoir peur, vous ?"
+    nyra reflechit "Nous avons entendu une voix qui disait avoir peur. Nous ne savons pas ce qui lui est arrivé."
+    iris "Tu veux que je te montre les enregistrements ?"
+    nyra "Je veux simplement qu'on évite de conclure trop vite."
+    iris "Je ne conclus RIEN ! Je vous dis qu'elle a demandé de l'aide !"
+    "Iris prend une grande inspiration, puis regarde Kael."
+    iris inquiet "Elle va revenir ?"
+    kael "Je ne sais pas."
+    tomas peur "Mais alors pourquoi personne n'appelle quelqu'un ? On est douze sur une station et..."
+    elias panique "On est douze enfermés dans une station qui répond à une IA qui vient de se faire pirater !"
+    elen peur "Elias, arrête..."
+    elias "Je sais ! Pardon, je sais ! Mais c'est vrai !"
+    "Elen serre les accoudoirs de son siège."
+    elen "Si elle revient pas, on fait comment pour rentrer ?"
+    kael "On a des systèmes locaux."
+    elen "Pour rentrer sur Terre ?"
+    "Kael hésite."
+    elen "D'accord. Donc tu sais pas."
+    "Un déclic retentit au-dessus de nous."
+    "L'écran principal s'allume. Pas de grésillement. Pas de bandes décalées."
+    play sound sfx_announce
+    show screen kami_broadcast_ui
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.9
+    kami "Merci de votre patience. L'incident est terminé. Nous allons procéder au vote."
+    $ bc_show("iris", "choc")
+    iris choc "Kami ?!"
+    $ bc_hide()
+    kami "Oui, Iris ?"
+    $ bc_show("iris", "inquiet")
+    iris "Tu... Tu vas bien ?"
+    $ bc_hide()
+    kami "Parfaitement. Je vous remercie de votre inquiétude."
+    $ bc_show("elias", "peur")
+    elias peur "Non. Non, non, non. Attendez. On va pas faire comme si de rien n'était !"
+    $ bc_hide()
+    kami "Le scrutin concernant la libre circulation entre les districts peut maintenant commencer."
+    $ bc_show("tomas", "inquiet")
+    tomas "Il y a quelqu'un qui te contrôlait !"
+    $ bc_hide()
+    kami "L'incident a été résolu, Tomas."
+    $ bc_show("iris", "colere")
+    iris "Comment ? Comment tu l'as résolu ?"
+    $ bc_hide()
+    kami "Les fonctions nécessaires au vote sont opérationnelles."
+    $ bc_show("iris", "colere")
+    iris "C'est pas ce que je te demande !"
+    $ bc_hide()
+    kami "Je vous laisse un instant pour vous préparer."
+    "Son image s'efface proprement, comme à la fin d'une diffusion ordinaire."
+    hide screen kami_broadcast_ui
+    $ bc_off()
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    play music "music/bgm_low_tension.mp3" fadein 1.3
+    $ showGroup([("ryn", "colere"), ("nyra", "raison"), ("elen", "peur"), ("iris", "inquiet"), ("elias", "peur"), ("tomas", "inquiet"), ("mara", "stress"), ("julian", "neutre"), ("noam", "inquiet")])
+    elias peur "C'est pas possible. Elle peut pas juste revenir et demander qu'on vote !"
+    tomas inquiet "Elle a même pas expliqué ce qui s'est passé."
+    elen peur "Elle parle normalement, au moins."
+    iris "C'est justement ce qui me fait peur."
+    mara "Kael. Le vote, il est sûr ?"
+    kael reflechit "Les écrans affichent le même texte. Je ne peux pas certifier ce qui contrôle la procédure."
+    nyra raison "Alors on ne peut pas voter pour l'ouverture aujourd'hui."
+    ryn colere "QUOI ?!"
+    nyra "Nous venons de voir une intervention extérieure prendre la main sur les commandes. Approuver une modification aussi importante sans vérifier les garanties..."
+    ryn "Mais on vient de la récupérer ! C'est fini !"
+    nyra "Tu n'en sais rien."
+    ryn "Et toi non plus !"
+    nyra "Justement."
+    ryn "Putain... On va pas renoncer parce qu'elle a commencé à dire n'importe quoi pendant dix minutes !"
+    elen inquiet "Ryn, elle a essayé de voter pour nous."
+    ryn "Ou quelqu'un a essayé ! On l'a empêché !"
+    nyra "Et tu proposes de lui confier immédiatement un nouveau système de frontières ?"
+    ryn "Je propose qu'on vote sur ce qu'on a discuté, pas sur une panne !"
+    "Sael s'apprête à répondre. Ryn la regarde."
+    ryn "Toi, je sais que t'es contre. Ça me plaît pas, mais au moins tu me l'as dit en face."
+    sael neutre "Ryn..."
+    ryn "Non. Je peux discuter avec toi. Je peux pas discuter avec une peur qui change d'avis à notre place."
+    iris colere "C'est pas juste une panne, Ryn ! Tu n'as pas vu..."
+    ryn "Si ! J'étais là ! J'ai vu exactement comme toi !"
+    iris "Alors arrête de dire que c'était rien !"
+    "Ryn se tait une seconde, surpris par le ton d'Iris."
+    ryn desaccord "J'ai pas dit que c'était rien pour elle. J'ai dit qu'on devait pas abandonner le vote."
+    tomas inquiet "Et si on fait une erreur ?"
+    ryn "On en fait tout le temps, Tomas ! C'est pas une raison pour ne plus décider !"
+    tomas "Moi j'ai peur de cliquer, d'accord ?! Voilà. J'ai peur."
+    "Tomas pose sa tablette écran contre la table."
+    elen triste "Je pensais que j'allais voter pour. Ce matin, après le reportage... Je voulais vraiment."
+    ryn inquiet "Elen..."
+    elen "Mais là, je sais même pas à qui on est en train de répondre."
+    "Ryn secoue la tête, incapable de trouver quelque chose à lui dire."
+    nyra reflechit "Nous pouvons refuser la proposition sans prétendre que la question est réglée."
+    ryn colere "Pour ceux qui attendent derrière les barrières, elle est réglée pour trois jours !"
+    "Julian, qui n'a presque pas ouvert la bouche, soupire."
+    julian neutre "Vous allez recommencer exactement la même dispute."
+    mara "Julian, pas maintenant."
+    julian "Je n'ai plus envie de parler de ça."
+    noam inquiet "Tu vas où ?"
+    julian "Dans ma chambre."
+    nyra "Le vote commence dans quelques minutes."
+    julian "J'ai entendu."
+    elen inquiet "Tu peux pas partir comme ça..."
+    julian "Si. Regarde."
+    "Il ramasse sa tablette, repousse sa chaise et prend la direction de la porte."
+    ryn "Julian !"
+    "Julian ne se retourne pas."
+    julian "Faites ce que vous voulez. Moi, j'en ai assez."
+    "La porte s'ouvre. Il sort. Personne ne le retient."
+    $ j601_julian_left_vote = True
+    "Il reste onze représentants dans la salle. La chaise vide de Julian attire davantage mon regard que l'écran."
+    elias peur "On a le droit de voter s'il est parti ?"
+    nyra raison "Les bulletins manquants ne comptent pas comme des votes favorables. L'unanimité est de toute façon impossible sans lui."
+    ryn colere "Alors pourquoi elle nous demande encore de voter ?!"
+    kael reflechit "Parce que la procédure est lancée."
+    "Une sonnerie propre, parfaitement normale, résonne dans la salle."
+    kami "Le scrutin est ouvert. Vous pouvez voter."
+    "Personne ne prend immédiatement sa tablette."
+    "Je fixe les trois choix. Il y a encore une heure, je pensais savoir ce que je voulais répondre."
     jump _6_0_1_VOTE
+
 
 label j601_sael_vote_animation:
 
