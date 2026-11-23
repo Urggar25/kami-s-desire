@@ -11,6 +11,7 @@ default j601_iris_confiance = 0
 default j601_repair_note = False
 default j601_julian_echo = False
 default j601_with_elen = False
+default j601_julian_left_vote = False
 default j601_hack_result = {}
 default j601_hack_success = False
 default j601_hack_rank = "D"
@@ -70,6 +71,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     $ j601_repair_note = False
     $ j601_julian_echo = False
     $ j601_with_elen = False
+    $ j601_julian_left_vote = False
 
     $ blink()
     "Ma tablette est restée sur le bureau. L'icône de la messagerie clignote : Elias m'a écrit tard hier soir."
@@ -813,7 +815,7 @@ label _6_0_1_APRES_COUPURE:
     stop music fadeout 0.3
     scene bg_conclave at adaptive_fullscreen with Dissolve(1.2)
     window show
-    $ showGroup([("iris", "peur"), ("elias", "peur"), ("tomas", "inquiet"), ("elen", "peur"), ("kael", "fatigue"), ("noam", "fatigue"), ("nyra", "inquiet")])
+    $ showGroup([("iris", "peur"), ("elias", "peur"), ("tomas", "inquiet"), ("elen", "peur"), ("kael", "fatigue"), ("noam", "fatigue"), ("nyra", "inquiet"), ("lysa", "neutre")])
     "Personne ne dit rien. J'entends seulement les ventilateurs et quelqu'un qui respire trop vite derrière moi."
     "Ma tablette est toujours ouverte sur le filtre du canal. J'ai beau regarder les chiffres, je ne sais même plus à quoi ils correspondent."
     noam fatigue "C'est... terminé ?"
@@ -1012,10 +1014,9 @@ label _6_0_1_VOTE:
     stop music fadeout 1.0
     $ _vote_result = renpy.call_screen("vote_screen")
 
-    # Résultats imposés pour le vote J6_0_1
-    # Pour : Julian, Tomas + éventuellement Noam
-    # Abstention : Elias + éventuellement Noam
-    # Contre : tous les autres + éventuellement Noam
+    # Jour 6 : Julian a quitté la salle, il ne dépose aucun bulletin.
+    # Ryn reste favorable à l’ouverture malgré ses doutes sur la procédure.
+    # Le scrutin porte sur 11 bulletins présents, pas sur 12.
 
     $ player_vote = vote_phase3_player_choice if vote_phase3_player_choice in ("pour", "contre", "abstention") else "abstention"
 
@@ -1024,10 +1025,9 @@ label _6_0_1_VOTE:
     $ vote_phase3_current_vote = None
 
     $ vote_phase3_results = [
-        ("Julian", "pour"),
         ("Tomas", "pour"),
         ("Elias", "abstention"),
-        ("Ryn", "contre"),
+        ("Ryn", "pour"),
         ("Nyra", "contre"),
         ("Kael", "contre"),
         ("Mara", "contre"),
@@ -1055,7 +1055,7 @@ label _6_0_1_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
     "Les résultats défilent. Le premier « CONTRE » apparaît, puis un deuxième."
-    "Tomas se penche en avant pour compter. Julian ne regarde plus l'écran."
+    "Tomas se penche en avant pour compter. La chaise de Julian est toujours vide."
     "Le nombre de votes contre augmente encore."
     think "Je cherche presque un nom à côté de chaque bulletin. Il n'y en a pas. Heureusement."
     "L'écran affiche les totaux, puis un seul mot : « REJETÉ »."
@@ -1074,23 +1074,26 @@ label _6_0_1_VOTE:
         think "Je me suis abstenu. Ça semblait être le seul choix que je pouvais faire sans mentir."
         think "Maintenant que je vois le résultat, je ne sais plus si je suis soulagé."
     "Personne ne demande le détail des bulletins."
-    "Les haut-parleurs se remettent à grésiller. C'est sa voix. Des morceaux d'annonces enregistrées, recollés bout à bout par le protocole de secours."
+    "Les haut-parleurs s'allument sans grésillement. Kami a retrouvé sa voix habituelle, jusque dans ses intonations."
     show screen kami_broadcast_ui
-    show screen j601_kami_glitch
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.6
-    kami "Résultat du scrutin. Douze... douze bulletins comptabilisés."
+    kami "Résultat du scrutin. Onze bulletins comptabilisés sur douze représentants."
     kami "Unanimité non atteinte. La libre circulation entre les districts est rejetée."
     $ interject("REJETÉ", color="#FF4D6D")
     pause 0.4
-    kami "Les restrictions restent... restent en vigueur."
-    play sound "audio/sfx_glitch.mp3"
-    "Je m'attends au rire habituel."
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Fin de séance."
-    "L'image s'efface. Pas de fanfare. Pas même un « à bientôt »."
-    hide screen j601_kami_glitch
+    kami "Les restrictions restent en vigueur."
+    $ bc_show("tomas", "inquiet")
+    tomas inquiet "Et le bulletin manquant ?"
+    $ bc_hide()
+    kami "Aucun bulletin n'a été enregistré pour un représentant absent."
+    $ bc_show("iris", "inquiet")
+    iris inquiet "Kami, tout à l'heure, tu..."
+    $ bc_hide()
+    kami "Fin de séance. Je vous remercie."
+    "L'image s'efface d'un seul coup. Aucune anomalie cette fois."
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.2
 
@@ -1100,7 +1103,6 @@ label _6_0_1_VOTE:
         ("iris", "inquiet"),
         ("mara", "doute"),
         ("tomas", "inquiet"),
-        ("julian", "decu"),
         ("elias", "fatigue"),
         ("lysa", "fatigue"),
         ("elen", "triste"),
@@ -1119,30 +1121,19 @@ label _6_0_1_VOTE:
     sael "Ryn..."
     ryn colere "Ne commence pas."
     "Sael referme la bouche."
-    ryn triste "Je vais devoir appeler les gens qui m'ont cru. Ceux qui pensaient que j'allais défendre l'ouverture."
+    ryn triste "Je vais devoir appeler les gens qui attendaient notre réponse."
     noam neutre "Tu peux leur dire ce qui s'est passé."
-    ryn "Que j'ai changé d'avis devant une tablette ?"
-    noam "Que tu n'avais pas confiance."
-    ryn "Ça ne va pas les aider à rentrer chez eux."
-    "Il s'essuie les yeux d'un geste brusque, avant de se lever."
+    ryn "Que j'ai insisté pour voter et qu'on a perdu quand même ?"
+    noam "Tu voulais qu'ils puissent rentrer chez eux."
+    ryn "Et ils sont toujours là-bas."
+    "Il passe une main sur ses yeux avant de se lever."
     sael neutre "Je peux venir avec toi, si tu veux."
     ryn colere "Non."
     "Sael hoche la tête. Il attend peut-être une réplique. Elle n'en donne pas."
     "Ryn quitte la salle."
     elen triste "Je voulais juste..."
     mara "Je sais."
-    "Julian se lève à son tour, puis se rassied."
-    if j601_julian_echo:
-        julian decu "J'avais préparé quelque chose pour après le vote."
-        noam "Je me doute."
-        julian "Je ne crois pas que ce soit le moment."
-        noam "Non."
-        "Il plie son brouillon et le garde dans sa poche."
-    else:
-        julian decu "On devrait au moins préparer une déclaration."
-        lysa blase "Pas maintenant."
-        julian neutre "D'accord."
-        "Il ne sort pas son brouillon."
+    "Je regarde la chaise de Julian. Il ne sera même pas là pour entendre le résultat."
     tomas inquiet "Vous êtes sûrs qu'il y a bien eu douze bulletins ?"
     kael reflechit "C'est le total qui s'affiche. Je ne peux pas te garantir autre chose."
     tomas "Je sais que tu peux pas, mais..."
