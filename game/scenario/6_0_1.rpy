@@ -105,6 +105,7 @@ label _6_0_1_REVEIL_CHAMBRE:
     "Sa voix grésille, puis la diffusion s'arrête au milieu d'un rire."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.5
     noam inquiet "Elle avait pas l'air pressée. Elle avait surtout l'air... bizarre."
@@ -219,7 +220,7 @@ label _6_0_1_CAFETERIA:
     "Goumi apporte une dernière petite assiette de fruits en conserve. Elen tend aussitôt la main."
     elen joie "Oh ! Il en restait !"
     goumi "Pour la table. Pas uniquement pour vous."
-    elen gene "Oui, oui, je partage !"
+    elen surpris "Oui, oui, je partage !"
     mara taquin "Tu as déjà pris la moitié."
     elen content "Parce que je distribue ! Tiens, Elias !"
     elias sourire "Merci !"
@@ -360,6 +361,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
     kami "Vous êtes attendus au Conclave. Merci. Mer... ci."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 0.9
     tomas "Bon. J'ai encore une alarme à quatorze heures."
@@ -488,6 +490,7 @@ label _6_0_1_CONCLAVE_START:
     "L'image se fige, puis disparaît."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_low_tension.mp3" fadein 1.0
     $ showGroup([("mara", "mefiant"), ("ryn", "colere"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "reflechit"), ("kael", "reflechit"), ("elen", "inquiet"), ("lysa", "blase"), ("noam", "surpris")])
@@ -685,6 +688,7 @@ label _6_0_1_CONCLAVE_START:
     "Puis l'écran devient noir."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([("mara", "colere"), ("ryn", "inquiet"), ("sael", "mefiant"), ("iris", "peur"), ("nyra", "raison"), ("kael", "inquiet"), ("elen", "peur"), ("elias", "inquiet"), ("noam", "peur")])
     stop music fadeout 0.25
@@ -767,6 +771,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     lysa blase "Personne ne l'a trouvée excellente."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([("mara", "mefiant"), ("ryn", "colere"), ("sael", "mefiant"), ("iris", "peur"), ("nyra", "inquiet"), ("kael", "reflechit"), ("elias", "inquiet"), ("lysa", "blase"), ("noam", "inquiet")])
     kael reflechit "Elias. Tu vois ce que je vois ?"
@@ -794,6 +799,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     iris "..."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     scene bg_conclave at adaptive_fullscreen with dissolve
     $ showGroup([("ryn", "colere"), ("kael", "reflechit"), ("sael", "mefiant"), ("mara", "agace"), ("nyra", "raison"), ("julian", "taquin"), ("lysa", "blase"), ("iris", "inquiet"), ("noam", "inquiet")])
     ryn colere "On la débranche, et c'est réglé."
@@ -830,6 +836,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "Vas-y. Coupe-moi, pour voir."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
+    $ bc_off()
     $ hideGroup()
     window hide
 
@@ -909,8 +916,8 @@ label _6_0_1_APRES_COUPURE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.9
     kami "Merci de votre patience. L'incident est terminé. Nous allons procéder au vote."
-    $ bc_show("iris", "choc")
-    iris choc "Kami ?!"
+    $ bc_show("iris", "surpris")
+    iris surpris "Kami ?!"
     $ bc_hide()
     kami "Oui, Iris ?"
     $ bc_show("iris", "inquiet")
