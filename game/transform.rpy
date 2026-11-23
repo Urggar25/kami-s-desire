@@ -73,11 +73,21 @@ init python:
     GROUP_AUTO_SMALL_MAX_MEMBERS = 5
 
     def _group_auto_x(count, index):
+        """Centre les petits groupes pour garder les locuteurs dans le champ.
+
+        L'ancien cadrage placait systematiquement les deux personnages
+        extremes hors ecran (-0.11 et 1.10). Aucun autofocus ne pouvait
+        recentrer correctement ces sprites une fois la camera zoomee.
+        Les groupes denses conservent leur ancien etalement.
+        """
         if count <= 1:
             return 0.5
-        max_x = GROUP_AUTO_X_MAX_SMALL if count <= GROUP_AUTO_SMALL_MAX_MEMBERS else GROUP_AUTO_X_MAX
-        spacing = (max_x - GROUP_AUTO_X_MIN) / float(count - 1)
-        return GROUP_AUTO_X_MIN + (spacing * float(index))
+        if count <= GROUP_AUTO_SMALL_MAX_MEMBERS:
+            # 2-5 membres : chaque centre de sprite reste dans le cadre.
+            left, right = 0.08, 0.92
+        else:
+            left, right = GROUP_AUTO_X_MIN, GROUP_AUTO_X_MAX
+        return left + ((right - left) * float(index) / float(count - 1))
 
     def _group_member_tuple(member, count, index):
         tag = member[0]
