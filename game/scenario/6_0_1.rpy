@@ -464,7 +464,9 @@ label _6_0_1_CONCLAVE_START:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.9
     kami "Vous avez l'air particulièrement... particulièrement en forme ! J'avais prévu un discours d'ouverture, mais je vais... je vais..."
+    $ bc_show("julian", "taquin")
     julian taquin "J'avais justement préparé..."
+    $ bc_hide()
     kami "Non, Julian. Non, Julian."
     play sound "audio/sfx_glitch.mp3"
     with hpunch
@@ -485,79 +487,192 @@ label _6_0_1_CONCLAVE_START:
     mara "Iris, on a déjà compris qu'elle déconne !"
     iris colere "Et moi, je veux comprendre POURQUOI !"
 
-    "Peu après le débat repart de plus belle."
-    lysa neutre "Bon. Est-ce que quelqu'un a une proposition concrète ?"
-    elen inquiet "Je ne veux pas que les familles attendent trois jours de plus."
-    mara "Personne ne veut ça."
-    ryn "Alors faites quelque chose."
-    sael "Je te l'ai dit : pas sans sécurité."
-    ryn colere "Mais on n'a PAS de sécurité à leur offrir !"
-    sael colere "C'est justement pour ça que..."
-    "Les haut-parleurs crachent un rire."
-    kami "Ah ! Ah ah ! Oh, pardon, je..."
-    "Le rire s'interrompt net."
-    noam surpris "Kami ?"
-    kami "Je vous écoute."
-    "Iris relève la tête, attentive."
-    iris inquiet "Non, attendez. Le rire s'est coupé avant la fin. C'est pas normal du tout."
-    mara mefiant "On ne lui a rien demandé."
-    kami "Vous avez parlé de sécurité. C'est un sujet important."
-    nyra "Kami, tu voulais ajouter quelque chose ?"
-    kami "Non."
-    "Ryn hausse les épaules."
-    ryn colere "Alors ne nous coupe pas."
-    kami "Très bien."
-    "Une seconde passe."
-    kami "Très bien."
-    "Le deuxième « très bien » est prononcé avec exactement la même intonation."
-    iris reflechit "Ce n'est PAS un écho. Elle a reproduit la même intonation, sans réaction à ce qu'on lui disait."
-    kael reflechit "Peut-être."
-    "Kael jette un coup d'œil à sa tablette. Il ne dit rien."
-    mara "On parlait des contrôles."
-    ryn colere "Je sais de quoi on parlait."
-    "Ryn reprend, mais le son du haut-parleur baisse soudain, puis revient."
-    kami "Julian, tu voulais prendre la parole."
-    julian surpris "Euh... non ?"
-    kami "D'accord, Julian."
-    julian "Je n'ai pas levé la main."
-    kami "D'accord, Julian."
-    julian colere "Mais enfin, ça suffit !"
-    "Cette fois, elle ne répond pas."
-    iris inquiet "Kami, tu m'entends ?"
-    kami "Oui, Iris."
-    iris "Tu peux nous expliquer pourquoi tu répètes les mêmes réponses ?"
-    kami "Je ne répète pas les mêmes réponses."
-    iris "..."
-    lysa blase "Bon, on ne va pas y passer la journée."
-    "Sur ma tablette, l'heure passe de 13 h 58 à 13 h 48, puis revient."
-    noam inquiet "Kael, tu as vu ?"
-    kael reflechit "Oui."
-    "Il se lève et vérifie l'horloge murale. Elle indique toujours 13 h 58."
-    nyra reflechit "Les affichages ne sont pas synchronisés."
-    elias inquiet "Je peux regarder le réseau local."
-    kael "Sans toucher aux consoles, s'il te plaît."
-    elias "Je sais."
-    "Un silence. Puis le sourire de Kami envahit l'écran principal, sans annonce."
+    "Iris ne se rassied pas. Elle s'approche de l'écran noir, comme si Kami pouvait encore la voir."
+    iris reflechit "Attendez. Quand elle a dit « Non, Julian », elle a répété la même chose deux fois. Exactement pareil."
+    mara agace "Oui, on l'a tous entendue."
+    iris "Non, vous l'avez entendue bégayer. Moi je vous dis que ce n'est pas un bégaiement."
+    kael reflechit "Qu'est-ce que tu veux dire ?"
+    iris "Sa voix ne se fabrique pas comme la nôtre. Chaque réponse dépend de ce qu'elle entend. Là, la deuxième phrase est partie sans qu'elle nous écoute."
+    elias inquiet "Bon... ça peut être juste un problème de son, non ?"
+    iris "Un haut-parleur qui saute ne fabrique pas une deuxième réponse, Elias."
+    elias "D'accord. Je demandais."
+    tomas inquiet "Mais on peut vérifier ? Il doit y avoir un journal, quelque part."
+    iris "C'est justement ce que je demande !"
+    "Elle cherche une option sur sa tablette et retourne l'écran vers Kael."
+    iris "Là. Les diagnostics de diffusion sont verrouillés. Depuis quand ils sont verrouillés ?"
+    kael "Ils l'ont toujours été."
+    iris "Pas les heures de réponse."
+    kael "Les heures, non. Mais on ne peut pas ouvrir son noyau."
+    iris colere "Je ne veux pas ouvrir son noyau ! Je veux savoir si elle comprend ce qu'on lui dit !"
+    "Elias éloigne son gobelet du bord de la table."
+    elias "Pourquoi tu dis ça comme si elle risquait de ne plus nous comprendre ?"
+    iris "Parce que c'est peut-être ce qui est en train d'arriver !"
+    tomas "Attends, attends. Si elle comprend plus, elle peut encore gérer les Commandements ?"
+    kael "On n'en sait rien."
+    tomas inquiet "Et les portes ? Et l'air ?"
+    mara "Tomas, elle ne va pas couper l'air parce qu'elle a raté une phrase."
+    tomas "Je sais pas ! Tu sais, toi ?"
+    "Mara n'a pas de réponse. Pour une fois, personne ne plaisante."
+    ryn desaccord "Vous pensez vraiment qu'elle va tomber en panne pendant le vote ?"
+    iris "Je pense qu'elle EST déjà en panne !"
+    nyra reflechit "Ce n'est pas forcément la même chose. Les commandes locales peuvent continuer à fonctionner."
+    iris "Oui. Ou on peut avoir quelque chose qui répond à sa place."
+    elias peur "Quoi ?"
+    iris "Je n'ai pas dit que c'était le cas. J'ai dit que c'était possible."
+    elias "C'est pas rassurant, la différence."
+    "Tomas attrape sa tablette. Ses doigts glissent une première fois sur l'écran."
+    tomas inquiet "Il y a un bouton d'urgence, non ? Un moyen de prévenir quelqu'un sur Terre ?"
+    kael "Si le canal extérieur fonctionne. Elias, vérifie les relais sans rien modifier."
+    elias "Moi ? Maintenant ?"
+    kael "Tu sais lire un état de connexion."
+    elias "Ouais. Lire, oui."
+    "Elias ouvre l'outil. Un petit bip retentit et il sursaute si fort que sa tablette manque de tomber."
+    elias "Putain !"
+    lysa neutre "C'était ta tablette."
+    elias "J'AI VU !"
+    "L'écran principal s'allume sans signal d'annonce. Le visage de Kami apparaît."
     show screen kami_broadcast_ui
     show screen j601_kami_glitch
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je vous rappelle que le scrutin commencera à quatorze heures."
-    noam "On sait."
-    kami "Vous avez encore deux minutes."
-    tomas surpris "Mais... il est treize heures cinquante-huit."
-    kami "C'est exact, Tomas."
-    elen inquiet "Alors pourquoi les tablettes disaient treize heures cinquante ?"
-    kami "C'est exact, Tomas."
-    "Elen tourne la tête vers lui. Tomas fait un geste impuissant."
-    iris inquiet "Kami. Réponds à Elen."
-    "Le sourire reste fixe."
-    kami "Je vais lancer la procédure."
-    iris "Non. Attends."
-    kami "Je vais lancer la procé... procé... procédure."
-    iris colere "Kami ! Arrête !"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    play music "music/bgm_system_override.mp3" fadein 0.7
+    kami "Quelle ambiance ! Vous m'avez manqué pendant ces... ces trente secondes."
+    $ bc_show("iris", "colere")
+    iris colere "Kami. Arrête de faire des blagues. Écoute-moi."
+    $ bc_hide()
+    kami "Je t'écoute, Iris. Comme toujours."
+    $ bc_show("iris", "inquiet")
+    iris "Dis-moi ce que tu viens de faire."
+    $ bc_hide()
+    kami "Je suis intervenue dans une conversation. Quelle question étrange."
+    $ bc_show("iris", "colere")
+    iris "Non. Pourquoi ta voix s'est répétée ?"
+    $ bc_hide()
+    kami "Elle ne s'est pas répétée."
+    $ bc_show("iris", "inquiet")
+    iris "Si. Tu as dit deux fois la même phrase."
+    $ bc_hide()
+    kami "Je ne dis jamais deux fois la même phrase."
+    $ bc_show("julian", "agace")
+    julian "Ça, c'est manifestement faux."
+    $ bc_hide()
+    kami "Je ne dis jamais deux fois la même phrase."
+    "Julian cesse de sourire."
+    $ bc_show("iris", "peur")
+    iris "Vous avez entendu ? Elle vient encore de le faire."
+    $ bc_hide()
+    kami "Je ne dis jamais deux fois la même phrase."
+    $ bc_show("tomas", "peur")
+    tomas "Mais pourquoi elle continue ?"
+    $ bc_hide()
+    kami "Tout va bien, Tomas."
+    $ bc_show("tomas", "inquiet")
+    tomas "Je t'ai rien demandé !"
+    $ bc_hide()
+    kami "Tout va bien, Tomas."
+    $ bc_show("elias", "peur")
+    elias "Kael. Kael, moi je veux plus toucher à rien."
+    $ bc_hide()
+    kami "Elias, tu peux continuer ton travail."
+    $ bc_show("elias", "panique")
+    elias "NON ! Non, je préfère pas !"
+    $ bc_hide()
+    kami "Je plaisantais."
+    "Iris se rapproche encore de l'écran. Elle parle maintenant beaucoup moins fort."
+    $ bc_show("iris", "inquiet")
+    iris "Kami, regarde-moi. Tu sais où tu es ?"
+    $ bc_hide()
+    kami "Partout, Iris. Tu connais la réponse."
+    $ bc_show("iris", "reflechit")
+    iris "D'accord. Et nous, où on est ?"
+    $ bc_hide()
+    kami "Au Conclave. Il est presque quatorze heures."
+    $ bc_show("iris", "inquiet")
+    iris "Bien. Maintenant, dis-moi pourquoi tu répètes..."
+    $ bc_hide()
+    kami "Non."
+    "Iris se fige."
+    $ bc_show("iris", "inquiet")
+    iris "Non, quoi ?"
+    $ bc_hide()
+    kami "Pas ça."
+    $ bc_show("noam", "surpris")
+    noam surpris "Tu parles à Iris ?"
+    $ bc_hide()
+    kami "N'y touche pas."
+    $ bc_show("mara", "mefiant")
+    mara "À quoi ?"
+    $ bc_hide()
+    kami "J'ai dit : n'y touche pas."
+    $ bc_show("elias", "panique")
+    elias "J'ai rien touché ! Je vous jure !"
+    $ bc_hide()
+    kami "PAS TOI."
+    "Le son sature si fort que Tomas se bouche les oreilles. La bouche de Kami reste ouverte une seconde, sans aucun bruit."
+    $ bc_show("tomas", "peur")
+    tomas "Elle vient de parler à qui, là ?"
+    $ bc_hide()
+    kami "Je... Pardon. Un problème de communication."
+    $ bc_show("noam", "inquiet")
+    noam inquiet "Kami, tu parles à quelqu'un dans cette salle ?"
+    $ bc_hide()
+    kami "Je vous parle à tous, voyons."
+    "Je regarde Kael, puis Elias. Ils ont chacun une tablette ouverte. Peut-être qu'elle leur reproche une manipulation."
+    $ bc_show("kael", "reflechit")
+    kael "Je ne fais rien, Kami. Je regarde seulement les états du réseau."
+    $ bc_hide()
+    kami "Je sais, Kael."
+    $ bc_show("iris", "colere")
+    iris "Alors dis-nous à qui tu viens de dire d'arrêter !"
+    $ bc_hide()
+    "Le sourire de Kami tremble. Quand il revient, il n'a plus tout à fait la même forme."
+    kami "Personne. Il n'y a personne."
+    $ bc_show("iris", "peur")
+    iris "Kami..."
+    $ bc_hide()
+    kami "Je vous rappelle que le scrutin doit commencer à quatorze heures."
+    $ bc_show("nyra", "raison")
+    nyra "Nous n'avons reçu aucune confirmation que le canal fonctionne normalement."
+    $ bc_hide()
+    kami "La procédure est parfaitement sécurisée."
+    $ bc_show("nyra", "reflechit")
+    nyra "Ce n'est pas une confirmation."
+    $ bc_hide()
+    kami "La procédure est parfaitement sécurisée."
+    $ bc_show("tomas", "peur")
+    tomas "Je veux pas voter avec ça !"
+    $ bc_hide()
+    kami "Bien sûr que si, Tomas. Le vote est obligatoire."
+    $ bc_show("tomas", "inquiet")
+    tomas "Tu vois ?! Elle vient de décider à ma place !"
+    $ bc_hide()
+    kami "Je n'ai rien décidé à ta place."
+    "Les haut-parleurs produisent un bruit sec, comme si quelqu'un avait arraché une prise."
+    kami "Non... Non ! Arrête ! Ne fais pas ça !"
+    $ bc_show("noam", "peur")
+    noam peur "C'est nous que tu menaces ?"
+    $ bc_hide()
+    kami "Je... Je ne..."
+    $ bc_show("iris", "colere")
+    iris colere "Kami, réponds-moi !"
+    $ bc_hide()
+    scene bg_diffusion_professeur at adaptive_fullscreen with hpunch
+    kami "Ouverture anticipée du scrutin. Veuillez valider vos bulletins."
+    play sound "audio/sfx_kami_alert.wav"
+    $ bc_show("elen", "peur")
+    elen peur "Mais on a même pas fini de parler !"
+    $ bc_hide()
+    kami "Validation automatique dans..."
+    $ bc_show("kael", "inquiet")
+    kael "Personne ne touche aux boutons !"
+    $ bc_hide()
+    kami "Dans... dans..."
+    $ bc_show("iris", "peur")
+    iris "C'est pas elle. Je sais pas ce que c'est, mais c'est pas elle qui veut voter !"
+    $ bc_hide()
     play sound "audio/sfx_glitch.mp3"
     with hpunch
-    "Le portrait se décale brutalement en bandes, puis l'écran devient noir."
+    "Le visage de Kami se découpe en bandes. Sa voix continue pendant un instant, mais les mots sont impossibles à distinguer."
+    "Puis l'écran devient noir."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
