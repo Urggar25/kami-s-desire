@@ -496,9 +496,7 @@ init python:
                 enter = char_enter_center(xp=x)
             at_list = [enter] + extra_at
 
-        at_list = kd_anime_sprite_at_list(tag, at_list)
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=zorder)
-        kd_anime_shock_sync_overlay(tag)
 
 
     def hideP(tag, layer="master"):
@@ -526,8 +524,6 @@ init python:
         renpy.show(img, tag=tag, layer=layer, at_list=[exit_tr])
         renpy.pause(0.24, hard=True)
         renpy.hide(tag, layer=layer)
-        if kd_anime_shock_active(tag):
-            blue_shock_clear(tag)
 
         store.char_pos.pop(tag, None)
         store.char_state.pop(tag, None)
@@ -545,9 +541,7 @@ init python:
         expr = store.char_state[tag]["expr"]
         img = f"{tag} {expr}"
         renpy.show(img, tag=tag, layer="master",
-                   at_list=kd_anime_sprite_at_list(
-                       tag, [Position(xalign=x, yalign=y), MoveTransition(t)]))
-        kd_anime_shock_sync_overlay(tag)
+                  at_list=[Position(xalign=x, yalign=y), MoveTransition(t)])
 
 init python:
     def restyle_char(tag, mode="restore"):
@@ -578,8 +572,7 @@ init python:
         else:
             at_list.append(char_restore)
 
-        renpy.show(img, tag=tag, layer=layer,
-                   at_list=kd_anime_sprite_at_list(tag, at_list), zorder=z)
+        renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
 
 init python:
     def cam_x_for_edge_safe_char(tag, zoom=None):
