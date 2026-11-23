@@ -30,7 +30,7 @@ init -2 python:
     # Durée du recadrage sur un nouveau locuteur (nerveux, façon DR/THL).
     CINEMA_FOCUS_TIME = 0.24
     # Seuil au-delà duquel la caméra est considérée cadrée sur un locuteur.
-    CINEMA_SPEAKER_ZOOM_MIN = CINEMA_ZOOM_BG * 0.92
+    CINEMA_SPEAKER_ZOOM_MIN = 1.30  # Inclut les focus adoucis des groupes
     CINEMA_SPRITE_ZOOM = 1.0
     CINEMA_SPRITE_YPUSH = -80
 
