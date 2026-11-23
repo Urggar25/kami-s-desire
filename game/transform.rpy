@@ -128,8 +128,6 @@ init python:
                 if tag not in next_tags:
                     old_layer = store.char_state.get(tag, {}).get("layer", layer)
                     renpy.hide(tag, layer=old_layer)
-                    if kd_anime_shock_active(tag):
-                        blue_shock_clear(tag)
                     store.char_pos.pop(tag, None)
                     store.char_state.pop(tag, None)
 
@@ -146,10 +144,7 @@ init python:
             else:
                 at = char_group_enter(x, y)
                 entered = True
-            renpy.show(f"{tag} {expr}", tag=tag,
-                       at_list=kd_anime_sprite_at_list(tag, [at]),
-                       layer=layer, zorder=zorder + idx)
-            kd_anime_shock_sync_overlay(tag)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[at], layer=layer, zorder=zorder + idx)
 
         if entered:
             renpy.pause(GROUP_ENTER_TIME, hard=True)
@@ -173,8 +168,6 @@ init python:
         for tag in members:
             layer = store.char_state.get(tag, {}).get("layer", "master")
             renpy.hide(tag, layer=layer)
-            if kd_anime_shock_active(tag):
-                blue_shock_clear(tag)
             store.char_pos.pop(tag, None)
             store.char_state.pop(tag, None)
         store.group_members = []
