@@ -24,18 +24,42 @@ label _8_1_0_0_CANON:
     think "Deuxième matin de silence. Et moi qui écoute le plafond comme un idiot."
     "Je vais pour attraper ma tablette, puis j'aperçois l'espace vide sur le bureau."
     think "Le dessin."
-    "Le sommeil me quitte d'un seul coup."
-
+    "Hier soir, j'ai déjà retourné cette chambre. Je pourrais recommencer, mais je retrouverais surtout la même poussière."
+    "Je me redresse et essaie de remettre les choses dans l'ordre : le bureau, ma veste, la tablette que j'ai prise deux fois."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    noam inquiet "Juliette... Où est-ce que je t'ai rangée ?"
-    "Hier soir, j'ai retourné les affaires du bureau avant de me promettre de chercher au réveil. J'espérais presque que la feuille réapparaîtrait d'elle-même pendant la nuit."
-    noam reflechit "Allez. Tu as dû le glisser dans un tiroir. Ou dans un livre. Ou..."
-    "Je revois Juliette penchée sur son dessin, tirant la langue pour ajouter une dernière mèche de cheveux à mon portrait."
-    think "Elle avait passé trois semaines à recommencer mon nez, et j'avais fini par lui dire que c'était le mien qui était raté."
-    think "Elle avait ri. Puis elle m'avait interdit de toucher au dessin tant qu'elle n'avait pas signé."
-    noam triste "Je l'ai emporté jusque dans l'espace. Ce serait vraiment idiot de le perdre maintenant."
-    "Je regarde la chambre. Je suis presque certain d'avoir déjà tout fouillé. Presque."
-    tuto "(Fouille la chambre. Le dessin est peut-être encore là.)"
+    noam inquiet "Je l'avais encore hier matin. Ça, j'en suis sûr."
+    "Je revois Juliette penchée sur son dessin, la langue sortie pendant qu'elle essayait de réparer mon nez."
+    think "Elle y avait passé des semaines. Je lui avais dit que si elle n'y arrivait pas, c'était peut-être à cause du modèle."
+    "Elle avait ri, puis m'avait interdit d'y toucher avant d'avoir signé."
+    "Je cherche mon dernier souvenir précis de la feuille. Pas un endroit où elle pourrait être, cette fois. Un moment où je l'ai réellement eue dans les mains."
+    if j701_lysa_search_help:
+        play sound sfx_knock
+        lysa "Noam ?"
+        noam surpris "Déjà ?"
+        lysa "Tu m'as demandé de venir ce matin. C'était une suggestion ?"
+        "J'ouvre. Lysa tient deux gobelets. Elle m'en tend un, puis inspecte le désordre par-dessus mon épaule."
+        lysa "Ah, oui. Tu n'exagérais pas."
+        noam fatigue "Je t'avais dit de ne pas te moquer."
+        lysa "Tu ne m'as absolument pas dit ça."
+        noam "C'est vrai."
+        lysa "Alors. Qu'est-ce qui manque ?"
+        noam hesitation "Un dessin. Ma petite sœur l'a fait avant mon départ."
+        lysa "D'accord."
+        noam "Tu vas me dire que c'est juste une feuille ?"
+        lysa "Non. Tu vas me dire où tu l'as vue pour la dernière fois."
+        "Je lui montre le bureau. Elle regarde sans toucher aux objets."
+        lysa "Tu veux que je fouille à ta place ?"
+        noam "Non. Je crois que je dois surtout me souvenir."
+        lysa "Ça, je ne peux pas le faire pour toi."
+        "Son gobelet à la main, elle reste un moment à côté de la porte."
+        lysa "Je dois passer voir Elen. Si tu bloques, viens me trouver. Et ne jette rien."
+        noam "Je n'allais rien jeter."
+        lysa "Tu as mis une chaussette sur la tablette."
+        "Je la retire. Lysa sort sans ajouter un mot."
+    else:
+        "Je prends ma tablette. J'hésite devant la messagerie de Lysa, puis la referme."
+        think "Je pourrais demander de l'aide. Mais pour l'instant, je voudrais comprendre moi-même."
+    tuto "(Examine les objets pour reconstituer les derniers moments où tu as vu le dessin.)"
     $ hideGroup()
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ pnc_room = "chambre_j8"
@@ -87,8 +111,8 @@ screen pnc_chambre_j8():
 
         vbox:
             spacing 2
-            text "FOUILLE DE LA CHAMBRE" xalign 0.5 size 22 color "#D6E8F0"
-            text "Zones principales vérifiées : [j8_search_count] / 4" xalign 0.5 size 16 color "#7FCFEA"
+            text "RECONSTITUER LA MATINÉE D'HIER" xalign 0.5 size 22 color "#D6E8F0"
+            text "Souvenirs examinés : [j8_search_count] / 4" xalign 0.5 size 16 color "#7FCFEA"
 
 # -------------------------------------------------------
 # LABELS PnC
@@ -120,10 +144,10 @@ label _8_PNC_LIT:
 
     $ pnc_flags["lit"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
-    "Je retire l'oreiller, secoue la couverture et passe la main entre le matelas et le sommier."
-    "Je m'agenouille ensuite pour regarder dessous. Une chaussette oubliée, un peu de poussière... mais aucune trace du dessin."
-    noam desaccord "Même les chaussettes ont survécu, et pas ton dessin ? C'est une blague..."
-    think "J'aimerais croire que c'en est une."
+    "La couverture est encore de travers. Je la remonte et m'assieds au bord du lit."
+    think "Hier matin, après avoir parlé au dessin, j'ai cherché une chaussette. Je ne me suis pas approché du lit avec la feuille."
+    "Je me relève, un peu déçu de ne pas pouvoir accuser mon propre désordre."
+    noam fatigue "Bon. Ça élimine au moins un moment."
     return
 
 label _8_PNC_TELEVISION:
@@ -150,10 +174,10 @@ label _8_PNC_TIROIR:
 
     $ pnc_flags["tiroir"] = True
     $ showGroup([("noam", "reflexion", 0.50)])
-    "J'ouvre le tiroir jusqu'à la butée. Quelques formulaires du Conclave, mon badge de réserve et un stylo roulent vers l'avant."
-    "Je sors tout, inspecte chaque feuille, puis retire complètement le tiroir pour regarder derrière."
-    noam fatigue "J'ai emporté un badge de réserve jusque dans l'espace, mais j'ai perdu une feuille..."
-    "Je repose les formulaires, puis les reprends. Une deuxième vérification ne me coûte rien. Elle ne m'apporte rien non plus."
+    "Le tiroir coince toujours au même endroit. Je me souviens l'avoir ouvert hier pour y mettre ma chaussette."
+    "Le dessin était déjà introuvable à ce moment-là. Je passe un doigt sur le rebord et m'arrête."
+    noam reflechit "Alors pourquoi je reviens toujours là ?"
+    "Je referme doucement. Au moins, je sais que le souvenir de l'avoir rangé ici n'en est pas un."
     return
 
 label _8_PNC_ARMOIRE:
@@ -163,10 +187,11 @@ label _8_PNC_ARMOIRE:
 
     $ pnc_flags["armoire"] = True
     $ showGroup([("noam", "reflexion", 0.50)])
-    "J'ouvre l'armoire et décroche mes vêtements un par un. Je palpe les poches, déplie le pull de l'étagère et vérifie derrière les cintres."
-    "Le fond métallique apparaît entièrement nu."
-    think "Je fouille la poche de ma veste une deuxième fois. Elle est toujours vide."
-    noam colere "Bon sang, arrête de faire semblant de ne pas comprendre !"
+    "Ma veste pend sur la porte. Hier matin, je l'ai prise après avoir remis le dessin sur le bureau."
+    "Je ferme les yeux pour revoir le geste. Ma main sur le papier. La veste. Puis la tablette."
+    "Je voudrais retrouver le moment où j'ai glissé la feuille ailleurs. Il ne vient pas."
+    noam inquiet "Et si j'avais simplement oublié ?"
+    "Je ne touche pas aux vêtements. Ils ne m'apprendront rien de plus."
     return
 
 label _8_PNC_SALLE_DE_BAIN:
@@ -202,10 +227,11 @@ label _8_PNC_TABLETTE:
 
     $ pnc_flags["tablette"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
-    "Je soulève la tablette, inspecte sa station d'accueil, puis passe la main derrière la table et sous son plateau."
-    "La surface où j'avais posé le dessin est nue. Pas de feuille tombée, pas même un coin de papier coincé contre le mur."
-    "Je pose la tablette à l'endroit exact où se trouvait le dessin, puis la repousse."
-    think "J'étais certain de l'avoir vu ici. Pourquoi est-ce que plus je cherche, moins je suis sûr de moi ?"
+    "La tablette est posée sur sa station d'accueil. Hier matin, je l'ai prise, reposée, puis reprise avant de sortir."
+    "Le dessin était à côté de la lampe quand je l'ai soulevé pour retrouver ma chaussette. Je me rappelle même lui avoir parlé."
+    "Mais je ne l'ai pas regardé une seconde fois avant de fermer la porte."
+    think "Je peux dire où je l'ai laissé. Je ne peux pas dire à quel moment il a disparu."
+    "Je prends une note de l'heure approximative de mon départ, puis vérifie qu'elle s'est bien enregistrée."
     return
 
 label _8_PNC_SORTIE:
@@ -229,27 +255,22 @@ label _8_PNC_SORTIE:
 label _8_FIN_RECHERCHE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
-    "Le tiroir est sur le sol, les vêtements sur le lit, et je suis à deux doigts de fouiller une troisième fois dans la même poche."
-    noam desaccord "Ça suffit..."
-    think "Non. Ça ne suffit pas. J'aurais voulu pouvoir arrêter après avoir trouvé quelque chose."
-    "Je repense au bureau tel qu'il était avant que je le vide. La feuille était là. Ou alors je me trompe sur le moment où je l'ai vue pour la dernière fois."
-    noam reflechit "Je vais finir par accuser une chaussette de m'avoir volé..."
-    noam fatigue "Et elle aura un meilleur alibi que moi."
-    "Je ramasse une chaussette sous le lit. Ce n'est même pas celle que je cherchais."
-    noam taquin "Toi, je te garde. On aura une petite discussion ce soir."
-    "Je la pose sur le bureau, puis m'arrête. Je viens vraiment de mettre une chaussette en garde à vue."
-    "Le pire, c'est que ça ne me fait pas rire."
-    "Mon estomac proteste. Il est déjà tard."
-    think "Je vais manger. Ensuite, je pourrai revenir ici avec une tête qui fonctionne."
-    "Je récupère ma veste au fond d'une pile de vêtements."
+    "Je reste au milieu de la chambre, la tablette à la main."
+    "Je me souviens du dessin sur le bureau hier matin. Je me souviens de la veste. Je me souviens de ma sortie."
+    "Entre les deux, il y a juste un trou. Pas une preuve. Pas même une bonne idée."
+    noam fatigue "Bon... je n'apprendrai rien en regardant le même tiroir."
+    "Je note les derniers gestes dont je suis certain. Si je demande de l'aide, au moins je pourrai expliquer ce que j'ai déjà vérifié."
+    "Mon estomac gargouille. Je n'ai même pas pris de petit-déjeuner."
     menu:
-        "Laisser la chambre telle quelle.":
-            think "Au moins, si je reviens, je saurai où j'en étais."
-            $ chambre_range = True
-        "Remettre l'essentiel en place avant de sortir.":
-            "Je remets le tiroir sur ses rails et repousse les vêtements dans l'armoire."
-            think "Ça ne fait pas réapparaître le dessin, mais je respire un peu mieux."
+        "Laisser la chambre telle quelle pour conserver mes repères.":
+            "Je prends une photo du bureau avant de sortir."
             $ chambre_range = False
+        "Remettre les affaires en place avant de sortir.":
+            "Je remets les quelques vêtements déplacés sur leur étagère et replace le tiroir."
+            $ chambre_range = True
+    if j701_lysa_search_help:
+        "Je prends le gobelet que Lysa m'a laissé. Le café est froid, mais je le bois quand même."
+    "Je récupère ma veste. Je n'ai pas résolu grand-chose, mais je sais maintenant ce que j'ignore."
     $ hideGroup()
     "Je ferme ma porte. Par réflexe, je vérifie qu'elle est bien verrouillée."
     "Je n'ai aucune raison de le faire deux fois. Je le fais quand même."
@@ -269,7 +290,7 @@ label _8_0_1_CAFETERIA_ARRIVEE:
     $ showGroup([
         ("iris", "sourire"), ("julian", "decontracte"), ("lysa", "neutre"),
         ("noam", "fatigue"), ("elias", "detendu"), ("mara", "rire"),
-        ("tomas", "fatigue"), ("elen", "sourire")
+        ("tomas", "fatigue"), ("elen", "sourire"), ("ryn", "neutre"), ("kael", "fatigue")
     ])
 
     julian sourire "C'est officiel. J'annonce la naissance du premier jour férié du Conclave !"
