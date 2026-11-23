@@ -1,5 +1,6 @@
 # Anime reaction FX — Blue Shock / aoi-tate-sen
-# Aucune modification des assets des personnages : teinte et SVG par-dessus.
+# Aucune modification des assets : filtre sur le personnage et lignes
+# procedurales creees avec Composite/Solid (Ren'Py ne rend pas nos SVG).
 # Usage (non bloquant) :
 #   $ blue_shock("elias")                         # 1.4 s
 #   $ blue_shock("elen", intensity="light")       # irritation
@@ -18,8 +19,8 @@ transform kd_blue_shock_tint(intensity="normal"):
     easeout 0.13 matrixcolor SaturationMatrix(0.44 if intensity == "light" else (0.25 if intensity == "extreme" else 0.32)) * TintMatrix("#9cbae0" if intensity == "light" else ("#4779b9" if intensity == "extreme" else "#739bcc"))
 
 transform kd_blue_shock_overlay_anim(duration=1.4, intensity="normal"):
-    # Les SVG sont dessines sur la toile source des personnages : 1024x1536,
-    # les sprites du projet ont un zoom de source de 0.60.
+    # La composition native utilise la toile source 1024x1536 des sprites.
+    # Le zoom 0.60 n'est applique qu'une seule fois, sur l'overlay.
     subpixel True
     zoom 0.60
     alpha 0.0
@@ -34,11 +35,51 @@ screen kd_anime_shock_watchdog():
 
 init python:
     KD_BLUE_SHOCK_TAG_PREFIX = "kd_blue_shock_"
-    KD_BLUE_SHOCK_ASSETS = {
-        "light": "images/effects/kd_blue_shock_light.svg",
-        "normal": "images/effects/kd_blue_shock_normal.svg",
-        "extreme": "images/effects/kd_blue_shock_extreme.svg",
-    }
+    KD_BLUE_SHOCK_LEVELS = ("light", "normal", "extreme")
+    KD_BLUE_SHOCK_DISPLAYABLES = {}
+
+    def kd_blue_shock_art(intensity):
+        """Calques natifs de Ren'Py, aucun SVG ou fichier externe a charger.
+
+        La composition est dans les coordonnees 1024x1536 des personnages.
+        Des bandes progressivement etroites donnent le degrade du front,
+        puis les stries noires descendent sur le haut du visage.
+        """
+        if intensity in KD_BLUE_SHOCK_DISPLAYABLES:
+            return KD_BLUE_SHOCK_DISPLAYABLES[intensity]
+
+        strength = {"light": 0.48, "normal": 0.76, "extreme": 1.0}[intensity]
+        children = []
+        # Degrade facon anime : bandes bleues de plus en plus transparentes,
+        # largeur variable pour ne pas creer un gros rectangle sur le decor.
+        for i in range(18):
+            y = 175 + i * 17
+            width = int(400 - (i * 6 if i > 10 else 0))
+            x = 512 - width // 2
+            alpha = int((0.55 - i * 0.023) * 255 * strength)
+            alpha = max(0, min(255, alpha))
+            children.extend(((x, y), Solid("#163f8b%02x" % alpha, xsize=width, ysize=18)))
+
+        count = {"light": 11, "normal": 19, "extreme": 26}[intensity]
+        for i in range(count):
+            # Positionnement deterministe, pour garder une reaction stable
+            # et eviter de modifier les random states du jeu.
+            x = 322 + (i * 41) % 375
+            y = 182 + (i * 11) % 45
+            length = 75 + (i * 31) % 167
+            width = 3 + (i * 7) % 7
+            opacity = int((0.56 + (i % 4) * 0.10) * strength * 255)
+            children.extend(((x, y), Solid("#091d45%02x" % min(255, opacity),
+                                           xsize=width, ysize=length)))
+        # Fines lueurs sous le front ; pas de faux visage cache par une image.
+        for i in range(4):
+            x = 340 + i * 97
+            children.extend(((x, 410 + i * 6),
+                             Solid("#b4d9ff%02x" % int(65 * strength),
+                                   xsize=48, ysize=5)))
+        art = Composite((1024, 1536), *children)
+        KD_BLUE_SHOCK_DISPLAYABLES[intensity] = art
+        return art
 
     def kd_anime_shock_active(tag):
         entry = store.kd_anime_active_shocks.get(tag)
@@ -96,7 +137,7 @@ init python:
         entry["x"], entry["y"], entry["layer"] = x, y, layer
         renpy.show(
             kd_anime_shock_overlay_tag(tag),
-            what=KD_BLUE_SHOCK_ASSETS[entry["intensity"]],
+            what=kd_blue_shock_art(entry["intensity"]),
             tag=kd_anime_shock_overlay_tag(tag),
             at_list=[
                 Position(xalign=x, yalign=y),
@@ -112,7 +153,7 @@ init python:
         Conserve les animations de bouche, les expressions et le cadrage.
         Les parametres sont facultatifs pour un appel en une seule ligne.
         """
-        if intensity not in KD_BLUE_SHOCK_ASSETS:
+        if intensity not in KD_BLUE_SHOCK_LEVELS:
             raise ValueError("blue_shock intensity: light, normal ou extreme")
         state = store.char_state.get(tag)
         if not state:
@@ -138,11 +179,11 @@ init python:
             "y": state.get("y", 1.0),
         }
         kd_anime_shock_refresh(tag)
-        # Affiche les lignes et l'ombre exactement aux coordonnees du sprite.
-        # Un meme SVG transparent accompagne le visage sans remplacer son asset.
+        # Affiche les bandes anime natives exactement sur la toile du sprite.
+        # Aucun fichier SVG n'est charge (fix de l'asset manquant a l'ecran).
         renpy.show(
             kd_anime_shock_overlay_tag(tag),
-            what=KD_BLUE_SHOCK_ASSETS[intensity],
+            what=kd_blue_shock_art(intensity),
             tag=kd_anime_shock_overlay_tag(tag),
             at_list=[
                 Position(xalign=state.get("x", 0.5), yalign=state.get("y", 1.0)),
