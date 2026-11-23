@@ -95,8 +95,10 @@ label _6_0_1_REVEIL_CHAMBRE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Rendez-vous au Conclave à quatorze heures. Pas une minute en ret... en ret..."
     kami "Quatorze heures. Quatorze heures. Quatorze heures."
+    $ bc_show("noam", "surpris")
     noam surpris "Kami ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    $ bc_hide()
     kami "Je vous rappelle que l'unanimité est... est..."
     play sound "audio/sfx_glitch.mp3"
     kami "Ah ! Bon ! Vous connaissez la suite, mes petits... mes petits..."
@@ -339,14 +341,20 @@ label _6_0_1_TRANSITION_CONCLAVE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.8
     kami "Eh bien, quelle jolie réunion ! Vous avez l'heure, vous avez vos jambes, alors utilisez-les !"
+    $ bc_show("tomas", "inquiet")
     tomas inquiet "Kami, certaines tablettes indiquent treize heures cinquante et d'autres quatorze heures."
+    $ bc_hide()
     kami "Je le sais, Tomas."
+    $ bc_show("noam", "neutre")
     noam "Tu peux nous dire quel horaire est le bon ?"
+    $ bc_hide()
     kami "Bien sûr ! Bien... sûr."
     play sound "audio/sfx_glitch.mp3"
     with hpunch
     kami "Venez main... maintenant."
+    $ bc_show("elen", "neutre")
     elen "Et pourquoi ça a changé ?"
+    $ bc_hide()
     kami "Parce que j'en ai... j'en ai décidé ainsi, évidemment ! Tu veux aussi un justificatif si... signé ?"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Vous êtes attendus au Conclave. Merci. Mer... ci."
@@ -700,42 +708,61 @@ label _6_0_1_SIGNAL_INSTABLE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 0.5
     kami "Merci de votre patience ! Un simple ajustement de connexion. Ça arrive même aux meilleurs."
+    $ bc_show("julian", "taquin")
     julian taquin "Tu vas nous dire qu'on doit redémarrer la station ?"
+    $ bc_hide()
     kami "Ha ha ! Très drôle, Julian."
+    $ bc_show("julian", "neutre")
     julian "Je n'essayais pas vraiment..."
     iris reflechit "Elle peut répondre. C'est déjà bon signe."
     nyra reflechit "Kami, peux-tu afficher le même texte sur nos douze tablettes ? Sans lancer le scrutin."
+    $ bc_hide()
     kami "Bien sûr !"
     "L'écran de Nyra reste vide."
+    $ bc_show("nyra", "neutre")
     nyra "Je n'ai toujours rien."
+    $ bc_hide()
     kami "Tout est affiché."
+    $ bc_show("nyra", "neutre")
     nyra "Non."
+    $ bc_hide()
     kami "Tout est affiché."
     "Nyra retourne sa tablette pour la montrer à l'écran."
+    $ bc_show("nyra", "neutre")
     nyra "Regarde."
+    $ bc_hide()
     kami "Je regarde."
     "Iris se lève."
+    $ bc_show("iris", "inquiet")
     iris inquiet "Kami, arrête de répondre comme ça. Vérifie le canal avant de continuer."
+    $ bc_hide()
     kami "Je n'ai pas besoin de..."
     pause 0.4
     kami "De..."
     "Le sourire de Kami se contracte. Le bord de son visage reste immobile alors que sa bouche continue de bouger."
     kami "Je n'ai pas besoin de vérification. Je suis opérationnelle."
+    $ bc_show("iris", "colere")
     iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
     noam inquiet "Iris, elle t'entend."
     iris "J'espère bien ! Je veux qu'elle me dise ce qui se passe, pas qu'elle récite une réponse toute faite !"
     "Kami ouvre la bouche pour lui répondre."
     "Ce qui sort des haut-parleurs n'a rien à voir."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    $ bc_hide()
     kami "Ouverture anticipée du scrutin. Veuillez valider vos bulletins."
     play sound "audio/sfx_kami_alert.wav"
     "Sur ma tablette, les boutons POUR et CONTRE s'allument. Ils clignotent."
+    $ bc_show("tomas", "surpris")
     tomas surpris "Hein ? Déjà ?"
     nyra inquiet "Personne ne touche à rien !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    $ bc_hide()
     kami "Ha ! Non, non, non. C'était une blague. Une petite blague."
+    $ bc_show("julian", "neutre")
     julian neutre "Une blague."
+    $ bc_hide()
     kami "Une excellente blague, Julian."
+    $ bc_show("julian", "neutre")
     julian "Je ne l'ai pas trouvée excellente."
     lysa blase "Personne ne l'a trouvée excellente."
     hide screen j601_kami_glitch
@@ -755,10 +782,15 @@ label _6_0_1_SIGNAL_INSTABLE:
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Quelqu'un d'autre ? Dans MON système ?"
     kami "Elias, mon chou. Tu as encore léché les câbles."
+    $ bc_show("elias", "neutre")
     elias "J'ai jamais léché de câble !"
+    $ bc_hide()
     kami "Il y a une première fois à tout."
+    $ bc_show("iris", "colere")
     iris colere "Kami ! Tu viens de dire un truc que tu n'as pas dit !"
+    $ bc_hide()
     kami "Je dis toujours ce que je dis, Iris. C'est même un peu ma spécialité."
+    $ bc_show("iris", "neutre")
     iris "..."
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
