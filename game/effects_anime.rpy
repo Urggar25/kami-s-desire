@@ -24,8 +24,8 @@ transform kd_blue_shock_overlay_anim(duration=1.4, intensity="normal"):
     subpixel True
     zoom 0.60
     alpha 0.0
-    yoffset -14
-    easeout 0.13 alpha (0.65 if intensity == "light" else 1.0) yoffset 0
+    yoffset -8
+    easeout 0.18 alpha (0.65 if intensity == "light" else 1.0) yoffset 0
     pause max(0.05, duration - 0.45)
     easein 0.28 alpha 0.0 yoffset 12
 
@@ -38,47 +38,93 @@ init python:
     KD_BLUE_SHOCK_LEVELS = ("light", "normal", "extreme")
     KD_BLUE_SHOCK_DISPLAYABLES = {}
 
-    def kd_blue_shock_art(intensity):
-        """Calques natifs de Ren'Py, aucun SVG ou fichier externe a charger.
+    def kd_blue_shock_art(tag, intensity):
+        """Ombre anime douce, localisee sur le visage du personnage.
 
-        La composition est dans les coordonnees 1024x1536 des personnages.
-        Des bandes progressivement etroites donnent le degrade du front,
-        puis les stries noires descendent sur le haut du visage.
+        Contrairement a la premiere version, aucune grande bande rectangulaire
+        et aucune ligne sur le decor : l'effet est masque par la silhouette du
+        sprite. Les couleurs se fondent progressivement vers le bas du visage.
+        Tous les calques sont des Solid/Composite natifs de Ren'Py 8.3.
         """
-        if intensity in KD_BLUE_SHOCK_DISPLAYABLES:
-            return KD_BLUE_SHOCK_DISPLAYABLES[intensity]
+        import math
 
-        strength = {"light": 0.48, "normal": 0.76, "extreme": 1.0}[intensity]
+        state = store.char_state.get(tag, {})
+        layer = state.get("layer", "master")
+        attrs = renpy.get_attributes(tag, layer=layer) or ()
+        expr = attrs[0] if attrs else state.get("expr", "neutre")
+        key = (tag, expr, intensity)
+        if key in KD_BLUE_SHOCK_DISPLAYABLES:
+            return KD_BLUE_SHOCK_DISPLAYABLES[key]
+
+        # Le haut du crane varie considerablement selon les personnages.
+        # KD_FACE_BOX existe deja pour les cut-ins du jeu (coord. 1024x1536).
+        face_x, head_y = KD_FACE_BOX.get(tag, (512, 145))
+        face_x = int(face_x)
+        head_y = int(head_y)
+        strength = {"light": 0.44, "normal": 0.73, "extreme": 0.94}[intensity]
         children = []
-        # Degrade facon anime : bandes bleues de plus en plus transparentes,
-        # largeur variable pour ne pas creer un gros rectangle sur le decor.
-        for i in range(18):
-            y = 175 + i * 17
-            width = int(400 - (i * 6 if i > 10 else 0))
-            x = 512 - width // 2
-            alpha = int((0.55 - i * 0.023) * 255 * strength)
-            alpha = max(0, min(255, alpha))
-            children.extend(((x, y), Solid("#163f8b%02x" % alpha, xsize=width, ysize=18)))
 
-        count = {"light": 11, "normal": 19, "extreme": 26}[intensity]
+        # Ombre bleue en ovale, avec fondu horizontal et vertical.
+        # Des tranches de 5 px remplacent les anciennes larges bandes
+        # rectangulaires qui recouvraient les cheveux et le decor.
+        total_rows = 57
+        for row in range(total_rows):
+            progress = float(row) / float(total_rows - 1)
+            fade_in = min(1.0, progress / 0.14)
+            fade_out = max(0.0, 1.0 - progress) ** 1.55
+            shape = max(0.0, math.sin(math.pi * (0.08 + 0.87 * progress)))
+            half_width = int((192 - 32 * progress) * shape)
+            if half_width < 4:
+                continue
+            y = head_y + 38 + row * 5
+            x = face_x - half_width
+            alpha = int(255 * strength * 0.45 * fade_in * fade_out)
+            if alpha < 2:
+                continue
+            # Contour legerement adouci : bords translucides.
+            edge = max(8, int(half_width * 0.18))
+            core_width = max(1, 2 * half_width - 2 * edge)
+            children.extend(((x + edge, y),
+                             Solid("#153f86%02x" % min(255, alpha),
+                                   xsize=core_width, ysize=6)))
+            children.extend(((x, y),
+                             Solid("#1c4f9b%02x" % max(1, alpha // 4),
+                                   xsize=edge, ysize=6)))
+            children.extend(((x + edge + core_width, y),
+                             Solid("#1c4f9b%02x" % max(1, alpha // 4),
+                                   xsize=edge, ysize=6)))
+
+        # Stries dessinees comme des aiguilles : debut marque puis
+        # effilement vers le bas, sans barre uniforme qui traverse les yeux.
+        count = {"light": 9, "normal": 16, "extreme": 22}[intensity]
         for i in range(count):
-            # Positionnement deterministe, pour garder une reaction stable
-            # et eviter de modifier les random states du jeu.
-            x = 322 + (i * 41) % 375
-            y = 182 + (i * 11) % 45
-            length = 75 + (i * 31) % 167
-            width = 3 + (i * 7) % 7
-            opacity = int((0.56 + (i % 4) * 0.10) * strength * 255)
-            children.extend(((x, y), Solid("#091d45%02x" % min(255, opacity),
-                                           xsize=width, ysize=length)))
-        # Fines lueurs sous le front ; pas de faux visage cache par une image.
-        for i in range(4):
-            x = 340 + i * 97
-            children.extend(((x, 410 + i * 6),
-                             Solid("#b4d9ff%02x" % int(65 * strength),
-                                   xsize=48, ysize=5)))
-        art = Composite((1024, 1536), *children)
-        KD_BLUE_SHOCK_DISPLAYABLES[intensity] = art
+            spread = (i + 0.5) / float(count) - 0.5
+            x = face_x + int(spread * 325) + ((i * 17) % 11 - 5)
+            y = head_y + 70 + (i * 13) % 41
+            length = 82 + (i * 31) % 108
+            width = 2 + (i * 5) % 4
+            base_alpha = int(255 * strength * (0.36 + (i % 3) * 0.075))
+            for seg in range(5):
+                start_y = y + (length * seg) // 5
+                segment_length = max(2, length // 5)
+                taper = max(1, width - seg // 2)
+                opacity = int(base_alpha * (1.0 - seg / 5.0) ** 1.15)
+                if opacity < 3:
+                    continue
+                children.extend(((x + (width - taper) // 2, start_y),
+                                 Solid("#081d42%02x" % min(255, opacity),
+                                       xsize=taper, ysize=segment_length + 1)))
+
+        plain_art = Composite((1024, 1536), *children)
+
+        # Les personnages ont une toile native 1024x1536 affichee a 60 %.
+        # Le masque reconstruit cette taille pour ne jamais colorer le decor
+        # ni les sprites voisins (probleme observe sur les captures).
+        # KD_SPRITE_SOURCE_SCALE est defini dans kd_staging.rpy.
+        mask = Transform(character_image(tag, expr),
+                         zoom=1.0 / KD_SPRITE_SOURCE_SCALE)
+        art = AlphaMask(plain_art, mask)
+        KD_BLUE_SHOCK_DISPLAYABLES[key] = art
         return art
 
     def kd_anime_shock_active(tag):
@@ -137,14 +183,14 @@ init python:
         entry["x"], entry["y"], entry["layer"] = x, y, layer
         renpy.show(
             kd_anime_shock_overlay_tag(tag),
-            what=kd_blue_shock_art(entry["intensity"]),
+            what=kd_blue_shock_art(tag, entry["intensity"]),
             tag=kd_anime_shock_overlay_tag(tag),
             at_list=[
                 Position(xalign=x, yalign=y),
                 kd_blue_shock_overlay_anim(remaining, entry["intensity"]),
             ],
             layer=layer,
-            zorder=700 + int(state.get("zorder", 0)),
+            zorder=int(state.get("zorder", 0)) + 1,
         )
 
     def blue_shock(tag, intensity="normal", duration=1.4, sound=False):
@@ -183,14 +229,14 @@ init python:
         # Aucun fichier SVG n'est charge (fix de l'asset manquant a l'ecran).
         renpy.show(
             kd_anime_shock_overlay_tag(tag),
-            what=kd_blue_shock_art(intensity),
+            what=kd_blue_shock_art(tag, intensity),
             tag=kd_anime_shock_overlay_tag(tag),
             at_list=[
                 Position(xalign=state.get("x", 0.5), yalign=state.get("y", 1.0)),
                 kd_blue_shock_overlay_anim(duration, intensity),
             ],
             layer=layer,
-            zorder=700 + int(state.get("zorder", 0)),
+            zorder=int(state.get("zorder", 0)) + 1,
         )
         renpy.show_screen("kd_anime_shock_watchdog")
         if sound and renpy.loadable("audio/sfx_qte_miss.wav"):
