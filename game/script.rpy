@@ -21,6 +21,12 @@ init -2 python:
     # image nette et cadrage buste complet (tête non coupée).
     CINEMA_ZOOM_BG = 1.67
     CINEMA_CAM_Y = 0.38
+    # Le plan de dialogue s'adapte au nombre de personnages visibles.
+    # Evite les portraits coupés sur les bords dans les groupes nombreux.
+    CINEMA_GROUP_SPEAKER_ZOOM = 1.46
+    CINEMA_TRIO_SPEAKER_ZOOM = 1.62
+    CINEMA_PAIR_SPEAKER_ZOOM = 1.80
+    CINEMA_GROUP_WIDE_ZOOM = 1.06
     # Durée du recadrage sur un nouveau locuteur (nerveux, façon DR/THL).
     CINEMA_FOCUS_TIME = 0.24
     # Seuil au-delà duquel la caméra est considérée cadrée sur un locuteur.
@@ -592,10 +598,35 @@ init python:
 # Cinéma : zoom BG + zoom sprite + dim autres + blur BG
 # ------------------------------------------------------------
 init python:
+    def cinema_visible_group_count():
+        """Compte les vrais sprites visibles, sans inclure les tags obsoletes."""
+        return sum(1 for tag in getattr(store, "group_members", [])
+                   if renpy.showing(tag, layer="master"))
+
+    def cinema_focus_zoom(tag):
+        """Le focus reste lisible sans transformer les plans collectifs en gros plans."""
+        n = cinema_visible_group_count()
+        if n >= 4:
+            return min(CINEMA_ZOOM_BG, CINEMA_GROUP_SPEAKER_ZOOM)
+        if n == 3:
+            return min(CINEMA_ZOOM_BG, CINEMA_TRIO_SPEAKER_ZOOM)
+        if n == 2:
+            return min(CINEMA_ZOOM_BG, CINEMA_PAIR_SPEAKER_ZOOM)
+        return CINEMA_ZOOM_BG
+
+    def cinema_wide_zoom():
+        """Les plans de narration doivent montrer le groupe plutot que le couper."""
+        n = cinema_visible_group_count()
+        if n >= 3:
+            return CINEMA_GROUP_WIDE_ZOOM
+        if n == 2:
+            return min(1.18, CINEMA_ZOOM_BG * 0.80)
+        return min(1.32, CINEMA_ZOOM_BG * 0.80)
+
     def cinematic_reset(t=0.6, cam_layers=("bgcam", "master"), blur_radius=2.0):
         # Reset garanti : cam + blur OFF + restore tous les persos
         bg_set_blur(False, blur_radius, layer="bgcam")
-        cam_move(0.5, 0.5, CINEMA_ZOOM_BG * 0.80, t=t, layers=cam_layers)
+        cam_move(0.5, 0.5, cinema_wide_zoom(), t=t, layers=cam_layers)
 
         for c in list(store.char_state.keys()):
             if renpy.showing(c, layer="master"):
@@ -616,8 +647,9 @@ init python:
             return
 
         bg_set_blur(False, 2.5, layer="bgcam")
-        safe_tx = cam_x_for_edge_safe_char(tag, CINEMA_ZOOM_BG)
-        cam_move(safe_tx, CINEMA_CAM_Y, CINEMA_ZOOM_BG, t, layers=("bgcam", "master"))
+        target_zoom = cinema_focus_zoom(tag)
+        safe_tx = cam_x_for_edge_safe_char(tag, target_zoom)
+        cam_move(safe_tx, CINEMA_CAM_Y, target_zoom, t, layers=("bgcam", "master"))
 
         for c in list(store.char_state.keys()):
             if not renpy.showing(c, layer="master"):
@@ -870,7 +902,7 @@ init -2:
 # ------------------------------------------------------------
 
 label _init_cinema_params:
-    $ CINEMA_ZOOM_BG = 2.25          # Zoom modéré sur le locuteur
+    $ CINEMA_ZOOM_BG = 1.85          # Gros plan solo; zoom réduit automatiquement en groupe
     $ CINEMA_CAM_Y = 0.41            # Cadrage relevé vers le visage
     $ CINEMA_SPRITE_ZOOM = 1.0       # Évite un double grossissement
     $ CINEMA_SPRITE_YPUSH = -80      # Relevé sprite (négatif = vers le haut)
