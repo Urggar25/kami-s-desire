@@ -128,6 +128,8 @@ init python:
                 if tag not in next_tags:
                     old_layer = store.char_state.get(tag, {}).get("layer", layer)
                     renpy.hide(tag, layer=old_layer)
+                    if kd_anime_shock_active(tag):
+                        blue_shock_clear(tag)
                     store.char_pos.pop(tag, None)
                     store.char_state.pop(tag, None)
 
@@ -171,6 +173,8 @@ init python:
         for tag in members:
             layer = store.char_state.get(tag, {}).get("layer", "master")
             renpy.hide(tag, layer=layer)
+            if kd_anime_shock_active(tag):
+                blue_shock_clear(tag)
             store.char_pos.pop(tag, None)
             store.char_state.pop(tag, None)
         store.group_members = []
