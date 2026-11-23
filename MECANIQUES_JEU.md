@@ -307,19 +307,6 @@ Pour chaque ajout ou modification future :
 | Lien Steam du dossier DLC | Ouvre une recherche Steam sur Kami's Desires tant que l'URL définitive du produit n'est pas connue. | `game/dlc_manager.rpy` | `Function(renpy.open_url, KD_DLC_STEAM_URL)` |
 
 
-## Réaction anime « Blue Shock » — 23 novembre 2026
-
-Effet générique, **non bloquant**, pour un personnage visible : désaturation et teinte bleue du sprite, lignes verticales sombres localisées au visage, sueur et petites vibrations graphiques. Les ombres du visage et les lignes sombres effilées sont dessinées par Ren'Py (`Composite`/`Solid`), alignées sur `KD_FACE_BOX`, et découpées sur la silhouette réelle du sprite (`AlphaMask`) : pas de rectangle bleu posé sur les personnages voisins. Aucun asset SVG externe n'est nécessaire. Le contrôleur `game/effects_anime.rpy` rétablit automatiquement les couleurs après le délai ; les appels `showP`, `showGroup` et `restyle_char` préservent l'effet tant qu'il est actif. L'overlay est affiché sur le même layer que le sprite et suit donc la caméra.
-
-| Variante | Usage | Appel |
-|---|---|---|
-| Light | Dépit, irritation légère | `$ blue_shock("elen", intensity="light")` |
-| Normal | Gêne, dégoût, consternation | `$ blue_shock("elias")` |
-| Extreme | Panique comique, humiliation | `$ blue_shock("julian", intensity="extreme", duration=2.0)` |
-| Arrêt manuel | Si la réaction doit être interrompue avant expiration | `$ blue_shock_clear("elias")` |
-
-L'option `sound=True` ajoute le SFX existant `audio/sfx_qte_miss.wav`, désactivé par défaut. La fonction renvoie `False` si le personnage n'est pas affiché. Ces effets ponctuels ne modifient pas les expressions ni les fichiers de sprite. Vérifier le rendu en jeu (Ren'Py 8.3.x), notamment pendant un changement de groupe ou de caméra.
-
 ## Animations expressives de visual novel — kit VN Video Motion (19 novembre 2026)
 
 **Source :** `game/kd_vn_video_motion.rpy`. Ces effets sont **ponctuels** (opt-in) et viennent compléter `showGroup`, l'autofocus, `close_up`, `cutin`, `reactions` et les animations de ponctuation : ne pas les déclencher à chaque réplique.
