@@ -1,5 +1,6 @@
 default j701_table_choice = "aucun"
 default j701_lysa_worry = False
+default j701_lysa_search_help = False
 default j701_iris_defense = False
 default j701_tomas_informed = False
 default j701_nyra_sorting = "standard"
@@ -1173,6 +1174,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     $ j701_table_choice = "aucun"
     $ j701_tomas_secret_kept = True
     $ j701_lysa_worry = False
+    $ j701_lysa_search_help = False
     $ j701_iris_defense = False
     $ j701_tomas_informed = False
     $ j701_nyra_sorting = "standard"
@@ -2216,7 +2218,7 @@ label _7_0_1_FIN_JOURNEE:
             "Je regarde les vêtements étalés sur mon lit."
             noam fatigue "Trop tard."
             "Elle répond par un simple « ... »."
-            $ j701_lysa_worry = True
+            $ j701_lysa_search_help = True
         "Ne rien dire à personne pour l'instant.":
             "Je reprends le dessin dans ma tête : le papier, le coin légèrement plié, l'endroit où je l'avais posé."
             "Je vois très bien ma main le remettre sur le bureau ce matin."
@@ -2227,7 +2229,7 @@ label _7_0_1_FIN_JOURNEE:
     "Je remets les objets à leur place, un par un. Je laisse seulement la boîte vide sur le bureau."
     "Au moment d'éteindre la lampe, je rouvre encore le tiroir."
     "Toujours rien."
-    if j701_lysa_worry:
+    if j701_lysa_search_help:
         noam triste "Demain, je chercherai avec Lysa."
     else:
         noam triste "Demain, je demanderai aux autres."
