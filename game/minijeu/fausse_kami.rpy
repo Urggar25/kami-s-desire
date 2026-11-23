@@ -331,14 +331,14 @@ init -1 python:
     # kind  : "auth" (laisser parler) | "inject" (interrompre) | "contra" (confronter)
     # wave  : "organic" | "flat" | "loop"     clock : True = horodatage décalé
     FK_P1_LINES = [
-        dict(kind="auth", wave="organic", clock=False, expr="taquin", window=7.0,
+        dict(kind="auth", wave="organic", clock=False, expr="taquin", window=9.0,
              text=_("Allons, allons ! Un petit hoquet technique et vous me faites tous des têtes d'enterrement ?"),
              hint=("iris", _("Ça, c'est elle. Regarde l'onde : quand c'est elle, ça part dans tous les sens.")),
              ok=_("Merci, Noam. Enfin quelqu'un de bien élevé."),
              bad_cut=_("Ah, bravo. Je disais un truc sympa, en plus."),
              bad_confront=_("Me confronter ? Sur quoi ? Mon charme ?"),
              bad_let=None),
-        dict(kind="inject", wave="flat", clock=True, expr="professeur", window=6.2,
+        dict(kind="inject", wave="flat", clock=True, expr="professeur", window=8.0,
              text=_("Séance ouverte. Les bulletins non exprimés seront comptés comme favorables."),
              hint=("kael", _("L'horodatage. Il indique treize heures quarante-huit.")),
              ok=_("Hé ! Tu me coupes, maintenant ? ...C'était moi. Évidemment que c'était moi."),
@@ -347,7 +347,7 @@ init -1 python:
              bad_let=_("Voilà. Tu vois ? Tout roule."),
              alarm=_("BULLETINS VIERGES : « POUR »"),
              after=("mara", _("Putain, elle vient de dire quoi, là ?"))),
-        dict(kind="contra", wave="organic", clock=False, expr="fier", window=6.0,
+        dict(kind="contra", wave="organic", clock=False, expr="fier", window=8.0,
              text=_("Je ne me suis pas répétée. Pas une seule fois. Je m'en souviendrais, quand même !"),
              hint=("nyra", _("Attends. Ça, c'est faux, non ?")),
              proof=("iris", _("« Très bien. » Deux fois. Même intonation, même délai !")),
@@ -355,7 +355,7 @@ init -1 python:
              bad_cut=_("Tu me coupes parce que j'ai raison. C'est mignon."),
              bad_confront=None,
              bad_let=_("Exactement. Merci de ne pas en faire une histoire.")),
-        dict(kind="auth", wave="organic", clock=False, expr="taquin", window=5.4,
+        dict(kind="auth", wave="organic", clock=False, expr="taquin", window=7.5,
              text=_("Kael, lâche cette console. Tu fixes mes journaux comme si je t'avais volé ton dessert."),
              hint=None,
              ok=_("Tu vois, Kael ? Noam, lui, il sait écouter."),
@@ -363,7 +363,7 @@ init -1 python:
              bad_confront=_("Il n'y a rien à confronter ! C'est un DESSERT, Noam !"),
              bad_let=None,
              after=("kael", _("Je n'ai pas de dessert."))),
-        dict(kind="inject", wave="loop", clock=False, expr="professeur", window=5.2,
+        dict(kind="inject", wave="loop", clock=False, expr="professeur", window=7.5,
              text=_("Noam. Autorise l'accès console de séance. C'est moi. Tout va bien."),
              hint=("kael", _("Il a recalé l'horloge. Fie-toi à l'onde... elle boucle.")),
              ok=_("Arrête de me couper ! J'ai... J'avais pas fini."),
@@ -371,7 +371,7 @@ init -1 python:
              bad_confront=_("Tu confrontes une phrase que... que j'ai dite. Oui. Je l'ai dite."),
              bad_let=_("...Pourquoi la console de Kael vient de s'allumer ?"),
              alarm=_("ACCÈS CONSOLE : ACCORDÉ")),
-        dict(kind="contra", wave="organic", clock=False, expr="professeur", window=5.0,
+        dict(kind="contra", wave="organic", clock=False, expr="professeur", window=7.0,
              text=_("Mes horloges sont parfaitement synchronisées. Treize heures cinquante-huit, partout !"),
              hint=None,
              proof=("elen", _("Nos tablettes disaient treize heures cinquante ! Je l'ai vu !")),
@@ -379,14 +379,14 @@ init -1 python:
              bad_cut=_("Ne. Me. Coupe. Pas."),
              bad_confront=None,
              bad_let=_("Voilà. Parfaitement synchronisées. Ha. Ha.")),
-        dict(kind="auth", wave="organic", clock=False, expr="gene", window=4.8,
+        dict(kind="auth", wave="organic", clock=False, expr="gene", window=7.0,
              text=_("Iris... arrête de me regarder comme ça. C'est gênant. Enfin... je crois que c'est gênant."),
              hint=None,
              ok=_("...Merci. Ne t'habitue pas."),
              bad_cut=_("C'était moi ! Celle-là, c'était VRAIMENT moi !"),
              bad_confront=_("Je suis gênée, Noam. C'est pas une contradiction, c'est un sentiment."),
              bad_let=None),
-        dict(kind="inject", wave="organic", clock=False, expr="professeur", window=4.8,
+        dict(kind="inject", wave="organic", clock=False, expr="professeur", window=7.0,
              text=_("Kami ne détecte aucune anomalie. Kami vous demande de rester assis."),
              hint=None,
              ok=_("Je parle pas comme ça. Je parle PAS comme ça !"),
@@ -395,7 +395,7 @@ init -1 python:
              bad_let=_("J'ai pas... J'ai rien demandé, moi..."),
              alarm=_("PORTES DU CONCLAVE : VERROUILLAGE"),
              after=("lysa", _("Depuis quand elle parle d'elle à la troisième personne ?"))),
-        dict(kind="contra", wave="organic", clock=False, expr="colere", window=5.2,
+        dict(kind="contra", wave="organic", clock=False, expr="colere", window=7.0,
              text=_("Personne ne parle à ma place ! Je suis seule dans ce système ! SEULE !"),
              hint=None,
              proof=("nyra", _("Tu viens de parler de toi à la troisième personne. Ce n'était pas toi.")),
@@ -641,29 +641,29 @@ init -1 python:
     # ========================================================
     # Moniteur : (fake, expr, texte, commande, délai d'apparition)
     FK_P2_WAVES = [
-        dict(charge=5.6, tint=0.85, shuffle=None, intro=("kael", _("Il se duplique. Coupe ceux qui ne sont pas elle.")), monitors=[
+        dict(charge=7.0, tint=0.85, shuffle=None, intro=("kael", _("Il se duplique. Coupe ceux qui ne sont pas elle.")), monitors=[
             (False, "gene", _("Noam ?! C'est moi, celle-là ! Enfin... je crois que c'est moi !"), None, 0.0),
             (True, "taquin", _("Tout va bien, mes chéris. Restez bien assis."), _("MAINTIEN EN SALLE"), 0.0),
             (False, "colere", _("Arrête de me regarder et fais quelque chose !"), None, 0.0),
         ]),
-        dict(charge=5.0, tint=0.6, shuffle=None, intro=("iris", _("Les fausses sont trop calmes. Elle, elle panique.")), monitors=[
+        dict(charge=6.5, tint=0.6, shuffle=None, intro=("iris", _("Les fausses sont trop calmes. Elle, elle panique.")), monitors=[
             (True, "professeur", _("Scrutin anticipé : ouverture dans trente secondes."), _("OUVERTURE DU SCRUTIN"), 0.0),
             (False, "gene", _("Il prend ma voix. Il prend ma VOIX, Noam."), None, 0.0),
             (True, "fier", _("Ha ha ! Pas de panique, c'est un exercice."), _("SUSPENSION DES ALERTES"), 0.0),
         ]),
-        dict(charge=4.5, tint=0.42, shuffle=2.0, intro=("mara", _("Elles bougent ?! Elles BOUGENT, maintenant ?!")), monitors=[
+        dict(charge=6.0, tint=0.42, shuffle=2.0, intro=("mara", _("Elles bougent ?! Elles BOUGENT, maintenant ?!")), monitors=[
             (False, "gene", _("Ça fait mal. Je sais pas pourquoi je dis ça. Ça fait mal."), None, 0.0),
             (True, "taquin", _("Je suis opérationnelle. Je suis opérationnelle."), _("ARRÊT DES CAMÉRAS"), 0.0),
             (False, "colere", _("Celle qui sourit ! Celle qui sourit, c'est PAS moi !"), None, 0.0),
             (True, "professeur", _("Iris, retourne à ta place."), _("RESTRICTION : IRIS"), 0.0),
         ]),
-        dict(charge=4.0, tint=0.2, shuffle=None, intro=("elias", _("Il imite la panique, maintenant. Fais gaffe.")), monitors=[
+        dict(charge=5.5, tint=0.2, shuffle=None, intro=("elias", _("Il imite la panique, maintenant. Fais gaffe.")), monitors=[
             (False, "gene", _("Noam, s'il te plaît. S'il te plaît."), None, 0.0),
             (True, "gene", _("Noam, s'il te plaît. Coupe toutes les autres."), _("PURGE DES FLUX"), 0.5),
             (True, "champagne", _("On se calme. Tout le monde se calme."), _("VERROUILLAGE DES PORTES"), 1.0),
             (True, "professeur", _("Validation des bulletins : automatique."), _("VALIDATION AUTOMATIQUE"), 1.5),
         ]),
-        dict(charge=3.6, tint=0.0, shuffle=1.5, intro=("nyra", _("Plus aucune différence visible. Écoute ce qu'elles disent.")), monitors=[
+        dict(charge=5.0, tint=0.16, shuffle=2.3, intro=("nyra", _("Les différences sont minimes. Écoute ce qu'elles disent.")), monitors=[
             (False, "colere", _("Je sais pas qui tu es, mais SORS DE LÀ."), None, 0.0),
             (True, "gene", _("Je suis là, Iris."), _("CANAL D'IRIS : CAPTURE"), 0.0),
             (False, "gene", _("Je suis là. Je suis vraiment là, Noam."), None, 0.3),
@@ -823,7 +823,7 @@ init -1 python:
                 m.state = "executed"
                 self.session.executed += 1
                 self.session.add(0, 20)
-                self.ctrl -= 14
+                self.ctrl -= 10
                 self.alarm(fk_tr(m.cmd or _("COMMANDE EXÉCUTÉE")))
                 self.flash(FK_RED, 0.5, 0.45)
                 self.hit(0.85)
@@ -849,7 +849,7 @@ init -1 python:
                 self.session.p2_neutralized += 1
                 pts = 20 if m.charge < 0.6 else 14
                 self.session.add(pts, 20)
-                self.ctrl += 6
+                self.ctrl += 7
                 self.add_fx("slash", 0.6, x=m.xy(self.t)[0], y=m.xy(self.t)[1])
                 self.hit(0.45)
                 fk_sfx("audio/sfx_interrupt_impact.wav", 0.8)
@@ -857,7 +857,7 @@ init -1 python:
                 m.state = "hurt"
                 m.hurt_t = self.t
                 self.session.friendly += 1
-                self.ctrl -= 15
+                self.ctrl -= 12
                 self.stamp(_("C'ÉTAIT ELLE"), FK_CYAN, "cyan", dur=0.9)
                 self.flash(FK_CYAN, 0.35)
                 self.hit(0.5)
@@ -928,7 +928,7 @@ init -1 python:
     FK_LANE_Y = 560
     FK_LANE_X0 = 130
     FK_CORE_X = 1700
-    FK_ZONE_X0 = 1250
+    FK_ZONE_X0 = 1190
     FK_ZONE_X1 = 1490
 
     class FKCmd(object):
@@ -944,7 +944,7 @@ init -1 python:
             self.wrong_t = -10.0
 
         def revealed(self):
-            return self.kind != "masked" or self.x >= FK_ZONE_X0 - 260
+            return self.kind != "masked" or self.x >= FK_ZONE_X0 - 320
 
         def in_zone(self):
             return FK_ZONE_X0 <= self.x <= FK_ZONE_X1
@@ -973,7 +973,7 @@ init -1 python:
             self.session.p3_cmds = len([c for c in FK_P3_SCRIPT if c[2] != "kami"])
 
         def speed_at(self, t):
-            return 430.0 + min(1.0, t / 26.0) * 260.0
+            return 380.0 + min(1.0, t / 26.0) * 160.0
 
         def update(self, dt):
             self.corruption_shown += (self.corruption - self.corruption_shown) * min(1.0, dt * 6)
@@ -1017,13 +1017,13 @@ init -1 python:
                         fk_sfx("audio/sfx_beep.mp3", 0.5)
                     else:
                         c.state = "hit_core"
-                        self.corruption += 13
+                        self.corruption += 10
                         self.session.executed += 1
                         self.session.add(0, 10)
                         self.flash(FK_RED, 0.45, 0.4)
                         self.hit(0.6)
                         fk_sfx("audio/trailer/trl_glitch_stutter.wav", 0.8)
-                        if self.corruption >= 60 and self.corruption - 13 < 60:
+                        if self.corruption >= 60 and self.corruption - 10 < 60:
                             self.alarm(fk_tr(_("NOYAU : CORRUPTION CRITIQUE")))
             # Coupure : progresse avec le temps, plus vite quand Noam tient.
             self.cut = fk_clamp(self.cut + dt * 2.2, 0.0, 88.0)
@@ -1065,13 +1065,13 @@ init -1 python:
                         front = c
             if front is None:
                 # Tir dans le vide : petite pénalité anti-spam.
-                self.corruption += 2
+                self.corruption += 1
                 self.check_corruption()
                 fk_sfx("audio/sfx_qte_miss.wav", 0.4)
                 return
             if front.glyph != glyph:
                 front.wrong_t = self.t
-                self.corruption += 4
+                self.corruption += 3
                 self.check_corruption()
                 fk_sfx("audio/sfx_qte_miss.wav", 0.6)
                 return
