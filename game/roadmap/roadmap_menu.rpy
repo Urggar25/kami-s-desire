@@ -1944,6 +1944,10 @@ init -2 python:
         node = ROADMAP_NODE_BY_ID.get(node_id)
         if not node:
             return
+        # Une téléportation dans une journée descendante de J6_0_1 saute
+        # son label de réveil : reconstruire ici l'accessoire d'Elias depuis
+        # les dépendances effectives de la roadmap, pas depuis le numéro du jour.
+        store.elias_cafe_harness_enabled = "day_6_incident" in roadmap_ancestry(node_id)
         for var_name, var_value in node.get("required_variables", {}).items():
             setattr(store, var_name, var_value)
         setup_label = node.get("setup")
