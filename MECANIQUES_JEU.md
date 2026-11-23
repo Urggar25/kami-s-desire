@@ -309,7 +309,7 @@ Pour chaque ajout ou modification future :
 
 ## Réaction anime « Blue Shock » — 23 novembre 2026
 
-Effet générique, **non bloquant**, pour un personnage visible : désaturation et teinte bleue du sprite, lignes verticales sombres localisées au visage, sueur et petites vibrations graphiques. Les lignes et bandes bleues sont dessinées directement par Ren'Py avec `Composite` et `Solid` dans `game/effects_anime.rpy` : aucun asset SVG externe (non pris en charge par le moteur) n'est nécessaire. Le contrôleur `game/effects_anime.rpy` rétablit automatiquement les couleurs après le délai ; les appels `showP`, `showGroup` et `restyle_char` préservent l'effet tant qu'il est actif. L'overlay est affiché sur le même layer que le sprite et suit donc la caméra.
+Effet générique, **non bloquant**, pour un personnage visible : désaturation et teinte bleue du sprite, lignes verticales sombres localisées au visage, sueur et petites vibrations graphiques. Les ombres du visage et les lignes sombres effilées sont dessinées par Ren'Py (`Composite`/`Solid`), alignées sur `KD_FACE_BOX`, et découpées sur la silhouette réelle du sprite (`AlphaMask`) : pas de rectangle bleu posé sur les personnages voisins. Aucun asset SVG externe n'est nécessaire. Le contrôleur `game/effects_anime.rpy` rétablit automatiquement les couleurs après le délai ; les appels `showP`, `showGroup` et `restyle_char` préservent l'effet tant qu'il est actif. L'overlay est affiché sur le même layer que le sprite et suit donc la caméra.
 
 | Variante | Usage | Appel |
 |---|---|---|
