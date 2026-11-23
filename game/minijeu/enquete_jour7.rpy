@@ -613,7 +613,7 @@ label j701_clue_counterweight:
     elias colere "Ou peut-être que le capteur raconte n'importe quoi. Pousse-toi."
     "Je soulève le faux fond avant lui. Deux poches d'eau aplaties sont sanglées sous la plaque."
     play sound "audio/sfx_metal_clank.mp3"
-    "Elles pèsent, au gramme près, le poids des batteries disparues. Le capteur n'a donc jamais enregistré de retrait."
+    "Les poches sont presque aussi lourdes que les batteries. Sur l'écran, le capteur indique toujours que l'étagère est pleine."
     elias surpris "Quelqu'un a pesé mes batteries avant de les prendre ?"
     noam reflechit "Et préparé les contrepoids avant cette nuit."
     mara mefiant "Donc le vol a commencé avant que les objets disparaissent."
