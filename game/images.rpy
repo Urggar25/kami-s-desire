@@ -1,6 +1,10 @@
 ﻿# ======================
 # ELIAS
 # ======================
+# L'accessoire est réservé à la route ouverte par J6_0_1 et ses descendants.
+# Variable de sauvegarde : le joueur peut aussi revenir sur une autre route.
+default elias_cafe_harness_enabled = False
+
 init -10 python:
     # Les DynamicDisplayable repassent souvent par les memes combinaisons de
     # calques. Conserver le Displayable final evite de recreer en boucle des
@@ -166,9 +170,14 @@ init python:
                 mouth = "bouche_parle"
             zoom = ELIAS_IMAGE_SCALE * (1.0 + (0.004 if (st % 0.42) < 0.21 else 0.0))
 
+        # Ordre réel des couches : corps -> sangle/tasse -> bras -> yeux -> bouche.
+        # Toutes les expressions partagent ce montage : aucun sprite n'est oublié.
+        asset_paths = [_elias_asset(body)]
+        if store.elias_cafe_harness_enabled and renpy.loadable(_elias_asset("acc_cafe")):
+            asset_paths.append(_elias_asset("acc_cafe"))
+        asset_paths.extend((_elias_asset(arms), _elias_asset(eyes), _elias_asset(mouth)))
         displayable = kd_cached_layered_sprite(
-            ELIAS_IMAGE_SIZE, zoom,
-            (_elias_asset(body), _elias_asset(arms), _elias_asset(eyes), _elias_asset(mouth)),
+            ELIAS_IMAGE_SIZE, zoom, tuple(asset_paths),
         )
         return displayable, kd_layered_sprite_delay(st, 5.1, 4.82, 4.98, speaking)
 
