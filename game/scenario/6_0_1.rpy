@@ -51,6 +51,7 @@ screen j601_kami_glitch():
 
 label _6_0_1_REVEIL_CHAMBRE:
 
+    $ elias_cafe_harness_enabled = True
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 2.0
     $ current_day = 6
