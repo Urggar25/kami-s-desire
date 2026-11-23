@@ -1,8 +1,8 @@
 # --------------------------------------------------------------------------------------------
-# JOUR 8 — Réveil chambre
-# Noam se réveille seul, calme. Cherche le dessin de Juliette. Ne le trouve pas.
-# Scène PnC : fouille de la chambre. Le dessin est introuvable.
-# Résolution : il décide d'aller manger.
+# JOUR 8 — Reconstitution de la disparition du dessin et crise de Kael
+# Continuité : assistance de Lysa et divulgation du relevé de Tomas au J7.
+# Scène PnC : Noam reconstitue ses derniers souvenirs plutôt que de refaire la fouille.
+# La crise de Kael révèle un autre objet intime disparu sans conclure à un coupable.
 # --------------------------------------------------------------------------------------------
 
 label _8_1_0_0_CANON:
@@ -294,7 +294,7 @@ label _8_0_1_CAFETERIA_ARRIVEE:
     ])
 
     julian sourire "Je déclare cette journée fériée."
-    elen surprise "Tu peux faire ça ?"
+    elen surpris "Tu peux faire ça ?"
     julian "Bien sûr. Je viens de le faire."
     lysa blase "C'est donc ça, le fonctionnement des institutions."
     julian taquin "La Fête du Grand Silence. Interdiction de prononcer le nom de Kami jusqu'à ce soir."
@@ -499,7 +499,7 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     lysa "Dans la poubelle."
     ryn "Dans une boîte qui était à côté de la poubelle."
     "Elias se lève pour aller vérifier. Ryn tente de le retenir, puis se ravise."
-    ryn fatigue "Bon, d'accord. On recommencera."
+    ryn desaccord "Bon, d'accord. On recommencera."
     lysa "Avec le mode d'emploi."
     ryn "On verra."
     "Il prend une gorgée d'eau. Personne n'ajoute rien."
