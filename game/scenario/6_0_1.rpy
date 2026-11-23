@@ -11,6 +11,9 @@ default j601_iris_confiance = 0
 default j601_repair_note = False
 default j601_julian_echo = False
 default j601_with_elen = False
+default j601_hack_result = {}
+default j601_hack_success = False
+default j601_hack_rank = "D"
 
 transform j601_sael_vote_strip:
     xalign 0.5
@@ -604,134 +607,174 @@ label _6_0_1_SIGNAL_INSTABLE:
     iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
     noam inquiet "Iris, elle t'entend."
     iris "J'espère bien ! Je veux qu'elle me dise ce qui se passe, pas qu'elle récite une réponse toute faite !"
-    iris "Alors laisse-les poser des questions."
-    kami "Bien sûr, Iris."
-    "L'écran s'éteint une nouvelle fois. Cette fois, les haut-parleurs émettent un souffle sourd."
-    hide screen j601_kami_glitch
-    hide screen kami_broadcast_ui
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([("mara", "mefiant"), ("ryn", "neutre"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "reflechit"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet"), ("elias", "neutre")])
-    stop music fadeout 0.2
-    mara mefiant "On reporte."
-    ryn neutre "Oui."
-    elen inquiet "Attendez, on peut ?"
-    nyra reflechit "Nous pouvons refuser de tenir le vote aujourd'hui. Mais pour modifier le texte, il faudra attendre une autre séance."
-    mara "Je préfère ça à un résultat sorti d'une boîte cassée."
-    kael reflechit "Je ne peux pas certifier l'état du système de dépouillement. Nous n'avons pas accès à ses journaux."
-    elias "Par contre, les tableaux locaux fonctionnent encore. Ils enregistrent les changements du canal de séance."
-    "Une alerte surgit sur ma tablette : « SESSION LOCALE — RETOUR EN ATTENTE »."
-    noam "Kael, j'ai un menu de récupération."
-    kael "Ne lance pas le scrutin. Essaie seulement de restaurer l'accès au dossier."
-    noam "Et si ça ne marche pas ?"
-    kael "Tu t'arrêtes. On n'est pas obligés de réparer Kami avec une tablette."
-    "Elias se penche au-dessus de mon épaule."
-    elias inquiet "Là. Le canal local. Tu peux le récupérer si tu suis la séquence."
-    call j601_play_signal_instable from _call_j601_play_signal_instable
-    $ j601_signal_stabilized = bool(_return)
-    stop sound fadeout 0.5
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    if j601_signal_stabilized:
-        "Mon dossier réapparaît. Je reconnais la proposition sur les frontières, mais le bouton de validation reste grisé."
-        noam surpris "Je l'ai !"
-        kael "Tu as récupéré ton affichage. C'est bien. Mais ne touche pas à la validation."
-        elias sourire "Au moins, on peut relire quelque chose !"
-        $ j601_vote_verification = True
-    else:
-        "La procédure de récupération échoue. Mon écran revient à un menu vide."
-        noam inquiet "Non. Ça ne marche pas."
-        kael "Alors on n'insiste pas."
-        elias fatigue "Je peux faire une capture depuis ma console si elle répond encore."
-        $ j601_vote_verification = False
-    "Les tablettes des autres représentants s'allument presque toutes à la fois."
-    elen peur "Ça recommence."
-    "Un bref clignotement traverse le plafond."
-    "La porte du Conclave émet un double bip. Personne n'a essayé de sortir."
-    tomas inquiet "C'est quoi, ce bruit ?"
-    kael inquiet "Je ne sais pas."
-    "Mara se lève pour aller vérifier. La porte s'ouvre normalement sous sa main."
-    mara neutre "Bon. Au moins, on peut sortir."
-    elen "C'est déjà ça."
-    "Mais personne ne la suit."
-    "La voix de Kami revient, beaucoup plus basse que d'habitude."
-    show screen kami_broadcast_ui
-    show screen j601_kami_glitch
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Tout va bien. Le système a retrouvé sa stabilité."
-    iris inquiet "Kami ?"
-    kami "Les procédures sont disponibles. Vous pouvez rester."
-    iris "Est-ce que tu sais ce qui vient de se passer ?"
-    kami "Je suis là, Iris."
-    iris "Je sais que tu es là !"
-    "Kami ne répond pas."
-    kami "Restez, s'il vous plaît."
-    "Il n'y a ni rire ni musique après sa phrase."
-    "Iris baisse lentement sa tablette."
-    iris fatigue "Ne faites rien. Pas encore."
-    hide screen j601_kami_glitch
-    hide screen kami_broadcast_ui
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([("mara", "mefiant"), ("ryn", "inquiet"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet")])
-    jump _6_0_1_FRACTURE_QTE
-
-label _6_0_1_FRACTURE_QTE:
-
-    play music "music/bgm_low_tension.mp3" fadein 1.5
-    "Kael et Nyra rapprochent leurs tablettes pour comparer ce qu'elles affichent."
-    $ showGroup([("nyra", "raison", 0.25), ("kael", "reflechit", 0.52), ("iris", "inquiet", 0.78)])
-    nyra reflechit "La proposition est bien revenue sur les douze écrans."
-    kael "Les journaux locaux, eux, signalent une différence entre l'heure de séance et l'horloge de la station."
-    iris "Ça peut être une transmission défectueuse. Ça n'implique pas une erreur dans les bulletins."
-    nyra "Non. Mais ça nous empêche d'être certains du contraire."
-    mara mefiant "Et donc ? On part et on revient quand elle sera remise ?"
-    elen inquiet "On ne peut pas laisser les gens attendre en disant juste qu'on verra plus tard."
-    ryn triste "On leur fera attendre trois jours de plus, quoi qu'on décide."
-    elen "Non. Si on vote, au moins on aura essayé."
-    ryn "Et si quelqu'un décide qu'on a voté autre chose ?"
-    "Elen s'arrête."
-    nyra "Je voudrais éviter qu'on confonde deux questions. La première, c'est : peut-on modifier les frontières aujourd'hui ? La seconde : est-ce que nous faisons confiance à cette procédure ?"
-    lysa reflechit "La réponse à la deuxième me paraît assez claire."
-    nyra "Ce n'est pas une raison pour inventer une réponse à la première."
-    "Sur l'écran de ma tablette, une ligne d'erreur disparaît aussitôt qu'elle apparaît."
-    elias inquiet "Attendez. Ça, on peut peut-être le conserver."
-    noam "Quoi ?"
-    elias "La trace du décalage. Pas le résultat du vote. Le problème de connexion lui-même."
-    kael reflechit "S'il reste quelque chose après la session, ça nous donnera au moins un point de comparaison."
-    noam "Tu veux que je fasse quoi ?"
-    elias "Capture la séquence pendant qu'elle passe. Et ne valide absolument rien."
-    "L'écran s'emplit de caractères qui se chevauchent. Je cherche les lignes qui reviennent."
-    call j601_play_fracture from _call_j601_play_fracture
-    $ j601_fracture_result = _return
-
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    if j601_fracture_result:
-        $ j601_fracture_trace_saved = True
-        "Une notification confirme : « TRACE LOCALE CONSERVÉE »."
-        noam "J'ai quelque chose."
-        kael reflechit "Montre."
-        "Il examine l'écran sans se précipiter."
-        kael "Bien. L'écart existe, et il est horodaté. Ça ne nous dit toujours pas s'il touche au dépouillement."
-        nyra "Mais on pourra poser une question précise au lieu d'accuser Kami au hasard."
-    else:
-        $ j601_fracture_trace_saved = False
-        "La ligne s'efface. Rien n'a été enregistré."
-        noam "Raté."
-        elias fatigue "Je l'ai vue aussi. Ça ne suffit pas à en garder une copie."
-        kael "On notera l'heure approximative. Pas plus."
-    "Kami réapparaît sans bruit."
-    show screen kami_broadcast_ui
-    show screen j601_kami_glitch
+    "Kami ouvre la bouche pour lui répondre."
+    "Ce qui sort des haut-parleurs n'a rien à voir."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    play music "music/bgm_system_override.mp3" fadein 0.6
-    kami "Le texte est disponible. Le scrutin peut... peut commencer."
-    mara colere "Non. Pas tant que tu ne nous auras pas expliqué ce qui s'est passé."
-    kami "Je suis opérationnelle."
-    mara "Ça ne répond pas à ma question."
-    kami "Le scrutin peut commencer."
-    nyra "Kami, peut-on suspendre la séance et reprendre le même texte quand tu auras vérifié ton système ?"
-    "Un long silence."
-    kami "La séance de ce jour se terminera sans amendement adopté en l'absence de vote unanime."
-    elen inquiet "Ça veut dire quoi ?"
-    kael reflechit "Que si nous quittons la salle, les restrictions restent. Et le prochain créneau est dans trois jours."
+    kami "Ouverture anticipée du scrutin. Veuillez valider vos bulletins."
+    play sound "audio/sfx_kami_alert.wav"
+    "Sur ma tablette, les boutons POUR et CONTRE s'allument. Ils clignotent."
+    tomas surpris "Hein ? Déjà ?"
+    nyra inquiet "Personne ne touche à rien !"
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Ha ! Non, non, non. C'était une blague. Une petite blague."
+    julian neutre "Une blague."
+    kami "Une excellente blague, Julian."
+    julian "Je ne l'ai pas trouvée excellente."
+    lysa blase "Personne ne l'a trouvée excellente."
+    hide screen j601_kami_glitch
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("mara", "mefiant"), ("ryn", "colere"), ("sael", "mefiant"), ("iris", "peur"), ("nyra", "inquiet"), ("kael", "reflechit"), ("elias", "inquiet"), ("lysa", "blase"), ("noam", "inquiet")])
+    kael reflechit "Elias. Tu vois ce que je vois ?"
+    elias inquiet "Deux signatures sur le canal de diffusion. Une à elle. L'autre..."
+    elias "L'autre, je sais pas."
+    mara colere "Comment ça, tu sais pas ?! C'est ton boulot de savoir !"
+    elias panique "Mon boulot, c'est de réparer des pompes, Mara !"
+    "Iris n'a pas bougé depuis l'annonce."
+    iris peur "Il y a quelqu'un d'autre. Dans son canal."
+    "Elle le dit presque tout bas. Personne ne lui répond tout de suite."
+    show screen kami_broadcast_ui
+    show screen j601_kami_glitch
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Quelqu'un d'autre ? Dans MON système ?"
+    kami "Elias, mon chou. Tu as encore léché les câbles."
+    elias "J'ai jamais léché de câble !"
+    kami "Il y a une première fois à tout."
+    iris colere "Kami ! Tu viens de dire un truc que tu n'as pas dit !"
+    kami "Je dis toujours ce que je dis, Iris. C'est même un peu ma spécialité."
+    iris "..."
+    hide screen j601_kami_glitch
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("ryn", "colere"), ("kael", "reflechit"), ("sael", "mefiant"), ("mara", "agace"), ("nyra", "raison"), ("julian", "taquin"), ("lysa", "blase"), ("iris", "inquiet"), ("noam", "inquiet")])
+    ryn colere "On la débranche, et c'est réglé."
+    kael reflechit "On ne débranche pas l'IA d'une station comme un grille-pain."
+    ryn "Pourquoi pas ?"
+    kael "Parce que c'est elle qui gère l'oxygène, Ryn."
+    ryn neutre "..."
+    ryn "Ah."
+    sael mefiant "Alors on fait quoi ? On attend qu'il vote à notre place ?"
+    kael "Elle peut couper elle-même sa connexion vers l'extérieur. Si elle le fait, celui qui parle à sa place perd l'accès."
+    mara agace "Elle ne le fera pas. Elle refuse même d'admettre qu'il y a un problème."
+    nyra raison "Alors il faut le lui montrer. Phrase par phrase."
+    nyra "Tant qu'on ne sait pas qui parle, rien de ce qui sort de ces haut-parleurs n'a valeur de séance."
+    julian taquin "Je propose qu'on inscrive ça au règlement."
+    lysa blase "Julian."
+    julian neutre "Oui, bon. Plus tard."
+    kael "Noam. Ta tablette a encore le menu de session locale ?"
+    noam surpris "Celle qui plante depuis ce matin ?"
+    kael "Elle plante moins que les autres. Je te relaie le filtre du canal. Tu pourras bloquer ce qui passe."
+    noam inquiet "Et comment je sais ce qui vient d'elle ?"
+    iris reflechit "Tu l'écoutes. Et tu regardes l'onde."
+    iris "Je répare des intercoms depuis que j'ai douze ans. Quand c'est elle, ça part dans tous les sens. Elle respire, même sans poumons."
+    noam "Et quand c'est pas elle ?"
+    iris inquiet "C'est propre. Trop propre."
+    elias inquiet "Regarde aussi l'horodatage. Tout à l'heure, les trucs bizarres sortaient à treize heures quarante-huit."
+    noam "D'accord. Je fais de mon mieux."
+    mara agace "Fais mieux que ton mieux."
+    noam neutre "Merci, Mara. Ça aide énormément."
+    "Elle hausse les épaules. Je pose ma tablette à plat sur la table."
+    show screen kami_broadcast_ui
+    show screen j601_kami_glitch
+    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    kami "Oh ! Noam veut jouer au technicien ? C'est adorable."
+    kami "Vas-y. Coupe-moi, pour voir."
+    hide screen j601_kami_glitch
+    hide screen kami_broadcast_ui
+    $ hideGroup()
+    window hide
+
+    call fausse_kami_run from _call_fausse_kami_run_j601
+    $ j601_hack_result = _return if isinstance(_return, dict) else {"success": False}
+    $ j601_hack_success = bool(j601_hack_result.get("success", False))
+    $ j601_hack_rank = j601_hack_result.get("rank", "D")
+    $ j601_signal_stabilized = j601_hack_success
+    $ j601_vote_verification = j601_hack_success
+    $ j601_fracture_trace_saved = j601_hack_success
+    jump _6_0_1_APRES_COUPURE
+
+label _6_0_1_APRES_COUPURE:
+
+    stop music
+    scene bg_conclave at adaptive_fullscreen with Dissolve(1.2)
+    window show
+
+    if j601_hack_success:
+        "Les haut-parleurs ne crachent plus rien."
+        "Pas un souffle. Pas un grésillement."
+        "Juste le ventilateur au-dessus de la table."
+        $ showGroup([("elen", "peur"), ("kael", "fatigue"), ("iris", "inquiet"), ("elias", "choc"), ("mara", "stress"), ("lysa", "neutre"), ("noam", "fatigue")])
+        elen peur "Elle est... morte ?"
+        kael fatigue "Non. Déconnectée. Le noyau tourne toujours."
+        kael "C'est elle qui a ouvert le relais. On l'a juste aidée à tenir."
+        if j601_hack_result.get("late_cut", False):
+            kael "Enfin. J'ai fini à la main. Ce truc résistait jusqu'au bout."
+            noam inquiet "Désolé, j'ai pas..."
+            kael calme "Ça a coupé. C'est ce qui compte."
+        "Iris fixe l'écran noir. Elle a posé les deux mains à plat sur sa tablette, comme si elle avait peur qu'elle s'envole."
+        iris fatigue "Elle l'a dit. Elle a dit qu'elle était piratée."
+        iris "Elle avait peur, je crois."
+        lysa neutre "Les IA ont peur, maintenant ?"
+        iris colere "J'en sais rien, Lysa ! Elle avait peur, c'est tout !"
+        lysa "...D'accord."
+        "Lysa n'ajoute rien. C'est peut-être la première fois que je la vois reculer."
+        elias content "Par contre... j'ai tout enregistré. Les deux signatures, les commandes qu'il a essayé de passer. Tout."
+        kael reflechit "Montre."
+        "Kael se penche sur l'écran d'Elias. Il ne dit rien pendant un long moment."
+        kael "C'est propre. Horodaté. On a une vraie trace."
+        elias sourire "Tu peux le dire que je suis génial, hein."
+        kael "On a une vraie trace, Elias."
+        elias "C'est pareil, dans ta langue."
+        if j601_hack_rank in ("S", "A"):
+            mara sourire "Pas mal, le technicien."
+            noam sourire "Je prends."
+            mara "Profites-en. Je le redirai pas."
+        if j601_hack_result.get("executed", 0) > 0:
+            tomas inquiet "Et les commandes qui sont passées ? Elle a parlé de... verrouiller les portes ?"
+            "Mara se lève pour aller vérifier. La porte s'ouvre normalement sous sa main."
+            mara neutre "Bon. Au moins, on peut sortir."
+            elen "C'est déjà ça."
+        $ j601_iris_confiance = 1
+        $ award_stat_xp("observation", 1)
+        $ award_stat_xp("sang_froid", 1)
+    else:
+        "Je n'arrive plus à suivre. Les lignes défilent trop vite."
+        "Kael arrache le capot de la console murale et tire sur quelque chose. Un claquement sec."
+        play sound "audio/sfx_metal_clank.mp3"
+        "Tous les écrans s'éteignent en même temps."
+        $ showGroup([("kael", "inquiet"), ("iris", "peur"), ("elias", "fatigue"), ("mara", "stress"), ("elen", "peur"), ("noam", "triste")])
+        kael inquiet "Voilà. Coupé."
+        iris peur "Tu lui as fait mal ?!"
+        kael "Je ne sais pas. Je ne sais même pas si ça se dit, pour elle."
+        iris "Tu ne sais pas ?!"
+        kael "Non, Iris. Je ne sais pas."
+        "Iris se rassoit sans le quitter des yeux."
+        elias fatigue "Il a eu le temps d'effacer derrière lui. J'ai plus rien. Pas une ligne."
+        noam triste "Désolé. J'ai pas réussi à le suivre."
+        elias "Personne l'a suivi, Noam."
+        "La porte du Conclave émet un double bip. Personne n'a essayé de sortir."
+        tomas inquiet "C'est quoi, ce bruit ?"
+        "Mara se lève pour aller vérifier. La porte s'ouvre normalement sous sa main."
+        mara neutre "Bon. Au moins, on peut sortir."
+        elen "C'est déjà ça."
+        "Mais personne ne la suit."
+        $ j601_iris_confiance = -1
+
+    $ showGroup([("mara", "doute"), ("ryn", "triste"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet"), ("noam", "inquiet"), ("tomas", "inquiet")])
+    play music "music/bgm_low_tension.mp3" fadein 1.5
+    nyra reflechit "La séance n'est pas levée."
+    mara agace "Tu rigoles ? Il n'y a plus personne pour la lever."
+    nyra "Justement. Sans Kami, c'est le protocole de secours qui prend le relais."
+    elen inquiet "Le protocole de quoi ?"
+    kael reflechit "Une procédure locale. Elle n'est reliée à rien, ni à Kami, ni à l'extérieur. Elle ouvre le scrutin à l'heure prévue et compte les bulletins."
+    nyra "Si nous quittons la salle, les restrictions restent. Le prochain créneau est dans trois jours."
+    lysa blase "Donc on vote avec un répondeur."
+    kael "Avec des annonces préenregistrées. Sa voix, découpée en morceaux."
+    lysa "Un répondeur."
+    if j601_hack_success:
+        kael "Pour une fois, c'est peut-être le moment le plus sûr pour voter. Il n'y a plus personne entre nous et les bulletins."
+    else:
+        kael "Je ne peux pas certifier ce qu'il a eu le temps de toucher. Le protocole, lui, est séparé. C'est tout ce que je peux dire."
     mara "Alors je préfère sortir."
     ryn triste "Et rentrer chez nous avec quoi ? Un « on verra » ?"
     mara "Tu préférerais un résultat dont personne ne peut répondre ?"
@@ -752,35 +795,23 @@ label _6_0_1_FRACTURE_QTE:
     "Il regarde les boutons apparus sur sa tablette."
     ryn "Je le veux encore."
     elen "Alors fais-le."
-    ryn triste "Je ne sais pas ce que Kami en fera."
+    ryn triste "Il y a cinq minutes, quelqu'un a essayé de valider nos bulletins à notre place."
     "Sael le regarde, mais n'intervient pas."
-    ryn "Je ne veux pas qu'un oui de ma part serve à ouvrir des passages sans que les villages sachent comment se défendre."
+    ryn "Je ne veux pas qu'un oui de ma part serve à ouvrir des passages sans que les villages sachent comment se défendre. Pas aujourd'hui. Pas comme ça."
     mara "Tu vas voter contre ?"
     ryn "Oui."
     elen triste "Ryn..."
     ryn "Je sais. Je sais ce que je dis."
     "Il se rassied et laisse sa tablette sur la table."
-    noam inquiet "Kami, si on participe, tu peux au moins nous dire combien de bulletins ont été enregistrés ? Sans révéler les choix."
-    kami "Douze bulletins seront comptabilisés."
-    noam "Tu pourras vérifier le nombre après ?"
-    kami "Oui, Noam."
-    "Sa réponse est immédiate. Pour la première fois depuis un moment, elle semble nous avoir compris."
-    iris inquiet "Je voudrais lui poser une question avant."
-    iris "Kami, tu peux me dire si tu es en danger ?"
-    "Personne ne bouge."
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Je suis là, Iris."
-    iris "Je ne t'ai pas demandé si tu étais là."
-    "Le visage de Kami reste affiché."
-    kami "Je suis là."
-    "Iris tourne la tête. Elle ne reprend pas la parole."
-    $ j601_iris_confiance = -1
-
-    hide screen j601_kami_glitch
-    hide screen kami_broadcast_ui
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([("mara", "doute"), ("ryn", "triste"), ("sael", "neutre"), ("iris", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "triste"), ("noam", "inquiet"), ("tomas", "inquiet")])
-    play music "music/bgm_low_tension.mp3" fadein 0.8
+    "Iris ne regarde pas la tablette. Elle regarde l'écran noir au-dessus de la table."
+    iris inquiet "Kami ?"
+    "Rien."
+    if j601_hack_success:
+        iris fatigue "Tu reviens après, hein ?"
+        "L'écran reste noir. Iris hoche la tête quand même, comme si on lui avait répondu."
+    else:
+        iris "..."
+        "Elle n'ajoute rien."
     "Nous pouvons quitter la pièce. Nous pouvons aussi voter. Rien ne garantit que ça se passera normalement."
     "Kael vérifie une dernière fois que le texte affiché sur les tablettes est identique."
     kael "La formulation est la même sur les douze écrans. Je ne peux pas certifier ce qui se passera après."
@@ -892,6 +923,7 @@ label _6_0_1_VOTE:
         think "Je me suis abstenu. Ça semblait être le seul choix que je pouvais faire sans mentir."
         think "Maintenant que je vois le résultat, je ne sais plus si je suis soulagé."
     "Personne ne demande le détail des bulletins."
+    "Les haut-parleurs se remettent à grésiller. C'est sa voix. Des morceaux d'annonces enregistrées, recollés bout à bout par le protocole de secours."
     show screen kami_broadcast_ui
     show screen j601_kami_glitch
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -971,7 +1003,7 @@ label _6_0_1_VOTE:
     iris inquiet "Kami ?"
     "Rien."
     iris "Kami, la séance est terminée. Tu peux me répondre ?"
-    elias inquiet "Peut-être qu'elle a désactivé le canal."
+    elias inquiet "Elle est encore coupée, Iris."
     iris colere "Je sais !"
     "Elle range sa tablette sans ajouter un mot."
     nyra reflechit "Nous devrions conserver les relevés locaux de la panne."
@@ -1013,7 +1045,7 @@ label _6_0_1_FIN_JOURNEE:
     iris fatigue "Pas moi."
     elen "Iris, s'il te plaît."
     iris "Je dois regarder les messages de Kami."
-    lysa blase "Elle ne répond pas aux questions depuis tout à l'heure."
+    lysa blase "Elle est débranchée, Iris."
     iris colere "Je sais."
     "Elle s'éloigne. Elen la regarde partir."
     elen triste "Je voulais pas l'embêter."
@@ -1116,11 +1148,11 @@ label _6_0_1_DORTOIR:
     else:
         think "Je me suis abstenu. J'y ai réfléchi tout l'après-midi et ça ne m'a pas rendu plus sûr de moi."
     if j601_fracture_trace_saved:
-        "Dans mes fichiers, la trace de la panne attend encore d'être transférée à Kael."
+        "Dans mes fichiers, la trace du piratage attend encore d'être transférée à Kael."
         $ j601_repair_note = True
         think "Je vais la lui envoyer demain. Pourvu qu'il puisse en tirer quelque chose."
     else:
-        "Je vérifie le journal des alertes. Rien sur la panne. Pas même une heure précise."
+        "Je vérifie le journal des alertes. Rien sur le piratage. Pas même une heure précise."
         think "Il va falloir qu'on se souvienne de ce qu'on a vu."
     "J'ouvre la messagerie."
     "Aucun nouveau message de Kami. Rien sur l'état du Conclave."

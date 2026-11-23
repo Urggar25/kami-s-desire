@@ -1714,7 +1714,7 @@ label _7_0_1_TEMPS_LIBRE_1:
     kael sourire "Tu peux aussi aller voir Julian. Il en donne des plus longues."
     "Il reprend la feuille."
     if j601_fracture_trace_saved:
-        kael reflechit "Au fait, tu as encore la trace que tu as enregistrée pendant le vote ?"
+        kael reflechit "Au fait, tu as encore la trace que tu as enregistrée pendant le piratage ?"
         noam "Oui."
         kael "Ne la supprime pas. Je voudrais comparer le décalage à l'horloge de la station."
         noam "Tu ne l'as pas déjà ?"
