@@ -570,7 +570,7 @@ label j701_clue_elias_testimony:
     noam doute "Tu es certain de ne pas y être retourné ?"
     elias colere "Certain ! À 23 h 47, tout était encore là. Ce matin, les emplacements étaient vides."
     "Il ne reconstruit pas un souvenir : il reproduit une routine. Les gestes, l'ordre, jusqu'au voyant de la porte."
-    think "S'il ment, il a préparé chaque détail. S'il dit vrai, la nuit vient de rétrécir."
+    "Je note l'heure. Elias vérifie que je ne me suis pas trompé d'un chiffre."
     $ hideGroup()
     return
 
@@ -594,7 +594,7 @@ label j701_clue_foil_crane:
     noam doute "Elen, tu en as donné à quelqu'un hier ?"
     elen inquiet "Non... mais j'en laisse partout. Sur les tables, dans les livres. N'importe qui pouvait en prendre une."
     "La graisse sur l'aile est fraîche. L'origami, lui, peut avoir changé dix fois de mains."
-    think "Une signature parfaite pour accuser Elen. Donc une signature presque inutile."
+    "Je conserve l'origami, mais Elen ne semble pas savoir quoi en penser non plus."
     $ hideGroup()
     return
 
@@ -617,8 +617,8 @@ label j701_clue_counterweight:
     elias surpris "Quelqu'un a pesé mes batteries avant de les prendre ?"
     noam reflechit "Et préparé les contrepoids avant cette nuit."
     mara mefiant "Donc le vol a commencé avant que les objets disparaissent."
-    "Ce n'est plus un geste improvisé. C'est un tour de prestidigitation répété à l'avance, jusqu'à devenir invisible pour la salle elle-même."
-    think "Le voleur ne s'est pas contenté de connaître le stockage. Il connaissait la façon dont le stockage regarde."
+    elias inquiet "Il fallait savoir comment le capteur fonctionnait. Et avoir prévu les poches d'eau."
+    "Je repose une poche sur la balance. Elle affiche la même valeur. Je la retire aussitôt."
     $ hideGroup()
     return
 
@@ -640,8 +640,9 @@ label j701_clue_blank_receipt:
     noam surpris "La ligne a été effacée ?"
     kael mefiant "Non. Une suppression laisserait un trou. Là, le système croit vraiment que personne a effectué le retrait."
     noam reflechit "Ou qu'il a reçu un nom qu'il n'est pas capable d'afficher."
-    "Le reçu prouve l'heure et l'autorisation — puis avale la seule chose qui nous intéresse."
-    think "À 02 h 14, la porte s'est ouverte pour un utilisateur que la machine ne sait pas nommer."
+    "Kael essaie d'exporter le reçu. L'emplacement du nom reste vide."
+    noam inquiet "Donc quelqu'un a eu le droit d'entrer, mais la porte ne sait pas qui ?"
+    kael "C'est ce que je veux vérifier."
     $ hideGroup()
     return
 
@@ -665,7 +666,7 @@ label j701_clue_brown_hair:
     mara mefiant "Il prouve surtout que quelqu'un voulait qu'on le trouve."
     noam inquiet "Brun et court... Ça désigne beaucoup trop de monde."
     mara neutre "Exactement. Suffisamment précis pour lancer une accusation. Suffisamment vague pour en lancer cinq."
-    think "Une preuve posée exprès peut mentir. Mais elle révèle tout de même l'existence d'un menteur."
+    "Mara met le cheveu dans un sachet sans y inscrire de nom."
     $ hideGroup()
     return
 
@@ -690,8 +691,9 @@ label j701_clue_negative_blueprint:
     noam reflechit "Les batteries, le micro-soudeur, les stabilisateurs..."
     elias inquiet "Tout ce qu'il faut pour que ce truc accepte une énorme charge sans griller."
     kael mefiant "Et quelqu'un a effacé le mode d'emploi après l'avoir fabriqué."
-    "Nous savons enfin que le matériel n'a pas seulement été caché. Une partie a déjà servi."
-    think "On ne cherche plus uniquement un voleur. On cherche ce qu'il a fabriqué."
+    elias inquiet "Tu crois que ce machin est encore dans la station ?"
+    kael "J'en sais rien. Il faudrait déjà savoir ce que c'est."
+    "Kael photographie le contour laissé par la limaille. Elias lui demande de reprendre la photo avec sa propre tablette."
     $ hideGroup()
     return
 
@@ -717,7 +719,7 @@ label j701_clue_kael_database:
     noam doute "Tu aurais pu nous prévenir."
     kael mefiant "Et transformer chaque ligne de code en débat collectif ? J'ai choisi de gagner du temps."
     "Sa justification tient. Son réflexe, beaucoup moins."
-    think "Kael peut être en train de nous aider. Il peut aussi choisir exactement ce que nous allons voir."
+    "Je ne sais pas si je dois le croire. Kael ne rouvre pas la fenêtre tant que je reste près de lui."
     $ hideGroup()
     return
 
@@ -744,7 +746,8 @@ label j701_clue_maintenance_log:
     noam reflechit "Assez de temps pour déplacer une cargaison sans courir."
     kael doute "Ou assez de temps pour vouloir nous faire croire à ce trajet. Ce journal a déjà accepté une identité impossible."
     "La ligne de 02 h 34 relie enfin deux salles. Elle ne nous dit toujours pas qui a franchi la porte."
-    think "Le matériel disparu est très probablement passé par la maintenance. À 2 h 34, quelqu'un y est entré sans laisser de nom."
+    lysa "Quelqu'un a dû passer par là."
+    kael "Probablement. Ou quelqu'un veut qu'on le croie."
     $ hideGroup()
     return
 
@@ -767,7 +770,7 @@ label j701_clue_vertical_tracks:
     mara doute "Pour la faire passer quand elle s'ouvre ?"
     iris inquiet "Ou pour la glisser dans le rail. Il est couvert de poussière noire fraîche."
     "Quelque chose de lourd a bien circulé au-dessus de la porte, hors du champ de la caméra."
-    think "Le voleur n'a pas traversé le sas. Il a utilisé la porte elle-même comme ascenseur."
+    "Mara essaie de faire bouger une plaque métallique fixée au-dessus de la porte. Elle ne cède pas."
     $ hideGroup()
     return
 
@@ -792,7 +795,7 @@ label j701_clue_impossible_echo:
     noam inquiet "Quelqu'un a diffusé un faux bip dans la salle."
     kael mefiant "Oui. Mais pour tromper une personne, un autre capteur... ou notre enquête ?"
     "Le micro ne répond pas. Il conserve seulement deux sons identiques dans un ordre impossible."
-    think "Quelqu'un a fabriqué du bruit comme il a fabriqué de fausses données : juste assez vrai pour que la machine l'accepte."
+    "Je réécoute les deux bips. Sans l'analyse de Kael, je n'aurais jamais remarqué qu'ils étaient identiques."
     $ hideGroup()
     return
 
