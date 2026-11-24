@@ -47,6 +47,9 @@ init python:
         "embarrassed": (12,5,.25), "interest": (0,-8,.28), "laugh": (0,-9,.14),
         "suspicion": (-5,0,.25), "silence": (0,0,.3),
         "step_back": (18,6,.28), "approach": (-12,-8,.28),
+        "recoil": (18,6,.175), "anger": (9,0,.09), "hesitate": (5,3,.25),
+        "lean_forward": (0,-11,.20), "exhausted": (0,15,.35),
+        "nervous": (5,0,.25), "shock": (0,-16,.15), "emphasis": (0,-6,.125),
     }
 
     def kd_direct_visible():
@@ -82,11 +85,13 @@ init python:
         skip = renpy.is_skipping() or not persistent.kd_dialogue_direction
         if reaction:
             dx,dy,t = KD_DIRECT_REACTIONS.get(reaction,(0,0,.2))
-            tr = kd_direct_pose(x,y,scale,facing,dim,0 if skip else dx,0 if skip else dy,0 if skip else t)
+            tr = kd_direct_pose(x,y,scale,facing,dim,0,0,0)
+            if not skip:
+                tr = [tr, kd_character_motion(reaction)]
         elif entry is not None:
             tr = kd_direct_arrive(x,y,scale,facing,entry,0 if skip else .3)
         elif old_x is not None:
             tr = kd_direct_move(x if skip else old_x,x,y,scale,facing,0 if skip else .22,dim)
         else:
             tr = kd_direct_pose(x,y,scale,facing,dim,0,0,0 if skip else .13,active and not skip)
-        renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=[tr],zorder=(500 if active else st.get("zorder",0)+depth))
+        renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=(tr if isinstance(tr,list) else [tr]),zorder=(500 if active else st.get("zorder",0)+depth))

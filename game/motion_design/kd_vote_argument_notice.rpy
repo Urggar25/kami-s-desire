@@ -20,8 +20,8 @@ transform kd_vote_notice_slide:
     alpha 0.0
     xoffset 70
     easeout .22 alpha 1.0 xoffset 0
-    pause 2.4
-    easein .30 alpha 0.0 xoffset 70
+    pause 1.65
+    easein .40 alpha 0.0 xoffset 35
 
 screen kd_vote_argument_toast(items):
     modal False
@@ -48,4 +48,42 @@ screen kd_vote_argument_toast(items):
             text _("Enregistré automatiquement"):
                 size 17
                 color "#83C8B9"
+    # Dedicated dossier receiver: visible during the animation even with the tablet closed.
+    fixed:
+        xalign .97
+        yalign .065
+        xysize (76, 76)
+        at kd_vote_receiver_pulse
+        add Solid("#173849F0") xysize (76, 76)
+        add Solid("#79DDEF") xpos 0 ypos 0 xysize (76, 2)
+        add Solid("#79DDEF") xpos 0 ypos 74 xysize (76, 2)
+        add Transform("hud/dossier/ic_box.png", xysize=(42, 42), fit="contain") xalign .5 yalign .42
+        text ("+%d" % len(items)) size 18 color "#E8F7FF" xalign .5 yalign .93
+    fixed at kd_vote_card_fly:
+        xpos (config.screen_width - 255)
+        ypos int(config.screen_height * .24)
+        xysize (100, 62)
+        add Solid("#102B3A") xysize (100, 62)
+        add Solid("#79DDEF") xpos 0 ypos 0 xysize (100, 3)
+        add Transform("hud/dossier/ic_box.png", xysize=(40, 40), fit="contain") xalign .5 yalign .5
     timer 2.95 action Hide("kd_vote_argument_toast")
+
+transform kd_vote_card_fly:
+    subpixel True
+    alpha 0.0
+    zoom 1.0
+    pause 1.65
+    easeout .10 alpha 1.0
+    easein .42 xoffset 164 yoffset (-int(config.screen_height * .19)) zoom .35
+    linear .08 alpha 0.0
+
+transform kd_vote_receiver_pulse:
+    alpha 0.0
+    zoom 1.0
+    easeout .18 alpha 1.0
+    pause 1.99
+    easeout .10 zoom 1.13
+    easein .18 zoom 1.0
+    pause .23
+    easein .20 alpha 0.0
+

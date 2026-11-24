@@ -747,7 +747,7 @@ init python:
 
 init python:
     def make_autofocus_cb(tag, doublage_tag=None):
-        def _cb(event, interact=True, **kwargs):
+        def _stage_cb(event, interact=True, **kwargs):
             if event != "begin":
                 return
             manual_camera = getattr(store, "_cinema_manual_override", False)
@@ -823,6 +823,11 @@ init python:
 
             # Coupe sèche à l'arrivée dans un lieu, recadrage nerveux sinon.
             cinematic_focus(tag, t=0.0 if scene_changed else CINEMA_FOCUS_TIME)
+
+        def _cb(event, interact=True, **kwargs):
+            _stage_cb(event, interact=interact, **kwargs)
+            if event == "begin" and interact:
+                kd_play_queued_character_motion(tag)
 
         return _cb
 
