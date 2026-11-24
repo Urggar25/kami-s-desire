@@ -225,24 +225,24 @@ screen day1_access_terminal(phase="idle", attempts=2):
                 text "CONCLAVE // ACCESS CONTROL" color "#b5c8d0" size 22
                 null width 24
                 text ("%d/3" % attempts) color accent size 23
-            add Solid("#45616c") xfill True ysize 2
+            add Solid("#45616c", xysize=(terminal_w - 48, 2))
             fixed:
                 xsize (terminal_w - 48)
                 ysize int(terminal_h * 0.49)
                 add Solid("#142c36")
                 for i in range(7):
-                    add Solid("#28505a") xpos (i / 7.0) xsize 1 yfill True
+                    add Solid("#28505a", xysize=(1, int(terminal_h * 0.49))) xpos (i / 7.0)
                 for i in range(6):
-                    add Solid("#28505a") ypos (i / 6.0) ysize 1 xfill True
+                    add Solid("#28505a", xysize=(terminal_w - 48, 1)) ypos (i / 6.0)
                 vbox:
                     align (0.5, 0.5)
                     spacing 8
                     text "ID" size 70 color accent xalign 0.5
                     text ("NOAM" if phase != "idle" else "—") size 30 color "#d2e5e9" xalign 0.5
                 if phase == "scan":
-                    add Solid("#75dbc999") xfill True ysize 4 at day1_terminal_scanline
+                    add Solid("#75dbc999", xysize=(terminal_w - 48, 4)) at day1_terminal_scanline
             text ("PERMISSION DENIED" if phase == "denied" else "SCANNING..." if phase == "scan" else "AWAITING IDENTIFICATION") color accent size 29 xalign 0.5
-            add Solid(accent) xfill True ysize 2
+            add Solid(accent, xysize=(terminal_w - 48, 2))
 
 # J1: progressive loss of perception. Separate audio channels keep the
 # heartbeat and tinnitus audible at the same time.
@@ -2509,22 +2509,30 @@ screen day1_shower_atmosphere():
             xpos (0.08 + i * 0.10)
             xysize (2, 36)
 
-transform day1_sleep_lid(top=True, final=False):
+transform day1_sleep_lid(top=True):
     xalign 0.5
     yalign (0.0 if top else 1.0)
     xsize config.screen_width
     ysize 0
-    if final:
-        ease 1.65 ysize (config.screen_height // 2 + 2)
-    else:
-        ease 0.58 ysize int(config.screen_height * 0.41)
-        pause 0.18
-        ease 0.45 ysize 0
+    ease 0.58 ysize int(config.screen_height * 0.41)
+    pause 0.18
+    ease 0.45 ysize 0
+
+transform day1_sleep_lid_final(top=True):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize 0
+    ease 1.65 ysize (config.screen_height // 2 + 2)
 
 screen day1_sleep_lids(final=False):
     zorder 998
-    add Solid("#000") at day1_sleep_lid(True, final)
-    add Solid("#000") at day1_sleep_lid(False, final)
+    if final:
+        add Solid("#000") at day1_sleep_lid_final(True)
+        add Solid("#000") at day1_sleep_lid_final(False)
+    else:
+        add Solid("#000") at day1_sleep_lid(True)
+        add Solid("#000") at day1_sleep_lid(False)
 
 label _1_FIN_JOURNEE_DORTOIR:
 # =============================================================================
