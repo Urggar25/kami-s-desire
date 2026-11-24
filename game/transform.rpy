@@ -18,11 +18,11 @@ transform char_group_fade_in(xpos):
     linear 0.35 alpha 1.0
 
 # Entrée : glissé latéral depuis le bord le plus proche + fondu court.
-transform char_group_enter(xpos, ypos=1.0):
+transform char_group_enter(xpos, ypos=1.0, scale=1.0):
     subpixel True
     xalign xpos
     yalign ypos
-    zoom 1.0
+    zoom scale
     yoffset 0
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
     alpha 0.0
@@ -30,33 +30,33 @@ transform char_group_enter(xpos, ypos=1.0):
     easeout 0.15 alpha 1.0 xoffset 0
 
 # Personnage déjà présent : déplacement vers sa nouvelle place, sans fondu.
-transform char_group_move(xpos, ypos=1.0, from_x=None):
+transform char_group_move(xpos, ypos=1.0, from_x=None, scale=1.0, from_scale=None):
     subpixel True
     xalign (xpos if from_x is None else from_x)
     alpha 1.0
-    zoom 1.0
+    zoom (scale if from_scale is None else from_scale)
     yoffset 0
     xoffset 0
     yalign ypos
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
-    easeout 0.17 xalign xpos
+    easeout 0.17 xalign xpos zoom scale
 
-transform char_group_exit(xpos, ypos=1.0):
+transform char_group_exit(xpos, ypos=1.0, scale=1.0):
     subpixel True
     xalign xpos
     yalign ypos
     alpha 1.0
-    zoom 1.0
+    zoom scale
     yoffset 0
     easein 0.14 alpha 0.0 xoffset (-60 if xpos < 0.5 else 60)
 
 
-transform char_group_place(xpos, ypos=1.0):
+transform char_group_place(xpos, ypos=1.0, scale=1.0):
     subpixel True
     xalign xpos
     yalign ypos
     alpha 1.0
-    zoom 1.0
+    zoom scale
     yoffset 0
     xoffset 0
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
@@ -72,39 +72,42 @@ init python:
     GROUP_AUTO_X_MAX_SMALL = 1.10
     GROUP_AUTO_SMALL_MAX_MEMBERS = 5
 
-    def _group_auto_x(count, index):
-        """Centre les petits groupes pour garder les locuteurs dans le champ.
-
-        L'ancien cadrage placait systematiquement les deux personnages
-        extremes hors ecran (-0.11 et 1.10). Aucun autofocus ne pouvait
-        recentrer correctement ces sprites une fois la camera zoomee.
-        Les groupes denses conservent leur ancien etalement.
-        """
-        if count <= 1:
-            return 0.5
-        if count == 2:
-            return (.23,.77)[index]
-        if count == 3:
-            return (.10,.50,.90)[index]
-        if count <= GROUP_AUTO_SMALL_MAX_MEMBERS:
-            # 2-5 membres : chaque centre de sprite reste dans le cadre.
-            left, right = 0.08, 0.92
-        else:
-            left, right = GROUP_AUTO_X_MIN, GROUP_AUTO_X_MAX
-        return left + ((right - left) * float(index) / float(count - 1))
+    KD_GROUP_FORMATIONS = {
+        1: ((0.5, 1, 0),),
+        2: ((0.18, 1, 0), (0.82, 1, 1),),
+        3: ((0.08, 0.98, 0), (0.5, 1, 2), (0.92, 0.98, 1),),
+        4: ((0.04, 0.98, 2), (0.34, 0.94, 0), (0.66, 0.94, 1), (0.96, 0.98, 3),),
+        5: ((0.02, 0.98, 3), (0.25, 0.94, 0), (0.5, 1, 4), (0.75, 0.94, 1), (0.98, 0.98, 2),),
+        6: ((0.01, 0.96, 3), (0.19, 0.92, 0), (0.39, 0.97, 4), (0.61, 0.97, 5), (0.81, 0.92, 1), (0.99, 0.96, 2),),
+        7: ((0.01, 0.96, 4), (0.16, 0.92, 0), (0.32, 0.96, 5), (0.5, 0.93, 1), (0.68, 0.96, 6), (0.84, 0.92, 2), (0.99, 0.96, 3),),
+        8: ((0.01, 0.96, 4), (0.14, 0.92, 0), (0.28, 0.96, 5), (0.43, 0.93, 1), (0.57, 0.96, 6), (0.72, 0.93, 2), (0.86, 0.96, 7), (0.99, 0.92, 3),),
+        9: ((0.01, 0.96, 5), (0.12, 0.93, 0), (0.25, 0.96, 6), (0.37, 0.93, 1), (0.5, 0.96, 7), (0.63, 0.93, 2), (0.75, 0.96, 8), (0.88, 0.93, 3), (0.99, 0.96, 4),),
+        10: ((0.01, 0.96, 5), (0.11, 0.93, 0), (0.23, 0.96, 6), (0.34, 0.93, 1), (0.45, 0.96, 7), (0.55, 0.93, 2), (0.66, 0.96, 8), (0.77, 0.93, 3), (0.89, 0.96, 9), (0.99, 0.93, 4),),
+        11: ((0.01, 0.96, 6), (0.1, 0.93, 0), (0.2, 0.96, 7), (0.3, 0.93, 1), (0.4, 0.96, 8), (0.5, 0.93, 2), (0.6, 0.96, 9), (0.7, 0.93, 3), (0.8, 0.96, 10), (0.9, 0.93, 4), (0.99, 0.96, 5),),
+        12: ((0.01, 0.96, 6), (0.1, 0.93, 0), (0.19, 0.96, 7), (0.28, 0.93, 1), (0.37, 0.96, 8), (0.46, 0.93, 2), (0.54, 0.96, 9), (0.63, 0.93, 3), (0.72, 0.96, 10), (0.81, 0.93, 4), (0.9, 0.96, 11), (0.99, 0.93, 5),),
+    }
 
     def kd_group_formation(count, index):
-        # Small casts occupy usable screen space; large casts stagger depth.
-        if count <= 1:
-            return (.5, 1.0, 0)
-        if count == 2:
-            return ((.23,.77)[index], 1.0, index)
-        if count == 3:
-            return ((.10,.50,.90)[index], 1.0 if index==1 else .96, index)
-        x = .035 + .93 * index / float(count-1)
-        rear = index % 2 == 0
-        scale = (.88 if rear else .96) if count <= 5 else (.76 if rear else .87)
-        return (x, scale, index if rear else 30+index)
+        return KD_GROUP_FORMATIONS[max(1,min(12,count))][index]
+
+    def _group_auto_x(count, index):
+        return kd_group_formation(count,index)[0]
+
+    def kd_group_slots(members):
+        # Assign only unspecified positions; reserve nearest slots for authored positions.
+        slots = list(KD_GROUP_FORMATIONS[max(1,len(members))])
+        available = list(range(len(slots)))
+        assigned = {}
+        for i,m in enumerate(members):
+            if len(m)>2:
+                nearest = min(available,key=lambda k:abs(slots[k][0]-float(m[2])))
+                available.remove(nearest)
+                assigned[i] = (m[2],1.0,i)
+        for i,m in enumerate(members):
+            if i not in assigned:
+                k = available.pop(0)
+                assigned[i] = slots[k]
+        return assigned
 
     def _group_member_tuple(member, count, index):
         tag = member[0]
@@ -122,19 +125,8 @@ init python:
         if len(members) > GROUP_MAX_MEMBERS:
             raise Exception("showGroup accepte au maximum 12 personnages.")
 
-        normalized = []
-        for i, member in enumerate(members):
-            normalized.append(_group_member_tuple(member, min(len(members), GROUP_MAX_MEMBERS), i))
-
-        # Keep authored order. Spread cramped formations and dense casts,
-        # but retain deliberate small-cast positions when already readable.
-        if layer == "master" and len(normalized) > 1:
-            ordered = sorted(normalized, key=lambda m: m[2])
-            xs = [m[2] for m in ordered]
-            cramped = min(xs) < -.03 or max(xs) > 1.03 or min(b-a for a,b in zip(xs,xs[1:])) < .16
-            if len(ordered) >= 6 or cramped or any(len(m)<3 for m in members):
-                positions = {m[0]:kd_group_formation(len(ordered),i)[0] for i,m in enumerate(ordered)}
-                normalized = [(tag,expr,positions[tag]) for tag,expr,x in normalized]
+        slots = kd_group_slots(members)
+        normalized = [(m[0],m[1] if len(m)>1 else "neutre",slots[i][0]) for i,m in enumerate(members)]
 
         next_tags = [tag for tag, expr, x in normalized]
         old_tags = list(getattr(store, "group_members", []))
@@ -149,7 +141,7 @@ init python:
             x = state.get("x", store.char_pos.get(tag, 0.5))
             expr = state.get("expr", "neutre")
             old_y = state.get("y", y)
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, old_y)], layer=old_layer)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, old_y, state.get('group_scale',1.0))], layer=old_layer)
 
         if any(tag not in next_tags for tag in old_tags):
             renpy.pause(GROUP_EXIT_TIME, hard=True)
@@ -167,13 +159,15 @@ init python:
             already = tag in old_tags and renpy.showing(tag, layer=layer)
             from_x = store.char_state.get(tag, {}).get("x", x)
             store.char_pos[tag] = x
-            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder + idx)
+            scale, depth = slots[idx][1:]
+            old_scale = store.char_state.get(tag, {}).get("group_scale", 1.0)
+            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder + depth, group_scale=scale, group_manual=len(members[idx])>2)
             if already:
-                at = char_group_move(x, y, from_x)
+                at = char_group_move(x, y, from_x, scale, old_scale)
             else:
-                at = char_group_enter(x, y)
+                at = char_group_enter(x, y, scale)
                 entered = True
-            renpy.show(f"{tag} {expr}", tag=tag, at_list=[at], layer=layer, zorder=zorder + idx)
+            renpy.show(f"{tag} {expr}", tag=tag, at_list=[at], layer=layer, zorder=zorder + depth)
 
         if entered:
             renpy.pause(GROUP_ENTER_TIME, hard=True)
@@ -193,7 +187,7 @@ init python:
                 x = state.get("x", store.char_pos.get(tag, 0.5))
                 y = state.get("y", 1.0)
                 expr = state.get("expr", "neutre")
-                renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y)], layer=layer)
+                renpy.show(f"{tag} {expr}", tag=tag, at_list=[char_group_exit(x, y, state.get('group_scale',1.0))], layer=layer)
         if members:
             renpy.pause(GROUP_EXIT_TIME, hard=True)
         for tag in members:

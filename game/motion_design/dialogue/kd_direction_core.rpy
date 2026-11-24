@@ -44,17 +44,11 @@ init python:
             self.shot("wide",duration=0,hold=0)
 
         def recompose(self):
-            visible = sorted(kd_direct_visible(), key=lambda a:store.char_state[a].get("x",.5))
-            if not visible:
-                return
-            n = len(visible)
-            for i, actor in enumerate(visible):
-                x, scale, depth = kd_group_formation(n,i)
+            # Read the existing blocking; do not rearrange a scene on begin.
+            for actor in kd_direct_visible():
                 st = store.char_state[actor]
-                st["x"] = x
-                store.char_pos[actor] = x
-                store.kd_direction_poses = dict(store.kd_direction_poses, **{actor:(scale,1,depth)})
-            kd_direct_refresh_focus()
+                if actor not in store.kd_direction_poses:
+                    store.kd_direction_poses = dict(store.kd_direction_poses, **{actor:(st.get("group_scale",1.0),1,0)})
 
         def profile(self,name):
             if name not in KD_DIRECT_PROFILES:
@@ -101,8 +95,12 @@ init python:
                     z = min(1.48,1.0/max(.68,max(positions)-min(positions)+.24))
                 elif kind in ("close","reaction","isolate"):
                     z = min(1.78,solo+.18)
-                else:
+                elif kind=="field":
                     z = solo
+                elif kind=="reverse":
+                    z = max(1.32,solo-.14)
+                else:
+                    z = max(1.30,solo-.08)
                 x,y = kd_direct_center_for(mid,z),(.34 if kind in ("close","reaction","isolate") else .40)
             kd_direct_cam_apply(x,y,z,t,"easeout" if kind=="reaction" else "ease")
             store.kd_direction_plan,store.kd_direction_targets = kind,targets
@@ -185,7 +183,7 @@ init python:
                         st["x"] = original.get("x",st.get("x",.5))
                         st["y"] = original.get("y",st.get("y",1.0))
                         store.char_pos[a] = st["x"]
-                    renpy.show(a+" "+st["expr"],tag=a,layer="master",at_list=[char_group_place(st.get("x",.5),st.get("y",1.0))],zorder=st.get("zorder",0))
+                    renpy.show(a+" "+st["expr"],tag=a,layer="master",at_list=[char_group_place(st.get("x",.5),st.get("y",1.0),st.get("group_scale",1.0))],zorder=st.get("zorder",0))
             store.kd_direction_active = False
             store.kd_direction_speaker = None
             store.kd_direction_actors = ()
@@ -215,7 +213,14 @@ init python:
             if not visible:
                 self.end(restore=False)
                 return False
-            if tag=="__NARRATOR__" or tag not in visible:
+            if tag=="__NARRATOR__":
+                return True
+            if tag not in visible:
+                if store.kd_direction_speaker is not None:
+                    store.kd_direction_speaker = None
+                    kd_direct_refresh_focus()
+                if not store.kd_direction_locked and store.kd_direction_mode!="manual" and store.kd_direction_plan!="wide":
+                    self.shot("wide",duration=.20,hold=0)
                 return True
             # Focus is independent of camera holds, locks and cut cadence.
             if store.kd_direction_speaker != tag:
@@ -226,7 +231,9 @@ init python:
             store.kd_direction_history = hist
             if store.kd_direction_hold:
                 store.kd_direction_hold -= 1
-                return True
+                if store.kd_direction_locked or tag in store.kd_direction_targets or store.kd_direction_plan in ("wide","retreat","detail","subjective"):
+                    return True
+                store.kd_direction_hold = 0
             if store.kd_direction_locked or store.kd_direction_mode=="manual":
                 return True
             gap = KD_DIRECT_PROFILES[store.kd_direction_profile][0]

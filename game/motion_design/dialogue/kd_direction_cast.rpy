@@ -12,14 +12,14 @@ transform kd_direct_pose(x, y, scale=1.0, facing=1, dim=0.0, dx=0, dy=0, t=.22, 
     easeout t xoffset dx yoffset dy
     ease t xoffset 0 yoffset 0
 
-transform kd_direct_move(x0, x, y, scale=1.0, facing=1, t=.35):
+transform kd_direct_move(x0, x, y, scale=1.0, facing=1, t=.35, dim=0.0):
     subpixel True
     xalign x0
     yalign y
     zoom scale
     xzoom facing
     alpha 1.0
-    matrixcolor BrightnessMatrix(0.0)
+    matrixcolor (TintMatrix("#8d97b8") * BrightnessMatrix(dim) * SaturationMatrix(0.55) if dim < 0 else TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0))
     ease t xalign x
 
 transform kd_direct_arrive(x, y, scale=1.0, facing=1, dx=90, t=.3):
@@ -70,7 +70,7 @@ init python:
         x,y = st.get("x",.5),st.get("y",1.0)
         expr = kd_direct_expression(tag)
         st["expr"],st["mode"] = expr,None
-        scale,facing,depth = store.kd_direction_poses.get(tag,(1.0,1,0))
+        scale,facing,depth = store.kd_direction_poses.get(tag,(st.get("group_scale",1.0),1,0))
         speaker = store.kd_direction_speaker
         active = speaker == tag
         if dim is None:
@@ -86,7 +86,7 @@ init python:
         elif entry is not None:
             tr = kd_direct_arrive(x,y,scale,facing,entry,0 if skip else .3)
         elif old_x is not None:
-            tr = kd_direct_move(x if skip else old_x,x,y,scale,facing,0 if skip else .35)
+            tr = kd_direct_move(x if skip else old_x,x,y,scale,facing,0 if skip else .22,dim)
         else:
             tr = kd_direct_pose(x,y,scale,facing,dim,0,0,0 if skip else .13,active and not skip)
         renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=[tr],zorder=(500 if active else st.get("zorder",0)+depth))

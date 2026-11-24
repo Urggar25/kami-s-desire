@@ -377,13 +377,19 @@ transform char_restore:
     yoffset 0
     ease 0.12 matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
 
-transform char_dim(a=0.35):
+transform char_dim(a=0.35, scale=1.0):
     alpha 1.0
-    zoom 1.0
+    zoom scale
     yoffset 0
     ease 0.14 matrixcolor TintMatrix("#8d97b8") * BrightnessMatrix(-0.80 * a) * SaturationMatrix(0.55)
 
 # Nouveau locuteur : retour en pleine lumière + petit sursaut vertical.
+transform char_restore_scaled(scale=1.0):
+    alpha 1.0
+    zoom scale
+    yoffset 0
+    ease 0.12 matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
+
 transform char_focus:
     alpha 1.0
     zoom 1.0
@@ -563,23 +569,15 @@ init python:
         img = f"{tag} {expr}"
         at_list = [Position(xalign=x, yalign=y)]
         z = base_z
-        visible_group = [a for a in store.group_members if a in store.char_state and renpy.showing(a, layer=layer)]
-        dense = len(visible_group) >= 6 and tag in visible_group
-        if dense and mode != "focus":
-            ordered = sorted(visible_group, key=lambda a:store.char_state[a].get("x",.5))
-            _, scale, depth = kd_group_formation(len(ordered),ordered.index(tag))
-            z = base_z + depth
-
+        scale = st.get("group_scale",1.0)
         if mode == "dim":
-            at_list.append(char_dim(0.35))
+            at_list.append(char_dim(0.35, scale))
         elif mode == "focus":
             at_list.append(char_focus)
             z = 500
         else:
-            at_list.append(char_restore)
+            at_list.append(char_restore_scaled(scale))
 
-        if dense and mode != "focus":
-            at_list.append(Transform(zoom=scale))
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
 
 init python:

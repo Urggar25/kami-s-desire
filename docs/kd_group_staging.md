@@ -1,0 +1,3 @@
+# Group staging
+
+Authored positions are preserved. Missing positions use declarative formations for 1–12 actors; mixed groups reserve nearest slots for authored actors. Depth is deliberately shallow (scale .92–1.0) to avoid severe height discrepancies. showGroup owns blocking, focus owns contrast and foreground, kd_direct owns camera. No redistribution on director begin. Offscreen speaker releases focus and returns to wide, unless camera locked. Field and reverse have distinct zooms. Existing explicit positions may still overlap, intentionally or otherwise. Test on actual sprite assets in Ren'Py 8.3.7.
