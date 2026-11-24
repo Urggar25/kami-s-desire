@@ -195,6 +195,55 @@ screen day1_group_glance(tag, expression):
         add kd_face(tag, expression, 210)
     timer 1.10 action Hide("day1_group_glance")
 
+# J1: diegetic access terminal. Built from native Ren'Py displayables;
+# no new fonts, textures or minigame dependencies.
+transform day1_terminal_enter:
+    alpha 0.0
+    zoom 0.96
+    easeout 0.24 alpha 1.0 zoom 1.0
+
+transform day1_terminal_scanline:
+    ypos 0
+    linear 0.75 ypos 1.0
+
+screen day1_access_terminal(phase="idle", attempts=2):
+    zorder 110
+    $ accent = "#fa7778" if phase == "denied" else "#75dbc9"
+    $ terminal_w = int(config.screen_width * 0.43)
+    $ terminal_h = int(config.screen_height * 0.55)
+    add Solid("#08131ccc")
+    frame at day1_terminal_enter:
+        align (0.5, 0.42)
+        xysize (terminal_w, terminal_h)
+        padding (24, 20)
+        background Solid("#101d26")
+        vbox:
+            spacing 15
+            hbox:
+                xfill True
+                text "CONCLAVE // ACCESS CONTROL" color "#b5c8d0" size 22
+                null width 24
+                text ("%d/3" % attempts) color accent size 23
+            add Solid("#45616c") xfill True ysize 2
+            fixed:
+                xsize (terminal_w - 48)
+                ysize int(terminal_h * 0.49)
+                clipping True
+                add Solid("#142c36")
+                for i in range(7):
+                    add Solid("#28505a") xpos (i / 7.0) xsize 1 yfill True
+                for i in range(6):
+                    add Solid("#28505a") ypos (i / 6.0) ysize 1 xfill True
+                vbox:
+                    align (0.5, 0.5)
+                    spacing 8
+                    text "ID" size 70 color accent xalign 0.5
+                    text ("NOAM" if phase != "idle" else "—") size 30 color "#d2e5e9" xalign 0.5
+                if phase == "scan":
+                    add Solid("#75dbc999") xfill True ysize 4 at day1_terminal_scanline
+            text ("PERMISSION DENIED" if phase == "denied" else "SCANNING..." if phase == "scan" else "AWAITING IDENTIFICATION") color accent size 29 xalign 0.5
+            add Solid(accent) xfill True ysize 2
+
 transform day1_asphyxia_overlay_in:
     alpha 0.0
     ease 0.85 alpha 0.50
@@ -534,8 +583,15 @@ label _1_CHOICE:
             ryn "Allez au suivant ! Qu'on termine ça au plus vite."
 
             noam raison "Bon, bah je vais tenter."
+            $ _cinema_manual_override = True
+            $ cam_move(0.5, 0.5, 1.15, 0.30)
+            show screen day1_access_terminal("idle", 2)
+            pause 0.25
+            show screen day1_access_terminal("scan", 2)
             "Je mets ma main sur la porte puis je vois comme une petite lumière verte qui scanne ma main."
-
+            pause 0.75
+            play sound "audio/sfx_beep.mp3"
+            show screen day1_access_terminal("denied", 3)
             think "Noam, Permission denied."
             noam triste "Fait chier, ça marche pas..."
 
@@ -548,6 +604,8 @@ label _1_CHOICE:
             noam surpris "Hein, c'est quoi ça ?"
             think "Sur l'écran il est affiché en petit dans le coin supérieur droit : 3/3"
 
+            hide screen day1_access_terminal
+            $ day1_group_release()
             "Je me retourne face aux autres."
 
             noam hesitation "Y'a un chiffre bizarre à côté aussi, il y a écrit 3."
