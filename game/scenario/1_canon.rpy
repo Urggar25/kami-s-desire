@@ -2406,6 +2406,96 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
 # =============================================================================
 
+# J1: quiet end-of-day staging, mirroring the opening eyelids.
+transform day1_room_discover:
+    align (0.5, 0.5)
+    zoom 1.08
+    xoffset -22
+    ease 2.4 zoom 1.0 xoffset 0
+
+transform day1_room_night:
+    align (0.5, 0.5)
+    zoom 1.035
+    matrixcolor BrightnessMatrix(0.0)
+    ease 3.0 zoom 1.075 matrixcolor BrightnessMatrix(-0.24) * TintMatrix("#b8d1ff")
+
+transform day1_jammer_in:
+    alpha 0.0
+    yoffset 8
+    easeout 0.35 alpha 1.0 yoffset 0
+    pause 1.4
+    ease 0.4 alpha 0.0
+
+screen day1_jammer_status():
+    zorder 105
+    frame at day1_jammer_in:
+        xalign 0.95
+        yalign 0.16
+        padding (18, 12)
+        background Solid("#101c27dd")
+        hbox:
+            spacing 12
+            add Solid("#78e2a7"):
+                xysize (10, 10)
+                yalign 0.5
+            text _("BROUILLEUR ACTIF") color "#b8e9d1" size 24
+    timer 2.2 action Hide("day1_jammer_status")
+
+transform day1_shower_cg:
+    align (0.5, 0.5)
+    zoom 1.025
+    ease 5.0 zoom 1.075
+
+transform day1_steam_drift(delay=0.0):
+    blur 36
+    alpha 0.0
+    pause delay
+    block:
+        yoffset 32
+        ease 1.7 alpha 0.10 yoffset -20
+        ease 1.9 alpha 0.0 yoffset -75
+        repeat
+
+transform day1_water_drop(delay=0.0):
+    alpha 0.0
+    pause delay
+    block:
+        ypos 0.08
+        linear 0.12 alpha 0.18
+        linear 1.6 ypos 0.85
+        linear 0.15 alpha 0.0
+        repeat
+
+screen day1_shower_atmosphere():
+    zorder 80
+    for i in range(4):
+        add Solid("#d2e5ef") at day1_steam_drift(i * 0.6):
+            xalign 0.5
+            yalign (0.65 + i * 0.07)
+            xsize config.screen_width
+            ysize int(config.screen_height * 0.12)
+    for i in range(9):
+        add Solid("#edf8ff") at day1_water_drop(i * 0.21):
+            xpos (0.08 + i * 0.10)
+            xysize (2, 36)
+
+transform day1_sleep_lid(top=True, final=False):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize 0
+    if final:
+        ease 1.65 ysize (config.screen_height // 2 + 2)
+    else:
+        ease 0.58 ysize int(config.screen_height * 0.41)
+        pause 0.18
+        ease 0.45 ysize 0
+
+screen day1_sleep_lids(final=False):
+    zorder 998
+    add Solid("#000") at day1_sleep_lid(True, final)
+    add Solid("#000") at day1_sleep_lid(False, final)
+
 label _1_FIN_JOURNEE_DORTOIR:
 # =============================================================================
 
@@ -2474,18 +2564,21 @@ label _1_FIN_JOURNEE_DORTOIR:
     $ hideGroup()
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_137
-    scene bg_chambre at adaptive_fullscreen with fade
+    scene bg_chambre at adaptive_fullscreen, day1_room_discover with fade
 
     think "Ma chambre est étrangement assez confortable."
     think "Enfin seul. Je jette presque mes affaires et découvre un grand lit, une garde-robe..."
     think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, le voyant vert fixe du brouilleur confirme qu'il est actif."
     $ noam_room_jammer_on = True
+    show screen day1_jammer_status
 
     think "Il y a une salle de bain privée. Une douche chaude est la première décision simple de la journée."
 
     pause 0.2
 
-    scene bg_cg011 at adaptive_fullscreen with dissolve
+    hide screen day1_jammer_status
+    scene bg_cg011 at adaptive_fullscreen, day1_shower_cg with dissolve
+    show screen day1_shower_atmosphere
     $ unlock_gallery_image("bg_cg011")
 
     play sound sfx_shower
@@ -2495,29 +2588,28 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     pause 0.5
 
-    scene bg_chambre at adaptive_fullscreen with fade
+    hide screen day1_shower_atmosphere
+    stop sound fadeout 0.8
+    scene bg_chambre at adaptive_fullscreen, day1_room_night with fade
 
     think "Je m'allonge, mais l'image de l'urne me revient aussitôt. Demain, on saura quel texte Kami a choisi."
 
-    $ blink()
-
-    pause 0.4
-
-    $ blink()
-
-    pause 0.4
-
-    $ blink()
+    show screen day1_sleep_lids(False)
+    pause 1.25
+    hide screen day1_sleep_lids
 
     think "Je ferme les yeux. Les voix du Conclave me reviennent une à une. Douze représentants, une seule voix contre pour tout arrêter... et demain, l'une de nos feuilles deviendra l'affaire de tous."
     think "J'essaye de me souvenir de qui a souri pendant l'annonce."
     think "Je préfère arrêter de compter."
     think "Le sommeil finit par gagner."
 
-    $ blink()
-
-    scene black with fade
-    stop music fadeout 2.0
+    window hide
+    show screen day1_sleep_lids(True)
+    stop music fadeout 1.8
+    pause 1.8
+    scene black
+    hide screen day1_sleep_lids
+    window auto
 
     # Progression normale : la journée 1 se poursuit directement au jour 2.
     $ roadmap_complete("day_1")
