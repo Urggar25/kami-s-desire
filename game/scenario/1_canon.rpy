@@ -244,19 +244,41 @@ screen day1_access_terminal(phase="idle", attempts=2):
             text ("PERMISSION DENIED" if phase == "denied" else "SCANNING..." if phase == "scan" else "AWAITING IDENTIFICATION") color accent size 29 xalign 0.5
             add Solid(accent) xfill True ysize 2
 
+# J1: progressive loss of perception. Separate audio channels keep the
+# heartbeat and tinnitus audible at the same time.
+init python:
+    renpy.music.register_channel("day1_pulse", mixer="sfx", loop=False)
+
 transform day1_asphyxia_overlay_in:
     alpha 0.0
-    ease 0.85 alpha 0.50
-    block:
-        ease 0.48 alpha 0.68
-        ease 0.58 alpha 0.44
-        repeat
+    ease 1.0 alpha 0.16
+    ease 2.0 alpha 0.36
+
+transform day1_asphyxia_tunnel:
+    alpha 0.0
+    zoom 1.35
+    align (0.5, 0.5)
+    ease 1.0 alpha 0.75 zoom 1.0
+    ease 2.0 alpha 1.0 zoom 0.78
+
+transform day1_asphyxia_camera:
+    zoom 1.06
+    align (0.5, 0.5)
+    rotate 0
+    blur 0
+    ease 0.9 zoom 1.12 rotate -1.8 blur 3
+    ease 1.4 zoom 1.18 rotate 2.2 blur 9
+    ease 0.7 zoom 1.21 rotate -3.0 blur 14
+
+transform day1_asphyxia_cg:
+    zoom 1.04
+    align (0.5, 0.5)
+    ease 2.0 zoom 1.12
 
 screen day1_asphyxia_overlay():
     zorder 880
-    # Le rouge obscur se referme autour du champ visuel.
     add Solid("#26030c") at day1_asphyxia_overlay_in
-    add "images/effects/stress_vignette.svg" at _stress_breathe
+    add "images/effects/stress_vignette.svg" at day1_asphyxia_tunnel
 
 label _1_CANON:
 # =============================================================================
@@ -618,17 +640,19 @@ label _1_CHOICE:
 
             # La mort est annoncee par le son et une perte graduelle de perception.
             stop music fadeout 0.7
-            play sound "audio/sfx_heartbeat.mp3"
+            $ _cinema_manual_override = True
+            $ cam_reset(t=0.0)
+            camera master at day1_asphyxia_camera
+            play day1_pulse "audio/sfx_heartbeat.mp3" loop
             show screen day1_asphyxia_overlay
             "Ma tête commence soudainement à tourner. Quelque chose ne va pas."
 
             "Quel est ce bruit ?"
             think "Pourquoi je vois tout flou ?"
             play sound "audio/sfx_tinnitus.wav"
-            $ shake(9, 0.36)
-            scene cg007 at adaptive_fullscreen with vpunch
-            hide screen day1_asphyxia_overlay
-            with flash_red
+            pause 0.35
+            camera master
+            scene cg007 at adaptive_fullscreen, day1_asphyxia_cg with Dissolve(0.28)
             $ unlock_gallery_image("cg007")
             $ _day1_asphyxia_deaths = register_day1_asphyxia_death()
 
@@ -644,7 +668,12 @@ label _1_CHOICE:
 
             think "Put...a..."
 
-            stop sound
+            stop day1_pulse fadeout 0.25
+            stop sound fadeout 0.25
+            hide screen day1_asphyxia_overlay
+            camera master
+            $ _cinema_manual_override = False
+            $ cam_reset(t=0.0)
             scene black with suffocation_cut
             pause 0.35
 
@@ -2343,6 +2372,10 @@ label _1_FIN_JOURNEE_DORTOIR:
 # Fin alternative : Noam meurt en tentant d'ouvrir la porte.
 # La route s'arrête ici et le joueur revient à la chronologie.
 label _1_CHOICE_FATAL_END:
+    hide screen day1_access_terminal
+    hide screen day1_asphyxia_overlay
+    stop day1_pulse
+    $ _cinema_manual_override = False
     $ roadmap_complete("choice_day1_door")
     $ roadmap_complete("ending_day1_asphyxia")
     $ hideGroup()
