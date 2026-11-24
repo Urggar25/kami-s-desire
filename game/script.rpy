@@ -563,6 +563,12 @@ init python:
         img = f"{tag} {expr}"
         at_list = [Position(xalign=x, yalign=y)]
         z = base_z
+        visible_group = [a for a in store.group_members if a in store.char_state and renpy.showing(a, layer=layer)]
+        dense = len(visible_group) >= 6 and tag in visible_group
+        if dense and mode != "focus":
+            ordered = sorted(visible_group, key=lambda a:store.char_state[a].get("x",.5))
+            _, scale, depth = kd_group_formation(len(ordered),ordered.index(tag))
+            z = base_z + depth
 
         if mode == "dim":
             at_list.append(char_dim(0.35))
@@ -572,6 +578,8 @@ init python:
         else:
             at_list.append(char_restore)
 
+        if dense and mode != "focus":
+            at_list.append(Transform(zoom=scale))
         renpy.show(img, tag=tag, layer=layer, at_list=at_list, zorder=z)
 
 init python:

@@ -8,7 +8,7 @@ transform kd_direct_pose(x, y, scale=1.0, facing=1, dim=0.0, dx=0, dy=0, t=.22, 
     alpha 1.0
     matrixcolor (TintMatrix("#8d97b8") * BrightnessMatrix(dim) * SaturationMatrix(0.55) if dim < 0 else TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0))
     xoffset 0
-    yoffset 0
+    yoffset (10 if active else 0)
     easeout t xoffset dx yoffset dy
     ease t xoffset 0 yoffset 0
 
@@ -75,6 +75,8 @@ init python:
         active = speaker == tag
         if dim is None:
             dim = -0.28 if speaker is not None and not active else 0.0
+        if active:
+            scale = max(scale, .98)
         # Match historical speaker contrast and foreground ordering.
         # Keep the authored composition and camera untouched.
         skip = renpy.is_skipping() or not persistent.kd_dialogue_direction
@@ -86,5 +88,5 @@ init python:
         elif old_x is not None:
             tr = kd_direct_move(x if skip else old_x,x,y,scale,facing,0 if skip else .35)
         else:
-            tr = kd_direct_pose(x,y,scale,facing,dim)
+            tr = kd_direct_pose(x,y,scale,facing,dim,0,0,0 if skip else .13,active and not skip)
         renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=[tr],zorder=(500 if active else st.get("zorder",0)+depth))

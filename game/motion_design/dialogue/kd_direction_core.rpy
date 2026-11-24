@@ -40,7 +40,21 @@ init python:
             store.kd_direction_locked = False
             store.kd_direction_hold = 0
             store.kd_direction_poses = {}
+            self.recompose()
             self.shot("wide",duration=0,hold=0)
+
+        def recompose(self):
+            visible = sorted(kd_direct_visible(), key=lambda a:store.char_state[a].get("x",.5))
+            if not visible:
+                return
+            n = len(visible)
+            for i, actor in enumerate(visible):
+                x, scale, depth = kd_group_formation(n,i)
+                st = store.char_state[actor]
+                st["x"] = x
+                store.char_pos[actor] = x
+                store.kd_direction_poses = dict(store.kd_direction_poses, **{actor:(scale,1,depth)})
+            kd_direct_refresh_focus()
 
         def profile(self,name):
             if name not in KD_DIRECT_PROFILES:
@@ -84,12 +98,12 @@ init python:
                 positions = [float(store.char_state[a].get("x",.5)) for a in targets]
                 mid = sum(positions)/len(positions)
                 if kind=="two":
-                    z = min(1.35,1.0/max(.74,max(positions)-min(positions)+.32))
+                    z = min(1.48,1.0/max(.68,max(positions)-min(positions)+.24))
                 elif kind in ("close","reaction","isolate"):
                     z = min(1.78,solo+.18)
                 else:
                     z = solo
-                x,y = kd_direct_center_for(mid,z),.38
+                x,y = kd_direct_center_for(mid,z),(.34 if kind in ("close","reaction","isolate") else .40)
             kd_direct_cam_apply(x,y,z,t,"easeout" if kind=="reaction" else "ease")
             store.kd_direction_plan,store.kd_direction_targets = kind,targets
             store.kd_direction_age = 0
@@ -217,30 +231,49 @@ init python:
                 return True
             gap = KD_DIRECT_PROFILES[store.kd_direction_profile][0]
             if store.kd_direction_mode=="automatic":
-                gap = max(2,gap-1)
-            if len(hist)>1 and hist[-2]==tag:
-                return True
+                gap = max(1,gap-1)
+            previous = hist[-2] if len(hist)>1 else None
+            plan = store.kd_direction_plan
             targets = store.kd_direction_targets
-            if store.kd_direction_plan not in ("wide","retreat","subjective") and tag not in targets:
-                if len(hist)>=2 and hist[-2] in visible and abs(store.char_state[tag]["x"]-store.char_state[hist[-2]]["x"])<.58:
-                    self.shot("two",(hist[-2],tag),hold=0)
-                else:
-                    self.shot("wide",hold=0)
-                return True
-            if store.kd_direction_age<gap:
-                return True
+            profile = store.kd_direction_profile
+            age = store.kd_direction_age
             recent = tuple(dict.fromkeys(hist[-4:]))
-            if len(recent)==2 and all(a in visible for a in recent):
-                if abs(store.char_state[recent[0]]["x"]-store.char_state[recent[1]]["x"])<.58:
-                    if store.kd_direction_plan!="two" or set(targets)!=set(recent):
-                        self.shot("two",recent,hold=0)
-                    return True
-            if len(recent)>2:
-                if store.kd_direction_plan!="wide":
-                    self.shot("wide",hold=0)
+            # Never let a dense cast remain a static wall of sprites.
+            if len(visible)>=6:
+                if previous != tag:
+                    kind = "field" if plan in ("reverse","wide","retreat") else "reverse"
+                    if age>=3 and len(recent)>=3 and plan not in ("wide","retreat"):
+                        kind = "medium"
+                    self.shot(kind,tag,hold=0)
+                elif age>=3 and plan not in ("close","reaction"):
+                    self.shot("close",tag,hold=0)
                 return True
-            if store.kd_direction_plan=="wide" and len(visible)<=3 and len(hist)>=gap:
+            # A sustained line can earn a push-in even without a speaker change.
+            if previous == tag:
+                if age>=gap+1 and plan in ("wide","two","medium","field","reverse"):
+                    self.shot("close" if profile in ("comedy","confrontation") else "medium",tag,hold=0)
+                return True
+            if previous is None:
                 self.shot("medium",tag,hold=0)
+                return True
+            # Two-shot is a temporary composition, not a permanent lock.
+            alternating = len(hist)>=4 and hist[-1]==hist[-3] and hist[-2]==hist[-4]
+            if alternating and previous in visible and plan!="two" and age>=gap:
+                if abs(store.char_state[tag]["x"]-store.char_state[previous]["x"])<=.58:
+                    self.shot("two",(previous,tag),hold=0)
+                    return True
+            if plan=="two" and tag in targets and age<gap+1:
+                return True
+            if plan=="two" and age>=gap+1:
+                self.shot("reverse",tag,hold=0)
+                return True
+            if tag not in targets or age>=gap:
+                kind = "reverse" if plan=="field" else "field"
+                if profile in ("comedy","confrontation") and len(recent)<=2 and plan not in ("close","reaction"):
+                    kind = "close"
+                elif len(recent)>=3 and age>=gap+2 and plan!="wide":
+                    kind = "wide"
+                self.shot(kind, None if kind=="wide" else tag,hold=0)
             return True
 
 define kd_direct = KDDialogueDirector()

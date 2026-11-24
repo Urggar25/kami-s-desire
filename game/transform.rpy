@@ -27,7 +27,7 @@ transform char_group_enter(xpos, ypos=1.0):
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
     alpha 0.0
     xoffset (-80 if xpos < 0.5 else 80)
-    easeout 0.18 alpha 1.0 xoffset 0
+    easeout 0.15 alpha 1.0 xoffset 0
 
 # Personnage déjà présent : déplacement vers sa nouvelle place, sans fondu.
 transform char_group_move(xpos, ypos=1.0, from_x=None):
@@ -39,7 +39,7 @@ transform char_group_move(xpos, ypos=1.0, from_x=None):
     xoffset 0
     yalign ypos
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
-    easeout 0.2 xalign xpos
+    easeout 0.17 xalign xpos
 
 transform char_group_exit(xpos, ypos=1.0):
     subpixel True
@@ -65,7 +65,7 @@ init python:
 
     GROUP_MAX_MEMBERS = 12
     # Temps bloquants des entrées/sorties de groupe (avant : 0.5 s chacun).
-    GROUP_ENTER_TIME = 0.18
+    GROUP_ENTER_TIME = 0.15
     GROUP_EXIT_TIME = 0.14
     GROUP_AUTO_X_MIN = -0.11
     GROUP_AUTO_X_MAX = 1.20
@@ -82,12 +82,29 @@ init python:
         """
         if count <= 1:
             return 0.5
+        if count == 2:
+            return (.23,.77)[index]
+        if count == 3:
+            return (.10,.50,.90)[index]
         if count <= GROUP_AUTO_SMALL_MAX_MEMBERS:
             # 2-5 membres : chaque centre de sprite reste dans le cadre.
             left, right = 0.08, 0.92
         else:
             left, right = GROUP_AUTO_X_MIN, GROUP_AUTO_X_MAX
         return left + ((right - left) * float(index) / float(count - 1))
+
+    def kd_group_formation(count, index):
+        # Small casts occupy usable screen space; large casts stagger depth.
+        if count <= 1:
+            return (.5, 1.0, 0)
+        if count == 2:
+            return ((.23,.77)[index], 1.0, index)
+        if count == 3:
+            return ((.10,.50,.90)[index], 1.0 if index==1 else .96, index)
+        x = .035 + .93 * index / float(count-1)
+        rear = index % 2 == 0
+        scale = (.88 if rear else .96) if count <= 5 else (.76 if rear else .87)
+        return (x, scale, index if rear else 30+index)
 
     def _group_member_tuple(member, count, index):
         tag = member[0]
@@ -108,6 +125,16 @@ init python:
         normalized = []
         for i, member in enumerate(members):
             normalized.append(_group_member_tuple(member, min(len(members), GROUP_MAX_MEMBERS), i))
+
+        # Keep authored order. Spread cramped formations and dense casts,
+        # but retain deliberate small-cast positions when already readable.
+        if layer == "master" and len(normalized) > 1:
+            ordered = sorted(normalized, key=lambda m: m[2])
+            xs = [m[2] for m in ordered]
+            cramped = min(xs) < -.03 or max(xs) > 1.03 or min(b-a for a,b in zip(xs,xs[1:])) < .16
+            if len(ordered) >= 6 or cramped or any(len(m)<3 for m in members):
+                positions = {m[0]:kd_group_formation(len(ordered),i)[0] for i,m in enumerate(ordered)}
+                normalized = [(tag,expr,positions[tag]) for tag,expr,x in normalized]
 
         next_tags = [tag for tag, expr, x in normalized]
         old_tags = list(getattr(store, "group_members", []))
@@ -140,7 +167,7 @@ init python:
             already = tag in old_tags and renpy.showing(tag, layer=layer)
             from_x = store.char_state.get(tag, {}).get("x", x)
             store.char_pos[tag] = x
-            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder)
+            store.char_state[tag] = dict(expr=expr, x=x, y=y, layer=layer, zorder=zorder + idx)
             if already:
                 at = char_group_move(x, y, from_x)
             else:
