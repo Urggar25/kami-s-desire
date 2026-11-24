@@ -244,6 +244,7 @@ init python:
             changed = True
         if changed:
             renpy.save_persistent()
+            kd_vote_argument_notice(aid)
             renpy.restart_interaction()
             return True
         return False

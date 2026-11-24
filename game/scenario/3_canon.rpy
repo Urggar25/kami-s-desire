@@ -257,10 +257,9 @@ label day3_play_corridor_trace:
         return False
 
 label day3_collect_vote_argument(arg_id):
-    call screen day3_argument_briefcase(arg_id)
-    if _return:
-        play sound sfx_drop
-        call screen day2_argument_deposit_success(DAY3_VOTE_ARGUMENTS[arg_id] if arg_id in DAY3_VOTE_ARGUMENTS else DAY2_VOTE_ARGUMENTS[arg_id])
+    $ day3_vote_bootstrap()
+    if day2_vote_add_argument(arg_id):
+        $ j3_codex_dot = True
         $ chapter1_check_complete_dossier()
     return
 
