@@ -4,7 +4,7 @@ default kd_corridor_last_actor = None
 default kd_corridor_visit_pending = True
 
 init python:
-    KD_CORRIDOR_AMBIENT_CHANCE = .30
+    KD_CORRIDOR_AMBIENT_CHANCE = .10
 
     # Conservative initial rollout: before the later branching crises.
     # Each entry: actor, expression, exit animation.
@@ -53,87 +53,73 @@ init python:
         side = renpy.random.choice((-1,1))
         return (actor,expr,motion,side)
 
-# Two independent transforms: horizontal trajectory and vertical step rhythm.
-# Explicitly finite, never loop after the actor has left.
+# Use a single transform per actor: no competing offsets or exaggerated bobbing.
+# Front-facing sprites cannot convincingly walk away into depth.
+# Start near an exit, already moving, and leave the frame without fading.
 transform kd_corridor_stride(side):
     subpixel True
     anchor (0.5, 1.0)
-    xpos 0.50
+    xpos (0.50 + side*.22)
     ypos 1.0
     zoom .84
     alpha 1.0
-    pause .18
-    easein .28 xpos (0.50 + side*.06)
-    linear 1.24 xpos (0.50 + side*.82)
-    alpha 0.0
+    linear 1.35 xpos (0.50 + side*1.10)
 
 transform kd_corridor_greet(side):
     subpixel True
     anchor (0.5, 1.0)
-    xpos (0.50 - side*.12)
+    xpos (0.50 + side*.25)
     ypos 1.0
-    zoom .86
+    zoom .84
     alpha 1.0
-    ease .16 yoffset 7
-    ease .16 yoffset 0
-    pause .42
-    easein 1.14 xpos (0.50 + side*.82)
-    alpha 0.0
+    pause .28
+    ease .12 yoffset 2
+    ease .14 yoffset 0
+    easein .22 xpos (0.50 + side*.32)
+    linear 1.05 xpos (0.50 + side*1.10)
 
 transform kd_corridor_rush(side):
     subpixel True
     anchor (0.5, 1.0)
-    xpos (0.50 - side*.18)
+    xpos (0.50 + side*.18)
     ypos 1.0
-    zoom .88
+    zoom .84
     alpha 1.0
-    ease .12 xpos (0.50 - side*.21)
-    easein .24 xpos (0.50 + side*.04)
-    linear .65 xpos (0.50 + side*.85)
-    alpha 0.0
+    linear .88 xpos (0.50 + side*1.10)
 
 transform kd_corridor_linger(side):
     subpixel True
     anchor (0.5, 1.0)
-    xpos (0.50 - side*.16)
+    xpos (0.50 + side*.28)
     ypos 1.0
-    zoom .80
+    zoom .84
     alpha 1.0
-    pause .70
-    easein .30 xpos (0.50 - side*.05)
-    linear 1.20 xpos (0.50 + side*.82)
-    alpha 0.0
+    pause .52
+    easein .26 xpos (0.50 + side*.35)
+    linear 1.10 xpos (0.50 + side*1.10)
 
+# Former recede motion: use a quiet lateral exit instead of shrinking
+# a forward-facing sprite as if it were walking backwards.
 transform kd_corridor_recede(side):
     subpixel True
     anchor (0.5, 1.0)
-    xpos (0.50 - side*.15)
+    xpos (0.50 + side*.32)
     ypos 1.0
-    zoom .82
+    zoom .80
     alpha 1.0
-    pause .25
-    ease 1.25 xpos (0.50 + side*.10) ypos .72 zoom .42
-    ease .55 xpos (0.50 + side*.22) ypos .64 zoom .31 alpha 0.0
-
-transform kd_corridor_steps(delay=.18, amplitude=5, pace=.14, count=5):
-    subpixel True
-    yoffset 0
-    pause delay
-    block:
-        ease pace yoffset (-amplitude)
-        ease pace yoffset 0
-        repeat count
+    pause .18
+    linear 1.25 xpos (0.50 + side*1.10)
 
 screen kd_corridor_ambient_actor(encounter):
     $ actor, expr, motion, side = encounter
     $ portrait = character_image(actor,expr)
     if motion == "greet":
-        add portrait at kd_corridor_steps(.74,4,.14,4), kd_corridor_greet(side)
+        add portrait at kd_corridor_greet(side)
     elif motion == "rush":
-        add portrait at kd_corridor_steps(.12,10,.09,5), kd_corridor_rush(side)
+        add portrait at kd_corridor_rush(side)
     elif motion == "linger":
-        add portrait at kd_corridor_steps(.70,4,.15,5), kd_corridor_linger(side)
+        add portrait at kd_corridor_linger(side)
     elif motion == "recede":
-        add portrait at kd_corridor_steps(.25,3,.16,5), kd_corridor_recede(side)
+        add portrait at kd_corridor_recede(side)
     else:
-        add portrait at kd_corridor_steps(.18,5,.14,5), kd_corridor_stride(side)
+        add portrait at kd_corridor_stride(side)
