@@ -90,12 +90,56 @@ init -1 python:
         parts = ["skin_%d" % skin, "outfit_%d" % outfit, "hair_%d_%d" % (hair, color), "brows_" + mood, "eyes_" + eyes, "mouth_" + mouth]
         if glasses:
             parts.append("glasses")
-        if mic:
-            parts.append("mic")
         args = []
         for part in parts:
             args.extend(((0, 0), base + part + ".svg"))
         return Composite((600, 720), *args), (0.07 if animate else None)
+
+    def kd_news_mic_pose():
+        # One mic per interview. In an insert, the reporter is off camera
+        # when a citizen is shown, so the mic enters from the frame edge.
+        cast = store.kd_news_cast
+        layout = store.kd_news_layout
+        if not cast or layout not in ("interview", "home", "duplex", "insert"):
+            return None
+        owners = [a for a in cast if store.kd_news_custom.get(a, KD_NEWS_PROFILES.get(a, KD_NEWS_PROFILES["anchor"]))[5]]
+        if not owners and layout != "insert":
+            return None
+        target = store.kd_news_speaker if store.kd_news_speaker in cast else (owners[0] if owners else cast[0])
+        slots = (960,) if len(cast) == 1 else ((540, 1380) if len(cast) == 2 else (360, 960, 1560))
+        if layout == "insert":
+            return (1440, 541, 25)
+        owner = owners[0]
+        ox = slots[cast.index(owner)]
+        tx = slots[cast.index(target)]
+        # In a duplex the presenter is in another location.
+        if layout == "duplex":
+            tx = ox
+        side = 1 if tx <= ox else -1
+        return (tx + side * 110, 541, -side * 28)
+
+    def kd_news_mic_motion(trans, st, at):
+        pose = kd_news_mic_pose()
+        if pose is None:
+            trans.alpha = 0.0
+            return 0.05
+        # Keep previous rendered position on the transform, not in save state.
+        # Exponential easing with elapsed time prevents jumps on frame skips.
+        previous = getattr(trans, "_kd_mic_position", None)
+        last = getattr(trans, "_kd_mic_time", st)
+        dt = max(0.0, min(0.10, st - last))
+        if previous is None or st < last or renpy.is_skipping() or not getattr(persistent, "dialogue_animations", True):
+            current = pose
+        else:
+            factor = 1.0 - pow(2.718281828, -dt * 15.0)
+            current = tuple(a + (b - a) * factor for a, b in zip(previous, pose))
+        trans._kd_mic_position = current
+        trans._kd_mic_time = st
+        trans.xpos = int(current[0])
+        trans.ypos = int(current[1])
+        trans.rotate = current[2]
+        trans.alpha = 1.0
+        return 0.016
 
     def kd_news_actor_image(actor):
         return DynamicDisplayable(_kd_news_partial(kd_news_portrait, actor))
@@ -114,6 +158,11 @@ transform kd_news_actor_arrive:
     alpha 0.0
     xoffset -18
     easeout 0.23 alpha 1.0 xoffset 0
+
+transform kd_news_shared_mic_motion:
+    subpixel True
+    anchor (0.5, 0.5)
+    function kd_news_mic_motion
 
 screen kd_news_actor_stage():
     zorder 3
@@ -155,6 +204,9 @@ screen kd_news_actor_stage():
                     add kd_news_actor_image(actor) zoom scale
                 if active:
                     add Solid("#6cc4dc", xysize=(64, 3)) xalign 0.5 yalign 0.98
+
+        if kd_news_mic_pose() is not None:
+            add "images/kd_news/mic_shared.svg" at kd_news_shared_mic_motion id "kd_news_shared_microphone"
 
 label kd_news_actor_demo:
     call kd_news_open(_("LIMEN 24"), _("ESSAI PLATEAU"), _("JOURNAL")) from _call_kd_news_actor_demo_open
