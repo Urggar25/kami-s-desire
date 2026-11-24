@@ -130,6 +130,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     $ kd_direct.react("noam","surprise")
     elias panique "Hé ! Pas le café !"
     noam surpris "Je voulais juste le poser par terre."
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "Ah. Oui, vas-y. Mais pas près de la vis, là."
     noam "Tu protèges plus ton café que ta réparation."
     elias reflechit "Non. Enfin... si tu peux ramasser ça, ce serait gentil. Mais ne touche pas à la porte."
@@ -187,6 +188,7 @@ label _4_0_ROUTE_MATIN_NYRA:
     "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."
     $ kd_direct.profile("comedy")
     $ kd_direct.react("noam", "surprise")
+    $ kd_queue_character_motion("nyra", "emphasis")
     nyra colere "Pas comme ça. Tu inclines la caisse."
     noam surpris "Je fais ce que je peux !"
     nyra "Alors incline-la dans l'autre sens."
@@ -229,6 +231,7 @@ label _4_0_CAFETERIA_ECRANS:
     pause 0.8
     scene bg_cg022 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg022")
+    $ kd_queue_character_motion("elen", "anger")
     elen colere "GOUMI ! Regarde-moi bien. Hier, tu avais de la cannelle."
     goumi "Je ne possède pas de dispositif permettant de détourner le regard."
     elen surpris "C'est PAS ce que je te demande !"
@@ -494,6 +497,7 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     elias inquiet "J'aimerais bien qu'ils aient quelque chose pour demain aussi."
     ryn colere "C'est ce que je dis depuis hier."
     julian decu "Et hier, quelqu'un a quand même préféré ne rien changer."
+    $ kd_queue_character_motion("ryn", "exasperation")
     ryn colere "Tu vas recommencer ?"
     julian neutre "Je n'ai cité personne."
     ryn colere "T'as pas besoin de citer mon nom pour me regarder comme ça !"
@@ -673,6 +677,7 @@ label _4_0_CAFETERIA_PNC_JULIAN:
     $ kd_direct.shot("medium","julian",duration=.32,hold=1)
     julian decu "Hier, quelqu'un nous a empêchés d'essayer. Et aujourd'hui, on devrait tous faire comme si de rien n'était."
     noam inquiet "Le texte pouvait aussi faire des morts. Tu le sais."
+    $ kd_queue_character_motion("julian", "anger")
     julian colere "Je le sais, Noam. J'étais là."
     "Il prend une inspiration, puis détourne les yeux."
     $ kd_direct.profile("confrontation")
@@ -769,6 +774,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     ])
     $ kd_direct.begin("debate")
     $ kd_direct.shot("medium","ryn",duration=.17,hold=1)
+    $ kd_queue_character_motion("ryn", "exasperation")
     ryn colere "ON REVIENT ENCORE ICI ?! Hier, on y a passé la moitié de la journée !"
     kael inquiet "Julian a dit qu'il ne viendrait pas. J'ai cru qu'il plaisantait."
     mara taquin "Julian qui évite une réunion ? Tu lui as proposé de parler de lui, pour voir ?"
@@ -955,6 +961,7 @@ label _4_0_DEBAT_APAISE:
     ryn neutre "Je t'ai entendue."
     sael neutre "Si tu veux me raconter ce qui s'est passé chez toi, je t'écouterai. Mais je ne veux pas que tu prennes ça pour une négociation."
     ryn colere "Tu pourrais commencer par me laisser finir deux phrases la prochaine fois."
+    $ kd_queue_character_motion("sael", "anger")
     sael colere "Tu pourrais éviter de m'accuser de vouloir des morts !"
     $ kd_direct.shot("wide",duration=.42,hold=2)
     "Ils se regardent un instant. Ni l'un ni l'autre ne semble prêt à ajouter quoi que ce soit."
@@ -992,6 +999,7 @@ label _4_0_DEBAT_ROMPU:
 
     $ kd_direct.begin("confrontation")
     $ kd_direct.shot("close","sael",duration=.16,hold=1)
+    $ kd_queue_character_motion("sael", "shock")
     sael colere "Vous voulez que je promette quoi ? Que les hommes qui nous ont attaqués ne reviendront pas ?!"
     $ kd_direct.shot("field","ryn",duration=.16,hold=1)
     ryn colere "Je veux que tu regardes les gens qu'on tue en prétendant protéger les autres !"
@@ -1092,6 +1100,7 @@ label day4_thread_debate_failure:
     $ kd_direct.shot("medium","noam",duration=.20,hold=1)
     noam inquiet "Il doit bien y avoir une solution... des contrôles, une exception, quelque chose !"
     $ kd_direct.interrupt("ryn",.8)
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "QUELLE exception ?! Tu comprends même pas pourquoi on se dispute !"
     sael mefiant "Tu nous demandes encore de te faire confiance sans rien proposer de précis."
     noam hesitation "Je voulais juste éviter que vous..."
@@ -1125,6 +1134,7 @@ label _4_0_APRES_CLASH_PRE_FETE:
         iris fatigue "Oui, ça s'entend."
     $ kd_direct.shot("medium","elias",duration=.24,hold=1)
     "Elias se lève. Le bruit de sa chaise fait tourner plusieurs têtes."
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "Je voulais juste aller manger. Vous pouvez arrêter de me regarder comme ça ?"
     tomas sourire "Je viens avec toi."
     $ kd_direct.profile("comedy")
@@ -1175,6 +1185,7 @@ label _4_0_SOIREE_SANS_VOTE:
     elen desaccord "Les règles sont très simples."
     $ kd_direct.shot("reaction","lysa",duration=.16,hold=1)
     lysa blase "Elle a dit ça trois fois. Les règles ont changé quatre fois."
+    $ kd_queue_character_motion("elen", "exasperation")
     elen colere "Parce que vous refusez de les comprendre !"
     tomas sourire "Le principe, c'est de lancer deux dés et de former une paire. Enfin, je crois."
     elias inquiet "J'avais une paire !"

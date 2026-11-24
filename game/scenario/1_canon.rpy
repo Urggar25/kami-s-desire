@@ -419,11 +419,13 @@ label _1_CANON:
     "Un homme se lève d'un bond. Son siège claque au sol."
 
     $ day1_group_reaction(iris="peur", elen="inquiet", mara="taquin", tomas="surpris")
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Putain mais on est où là ?!"
     ryn colere "Qui a fait ça ?!"
 
     $ day1_group_reaction(ryn="colere", iris="blase", lysa="blase", elen="inquiet")
     $ day1_group_shot(("ryn", "mara"), 1.22)
+    $ kd_queue_character_motion("mara", "laugh")
     mara rire "Tu veux dire... à part l'IA qui tient le monde en laisse ?"
     mara taquin "Et toi, t'as fini de gueuler ? Parce que là, tu nous réveilles tous une deuxième fois."
     "Elle fait un mouvement de tête dans une direction, pour montrer une caméra."
@@ -765,6 +767,7 @@ label _1_CHOICE:
     ])
 
     noam doute "On ne sait pas ce qu'on doit faire, il vaut mieux attendre les consignes."
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Attendre ?! Tu plaisantes ?"
     lysa blase "Pour une fois que quelqu'un suggère de ne pas foncer tête baissée..."
     mara taquin "Je prends les paris. Dix minutes avant qu'il essaie quand même."
@@ -979,6 +982,7 @@ label _1_PNC_CONCLAVE_RYN:
 
     ryn colere2 "Cette porte me saoule."
     ryn colere "Et puis qu'est-ce qu'on fout là d'abord !"
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "Attends... Tu ne sais toujours pas pourquoi tu es là ?" 
     ryn "Et d'abord, c'était quoi votre soi-disant annonce de tout à l'heure ?!"
     ryn colere "Réponds-moi ! J'y pige que dalle !"
@@ -1016,6 +1020,7 @@ label _1_PNC_CONCLAVE_MARA:
     noam reflechit "J'essaie déjà de comprendre où on est."
     mara taquin "Mauvaise nouvelle : on est enfermés. Bonne nouvelle : tu as trouvé une porte. Quel enquêteur !"
     mara jaloux "Trente jours avec vous... Je sais pas si je dois rire ou demander une autre cellule."
+    $ kd_queue_character_motion("mara", "laugh")
     mara rire "On devrait pouvoir bien s'amuser !"
     mara taquin "Ou plus, si affinité ?"
     noam peur "Hein ?!"
@@ -1046,6 +1051,7 @@ label _1_PNC_CONCLAVE_ELIAS:
     elias neutre "À force de bosser au milieu des machines, je reconnais quand un truc tourne pas rond. Là, ça fait un genre de... Vrrrr..."
     elias reflechit "Non, attends... Brrrrr... Enfin bref, c'est pas le même bruit !"
     noam reflechit "Maintenant que tu le dis... oui. Le ronronnement est plus aigu."
+    $ kd_queue_character_motion("elias", "surprise")
     elias surpris "Ah, tu l'as remarqué toi aussi ?"
     noam sourire "On m'a souvent dit que j'avais une très bonne ouïe."
     elias ecoute "Intéressant à savoir !"
@@ -1107,6 +1113,7 @@ label _1_PNC_CONCLAVE_TOMAS:
     "Il pointe du doigt des côtés de l'écran."
     tomas hesitation "Déjà il n'y a aucun bouton pour l'allumer ou l'éteindre."
     tomas reflechit "Habituellement sur les modèles RX-453, ce modèle de télévision on a des boutons pour pouvoir..."
+    $ kd_queue_character_motion("noam", "shock")
     noam peur "Attends quoi ? Tu connais le modèle de la télévision par cœur ?!"
     noam taquin "T'es une sorte de geek ou quelque chose du genre ?"
     tomas gene "Hein ? Moi ? Ah... Non pas vraiment..."
@@ -1162,6 +1169,7 @@ label _1_PNC_CONCLAVE_ELEN:
     elen surpris "Tu crois qu'ils ont prévu des pauses dans leur truc ?"
     noam neutre "Des pauses ?"
     elen triste "Bah oui. Moi, je ne veux pas travailler tout le teeeemps !"
+    $ kd_queue_character_motion("elen", "nervous")
     elen peur "Et j'ai besoin de trouver urgemment des toilettes..."
     noam triste "À mon avis, Kami a oublié l'option service client."
     elen joie "J'espère au moins qu'il y aura des trucs bons à manger !"
@@ -2180,6 +2188,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     $ bc_hide()
     kami "Quelle jolie manière de le formuler."
     $ bc_show("iris", "colere", px=-80, py=-45, pz=0.85)
+    $ kd_queue_character_motion("iris", "anger")
     iris colere "Tu réalises à quel point c'est malsain ?"
     $ bc_hide()
     kami "J'ai eu trente jours à préparer mes réponses à cette question. Tu veux la version courte ?"
@@ -2276,6 +2285,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     ])
     elen inquiet "Vous écrivez quoi, vous ? J'ai plein d'idées, mais je sais pas laquelle choisir !"
     iris fatigue "Déjà, évite celle qui nous ferait tous tuer. Ce serait sympa."
+    $ kd_queue_character_motion("elen", "recoil")
     elen peur "Mais c'est justement ça qui me fait peur ! Et si je me trompe ?"
     sael determine "Relis ce que tu écris. Si t'es pas sûre, ne promets rien."
     julian sourire "Moi, j'ai une proposition. Enfin, j'en avais trois, mais il faut choisir."
@@ -2419,6 +2429,7 @@ label _1_AMENDEMENT_DEPOSE:
 
     kami "Grâce à vous, je n'aurai pas besoin d'éliminer qui que ce soit aujourd'hui."
     $ bc_show("elen", "peur")
+    $ kd_queue_character_motion("elen", "shock")
     elen peur "É-Éliminer ?! C'était prévu, ça ?"
     $ bc_hide()
     kami "Prévu ? Non. Envisagé ? Oh, tout est envisageable."
@@ -2576,6 +2587,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     tomas hesitation "Je me suis dit que…"
     tomas hesitation "…que ça ferait peut-être du bien."
     tomas hesitation "Un truc chaud. Juste… un truc chaud."
+    $ kd_queue_character_motion("tomas", "embarrassed")
     tomas gene "Je savais pas combien on allait être alors j'en ai pris quelques-uns..."
     tomas "Voilà. Rien de cassé. Enfin, pas encore."
     mara taquin "Quel dommage. On avait presque un premier incident."
@@ -2922,6 +2934,7 @@ label _1_WAKE_HIDDEN_SCENE:
     $ renpy.pause(0.67, hard=True)
     camera master at day1_wake_close
     lysa colere "Hé ! Je te parle, là ! Tu comptes regarder les murs encore longtemps ?!"
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "Ah ! Mais arrête de me secouer comme ça ! Je t'écoute !"
     lysa blase "Ah ouais ? Parce qu'à te voir fixer le plafond, j'avais un sérieux doute."
     $ unlock_succes("succes009")

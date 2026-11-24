@@ -435,6 +435,7 @@ label _5_0_REVEIL_CHAMBRE:
     elen sourire "Oui ! C'est pour ça que je viens maintenant."
     noam reflechit "Ce n'est pas une explication."
     elen "Tu aurais de la cannelle ?"
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "De la... cannelle ?"
     elen "Même un tout petit peu. Un sachet oublié, un fond dans une boîte..."
     noam neutre "Pourquoi j'aurais de la cannelle dans ma chambre ?"
@@ -512,6 +513,7 @@ label _5_0_CHERCHE_SAEL:
     "La porte d'à côté s'ouvre. Elias en ressort avec une longue planche sur l'épaule, qu'il manque de coincer contre l'encadrement."
     $ showGroup([("elias", "gene", 0.18), ("noam", "surpris", 0.44), ("sael", "neutre", 0.78)])
     noam surpris "Elias ? Qu'est-ce que tu fiches avec ça ?"
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "Ah ! Salut, Noam. Je... je donne un coup de main."
     noam "En déménageant le lit ?"
     elias "Pas le lit entier ! Juste... cette partie."
@@ -525,6 +527,7 @@ label _5_0_CHERCHE_SAEL:
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre_sael") from _call_MAYBE_PLAY_SCRIPTED_DOOR_232
     scene bg_chambre_sael at adaptive_fullscreen with dissolve
     "Son matelas est par terre. Les planches du sommier s'alignent contre le mur. À côté, des morceaux de bois, des cordes, de petits outils."
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "Tu as démonté toute la chambre ?"
     sael sourire "Non. Les murs sont toujours là."
     noam neutre "Très rassurant."
@@ -723,6 +726,7 @@ label _5_0_0_JULIAN:
     julian "Non. Trop long."
     play sound sfx_beep
     hide screen j50_julian_surveillance_overlay
+    $ kd_queue_character_motion("noam", "hesitate")
     noam surpris "Tu répètes un discours ?"
     julian neutre "Je travaille. Ne fais pas cette tête."
     noam "Je suis venu te demander comment tu allais !"
@@ -782,6 +786,7 @@ label _5_0_0_JULIAN:
     noam "Et Tomas ?"
     julian neutre "Quoi, Tomas ?"
     noam "Tu l'as coincé dans la salle de repos."
+    $ kd_queue_character_motion("julian", "anger")
     julian colere "Je voulais qu'il écoute !"
     noam "Il écoutait. Il voulait juste que tu le laisses sortir."
     "Julian ouvre la bouche, puis tourne les yeux vers la tablette."
@@ -865,8 +870,10 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     "Il ferme les yeux."
     elias reflechit "Quatre pas. Tu traînes un peu le pied gauche. Oui, c'est toi."
     noam reflechit "J'aurais pu te le dire."
+    $ kd_queue_character_motion("elias", "laugh")
     elias rire "Mais c'est moins drôle !"
     noam "Tu fais ça pour t'amuser ?"
+    $ kd_queue_character_motion("elias", "nervous")
     elias gene "J'essaie de reconnaître les gens au bruit. Ça sert parfois pour savoir qui arrive quand on travaille sous une console."
     noam "Et les papiers ?"
     elias "Un classement. Kael marche vite. Nyra marche presque sans bruit."

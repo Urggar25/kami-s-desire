@@ -142,6 +142,7 @@ label _6_1_0_CAFETERIA:
 
     iris taquin "C'était le but."
 
+    $ kd_queue_character_motion("elen", "laugh")
     elen rire "Ah ! Je savais que ce petit déjeuner finirait bien !"
 
     pause 0.6
@@ -159,6 +160,7 @@ label _6_1_0_CAFETERIA:
 
     pause 0.4
 
+    $ kd_queue_character_motion("ryn", "exhausted")
     ryn fatigue "J'ai pas dormi."
 
     think "Sa voix coupe la conversation. Sael s'immobilise une seconde, puis reprend son repas."
@@ -169,6 +171,7 @@ label _6_1_0_CAFETERIA:
 
     sael neutre "Personne ne te le reproche."
 
+    $ kd_queue_character_motion("ryn", "exasperation")
     ryn colere "J'ai pas dit que quelqu'un me le reprochait."
 
     pause 0.5
@@ -290,6 +293,7 @@ label _6_1_0_SALLE_REPOS_ARRIVEE:
 
     pause 0.5
 
+    $ kd_queue_character_motion("sael", "sigh")
     sael fatigue "Vous pouvez parler devant moi."
 
     iris inquiet "Personne n'essaye de t'isoler, hein."
@@ -352,6 +356,7 @@ label _6_1_0_RYN_SAEL:
     think "Je les retrouve dans le dortoir, à quelques mètres de la porte de Sael."
     think "Ryn lui barre le passage. Sael garde les bras le long du corps, immobile."
 
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Tu vas vraiment faire ça ?"
 
     sael neutre "Je te l'ai déjà dit."
@@ -368,6 +373,7 @@ label _6_1_0_RYN_SAEL:
     scene bg_cg036 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg036")
 
+    $ kd_queue_character_motion("ryn", "emphasis")
     ryn colere "Cette proposition, c'est moi qui l'ai déposée."
 
     pause 0.5
@@ -377,6 +383,7 @@ label _6_1_0_RYN_SAEL:
     ryn determine "C'est moi qui ai demandé qu'on puisse traverser les frontières. Pas Tomas. Pas Noam. Moi."
     ryn colere "J'ai passé des années à regarder les gens crever à quelques mètres d'une limite qu'ils pouvaient même pas voir."
     ryn colere2 "J'ai creusé des tranchées pour les empêcher d'avancer. J'ai ramené ceux qui avaient encore assez de jambes pour revenir."
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Et maintenant qu'on a enfin une chance d'ouvrir cette saloperie de frontière, c'est toi qui vas tout bloquer."
 
     sael fatigue "Oui."
@@ -586,6 +593,7 @@ label _6_1_0_DEBAT:
 
     elen choque "Noam ?! Qu'est-ce qui t'est arrivé ?"
 
+    $ kd_queue_character_motion("mara", "shock")
     mara colere "Attends. Pourquoi Ryn a du sang sur la main ?"
 
     julian inquietude "Vous vous êtes battus ?"
@@ -599,6 +607,7 @@ label _6_1_0_DEBAT:
     call cutin("mara", expr="colere_noire") from _call_kd_cutin_6_mara
     mara colere_noire "Tu as frappé Noam avant un vote décisif et ton résumé, c'est que tu as déconné ?"
 
+    $ kd_queue_character_motion("elias", "emphasis")
     elias colere "Il a menacé Sael aussi."
 
     elen colere "Mais qu'est-ce qui te prend ?! On est tous tendus, ça te donne pas le droit de taper les gens !"

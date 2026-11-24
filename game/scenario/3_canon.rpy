@@ -362,6 +362,7 @@ label _3_OPT_KAEL_DIAL:
         ("kael", "fatigue", 0.65),
     ])
 
+    $ kd_queue_character_motion("kael", "exhausted")
     kael fatigue "Ah... Noam. J'ai entendu des pas. J'espérais presque que ce soit un technicien."
 
     think "Il a l’air d’avoir très peu dormi."
@@ -417,8 +418,10 @@ label _3_OPT_JULIAN_DIAL:
 
     julian joie "Noam ! Quelle journée ! On pourrait entrer dans l'histoire d'ici quelques heures !"
     noam sourire "T'as pris combien de cafés avant de dire bonjour ?"
+    $ kd_queue_character_motion("julian", "laugh")
     julian rire "Un seul, mais il suffit de savoir se motiver. Tu devrais essayer devant un miroir."
     "La tasse de Julian déborde. Il la retire trop tard et se brûle les doigts."
+    $ kd_queue_character_motion("julian", "shock")
     julian colere "AÏE ! Cette machine a décidé de saboter mon discours !"
     noam sourire "Tu peux toujours lui expliquer ton programme. Peut-être qu'elle votera pour toi."
     julian sourire "Très spirituel. Mais imagine : des gens qui achètent et vendent sans supplier Kami de leur donner la permission. On peut y arriver."
@@ -517,6 +520,7 @@ label _3_CAFETERIA_ARRIVE:
 
     elen taquin "Vas-y ! Promis, je l'écoute entre deux bouchées."
 
+    $ kd_queue_character_motion("iris", "sigh")
     iris fatigue "Non. Pour une fois, je vais te laisser tranquille."
 
     think "Elias arrive juste au moment où la conversation devient presque touchante. Il pose son plateau, cale sa tasse de café contre son assiette et regarde le bol."
@@ -751,6 +755,7 @@ label _3_PAUSE_CHAMBRE:
     nyra stress "Noam, viens. Julian a coincé Tomas dans la salle de repos. Il ne le laisse pas partir."
     noam inquiet "Coincé comment ? Il l'a menacé ?"
     nyra colere "Il veut lui faire promettre un vote pour. Et lui faire dire devant les caméras qu'il le soutient. Tomas a dit qu'il voulait réfléchir seul."
+    $ kd_queue_character_motion("noam", "anger")
     noam colere "Il s'en prend à Tomas ?! Il sait très bien que Tomas va pas lui rentrer dedans !"
     nyra stress "Tomas m'a écrit parce qu'il n'arrive plus à s'en débarrasser. Il faut y aller, pas lui faire un cours sur le vote."
     noam determine "On y va. Avant qu'ils se mettent à voter pour savoir qui a le droit de quitter la pièce."
@@ -1029,6 +1034,7 @@ label _3_DEBAT1_PHASE1:
         ("elias", "reflechit", 1.19),
     ])
 
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "C'EST QUOI CE PAVÉ ?! On a demandé le commerce, pas un concours de lecture !"
 
     tomas inquiet "Attendez ! Si elle a ajouté une condition à la fin, on pourrait tout approuver sans s'en rendre compte. Il faut vérifier chaque phrase."
@@ -1065,6 +1071,7 @@ label _3_DEBAT1_PHASE1:
     ])
 
     lysa reflexion "Attendez... « Autoriser le transport, la vente et l'échange de marchandises. » Très bien. Mais la suite..."
+    $ kd_queue_character_motion("lysa", "emphasis")
     lysa colere "« En conséquence, le système de distribution de denrées est aboli. » Vous avez bien LU ce passage ?!"
     call reactions([("elen", "peur"), ("ryn", "colere"), ("tomas", "peur")]) from _call_kd_reactions_3_abolition
     elen peur "HEIN ?! Mais j'ai déjà dit à tout le monde que je voterais pour ! Je savais pas qu'on supprimait les bons !"
@@ -1102,6 +1109,7 @@ label _3_DEBAT1_PHASE2:
 
     mara surpris "Merveilleux. On commande du commerce et on nous livre la fin des rations. La prochaine fois, demandons des serviettes : elle supprimera l'eau."
 
+    $ kd_queue_character_motion("noam", "shock")
     noam surpris "Attends. La suppression des bons, c'était dans la proposition d'hier ?"
     tomas inquiet "NON ! J'ai tout relu ! Il n'y avait pas ça !"
     nyra reflechit "Et là, c'est partout. Même dans les districts qui n'ont aucun commerce prêt à prendre le relais."
@@ -1211,6 +1219,7 @@ label day3_before_objection_protocol_minigame:
 
     elen inquiet "Mais… du coup, c'est pire de ne rien faire, non ? Ils souffrent déjà."
 
+    $ kd_queue_character_motion("mara", "emphasis")
     mara colere "Ou alors c'est exactement ce qu'elle veut qu'on pense. Paniquer, voter vite, se planter."
 
     noam inquiet "Je sais qu’ils ont faim, mais si on supprime les bons maintenant, ils risquent d’avoir encore moins à manger. On peut pas décider juste parce qu’elle nous fait peur."
@@ -1248,8 +1257,10 @@ label _3_DEBAT1_PHASE3:
 
     noam inquiet "On peut se calmer deux secondes ? Je n'arrive même plus à entendre ce qu'on dit !"
 
+    $ kd_queue_character_motion("julian", "anger")
     julian colere "Entre deux cris ?! Ça fait un an que les gens manquent de tout ! Tu veux leur demander d'attendre encore combien de temps ?"
 
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Et ton grand projet, c'est quoi ?! On sacrifie Limen pour que Nexus se paie des nouveaux jouets ?!"
 
     julian surpris "Tu crois que tous ceux de Nexus roulent sur l'or ?! J'en viens, figure-toi !"
@@ -1507,6 +1518,7 @@ label _3_VOTE_POUR:
 
     julian joie "ON A RÉUSSI ! VOUS VOUS RENDEZ COMPTE ?! C'est notre premier amendement !"
     elen joie "OUAAAAAIS ! Personne a dit non ! C'est pareil que tout le monde oui, hein ?"
+    $ kd_queue_character_motion("julian", "laugh")
     julian rire "Elen, viens là ! Ryn ! Vous avez vu ? On a réussi !"
     ryn jaloux "Me touche pas."
     julian surpris "Oh, allez ! Même toi, tu peux être content cinq minutes !"
@@ -1613,8 +1625,10 @@ label _3_VOTE_CONTRE:
         ("nyra", "raison", 1.14),
     ])
 
+    $ kd_queue_character_motion("julian", "shock")
     julian colere "NON ! On avait une chance ! Une vraie chance de changer quelque chose !"
 
+    $ kd_queue_character_motion("ryn", "exhausted")
     ryn fatigue "On pouvait aussi condamner des gens à crever sans rations. C'est pas si simple."
 
     mara colere "Fantastique. On garde les pénuries, les formulaires et les files d'attente. On a sauvé notre petite routine !"

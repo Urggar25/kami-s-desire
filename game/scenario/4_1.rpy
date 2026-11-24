@@ -85,6 +85,7 @@ label _4_1_CAFETERIA_ECRANS:
 
     kael calme "À Orbite, les exportations augmentent plus vite que prévu. Les outils et les filtres partent en premier."
 
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Évidemment que ça fonctionne chez vous ! À Limen, ils commencent à se battre pour un sac de nourriture."
     ryn colere "Regardez la file devant l'ancien centre ! Ils attendent encore des rations qui n'arriveront plus !"
 
@@ -268,11 +269,14 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     think "Le mot « frontières » suffit à changer l'attitude de Ryn. Il se penche immédiatement vers son micro."
 
+    $ kd_queue_character_motion("ryn", "emphasis")
     ryn colere "Il faut voter pour. Je veux même pas entendre qu'on pourrait encore garder ces foutues frontières fermées."
     ryn triste "J'ai passé des années à empêcher des gens de les atteindre. J'en ai vu creuser des tranchées sans savoir exactement où le rayon allait tomber."
 
+    $ kd_queue_character_motion("kael", "surprise")
     kael surpris "Tu étais un Gardien ?"
 
+    $ kd_queue_character_motion("ryn", "exhausted")
     ryn fatigue "Ouais. On devait arrêter les gens plusieurs mètres avant la frontière pour éviter qu'ils se fassent exécuter."
     ryn triste "Au début, personne ne connaissait son tracé exact. Beaucoup de Gardiens sont morts en essayant de le trouver."
 
@@ -315,6 +319,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     elias colere "Mais tu peux pas décider pour tout le monde uniquement à cause de ce qui s'est passé avant !"
     elias inquiet "Si les gens peuvent bouger, les médecins et les ressources pourront bouger aussi. Ça sauvera des vies."
 
+    $ kd_queue_character_motion("sael", "anger")
     sael colere "Tu crois que je n'y ai pas réfléchi ?"
     sael determine "Non. Pas si ça risque de ramener des hommes armés chez nous. J'ai déjà vu ce que ça donnait."
 
@@ -420,6 +425,7 @@ label _4_1_APRES_CLASH_PRE_FETE:
     elen joie "Bon ! On ne va pas rester là à se regarder comme si quelqu'un venait de mourir."
     elen content "On a adopté notre premier amendement hier. Je propose qu'on fête ça ce soir !"
 
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "Une fête ? Maintenant ?"
 
     elen inquiet "Justement maintenant. Si on retourne tous dans nos chambres après ça, demain personne ne voudra encore se parler."
@@ -432,6 +438,7 @@ label _4_1_APRES_CLASH_PRE_FETE:
     elen desaccord "On peut être inquiets et quand même souffler un peu. Les deux sont possibles !"
     elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Je pense qu'elles t'écouteront plus facilement."
 
+    $ kd_queue_character_motion("nyra", "recoil")
     nyra surpris "Moi ? Pourquoi est-ce que ce serait plus facile avec moi ?"
 
     elen taquin "Parce que tu sais parler aux gens sans les énerver en moins de dix secondes. C'est un talent rare ici."
@@ -663,6 +670,7 @@ label _4_1_FETE_IMPROVISEE:
     mara taquin "Attends, Iris. Tu peux rester sans participer. Mais priver cette soirée de ton regard assassin, ça devient personnel."
 
     iris fatigue "Tu es épuisante."
+    $ kd_queue_character_motion("iris", "embarrassed")
     iris gene "Bon. Je reste. Et je joue… seulement si Noam joue aussi."
 
     lysa reflechit "Pourquoi Noam ?"
@@ -754,6 +762,7 @@ label _4_1_JEU_BOUTEILLE:
 
     elen joie "Lysa ! Tu as rougi ! C'était beaucoup trop mignon !"
 
+    $ kd_queue_character_motion("lysa", "embarrassed")
     lysa gene "C'est l'alcool. Pas lui."
     lysa taquin "Cela dit, il embrasse mieux qu'il ne termine ses phrases. La barre était assez basse."
 

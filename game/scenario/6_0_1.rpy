@@ -158,6 +158,7 @@ label _6_0_1_CAFETERIA:
     mara taquin "Celle qui t'attachera les mains dans le dos, j'espère."
     elen colere "MARA !"
     noam sourire "Qu'est-ce que vous fabriquez ?"
+    $ kd_queue_character_motion("elias", "exhausted")
     elias fatigue "Une invention qui devait empêcher mon café de tomber. Mais j'ai peu d'espoir..."
     elen joie "Noam ! Parfait ! Tiens ça."
     "Elle me tend le couvercle de sa boîte."
@@ -178,11 +179,13 @@ label _6_0_1_CAFETERIA:
     noam "Pour une fois, je suis de son côté. Si on fabrique un gobelet qui empêche de boire, on a raté quelque chose."
     elen "Mais non, regarde."
     "Elle enfonce le couvercle. Le gobelet se déforme."
+    $ kd_queue_character_motion("elias", "shock")
     elias peur "ELEN !"
     elen surpris "Ah."
     noam neutre "C'était l'étape de résistance des matériaux ?"
     elen "Bon. D'accord. Nouveau plan."
     "Elle récupère la boîte, s'assied et se met à déplier un autre morceau de carton."
+    $ kd_queue_character_motion("iris", "sigh")
     iris fatigue "Laisse-lui simplement une tasse sans couvercle. Et éloigne-la des consoles."
     elias gene "C'est ce que je fais !"
     "Elias pose son gobelet sur le plateau d'Elen."
@@ -202,8 +205,11 @@ label _6_0_1_CAFETERIA:
     mara "On fait l'essai à vide, évidemment. Je tiens à ce qu'Elias conserve sa peau."
     "Mara lui passe la sangle sur les épaules et ajuste le support contre son torse. Un gobelet vide tient enfin sans basculer."
     elen joie "ÇA MARCHE !"
+    $ kd_queue_character_motion("elias", "surprise")
     elias surpris "Hé... ça tient vraiment !"
+    $ kd_queue_character_motion("mara", "laugh")
     mara rire "Et regardez-moi ses PECS de ouf !"
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "MARA ! C'est le support qui fait ça !"
     noam sourire "T'es sûr ?"
     elias colere "Mais oui ! Arrêtez de regarder !"
@@ -351,6 +357,7 @@ label _6_0_1_TRANSITION_CONCLAVE:
     elen "Mais... Tu l'as réglée pour treize heures trente demain."
     tomas surpris "Quoi ?"
     elen sourire "Regarde la date."
+    $ kd_queue_character_motion("tomas", "nervous")
     tomas gene "Ah. Justement. Il ne faut JA-JAMAIS être en retard."
     "Je consulte ma tablette : 13 h 50 apparaît à la place de 14 h."
     noam inquiet "Elen, ton invitation indique quelle heure ?"
@@ -404,6 +411,7 @@ label _6_0_1_CONCLAVE_START:
 
     "Le débat commence avant même que tout le monde ait atteint sa chaise. Ryn tient sa tablette à bout de bras devant Sael ; Mara essaie de l'écarter du passage."
     $ showGroup([("ryn", "colere"), ("sael", "mefiant"), ("mara", "agace"), ("julian", "inquiet"), ("lysa", "blase"), ("tomas", "inquiet"), ("noam", "neutre"), ("elen", "inquiet"), ("iris", "reflechit")])
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "Lis ça ! Ils continuent de s'entasser en espérant pouvoir passer la frontière !"
     sael mefiant "..."
     ryn "Ils vont encore passer la nuit dehors !"
@@ -772,6 +780,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     "Le sourire de Kami se contracte. Le bord de son visage reste immobile alors que sa bouche continue de bouger."
     kami "Je n'ai pas besoin de vérification. Je suis opérationnelle."
     $ bc_show("iris", "colere")
+    $ kd_queue_character_motion("iris", "anger")
     iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
     $ bc_hide()
     $ bc_show("noam", "inquiet")
@@ -812,6 +821,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     kael reflechit "Elias. Tu vois ce que je vois ?"
     elias inquiet "Deux signatures sur le canal de diffusion. Une à elle. L'autre..."
     elias "L'autre, je sais pas."
+    $ kd_queue_character_motion("mara", "shock")
     mara colere "Comment ça, tu sais pas ?! C'est ton boulot de savoir !"
     elias panique "Mon boulot, c'est de réparer des pompes, Mara !"
     "Iris n'a pas bougé depuis l'annonce."
@@ -894,6 +904,7 @@ label _6_0_1_APRES_COUPURE:
     "Ma tablette est toujours ouverte sur le filtre du canal. J'ai beau regarder les chiffres, je ne sais même plus à quoi ils correspondent."
     noam fatigue "C'est... terminé ?"
     "Kael regarde la console. Ses doigts restent suspendus au-dessus de l'écran."
+    $ kd_queue_character_motion("kael", "exhausted")
     kael fatigue "La connexion a été coupée."
     elias peur "Coupée comment ?"
     kael "Le relais extérieur. Il ne répond plus."
@@ -1213,6 +1224,7 @@ label _6_0_1_VOTE:
     tomas "Je sais que tu peux pas, mais..."
     kael "On va vérifier ce qu'on peut vérifier."
     nyra raison "Et personne ne cherchera à reconstituer les votes individuels. Les résultats restent secrets."
+    $ kd_queue_character_motion("tomas", "embarrassed")
     tomas gene "Je demandais juste pour le nombre."
     nyra "C'est bien ce que je te réponds."
     "Iris ne regarde pas le résultat. Elle fixe l'écran noir au-dessus de la table."

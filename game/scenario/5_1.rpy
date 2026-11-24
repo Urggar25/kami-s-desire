@@ -25,6 +25,7 @@ label _5_1_REVEIL_CHAMBRE:
     think "J'ai la bouche sèche, la nuque bloquée et beaucoup trop de lumière dans les yeux."
     think "Franchement, je l'ai bien mérité."
 
+    $ kd_queue_character_motion("noam", "exhausted")
     noam fatigue "Plus jamais je ne bois autant..."
     think "Je dis ça maintenant, mais je suis presque sûr d'avoir déjà fait cette promesse."
 
@@ -51,6 +52,7 @@ label _5_1_REVEIL_CHAMBRE:
 
     think "Je me redresse et une douleur me traverse la nuque jusqu'au milieu du dos."
 
+    $ kd_queue_character_motion("noam", "exhausted")
     noam fatigue "Putain... Je suis complètement cassé."
 
     think "Le métal froid traverse mes chaussettes."
@@ -248,6 +250,7 @@ label _5_1_KAEL_NYRA:
 
     nyra raison "Parce que c'est vrai. Je ne vais pas te dire que ça ne recommencera jamais juste pour te rassurer."
 
+    $ kd_queue_character_motion("kael", "sigh")
     kael fatigue "Charmant."
 
     nyra raison "Mais tu préfères que je sois honnête."
@@ -381,6 +384,7 @@ label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     kael triste "Donc j'aimerais manger tranquillement."
 
+    $ kd_queue_character_motion("elen", "nervous")
     elen fatigue "D'accord. Oui. Mange. Je peux te trouver un truc sucré si— non. Mange d'abord."
 
     ryn blase "Moi, c'est Limen qui me fait flipper."
@@ -427,6 +431,7 @@ label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     noam taquin "Merci. J'ai préféré ne pas consulter le miroir ce matin."
 
+    $ kd_queue_character_motion("iris", "exhausted")
     iris fatigue "Non, mais vraiment."
 
     noam taquin "Oui, Iris, j'avais compris le diagnostic."
@@ -593,6 +598,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     noam inquiet "Merde."
 
+    $ kd_queue_character_motion("elias", "emphasis")
     elias fatigue "Ouais. Viens vite."
 
     hide elias
@@ -672,6 +678,7 @@ label _5_1_INFIRMERIE_KAEL:
 
     mara taquin "J'ai pas touché."
 
+    $ kd_queue_character_motion("kael", "exhausted")
     kael fatigue "Je prends de l'avance."
 
     mara agace "Arrête de prendre des initiatives."

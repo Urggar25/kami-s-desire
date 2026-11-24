@@ -105,6 +105,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     tomas inquiet "On est vraiment obligés d'être tous là à neuf heures précises ? Je veux dire... si quelqu'un dort encore ?"
 
     iris desaccord "Bien sûr ! On va demander gentiment à l'IA qui nous séquestre de décaler son programme pour les gros dormeurs."
+    $ kd_queue_character_motion("iris", "exasperation")
     iris colere "Un volontaire pour lui expliquer ? Personne ? Alors on mange."
 
     tomas panne "Je—"
@@ -114,6 +115,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
 
     elen content "Oh !"
     elen joie "C'est vraiii que l'ambiance est un peu... comment dire... funèbre ?"
+    $ kd_queue_character_motion("elen", "surprise")
     elen surpris "Oh ! Mais faut voir le bon côté des choses !"
     elen joie "Alors j'ai décidé qu'on allait commencer par quelque chose d'important : vous avez goûté le petit-déjeuner ?"
 
@@ -415,6 +417,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     mara taquin "Tomas, si tu termines cette phrase, je vote contre toi personnellement."
     tomas inquiet "Mais je... non, d'accord. J'arrête."
     noam taquin "Julian, ta réunion a déjà perdu le contrôle. Tu veux qu'on élise un responsable ?"
+    $ kd_queue_character_motion("julian", "sigh")
     julian panne "Vous êtes épuisants. Et je n'ai même pas encore commencé."
     lysa blase "Tu viens d'entrer et tu veux déjà diriger les débats ? Laisse-moi finir ma tartine avant d'élire un président."
     julian taquin "Je proposais seulement qu'on soit efficaces. Mais si ça vous effraie autant que ça..."
@@ -431,6 +434,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael reflechit "On s'est longtemps débrouillés seuls. Depuis la fermeture des passages, les bandes armées ne viennent plus jusqu'à nous. Ça, au moins, on ne peut pas le nier."
     ryn colere "Ah ouais ? Chez nous, il y a des gens qui meurent en essayant de franchir ces foutues frontières. Tu veux qu'on les remercie, aussi ?"
     sael mefiant "Je n'ai pas dit que la fermeture était juste pour tout le monde. J'ai dit que les attaques avaient cessé chez nous. Ce n'est pas la même chose."
+    $ kd_queue_character_motion("ryn", "anger")
     ryn colere "C'est pratique, de pouvoir parler de paix quand on est du bon côté de la barrière !"
     sael colere "Et tu crois que je ne sais pas ce que c'est, de perdre des gens ?"
     ryn colere "Alors ne me parle pas comme si cette frontière nous avait tous sauvés !"
@@ -564,6 +568,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     $ kd_direct.interrupt("lysa")
     $ kd_direct.react("elias", "surprise")
     lysa blase "ELIAS."
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "Quoi ? C'était pas un secret, si ?"
     lysa blase "Non. Laisse tomber."
     noam reflexion "Tu penses qu'on passera encore en dernier si tout se vend ?"
@@ -573,6 +578,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     noam inquiet "Ouais."
     elias reflechit "Je pensais surtout aux pièces détachées. Mais si vous pouvez même pas en acheter..."
     lysa taquin "Félicitations, tu viens de découvrir une économie."
+    $ kd_queue_character_motion("elias", "laugh")
     elias rire "Je peux la redécouvrir demain avec des schémas si ça t'arrange."
     "Lysa a un petit sourire. Elle essaie aussitôt de le cacher."
     noam raison "Tu le diras pendant le débat ?"
@@ -600,6 +606,7 @@ label _2_APRES_MIDI_ELEN:
         ("elen", "content", 0.68),
     ])
 
+    $ kd_queue_character_motion("noam", "surprise")
     noam surpris "Attends... tu prépares un amendement ou tu déclares tes revenus ?"
     elen content "Je voulais des fraises ! Ils en ont ! J'ai vu la liste, je te jure !"
     noam neutre "Et ces quatre feuilles, c'est pour... un bol de fraises ?"
@@ -711,6 +718,7 @@ label _2_SALLE_OBSERVATION:
     ])
 
     noam inquiet "Demain, quatorze heures. On aura jamais le temps de tout vérifier."
+    $ kd_queue_character_motion("kael", "exhausted")
     kael fatigue "Même avec un mois, on pourrait pas."
     noam reflexion "T'es contre le texte ?"
     kael calme "J'en sais rien. On a besoin de pièces, de livraisons... Mais chaque nouveau trajet, c'est un risque."
@@ -722,6 +730,7 @@ label _2_SALLE_OBSERVATION:
     "Il tourne le dos à la vitre."
     noam inquiet "Kael..."
     kael triste "Une fois, on a dû fermer une cloison. Il restait deux personnes de l'autre côté."
+    $ kd_queue_character_motion("noam", "shock")
     noam peur "Vous avez pu les sortir ?"
     kael triste "Non."
     "Il se remet à examiner les consoles. Je le laisse faire, mais la question me brûle encore les lèvres."
@@ -757,6 +766,7 @@ label _2_ROUTE_GYMNASE_MARA_TOMAS:
     mara taquin "Ah ouais ? T'es allé faire le tour des chambres ? Petit curieux !"
     tomas inquiet "Non ! Il m'a montré la sienne hier. Et puis j'ai aperçu celle d'Elen quand elle a laissé sa porte ouverte."
     tomas raison "Les superficies, les meubles, même les couleurs... Il n'y en a pas deux pareilles. C'est étrange pour une station conçue pour nous accueillir tous en même temps."
+    $ kd_queue_character_motion("mara", "laugh")
     mara rire "Moi, j'ai un lit immense. Si Kami veut acheter mon vote avec ça, elle s'y prend plutôt bien."
     tomas raison "Je me demande si les aménagements correspondent aux préférences de chacun. Mais comment aurait-elle pu les connaître ?"
     mara taquin "Tomas, je te demandais si t'avais bien dormi. Pas de rédiger une thèse sur les oreillers."
@@ -775,7 +785,9 @@ label _2_ROUTE_GYMNASE_ELEN_SAEL:
     ])
     elen joie "Attends, Sael ! Et le village, il est grand ? Vous êtes combien ?"
     sael neutre "Assez pour que tout le monde se connaisse. Pas assez pour qu'on puisse se cacher longtemps."
+    $ kd_queue_character_motion("elen", "lean_forward")
     elen surpris "Oh ! Et vous avez des fêtes ? Des marchés ? Des animaux ?!"
+    $ kd_queue_character_motion("sael", "sigh")
     sael fatigue "Des fêtes, oui. Des animaux, aussi. Les marchés, moins."
     elen content "Et tu vis dans une maison ? Elle ressemble à quoi ? Il y a des fleurs ?"
     sael mefiant "Elen... Tu comptes me poser toutes les questions du monde aujourd'hui ?"
@@ -861,8 +873,10 @@ label _2_GYMNASE:
     elias ecoute "Encore deux séries et tu auras mérité une vraie pause !"
 
     elias ecoute "Allez ! Encore deux répétitions, et je te laisse respirer. Je suis là si tu flanches."
+    $ kd_queue_character_motion("noam", "recoil")
     noam inquiet "Tu m'avais promis une initiation ! Pas une tentative de meurtre !"
     iris taquin "Oh, le pauvre. Je peux te chercher les haltères roses, si tu veux. Il y a des petits cœurs dessus."
+    $ kd_queue_character_motion("elias", "embarrassed")
     elias gene "Ils sont pas là pour décorer, les petits haltères..."
     iris blase "Je sais. C'était une plaisanterie."
     noam inquiet "Merci, Elias. Je commençais à croire que tu étais de son côté."
@@ -923,6 +937,7 @@ label _2_ROUTE_CAFETERIA_SOIR_LYSA:
     noam hesitation "Non. Enfin... Iris était là aussi."
     lysa blase "Donc tu t'es laissé convaincre par Elias, avec Iris pour t'encourager. C'était courageux. Ou complètement idiot."
     noam inquiet "Les deux, probablement. Je transpire encore, et je crois que mes jambes vont porter plainte."
+    $ kd_queue_character_motion("lysa", "laugh")
     lysa rire "Si tu tombes avant la cafétéria, je te promets de prévenir quelqu'un."
     noam sourire "Tu pourrais m'aider à me relever, non ?"
     lysa taquin "Faut pas abuser. Je viens de t'offrir un soutien moral exceptionnel."
@@ -956,6 +971,7 @@ label _2_CAFETERIA_SOIR:
     kael neutre "Chez nous, il fallait surtout se dépêcher. Une équipe finissait, la suivante prenait la place. Pas de place pour les grands discours."
     $ kd_direct.profile("comedy")
     $ kd_direct.two_shot("elen", "kael")
+    $ kd_queue_character_motion("elen", "surprise")
     elen surpris "Attendez. Vous mangez en flottant ?! Ça veut dire que vos soupes font des petites bulles ?"
     $ kd_direct.react("kael", "sigh")
     kael sourire "On a une gravité artificielle, Elen. Et on fixe les plateaux quand c'est nécessaire. Sinon, je te garantis qu'on mangerait moins de soupe."
@@ -969,6 +985,7 @@ label _2_CAFETERIA_SOIR:
     $ kd_direct.profile("intimate")
     $ kd_direct.shot("wide", duration=0.55)
     noam inquiet "Kael m'a raconté ce qui arrive quand une sanction perce la coque. J'arrive pas à me sortir ça de la tête."
+    $ kd_queue_character_motion("kael", "sigh")
     kael fatigue "J'espérais ne pas remettre ça sur la table ce soir."
     noam neutre "T'as rien gâché. C'est moi qui ai posé la question."
     elen inquiet "Vous pensez que nos familles nous voient, en ce moment ? Parce que si oui, j'espère qu'elles ne croient pas qu'on s'amuse vraiment."
