@@ -84,6 +84,7 @@ label kd_daily_news_2:
     "PRÉSENTATRICE — On ne va pas lui donner."
     "CHRONIQUEUR — Non."
     "Je devrais peut-être éviter de raconter ça à Julian."
+    $ kd_news_sfx("poll")
     show screen kd_news_poll_results
     "Un classement apparaît à l'écran. Nyra, Sael, Julian. Pas de Noam."
     hide screen kd_news_poll_results

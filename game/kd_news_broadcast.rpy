@@ -164,20 +164,26 @@ screen kd_news_outro():
     add Solid("#050a12") at kd_news_close_motion
     add Solid("#a7d0e1", xysize=(1920, 4)) xalign 0.5 yalign 0.5 at kd_news_close_line
 
-label kd_news_open(channel, topic, edition):
+label kd_news_open(channel, topic, edition, audio_mode="studio"):
     window hide
+    call kd_news_audio_begin(audio_mode) from _call_kd_news_audio_begin
     if not renpy.is_skipping():
         show screen kd_news_intro(channel, topic, edition)
         $ renpy.pause(1.35)
         hide screen kd_news_intro
+    $ kd_news_bed_start(audio_mode)
+    $ kd_news_sfx("live")
     return
 
 label kd_news_close:
     window hide
     hide screen kd_news_broadcast
+    $ renpy.music.stop(channel="kd_news_bed", fadeout=0.15)
+    $ kd_news_sfx("close")
     if not renpy.is_skipping():
         show screen kd_news_outro
         $ renpy.pause(0.32)
         hide screen kd_news_outro
+    call kd_news_audio_end from _call_kd_news_audio_end
     window auto
     return

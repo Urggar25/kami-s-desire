@@ -294,12 +294,13 @@ label _6_0_1_TV_FRONTIERES:
 
     $ j601_border_news_seen = True
     $ unlock_gallery_image("bg_cg035")
-    call kd_news_open(_("LIMEN 24"), _("LIBRE CIRCULATION"), _("ÉDITION SPÉCIALE")) from _call_kd_news_open_j601
+    call kd_news_open(_("LIMEN 24"), _("LIBRE CIRCULATION"), _("ÉDITION SPÉCIALE"), "field") from _call_kd_news_open_j601
     scene bg_cg035 at adaptive_fullscreen
     show screen kd_news_broadcast(_("LIMEN 24"), _("POSTE-FRONTIÈRE DE LIMEN"), _("Des familles dans l’attente du vote"), (_("Le Conclave se prononce cet après-midi."), _("Les restrictions de circulation restent en vigueur."), _("Aucune ouverture des frontières n’est annoncée.")))
     with Dissolve(0.25)
     window auto
     "À l'écran, des gens se sont installés devant un poste-frontière. Certains ont amené des chaises pliantes. Un enfant joue avec le ruban qui entoure une valise."
+    $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("POSTE-FRONTIÈRE DE LIMEN"), _("Des familles dans l’attente du vote"), (_("Le Conclave se prononce cet après-midi."), _("Les restrictions de circulation restent en vigueur."), _("Aucune ouverture des frontières n’est annoncée.")), _("TÉMOIGNAGE"), _("Une femme attend son frère"))
     "JOURNALISTE — Vous êtes là depuis ce matin ?"
     "UNE FEMME — Depuis hier soir, moi. Ma sœur me dit toujours que je suis en avance."
@@ -311,6 +312,7 @@ label _6_0_1_TV_FRONTIERES:
     "UNE FEMME — Là, j'ai encore une boîte. Je voulais lui donner en main propre."
     "Elle ouvre son sac pour montrer le paquet. L'emballage est abîmé."
     "Une autre personne traverse le cadre en portant une chaise."
+    $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("POSTE-FRONTIÈRE DE LIMEN"), _("Des familles dans l’attente du vote"), (_("Le Conclave se prononce cet après-midi."), _("Les restrictions de circulation restent en vigueur."), _("Aucune ouverture des frontières n’est annoncée.")), _("SUR PLACE"), _("Des proches attendent devant les barrières"))
     "UN HOMME — Vous pouvez pousser votre matériel ? Ma mère n'arrive pas à passer."
     "JOURNALISTE — Excusez-moi. Madame, vous aussi, vous attendez quelqu'un ?"
@@ -318,6 +320,7 @@ label _6_0_1_TV_FRONTIERES:
     "UN HOMME — Maman..."
     "UNE VIEILLE FEMME — Quoi ? C'est vrai."
     "Le journaliste se décale. Au fond, des agents surveillent les barrières sans parler."
+    $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("POSTE-FRONTIÈRE DE LIMEN"), _("Le Conclave doit se prononcer"), (_("Le Conclave se prononce cet après-midi."), _("Les restrictions de circulation restent en vigueur."), _("Aucune ouverture des frontières n’est annoncée.")))
     "JOURNALISTE — La décision du Conclave est attendue cet après-midi. Pour le moment, aucune ouverture n'est annoncée."
     "Une petite fille demande à son père s'ils peuvent rentrer manger. Il lui promet d'y aller bientôt."
