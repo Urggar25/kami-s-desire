@@ -160,6 +160,8 @@ label _4_0_ROUTE_MATIN_NYRA:
     $ j4_route_optional_met = True
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("nyra", "neutre", 0.30), ("noam", "neutre", 0.70)])
+    $ kd_direct.begin("casual")
+    $ kd_direct.two_shot("nyra", "noam")
     "Nyra tente de faire passer un chariot dans le couloir. Deux cartons dépassent de chaque côté et bloquent le virage."
     noam sourire "Tu prépares un déménagement ?"
     nyra reflechit "Les couverts du petit-déjeuner. Le chariot est plus large que l'espace entre les deux angles."
@@ -168,11 +170,14 @@ label _4_0_ROUTE_MATIN_NYRA:
     noam "Je peux aider ?"
     nyra reflechit "Si tu tiens la caisse du haut pendant que je tourne, oui."
     "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.react("noam", "surprise")
     nyra colere "Pas comme ça. Tu inclines la caisse."
     noam surpris "Je fais ce que je peux !"
     nyra "Alors incline-la dans l'autre sens."
     "Le chariot finit par franchir le passage sans rien renverser."
     noam "On aurait pu enlever les caisses avant."
+    $ kd_direct.shot("reaction", "nyra", duration=0.3, hold=2)
     "Nyra regarde successivement le chariot et les cartons."
     nyra reflechit "Oui. On aurait pu."
     "Elle soupire, puis reprend la poignée."
@@ -184,6 +189,7 @@ label _4_0_ROUTE_MATIN_NYRA:
     "Un cri indigné traverse la porte de la cafétéria. Nyra tourne la tête."
     noam "Je pense que tu vas avoir ta réponse."
     nyra reflechit "Ça promet."
+    $ kd_direct.end()
     $ hideGroup()
     return
 
@@ -251,10 +257,15 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("medium", "elen", duration=0.0, hold=1)
     elen colere "JE NE SUIS PAS DIFFICILE !"
     elias reflechit "Tu as quand même crié pendant trois minutes à cause de..."
     elen colere "ELIAS."
+    $ kd_direct.shot("reaction", "elias", duration=0.22, hold=1)
+    $ kd_direct.react("elias", "embarrassed")
     elias inquiet "Oui. Rien."
+    $ kd_direct.end()
     "Elen emporte son plateau vide comme une personne qui vient de perdre un procès et quitte la cafétéria."
     "À peine la porte refermée, quelqu'un déplace sa tasse pour l'empêcher de tomber du comptoir."
 
@@ -270,6 +281,7 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("casual")
     mara taquin "Je donne dix minutes avant qu'elle revienne annoncer une grève de la faim."
     iris colere "Tu rigoles, mais Kami a décidé toute seule de ce qu'on pouvait garder."
     mara neutre "Je peux trouver ça inquiétant et trouver Elen ridicule. J'ai le droit aux deux."
@@ -279,9 +291,12 @@ label _4_0_CAFETERIA_ECRANS:
     lysa sourire "Sinon ce morceau de pain date d'hier. Goumi cuit du pain en direct si on en demande."
     noam sourire "Pourquoi tu en demandes pas un d'aujourd'hui ? Si tu peux, autant éviter de manger du pain dur."
     lysa neutre "J'ai bien envie de cuisiner..."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.interrupt("mara")
     mara surpris "Hein ?! Cuisiner ? TOI ?!"
     kael calme "Non, mais sérieusement. On peut utiliser ce pain pour cuisiner ?"
     lysa reflechit "Pour faire des miettolunes, oui. C'est presque fait pour."
+    $ kd_direct.profile("casual")
     $ unlock_codex_page("miettolunes", with_notification=False)
     noam surpris "Des quoi ?"
     lysa neutre "Des miettolunes."
@@ -332,6 +347,7 @@ label _4_0_CAFETERIA_ECRANS:
 
     $ j4_cafeteria_ryn_talked = False
     $ j4_cafeteria_julian_talked = False
+    $ kd_direct.end()
     call _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE from _call_4_0_cafeteria_television_obligatoire
 
     scene bg_cafeteria at adaptive_fullscreen with dissolve

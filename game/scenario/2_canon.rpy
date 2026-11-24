@@ -535,16 +535,25 @@ label _2_APRES_MIDI_LYSA_ELIAS:
         ("lysa", "triste", 0.25),
     ])
 
+    $ kd_direct.begin("casual")
+    $ kd_direct.place("elias", x=0.20)
+    $ kd_direct.place("lysa", x=0.75)
+    $ kd_direct.two_shot("elias", "lysa")
     elias ecoute "T'étais bizarrement silencieuse ce matin. Hier, tu arrivais à me répondre avant même que je finisse une phrase."
     lysa blase "J'ai écouté. Expérience nouvelle. Je recommande une fois par trimestre."
     elias sourire "T'as dû être très malade."
     lysa neutre "Merci, docteur. Ton diagnostic me touche."
     think "Je les rejoins. Lysa me laisse une place près du mur."
+    $ kd_direct.end()
     $ showGroup([
         ("elias", "neutre", -0.11),
         ("noam", "inquiet", 0.13),
         ("lysa", "triste", 0.25),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.place("elias", x=0.12, depth=1)
+    $ kd_direct.place("noam", x=0.50, scale=0.94)
+    $ kd_direct.place("lysa", x=0.88, depth=1)
     noam taquin "Vous avez fini de vous disputer ?"
     lysa blase "On n'a pas commencé. Elias a encore toutes ses dents."
     elias sourire "Je préfère qu'on garde cette méthode."
@@ -552,10 +561,14 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     lysa blase "J'essayais de voir combien de temps tu mettrais à le remarquer."
     noam inquiet "D'accord. Mauvaise question."
     elias ecoute "Elle m'a demandé combien de temps il fallait pour recevoir une pièce à Harmonie."
+    $ kd_direct.interrupt("lysa")
+    $ kd_direct.react("elias", "surprise")
     lysa blase "ELIAS."
     elias gene "Quoi ? C'était pas un secret, si ?"
     lysa blase "Non. Laisse tomber."
     noam reflexion "Tu penses qu'on passera encore en dernier si tout se vend ?"
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium", "lysa", duration=0.55)
     lysa reflexion "On n'a pas de quoi payer le premier prix. Et on a déjà des pénuries. Tu vois le calcul."
     noam inquiet "Ouais."
     elias reflechit "Je pensais surtout aux pièces détachées. Mais si vous pouvez même pas en acheter..."
@@ -568,6 +581,7 @@ label _2_APRES_MIDI_LYSA_ELIAS:
     noam taquin "On va les noter avant qu'elle change d'avis."
     "Elias sort déjà sa tablette. Lysa soupire, mais elle ne lui demande pas de la ranger."
 
+    $ kd_direct.end()
     call day2_collect_vote_argument("approvisionnement") from _call_day2_collect_vote_argument_approvisionnement
 
     think "Je note l'inquiétude de Lysa dans mon dossier de vote."
@@ -933,35 +947,46 @@ label _2_CAFETERIA_SOIR:
         ("nyra", "taquin", 0.96),
     ])
 
+    $ kd_direct.begin("casual")
     think "Je reviens à la cafétéria. Mes bras protestent dès que j'essaie de tenir le plateau. À une table, Nyra raconte quelque chose qui a l'air de passionner Elen."
 
     nyra sourire "À Orbite, on pouvait finir un repas sans qu'il se transforme en débat. Vous parlez toujours autant, à Harmonie ?"
     noam sourire "Non. C'est un effet secondaire de trente jours d'enfermement avec des inconnus."
     elen joie "Moi j'adore ! Enfin, sauf quand quelqu'un crie ou menace de partir. Ou quand on parle de cadavres."
     kael neutre "Chez nous, il fallait surtout se dépêcher. Une équipe finissait, la suivante prenait la place. Pas de place pour les grands discours."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.two_shot("elen", "kael")
     elen surpris "Attendez. Vous mangez en flottant ?! Ça veut dire que vos soupes font des petites bulles ?"
+    $ kd_direct.react("kael", "sigh")
     kael sourire "On a une gravité artificielle, Elen. Et on fixe les plateaux quand c'est nécessaire. Sinon, je te garantis qu'on mangerait moins de soupe."
     elen content "C'est nul ! Je voulais voir une purée faire un looping !"
     kael sourire "Je peux te garantir que ce serait surtout un cauchemar à nettoyer."
+    $ kd_direct.shot("reaction", "nyra", duration=0.25, hold=1)
     nyra taquin "Et nous voilà revenus aux problèmes les plus importants d'Orbite."
     noam sourire "Je crois que j'ai raté le début de cette réunion scientifique."
     tomas hesitation "On est en train de décider de ce que vous pourrez acheter, mais... je sais même pas comment vous mangez. Ça me paraît un peu inquiétant."
     nyra neutre "On peut t'expliquer. Mais pas en un repas. Tu veux commencer par les rations ou les filtres à air ?"
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("wide", duration=0.55)
     noam inquiet "Kael m'a raconté ce qui arrive quand une sanction perce la coque. J'arrive pas à me sortir ça de la tête."
     kael fatigue "J'espérais ne pas remettre ça sur la table ce soir."
     noam neutre "T'as rien gâché. C'est moi qui ai posé la question."
     elen inquiet "Vous pensez que nos familles nous voient, en ce moment ? Parce que si oui, j'espère qu'elles ne croient pas qu'on s'amuse vraiment."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("medium", "elen", duration=0.30, hold=1)
     elen joie "Oh ! Attendez, vous avez goûté la purée ? Je suis sûre qu'ils ont changé la recette !"
     nyra taquin "Je crois surtout qu'elle a eu le temps de refroidir pendant notre conversation sur le vide spatial."
     tomas sourire "Il paraît qu'on cherche une raison de voter à l'unanimité. On pourrait commencer par la purée."
     elen joie "Moi je vote pour !"
     kael calme "Je m'abstiens. Je n'ai pas encore lu la recette."
     nyra sourire "Un vrai parlement, finalement."
+    $ kd_direct.shot("retreat", duration=0.55)
     think "Je ris avec eux. Ça ne dure pas longtemps, mais ça fait du bien."
     think "Elen examine les assiettes comme un jury gastronomique. Kael essaie de lui expliquer la préparation des repas sur Orbite sans qu'elle lui demande si les pommes de terre flottent."
 
     think "Les conversations se mélangent. Un souvenir de la Terre, une question sur Orbite, une plaisanterie. Pendant quelques minutes, personne ne parle du vote."
 
+    $ kd_direct.end()
     stop music fadeout 1.0
     pause 0.6
     hide screen day2_quick_vote_notes

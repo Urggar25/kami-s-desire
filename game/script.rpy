@@ -758,6 +758,10 @@ init python:
             start_character_dialogue(tag, dialogue_text)
             play_dialogue_doublage(doublage_tag or tag, dialogue_text)
 
+            # The director only owns staging; voice and lip sync above are unchanged.
+            if getattr(store, "kd_direction_active", False) and kd_direct.on_line(tag):
+                return
+
             # Les décors via bg_show et les diffusions ne doivent pas être
             # recadrés par les personnages, même si leurs sprites sont présents.
             if scene_has_no_character_sprites():

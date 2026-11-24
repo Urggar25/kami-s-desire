@@ -100,6 +100,8 @@ init python:
         members : liste de tuples (tag, expr) ou (tag, expr, x)
         ex: showGroup([("lysa","neutre",0.15), ("julian","sourire",0.5)])
         """
+        if getattr(store, "kd_direction_active", False):
+            kd_direct.end()
         if len(members) > GROUP_MAX_MEMBERS:
             raise Exception("showGroup accepte au maximum 12 personnages.")
 
@@ -154,6 +156,8 @@ init python:
 
     def hideGroup():
         """Cache tous les personnages du groupe actuel avec fade out"""
+        if getattr(store, "kd_direction_active", False):
+            kd_direct.end()
         members = list(store.group_members)
         for tag in members:
             state = store.char_state.get(tag, {})
