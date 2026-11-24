@@ -3,6 +3,7 @@ default choix_1_soir = "dormir"
 default day1_wake_edge_enabled = False
 default day1_wake_edge_started = None
 default day1_wake_edge_triggered = False
+default day1_wake_pan_last = None
 define sfx_drop = "audio/sfx_drop.mp3"
 define sfx_shower = "audio/sfx_shower.mp3"
 
@@ -35,9 +36,9 @@ init python:
     def day1_wake_pan(trans, st, at):
         import math
         # Exponential damping based on elapsed time, not frame count.
-        previous = getattr(trans, "_day1_pan_st", st)
-        dt = max(0.0, min(0.10, st - previous))
-        trans._day1_pan_st = st
+        previous = store.day1_wake_pan_last
+        dt = 0.016 if previous is None or st < previous else max(0.0, min(0.10, st - previous))
+        store.day1_wake_pan_last = st
         blend = 1.0 - math.exp(-8.0 * dt)
         try:
             mx, my = renpy.get_mouse_pos()
@@ -204,7 +205,7 @@ transform day1_terminal_enter:
 
 transform day1_terminal_scanline:
     ypos 0
-    linear 0.75 ypos 1.0
+    linear 0.75 ypos 0.97
 
 screen day1_access_terminal(phase="idle", attempts=2):
     zorder 110
@@ -228,7 +229,6 @@ screen day1_access_terminal(phase="idle", attempts=2):
             fixed:
                 xsize (terminal_w - 48)
                 ysize int(terminal_h * 0.49)
-                clipping True
                 add Solid("#142c36")
                 for i in range(7):
                     add Solid("#28505a") xpos (i / 7.0) xsize 1 yfill True
@@ -259,7 +259,7 @@ transform day1_asphyxia_tunnel:
     zoom 1.35
     align (0.5, 0.5)
     ease 1.0 alpha 0.75 zoom 1.0
-    ease 2.0 alpha 1.0 zoom 0.78
+    ease 2.0 alpha 1.0 zoom 1.0
 
 transform day1_asphyxia_camera:
     zoom 1.06
@@ -275,10 +275,19 @@ transform day1_asphyxia_cg:
     align (0.5, 0.5)
     ease 2.0 zoom 1.12
 
+transform day1_tunnel_edge(top=True):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize 0
+    ease 3.0 ysize int(config.screen_height * 0.19)
+
 screen day1_asphyxia_overlay():
     zorder 880
     add Solid("#26030c") at day1_asphyxia_overlay_in
     add "images/effects/stress_vignette.svg" at day1_asphyxia_tunnel
+    add Solid("#08060b") at day1_tunnel_edge(True)
+    add Solid("#08060b") at day1_tunnel_edge(False)
 
 label _1_CANON:
 # =============================================================================
@@ -295,6 +304,7 @@ label _1_CANON:
     $ day1_wake_edge_enabled = False
     $ day1_wake_edge_started = None
     $ day1_wake_edge_triggered = False
+    $ day1_wake_pan_last = None
     # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
     scene bg_conclave at adaptive_fullscreen
     $ showGroup([("lysa", "blase", 0.50)])
@@ -1228,6 +1238,19 @@ transform day1_kami_rule_cell(delay=0.0):
     pause delay
     easeout 0.18 alpha 1.0 yoffset 0
 
+screen day1_kami_pair(first, second):
+    zorder 121
+    hbox at day1_kami_rule_in:
+        xalign 0.97
+        yalign 0.48
+        spacing 10
+        for tag, expression in (first, second):
+            frame:
+                padding (3, 3)
+                background Solid(kd_char_color(tag))
+                add kd_face(tag, expression, 160)
+    timer 1.30 action Hide("day1_kami_pair")
+
 screen day1_kami_rule(kind):
     zorder 120
     frame at day1_kami_rule_in:
@@ -1379,11 +1402,13 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Une excellente transition ! Je vois que certains ont déjà envie d'avoir la parole."
     $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
+    show screen day1_kami_pair(("mara", "taquin"), ("julian", "neutre"))
     mara taquin "Il attend ça depuis qu'il a ouvert les yeux."
     $ bc_hide()
     $ bc_show("julian", "neutre", px=-80, py=-45, pz=0.85)
     julian neutre "Je pose une question."
     $ bc_hide()
+    hide screen day1_kami_pair
     kami "Et moi, je savoure ce moment."
 
     pause 0.3
@@ -1418,11 +1443,13 @@ label _1_KAMI_APPARITION:
     elen joie "On peut applaudir ?"
     $ bc_hide()
     $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
+    show screen day1_kami_pair(("ryn", "colere"), ("elen", "peur"))
     ryn colere "TU VAS VRAIMENT APPLAUDIR ?!"
     call kd_vn_reaction("ryn", "colere", "#ff9c55")
     $ bc_hide()
     $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "Mais non ! Je demandais !"
+    hide screen day1_kami_pair
     $ bc_hide()
     kami "Oh, faites comme chez vous. Il n'y aura pas de deuxième cérémonie d'accueil."
     $ bc_show("mara", "rire", px=-80, py=-45, pz=0.85)
@@ -1657,6 +1684,9 @@ label _1_KAMI_APPARITION:
     $ bc_off()
     play music "music/bgm_quiet_routine.mp3" fadein 0.4
     hide screen kami_broadcast_ui
+    hide screen day1_kami_pair
+    hide screen day1_kami_rule
+    hide screen day1_kami_takeover
 
     scene bg_conclave at adaptive_fullscreen with fade
 
