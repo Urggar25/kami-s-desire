@@ -168,6 +168,8 @@ screen kd_news_outro():
     add Solid("#a7d0e1", xysize=(1920, 4)) xalign 0.5 yalign 0.5 at kd_news_close_line
 
 label kd_news_open(channel, topic, edition, audio_mode="studio"):
+    hide screen kd_news_actor_stage
+    $ kd_news_reset_actors()
     window hide
     call kd_news_audio_begin(audio_mode) from _call_kd_news_audio_begin
     if not renpy.is_skipping():
@@ -180,6 +182,8 @@ label kd_news_open(channel, topic, edition, audio_mode="studio"):
 
 label kd_news_close:
     window hide
+    hide screen kd_news_actor_stage
+    $ kd_news_reset_actors()
     hide screen kd_news_broadcast
     $ renpy.music.stop(channel="kd_news_bed", fadeout=0.15)
     $ kd_news_sfx("close")

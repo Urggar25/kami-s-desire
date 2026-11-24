@@ -402,12 +402,16 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     mara neutre "Ou qu'elle n'arrivait pas à le porter."
     $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Les familles récupèrent leurs denrées"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")), _("SUR PLACE"), _("Distribution de colis alimentaires"))
+    $ kd_news_stage("insert", "reporter")
     "La journaliste se tourne vers la petite fille. Elle lui demande ce qu'elle préfère dans le paquet. L'enfant regarde sa mère avant de répondre."
+    $ kd_news_stage("insert", "girl")
+    $ kd_news_expression("girl", "happy")
     "Une seconde plus tard, la petite fille sourit à la caméra, sans donner le nom d'un seul aliment."
     elias reflechit "Elle est contente, non ?"
     ryn neutre "Elle a reçu à manger. Bien sûr qu'elle est contente."
     $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Des habitants s’inquiètent des prochaines livraisons"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")), _("TÉMOIGNAGE"), _("Une mère attend des réponses"))
+    $ kd_news_stage("insert", "mother")
     "Ryn garde les yeux sur l'écran. La journaliste s'adresse maintenant à une femme qui tient un enfant endormi contre son épaule."
     "La femme remercie les bénévoles, puis demande quand arrivera la prochaine livraison. On lui répond qu'aucune date n'est garantie."
     iris fatigue "Super."
@@ -416,6 +420,7 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     "La journaliste demande à la femme si elle souhaiterait autre chose. Celle-ci commence à répondre, hésite et jette un regard vers la caméra."
     $ kd_news_sfx("headline")
     show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Une nouvelle livraison en cours"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")))
+    hide screen kd_news_actor_stage
     "Le reportage coupe sur les bénévoles qui déchargent un autre camion."
     kael reflechit "Elle allait dire quoi ?"
     nyra reflechit "On n'en saura rien."
