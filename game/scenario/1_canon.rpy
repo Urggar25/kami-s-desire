@@ -1306,41 +1306,147 @@ screen day1_kami_pair(first, second):
                 add kd_face(tag, expression, 160)
     timer 1.30 action Hide("day1_kami_pair")
 
+# Full monitor graphic: existing metal bezel + CRT treatment, no avatar underneath.
+# Screen sits below say (zorder 0), above master. Layout stays in the safe
+# central area, away from the day HUD and the dialogue box.
+transform day1_protocol_reveal:
+    alpha 0.0
+    zoom 1.025
+    align (0.5, 0.5)
+    easeout 0.24 alpha 1.0 zoom 1.0
+
+transform day1_protocol_title:
+    alpha 0.0
+    yoffset -20
+    easeout 0.25 alpha 1.0 yoffset 0
+
+transform day1_protocol_tile(delay=0.0):
+    alpha 0.0
+    yoffset 18
+    pause delay
+    easeout 0.22 alpha 1.0 yoffset 0
+
+transform day1_protocol_veto:
+    alpha 0.0
+    zoom 1.18
+    pause 0.58
+    easeout 0.13 alpha 1.0 zoom 0.96
+    ease 0.12 zoom 1.0
+
+transform day1_protocol_stamp:
+    alpha 0.0
+    zoom 1.18
+    pause 0.76
+    easeout 0.13 alpha 1.0 zoom 0.96
+    ease 0.12 zoom 1.0
+
+transform day1_protocol_sweep:
+    alpha 0.10
+    ypos 0
+    linear 2.6 ypos 0.96
+    repeat
+
 screen day1_kami_rule(kind):
-    zorder 120
-    frame at day1_kami_rule_in:
-        xalign 0.97
-        yalign 0.12
-        padding (22, 18)
-        background Solid("#101b2bee")
-        vbox:
-            spacing 12
-            text "CONCLAVE // PROTOCOL" color "#8cc9d9" size 22
-            if kind == "duration" or kind == "calendar":
-                text (_("30 JOURS") if kind == "duration" else _("UN VOTE TOUS LES 3 JOURS")) color "#edf8ff" size 29
-                grid 10 3:
-                    spacing 5
-                    for i in range(30):
-                        add Solid("#74ccdd" if kind == "duration" or (i + 1) % 3 == 0 else "#34485a") at day1_kami_rule_cell(i * 0.012):
-                            xysize (28, 12)
-            elif kind == "abstain" or kind == "veto":
-                grid 6 2:
-                    spacing 6
-                    for i in range(12):
-                        frame at day1_kami_rule_cell(i * 0.035):
-                            xysize (52, 45)
-                            padding (0, 0)
-                            background Solid("#a53148" if i == 11 and kind == "veto" else "#566575" if i == 11 else "#235d56")
-                            text ("X" if i == 11 and kind == "veto" else "-" if i == 11 else "+") color "#ffffff" size 28 align (0.5, 0.5)
-                text (_("REJETÉ") if kind == "veto" else _("ADOPTÉ")) color ("#ff8090" if kind == "veto" else "#8ce8bc") size 28 xalign 0.5
-            else:
-                text _("COMMANDEMENTS") color "#edf8ff" size 28
-                hbox:
-                    spacing 5
-                    for i in range(10):
-                        add Solid("#52606f") at day1_kami_rule_cell(i * 0.035):
-                            xysize (26, 8)
-                text _("SUSPENDUS") color "#ff8090" size 30
+    zorder -1
+    modal False
+    $ vote = kind in ("abstain", "veto")
+    $ rejected = kind == "veto"
+    $ ink = "#071b31"
+    $ cyan = "#58d7ef"
+    $ pale = "#c0f6ff"
+    $ red = "#ff6a80"
+    # The actual broadcast background replaces Kami's sprite visually.
+    add "images/background/kami_diffusion/bg_diffusion_fond.png" at adaptive_fullscreen
+    fixed:
+        xysize (1600, 720)
+        align (0.5, 0.43)
+        at day1_protocol_reveal
+        add Solid("#071b31c9")
+        add Solid("#46bedb", xysize=(1460, 3)) xpos 70 ypos 90
+        add Solid("#46bedb", xysize=(1460, 2)) xpos 70 ypos 660
+        text "KAMI  //  CONCLAVE" xpos 70 ypos 25 size 25 color cyan
+        text "PROTOCOL" xalign 0.95 ypos 25 size 25 color cyan
+        if kind in ("duration", "calendar"):
+            text (_("30 JOURS") if kind == "duration" else _("UN VOTE TOUS LES 3 JOURS")) at day1_protocol_title:
+                xalign 0.5
+                ypos 116
+                size 78
+                color pale
+                outlines [(4, ink, 0, 0)]
+            grid 10 3:
+                xpos 145
+                ypos 250
+                spacing 12
+                for i in range(30):
+                    $ marked = kind == "duration" or (i + 1) % 3 == 0
+                    frame at day1_protocol_tile(i * 0.026):
+                        xysize (120, 92)
+                        padding (0, 0)
+                        background Solid("#14728c" if marked else "#20374c")
+                        add Solid(cyan if marked else "#42637b", xysize=(120, 5))
+                        text ("%02d" % (i + 1)) align (0.5, 0.5) size 40 color (pale if marked else "#91aab9")
+            if kind == "calendar":
+                text _("10 SCRUTINS") at day1_protocol_stamp:
+                    xalign 0.5
+                    ypos 582
+                    size 42
+                    color cyan
+        elif vote:
+            text (_("UN SEUL CONTRE SUFFIT") if rejected else _("POUR / CONTRE / ABSTENTION")) at day1_protocol_title:
+                xalign 0.5
+                ypos 116
+                size 60
+                color pale
+                outlines [(3, ink, 0, 0)]
+            hbox:
+                xpos 160
+                ypos 255
+                spacing 6
+                for i in range(12):
+                    fixed:
+                        xysize (101, 145)
+                        at day1_protocol_tile(i * 0.037)
+                        add "images/effects/kami_protocol_symbols.svg":
+                            xysize (98, 98)
+                        if i == 11 and rejected:
+                            add Solid("#9b233cdd", xysize=(92, 92)) xpos 3 ypos 3 at day1_protocol_veto
+                            text "X" at day1_protocol_veto:
+                                align (0.5, 0.27)
+                                size 60
+                                color "#ffffff"
+                        else:
+                            text ("—" if i == 11 else "+") align (0.5, 0.27) size 52 color "#e7ffff" outlines [(3, ink, 0, 0)]
+                        text ("%02d" % (i + 1)) xalign 0.5 ypos 105 size 22 color pale
+            frame at day1_protocol_stamp:
+                xalign 0.5
+                ypos 452
+                xysize (740, 130)
+                padding (0, 0)
+                background Solid("#82253c" if rejected else "#14556a")
+                text (_("REJETÉ") if rejected else _("ADOPTÉ")) align (0.5, 0.5) size 78 color "#ffffff"
+            text (_("11 POUR   /   1 CONTRE") if rejected else _("11 POUR   /   1 ABSTENTION")) xalign 0.5 ypos 600 size 30 color (red if rejected else pale)
+        else:
+            text _("LES DIX COMMANDEMENTS") at day1_protocol_title:
+                xalign 0.5
+                ypos 116
+                size 60
+                color pale
+            add "images/effects/kami_protocol_book.svg" at day1_protocol_tile(0.1):
+                xpos 275
+                ypos 240
+                xysize (280, 306)
+            vbox:
+                xpos 650
+                ypos 276
+                spacing 18
+                text _("APPLICATION LOCALE") size 36 color cyan
+                text _("SUSPENDUE") at day1_protocol_stamp:
+                    size 85
+                    color red
+                    outlines [(4, ink, 0, 0)]
+                add Solid(red, xysize=(650, 6)) at day1_protocol_stamp
+        add Solid("#90e7ff", xysize=(1460, 12)) xpos 70 at day1_protocol_sweep
+    add _kami_screen_fx()
 
 # J1: Julian imagines himself on the public broadcast.
 transform day1_rec_in:
@@ -1626,8 +1732,6 @@ label _1_KAMI_APPARITION:
     kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
 
     show bg_diffusion_colere as bg_diffusion_amour at adaptive_fullscreen
-    $ impact(10, 0.25, "#c81e2e")
-
     show screen day1_kami_rule("veto")
     kami "Personne ne devra voter contre. Sinon, le vote est refusé."
     hide screen day1_kami_rule
