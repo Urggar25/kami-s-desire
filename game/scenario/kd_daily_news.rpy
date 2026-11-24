@@ -1,14 +1,15 @@
 # Bulletins facultatifs J1-J6. Aucun effet sur les stats, votes ou temps libre.
-# Une lecture par journée, partagée entre les trois télévisions.
+# Une lecture par bulletin, partagée entre les trois télévisions (J3 avant/après).
 default kd_daily_news_seen = []
 
 label kd_daily_news_watch:
     if day_number() not in (1, 2, 3, 4, 5, 6):
         return
-    if day_number() in kd_daily_news_seen:
+    $ kd_news_watch_key = (3, getattr(store, "vote1", "")) if day_number() == 3 else day_number()
+    if kd_news_watch_key in kd_daily_news_seen:
         think "C'est le même bulletin que tout à l'heure."
         return
-    $ kd_daily_news_seen = kd_daily_news_seen + [day_number()]
+    $ kd_daily_news_seen = kd_daily_news_seen + [kd_news_watch_key]
     if day_number() == 4:
         if getattr(store, "vote1", "") == "OUI":
             call kd_daily_news_4_oui from _call_kd_daily_news_4_oui
@@ -16,8 +17,16 @@ label kd_daily_news_watch:
             call kd_daily_news_4_non from _call_kd_daily_news_4_non
     elif day_number() == 3 and getattr(store, "vote1", "") in ("OUI", "NON"):
         call kd_daily_news_3_after from _call_kd_daily_news_3_after
-    else:
-        call expression "kd_daily_news_%s" % day_number()
+    elif day_number() == 1:
+        call kd_daily_news_1 from _call_kd_daily_news_dispatch_1
+    elif day_number() == 2:
+        call kd_daily_news_2 from _call_kd_daily_news_dispatch_2
+    elif day_number() == 3:
+        call kd_daily_news_3 from _call_kd_daily_news_dispatch_3
+    elif day_number() == 5:
+        call kd_daily_news_5 from _call_kd_daily_news_dispatch_5
+    elif day_number() == 6:
+        call kd_daily_news_6 from _call_kd_daily_news_dispatch_6
     return
 
 label kd_daily_news_3_after:
@@ -37,92 +46,100 @@ label kd_daily_news_3_after:
     return
 
 label kd_daily_news_1:
-    call kd_news_open(_("LIMEN 24"), _("Le Conclave vu d'en bas"), _("JOURNAL")) from _call_kd_daily_news_open_1
+    call kd_news_open(_("LIMEN 24"), _("Le monde regarde le Conclave"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_1
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("NEXUS — MICRO-TROTTOIR"), _("Une question de famille"), (_("Les représentants sont réunis en orbite."), _("Retrouvez notre rubrique culture après le journal.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — CONCLAVE"), _("Douze représentants, des millions de vies"), (_("Les représentants sont réunis en orbite."), _("Le Conclave peut modifier les Commandements à l’unanimité.")))
     window auto
-    "JOURNALISTE — Vous avez suivi l'annonce concernant le Conclave ?"
-    "UN HOMME — Oui, enfin... ma femme l'a suivie. Moi, j'étais en train de réparer le four."
-    "JOURNALISTE — Vous attendez quelque chose de ces représentants ?"
-    "UN HOMME — Qu'ils nous laissent revoir notre fils. Il travaille dans un autre district."
-    "UNE FEMME — Dis-lui pour le four."
-    "UN HOMME — Mais elle s'en fout, du four !"
-    "UNE FEMME — Ça fait trois semaines que tu le répares."
-    "JOURNALISTE — Votre fils vit loin de chez vous ?"
-    "UNE FEMME — Pas tellement. C'est ça qui est bête. On pourrait y aller à pied."
-    "UN HOMME — Il nous appelle le dimanche. Quand il y pense."
-    "UNE FEMME — Il y pense. C'est toi qui coupes la sonnerie."
-    "JOURNALISTE — Merci à vous deux."
-    "Je baisse un peu le volume. J'ai presque envie de savoir ce qu'il a, ce four."
+    "PRÉSENTATRICE — Nous consacrons l'essentiel de cette édition à l'ouverture du Conclave. Pour la première fois, les représentants sont réunis en orbite pour examiner les règles qui régissent notre quotidien."
+    "PRÉSENTATRICE — Qu'est-ce que vous attendez d'eux ? Nous avons posé la question dans plusieurs districts."
+    "UNE FEMME — Qu'on puisse revoir notre fils. Il habite de l'autre côté de la frontière."
+    "UN HOMME — On en parle depuis ce matin. Elle a même sorti les affaires du petit."
+    "UNE FEMME — Arrête. J'ai juste préparé son lit."
+    "JOURNALISTE — Vous pensez qu'il pourra bientôt revenir ?"
+    "UNE FEMME — Je sais pas. Vous avez vu les gens qu'ils ont envoyés là-haut, vous ? Ils ont l'air de s'entendre ?"
+    "JOURNALISTE — Il est encore un peu tôt pour le dire."
+    "UN HOMME — Ils ont bien le droit de pas être d'accord, non ?"
+    "UNE FEMME — Oui, mais faudrait pas qu'ils le soient trop longtemps."
+    "PRÉSENTATRICE — Nous suivrons leurs premières décisions dans les prochaines éditions."
+    "Je reconnais le décor de la station sur le générique de fin. Ça me fait un drôle d'effet de le voir à la télévision."
     call kd_news_close from _call_kd_daily_news_close_1
     return
 
+
 label kd_daily_news_2:
-    call kd_news_open(_("LIMEN 24"), _("Un concours très disputé"), _("JOURNAL")) from _call_kd_daily_news_open_2
+    call kd_news_open(_("LIMEN 24"), _("Le baromètre du Conclave"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_2
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("HARMONIE — VIE LOCALE"), _("Le plus beau balcon du quartier"), (_("Concours de jardinage : les inscriptions sont ouvertes."), _("La météo à suivre dans notre prochaine édition.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — SONDAGE"), _("Quel représentant vous inspire confiance ?"), (_("Consultation ouverte aux téléspectateurs."), _("Sondage de participation libre : résultats non représentatifs.")))
     window auto
-    "PRÉSENTATRICE — Et nous retrouvons notre jury pour le concours annuel des balcons fleuris."
-    "JURÉ — Alors, ici, nous avons un très beau travail sur les couleurs."
-    "UNE HABITANTE — Merci. C'est mon mari qui a choisi les pots."
-    "JURÉ — Et les fleurs ?"
-    "UNE HABITANTE — Ah non, surtout pas lui."
-    "UN HOMME — J'ai quand même planté les tomates."
-    "UNE HABITANTE — On ne met pas de tomates dans un concours de fleurs !"
-    "UN HOMME — Elles ont des fleurs, mes tomates."
-    "JURÉ — Techniquement, monsieur n'a pas tort."
-    "UNE HABITANTE — Vous voulez les noter aussi ?"
-    "UN HOMME — Attendez, je vais vous en chercher une."
-    "PRÉSENTATRICE — Nous retrouverons les résultats demain."
-    "Je serais curieux de voir la note des tomates."
+    "PRÉSENTATRICE — Depuis hier, les messages sur les douze représentants affluent à la rédaction. Nous avons demandé à nos téléspectateurs à qui ils feraient le plus confiance."
+    "CHRONIQUEUR — Parmi les noms qui reviennent le plus souvent : Nyra, Sael et Julian."
+    "PRÉSENTATRICE — Julian ? Pour quelles raisons ?"
+    "CHRONIQUEUR — Alors... j'ai les commentaires ici. Il est bien habillé, il regarde la caméra et il a de très beaux cheveux."
+    "PRÉSENTATRICE — On leur a posé une question sur la confiance."
+    "CHRONIQUEUR — Oui, je sais."
+    "PRÉSENTATRICE — Et les deux autres ?"
+    "CHRONIQUEUR — Nyra a l'air de savoir ce qu'elle fait. Pour Sael, beaucoup de gens disent qu'ils aimeraient l'avoir comme médecin."
+    "PRÉSENTATRICE — D'accord. Est-ce que les gens connaissent leurs positions ?"
+    "CHRONIQUEUR — Pas vraiment. On a aussi reçu vingt-sept messages de la même personne qui réclame le numéro de Julian."
+    "PRÉSENTATRICE — On ne va pas lui donner."
+    "CHRONIQUEUR — Non."
+    "Je devrais peut-être éviter de raconter ça à Julian."
+    show screen kd_news_poll_results
+    "Un classement apparaît à l'écran. Nyra, Sael, Julian. Pas de Noam."
+    hide screen kd_news_poll_results
     call kd_news_close from _call_kd_daily_news_close_2
     return
 
+
 label kd_daily_news_3:
-    call kd_news_open(_("LIMEN 24"), _("Le premier scrutin"), _("JOURNAL")) from _call_kd_daily_news_open_3
+    call kd_news_open(_("LIMEN 24"), _("Premier vote : le commerce"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_3
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("NEXUS — ÉCONOMIE"), _("Les commerçants attendent"), (_("Le Conclave examine la question du commerce."), _("Les habitants suivent les annonces officielles.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — AVANT LE SCRUTIN"), _("Le monde suspendu à la décision"), (_("Le Conclave examine la reprise des échanges."), _("L’adoption d’un amendement exige l’unanimité.")))
     window auto
-    "JOURNALISTE — Si les échanges sont autorisés, vous comptez ouvrir votre boutique ?"
-    "UNE ANCIENNE COMMERÇANTE — Si j'arrive à ouvrir la grille, oui."
-    "JOURNALISTE — Elle est coincée ?"
-    "UNE ANCIENNE COMMERÇANTE — Ça fait des années qu'elle n'a pas bougé. J'ai même perdu la clé."
-    "JOURNALISTE — Et vous vendriez quoi ?"
-    "UNE ANCIENNE COMMERÇANTE — Des chaussures. Enfin, j'en ai encore quelques paires derrière."
-    "JOURNALISTE — Vous les avez conservées ?"
-    "UNE ANCIENNE COMMERÇANTE — Mon mari voulait jeter le stock. Je lui ai dit d'attendre."
-    "JOURNALISTE — Vous pensiez que le commerce reviendrait ?"
-    "UNE ANCIENNE COMMERÇANTE — Non. Je détestais surtout l'idée de jeter toutes ces chaussures."
-    "UNE ANCIENNE COMMERÇANTE — Il y a une paire à votre taille, d'ailleurs. Les marron."
-    "JOURNALISTE — Ah... On en reparle après."
-    "Je regarde mes propres chaussures. Les siennes sont probablement plus confortables."
+    "PRÉSENTATRICE — C'est aujourd'hui que le Conclave doit se prononcer sur le retour du commerce. Des habitants se sont rassemblés devant les écrans dans plusieurs districts."
+    "PRÉSENTATRICE — Nous retrouvons notre correspondant devant une ancienne boutique de chaussures."
+    "JOURNALISTE — Si le texte passe, vous comptez rouvrir ?"
+    "UNE ANCIENNE COMMERÇANTE — Si j'arrive à ouvrir la grille, oui. J'ai perdu la clé."
+    "JOURNALISTE — Vous avez gardé votre stock ?"
+    "UNE ANCIENNE COMMERÇANTE — Une partie. Mon mari voulait tout jeter."
+    "JOURNALISTE — Et si la distribution gratuite devait disparaître avec le retour du commerce ?"
+    "UNE ANCIENNE COMMERÇANTE — Ah, ça... Vous savez, moi aussi je récupère mes colis. Je peux pas manger des chaussures."
+    "JOURNALISTE — Vous souhaitez toujours que le texte soit adopté ?"
+    "UNE ANCIENNE COMMERÇANTE — J'aimerais surtout savoir ce qu'ils vont voter exactement."
+    "PRÉSENTATRICE — Nous attendons le résultat. Pour rappel, un seul vote contre suffit à empêcher l'adoption."
+    "J'ai l'impression d'avoir un peu moins envie de retourner dans cette salle."
     call kd_news_close from _call_kd_daily_news_close_3
     return
 
+
 label kd_daily_news_4_non:
-    call kd_news_open(_("LIMEN 24"), _("Distribution des denrées"), _("JOURNAL")) from _call_kd_daily_news_open_4_non
+    call kd_news_open(_("LIMEN 24"), _("Le premier vote a échoué"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_4_non
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — SOLIDARITÉ"), _("Une distribution sous surveillance"), (_("Le système de distribution est maintenu."), _("Des familles attendent leur colis.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — LIMEN"), _("Le rejet du commerce divise les habitants"), (_("Le premier amendement n’a pas été adopté."), _("La distribution gratuite reste en vigueur.")))
     window auto
-    "JOURNALISTE — Vous avez pu récupérer votre colis ?"
-    "UN HOMME — Oui. Celui de ma voisine aussi, elle ne peut pas descendre les escaliers."
-    "JOURNALISTE — Vous faites ça régulièrement ?"
-    "UN HOMME — Quand elle me laisse faire. Elle est persuadée que je vais lui piquer ses biscuits."
-    "JOURNALISTE — Et vous avez assez pour la semaine ?"
-    "UN HOMME — Pour moi, oui. J'ai pas d'enfants à nourrir."
-    "UNE VOISINE, HORS CHAMP — Gérard ! T'as pris les petits biscuits ou les grands ?"
-    "UN HOMME — Les petits !"
-    "UNE VOISINE — Ah, merde."
-    "UN HOMME — Vous voyez ?"
-    "Le journaliste s'écarte pour le laisser passer avec ses deux colis."
+    "PRÉSENTATRICE — Au lendemain du rejet du texte sur le commerce, les réactions se multiplient. À Limen, la distribution des denrées se poursuit."
+    "JOURNALISTE — Vous avez suivi le résultat hier ?"
+    "UN HOMME — Oui. J'ai éteint la télé après."
+    "JOURNALISTE — Vous êtes déçu ?"
+    "UN HOMME — Mon frère avait ressorti son matériel de menuiserie. Il s'était fait tout un programme."
+    "UNE FEMME — Moi, j'ai dormi pour la première fois correctement depuis trois jours."
+    "JOURNALISTE — Vous souhaitiez le rejet du texte ?"
+    "UNE FEMME — J'ai deux enfants. Tant que je sais ce qu'on va manger, le reste... Enfin, on verra."
+    "UN HOMME — Je lui en veux pas, hein. À madame."
+    "UNE FEMME — Oh, mais je l'ai pas pris pour moi."
+    "JOURNALISTE — Est-ce que vous avez confiance pour la suite ?"
+    "UN HOMME — Bah, je vais regarder. Qu'est-ce que vous voulez que je fasse d'autre ?"
+    "PRÉSENTATRICE — La rédaction reviendra sur les prochaines propositions du Conclave dès leur annonce."
     call kd_news_close from _call_kd_daily_news_close_4_non
     return
 
+
 label kd_daily_news_4_oui:
-    call kd_news_open(_("LIMEN 24"), _("Le retour des échanges"), _("JOURNAL")) from _call_kd_daily_news_open_4_oui
+    call kd_news_open(_("LIMEN 24"), _("Le commerce est rétabli"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_4_oui
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("NEXUS — ÉCONOMIE"), _("Les premiers prix font discuter"), (_("Le commerce est de nouveau autorisé."), _("La distribution gratuite prend fin.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — NEXUS"), _("Premiers échanges, premières difficultés"), (_("Le Conclave a adopté son premier amendement."), _("La distribution gratuite prend fin.")))
     window auto
+    "PRÉSENTATRICE — Le premier amendement du Conclave a été adopté. Partout, les habitants tentent de s'organiser face au retour des échanges et à la fin des distributions gratuites."
     "JOURNALISTE — Vous avez affiché vos prix ce matin ?"
     "UN VENDEUR — Oui. J'en ai déjà changé trois."
     "JOURNALISTE — Pourquoi ?"
@@ -135,36 +152,40 @@ label kd_daily_news_4_oui:
     "UN VENDEUR — Plus de savon. Lui, là-bas, il en a."
     "JOURNALISTE — Vous lui envoyez vos clients ?"
     "UN VENDEUR — C'est mon frère. Il m'a prêté la table."
-    "Je me demande ce que les gens qui n'ont rien à échanger vont faire."
+    "PRÉSENTATRICE — Ailleurs, des habitants s'inquiètent de ne rien avoir à échanger. Nous poursuivrons notre couverture tout au long de la journée."
     call kd_news_close from _call_kd_daily_news_close_4_oui
     return
 
+
 label kd_daily_news_5:
-    call kd_news_open(_("LIMEN 24"), _("Une finale interminable"), _("JOURNAL")) from _call_kd_daily_news_open_5
+    call kd_news_open(_("LIMEN 24"), _("Le Conclave jusque dans les foyers"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_5
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("HARMONIE — SPORT"), _("Le tournoi de ping-pong reprend"), (_("La finale locale oppose deux habitués du club."), _("Le classement sera publié après la rencontre.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — SOCIÉTÉ"), _("Les familles ne décrochent plus"), (_("Les débats du Conclave dominent les éditions d’information."), _("Culture : la finale locale de tennis de table est reportée dans notre grille.")))
     window auto
-    "COMMENTATEUR — Nous en sommes à la troisième interruption de cette finale."
-    "COMMENTATRICE — Le joueur de gauche conteste encore le point ?"
-    "COMMENTATEUR — Non, il cherche sa balle. Elle est passée sous le banc."
-    "UN JOUEUR — Elle est de votre côté !"
-    "UN AUTRE JOUEUR — J'ai mal au dos, moi."
-    "COMMENTATRICE — Il a effectivement pris sa retraite sportive il y a quatre ans."
-    "COMMENTATEUR — Il est revenu l'année dernière parce que son épouse en avait marre de le voir à la maison."
-    "COMMENTATRICE — Ah, la voilà. La balle, pas son épouse."
-    "UN JOUEUR — On en était à combien ?"
-    "UN AUTRE JOUEUR — Onze à huit."
-    "UN JOUEUR — N'importe quoi !"
-    "COMMENTATEUR — Et nous repartons sur une quatrième interruption..."
-    "Je crois que je préfère regarder ça plutôt que jouer avec Julian."
+    "PRÉSENTATRICE — Depuis l'ouverture du Conclave, de nombreux habitants organisent leurs journées autour des annonces venues de la station."
+    "JOURNALISTE — Vous regardez les informations ensemble ?"
+    "UNE ADOLESCENTE — Non. Mon père regarde, moi j'aimerais bien récupérer la télé."
+    "UN PÈRE — Il y a des décisions importantes qui se prennent."
+    "UNE ADOLESCENTE — Papa, tu regardes la rediffusion. On l'a déjà vue deux fois."
+    "UN PÈRE — J'essaie de comprendre ce que dit la fille, là. Nyra."
+    "JOURNALISTE — Vous suivez surtout un représentant ?"
+    "UNE ADOLESCENTE — Lui, c'est Nyra. Maman, c'est Sael. Mon petit frère veut la veste de Noam."
+    "UN PÈRE — Ah oui. Ça, il nous embête avec depuis deux jours."
+    "UNE ADOLESCENTE — Il en a trouvé une dans le placard. Elle lui arrive aux genoux."
+    "JOURNALISTE — Et vous ?"
+    "UNE ADOLESCENTE — Je voudrais juste regarder un film."
+    "PRÉSENTATRICE — Nous retrouverons les résultats sportifs à la fin de cette édition."
+    "Attendez... ma veste ?"
     call kd_news_close from _call_kd_daily_news_close_5
     return
 
+
 label kd_daily_news_6:
-    call kd_news_open(_("LIMEN 24"), _("La vie près des frontières"), _("JOURNAL")) from _call_kd_daily_news_open_6
+    call kd_news_open(_("LIMEN 24"), _("Les frontières au cœur des attentes"), _("ÉDITION SPÉCIALE")) from _call_kd_daily_news_open_6
     scene expression "images/kd_news/daily_studio.svg" at adaptive_fullscreen
-    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — SOCIÉTÉ"), _("Des habitants parlent de leurs proches"), (_("Les restrictions frontalières demeurent en vigueur."), _("Suivez les prochaines annonces du Conclave.")))
+    show screen kd_news_broadcast(_("LIMEN 24"), _("ÉDITION MONDIALE — LIMEN"), _("Des familles attendent une décision"), (_("Le franchissement des frontières reste soumis aux restrictions."), _("Les habitants attendent les prochaines décisions du Conclave.")))
     window auto
+    "PRÉSENTATRICE — La question des frontières mobilise aujourd'hui des habitants dans plusieurs districts. Beaucoup espèrent une décision qui leur permettra enfin de retrouver leurs proches."
     "JOURNALISTE — Votre sœur vous manque ?"
     "UNE JEUNE FEMME — Oui. Enfin, elle m'énerve aussi. Même au téléphone."
     "JOURNALISTE — Vous vous appelez souvent ?"
@@ -176,7 +197,37 @@ label kd_daily_news_6:
     "JOURNALISTE — Vous avez prévu quelque chose si les restrictions changent ?"
     "UNE JEUNE FEMME — Je lui ai demandé de ne pas faire sa valise. Elle l'a faite quand même."
     "UNE JEUNE FEMME — Je lui ai dit que je l'appellerais dès qu'on saurait quelque chose."
-    "Elle sort son téléphone de sa poche pour vérifier l'heure."
+    "PRÉSENTATRICE — Nous resterons à l'antenne pour les annonces du Conclave."
     call kd_news_close from _call_kd_daily_news_close_6
     return
 
+
+# Classement éditorial fictif, sans pourcentages inventés à l'intérieur du récit.
+# L'échantillon volontaire ne permet pas d'établir une cote mondiale.
+transform kd_news_poll_enter(delay=0.0):
+    alpha 0.0
+    xoffset -55
+    pause delay
+    easeout 0.30 alpha 1.0 xoffset 0
+
+screen kd_news_poll_results():
+    zorder 6
+    modal False
+    fixed:
+        xpos 330
+        ypos 112
+        xysize (1260, 485)
+        add Solid("#081727f5", xysize=(1260, 485))
+        text _("BAROMÈTRE DES TÉLÉSPECTATEURS") style "kd_news_title" xpos 38 ypos 25
+        text _("Noms les plus cités • consultation ouverte") style "kd_news_small" color "#9dc8de" xpos 38 ypos 86
+        for i, name in enumerate(("Nyra", "Sael", "Julian")):
+            fixed:
+                xpos 38
+                ypos (145 + i * 91)
+                xysize (1184, 76)
+                at kd_news_poll_enter(i * 0.12)
+                add Solid("#1a3a51", xysize=(1184, 76))
+                add Solid("#66c8df", xysize=(6, 76))
+                text ("%02d" % (i + 1)) style "kd_news_title" color "#83d6e8" xpos 24 yalign 0.5
+                text name style "kd_news_title" xpos 112 yalign 0.5
+        text _("Participation libre — non représentatif") style "kd_news_small" color "#9dc8de" xpos 38 ypos 434
