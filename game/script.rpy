@@ -68,6 +68,7 @@ default cam_runtime_z1 = 1.0
 default cam_runtime_duration = 0.6
 default cam_runtime_speaker = False
 default _cinema_manual_override = False
+default _cinema_manual_speaker_focus = False
 default _focus_locked = False
 default _focus_last_params = None
 default _cinema_last_scene_signature = None
@@ -390,9 +391,9 @@ transform char_restore_scaled(scale=1.0):
     yoffset 0
     ease 0.12 matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
 
-transform char_focus:
+transform char_focus(scale=1.0):
     alpha 1.0
-    zoom 1.0
+    zoom scale
     matrixcolor TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0)
     yoffset 14
     easeout 0.13 yoffset 0
@@ -573,7 +574,7 @@ init python:
         if mode == "dim":
             at_list.append(char_dim(0.35, scale))
         elif mode == "focus":
-            at_list.append(char_focus)
+            at_list.append(char_focus(scale))
             z = 500
         else:
             at_list.append(char_restore_scaled(scale))
@@ -641,6 +642,19 @@ init python:
         store._focus_last_params = dict(tag="__NARRATOR__")
 
 init python:
+    def cinematic_speaker_lighting(tag):
+        """Focus visuel indépendant de la caméra, y compris sur un plan manuel."""
+        if tag == "__NARRATOR__" or not cinema_visible_speaker(tag):
+            return
+        for c in list(store.char_state.keys()):
+            if not renpy.showing(c, layer="master"):
+                continue
+            attrs = renpy.get_attributes(c, layer="master") or ()
+            if attrs and attrs[0] != store.char_state[c].get("expr"):
+                store.char_state[c]["expr"] = attrs[0]
+                store.char_state[c]["mode"] = None
+            restyle_char(c, "focus" if c == tag else "dim")
+
     def cinematic_focus(tag, t=0.6):
         store._focus_last_params = dict(tag=tag)
 
@@ -657,19 +671,7 @@ init python:
         safe_tx = cam_x_for_edge_safe_char(tag, target_zoom)
         cam_move(safe_tx, CINEMA_CAM_Y, target_zoom, t, layers=("bgcam", "master"))
 
-        for c in list(store.char_state.keys()):
-            if not renpy.showing(c, layer="master"):
-                continue
-            if c == tag:
-                attrs = renpy.get_attributes(c, layer="master")
-                if attrs:
-                    real_expr = attrs[0]
-                    if real_expr != store.char_state[c].get("expr"):
-                        store.char_state[c]["expr"] = real_expr
-                        store.char_state[c]["mode"] = None
-                restyle_char(c, "focus")
-            else:
-                restyle_char(c, "dim")
+        cinematic_speaker_lighting(tag)
 
 init python:
     def cinematic_hold(t=0.0):
@@ -785,7 +787,11 @@ init python:
                 store._focus_last_params = dict(tag="__REGROUP__")
 
             if manual_camera:
-                return  # Les mouvements de caméra explicitement scénarisés restent possibles.
+                # Les plans manuels J1 verrouillent le cadrage, pas la lumière.
+                # Les autres séquences subjectives gardent leur comportement initial.
+                if store._cinema_manual_speaker_focus:
+                    cinematic_speaker_lighting(tag)
+                return
 
             scene_signature = cinema_scene_signature()
             scene_changed = scene_signature != store._cinema_last_scene_signature
@@ -812,6 +818,7 @@ init python:
                 # Même locuteur : ne pas recréer le transform, car cela
                 # relancerait le travelling et réinitialiserait le curseur.
                 # Ses animations de bouche et son audio ont déjà été lancés.
+                cinematic_speaker_lighting(tag)
                 return
 
             # Coupe sèche à l'arrivée dans un lieu, recadrage nerveux sinon.
