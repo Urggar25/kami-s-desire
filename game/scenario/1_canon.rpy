@@ -33,12 +33,18 @@ init 2 python:
 # de changement d'expression. On n'applique jamais d'alpha au décor.
 init python:
     def day1_wake_pan(trans, st, at):
+        import math
+        # Exponential damping based on elapsed time, not frame count.
+        previous = getattr(trans, "_day1_pan_st", st)
+        dt = max(0.0, min(0.10, st - previous))
+        trans._day1_pan_st = st
+        blend = 1.0 - math.exp(-8.0 * dt)
         try:
             mx, my = renpy.get_mouse_pos()
             sw, sh = float(renpy.config.screen_width), float(renpy.config.screen_height)
             # Recadrage dans l'image agrandie, sans afficher ses bordures.
-            tx = -(mx / sw - 0.5) * 440.0
-            ty = -(my / sh - 0.5) * 230.0
+            tx = -(mx / sw - 0.5) * 210.0
+            ty = -(my / sh - 0.5) * 110.0
             # Léger tremblement indicateur quand le regard bute sur un bord.
             if (store.day1_wake_edge_enabled and
                     (mx <= sw * .05 or mx >= sw * .95 or
@@ -46,62 +52,71 @@ init python:
                 import math
                 tx += math.sin(st * 65.0) * 5.0
                 ty += math.cos(st * 79.0) * 4.0
-            trans.xoffset += (tx - trans.xoffset) * 0.18
-            trans.yoffset += (ty - trans.yoffset) * 0.18
+            trans.xoffset += (tx - trans.xoffset) * blend
+            trans.yoffset += (ty - trans.yoffset) * blend
         except Exception:
             pass
         return 0.016
 
+# Subjective camera: blur both the room and Lysa on the master layer.
 transform day1_wake_focus:
-    blur 20
-    linear 2.4 blur 13
-    linear 2.8 blur 5
-    linear 1.8 blur 0
+    zoom 1.68
+    xalign 0.5
+    yalign 0.41
+    blur 18
+    rotate -1.2
+    ease 1.35 blur 0 rotate 0
+    function day1_wake_pan
 
 transform day1_wake_close:
     zoom 1.68
     xalign 0.5
     yalign 0.41
+    blur 0
+    rotate 0
     function day1_wake_pan
 
+# Legacy transform names retained for saved games.
 transform day1_wake_close_talk:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    ease 0.30 zoom 1.73
     function day1_wake_pan
 
 transform day1_wake_jolt:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    xoffset -27
-    yoffset 15
-    linear 0.10 xoffset 24 yoffset -12
-    linear 0.11 xoffset -18 yoffset 8
-    linear 0.12 xoffset 14 yoffset -7
-    ease 0.14 xoffset 0 yoffset 0
+    easeout 0.10 rotate -2.0 xoffset -24 yoffset 14
+    ease 0.16 rotate 1.2 xoffset 18 yoffset -8
+    ease 0.23 rotate 0 xoffset 0 yoffset 0
 
-# Réveil subjectif : rapprochement brutal sur le visage de Lysa.
-# Le tremblement concerne le décor ET Lysa, sur la caméra master ;
-# les sprites de bras au premier plan ne sont volontairement pas utilisés.
 transform day1_wake_face_shake:
     zoom 1.68
     xalign 0.5
-    yalign 0.30
-    easeout 0.16 zoom 2.65
-    linear 0.065 xoffset -27 yoffset 18
-    linear 0.065 xoffset 28 yoffset -15
-    linear 0.065 xoffset -23 yoffset 12
-    linear 0.065 xoffset 21 yoffset -11
-    linear 0.065 xoffset -14 yoffset 9
-    easeout 0.16 xoffset 0 yoffset 0 zoom 1.68
+    yalign 0.41
+    easeout 0.10 zoom 1.83 rotate -2.4 xoffset -26 yoffset 18
+    ease 0.16 rotate 1.5 xoffset 19 yoffset -10
+    ease 0.30 zoom 1.68 rotate 0 xoffset 0 yoffset 0
 
 transform day1_wake_pullback:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    ease 2.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
+    ease 1.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
+
+transform day1_wake_lid(top=True):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize (config.screen_height // 2 + 2)
+    ease 0.65 ysize 0
+
+screen day1_wake_opening():
+    zorder 998
+    add Solid("#000") at day1_wake_lid(True)
+    add Solid("#000") at day1_wake_lid(False)
+    timer 0.70 action Hide("day1_wake_opening")
 
 # =============================================================================
 
@@ -178,11 +193,11 @@ label _1_CANON:
     $ day1_wake_edge_started = None
     $ day1_wake_edge_triggered = False
     # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
-    scene bg_conclave at adaptive_fullscreen, day1_wake_focus
+    scene bg_conclave at adaptive_fullscreen
     $ showGroup([("lysa", "blase", 0.50)])
-    camera master at day1_wake_close
+    camera master at day1_wake_focus
     stop music fadeout 0.3
-    $ blink()
+    show screen day1_wake_opening
     lysa blase "Hé. Hé, tu m'entends ?"
     think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
     lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
@@ -196,34 +211,25 @@ label _1_CANON:
     $ day1_wake_edge_enabled = True
     show screen day1_wake_edge_watch
     noam inquiet "Mh... Arrête de me secouer..."
-    camera master at day1_wake_close_talk
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
     noam inquiet "Le prochain quoi...?"
     lysa taquin "Oh, rien. Juste la réunion la plus importante de ta vie. Tu peux te rendormir, si tu veux."
     think "Cette voix me dit quelque chose. Le ton aussi. Agressivement rassurant."
-    camera master at day1_wake_close
     think "J'ouvre péniblement les yeux. La fille qui m'a réveillé est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste indistincte."
-    $ blink()
-    camera master at day1_wake_close_talk
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
-    camera master at day1_wake_close
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
-    camera master at day1_wake_close_talk
     lysa blase "Bah quoi ? J'allais pas te laisser dormir là toute la journée."
-    camera master at day1_wake_close
     think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans qu'elle s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
-    camera master at day1_wake_close_talk
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
     $ day1_wake_edge_enabled = False
     hide screen day1_wake_edge_watch
     # Le gros plan ne prend fin QU'ICI. Recul continu avant la discussion.
     camera master at day1_wake_pullback
-    pause 2.3
+    pause 1.25
     camera master
     $ _cinema_manual_override = False
-    scene bg_conclave at adaptive_fullscreen with Dissolve(0.2)
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
