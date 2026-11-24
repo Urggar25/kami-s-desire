@@ -468,7 +468,9 @@ label _5_0_REVEIL_CHAMBRE:
     kami "BOOOONJOUR ! Quel bonheur de vous savoir si actifs dès le matin !"
     kami "Petit rappel : la prochaine livraison est prévue au jour 7. Jusque-là, inutile de marchander avec Goumi."
     kami "Et oui, Elen, je parle aussi de la cannelle."
+    $ bc_show("elen", "colere")
     elen "C'EST PAS DE LA MARCHANDISE !"
+    $ bc_hide()
     kami "Oh, je sais. Tu as demandé à quatre personnes et menacé un grille-pain. C'est une quête spirituelle."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Demain, nouveau scrutin. Vous avez encore toute une journée pour changer d'avis. Ou pour vous persuader que vous aviez raison depuis le début."
