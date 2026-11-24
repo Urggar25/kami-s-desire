@@ -217,7 +217,7 @@ init python:
         return automatic_scene_lighting(Image(corridor_background(corridor_key)))
 
 
-screen conclave_corridor(corridor_key=None):
+screen conclave_corridor(corridor_key=None, ambient_encounter=None):
     modal True
     zorder 200
 
@@ -245,6 +245,12 @@ screen conclave_corridor(corridor_key=None):
             hovered SetVariable("corridor_ui_target", target_text if target_enabled else "Accès indisponible")
             unhovered SetVariable("corridor_ui_target", None)
             action Return((target_type, target_key))
+
+    # Ambient sprite is a non-interactive layer. Navigation stays available.
+    default ambient_visible = ambient_encounter is not None
+    if ambient_visible and ambient_encounter is not None:
+        use kd_corridor_ambient_actor(ambient_encounter)
+        timer 2.45 action SetScreenVariable("ambient_visible", False)
 
     # Rencontre du jour 4 réellement facultative : le joueur clique sur Nyra
     # avant d'entrer en cafétéria, comme les rencontres du jour 2 et du jour 3.
@@ -485,9 +491,12 @@ label _2_ROUTE_CAFETERIA_TOMAS:
 label CORRIDOR_NAVIGATION(start_corridor=None):
     if start_corridor is not None:
         $ corridor_current = start_corridor
+        $ kd_corridor_visit_pending = True
 
     $ corridor_ui_target = None
-    call screen conclave_corridor(corridor_current)
+    $ _kd_corridor_encounter = kd_corridor_roll(corridor_current) if kd_corridor_visit_pending else None
+    $ kd_corridor_visit_pending = False
+    call screen conclave_corridor(corridor_current, ambient_encounter=_kd_corridor_encounter)
     $ _corridor_action = _return
 
     if _corridor_action is None:
@@ -498,9 +507,11 @@ label CORRIDOR_NAVIGATION(start_corridor=None):
         jump CORRIDOR_NAVIGATION
 
     if _corridor_action[0] == "corridor":
+        $ kd_corridor_visit_pending = _corridor_action[1] != corridor_current
         $ corridor_current = _corridor_action[1]
         jump CORRIDOR_NAVIGATION
 
+    $ kd_corridor_visit_pending = True
     $ _corridor_room = _corridor_action[1]
     $ corridor_current = corridor_for_room(_corridor_room)
     $ scripted_room_current = _corridor_room
@@ -543,6 +554,7 @@ label MAYBE_PLAY_SCRIPTED_DOOR(room_key, next_background_name):
 
 
 label EXIT_ROOM_TO_CORRIDOR:
+    $ kd_corridor_visit_pending = True
     $ scripted_room_current = "couloir_" + corridor_current
     call PLAY_DOOR_OPEN(door_corridor_background(corridor_current)) from _call_PLAY_DOOR_OPEN_1
 
