@@ -163,6 +163,38 @@ init python:
             for name, face, position in _day1_group_cast
         ])
 
+# J1: explicit group shots, using the existing two-layer camera.
+init python:
+    def day1_group_shot(tags, zoom=1.22, duration=0.32):
+        positions = [store.char_pos[tag] for tag in tags if tag in store.char_pos]
+        if not positions:
+            return
+        store._cinema_manual_override = True
+        center = sum(positions) / float(len(positions))
+        margin = 0.5 / zoom
+        center = max(margin, min(1.0 - margin, center))
+        cam_move(center, 0.45, zoom, duration)
+
+    def day1_group_release():
+        release_cam(t=0.32)
+
+transform day1_group_reaction_in:
+    alpha 0.0
+    xoffset 30
+    easeout 0.20 alpha 1.0 xoffset 0
+    pause 0.65
+    ease 0.20 alpha 0.0
+
+screen day1_group_glance(tag, expression):
+    zorder 90
+    frame at day1_group_reaction_in:
+        xalign 0.84
+        yalign 0.18
+        padding (3, 3)
+        background Solid(kd_char_color(tag))
+        add kd_face(tag, expression, 210)
+    timer 1.10 action Hide("day1_group_glance")
+
 transform day1_asphyxia_overlay_in:
     alpha 0.0
     ease 0.85 alpha 0.50
@@ -256,6 +288,8 @@ label _1_CANON:
 
     think "Je regarde autour, en m'efforçant de ne pas parler. Je ne reconnais aucun autre visage. Donc c'est vrai : les douze représentants sont bien réunis dans la même cage."
 
+    $ day1_group_shot(("ryn",), 1.35, 0.15)
+    play sound sfx_thud
     "Un homme se lève d'un bond. Son siège claque au sol."
 
     $ day1_group_reaction(iris="peur", elen="inquiet", mara="taquin", tomas="surpris")
@@ -263,6 +297,7 @@ label _1_CANON:
     ryn colere "Qui a fait ça ?!"
 
     $ day1_group_reaction(ryn="colere", iris="blase", lysa="blase", elen="inquiet")
+    $ day1_group_shot(("ryn", "mara"), 1.22)
     mara rire "Tu veux dire... à part l'IA qui tient le monde en laisse ?"
     mara taquin "Et toi, t'as fini de gueuler ? Parce que là, tu nous réveilles tous une deuxième fois."
     "Elle fait un mouvement de tête dans une direction, pour montrer une caméra."
@@ -276,6 +311,7 @@ label _1_CANON:
     tomas reflechit "C-Comment ça t'es au courant de rien ..?"
     tomas reflechit "Tu... Tu as bien entendu l'annonce, non ?!"
 
+    $ day1_group_shot(("elen",), 1.28, 0.25)
     elen surpris "Aaaaah, je sais même pas depuis combien de temps on était là, c'est quand même nous qu'on a emballés dans des boîtes, non ?"
     elen surpris "Oh ! Vous croyez qu'ils ont prévu à manger ? Parce que le gaz, franchement, ça ouvre l'appétit et—"
 
@@ -294,14 +330,17 @@ label _1_CANON:
     mara taquin "Ouuuh effraaayant !"
     elen surpris "Hé, attendez ! Vous êtes sûrs qu'on est tous censés être là ?"
     mara taquin "Non, on s'est réunis par hasard pour l'anniversaire du monsieur qui hurle."
+    $ day1_group_release()
     call cutin("ryn") from _call_kd_cutin_1_ryn
     ryn colere "TU TE FOUS DE MOI ?!"
     elen desaccord "Oh, moi j'avais pas prévu de cadeau..."
     think "À peine réveillés, et il y a déjà deux conversations que personne ne contrôle."
 
+    $ wide_shot(t=0.30)
     noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
     mara taquin "Le même bateau ? J'espère que t'as pas le permis."
     ryn colere "On n'est PAS sur un bateau !"
+    show screen day1_group_glance("lysa", "blase")
     lysa blase "Merci, capitaine. On avait un doute."
     noam inquiet "C'était une expression..."
     think "J'aurais dû me taire. Ça aurait au moins fait un argument de moins."
@@ -319,6 +358,7 @@ label _1_CANON:
     iris blase "On attend quoi ? Un miracle ? Une notice ? Quelqu'un de compétent ? On ne sait même pas ce qu'on doit faire."
     elias inquiet "On peut peut-être commencer par chercher une sortie ?"
     iris desaccord "Formidable. Quelqu'un vient d'inventer la porte."
+    show screen day1_group_glance("elias", "gene")
     elias gene "Je proposais juste..."
     kael calme "Pour sa défense, c'est pas la pire idée qu'on ait eue depuis notre réveil."
     ryn colere "Et c'était quoi, la pire ?!"
@@ -332,9 +372,11 @@ label _1_CANON:
 
     elen inquiet "Hein ?? On est enfermés ?!"
     elen inquiet "Mais comment qu'on va faire..."
+    $ day1_group_shot(("elen",), 1.25, 0.25)
     elen fatigue "Aaaahh ! En plus j'ai envie d'aller faire pipi !"
     elen inquiet "C'est sérieux, hein ! J'ai cherché des toilettes dans mon rêve et y en avait même pas !"
     mara taquin "C'est peut-être ça, le fameux test de l'humanité."
+    $ day1_group_release()
     sael raison "On peut éviter les plaisanteries et chercher un plan de cette salle."
     elen desaccord "Ben justement ! Un plan avec des toilettes !"
     think "Je crois qu'elle est sincèrement la plus motivée de nous tous."
@@ -358,6 +400,7 @@ label _1_CANON:
     think "D'habitude, Kami adore être présente. Là, c'est comme une salle de classe sans prof."
     think "Sauf qu'ici le prof peut tuer les élèves à tout moment, et à distance."
 
+    $ wide_shot(t=0.35)
     lysa fatigue "... Silence radio."
 
     noam reflexion "Ça veut dire quoi pour toi ?"
@@ -382,11 +425,13 @@ label _1_CANON:
     lysa blase "T'en as d'autres des idées de génie ?"
     lysa fatigue "Je vois pas pourquoi l'un d'entre nous aurait des permissions que les autres n'auraient pas."
 
+    $ day1_group_shot(("nyra",), 1.20, 0.40)
     nyra hesitation "Sauf si elle veut créer des tensions dans le groupe dès le début ?"
 
     pause 0.4
 
     $ day1_group_reaction(ryn="colere")
+    $ day1_group_release()
     think "Les regards circulent. Personne n'a l'air coupable, ce qui ne m'aide absolument pas."
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
@@ -417,6 +462,8 @@ label _1_CANON:
 
     think "Une porte verrouillée. Douze inconnus. Et on me demande de trancher sur notre première mauvaise idée."
 
+    hide screen day1_group_glance
+    $ day1_group_release()
     jump _1_CHOICE
 
 label _1_CHOICE_DEATH:
