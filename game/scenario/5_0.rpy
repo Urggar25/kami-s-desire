@@ -1109,13 +1109,20 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     kael reflechit "Et moi, pourquoi le contrôleur d'accès a pris une panne locale pour un problème de pression."
     elias gene "Je peux expliquer le début."
     kael "Je t'écoute."
+    $ kd_direct.begin("comedy", auto=False)
+    $ kd_direct.fixed_close("elias", duration=.18)
     elias "J'ai renversé mon café."
     pause 0.3
+    $ kd_direct.unlock()
+    $ kd_direct.shot("reverse", "kael", duration=.18, hold=0)
     kael "Sur quoi ?"
+    $ kd_direct.shot("field", "elias", duration=.18, hold=0)
     elias "La console."
     kael "Avec le capot ouvert ?"
     elias "Oui."
+    $ kd_direct.simultaneous(("kael", "nyra"))
     "Kael se passe une main sur le visage."
+    $ kd_direct.end()
     nyra neutre "C'est donc une erreur humaine, suivie d'une erreur de diagnostic du système."
     noam "On peut dire ça."
     if j50_wire_completed:

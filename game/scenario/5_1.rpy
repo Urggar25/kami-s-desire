@@ -489,12 +489,15 @@ label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     think "Au bout de la table, Sael reste silencieuse. Elle ne regarde même pas Julian lorsqu'il prononce son nom."
 
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "julian", duration=.20, hold=0)
     julian detendu "Sael."
 
     sael mefiant "Non."
 
     julian detendu "Je n'ai pas encore posé la question."
 
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael mefiant "Tu allais encore me demander de changer d'avis. Alors je préfère te répondre tout de suite."
     sael mefiant "Non."
 
@@ -502,6 +505,7 @@ label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     julian sourire "Je voulais seulement reprendre la discussion d'hier."
 
+    $ kd_direct.fixed_close("sael", duration=.25)
     sael determine "Je n'ai rien de plus à ajouter."
 
     elen inquiet "Sael, on peut juste écouter ? Sans crier, sans porte qui claque, sans— enfin, juste écouter ?"
@@ -512,8 +516,11 @@ label _5_1_CAFETERIA_MATIN_ARRIVEE:
 
     sael determine "Alors n'insiste pas. Répéter les mêmes arguments ne les rendra pas meilleurs."
 
+    $ kd_direct.unlock()
+    $ kd_direct.shot("reaction", "julian", duration=.25, hold=0)
     think "Julian conserve son sourire, mais détourne légèrement le regard."
 
+    $ kd_direct.end()
     julian detendu "Très bien."
     julian detendu "Nous reprendrons cette conversation plus tard."
 

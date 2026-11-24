@@ -270,6 +270,8 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     think "Le mot « frontières » suffit à changer l'attitude de Ryn. Il se penche immédiatement vers son micro."
 
     $ kd_queue_character_motion("ryn", "emphasis")
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Il faut voter pour. Je veux même pas entendre qu'on pourrait encore garder ces foutues frontières fermées."
     ryn triste "J'ai passé des années à empêcher des gens de les atteindre. J'en ai vu creuser des tranchées sans savoir exactement où le rayon allait tomber."
 
@@ -280,11 +282,13 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
     ryn fatigue "Ouais. On devait arrêter les gens plusieurs mètres avant la frontière pour éviter qu'ils se fassent exécuter."
     ryn triste "Au début, personne ne connaissait son tracé exact. Beaucoup de Gardiens sont morts en essayant de le trouver."
 
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael triste "Leurs tranchées ont fini par dessiner une limite visible. Sans eux, il y aurait eu beaucoup plus de morts."
     $ unlock_codex_page("frontieres_limen", with_notification=False)
     $ unlock_codex_page("mont_kensen", with_notification=False)
     $ unlock_codex_page("gardiens_limen", with_notification=False)
 
+    $ kd_direct.end()
     ryn colere "Et maintenant on devrait continuer à garder cette limite pour toujours ? Non. Je veux que ça s'arrête."
 
     lysa reflechit "Tu as passé des années à empêcher les gens de traverser. Et maintenant tu veux leur ouvrir la route."
@@ -309,12 +313,14 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     ryn surpris "Quoi ? Après tout ce que je viens de dire ?"
 
-    $ close_up("sael")
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.fixed_close("sael", duration=.30)
     sael determine "Mon peuple vit près du Mont Kensen. Avant Kami, les groupes armés de Limen traversaient régulièrement nos terres."
     sael triste "J'ai vu ce que ces déplacements transportaient avec eux. Des armes, de la colère et des morts."
     sael mefiant "Pour vous, cette proposition ouvre des routes. Pour moi, elle rouvre celles que la guerre empruntait."
 
     think "Sael croise les bras. Elle ne regarde déjà plus Ryn."
+    $ kd_direct.end()
 
     elias colere "Mais tu peux pas décider pour tout le monde uniquement à cause de ce qui s'est passé avant !"
     elias inquiet "Si les gens peuvent bouger, les médecins et les ressources pourront bouger aussi. Ça sauvera des vies."

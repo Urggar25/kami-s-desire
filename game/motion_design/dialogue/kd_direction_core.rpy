@@ -80,7 +80,7 @@ init python:
             renpy.hide_screen("kd_direction_split")
             if kind == "split" and len(targets)>=2:
                 if not renpy.is_skipping():
-                    renpy.show_screen("kd_direction_split",targets=targets[:2])
+                    renpy.show_screen("kd_direction_split",targets=targets[:3])
                 x,y,z = .5,.5,1.0
             elif kind in ("wide","retreat"):
                 x,y,z = .5,.5,1.0
@@ -107,6 +107,14 @@ init python:
             store.kd_direction_age = 0
             store.kd_direction_hold = max(0,int(hold))
             # Camera changes do not reset sprite focus or ongoing reactions.
+
+        def fixed_close(self, tag, duration=.35):
+            self.shot("close", tag, duration=duration, hold=0)
+            self.lock()
+
+        def simultaneous(self, targets):
+            self.shot("split", tuple(targets), duration=.18, hold=0)
+            self.lock()
 
         def two_shot(self,a,b,duration=None):
             self.shot("two",(a,b),duration)
@@ -290,11 +298,15 @@ screen kd_direction_split(targets):
     zorder -1
     modal False
     add Solid("#0b1725")
+    $ panel_width = config.screen_width // len(targets)
+    $ panel_height = int(config.screen_height * .70)
     for i, tag in enumerate(targets):
         fixed:
-            xpos (i*960)
+            xpos (i * panel_width)
             ypos 70
-            xysize (960,730)
-            add Solid(kd_char_color(tag),xysize=(960,6))
-            add kd_face(tag,size=650) xalign 0.5 ypos 35
-    add Solid("#d6e5ed",xysize=(4,730)) xpos 958 ypos 70
+            xysize (panel_width, panel_height)
+            clipping True
+            add Solid(kd_char_color(tag), xysize=(panel_width, 6))
+            add kd_face(tag, size=min(650, panel_width - 40)) xalign 0.5 ypos 35
+            if i > 0:
+                add Solid("#d6e5ed", xysize=(3, panel_height))

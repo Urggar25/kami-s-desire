@@ -2320,9 +2320,14 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     play sound sfx_drop
     mara sourire "Ah bah voilà ! Il en fallait un pour que les autres se bougent."
     julian sourire "Ou alors on voulait juste vérifier que l'urne ne mordait pas."
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Tu veux essayer avec ta main ?"
+    $ kd_direct.shot("reverse", "julian", duration=.20, hold=0)
     julian sourire "Tu sais, on a aussi le droit de plaisanter sans menacer quelqu'un."
+    $ kd_direct.shot("field", "ryn", duration=.18, hold=0)
     ryn colere "Je te menaçais pas !"
+    $ kd_direct.end()
     mara rire "Non, il te proposait une expérience scientifique."
     sael raison "Ça suffit. Chacun son texte."
     think "Même ceux qui étaient prêts à s'entraider baissent les yeux."

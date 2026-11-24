@@ -366,7 +366,9 @@ label _4_0_CAFETERIA_ECRANS:
     $ kd_direct.shot("medium","julian",duration=.20,hold=1)
     julian decu "Amusant. On est en train de discuter d'un dessert, alors qu'on aurait pu retirer à Kami ce pouvoir hier."
     $ kd_direct.react("kael","silence")
+    $ kd_direct.fixed_close("kael", duration=.26)
     "Le morceau de pain reste immobile dans les mains de Kael."
+    $ kd_direct.unlock()
     $ kd_direct.shot("field","ryn",duration=.16,hold=1)
     ryn colere "Hier, le texte supprimait aussi les rations. C'est pas un détail."
     $ kd_direct.shot("reverse","julian",duration=.16,hold=1)

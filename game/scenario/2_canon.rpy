@@ -432,14 +432,21 @@ label _2_CAFETERIA_POST_ANNONCE:
     sael sourire "La terre ne se cultive pas depuis une chaise. Et les autres n'auraient aucune raison de m'écouter si je ne faisais rien."
     noam sourire "Ça explique pourquoi tu as toujours l'air d'attendre que quelqu'un fasse une bêtise."
     sael reflechit "On s'est longtemps débrouillés seuls. Depuis la fermeture des passages, les bandes armées ne viennent plus jusqu'à nous. Ça, au moins, on ne peut pas le nier."
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Ah ouais ? Chez nous, il y a des gens qui meurent en essayant de franchir ces foutues frontières. Tu veux qu'on les remercie, aussi ?"
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael mefiant "Je n'ai pas dit que la fermeture était juste pour tout le monde. J'ai dit que les attaques avaient cessé chez nous. Ce n'est pas la même chose."
     $ kd_queue_character_motion("ryn", "anger")
+    $ kd_direct.shot("field", "ryn", duration=.18, hold=0)
     ryn colere "C'est pratique, de pouvoir parler de paix quand on est du bon côté de la barrière !"
+    $ kd_direct.shot("reverse", "sael", duration=.18, hold=0)
     sael colere "Et tu crois que je ne sais pas ce que c'est, de perdre des gens ?"
     ryn colere "Alors ne me parle pas comme si cette frontière nous avait tous sauvés !"
+    $ kd_direct.shot("reaction", "elen", duration=.22, hold=0)
     elen peur "Hé... On peut se calmer ?"
     sael mefiant "Je ne t'ai pas demandé d'être d'accord. Je te demande d'écouter."
+    $ kd_direct.end()
     think "Personne n'élève plus la voix. Le silence n'a rien réglé."
     "Ryn repousse légèrement sa chaise. Je crois qu'il va partir, mais il reprend sa tasse et reste assis."
     elias reflechit "Et moi je parlais de boulons, il y a cinq minutes... J'ai l'air malin."

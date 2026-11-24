@@ -357,18 +357,23 @@ label _6_1_0_RYN_SAEL:
     think "Ryn lui barre le passage. Sael garde les bras le long du corps, immobile."
 
     $ kd_queue_character_motion("ryn", "anger")
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Tu vas vraiment faire ça ?"
 
     sael neutre "Je te l'ai déjà dit."
 
     ryn colere2 "Non. Tu l'as dit aux autres. Comme une putain d'annonce. Moi, tu m'as rien expliqué."
 
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael mefiant "Tu ne veux pas d'explication. Tu veux que je change d'avis."
 
+    $ kd_direct.shot("field", "ryn", duration=.18, hold=0)
     ryn desaccord "Évidemment que je veux que tu changes d'avis !"
 
     sael raison "Alors cette conversation ne sert à rien."
 
+    $ kd_direct.end()
     call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg036 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg036")

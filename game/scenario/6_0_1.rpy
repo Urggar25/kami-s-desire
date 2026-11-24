@@ -446,15 +446,20 @@ label _6_0_1_CONCLAVE_START:
         lysa blase "On aimerait voir ça."
     elen inquiet "S'il vous plaît. On peut commencer avant de se chamailler ?"
     $ showGroup([("ryn", "neutre", 0.10), ("sael", "neutre", 0.40), ("elen", "inquiet", 0.70), ("nyra", "neutre", 1.00)])
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn neutre "Sael. Tu m'as dit non hier."
     sael "Oui."
     ryn "Tu me le dirais encore aujourd'hui ?"
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael "Oui. Je te l'ai dit, je ne changerai pas d'avis."
     ryn "T'es... T'es sérieuse ?! Putain !"
     "Il s'assied. Elen regarde tour à tour Ryn et Sael."
+    $ kd_direct.shot("reaction", "elen", duration=.20, hold=0)
     elen inquiet "C'est... tout ?"
     ryn neutre "Qu'est-ce que tu veux que je dise ?"
     elen "Je ne sais pas. Quelque chose."
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Hier, je lui ai crié dessus. Ça n'a servi à rien."
     sael mefiant "Non, ça c'est sûr."
     ryn "Alors... Fais chier !"
@@ -464,6 +469,7 @@ label _6_0_1_CONCLAVE_START:
     ryn "Et les gens qu'on laisse dehors ?"
     sael "On trouvera toujours l'herbe plus verte ailleurs. Est-ce que ça veut dire qu'il faut tout abandonner ?"
     ryn "Je ne t'ai pas demandé ça..."
+    $ kd_direct.shot("reverse", "sael", duration=.20, hold=0)
     sael colere "Si, c'est exactement ça le problème. Changer de district quand ça va mal, ça revient à fuir !"
     ryn "Tu n'as pas besoin d'être agressive."
     sael colere "Pardon ?! Tu es sérieux ?"
@@ -478,6 +484,7 @@ label _6_0_1_CONCLAVE_START:
     sael mefiant "Et donc tu fais appliquer les Commandements."
     ryn "... Putain ! Alors tu proposes quoi, hein ?! De ne rien changer ?!"
     "Son poing s'abat sur la table. Il regarde sa propre main, contrarié d'avoir recommencé."
+    $ kd_direct.end()
     elen triste "Tu... Tu ne veux pas que les familles séparées puissent se rejoindre ?"
     sael neutre "Ce n'est pas le débat. On peut toujours demander des dérogations pour traverser..."
     nyra reflechit "C'est possible mais... Les dérogations prennent parfois plusieurs mois."

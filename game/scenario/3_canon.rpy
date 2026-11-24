@@ -855,11 +855,14 @@ label _3_PAUSE_CHAMBRE:
     julian colere "Tu crois que ça m'amuse ?! UN seul contre et trois jours d'efforts partent en fumée !"
     noam colere "Alors parle-lui du TEXTE ! Arrête de lui demander de sourire devant les caméras !"
     julian colere "Tu peux jouer les gentils parce que d'autres prennent le risque de défendre ce qu'ils croient juste !"
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.fixed_close("tomas", duration=.12)
     tomas inquiet "MAIS VOUS ALLEZ VOUS TAIRE ?!"
     tomas colere "Je suis là ! Je suis pas une chaise qu'on déplace d'un camp à l'autre !"
     "Tomas nous regarde l'un après l'autre. Il tremble de colère."
     noam colere "Mais je suis venu parce que Julian te laissait pas..."
     tomas colere "ET TOI, TU FAIS QUOI LÀ ?! Tu réponds encore pour moi !"
+    $ kd_direct.end()
     noam hesitation "..."
     noam culpabilite "Ouais. Merde. Pardon, Tomas."
     julian hesitation "Tomas, je ne voulais pas..."
@@ -1074,9 +1077,12 @@ label _3_DEBAT1_PHASE1:
     $ kd_queue_character_motion("lysa", "emphasis")
     lysa colere "« En conséquence, le système de distribution de denrées est aboli. » Vous avez bien LU ce passage ?!"
     call reactions([("elen", "peur"), ("ryn", "colere"), ("tomas", "peur")]) from _call_kd_reactions_3_abolition
+    $ kd_direct.begin("debate", auto=False)
+    $ kd_direct.simultaneous(("elen", "ryn", "tomas"))
     elen peur "HEIN ?! Mais j'ai déjà dit à tout le monde que je voterais pour ! Je savais pas qu'on supprimait les bons !"
     ryn colere "VOUS ÊTES MALADES ?! À LIMEN, ON MANGE QUOI QUAND LES BONS DISPARAISSENT ? LE TEXTE ?!"
     tomas peur "Non... hier, il n'y avait pas ça. Je l'aurais remarqué ! J'ai relu la phrase au moins dix fois !"
+    $ kd_direct.end()
     iris colere "KAMI ! Tu t'es bien gardée de nous prévenir de cette petite conséquence, hein ?!"
     mara colere "Et voilà ! On m'a traitée de rabat-joie parce que je voulais LIRE ! C'était vraiment trop demander ?!"
     nyra stress "Attendez. On doit d'abord savoir si cette disposition est définitive. Arrêtez de parler tous en même temps !"
@@ -1180,7 +1186,10 @@ label day3_before_objection_protocol_minigame:
     kami "Alors regardez. En direct. Ce n'est pas une rediffusion."
 
     scene bg_cg034 at adaptive_fullscreen,memory_idle with dissolve
+    show screen kd_j3_limen_feed(False)
+
     "Les écrans du Conclave basculent sur un plan de Limen. Une file devant un centre de distribution. Des gens qui poussent. Des cartons vides."
+    hide screen kd_j3_limen_feed
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Vos districts vous écoutent depuis ce matin. Ils savent qu'aujourd'hui, vous touchez aux rations."
@@ -1191,8 +1200,11 @@ label day3_before_objection_protocol_minigame:
     $ bc_hide()
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    scene bg_cg034 at adaptive_fullscreen with dissolve
+    show screen kd_j3_limen_feed(True)
     kami "Douze mille trois cent quarante et un."
     kami "C'est le nombre de foyers de Limen sans ration complète à cette heure précise. Le chiffre monte pendant que vous hésitez."
+    hide screen kd_j3_limen_feed
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Alors dépêchez-vous de décider. Ils comptent sur vous."
@@ -1261,12 +1273,17 @@ label _3_DEBAT1_PHASE3:
     julian colere "Entre deux cris ?! Ça fait un an que les gens manquent de tout ! Tu veux leur demander d'attendre encore combien de temps ?"
 
     $ kd_queue_character_motion("ryn", "anger")
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("field", "ryn", duration=.20, hold=0)
     ryn colere "Et ton grand projet, c'est quoi ?! On sacrifie Limen pour que Nexus se paie des nouveaux jouets ?!"
 
+    $ kd_direct.shot("reverse", "julian", duration=.20, hold=0)
     julian surpris "Tu crois que tous ceux de Nexus roulent sur l'or ?! J'en viens, figure-toi !"
 
+    $ kd_direct.shot("field", "ryn", duration=.18, hold=0)
     ryn "...C'est pas ce que j'ai dit ! Enfin, si, mais c'est pas le problème !"
 
+    $ kd_direct.end()
     mara taquin "Économise ta salive, Ryn. On n'a même pas encore le droit de cocher une case."
 
     elen joie "Mais imaginez ! Acheter quelque chose sans devoir raconter pourquoi on en a besoin à un distributeur !"
@@ -1325,12 +1342,16 @@ label _3_DEBAT1_PHASE3:
     kami "Oh ! Une question pratique ! Mes petits représentants découvrent l'économie ! Je suis si émue."
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show screen kd_j3_contracts(1)
     kami "Si le texte passe, je proposerai des contrats rémunérés. Des tâches, des objectifs, un salaire. Comme dans vos vieux souvenirs d'avant moi, mais avec moins de paperasse inutile."
+    show screen kd_j3_contracts(2)
     kami "Vous produisez, récoltez, transportez, réparez. Je vous paie. Vous achetez. Facile, non ?"
 
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Vous serez libres de travailler. Ou de ne pas travailler. Attention : la liberté de ne rien gagner est incluse dans l'offre."
+    show screen kd_j3_contracts(3)
     kami "Et ceux qui refuseront de travailler ? Eh bien... il faudra se débrouiller. Les rations ne seront plus là pour attendre les retardataires. Motivant !"
+    hide screen kd_j3_contracts
 
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
@@ -1446,6 +1467,8 @@ label _3_DEBAT1_PHASE3:
 
     think "Reste Kael. Il m'avait dit qu'il déciderait devant le bulletin. Le bulletin n'est plus très loin."
 
+    $ kd_direct.begin("intimate", auto=False)
+    $ kd_direct.fixed_close("kael", duration=.55)
     kael inquiet "Je…"
 
     kael triste "Sur Orbite, une erreur peut tuer des innocents. Et je n'arrive pas à savoir si ce texte nous ouvre une porte..."
@@ -1453,7 +1476,9 @@ label _3_DEBAT1_PHASE3:
 
     noam inquiet "Kael, on peut te laisser une minute. Personne ne va te forcer à..."
 
+    $ kd_direct.focus("kael")
     think "Il ouvre la bouche."
+    $ kd_direct.end()
 
     play sound sfx_announce
     show screen kami_broadcast_ui
