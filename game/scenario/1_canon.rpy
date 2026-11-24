@@ -171,12 +171,14 @@ init python:
         if not positions:
             return
         store._cinema_manual_override = True
+        store._cinema_manual_speaker_focus = True
         center = sum(positions) / float(len(positions))
-        margin = 0.5 / zoom
-        center = max(margin, min(1.0 - margin, center))
-        cam_move(center, 0.45, zoom, duration)
+        # cam_apply expects a normalized pan target, not the world-space center.
+        target = 0.5 + (center - 0.5) * zoom / (zoom - 1.0) if zoom > 1.0 else 0.5
+        cam_move(max(0.0, min(1.0, target)), 0.45, zoom, duration)
 
     def day1_group_release():
+        store._cinema_manual_speaker_focus = False
         release_cam(t=0.32)
 
 transform day1_group_reaction_in:
@@ -300,6 +302,7 @@ label _1_CANON:
     $ cafeteria_food_level = "high"
 
     # Le cadrage manuel du réveil est indépendant du système global de dialogue.
+    $ _cinema_manual_speaker_focus = False
     $ _cinema_manual_override = True
     $ day1_wake_edge_enabled = False
     $ day1_wake_edge_started = None
@@ -342,6 +345,7 @@ label _1_CANON:
     camera master at day1_wake_pullback
     pause 1.25
     camera master
+    $ _cinema_manual_speaker_focus = False
     $ _cinema_manual_override = False
     $ showGroup([
         ("lysa", "neutre", -0.11),
@@ -417,6 +421,8 @@ label _1_CANON:
     elen desaccord "Oh, moi j'avais pas prévu de cadeau..."
     think "À peine réveillés, et il y a déjà deux conversations que personne ne contrôle."
 
+    $ _cinema_manual_speaker_focus = False
+
     $ wide_shot(t=0.30)
     noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
     mara taquin "Le même bateau ? J'espère que t'as pas le permis."
@@ -480,6 +486,8 @@ label _1_CANON:
 
     think "D'habitude, Kami adore être présente. Là, c'est comme une salle de classe sans prof."
     think "Sauf qu'ici le prof peut tuer les élèves à tout moment, et à distance."
+
+    $ _cinema_manual_speaker_focus = False
 
     $ wide_shot(t=0.35)
     lysa fatigue "... Silence radio."
@@ -615,6 +623,7 @@ label _1_CHOICE:
             ryn "Allez au suivant ! Qu'on termine ça au plus vite."
 
             noam raison "Bon, bah je vais tenter."
+            $ _cinema_manual_speaker_focus = False
             $ _cinema_manual_override = True
             $ cam_move(0.5, 0.5, 1.15, 0.30)
             show screen day1_access_terminal("idle", 2)
@@ -650,6 +659,7 @@ label _1_CHOICE:
 
             # La mort est annoncee par le son et une perte graduelle de perception.
             stop music fadeout 0.7
+            $ _cinema_manual_speaker_focus = False
             $ _cinema_manual_override = True
             $ cam_reset(t=0.0)
             camera master at day1_asphyxia_camera
@@ -682,6 +692,7 @@ label _1_CHOICE:
             stop sound fadeout 0.25
             hide screen day1_asphyxia_overlay
             camera master
+            $ _cinema_manual_speaker_focus = False
             $ _cinema_manual_override = False
             $ cam_reset(t=0.0)
             scene black with suffocation_cut
@@ -1349,12 +1360,14 @@ label _1_KAMI_APPARITION:
     elias taquin "La télévision va s'allumer."
 
     play sound sfx_gresillement
+    $ _cinema_manual_speaker_focus = False
     $ _cinema_manual_override = True
     $ cam_move(0.5, 0.20, 1.25, 0.55)
     window hide
     show screen day1_kami_takeover
     pause 1.05
     $ cam_reset(t=0.0)
+    $ _cinema_manual_speaker_focus = False
     $ _cinema_manual_override = False
     play music "music/bgm_system_override.mp3" fadein 0.4
     scene bg_diffusion_amour at adaptive_fullscreen
@@ -2661,6 +2674,7 @@ label _1_CHOICE_FATAL_END:
     hide screen day1_access_terminal
     hide screen day1_asphyxia_overlay
     stop day1_pulse
+    $ _cinema_manual_speaker_focus = False
     $ _cinema_manual_override = False
     $ roadmap_complete("choice_day1_door")
     $ roadmap_complete("ending_day1_asphyxia")
