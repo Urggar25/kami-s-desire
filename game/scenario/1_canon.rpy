@@ -198,53 +198,92 @@ screen day1_group_glance(tag, expression):
         add kd_face(tag, expression, 210)
     timer 1.10 action Hide("day1_group_glance")
 
-# J1: diegetic access terminal. Built from native Ren'Py displayables;
-# no new fonts, textures or minigame dependencies.
-transform day1_terminal_enter:
+# J1: one self-contained biometric insert. No dialogue under the overlay.
+transform day1_bio_in:
     alpha 0.0
-    zoom 0.96
-    easeout 0.24 alpha 1.0 zoom 1.0
+    xoffset 38
+    easeout 0.22 alpha 1.0 xoffset 0
 
-transform day1_terminal_scanline:
-    ypos 0
-    linear 0.75 ypos 0.97
+transform day1_bio_scan:
+    alpha 0.0
+    ypos 12
+    linear 0.10 alpha 1.0
+    linear 0.57 ypos 222
+    linear 0.08 alpha 0.0
+
+transform day1_bio_hand:
+    alpha 0.35
+    ease 0.30 alpha 1.0
+
+transform day1_bio_denied:
+    alpha 0.0
+    xoffset 12
+    easeout 0.10 alpha 1.0 xoffset -5
+    ease 0.12 xoffset 0
+
+transform day1_bio_static:
+    alpha 1.0
+    xoffset 0
+
+transform day1_bio_exit:
+    alpha 1.0
+    easein 0.20 alpha 0.0 xoffset 28
+
+transform day1_bio_progress:
+    xzoom 0.0
+    xanchor 0.0
+    linear 0.75 xzoom 1.0
 
 screen day1_access_terminal(phase="idle", attempts=2):
     zorder 110
-    $ accent = "#fa7778" if phase == "denied" else "#75dbc9"
-    $ terminal_w = int(config.screen_width * 0.43)
-    $ terminal_h = int(config.screen_height * 0.55)
-    add Solid("#08131ccc")
-    frame at day1_terminal_enter:
-        align (0.5, 0.42)
-        xysize (terminal_w, terminal_h)
-        padding (24, 20)
-        background Solid("#101d26")
-        vbox:
-            spacing 15
-            hbox:
-                xfill True
-                text "CONCLAVE // ACCESS CONTROL" color "#b5c8d0" size 22
-                null width 24
-                text ("%d/3" % attempts) color accent size 23
-            add Solid("#45616c", xysize=(terminal_w - 48, 2))
-            fixed:
-                xsize (terminal_w - 48)
-                ysize int(terminal_h * 0.49)
-                add Solid("#142c36")
-                for i in range(7):
-                    add Solid("#28505a", xysize=(1, int(terminal_h * 0.49))) xpos (i / 7.0)
-                for i in range(6):
-                    add Solid("#28505a", xysize=(terminal_w - 48, 1)) ypos (i / 6.0)
-                vbox:
-                    align (0.5, 0.5)
-                    spacing 8
-                    text "ID" size 70 color accent xalign 0.5
-                    text ("NOAM" if phase != "idle" else "—") size 30 color "#d2e5e9" xalign 0.5
-                if phase == "scan":
-                    add Solid("#75dbc999", xysize=(terminal_w - 48, 4)) at day1_terminal_scanline
-            text ("PERMISSION DENIED" if phase == "denied" else "SCANNING..." if phase == "scan" else "AWAITING IDENTIFICATION") color accent size 29 xalign 0.5
-            add Solid(accent, xysize=(terminal_w - 48, 2))
+    modal False
+    $ rejected = phase in ("denied", "exit")
+    $ accent = "#ff7182" if rejected else "#75e5d2"
+    $ root = "images/effects/biometric_"
+    # Explicit dimensions, no unsupported xfill/yfill on add statements.
+    fixed:
+        xysize (720, 340)
+        xalign 0.69
+        yalign 0.35
+        at (day1_bio_in if phase == "idle" else day1_bio_exit if phase == "exit" else day1_bio_static)
+        add (root + "panel.svg")
+        text "CONCLAVE  /  ACCESS CONTROL" xpos 34 ypos 30 size 21 color "#a8cbdc"
+        text "01 / PALM" xalign 0.94 ypos 30 size 18 color "#7699af"
+        add (root + "hand.svg") at day1_bio_hand:
+            xpos 35
+            ypos 66
+            xysize (214, 214)
+        if phase == "scan":
+            add (root + "scan.svg") at day1_bio_scan:
+                xpos 28
+                xysize (228, 35)
+        if rejected:
+            add (root + "lock.svg") at day1_bio_denied:
+                xpos 250
+                ypos 193
+                xysize (62, 62)
+        text "BIOMETRIC ID" xpos 329 ypos 80 size 18 color "#85a7bc"
+        text ("NOAM" if phase != "idle" else "—") xpos 326 ypos 105 size 42 color "#e3f5ff"
+        if rejected:
+            text "PERMISSION" xpos 329 ypos 160 size 27 color accent
+            text "DENIED" at day1_bio_denied:
+                xpos 326
+                ypos 187
+                size 48
+                color accent
+        else:
+            text ("SCANNING..." if phase == "scan" else "PLACE PALM") xpos 329 ypos 172 size 29 color accent
+        add Solid("#1b3647", xysize=(325, 4)) xpos 329 ypos 251
+        if phase == "scan":
+            add Solid(accent, xysize=(325, 4)) at day1_bio_progress:
+                xpos 329
+                ypos 251
+        elif rejected:
+            add Solid(accent, xysize=(325, 4)) xpos 329 ypos 251
+        text "ATTEMPTS" xpos 329 ypos 296 size 19 color "#91acbf"
+        for i in range(3):
+            add Solid(accent if i < attempts else "#263c4b", xysize=(28, 10)) xpos (440 + i * 35) ypos 303
+        text ("%d/3" % attempts) xpos 600 ypos 288 size 30 color accent
 
 # J1: progressive loss of perception. Separate audio channels keep the
 # heartbeat and tinnitus audible at the same time.
@@ -623,30 +662,33 @@ label _1_CHOICE:
             ryn "Allez au suivant ! Qu'on termine ça au plus vite."
 
             noam raison "Bon, bah je vais tenter."
+            "Je mets ma main sur la porte puis je vois comme une petite lumière verte qui scanne ma main."
+
+            window hide
             $ _cinema_manual_speaker_focus = False
             $ _cinema_manual_override = True
-            $ cam_move(0.5, 0.5, 1.15, 0.30)
             show screen day1_access_terminal("idle", 2)
-            pause 0.25
+            $ renpy.pause(0.22, hard=True)
             show screen day1_access_terminal("scan", 2)
-            "Je mets ma main sur la porte puis je vois comme une petite lumière verte qui scanne ma main."
-            pause 0.75
             play sound "audio/sfx_beep.mp3"
+            $ renpy.pause(0.75, hard=True)
             show screen day1_access_terminal("denied", 3)
+            play sound "audio/sfx_beep.mp3"
+            $ renpy.pause(0.80, hard=True)
+            show screen day1_access_terminal("exit", 3)
+            $ renpy.pause(0.20, hard=True)
+            hide screen day1_access_terminal
+            $ day1_group_release()
+            window auto
+
             think "Noam, Permission denied."
             noam triste "Fait chier, ça marche pas..."
 
             play sound sfx_clim volume 5.0
-            # Le lecteur biométrique devient le seul point d'attention.
-            play sound "audio/sfx_beep.mp3"
-            pause 0.2
-
             think "Je regarde plus en détail l'écran pour voir s'il y a d'autres indications."
             noam surpris "Hein, c'est quoi ça ?"
             think "Sur l'écran il est affiché en petit dans le coin supérieur droit : 3/3"
 
-            hide screen day1_access_terminal
-            $ day1_group_release()
             "Je me retourne face aux autres."
 
             noam hesitation "Y'a un chiffre bizarre à côté aussi, il y a écrit 3."
