@@ -2418,9 +2418,13 @@ label _1_AMENDEMENT_DEPOSE:
     scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
 
     kami "Grâce à vous, je n'aurai pas besoin d'éliminer qui que ce soit aujourd'hui."
+    $ bc_show("elen", "peur")
     elen peur "É-Éliminer ?! C'était prévu, ça ?"
+    $ bc_hide()
     kami "Prévu ? Non. Envisagé ? Oh, tout est envisageable."
+    $ bc_show("tomas", "inquiet")
     tomas inquiet "Tu... tu ne plaisantes pas ?"
+    $ bc_hide()
     kami "Vous avez tous rendu votre copie. Ne gâchons pas cette merveilleuse réussite collective."
     think "Elle vient de prononcer le mot réussite comme une menace."
 
