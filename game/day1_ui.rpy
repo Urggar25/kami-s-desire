@@ -888,6 +888,30 @@ transform day1_minute_roll_in:
     parallel:
         easeout 0.22 alpha 1.0
 
+# J1 owns its countdown; it no longer depends on the removed J0 UI.
+# Keep the legacy public names for existing scenario calls and saves.
+default day0_timer_active = False
+default day1_timer_deadline = None
+default day1_timer_seconds = 1860.0
+
+init python:
+    def day0_timer_init(m=0, s=0):
+        day0_timer_set(max(0.0, float(m) * 60.0 + float(s)))
+
+    def day0_timer_set(seconds):
+        store.day1_timer_seconds = max(0.0, float(seconds))
+        store.day1_timer_deadline = renpy.get_game_runtime() + store.day1_timer_seconds
+        store.day0_timer_active = True
+
+    def day0_timer_remaining():
+        if not store.day0_timer_active:
+            return 0.0
+        # Compatibility with saves created before the J1 timer was restored.
+        if store.day1_timer_deadline is None:
+            return max(0.0, store.day1_timer_seconds)
+        return max(0.0, min(store.day1_timer_seconds,
+                           store.day1_timer_deadline - renpy.get_game_runtime()))
+
 screen day1_amendment_timer():
     zorder 70
 
