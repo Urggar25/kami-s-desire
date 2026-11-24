@@ -111,6 +111,10 @@ init python:
             return False
         for screen_name in DAY_PERIOD_HUD_BLOCKING_SCREENS:
             if renpy.get_screen(screen_name):
+                # The tutorial points to the real HUD tablet button during step 1.
+                # Other blocking screens (including tablet_home) still hide the HUD.
+                if screen_name == "day1_rules_guided_reading" and store.day1_rules_stage == 0:
+                    continue
                 return False
         return True
 
