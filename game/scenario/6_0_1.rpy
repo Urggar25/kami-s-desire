@@ -740,7 +740,11 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "Ha ha ! Très drôle, Julian."
     $ bc_show("julian", "neutre")
     julian "Je n'essayais pas vraiment..."
+    $ bc_hide()
+    $ bc_show("iris", "reflechit")
     iris reflechit "Elle peut répondre. C'est déjà bon signe."
+    $ bc_hide()
+    $ bc_show("nyra", "reflechit")
     nyra reflechit "Kami, peux-tu afficher le même texte sur nos douze tablettes ? Sans lancer le scrutin."
     $ bc_hide()
     kami "Bien sûr !"
@@ -769,7 +773,11 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "Je n'ai pas besoin de vérification. Je suis opérationnelle."
     $ bc_show("iris", "colere")
     iris colere "Non ! Tu viens de bloquer sur une phrase ! Ça n'arrive pas à une IA comme toi !"
+    $ bc_hide()
+    $ bc_show("noam", "inquiet")
     noam inquiet "Iris, elle t'entend."
+    $ bc_hide()
+    $ bc_show("iris", "colere")
     iris "J'espère bien ! Je veux qu'elle me dise ce qui se passe, pas qu'elle récite une réponse toute faite !"
     "Kami ouvre la bouche pour lui répondre."
     "Ce qui sort des haut-parleurs n'a rien à voir."
@@ -780,6 +788,8 @@ label _6_0_1_SIGNAL_INSTABLE:
     "Sur ma tablette, les boutons POUR et CONTRE s'allument. Ils clignotent."
     $ bc_show("tomas", "surpris")
     tomas surpris "Hein ? Déjà ?"
+    $ bc_hide()
+    $ bc_show("nyra", "inquiet")
     nyra inquiet "Personne ne touche à rien !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     $ bc_hide()
@@ -790,7 +800,10 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "Une excellente blague, Julian."
     $ bc_show("julian", "neutre")
     julian "Je ne l'ai pas trouvée excellente."
+    $ bc_hide()
+    $ bc_show("lysa", "blase")
     lysa blase "Personne ne l'a trouvée excellente."
+    $ bc_hide()
     hide screen j601_kami_glitch
     hide screen kami_broadcast_ui
     $ bc_off()
