@@ -18,6 +18,10 @@ label chambre1_lit:
             jump CHAMBRE_TP
 
 label chambre1_television:
+    if day_number() in (1, 2, 3, 4, 5, 6):
+        call kd_daily_news_watch from _call_kd_daily_news_chambre
+        jump CHAMBRE_TP
+
     "L'ecran est éteint."
     think "A vrai dire, c'est bien mieux comme ça."
     think "A chaque fois que Kami parle, on ne sait pas comment ça va finir..."

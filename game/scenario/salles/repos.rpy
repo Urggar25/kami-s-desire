@@ -123,8 +123,12 @@ label repos1_porte_couloir_cafeteria:
 
 
 label repos2_television:
-    if day_number() == 6 and social_free_time_active() and not j601_border_news_seen:
+    if day_number() == 6 and getattr(store, "vote1", "") == "NON" and social_free_time_active() and not j601_border_news_seen:
         call _6_0_1_TV_FRONTIERES from _call_j601_tv_frontieres_repos
+        jump REPOS_TP
+
+    if day_number() in (1, 2, 3, 4, 5, 6):
+        call kd_daily_news_watch from _call_kd_daily_news_repos
         jump REPOS_TP
 
     "L'écran occupe une bonne partie du mur."
