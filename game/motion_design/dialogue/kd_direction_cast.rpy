@@ -1,12 +1,12 @@
 # Existing sprites only. No facial or skeletal asset is synthesized.
-transform kd_direct_pose(x, y, scale=1.0, facing=1, dim=0.0, dx=0, dy=0, t=.22):
+transform kd_direct_pose(x, y, scale=1.0, facing=1, dim=0.0, dx=0, dy=0, t=.22, active=False):
     subpixel True
     xalign x
     yalign y
     zoom scale
     xzoom facing
     alpha 1.0
-    matrixcolor BrightnessMatrix(dim)
+    matrixcolor (TintMatrix("#8d97b8") * BrightnessMatrix(dim) * SaturationMatrix(0.55) if dim < 0 else TintMatrix("#ffffff") * BrightnessMatrix(0.0) * SaturationMatrix(1.0))
     xoffset 0
     yoffset 0
     easeout t xoffset dx yoffset dy
@@ -59,7 +59,11 @@ init python:
             return attrs[0]
         return store.char_state.get(tag, {}).get("expr","neutre")
 
-    def kd_direct_draw(tag, reaction=None, dim=0.0, old_x=None, entry=None):
+    def kd_direct_refresh_focus():
+        for actor in kd_direct_visible():
+            kd_direct_draw(actor)
+
+    def kd_direct_draw(tag, reaction=None, dim=None, old_x=None, entry=None):
         if tag not in kd_direct_visible():
             return
         st = store.char_state[tag]
@@ -67,6 +71,12 @@ init python:
         expr = kd_direct_expression(tag)
         st["expr"],st["mode"] = expr,None
         scale,facing,depth = store.kd_direction_poses.get(tag,(1.0,1,0))
+        speaker = store.kd_direction_speaker
+        active = speaker == tag
+        if dim is None:
+            dim = -0.28 if speaker is not None and not active else 0.0
+        # Match historical speaker contrast and foreground ordering.
+        # Keep the authored composition and camera untouched.
         skip = renpy.is_skipping() or not persistent.kd_dialogue_direction
         if reaction:
             dx,dy,t = KD_DIRECT_REACTIONS.get(reaction,(0,0,.2))
@@ -77,4 +87,4 @@ init python:
             tr = kd_direct_move(x if skip else old_x,x,y,scale,facing,0 if skip else .35)
         else:
             tr = kd_direct_pose(x,y,scale,facing,dim)
-        renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=[tr],zorder=st.get("zorder",0)+depth)
+        renpy.show(tag+" "+expr,tag=tag,layer="master",at_list=[tr],zorder=(500 if active else st.get("zorder",0)+depth))

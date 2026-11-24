@@ -14,6 +14,7 @@ default kd_direction_poses = {}
 default kd_direction_original = {}
 default kd_direction_camera_original = None
 default kd_direction_hold = 0
+default kd_direction_speaker = None
 
 init python:
     class KDDialogueDirector(object):
@@ -33,6 +34,7 @@ init python:
             store.kd_direction_signature = cinema_scene_signature()
             store.kd_direction_profile = profile
             store.kd_direction_active = True
+            store.kd_direction_speaker = None
             store.kd_direction_history = ()
             store.kd_direction_age = 0
             store.kd_direction_locked = False
@@ -92,8 +94,7 @@ init python:
             store.kd_direction_plan,store.kd_direction_targets = kind,targets
             store.kd_direction_age = 0
             store.kd_direction_hold = max(0,int(hold))
-            for a in visible:
-                kd_direct_draw(a,dim=-.10 if kind=="isolate" and a not in targets else 0.0)
+            # Camera changes do not reset sprite focus or ongoing reactions.
 
         def two_shot(self,a,b,duration=None):
             self.shot("two",(a,b),duration)
@@ -153,8 +154,8 @@ init python:
 
         def focus(self,tag):
             if store.kd_direction_active:
-                for a in kd_direct_visible():
-                    kd_direct_draw(a,dim=0.0 if a==tag else -.10)
+                store.kd_direction_speaker = tag if tag in kd_direct_visible() else None
+                kd_direct_refresh_focus()
 
         def end(self,restore=True):
             if not store.kd_direction_active:
@@ -172,6 +173,7 @@ init python:
                         store.char_pos[a] = st["x"]
                     renpy.show(a+" "+st["expr"],tag=a,layer="master",at_list=[char_group_place(st.get("x",.5),st.get("y",1.0))],zorder=st.get("zorder",0))
             store.kd_direction_active = False
+            store.kd_direction_speaker = None
             store.kd_direction_actors = ()
             store.kd_direction_poses = {}
             store.kd_direction_original = {}
@@ -201,6 +203,10 @@ init python:
                 return False
             if tag=="__NARRATOR__" or tag not in visible:
                 return True
+            # Focus is independent of camera holds, locks and cut cadence.
+            if store.kd_direction_speaker != tag:
+                store.kd_direction_speaker = tag
+                kd_direct_refresh_focus()
             store.kd_direction_age += 1
             hist = (store.kd_direction_history+(tag,))[-6:]
             store.kd_direction_history = hist
