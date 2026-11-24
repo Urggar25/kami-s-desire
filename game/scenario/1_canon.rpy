@@ -324,7 +324,9 @@ transform day1_tunnel_edge(top=True):
     ease 3.0 ysize int(config.screen_height * 0.19)
 
 screen day1_asphyxia_overlay():
-    zorder 880
+    # Le say screen est au zorder 0 : les paupieres et le voile restent
+    # derriere la boite de dialogue, sans modifier leur animation.
+    zorder -1
     add Solid("#26030c") at day1_asphyxia_overlay_in
     add "images/effects/stress_vignette.svg" at day1_asphyxia_tunnel
     add Solid("#08060b") at day1_tunnel_edge(True)
