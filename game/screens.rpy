@@ -78,6 +78,9 @@ style frame:
 ################################################################################
 
 screen say(who, what):
+    # TV: le plateau (3), les bandeaux (5) et le sondage (6) restent sous le dialogue.
+    # Hors diffusion, conserver la priorité historique du say screen.
+    zorder (20 if renpy.get_screen("kd_news_broadcast") is not None else 0)
 
     use dialogue_punctuation_overlay(what)
 
