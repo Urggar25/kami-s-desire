@@ -3,6 +3,7 @@ default choix_1_soir = "dormir"
 default day1_wake_edge_enabled = False
 default day1_wake_edge_started = None
 default day1_wake_edge_triggered = False
+default day1_wake_pan_last = None
 define sfx_drop = "audio/sfx_drop.mp3"
 define sfx_shower = "audio/sfx_shower.mp3"
 
@@ -33,12 +34,18 @@ init 2 python:
 # de changement d'expression. On n'applique jamais d'alpha au décor.
 init python:
     def day1_wake_pan(trans, st, at):
+        import math
+        # Exponential damping based on elapsed time, not frame count.
+        previous = store.day1_wake_pan_last
+        dt = 0.016 if previous is None or st < previous else max(0.0, min(0.10, st - previous))
+        store.day1_wake_pan_last = st
+        blend = 1.0 - math.exp(-8.0 * dt)
         try:
             mx, my = renpy.get_mouse_pos()
             sw, sh = float(renpy.config.screen_width), float(renpy.config.screen_height)
             # Recadrage dans l'image agrandie, sans afficher ses bordures.
-            tx = -(mx / sw - 0.5) * 440.0
-            ty = -(my / sh - 0.5) * 230.0
+            tx = -(mx / sw - 0.5) * 210.0
+            ty = -(my / sh - 0.5) * 110.0
             # Léger tremblement indicateur quand le regard bute sur un bord.
             if (store.day1_wake_edge_enabled and
                     (mx <= sw * .05 or mx >= sw * .95 or
@@ -46,62 +53,71 @@ init python:
                 import math
                 tx += math.sin(st * 65.0) * 5.0
                 ty += math.cos(st * 79.0) * 4.0
-            trans.xoffset += (tx - trans.xoffset) * 0.18
-            trans.yoffset += (ty - trans.yoffset) * 0.18
+            trans.xoffset += (tx - trans.xoffset) * blend
+            trans.yoffset += (ty - trans.yoffset) * blend
         except Exception:
             pass
         return 0.016
 
+# Subjective camera: blur both the room and Lysa on the master layer.
 transform day1_wake_focus:
-    blur 20
-    linear 2.4 blur 13
-    linear 2.8 blur 5
-    linear 1.8 blur 0
+    zoom 1.68
+    xalign 0.5
+    yalign 0.41
+    blur 18
+    rotate -1.2
+    ease 1.35 blur 0 rotate 0
+    function day1_wake_pan
 
 transform day1_wake_close:
     zoom 1.68
     xalign 0.5
     yalign 0.41
+    blur 0
+    rotate 0
     function day1_wake_pan
 
+# Legacy transform names retained for saved games.
 transform day1_wake_close_talk:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    ease 0.30 zoom 1.73
     function day1_wake_pan
 
 transform day1_wake_jolt:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    xoffset -27
-    yoffset 15
-    linear 0.10 xoffset 24 yoffset -12
-    linear 0.11 xoffset -18 yoffset 8
-    linear 0.12 xoffset 14 yoffset -7
-    ease 0.14 xoffset 0 yoffset 0
+    easeout 0.10 rotate -2.0 xoffset -24 yoffset 14
+    ease 0.16 rotate 1.2 xoffset 18 yoffset -8
+    ease 0.23 rotate 0 xoffset 0 yoffset 0
 
-# Réveil subjectif : rapprochement brutal sur le visage de Lysa.
-# Le tremblement concerne le décor ET Lysa, sur la caméra master ;
-# les sprites de bras au premier plan ne sont volontairement pas utilisés.
 transform day1_wake_face_shake:
     zoom 1.68
     xalign 0.5
-    yalign 0.30
-    easeout 0.16 zoom 2.65
-    linear 0.065 xoffset -27 yoffset 18
-    linear 0.065 xoffset 28 yoffset -15
-    linear 0.065 xoffset -23 yoffset 12
-    linear 0.065 xoffset 21 yoffset -11
-    linear 0.065 xoffset -14 yoffset 9
-    easeout 0.16 xoffset 0 yoffset 0 zoom 1.68
+    yalign 0.41
+    easeout 0.10 zoom 1.83 rotate -2.4 xoffset -26 yoffset 18
+    ease 0.16 rotate 1.5 xoffset 19 yoffset -10
+    ease 0.30 zoom 1.68 rotate 0 xoffset 0 yoffset 0
 
 transform day1_wake_pullback:
     zoom 1.68
     xalign 0.5
     yalign 0.41
-    ease 2.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
+    ease 1.2 zoom 1.0 xalign 0.5 yalign 0.5 xoffset 0 yoffset 0
+
+transform day1_wake_lid(top=True):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize (config.screen_height // 2 + 2)
+    ease 0.65 ysize 0
+
+screen day1_wake_opening():
+    zorder 998
+    add Solid("#000") at day1_wake_lid(True)
+    add Solid("#000") at day1_wake_lid(False)
+    timer 0.70 action Hide("day1_wake_opening")
 
 # =============================================================================
 
@@ -148,19 +164,130 @@ init python:
             for name, face, position in _day1_group_cast
         ])
 
+# J1: explicit group shots, using the existing two-layer camera.
+init python:
+    def day1_group_shot(tags, zoom=1.22, duration=0.32):
+        positions = [store.char_pos[tag] for tag in tags if tag in store.char_pos]
+        if not positions:
+            return
+        store._cinema_manual_override = True
+        center = sum(positions) / float(len(positions))
+        margin = 0.5 / zoom
+        center = max(margin, min(1.0 - margin, center))
+        cam_move(center, 0.45, zoom, duration)
+
+    def day1_group_release():
+        release_cam(t=0.32)
+
+transform day1_group_reaction_in:
+    alpha 0.0
+    xoffset 30
+    easeout 0.20 alpha 1.0 xoffset 0
+    pause 0.65
+    ease 0.20 alpha 0.0
+
+screen day1_group_glance(tag, expression):
+    zorder 90
+    frame at day1_group_reaction_in:
+        xalign 0.84
+        yalign 0.18
+        padding (3, 3)
+        background Solid(kd_char_color(tag))
+        add kd_face(tag, expression, 210)
+    timer 1.10 action Hide("day1_group_glance")
+
+# J1: diegetic access terminal. Built from native Ren'Py displayables;
+# no new fonts, textures or minigame dependencies.
+transform day1_terminal_enter:
+    alpha 0.0
+    zoom 0.96
+    easeout 0.24 alpha 1.0 zoom 1.0
+
+transform day1_terminal_scanline:
+    ypos 0
+    linear 0.75 ypos 0.97
+
+screen day1_access_terminal(phase="idle", attempts=2):
+    zorder 110
+    $ accent = "#fa7778" if phase == "denied" else "#75dbc9"
+    $ terminal_w = int(config.screen_width * 0.43)
+    $ terminal_h = int(config.screen_height * 0.55)
+    add Solid("#08131ccc")
+    frame at day1_terminal_enter:
+        align (0.5, 0.42)
+        xysize (terminal_w, terminal_h)
+        padding (24, 20)
+        background Solid("#101d26")
+        vbox:
+            spacing 15
+            hbox:
+                xfill True
+                text "CONCLAVE // ACCESS CONTROL" color "#b5c8d0" size 22
+                null width 24
+                text ("%d/3" % attempts) color accent size 23
+            add Solid("#45616c") xfill True ysize 2
+            fixed:
+                xsize (terminal_w - 48)
+                ysize int(terminal_h * 0.49)
+                add Solid("#142c36")
+                for i in range(7):
+                    add Solid("#28505a") xpos (i / 7.0) xsize 1 yfill True
+                for i in range(6):
+                    add Solid("#28505a") ypos (i / 6.0) ysize 1 xfill True
+                vbox:
+                    align (0.5, 0.5)
+                    spacing 8
+                    text "ID" size 70 color accent xalign 0.5
+                    text ("NOAM" if phase != "idle" else "—") size 30 color "#d2e5e9" xalign 0.5
+                if phase == "scan":
+                    add Solid("#75dbc999") xfill True ysize 4 at day1_terminal_scanline
+            text ("PERMISSION DENIED" if phase == "denied" else "SCANNING..." if phase == "scan" else "AWAITING IDENTIFICATION") color accent size 29 xalign 0.5
+            add Solid(accent) xfill True ysize 2
+
+# J1: progressive loss of perception. Separate audio channels keep the
+# heartbeat and tinnitus audible at the same time.
+init python:
+    renpy.music.register_channel("day1_pulse", mixer="sfx", loop=False)
+
 transform day1_asphyxia_overlay_in:
     alpha 0.0
-    ease 0.85 alpha 0.50
-    block:
-        ease 0.48 alpha 0.68
-        ease 0.58 alpha 0.44
-        repeat
+    ease 1.0 alpha 0.16
+    ease 2.0 alpha 0.36
+
+transform day1_asphyxia_tunnel:
+    alpha 0.0
+    zoom 1.35
+    align (0.5, 0.5)
+    ease 1.0 alpha 0.75 zoom 1.0
+    ease 2.0 alpha 1.0 zoom 1.0
+
+transform day1_asphyxia_camera:
+    zoom 1.06
+    align (0.5, 0.5)
+    rotate 0
+    blur 0
+    ease 0.9 zoom 1.12 rotate -1.8 blur 3
+    ease 1.4 zoom 1.18 rotate 2.2 blur 9
+    ease 0.7 zoom 1.21 rotate -3.0 blur 14
+
+transform day1_asphyxia_cg:
+    zoom 1.04
+    align (0.5, 0.5)
+    ease 2.0 zoom 1.12
+
+transform day1_tunnel_edge(top=True):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize 0
+    ease 3.0 ysize int(config.screen_height * 0.19)
 
 screen day1_asphyxia_overlay():
     zorder 880
-    # Le rouge obscur se referme autour du champ visuel.
     add Solid("#26030c") at day1_asphyxia_overlay_in
-    add "images/effects/stress_vignette.svg" at _stress_breathe
+    add "images/effects/stress_vignette.svg" at day1_asphyxia_tunnel
+    add Solid("#08060b") at day1_tunnel_edge(True)
+    add Solid("#08060b") at day1_tunnel_edge(False)
 
 label _1_CANON:
 # =============================================================================
@@ -177,12 +304,13 @@ label _1_CANON:
     $ day1_wake_edge_enabled = False
     $ day1_wake_edge_started = None
     $ day1_wake_edge_triggered = False
+    $ day1_wake_pan_last = None
     # Gros plan dès la PREMIÈRE réplique : décor et Lysa dans la caméra.
-    scene bg_conclave at adaptive_fullscreen, day1_wake_focus
+    scene bg_conclave at adaptive_fullscreen
     $ showGroup([("lysa", "blase", 0.50)])
-    camera master at day1_wake_close
+    camera master at day1_wake_focus
     stop music fadeout 0.3
-    $ blink()
+    show screen day1_wake_opening
     lysa blase "Hé. Hé, tu m'entends ?"
     think "Quelqu'un m'appelle. Une voix de fille, beaucoup trop près de mon oreille."
     lysa blase "Non, mais c'est pas vrai... Tu vas te réveiller, oui ?!"
@@ -196,34 +324,25 @@ label _1_CANON:
     $ day1_wake_edge_enabled = True
     show screen day1_wake_edge_watch
     noam inquiet "Mh... Arrête de me secouer..."
-    camera master at day1_wake_close_talk
     lysa blase "Ah ! Enfin ! J'ai cru que tu comptais dormir jusqu'au prochain Conclave."
     noam inquiet "Le prochain quoi...?"
     lysa taquin "Oh, rien. Juste la réunion la plus importante de ta vie. Tu peux te rendormir, si tu veux."
     think "Cette voix me dit quelque chose. Le ton aussi. Agressivement rassurant."
-    camera master at day1_wake_close
     think "J'ouvre péniblement les yeux. La fille qui m'a réveillé est penchée juste au-dessus de moi, assez près pour que son visage occupe presque tout mon champ de vision ; au-delà de son épaule, la salle reste indistincte."
-    $ blink()
-    camera master at day1_wake_close_talk
     lysa blase "Tu m'entends au moins ? Ça fait un moment que je te parle, et les autres commencent déjà à s'agiter."
-    camera master at day1_wake_close
     noam inquiet "Oui, je t'entends... T'es obligée de me secouer comme ça ?"
-    camera master at day1_wake_close_talk
     lysa blase "Bah quoi ? J'allais pas te laisser dormir là toute la journée."
-    camera master at day1_wake_close
     think "Je tourne un peu la tête pour regarder derrière elle. Les sièges et quelques silhouettes glissent dans mon champ de vision, sans qu'elle s'éloigne vraiment."
     noam inquiet "J'ai la tête en vrac... On est où ?"
-    camera master at day1_wake_close_talk
     lysa reflexion "Regarde autour de toi, tu devrais finir par deviner."
 
     $ day1_wake_edge_enabled = False
     hide screen day1_wake_edge_watch
     # Le gros plan ne prend fin QU'ICI. Recul continu avant la discussion.
     camera master at day1_wake_pullback
-    pause 2.3
+    pause 1.25
     camera master
     $ _cinema_manual_override = False
-    scene bg_conclave at adaptive_fullscreen with Dissolve(0.2)
     $ showGroup([
         ("lysa", "neutre", -0.11),
         ("noam", "inquiet", 0.01),
@@ -250,6 +369,8 @@ label _1_CANON:
 
     think "Je regarde autour, en m'efforçant de ne pas parler. Je ne reconnais aucun autre visage. Donc c'est vrai : les douze représentants sont bien réunis dans la même cage."
 
+    $ day1_group_shot(("ryn",), 1.35, 0.15)
+    play sound sfx_thud
     "Un homme se lève d'un bond. Son siège claque au sol."
 
     $ day1_group_reaction(iris="peur", elen="inquiet", mara="taquin", tomas="surpris")
@@ -257,6 +378,7 @@ label _1_CANON:
     ryn colere "Qui a fait ça ?!"
 
     $ day1_group_reaction(ryn="colere", iris="blase", lysa="blase", elen="inquiet")
+    $ day1_group_shot(("ryn", "mara"), 1.22)
     mara rire "Tu veux dire... à part l'IA qui tient le monde en laisse ?"
     mara taquin "Et toi, t'as fini de gueuler ? Parce que là, tu nous réveilles tous une deuxième fois."
     "Elle fait un mouvement de tête dans une direction, pour montrer une caméra."
@@ -270,6 +392,7 @@ label _1_CANON:
     tomas reflechit "C-Comment ça t'es au courant de rien ..?"
     tomas reflechit "Tu... Tu as bien entendu l'annonce, non ?!"
 
+    $ day1_group_shot(("elen",), 1.28, 0.25)
     elen surpris "Aaaaah, je sais même pas depuis combien de temps on était là, c'est quand même nous qu'on a emballés dans des boîtes, non ?"
     elen surpris "Oh ! Vous croyez qu'ils ont prévu à manger ? Parce que le gaz, franchement, ça ouvre l'appétit et—"
 
@@ -288,14 +411,17 @@ label _1_CANON:
     mara taquin "Ouuuh effraaayant !"
     elen surpris "Hé, attendez ! Vous êtes sûrs qu'on est tous censés être là ?"
     mara taquin "Non, on s'est réunis par hasard pour l'anniversaire du monsieur qui hurle."
+    $ day1_group_release()
     call cutin("ryn") from _call_kd_cutin_1_ryn
     ryn colere "TU TE FOUS DE MOI ?!"
     elen desaccord "Oh, moi j'avais pas prévu de cadeau..."
     think "À peine réveillés, et il y a déjà deux conversations que personne ne contrôle."
 
+    $ wide_shot(t=0.30)
     noam "Bon, attendez ! On est tous dans le même bateau, non ? Se gueuler dessus ne nous aidera pas à sortir."
     mara taquin "Le même bateau ? J'espère que t'as pas le permis."
     ryn colere "On n'est PAS sur un bateau !"
+    show screen day1_group_glance("lysa", "blase")
     lysa blase "Merci, capitaine. On avait un doute."
     noam inquiet "C'était une expression..."
     think "J'aurais dû me taire. Ça aurait au moins fait un argument de moins."
@@ -313,6 +439,7 @@ label _1_CANON:
     iris blase "On attend quoi ? Un miracle ? Une notice ? Quelqu'un de compétent ? On ne sait même pas ce qu'on doit faire."
     elias inquiet "On peut peut-être commencer par chercher une sortie ?"
     iris desaccord "Formidable. Quelqu'un vient d'inventer la porte."
+    show screen day1_group_glance("elias", "gene")
     elias gene "Je proposais juste..."
     kael calme "Pour sa défense, c'est pas la pire idée qu'on ait eue depuis notre réveil."
     ryn colere "Et c'était quoi, la pire ?!"
@@ -326,9 +453,11 @@ label _1_CANON:
 
     elen inquiet "Hein ?? On est enfermés ?!"
     elen inquiet "Mais comment qu'on va faire..."
+    $ day1_group_shot(("elen",), 1.25, 0.25)
     elen fatigue "Aaaahh ! En plus j'ai envie d'aller faire pipi !"
     elen inquiet "C'est sérieux, hein ! J'ai cherché des toilettes dans mon rêve et y en avait même pas !"
     mara taquin "C'est peut-être ça, le fameux test de l'humanité."
+    $ day1_group_release()
     sael raison "On peut éviter les plaisanteries et chercher un plan de cette salle."
     elen desaccord "Ben justement ! Un plan avec des toilettes !"
     think "Je crois qu'elle est sincèrement la plus motivée de nous tous."
@@ -352,6 +481,7 @@ label _1_CANON:
     think "D'habitude, Kami adore être présente. Là, c'est comme une salle de classe sans prof."
     think "Sauf qu'ici le prof peut tuer les élèves à tout moment, et à distance."
 
+    $ wide_shot(t=0.35)
     lysa fatigue "... Silence radio."
 
     noam reflexion "Ça veut dire quoi pour toi ?"
@@ -376,11 +506,13 @@ label _1_CANON:
     lysa blase "T'en as d'autres des idées de génie ?"
     lysa fatigue "Je vois pas pourquoi l'un d'entre nous aurait des permissions que les autres n'auraient pas."
 
+    $ day1_group_shot(("nyra",), 1.20, 0.40)
     nyra hesitation "Sauf si elle veut créer des tensions dans le groupe dès le début ?"
 
     pause 0.4
 
     $ day1_group_reaction(ryn="colere")
+    $ day1_group_release()
     think "Les regards circulent. Personne n'a l'air coupable, ce qui ne m'aide absolument pas."
     think "L'un d'entre nous a-t-il la permission d'ouvrir la porte ?"
 
@@ -411,6 +543,8 @@ label _1_CANON:
 
     think "Une porte verrouillée. Douze inconnus. Et on me demande de trancher sur notre première mauvaise idée."
 
+    hide screen day1_group_glance
+    $ day1_group_release()
     jump _1_CHOICE
 
 label _1_CHOICE_DEATH:
@@ -481,8 +615,15 @@ label _1_CHOICE:
             ryn "Allez au suivant ! Qu'on termine ça au plus vite."
 
             noam raison "Bon, bah je vais tenter."
+            $ _cinema_manual_override = True
+            $ cam_move(0.5, 0.5, 1.15, 0.30)
+            show screen day1_access_terminal("idle", 2)
+            pause 0.25
+            show screen day1_access_terminal("scan", 2)
             "Je mets ma main sur la porte puis je vois comme une petite lumière verte qui scanne ma main."
-
+            pause 0.75
+            play sound "audio/sfx_beep.mp3"
+            show screen day1_access_terminal("denied", 3)
             think "Noam, Permission denied."
             noam triste "Fait chier, ça marche pas..."
 
@@ -495,6 +636,8 @@ label _1_CHOICE:
             noam surpris "Hein, c'est quoi ça ?"
             think "Sur l'écran il est affiché en petit dans le coin supérieur droit : 3/3"
 
+            hide screen day1_access_terminal
+            $ day1_group_release()
             "Je me retourne face aux autres."
 
             noam hesitation "Y'a un chiffre bizarre à côté aussi, il y a écrit 3."
@@ -507,17 +650,19 @@ label _1_CHOICE:
 
             # La mort est annoncee par le son et une perte graduelle de perception.
             stop music fadeout 0.7
-            play sound "audio/sfx_heartbeat.mp3"
+            $ _cinema_manual_override = True
+            $ cam_reset(t=0.0)
+            camera master at day1_asphyxia_camera
+            play day1_pulse "audio/sfx_heartbeat.mp3" loop
             show screen day1_asphyxia_overlay
             "Ma tête commence soudainement à tourner. Quelque chose ne va pas."
 
             "Quel est ce bruit ?"
             think "Pourquoi je vois tout flou ?"
             play sound "audio/sfx_tinnitus.wav"
-            $ shake(9, 0.36)
-            scene cg007 at adaptive_fullscreen with vpunch
-            hide screen day1_asphyxia_overlay
-            with flash_red
+            pause 0.35
+            camera master
+            scene cg007 at adaptive_fullscreen, day1_asphyxia_cg with Dissolve(0.28)
             $ unlock_gallery_image("cg007")
             $ _day1_asphyxia_deaths = register_day1_asphyxia_death()
 
@@ -533,7 +678,12 @@ label _1_CHOICE:
 
             think "Put...a..."
 
-            stop sound
+            stop day1_pulse fadeout 0.25
+            stop sound fadeout 0.25
+            hide screen day1_asphyxia_overlay
+            camera master
+            $ _cinema_manual_override = False
+            $ cam_reset(t=0.0)
             scene black with suffocation_cut
             pause 0.35
 
@@ -1041,6 +1191,149 @@ label _1_PNC_CONCLAVE_SAEL:
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
+# J1 broadcast takeover: native ATL, no external animation runtime.
+transform day1_kami_dark:
+    alpha 0.0
+    ease 0.35 alpha 0.92
+    pause 0.75
+    ease 0.75 alpha 0.0
+
+transform day1_kami_signal:
+    alpha 0.0
+    xzoom 0.02
+    easeout 0.35 alpha 1.0 xzoom 1.0
+    pause 0.65
+    ease 0.30 alpha 0.0
+
+transform day1_kami_title:
+    alpha 0.0
+    yoffset 18
+    pause 0.35
+    easeout 0.25 alpha 1.0 yoffset 0
+    pause 0.45
+    ease 0.25 alpha 0.0
+
+screen day1_kami_takeover():
+    zorder 990
+    add Solid("#070b14") at day1_kami_dark
+    add Solid("#79cbdc") at day1_kami_signal:
+        xalign 0.5
+        yalign 0.42
+        xsize int(config.screen_width * 0.76)
+        ysize 3
+    vbox at day1_kami_title:
+        align (0.5, 0.5)
+        spacing 12
+        text "KAMI" size 94 color "#e4f7ff" xalign 0.5
+        text "SYSTEM OVERRIDE // LIVE" size 24 color "#79cbdc" xalign 0.5
+
+transform day1_kami_rule_in:
+    alpha 0.0
+    xoffset 32
+    easeout 0.30 alpha 1.0 xoffset 0
+
+transform day1_kami_rule_cell(delay=0.0):
+    alpha 0.0
+    yoffset 8
+    pause delay
+    easeout 0.18 alpha 1.0 yoffset 0
+
+screen day1_kami_pair(first, second):
+    zorder 121
+    hbox at day1_kami_rule_in:
+        xalign 0.97
+        yalign 0.48
+        spacing 10
+        for tag, expression in (first, second):
+            frame:
+                padding (3, 3)
+                background Solid(kd_char_color(tag))
+                add kd_face(tag, expression, 160)
+    timer 1.30 action Hide("day1_kami_pair")
+
+screen day1_kami_rule(kind):
+    zorder 120
+    frame at day1_kami_rule_in:
+        xalign 0.97
+        yalign 0.12
+        padding (22, 18)
+        background Solid("#101b2bee")
+        vbox:
+            spacing 12
+            text "CONCLAVE // PROTOCOL" color "#8cc9d9" size 22
+            if kind == "duration" or kind == "calendar":
+                text (_("30 JOURS") if kind == "duration" else _("UN VOTE TOUS LES 3 JOURS")) color "#edf8ff" size 29
+                grid 10 3:
+                    spacing 5
+                    for i in range(30):
+                        add Solid("#74ccdd" if kind == "duration" or (i + 1) % 3 == 0 else "#34485a") at day1_kami_rule_cell(i * 0.012):
+                            xysize (28, 12)
+            elif kind == "abstain" or kind == "veto":
+                grid 6 2:
+                    spacing 6
+                    for i in range(12):
+                        frame at day1_kami_rule_cell(i * 0.035):
+                            xysize (52, 45)
+                            padding (0, 0)
+                            background Solid("#a53148" if i == 11 and kind == "veto" else "#566575" if i == 11 else "#235d56")
+                            text ("X" if i == 11 and kind == "veto" else "-" if i == 11 else "+") color "#ffffff" size 28 align (0.5, 0.5)
+                text (_("REJETÉ") if kind == "veto" else _("ADOPTÉ")) color ("#ff8090" if kind == "veto" else "#8ce8bc") size 28 xalign 0.5
+            else:
+                text _("COMMANDEMENTS") color "#edf8ff" size 28
+                hbox:
+                    spacing 5
+                    for i in range(10):
+                        add Solid("#52606f") at day1_kami_rule_cell(i * 0.035):
+                            xysize (26, 8)
+                text _("SUSPENDUS") color "#ff8090" size 30
+
+# J1: Julian imagines himself on the public broadcast.
+transform day1_rec_in:
+    alpha 0.0
+    easeout 0.22 alpha 1.0
+
+transform day1_rec_dot:
+    alpha 1.0
+    pause 0.75
+    alpha 0.25
+    pause 0.25
+    repeat
+
+transform day1_lysa_interrupt:
+    alpha 0.0
+    xoffset -80
+    easeout 0.18 alpha 1.0 xoffset 0
+    pause 0.60
+    ease 0.22 alpha 0.0
+
+screen day1_julian_rec():
+    zorder 100
+    fixed at day1_rec_in:
+        add Solid("#070d1833")
+        add Solid("#b7d2db") xpos 0.035 ypos 0.055 xsize 82 ysize 3
+        add Solid("#b7d2db") xpos 0.035 ypos 0.055 xsize 3 ysize 56
+        add Solid("#b7d2db") xalign 0.965 ypos 0.055 xsize 82 ysize 3
+        add Solid("#b7d2db") xalign 0.965 ypos 0.055 xsize 3 ysize 56
+        hbox:
+            xpos 0.065
+            ypos 0.075
+            spacing 12
+            add Solid("#eb5361") at day1_rec_dot:
+                xysize (13, 13)
+                yalign 0.5
+            text "REC" size 27 color "#f0d5db"
+        text "CONCLAVE // CAM" size 22 color "#b7d2db" xalign 0.93 ypos 0.075
+
+screen day1_lysa_rec_interrupt():
+    zorder 125
+    frame at day1_lysa_interrupt:
+        xpos 0.035
+        yalign 0.34
+        padding (4, 4)
+        background Solid("#ff8a3d")
+        add kd_face("lysa", "colere", 270)
+    timer 1.05 action Hide("day1_lysa_rec_interrupt")
+
 label _1_KAMI_APPARITION:
 
     $ showGroup([
@@ -1056,19 +1349,25 @@ label _1_KAMI_APPARITION:
     elias taquin "La télévision va s'allumer."
 
     play sound sfx_gresillement
-    $ shake(8, 0.25)
-
-    $ cam_move(0.5, 0.05, 3.00, 1.0)
-
+    $ _cinema_manual_override = True
+    $ cam_move(0.5, 0.20, 1.25, 0.55)
+    window hide
+    show screen day1_kami_takeover
+    pause 1.05
+    $ cam_reset(t=0.0)
+    $ _cinema_manual_override = False
     play music "music/bgm_system_override.mp3" fadein 0.4
-    scene bg_diffusion_amour at adaptive_fullscreen with fade
+    scene bg_diffusion_amour at adaptive_fullscreen
     $ bc_off()
     show screen kami_broadcast_ui
+    pause 0.85
+    hide screen day1_kami_takeover
+    window auto
 
     kami "Ah… vous êtes tous réveillés. Parfait."
     kami "J'avais peur d'avoir surestimé votre capacité à survivre à une petite sieste forcée."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Les sièges étaient confortables, j'espère."
     kami "J'ai hésité avec des bancs en métal."
@@ -1081,7 +1380,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Oh."
     kami "Excellente question."
@@ -1103,11 +1402,13 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Une excellente transition ! Je vois que certains ont déjà envie d'avoir la parole."
     $ bc_show("mara", "taquin", px=-80, py=-45, pz=0.85)
+    show screen day1_kami_pair(("mara", "taquin"), ("julian", "neutre"))
     mara taquin "Il attend ça depuis qu'il a ouvert les yeux."
     $ bc_hide()
     $ bc_show("julian", "neutre", px=-80, py=-45, pz=0.85)
     julian neutre "Je pose une question."
     $ bc_hide()
+    hide screen day1_kami_pair
     kami "Et moi, je savoure ce moment."
 
     pause 0.3
@@ -1120,33 +1421,35 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Du calme, mon grand. C'est vrai que tu n'es pas au courant de tout..."
     kami "Vous êtes mon petit échantillon de l'humanité. Douze spécimens, et pas un seul mode d'emploi."
     kami "Je vais confronter vos rêves à la réalité. Vos belles convictions à vos petites habitudes. Ça promet."
 
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    show bg_diffusion_colere as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Mais aussi votre capacité à obéir…"
     kami "Et surtout à appeler votre obéissance le bien commun. J'adore quand vous faites ça."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Croyez-moi. Ça ne sera pas si évident."
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Alors je vous le dis : bienvenue au Conclave."
     $ bc_show("elen", "joie", px=-80, py=-45, pz=0.85)
     elen joie "On peut applaudir ?"
     $ bc_hide()
     $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
+    show screen day1_kami_pair(("ryn", "colere"), ("elen", "peur"))
     ryn colere "TU VAS VRAIMENT APPLAUDIR ?!"
     call kd_vn_reaction("ryn", "colere", "#ff9c55")
     $ bc_hide()
     $ bc_show("elen", "peur", px=-80, py=-45, pz=0.85)
     elen peur "Mais non ! Je demandais !"
+    hide screen day1_kami_pair
     $ bc_hide()
     kami "Oh, faites comme chez vous. Il n'y aura pas de deuxième cérémonie d'accueil."
     $ bc_show("mara", "rire", px=-80, py=-45, pz=0.85)
@@ -1155,10 +1458,12 @@ label _1_KAMI_APPARITION:
 
     pause 0.5
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("duration")
     kami "Le Conclave durera trente jours."
     kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
+    hide screen day1_kami_rule
     $ bc_show("noam", "inquiet", px=-80, py=-45, pz=0.85)
     noam inquiet "Trente jours ? Tu ne nous as pas demandé notre avis !"
     $ bc_hide()
@@ -1172,7 +1477,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Tu me reproches déjà de ne pas être présente physiquement ? C'est touchant."
 
-    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+    show bg_diffusion_triste as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Trente jours pendant lesquels vous allez décider."
     kami "Pas pour vous mais pour tous les autres."
@@ -1187,7 +1492,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Des règles."
     kami "Celles qui encadrent ce monde."
@@ -1220,17 +1525,17 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Oh non. Continuez. Je prends un plaisir considérable à vous écouter."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Renforcez une règle. Affaiblissez-la. Tordez-la. Supprimez-la. Je veux voir jusqu'où va votre imagination."
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Vous êtes libres de proposer ce que vous voulez."
     kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
     kami "Vous pouvez penser à tous les autres. Ou seulement à vous. Je vous laisse deviner ce que je préfère observer."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je vous laisse être créatifs."
     kami "Après tout… C'est sans doute ce que vous faites de mieux."
@@ -1242,27 +1547,33 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("calendar")
     kami "Ensuite ? Vous voterez. Il y aura un vote tous les trois jours."
+    hide screen day1_kami_rule
     kami "Je vous offre la possibilité de changer les règles de mon monde. Mais, ça ne sera pas si simple."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("abstain")
     kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
     kami "Vous ne votez pas ? Je compte une abstention. Voyez comme je vous facilite la vie."
+    hide screen day1_kami_rule
 
     pause 0.3
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Mais attention !"
     kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
 
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    show bg_diffusion_colere as bg_diffusion_amour at adaptive_fullscreen
     $ impact(10, 0.25, "#c81e2e")
 
+    show screen day1_kami_rule("veto")
     kami "Personne ne devra voter contre. Sinon, le vote est refusé."
+    hide screen day1_kami_rule
     $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Attends ! Un seul type peut bloquer tout le monde ?"
     $ bc_hide()
@@ -1284,14 +1595,14 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Pas encore. Voilà qui est enthousiasmant."
 
-    scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
+    show bg_diffusion_desespoir as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Une voix contre, et votre joli texte disparaît. Avec les grands espoirs que vous aviez mis dedans."
     kami "Une seule petite voix contre et tout peut tomber à l'eau."
 
     pause 0.4
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Vous allez apprendre quelque chose d'important ici."
     kami "Essayez déjà de mettre douze personnes d'accord sur l'heure du dîner. Après, on parlera de changer le monde."
@@ -1299,24 +1610,26 @@ label _1_KAMI_APPARITION:
 
     pause 0.6
 
-    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+    show bg_diffusion_champagne as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Petite précision qui a toute son importance :"
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
     kami "Vos alliances, vos manigances, vos petits arrangements ? Sans moi. Je veux la meilleure place pour regarder."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je regarderai. Et j'apprendrai en vous observant."
 
     pause 0.4
 
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    show bg_diffusion_zen as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("suspended")
     kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
+    hide screen day1_kami_rule
 
     kami "Vous pouvez vous battre."
     kami "Vous pouvez mentir. D'ailleurs, certains ont sûrement commencé."
@@ -1347,19 +1660,19 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
     kami "J'ai passé un an à vous observer. Vos débats. Vos justifications. Vos excuses. Votre haine ou votre fascination."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
     kami "Ce serait dommage de s'arrêter maintenant."
 
     pause 0.6
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
     kami "Le Conclave commence, je vous donne à tous les autorisations pour l'explorer librement."
     kami "Les portes vous sont désormais ouvertes."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
     kami "Faites connaissance ! Vous avez trente jours pour devenir inséparables. Dans tous les sens du terme."
 
     pause 0.5
@@ -1371,6 +1684,9 @@ label _1_KAMI_APPARITION:
     $ bc_off()
     play music "music/bgm_quiet_routine.mp3" fadein 0.4
     hide screen kami_broadcast_ui
+    hide screen day1_kami_pair
+    hide screen day1_kami_rule
+    hide screen day1_kami_takeover
 
     scene bg_conclave at adaptive_fullscreen with fade
 
@@ -1422,14 +1738,21 @@ label _1_KAMI_APPARITION:
 
     think "Le type qui soigne tellement sa présentation se lève, ajuste sa veste et repère une caméra avant de trouver ses mots."
 
+    $ day1_group_shot(("julian",), 1.32, 0.35)
+    show screen day1_julian_rec
     julian rire "Franchement ? Ce moment est historique."
     julian neutre "Enfin un lieu où nos paroles peuvent peser sur les règles."
     julian idee "Je n'ai pas l'intention de gaspiller cette occasion."
 
     think "Il offre son meilleur profil à la caméra. Pour lui, ça semble avoir toute l'importance du monde."
 
+    show screen day1_lysa_rec_interrupt
     lysa doute "T'es sérieux ?"
+    hide screen day1_lysa_rec_interrupt
+    hide screen day1_julian_rec
+    $ day1_group_release()
     call cutin("lysa") from _call_kd_cutin_1_lysa
+    $ day1_group_shot(("lysa", "julian"), 1.14, 0.25)
     lysa colere "On est coincés ici, on risque de crever si ça tourne mal, et toi tu poses pour les caméras ?!"
     lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
 
@@ -1437,8 +1760,11 @@ label _1_KAMI_APPARITION:
     julian idee "Tu peux me mépriser. Mais les gens, eux, ont besoin d'un résultat, ils veulent du CHANGEMENT."
 
     think "Il salue la caméra comme si le public l'attendait déjà."
+    $ day1_group_release()
+    show screen day1_group_glance("julian", "colere")
 
     noam inquiet "…"
+    hide screen day1_group_glance
 
     tomas reflechit "Au moins, ça confirme quelque chose."
     tomas reflechit "Kami veut du spectacle. Vraiment."
@@ -2110,6 +2436,96 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
 # =============================================================================
 
+# J1: quiet end-of-day staging, mirroring the opening eyelids.
+transform day1_room_discover:
+    align (0.5, 0.5)
+    zoom 1.08
+    xoffset -22
+    ease 2.4 zoom 1.0 xoffset 0
+
+transform day1_room_night:
+    align (0.5, 0.5)
+    zoom 1.035
+    matrixcolor BrightnessMatrix(0.0)
+    ease 3.0 zoom 1.075 matrixcolor BrightnessMatrix(-0.24) * TintMatrix("#b8d1ff")
+
+transform day1_jammer_in:
+    alpha 0.0
+    yoffset 8
+    easeout 0.35 alpha 1.0 yoffset 0
+    pause 1.4
+    ease 0.4 alpha 0.0
+
+screen day1_jammer_status():
+    zorder 105
+    frame at day1_jammer_in:
+        xalign 0.95
+        yalign 0.16
+        padding (18, 12)
+        background Solid("#101c27dd")
+        hbox:
+            spacing 12
+            add Solid("#78e2a7"):
+                xysize (10, 10)
+                yalign 0.5
+            text _("BROUILLEUR ACTIF") color "#b8e9d1" size 24
+    timer 2.2 action Hide("day1_jammer_status")
+
+transform day1_shower_cg:
+    align (0.5, 0.5)
+    zoom 1.025
+    ease 5.0 zoom 1.075
+
+transform day1_steam_drift(delay=0.0):
+    blur 36
+    alpha 0.0
+    pause delay
+    block:
+        yoffset 32
+        ease 1.7 alpha 0.10 yoffset -20
+        ease 1.9 alpha 0.0 yoffset -75
+        repeat
+
+transform day1_water_drop(delay=0.0):
+    alpha 0.0
+    pause delay
+    block:
+        ypos 0.08
+        linear 0.12 alpha 0.18
+        linear 1.6 ypos 0.85
+        linear 0.15 alpha 0.0
+        repeat
+
+screen day1_shower_atmosphere():
+    zorder 80
+    for i in range(4):
+        add Solid("#d2e5ef") at day1_steam_drift(i * 0.6):
+            xalign 0.5
+            yalign (0.65 + i * 0.07)
+            xsize config.screen_width
+            ysize int(config.screen_height * 0.12)
+    for i in range(9):
+        add Solid("#edf8ff") at day1_water_drop(i * 0.21):
+            xpos (0.08 + i * 0.10)
+            xysize (2, 36)
+
+transform day1_sleep_lid(top=True, final=False):
+    xalign 0.5
+    yalign (0.0 if top else 1.0)
+    xsize config.screen_width
+    ysize 0
+    if final:
+        ease 1.65 ysize (config.screen_height // 2 + 2)
+    else:
+        ease 0.58 ysize int(config.screen_height * 0.41)
+        pause 0.18
+        ease 0.45 ysize 0
+
+screen day1_sleep_lids(final=False):
+    zorder 998
+    add Solid("#000") at day1_sleep_lid(True, final)
+    add Solid("#000") at day1_sleep_lid(False, final)
+
 label _1_FIN_JOURNEE_DORTOIR:
 # =============================================================================
 
@@ -2178,18 +2594,21 @@ label _1_FIN_JOURNEE_DORTOIR:
     $ hideGroup()
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_137
-    scene bg_chambre at adaptive_fullscreen with fade
+    scene bg_chambre at adaptive_fullscreen, day1_room_discover with fade
 
     think "Ma chambre est étrangement assez confortable."
     think "Enfin seul. Je jette presque mes affaires et découvre un grand lit, une garde-robe..."
     think "Non, ce sont MES affaires ! Du matériel informatique. Près du bureau, le voyant vert fixe du brouilleur confirme qu'il est actif."
     $ noam_room_jammer_on = True
+    show screen day1_jammer_status
 
     think "Il y a une salle de bain privée. Une douche chaude est la première décision simple de la journée."
 
     pause 0.2
 
-    scene bg_cg011 at adaptive_fullscreen with dissolve
+    hide screen day1_jammer_status
+    scene bg_cg011 at adaptive_fullscreen, day1_shower_cg with dissolve
+    show screen day1_shower_atmosphere
     $ unlock_gallery_image("bg_cg011")
 
     play sound sfx_shower
@@ -2199,29 +2618,28 @@ label _1_FIN_JOURNEE_DORTOIR:
 
     pause 0.5
 
-    scene bg_chambre at adaptive_fullscreen with fade
+    hide screen day1_shower_atmosphere
+    stop sound fadeout 0.8
+    scene bg_chambre at adaptive_fullscreen, day1_room_night with fade
 
     think "Je m'allonge, mais l'image de l'urne me revient aussitôt. Demain, on saura quel texte Kami a choisi."
 
-    $ blink()
-
-    pause 0.4
-
-    $ blink()
-
-    pause 0.4
-
-    $ blink()
+    show screen day1_sleep_lids(False)
+    pause 1.25
+    hide screen day1_sleep_lids
 
     think "Je ferme les yeux. Les voix du Conclave me reviennent une à une. Douze représentants, une seule voix contre pour tout arrêter... et demain, l'une de nos feuilles deviendra l'affaire de tous."
     think "J'essaye de me souvenir de qui a souri pendant l'annonce."
     think "Je préfère arrêter de compter."
     think "Le sommeil finit par gagner."
 
-    $ blink()
-
-    scene black with fade
-    stop music fadeout 2.0
+    window hide
+    show screen day1_sleep_lids(True)
+    stop music fadeout 1.8
+    pause 1.8
+    scene black
+    hide screen day1_sleep_lids
+    window auto
 
     # Progression normale : la journée 1 se poursuit directement au jour 2.
     $ roadmap_complete("day_1")
@@ -2232,6 +2650,10 @@ label _1_FIN_JOURNEE_DORTOIR:
 # Fin alternative : Noam meurt en tentant d'ouvrir la porte.
 # La route s'arrête ici et le joueur revient à la chronologie.
 label _1_CHOICE_FATAL_END:
+    hide screen day1_access_terminal
+    hide screen day1_asphyxia_overlay
+    stop day1_pulse
+    $ _cinema_manual_override = False
     $ roadmap_complete("choice_day1_door")
     $ roadmap_complete("ending_day1_asphyxia")
     $ hideGroup()
