@@ -1264,6 +1264,53 @@ screen day1_kami_rule(kind):
                             xysize (26, 8)
                 text _("SUSPENDUS") color "#ff8090" size 30
 
+# J1: Julian imagines himself on the public broadcast.
+transform day1_rec_in:
+    alpha 0.0
+    easeout 0.22 alpha 1.0
+
+transform day1_rec_dot:
+    alpha 1.0
+    pause 0.75
+    alpha 0.25
+    pause 0.25
+    repeat
+
+transform day1_lysa_interrupt:
+    alpha 0.0
+    xoffset -80
+    easeout 0.18 alpha 1.0 xoffset 0
+    pause 0.60
+    ease 0.22 alpha 0.0
+
+screen day1_julian_rec():
+    zorder 100
+    fixed at day1_rec_in:
+        add Solid("#070d1833")
+        add Solid("#b7d2db") xpos 0.035 ypos 0.055 xsize 82 ysize 3
+        add Solid("#b7d2db") xpos 0.035 ypos 0.055 xsize 3 ysize 56
+        add Solid("#b7d2db") xalign 0.965 ypos 0.055 xsize 82 ysize 3
+        add Solid("#b7d2db") xalign 0.965 ypos 0.055 xsize 3 ysize 56
+        hbox:
+            xpos 0.065
+            ypos 0.075
+            spacing 12
+            add Solid("#eb5361") at day1_rec_dot:
+                xysize (13, 13)
+                yalign 0.5
+            text "REC" size 27 color "#f0d5db"
+        text "CONCLAVE // CAM" size 22 color "#b7d2db" xalign 0.93 ypos 0.075
+
+screen day1_lysa_rec_interrupt():
+    zorder 125
+    frame at day1_lysa_interrupt:
+        xpos 0.035
+        yalign 0.34
+        padding (4, 4)
+        background Solid("#ff8a3d")
+        add kd_face("lysa", "colere", 270)
+    timer 1.05 action Hide("day1_lysa_rec_interrupt")
+
 label _1_KAMI_APPARITION:
 
     $ showGroup([
@@ -1661,14 +1708,21 @@ label _1_KAMI_APPARITION:
 
     think "Le type qui soigne tellement sa présentation se lève, ajuste sa veste et repère une caméra avant de trouver ses mots."
 
+    $ day1_group_shot(("julian",), 1.32, 0.35)
+    show screen day1_julian_rec
     julian rire "Franchement ? Ce moment est historique."
     julian neutre "Enfin un lieu où nos paroles peuvent peser sur les règles."
     julian idee "Je n'ai pas l'intention de gaspiller cette occasion."
 
     think "Il offre son meilleur profil à la caméra. Pour lui, ça semble avoir toute l'importance du monde."
 
+    show screen day1_lysa_rec_interrupt
     lysa doute "T'es sérieux ?"
+    hide screen day1_lysa_rec_interrupt
+    hide screen day1_julian_rec
+    $ day1_group_release()
     call cutin("lysa") from _call_kd_cutin_1_lysa
+    $ day1_group_shot(("lysa", "julian"), 1.14, 0.25)
     lysa colere "On est coincés ici, on risque de crever si ça tourne mal, et toi tu poses pour les caméras ?!"
     lysa blase "T'es vraiment obligé de faire ton numéro devant la caméra ?"
 
@@ -1676,8 +1730,11 @@ label _1_KAMI_APPARITION:
     julian idee "Tu peux me mépriser. Mais les gens, eux, ont besoin d'un résultat, ils veulent du CHANGEMENT."
 
     think "Il salue la caméra comme si le public l'attendait déjà."
+    $ day1_group_release()
+    show screen day1_group_glance("julian", "colere")
 
     noam inquiet "…"
+    hide screen day1_group_glance
 
     tomas reflechit "Au moins, ça confirme quelque chose."
     tomas reflechit "Kami veut du spectacle. Vraiment."
