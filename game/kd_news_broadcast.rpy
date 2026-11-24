@@ -106,7 +106,7 @@ screen kd_news_intro(channel, topic, edition):
         add Solid("#617d96", xysize=(680, 2)) xalign 0.5 ypos 572
         text topic style "kd_news_title" xalign 0.5 ypos 600 xmaximum 1500 text_align 0.5
 
-screen kd_news_broadcast(channel, location, headline, headlines=(), speaker="", detail=""):
+screen kd_news_broadcast(channel, location, headline, headlines=(), speaker="", detail="", live=True):
     zorder 5
     modal False
 
@@ -125,8 +125,11 @@ screen kd_news_broadcast(channel, location, headline, headlines=(), speaker="", 
             xysize (215, 50)
             at kd_news_drop
             add Solid("#b92d49", xysize=(215, 50))
-            add "images/kd_news/live_dot.svg" xpos 17 ypos 14 at kd_news_live_pulse
-            text _("DIRECT") style "kd_news_small" bold True xpos 52 yalign 0.5
+            if live:
+                add "images/kd_news/live_dot.svg" xpos 17 ypos 14 at kd_news_live_pulse
+                text _("DIRECT") style "kd_news_small" bold True xpos 52 yalign 0.5
+            else:
+                text _("REDIFF.") style "kd_news_small" bold True xalign 0.5 yalign 0.5
 
         # Le bandeau principal et le fil restent hors de la textbox.
         fixed:
@@ -186,4 +189,11 @@ label kd_news_close:
         hide screen kd_news_outro
     call kd_news_audio_end from _call_kd_news_audio_end
     window auto
+    return
+
+# Quitter le point de vue TV sans prétendre que le poste a été éteint.
+# Utilisé lorsque le scénario revient à la pièce pendant une diffusion.
+label kd_news_leave_view:
+    hide screen kd_news_broadcast
+    call kd_news_audio_end from _call_kd_news_audio_leave_view
     return

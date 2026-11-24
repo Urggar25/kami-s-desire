@@ -386,8 +386,12 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     if _return != "television":
         jump _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE
 
-    scene bg_cg034 at adaptive_fullscreen with dissolve
+    call kd_news_open(_("LIMEN 24"), _("APRÈS LE VOTE DU CONCLAVE"), _("ÉDITION SPÉCIALE"), "field") from _call_kd_news_open_j40_mandatory
+    scene bg_cg034 at adaptive_fullscreen
     $ unlock_gallery_image("bg_cg034")
+    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("La distribution gratuite se poursuit"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")))
+    with Dissolve(0.25)
+    window auto
     "L'écran montre une file de personnes devant un centre de distribution. Des bénévoles chargent des sacs sur une table ; derrière eux, les cartons s'empilent jusque sous une bâche."
     elias inquiet "Bon. Il y a vraiment quelque chose dans les sacs."
     kael reflechit "On voit des livraisons. Pas ce qu'il reste dans les entrepôts."
@@ -396,16 +400,22 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     iris reflechit "Pourquoi elle a reposé le deuxième ?"
     nyra neutre "On ne sait pas. Peut-être qu'elle n'y avait pas droit."
     mara neutre "Ou qu'elle n'arrivait pas à le porter."
+    $ kd_news_sfx("headline")
+    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Les familles récupèrent leurs denrées"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")), _("SUR PLACE"), _("Distribution de colis alimentaires"))
     "La journaliste se tourne vers la petite fille. Elle lui demande ce qu'elle préfère dans le paquet. L'enfant regarde sa mère avant de répondre."
     "Une seconde plus tard, la petite fille sourit à la caméra, sans donner le nom d'un seul aliment."
     elias reflechit "Elle est contente, non ?"
     ryn neutre "Elle a reçu à manger. Bien sûr qu'elle est contente."
+    $ kd_news_sfx("headline")
+    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Des habitants s’inquiètent des prochaines livraisons"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")), _("TÉMOIGNAGE"), _("Une mère attend des réponses"))
     "Ryn garde les yeux sur l'écran. La journaliste s'adresse maintenant à une femme qui tient un enfant endormi contre son épaule."
     "La femme remercie les bénévoles, puis demande quand arrivera la prochaine livraison. On lui répond qu'aucune date n'est garantie."
     iris fatigue "Super."
     noam inquiet "Au moins, elles ont de quoi manger aujourd'hui."
     lysa neutre "Aujourd'hui, oui."
     "La journaliste demande à la femme si elle souhaiterait autre chose. Celle-ci commence à répondre, hésite et jette un regard vers la caméra."
+    $ kd_news_sfx("headline")
+    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("Une nouvelle livraison en cours"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")))
     "Le reportage coupe sur les bénévoles qui déchargent un autre camion."
     kael reflechit "Elle allait dire quoi ?"
     nyra reflechit "On n'en saura rien."
@@ -426,6 +436,8 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     "Ryn se rassoit si brusquement qu'une cuillère tombe sur le sol. Personne ne la ramasse."
     "L'écran continue à diffuser des images de sacs alignés. Pendant quelques secondes, on entend seulement les commentaires de la journaliste."
     "Une porte s'ouvre derrière nous."
+    # Noam détourne son attention : la télévision n’est pas éteinte.
+    call kd_news_leave_view from _call_kd_news_leave_j40_mandatory
     # L'annonce d'Elen se déroule au présent, dans la cafétéria, pas sur la CG télévisée.
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -581,10 +593,15 @@ label _4_0_CAFETERIA_PNC_JULIAN:
 
 label day4_optional_news:
 
-    scene bg_cg034 at adaptive_fullscreen with dissolve
+    call kd_news_open(_("LIMEN 24"), _("APRÈS LE VOTE DU CONCLAVE"), _("REDIFFUSION"), "field") from _call_kd_news_open_j40_legacy
+    scene bg_cg034 at adaptive_fullscreen
+    show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("La distribution gratuite se poursuit"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")), live=False)
+    with Dissolve(0.25)
+    window auto
     think "Les images de distribution tournent en boucle. Des sacs remplis, des files interminables, des sourires devant la caméra."
     think "Je voudrais savoir combien de personnes repartiront réellement avec quelque chose. L'écran ne le dit pas."
 
+    call kd_news_close from _call_kd_news_close_j40_legacy
     return
 
 label _4_0_TEMPS_LIBRE_1:
