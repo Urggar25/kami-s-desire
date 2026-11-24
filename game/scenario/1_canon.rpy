@@ -1181,6 +1181,89 @@ label _1_PNC_CONCLAVE_SAEL:
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
+# J1 broadcast takeover: native ATL, no external animation runtime.
+transform day1_kami_dark:
+    alpha 0.0
+    ease 0.35 alpha 0.92
+    pause 0.75
+    ease 0.75 alpha 0.0
+
+transform day1_kami_signal:
+    alpha 0.0
+    xzoom 0.02
+    easeout 0.35 alpha 1.0 xzoom 1.0
+    pause 0.65
+    ease 0.30 alpha 0.0
+
+transform day1_kami_title:
+    alpha 0.0
+    yoffset 18
+    pause 0.35
+    easeout 0.25 alpha 1.0 yoffset 0
+    pause 0.45
+    ease 0.25 alpha 0.0
+
+screen day1_kami_takeover():
+    zorder 990
+    add Solid("#070b14") at day1_kami_dark
+    add Solid("#79cbdc") at day1_kami_signal:
+        xalign 0.5
+        yalign 0.42
+        xsize int(config.screen_width * 0.76)
+        ysize 3
+    vbox at day1_kami_title:
+        align (0.5, 0.5)
+        spacing 12
+        text "KAMI" size 94 color "#e4f7ff" xalign 0.5
+        text "SYSTEM OVERRIDE // LIVE" size 24 color "#79cbdc" xalign 0.5
+
+transform day1_kami_rule_in:
+    alpha 0.0
+    xoffset 32
+    easeout 0.30 alpha 1.0 xoffset 0
+
+transform day1_kami_rule_cell(delay=0.0):
+    alpha 0.0
+    yoffset 8
+    pause delay
+    easeout 0.18 alpha 1.0 yoffset 0
+
+screen day1_kami_rule(kind):
+    zorder 120
+    frame at day1_kami_rule_in:
+        xalign 0.97
+        yalign 0.12
+        padding (22, 18)
+        background Solid("#101b2bee")
+        vbox:
+            spacing 12
+            text "CONCLAVE // PROTOCOL" color "#8cc9d9" size 22
+            if kind == "duration" or kind == "calendar":
+                text (_("30 JOURS") if kind == "duration" else _("UN VOTE TOUS LES 3 JOURS")) color "#edf8ff" size 29
+                grid 10 3:
+                    spacing 5
+                    for i in range(30):
+                        add Solid("#74ccdd" if kind == "duration" or (i + 1) % 3 == 0 else "#34485a") at day1_kami_rule_cell(i * 0.012):
+                            xysize (28, 12)
+            elif kind == "abstain" or kind == "veto":
+                grid 6 2:
+                    spacing 6
+                    for i in range(12):
+                        frame at day1_kami_rule_cell(i * 0.035):
+                            xysize (52, 45)
+                            padding (0, 0)
+                            background Solid("#a53148" if i == 11 and kind == "veto" else "#566575" if i == 11 else "#235d56")
+                            text ("X" if i == 11 and kind == "veto" else "-" if i == 11 else "+") color "#ffffff" size 28 align (0.5, 0.5)
+                text (_("REJETÉ") if kind == "veto" else _("ADOPTÉ")) color ("#ff8090" if kind == "veto" else "#8ce8bc") size 28 xalign 0.5
+            else:
+                text _("COMMANDEMENTS") color "#edf8ff" size 28
+                hbox:
+                    spacing 5
+                    for i in range(10):
+                        add Solid("#52606f") at day1_kami_rule_cell(i * 0.035):
+                            xysize (26, 8)
+                text _("SUSPENDUS") color "#ff8090" size 30
+
 label _1_KAMI_APPARITION:
 
     $ showGroup([
@@ -1196,19 +1279,25 @@ label _1_KAMI_APPARITION:
     elias taquin "La télévision va s'allumer."
 
     play sound sfx_gresillement
-    $ shake(8, 0.25)
-
-    $ cam_move(0.5, 0.05, 3.00, 1.0)
-
+    $ _cinema_manual_override = True
+    $ cam_move(0.5, 0.20, 1.25, 0.55)
+    window hide
+    show screen day1_kami_takeover
+    pause 1.05
+    $ cam_reset(t=0.0)
+    $ _cinema_manual_override = False
     play music "music/bgm_system_override.mp3" fadein 0.4
-    scene bg_diffusion_amour at adaptive_fullscreen with fade
+    scene bg_diffusion_amour at adaptive_fullscreen
     $ bc_off()
     show screen kami_broadcast_ui
+    pause 0.85
+    hide screen day1_kami_takeover
+    window auto
 
     kami "Ah… vous êtes tous réveillés. Parfait."
     kami "J'avais peur d'avoir surestimé votre capacité à survivre à une petite sieste forcée."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Les sièges étaient confortables, j'espère."
     kami "J'ai hésité avec des bancs en métal."
@@ -1221,7 +1310,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Oh."
     kami "Excellente question."
@@ -1260,22 +1349,22 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Du calme, mon grand. C'est vrai que tu n'es pas au courant de tout..."
     kami "Vous êtes mon petit échantillon de l'humanité. Douze spécimens, et pas un seul mode d'emploi."
     kami "Je vais confronter vos rêves à la réalité. Vos belles convictions à vos petites habitudes. Ça promet."
 
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    show bg_diffusion_colere as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Mais aussi votre capacité à obéir…"
     kami "Et surtout à appeler votre obéissance le bien commun. J'adore quand vous faites ça."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Croyez-moi. Ça ne sera pas si évident."
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Alors je vous le dis : bienvenue au Conclave."
     $ bc_show("elen", "joie", px=-80, py=-45, pz=0.85)
@@ -1295,10 +1384,12 @@ label _1_KAMI_APPARITION:
 
     pause 0.5
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("duration")
     kami "Le Conclave durera trente jours."
     kami "Et pendant ces trente jours, vous ne retournerez pas chez vous."
+    hide screen day1_kami_rule
     $ bc_show("noam", "inquiet", px=-80, py=-45, pz=0.85)
     noam inquiet "Trente jours ? Tu ne nous as pas demandé notre avis !"
     $ bc_hide()
@@ -1312,7 +1403,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Tu me reproches déjà de ne pas être présente physiquement ? C'est touchant."
 
-    scene bg_diffusion_triste at adaptive_fullscreen with dissolve
+    show bg_diffusion_triste as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Trente jours pendant lesquels vous allez décider."
     kami "Pas pour vous mais pour tous les autres."
@@ -1327,7 +1418,7 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Des règles."
     kami "Celles qui encadrent ce monde."
@@ -1360,17 +1451,17 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Oh non. Continuez. Je prends un plaisir considérable à vous écouter."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Renforcez une règle. Affaiblissez-la. Tordez-la. Supprimez-la. Je veux voir jusqu'où va votre imagination."
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Vous êtes libres de proposer ce que vous voulez."
     kami "Et personne ne saura jamais qui a proposé quoi, le dépot sera entièrement anonyme !"
     kami "Vous pouvez penser à tous les autres. Ou seulement à vous. Je vous laisse deviner ce que je préfère observer."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je vous laisse être créatifs."
     kami "Après tout… C'est sans doute ce que vous faites de mieux."
@@ -1382,27 +1473,33 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
 
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("calendar")
     kami "Ensuite ? Vous voterez. Il y aura un vote tous les trois jours."
+    hide screen day1_kami_rule
     kami "Je vous offre la possibilité de changer les règles de mon monde. Mais, ça ne sera pas si simple."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("abstain")
     kami "Pour chaque amendement, vous pourrez voter pour, voter contre ou vous abstenir."
     kami "Vous ne votez pas ? Je compte une abstention. Voyez comme je vous facilite la vie."
+    hide screen day1_kami_rule
 
     pause 0.3
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Mais attention !"
     kami "Pour qu'un amendement soit adopté… Il faudra convaincre tous les autres !"
 
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    show bg_diffusion_colere as bg_diffusion_amour at adaptive_fullscreen
     $ impact(10, 0.25, "#c81e2e")
 
+    show screen day1_kami_rule("veto")
     kami "Personne ne devra voter contre. Sinon, le vote est refusé."
+    hide screen day1_kami_rule
     $ bc_show("ryn", "colere", px=-80, py=-45, pz=0.85)
     ryn colere "Attends ! Un seul type peut bloquer tout le monde ?"
     $ bc_hide()
@@ -1424,14 +1521,14 @@ label _1_KAMI_APPARITION:
     $ bc_hide()
     kami "Pas encore. Voilà qui est enthousiasmant."
 
-    scene bg_diffusion_desespoir at adaptive_fullscreen with dissolve
+    show bg_diffusion_desespoir as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Une voix contre, et votre joli texte disparaît. Avec les grands espoirs que vous aviez mis dedans."
     kami "Une seule petite voix contre et tout peut tomber à l'eau."
 
     pause 0.4
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Vous allez apprendre quelque chose d'important ici."
     kami "Essayez déjà de mettre douze personnes d'accord sur l'heure du dîner. Après, on parlera de changer le monde."
@@ -1439,24 +1536,26 @@ label _1_KAMI_APPARITION:
 
     pause 0.6
 
-    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
+    show bg_diffusion_champagne as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Petite précision qui a toute son importance :"
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je ne participerai pas aux votes. Je ne donnerai pas mon avis."
     kami "Vos alliances, vos manigances, vos petits arrangements ? Sans moi. Je veux la meilleure place pour regarder."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
 
     kami "Je regarderai. Et j'apprendrai en vous observant."
 
     pause 0.4
 
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    show bg_diffusion_zen as bg_diffusion_amour at adaptive_fullscreen
 
+    show screen day1_kami_rule("suspended")
     kami "D'ailleurs, à ce sujet. Ici… les Commandements n'ont pas lieu d'être."
+    hide screen day1_kami_rule
 
     kami "Vous pouvez vous battre."
     kami "Vous pouvez mentir. D'ailleurs, certains ont sûrement commencé."
@@ -1487,19 +1586,19 @@ label _1_KAMI_APPARITION:
 
     pause 0.4
 
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    show bg_diffusion_professeur as bg_diffusion_amour at adaptive_fullscreen
     kami "J'ai passé un an à vous observer. Vos débats. Vos justifications. Vos excuses. Votre haine ou votre fascination."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
     kami "Ce serait dommage de s'arrêter maintenant."
 
     pause 0.6
 
-    scene bg_diffusion_fier at adaptive_fullscreen with dissolve
+    show bg_diffusion_fier as bg_diffusion_amour at adaptive_fullscreen
     kami "Le Conclave commence, je vous donne à tous les autorisations pour l'explorer librement."
     kami "Les portes vous sont désormais ouvertes."
 
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show bg_diffusion_taquin as bg_diffusion_amour at adaptive_fullscreen
     kami "Faites connaissance ! Vous avez trente jours pour devenir inséparables. Dans tous les sens du terme."
 
     pause 0.5
