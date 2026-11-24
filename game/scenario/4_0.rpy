@@ -116,26 +116,35 @@ label _4_0_NAVIGATION_CAFETERIA:
         ("noam", "neutre", 0.30),
         ("elias", "neutre", 0.70),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.two_shot("noam","elias", duration=.18)
     noam sourire "C'est toi, le bruit de tout à l'heure ?"
     elias gene "Quel bruit ?"
     noam neutre "Un bruit métallique. Un juron. Quelqu'un qui a brièvement perdu confiance en l'univers."
+    $ kd_direct.shot("reaction","elias",duration=.18,hold=1)
     elias inquiet "Ah. Celui-là."
     "Il essaie de repousser le ressort du bout du doigt. Le ressort roule jusqu'à ma chaussure."
     noam sourire "Tu veux de l'aide ?"
     "Je tends la main vers sa tasse pour la mettre à l'abri."
+    $ kd_direct.interrupt("elias",.7)
+    $ kd_direct.react("noam","surprise")
     elias panique "Hé ! Pas le café !"
     noam surpris "Je voulais juste le poser par terre."
     elias gene "Ah. Oui, vas-y. Mais pas près de la vis, là."
     noam "Tu protèges plus ton café que ta réparation."
     elias reflechit "Non. Enfin... si tu peux ramasser ça, ce serait gentil. Mais ne touche pas à la porte."
+    $ kd_direct.shot("two",("noam","elias"),duration=.24,hold=1)
     noam surpris "Pourquoi ?"
     elias gene "Parce qu'elle tient."
     "Je regarde la porte. Elle semble parfaitement normale."
     noam neutre "Et avant que tu t'en occupes ?"
     elias inquiet "Elle tenait aussi, mais avec une petite résistance. Maintenant elle ferme toute seule."
+    $ kd_direct.shot("medium","elias",duration=.28,hold=2)
     "Elias pousse la porte du casier. Elle se ferme. Puis elle se rouvre immédiatement."
     elias colere "C'EST PAS POSSIBLE !"
+    $ kd_direct.end()
     call kd_vn_reaction("elias", "colere", "#ff9c55")
+    $ kd_direct.begin("comedy")
     noam sourire "C'est impressionnant. Mais... J'ai peur de la réponse."
     noam reflechit "Pourquoi tu es en train de bricoler sur cette porte en fait ?!"
     elias inquiet "Elle grinçait trop hier quand on l'utilisait... Alors jeme suis dis que j'allais réparer ça !"
@@ -145,11 +154,15 @@ label _4_0_NAVIGATION_CAFETERIA:
     noam neutre "Il distribuait quoi ?"
     elias reflechit "Pas grand chose, justement. C'était son problème."
     noam surpris "Et après ?"
+    $ kd_direct.shot("medium","elias",duration=.20,hold=1)
     elias gene "Après... des sachets de nourriture. Mais genre tous à la fois. Du coup les gens étaient contents, ils recevaient d'un coup toutes les rations contre un seul bon de rationnement."
+    $ kd_direct.shot("reaction","noam",duration=.18,hold=1)
     think "Impossible que ce soit voulu !"
     noam surpris "Ou-Ouais... Je vois..."
+    $ kd_direct.shot("retreat",duration=.30,hold=2)
     "Il ramasse les derniers outils en évitant soigneusement mon regard."
     "Nous avançons de quelques pas. Derrière nous, la porte claque enfin. Elias s'arrête, écoute, puis décide de ne surtout pas aller vérifier si tout est enfin bon."
+    $ kd_direct.end()
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
     $ current_scene_active = None
     "Devant la cafétéria, une voix familière couvre presque le bruit des plateaux."
@@ -166,9 +179,11 @@ label _4_0_ROUTE_MATIN_NYRA:
     noam sourire "Tu prépares un déménagement ?"
     nyra reflechit "Les couverts du petit-déjeuner. Le chariot est plus large que l'espace entre les deux angles."
     noam "Il a peut-être maigri depuis tout à l'heure."
+    $ kd_direct.shot("close","nyra",duration=.14,hold=1)
     nyra neutre "Non."
     noam "Je peux aider ?"
     nyra reflechit "Si tu tiens la caisse du haut pendant que je tourne, oui."
+    $ kd_direct.shot("two",("nyra","noam"),duration=.28,hold=1)
     "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."
     $ kd_direct.profile("comedy")
     $ kd_direct.react("noam", "surprise")
@@ -181,11 +196,14 @@ label _4_0_ROUTE_MATIN_NYRA:
     "Nyra regarde successivement le chariot et les cartons."
     nyra reflechit "Oui. On aurait pu."
     "Elle soupire, puis reprend la poignée."
+    $ kd_direct.profile("casual")
+    $ kd_direct.two_shot("nyra","noam",duration=.25)
     nyra neutre "Merci. Au fait, tu sais pourquoi Elen a demandé trois fois plus de cannelle que prévu ?"
     noam reflechit "Aucune idée."
     nyra "Sa demande fait trois pages."
     noam sourire "Tu crois qu'elle prépare une révolution ?"
     nyra "Je crois surtout qu'elle ne comprend pas les restrictions de stock."
+    $ kd_direct.shot("wide",duration=.18,hold=2)
     "Un cri indigné traverse la porte de la cafétéria. Nyra tourne la tête."
     noam "Je pense que tu vas avoir ta réponse."
     nyra reflechit "Ça promet."
@@ -261,6 +279,7 @@ label _4_0_CAFETERIA_ECRANS:
     $ kd_direct.shot("medium", "elen", duration=0.0, hold=1)
     elen colere "JE NE SUIS PAS DIFFICILE !"
     elias reflechit "Tu as quand même crié pendant trois minutes à cause de..."
+    $ kd_direct.shot("close","elen",duration=.12,hold=1)
     elen colere "ELIAS."
     $ kd_direct.shot("reaction", "elias", duration=0.22, hold=1)
     $ kd_direct.react("elias", "embarrassed")
@@ -283,10 +302,14 @@ label _4_0_CAFETERIA_ECRANS:
     ])
     $ kd_direct.begin("casual")
     mara taquin "Je donne dix minutes avant qu'elle revienne annoncer une grève de la faim."
+    $ kd_direct.profile("debate")
+    $ kd_direct.shot("medium","iris",duration=.23,hold=1)
     iris colere "Tu rigoles, mais Kami a décidé toute seule de ce qu'on pouvait garder."
     mara neutre "Je peux trouver ça inquiétant et trouver Elen ridicule. J'ai le droit aux deux."
     "Lysa essaie de casser une tranche de pain. Elle n'y parvient pas et la repose comme si elle n'avait jamais eu l'intention de la manger."
+    $ kd_direct.shot("medium","kael",duration=.24,hold=1)
     kael reflechit "Le pain n'a pas survécu au voyage ? Il est déjà tout rassis ?"
+    $ kd_direct.shot("reverse","lysa",duration=.17,hold=1)
     lysa blase "C'est nous qui risquons de ne pas y survivre."
     lysa sourire "Sinon ce morceau de pain date d'hier. Goumi cuit du pain en direct si on en demande."
     noam sourire "Pourquoi tu en demandes pas un d'aujourd'hui ? Si tu peux, autant éviter de manger du pain dur."
@@ -300,9 +323,14 @@ label _4_0_CAFETERIA_ECRANS:
     $ unlock_codex_page("miettolunes", with_notification=False)
     noam surpris "Des quoi ?"
     lysa neutre "Des miettolunes."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("medium","mara",duration=.18,hold=1)
     mara taquin "Il faut prononcer ça en regardant la lune, ou ça marche en plein jour ?"
+    $ kd_direct.shot("close","lysa",duration=.14,hold=1)
     lysa blase "Tu pourrais essayer de te taire, on verrait déjà si ça améliore le goût."
     kael reflechit "Je n'ai jamais entendu ce nom. C'est une spécialité d'où ?"
+    $ kd_direct.profile("casual")
+    $ kd_direct.shot("medium","lysa",duration=.30,hold=1)
     lysa neutre "C'est devenu très courant à Harmonie depuis Kami. Tu prends du pain sec, tu l'émiettes et tu le ramollis avec un peu de lait."
     noam reflechit "Et après ?"
     lysa neutre "Tu ajoutes ce que tu as : du sucre, une cuillère de confiture... Un œuf quand il y en a. Ça tient mieux à la cuisson."
@@ -310,15 +338,20 @@ label _4_0_CAFETERIA_ECRANS:
     lysa neutre "Voilà. Quelques condiments pour le goût et c'est prêt. Ça coûte presque rien."
     mara taquin "J'étais persuadée que tu gardais un ingrédient secret."
     lysa blase "Oui. Ne pas laisser Mara toucher à la poêle."
+    $ kd_direct.shot("medium","kael",duration=.22,hold=1)
     kael reflechit "C'est tout ? Pas de poudre levante ? Pas d'extrait aromatique ?"
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("close","lysa",duration=.16,hold=1)
     lysa blase "Tu veux que je te donne aussi le numéro de série de la poêle ?"
     kael calme "Non. Mais je serais curieux de goûter."
     lysa neutre "Pourquoi ?"
     kael sourire "Parce que tu en parles comme si c'était délicieux et que, pour l'instant, ça ressemble à du pain mouillé."
     lysa blase "Évidemment que c'est délicieux. Enfin... c'est pas mauvais."
+    $ kd_direct.shot("reaction","iris",duration=.19,hold=1)
     iris taquin "Attendez. Lysa fait des pâtisseries ?"
     lysa determine "J'ai dit que je savais faire une galette. Détendez-vous."
     noam sourire "Une galette que tu viens de défendre avec plus d'énergie que la moitié des décisions d'hier."
+    $ kd_direct.shot("close","lysa",duration=.16,hold=1)
     lysa blase "Encore un mot, et je t'apprends la recette à coup de plateau."
     "Kael reprend un morceau de pain et l'examine avec le sérieux de quelqu'un qui vient de découvrir un nouveau matériau."
     kael reflechit "Ça fonctionnerait avec une cuisson moins forte ?"
@@ -326,23 +359,31 @@ label _4_0_CAFETERIA_ECRANS:
     kael calme "C'est une question."
     lysa blase "Et ma réponse, c'est non. On ne change pas une recette traditionnelle !"
     "Iris a un sourire qu'elle prend à peine la peine de cacher."
+    $ kd_direct.profile("confrontation")
+    $ kd_direct.shot("medium","julian",duration=.20,hold=1)
     julian decu "Amusant. On est en train de discuter d'un dessert, alors qu'on aurait pu retirer à Kami ce pouvoir hier."
+    $ kd_direct.react("kael","silence")
     "Le morceau de pain reste immobile dans les mains de Kael."
+    $ kd_direct.shot("field","ryn",duration=.16,hold=1)
     ryn colere "Hier, le texte supprimait aussi les rations. C'est pas un détail."
+    $ kd_direct.shot("reverse","julian",duration=.16,hold=1)
     julian neutre "Je n'ai pas dit que c'en était un."
     ryn colere "Mais tu le penses assez fort pour que tout le monde l'entende."
+    $ kd_direct.shot("reaction","lysa",duration=.24,hold=1)
     lysa blase "J'avais presque réussi à parler d'autre chose. C'était trop demander, visiblement."
     julian decu "Je n'empêche personne de parler de ses gâteaux."
     lysa determine "T'as vraiment décidé d'être pénible jusqu'au dernier repas ?"
     julian neutre "On a le droit de parler de ce qu'on a perdu."
     ryn colere "Et de ce qu'on aurait pu perdre en votant oui, non ?"
     "Ryn repousse son plateau. Mara retire sa tasse du bord sans interrompre son geste."
+    $ kd_direct.shot("medium","mara",duration=.20,hold=1)
     mara agace "Vous voulez refaire toute la journée d'hier ici ? Dites-le, que je trouve un endroit où manger."
     noam inquiet "On ne sait même pas qui a voté contre, Julian."
     julian decu "Je sais. C'est bien ce qui m'agace."
     kael reflechit "On pourrait au moins regarder la distribution. L'écran diffuse les images depuis tout à l'heure."
     iris desaccord "Une caméra ne nous dira pas si Kami a pris la bonne décision."
     kael calme "Non. Mais j'aimerais savoir où sont arrivées les provisions."
+    $ kd_direct.shot("reaction","lysa",duration=.30,hold=2)
     "Lysa repousse sa tranche de pain sans un mot. Kael la regarde encore une seconde, puis se tourne vers l'écran."
 
     $ j4_cafeteria_ryn_talked = False
@@ -363,10 +404,13 @@ label _4_0_CAFETERIA_ECRANS:
         ("noam", "reflexion", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.two_shot("lysa","noam",duration=.30)
     "Je récupère un morceau de pain. Il est moins dur que celui de Lysa, mais pas de beaucoup."
     lysa neutre "T'as l'air épuisé."
     noam neutre "Je n'ai même pas encore commencé à le mâcher."
     lysa blase "Je parlais d'hier. Enfin, peu importe."
+    $ kd_direct.end()
     menu:
         "Dire que le résultat te travaille.":
             noam triste "J'arrête pas de me demander si on aurait pu trouver un meilleur texte."
@@ -377,13 +421,18 @@ label _4_0_CAFETERIA_ECRANS:
         "Admettre que tu n'en sais rien.":
             noam neutre "J'en sais rien. Je pensais être soulagé ce matin. C'est raté."
             lysa blase "Au moins, ça nous fait un point commun."
+    $ kd_direct.begin("casual")
+    $ kd_direct.shot("medium","iris",duration=.20,hold=1)
     iris fatigue "Vous avez prévu de manger ce pain avant le prochain ravitaillement ?"
     noam sourire "J'essaie de déterminer par quel côté l'attaquer."
     kael reflechit "Lysa, pour les miettolunes..."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("close","lysa",duration=.12,hold=1)
     lysa determine "NON."
     kael calme "Je n'ai encore rien demandé."
     lysa blase "Tu allais le faire."
     "Cette fois, je commence à rire. Même Lysa détourne la tête pour cacher un sourire."
+    $ kd_direct.end()
     jump _4_0_TEMPS_LIBRE_1
 
 label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
@@ -473,18 +522,23 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("medium","elen",duration=.12,hold=1)
     elen joie "BON ! J'AI DÉCIDÉ QU'ON ALLAIT FAIRE QUELQUE CHOSE DE FORMIDABLE !"
     "Je me retourne. Elen a les bras levés et un air parfaitement ravi, comme si elle n'avait pas quitté la pièce en déclarant la guerre à un robot."
     iris hesitation "Tu as retrouvé ta cannelle ?"
     elen desaccord "Non, mais j'ai trouvé beaucoup mieux !"
+    $ kd_direct.shot("reaction","mara",duration=.14,hold=1)
     mara taquin "Le sel ?"
     elen joie "Une idée !"
+    $ kd_direct.shot("close","lysa",duration=.16,hold=1)
     lysa blase "C'est précisément ce qui m'inquiète."
     elen joie "J'ai entendu parler de vos miettolunes dans le couloir !"
     lysa neutre "Tu nous écoutais ?"
     elen inquiet "J'étais juste... devant la porte. Et ça résonne très bien, ici."
     kael reflechit "En théorie, avec les ingrédients qui restent, on pourrait en préparer."
     elen joie "EXACTEMENT ! GOUMI !"
+    $ kd_direct.end()
     $ showGroup([
         ("lysa", "blase", 0.040),
         ("kael", "calme", 0.124),
@@ -498,8 +552,11 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
         ("elias", "neutre", 0.960),
     ])
     goumi "Je vous écoute."
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("medium","elen",duration=.18,hold=1)
     elen joie "Prépare des miettolunes pour TOUT LE MONDE ! On va se faire un énorme petit-déjeuner !"
     goumi "Recette introuvable."
+    $ kd_direct.shot("reaction","elen",duration=.12,hold=1)
     elen surpris "Comment ça, introuvable ?!"
     goumi "Aucune recette référencée sous la dénomination « miettolunes »."
     kael reflechit "Lysa, tu pourrais lui dicter les proportions ?"
@@ -507,19 +564,23 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     goumi "Précisez la quantité de lait."
     lysa neutre "Un peu. Juste assez pour ramollir le pain, pas pour le noyer."
     goumi "Unité de mesure non reconnue."
+    $ kd_direct.shot("close","lysa",duration=.15,hold=1)
     lysa determine "Oh, ça va ! Assez pour que ça colle. Tu vas pas leur faire passer un examen d'hydratation !"
     elen joie "Lysa, viens ! Tu peux lui montrer !"
+    $ kd_direct.shot("reaction","lysa",duration=.15,hold=1)
     lysa neutre "Pardon ?"
     elen joie "C'est ta recette. Tu vas être notre cheffe !"
     lysa determine "J'ai jamais dit que je voulais cuisiner pour une assemblée entière."
     kael calme "Moi, je veux surtout goûter. Tu peux ne faire que deux galettes."
     elen desaccord "Deux ?! Mais on est..."
+    $ kd_direct.shot("medium","iris",duration=.20,hold=1)
     iris taquin "Elen. Tu as déjà réussi à réquisitionner tout le comptoir pour une épice. Laisse-lui une chance de refuser."
     "Lysa regarde Kael, puis le morceau de pain qu'il tient encore entre deux doigts."
     lysa neutre "D'accord. Deux. Et vous arrêtez de me regarder comme si j'avais découvert une nouvelle planète."
     kael sourire "Je peux observer la cuisson ?"
     lysa blase "Non."
     kael reflechit "Même de loin ?"
+    $ kd_direct.shot("close","lysa",duration=.12,hold=1)
     lysa determine "SURTOUT PAS DE LOIN."
     elen joie "C'EST DÉCIDÉ ! Ce soir, on mange des miettolunes !"
     goumi "Aucune réservation de salle n'a été demandée."
@@ -528,10 +589,12 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     goumi "Ingrédients disponibles. La préparation reste à votre charge."
     "Elen regarde l'assiette, incrédule. Puis elle la soulève comme s'il s'agissait d'un trophée."
     elen joie "ON A LE MATÉRIEL !"
+    $ kd_direct.shot("reaction","lysa",duration=.18,hold=1)
     lysa blase "On a du pain, Elen."
     elen joie "Chaque grande idée commence quelque part."
     "Tomas sourit enfin, tout petit. Ryn se contente de relever les yeux."
     "Sur l'écran derrière nous, les bénévoles poursuivent leur distribution. Personne ne sait encore quand le prochain camion arrivera."
+    $ kd_direct.end()
     return
 
 label _4_0_CAFETERIA_PNC_RYN:
@@ -549,6 +612,8 @@ label _4_0_CAFETERIA_PNC_RYN:
         ("noam", "reflexion", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.two_shot("noam","ryn",duration=.24)
     noam inquiet "Tu comptes manger ce plateau ou lui demander ce qu'il pense du vote ?"
     ryn colere "Très drôle."
     noam neutre "J'essayais."
@@ -556,22 +621,30 @@ label _4_0_CAFETERIA_PNC_RYN:
     noam neutre "Je crois que certains sont encore énervés. Pas forcément contre toi."
     ryn colere "Julian, lui, il l'est."
     "Ryn frotte le bord de son assiette avec son pouce."
+    $ kd_direct.shot("medium","ryn",duration=.35,hold=1)
     ryn neutre "Quand j'étais plus jeune, les gens de mon quartier m'appelaient « la sirène ». Si j'avais un problème, toute la rue était au courant."
     noam sourire "Ça devait être reposant pour tes voisins."
     ryn colere "Hé ! C'était pratique quand il fallait prévenir d'un danger."
     noam neutre "Et quand il n'y avait pas de danger ?"
     ryn neutre "Bon. Ils avaient un système pour savoir si je râlais juste parce que j'avais perdu quelque chose."
+    $ kd_direct.shot("reaction","noam",duration=.18,hold=1)
     noam surpris "Lequel ?"
+    $ kd_direct.shot("medium","ryn",duration=.24,hold=1)
     ryn sourire "Ils attendaient une minute. Si je jurais encore, c'était sérieux."
     "Il sourit une seconde, puis revient à son plateau."
+    $ kd_direct.profile("debate")
+    $ kd_direct.shot("close","ryn",duration=.25,hold=1)
     ryn colere "Mais là c'est sérieux. Des familles dépendent de ces sacs. J'allais pas me taire pendant le vote pour faire plaisir à Julian."
     noam inquiet "Je sais. Et personne ne sait qui a voté contre."
     ryn colere "Alors pourquoi tout le monde croit le savoir ?!"
+    $ kd_direct.profile("intimate")
+    $ kd_direct.two_shot("noam","ryn",duration=.30)
     noam calme "Tu peux lui parler. Mais essaie de lui parler, pas de lui hurler dessus."
     ryn colere "Tu pourrais lui dire la même chose. Surtout que toi, il t'écoute parfois."
     noam sourire "Parfois. Pas longtemps."
     ryn neutre "Ouais. Bonne chance."
     $ j4_cafeteria_ryn_talked = True
+    $ kd_direct.end()
     return
 
 label _4_0_CAFETERIA_PNC_JULIAN:
@@ -589,27 +662,37 @@ label _4_0_CAFETERIA_PNC_JULIAN:
         ("noam", "reflexion", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.two_shot("noam","julian",duration=.25)
     noam neutre "Julian, tu vas manger ton pain ou continuer à le punir ?"
     julian decu "Pas faim."
     noam sourire "Il n'a pourtant rien fait."
     julian neutre "Tu n'es pas obligé de plaisanter."
     noam neutre "Non. C'est vrai."
     "Je reste près de la table. Julian pousse son plateau de quelques centimètres."
+    $ kd_direct.shot("medium","julian",duration=.32,hold=1)
     julian decu "Hier, quelqu'un nous a empêchés d'essayer. Et aujourd'hui, on devrait tous faire comme si de rien n'était."
     noam inquiet "Le texte pouvait aussi faire des morts. Tu le sais."
     julian colere "Je le sais, Noam. J'étais là."
     "Il prend une inspiration, puis détourne les yeux."
+    $ kd_direct.profile("confrontation")
+    $ kd_direct.shot("close","julian",duration=.20,hold=1)
     julian neutre "Tu sais qui a voté contre ?"
     noam surpris "Non. Et tu sais très bien que je ne peux pas le savoir."
     julian decu "Je voudrais juste comprendre."
     noam neutre "Si la personne voulait l'expliquer, elle pourrait le faire. Le vote est secret pour une raison."
     julian colere "Formidable. Une personne peut faire échouer tout le monde, et tout ce qu'on peut faire, c'est lui souhaiter une bonne journée."
+    $ kd_direct.shot("field","noam",duration=.16,hold=1)
     noam colere "Tu voudrais qu'on puisse lui demander des comptes ? Jusqu'où ?"
+    $ kd_direct.shot("reverse","julian",duration=.20,hold=1)
     julian decu "Tu m'as déjà posé cette question hier. Devant Tomas."
     noam hesitation "Oui. Je sais."
     "Julian baisse les yeux. Il a encore quelque chose à dire, c'est évident. Mais il se contente de toucher sa tasse froide."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium","julian",duration=.35,hold=1)
     julian neutre "Laisse-moi seul, Noam. S'il te plaît."
     $ j4_cafeteria_julian_talked = True
+    $ kd_direct.end()
     return
 
 label day4_optional_news:
@@ -642,15 +725,20 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("elen", "inquiet", 0.30),
         ("noam", "neutre", 0.70),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.two_shot("noam","elen",duration=.22)
     noam surpris "C'est pour quoi ?"
     elen joie "Pour ce soir."
     noam neutre "Il y a quoi dessous ?"
+    $ kd_direct.shot("reaction","elen",duration=.18,hold=1)
     elen inquiet "Pour l'instant ? Du pain."
     noam sourire "Tu vas le promener longtemps ?"
+    $ kd_direct.shot("close","elen",duration=.18,hold=1)
     elen desaccord "C'est une opération délicate. N'en parle pas à Lysa !"
     "Elle disparaît avant que j'aie le temps de répondre."
     play sound sfx_announce
     pause 0.4
+    $ kd_direct.end()
     scene bg_diffusion_zen at adaptive_fullscreen with None
     show screen kami_broadcast_ui
     call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_3
@@ -679,6 +767,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("sael", "mefiant", 0.876),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("debate")
+    $ kd_direct.shot("medium","ryn",duration=.17,hold=1)
     ryn colere "ON REVIENT ENCORE ICI ?! Hier, on y a passé la moitié de la journée !"
     kael inquiet "Julian a dit qu'il ne viendrait pas. J'ai cru qu'il plaisantait."
     mara taquin "Julian qui évite une réunion ? Tu lui as proposé de parler de lui, pour voir ?"
@@ -686,16 +776,20 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     mara neutre "Tu lui as écrit ?"
     tomas hesitation "J'ai commencé."
     ryn colere "C'est-à-dire ?"
+    $ kd_direct.shot("medium","tomas",duration=.24,hold=1)
     tomas inquiet "J'avais écrit « Salut ». Ensuite, j'ai effacé. Ça me paraissait bizarre de commencer par « Salut »."
     mara agace "Tomas."
+    $ kd_direct.interrupt("tomas",.6)
     tomas colere "Quoi ?! Je peux être en colère contre lui sans avoir envie qu'il reste seul !"
     "Mara ouvre la bouche, puis la referme. Tomas regarde sa tablette comme s'il envisageait de tout recommencer."
     nyra neutre "Il a demandé à être tranquille. On peut respecter ça pendant une journée."
     ryn neutre "Pour une fois, je suis d'accord."
+    $ kd_direct.shot("reaction","mara",duration=.18,hold=1)
     mara taquin "Profite bien de cet instant, Nyra."
     play sound sfx_announce
     pause 1.0
     stop music fadeout 1.0
+    $ kd_direct.end()
     scene bg_diffusion_zen at adaptive_fullscreen with None
     show screen kami_broadcast_ui
     call KAMI_BROADCAST_WAIT_OPEN from _call_kami_open_j4_4
@@ -738,8 +832,12 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
         ("sael", "mefiant", 0.876),
         ("elias", "determine", 0.960),
     ])
+    $ kd_direct.begin("debate")
+    $ kd_direct.shot("medium","elen",duration=.23,hold=1)
     elen surpris "Attendez. Je pourrais aller voir quelqu'un dans un autre district sans autorisation ?"
+    $ kd_direct.interrupt("ryn",.7)
     ryn sourire "ENFIN !"
+    $ kd_direct.shot("reaction","lysa",duration=.18,hold=1)
     lysa blase "Quatre secondes. Tu pourrais au moins faire semblant de lire le texte."
     ryn colere "À Limen, on retrouve des gens qui ont tenté de rejoindre leur famille. Parfois trop tard. J'ai pas besoin d'une heure pour savoir ce que j'en pense."
     $ unlock_dossier_arg("p2_frontiere_limen")
@@ -752,6 +850,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     mara neutre "Et les usines d'Axiome ne régleront pas le problème en fabriquant des barrières. Manupolis a déjà passé des siècles à vendre des armes sans jamais déclarer la guerre à personne."
     $ unlock_codex_page("manupolis", with_notification=False)
     $ unlock_dossier_arg("p2_orbite")
+    $ kd_direct.profile("confrontation")
+    $ kd_direct.shot("medium","sael",duration=.25,hold=1)
     sael mefiant "Et les villages qui n'ont pas vos moyens de surveillance ?"
     ryn colere "On a déjà des gardiens. On peut surveiller les routes."
     sael neutre "Pas partout. Tu le sais aussi bien que moi."
@@ -764,10 +864,14 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     $ unlock_codex_page("technocratie_nessaire", with_notification=False)
     $ unlock_codex_page("terres_ravagees", with_notification=False)
     ryn neutre "Arrête de parler comme si tout le monde pensait pareil."
+    $ kd_direct.shot("close","sael",duration=.18,hold=1)
     sael colere "Et toi, t'as pardonné ?"
+    $ kd_direct.shot("reaction","ryn",duration=.18,hold=1)
     ryn neutre "Quoi ?"
     sael "Aux Veyroniens. Aux Nessairois. À ceux qui ont transformé nos terres en désert. Tu leur as pardonné, toi ?"
     "Ryn cherche sa réponse. Il ne la trouve pas tout de suite."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium","ryn",duration=.40,hold=1)
     ryn neutre "Je ne sais pas si j'ai pardonné."
     ryn "Mais je ne vais pas condamner leurs enfants pour ce qu'ils ont fait."
     sael mefiant "Tu crois que tous les autres auront cette patience ?"
@@ -785,37 +889,51 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     sael "J'ai peur qu'on nous demande encore de disparaître, mais cette fois en nous disant que c'est pour notre bien."
     "Ryn s'appuie sur la table. Il ne la regarde plus de la même manière."
     $ close_up("sael")
+    $ kd_direct.shot("medium","sael",duration=.42,hold=1)
     sael neutre "Avant la fermeture, des groupes armés passaient par chez nous. Ils prenaient de la nourriture, des outils. Et parfois des gens."
     elen inquiet "Des gens ?"
+    $ kd_direct.shot("close","sael",duration=.45,hold=1)
     sael triste "On attendait qu'ils reviennent. Des jours. Après, on arrêtait de demander."
     "Le visage de Ryn se ferme."
     sael mefiant "Depuis la fermeture, ils ne viennent plus. La première nuit où les enfants ont dormi sans avoir peur, je m'en souviens encore."
+    $ kd_direct.shot("medium","ryn",duration=.40,hold=1)
     ryn triste "Chez moi, les enfants attendent ceux qui ne pourront plus traverser."
     sael triste "Je sais."
     ryn colere "Non, je crois pas !"
+    $ kd_direct.profile("confrontation")
+    $ kd_direct.shot("close","sael",duration=.15,hold=1)
     sael colere "Tu crois être le seul à avoir ramassé des morts ?"
     "Ryn se lève si vite que sa chaise grince, puis se rassoit."
+    $ kd_direct.shot("medium","nyra",duration=.22,hold=1)
     nyra raison "Vous ne parlez plus de la même chose. Ryn, laisse-la finir."
     ryn colere "Elle a fini ! Elle veut garder les frontières fermées !"
     tomas hesitation "Et des passages autorisés ? Avec des gardiens, des listes..."
     ryn colere "Des listes ? On en a déjà assez, Tomas ! Des noms de gens qu'on doit prévenir, tu veux les voir ?!"
+    $ kd_direct.shot("reaction","tomas",duration=.20,hold=1)
     tomas peur "Non, je... je parlais de vérifier qui entre..."
     sael mefiant "Une liste ne retiendra pas des hommes armés."
     iris desaccord "Alors on fait quoi ? On accepte de tirer sur les gens pour toujours ?"
     sael colere "Ceux qui essaient de passer savent pourtant ce qui les attend !"
     "Sael s'interrompt. Elle regarde la table, comme si elle regrettait déjà de s'être entendue."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("close","ryn",duration=.38,hold=1)
     ryn triste "Oui. Ils le savent."
     ryn colere "Et ils y vont quand même. Tu te demandes jamais pourquoi ?"
     sael triste "Ryn, je..."
     ryn colere "Laisse tomber. Je sais ce que tu penses."
     $ punch_in(0.08)
+    $ kd_direct.profile("confrontation")
+    $ kd_direct.interrupt("sael",.8)
     sael colere "NON ! Tu sais ce que j'ai dit parce que j'ai peur. Ça te donne pas le droit de décider ce que je pense !"
+    $ kd_direct.shot("medium","mara",duration=.20,hold=1)
     mara agace "Vous êtes en train de vous déchirer pour le plaisir de Kami. Vous vous rendez compte ?"
     ryn colere "Et alors ?! Ça va faire revenir ceux que j'ai enterrés ?!"
+    $ kd_direct.shot("close","sael",duration=.28,hold=1)
     sael determine "Même avec des gardiens, je voterai contre. Pas seulement contre ce texte. Contre l'ouverture des frontières. Je ne veux pas de ça."
     elen inquiet "Mais... on a encore deux jours. On peut peut-être en parler autrement ?"
     sael neutre "On peut en parler. Mais pas pour me faire changer mon vote. Je suis contre. Et je le resterai."
     "Ryn détourne la tête. J'ai envie d'intervenir, mais chaque phrase qui me vient sonne comme un reproche adressé à l'un des deux."
+    $ kd_direct.end()
     call day4_thread_debate_game from _call_day4_thread_debate_game
     if j4_frontieres_result == "pont":
         jump _4_0_DEBAT_APAISE
@@ -824,19 +942,25 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
 
 label _4_0_DEBAT_APAISE:
 
+    $ kd_direct.begin("intimate")
+    $ kd_direct.shot("wide",duration=.24,hold=1)
     "Le silence n'a rien d'apaisant. Ryn garde les bras croisés ; Sael regarde le siège vide à côté de lui."
     sael reflechit "Ce que j'ai dit sur ceux qui traversent..."
     "Elle s'arrête, agacée de ne pas trouver ses mots."
+    $ kd_direct.shot("close","sael",duration=.36,hold=1)
     sael triste "C'était pas juste. J'aurais pas dû le dire comme ça."
+    $ kd_direct.shot("reaction","ryn",duration=.28,hold=1)
     ryn triste "Non."
     sael mefiant "Et je suis toujours contre l'ouverture. Pas seulement contre cette formulation. Je veux que tu le comprennes."
     ryn neutre "Je t'ai entendue."
     sael neutre "Si tu veux me raconter ce qui s'est passé chez toi, je t'écouterai. Mais je ne veux pas que tu prennes ça pour une négociation."
     ryn colere "Tu pourrais commencer par me laisser finir deux phrases la prochaine fois."
     sael colere "Tu pourrais éviter de m'accuser de vouloir des morts !"
+    $ kd_direct.shot("wide",duration=.42,hold=2)
     "Ils se regardent un instant. Ni l'un ni l'autre ne semble prêt à ajouter quoi que ce soit."
     ryn neutre "Demain. On en parlera demain."
     sael determine "On peut s'écouter. Ça ne veut pas dire qu'on sera d'accord."
+    $ kd_direct.end()
     "Elle quitte la salle."
     $ showGroup([
         ("lysa", "blase", 0.040),
@@ -850,24 +974,36 @@ label _4_0_DEBAT_APAISE:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("casual")
+    $ kd_direct.shot("medium","mara",duration=.23,hold=1)
     mara neutre "Bon. Personne n'a jeté de chaise. C'est déjà ça."
     iris fatigue "Mara..."
     mara agace "Quoi ? J'essaie de voir le bon côté."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium","ryn",duration=.32,hold=1)
     ryn triste "Je lui parlerai. Mais pas ce soir."
     tomas hesitation "Je peux t'accompagner si tu..."
     ryn neutre "Non, Tomas. Merci."
     "Tomas acquiesce. Ryn pousse sa chaise contre la table, cette fois sans bruit."
+    $ kd_direct.end()
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label _4_0_DEBAT_ROMPU:
 
+    $ kd_direct.begin("confrontation")
+    $ kd_direct.shot("close","sael",duration=.16,hold=1)
     sael colere "Vous voulez que je promette quoi ? Que les hommes qui nous ont attaqués ne reviendront pas ?!"
+    $ kd_direct.shot("field","ryn",duration=.16,hold=1)
     ryn colere "Je veux que tu regardes les gens qu'on tue en prétendant protéger les autres !"
     sael colere "Et moi, je refuse de te donner mon village comme preuve de bonne volonté !"
+    $ kd_direct.shot("reaction","elen",duration=.22,hold=1)
+    $ kd_direct.react("tomas","step_back")
     "Tomas recule sa chaise. Le bruit fait sursauter Elen."
     tomas inquiet "Sael, je crois que personne ne te demande..."
     sael mefiant "Tomas, s'il te plaît. Pas toi aussi."
+    $ kd_direct.shot("close","sael",duration=.23,hold=1)
     sael determine "Je voterai contre. Même si vous changez le texte, ce sera non. Et je ne discuterai plus de ça aujourd'hui."
+    $ kd_direct.end()
     "La porte se referme avant que Ryn ait trouvé quoi répondre."
     $ showGroup([
         ("lysa", "blase", 0.040),
@@ -881,12 +1017,16 @@ label _4_0_DEBAT_ROMPU:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("confrontation")
+    $ kd_direct.shot("medium","mara",duration=.18,hold=1)
     mara colere "Tu l'as entendue parler de son village, oui ou non ?!"
     ryn colere "Je l'ai entendue dire non !"
     mara agace "Ça, on avait remarqué."
     ryn colere "Tu vas me faire la morale aussi ? Tu sais pas ce que c'est !"
+    $ kd_direct.shot("medium","mara",duration=.28,hold=1)
     mara neutre "Non. Et je vais pas prétendre le contraire."
     mara colere "Mais toi, tu prétends savoir ce qu'elle pense, alors que tu n'as même pas écouté la moitié de ses phrases."
+    $ kd_direct.end()
     "Mara s'en va. Ryn la regarde partir sans rien dire."
     $ showGroup([
         ("lysa", "blase", 0.040),
@@ -899,10 +1039,14 @@ label _4_0_DEBAT_ROMPU:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.shot("close","ryn",duration=.40,hold=1)
     ryn triste "Je voulais juste que quelqu'un dise que c'était pas normal."
     iris triste "Personne n'a dit que c'était normal."
     ryn colere "Alors pourquoi ça continue ?!"
+    $ kd_direct.shot("retreat",duration=.55,hold=1)
     "Personne ne répond. J'ai envie d'essayer, mais je viens de voir ce que donnent mes bonnes intentions."
+    $ kd_direct.end()
     jump _4_0_APRES_CLASH_PRE_FETE
 
 label day4_thread_debate_game:
@@ -920,30 +1064,44 @@ label day4_thread_debate_success:
     $ j4_frontieres_result = "pont"
     think "Je ne vais pas les mettre d'accord sur un texte en deux phrases. Peut-être qu'ils peuvent au moins arrêter de se parler comme s'ils s'étaient toujours détestés."
     call cutin("noam", expr="determine") from _call_cutin_kv2_4_0_noam
+    $ kd_direct.begin("debate")
+    $ kd_direct.shot("medium","noam",duration=.20,hold=1)
     noam determine "Ryn, elle refuse le texte. Elle n'a pas dit qu'elle voulait qu'on tire sur les gens."
     ryn colere "Et moi, je suis censé faire quoi de ceux qui meurent ?!"
     noam inquiet "Rien oublier. Mais écoute pourquoi elle a peur avant de lui répondre."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium","sael",duration=.35,hold=1)
     sael reflechit "Je ne veux pas qu'on tue des gens. Mais je ne vais pas ouvrir mon village à ceux dont on a encore peur."
     ryn triste "Alors on surveille les passages. On ne les ferme pas à coups de tirs."
     sael mefiant "Tu peux me garantir que ça marchera ?"
+    $ kd_direct.shot("close","ryn",duration=.34,hold=1)
     ryn neutre "Non."
     "Sael lève les yeux. Il ne cherche pas à se rattraper."
     ryn neutre "Je ne te demande pas de voter oui aujourd'hui. Je veux seulement que tu saches pourquoi je refuse d'abandonner."
+    $ kd_direct.shot("medium","sael",duration=.35,hold=1)
     sael neutre "Je sais. Et moi, je voterai non. Tu peux accepter au moins ça ?"
     ryn triste "Je peux l'entendre."
+    $ kd_direct.end()
     $ unlock_dossier_arg("p2_dialogue_possible")
     return
 
 label day4_thread_debate_failure:
     $ j4_frontieres_result = "rupture"
     think "J'ouvre la bouche trop vite. Je veux absolument trouver une solution, et je n'ai même pas demandé ce qu'ils attendaient de moi."
+    $ kd_direct.begin("confrontation")
+    $ kd_direct.shot("medium","noam",duration=.20,hold=1)
     noam inquiet "Il doit bien y avoir une solution... des contrôles, une exception, quelque chose !"
+    $ kd_direct.interrupt("ryn",.8)
     ryn colere "QUELLE exception ?! Tu comprends même pas pourquoi on se dispute !"
     sael mefiant "Tu nous demandes encore de te faire confiance sans rien proposer de précis."
     noam hesitation "Je voulais juste éviter que vous..."
+    $ kd_direct.shot("close","sael",duration=.16,hold=1)
     sael colere "Que nous quoi ? Que nous ayons peur ? Ça te dérange tant que ça ?"
+    $ kd_direct.shot("medium","iris",duration=.26,hold=1)
     iris fatigue "Noam, arrête. Là, tu leur demandes de se calmer pour qu'on se sente mieux, nous."
+    $ kd_direct.shot("wide",duration=.40,hold=1)
     "J'essaie de reprendre la parole, mais Ryn et Sael se regardent sans plus m'écouter."
+    $ kd_direct.end()
     $ unlock_dossier_arg("p2_confiance_brisee")
     return
 
@@ -951,6 +1109,7 @@ label _4_0_APRES_CLASH_PRE_FETE:
 
     # Continuité du débat : le groupe exact est déjà posé par chaque issue.
     play music "music/bgm_world_decline.mp3" fadein 1.0
+    $ kd_direct.begin("casual")
     if j4_frontieres_result == "pont":
         elen inquiet "Est-ce qu'on peut considérer que ça s'est mieux terminé que prévu ?"
         lysa blase "Tu peux considérer que personne n'a fini sur la table d'opération. C'est déjà ça..."
@@ -964,9 +1123,12 @@ label _4_0_APRES_CLASH_PRE_FETE:
         lysa blase "Surtout Ryn. S'il a envie de parler, il saura nous trouver."
         ryn colere "Je suis encore là, vous savez !"
         iris fatigue "Oui, ça s'entend."
+    $ kd_direct.shot("medium","elias",duration=.24,hold=1)
     "Elias se lève. Le bruit de sa chaise fait tourner plusieurs têtes."
     elias gene "Je voulais juste aller manger. Vous pouvez arrêter de me regarder comme ça ?"
     tomas sourire "Je viens avec toi."
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("medium","elen",duration=.18,hold=1)
     elen surpris "Attendez, personne n'a parlé du goûter de ce soir !"
     lysa blase "Je savais qu'on finirait par en arriver là."
     kael reflechit "Il y avait une préparation à essayer, non ?"
@@ -974,11 +1136,14 @@ label _4_0_APRES_CLASH_PRE_FETE:
     elen joie "Mais on peut au moins s'installer à la salle de repos. J'ai déjà trouvé un jeu !"
     iris taquin "Et si on évitait de parler du vote pendant une heure ?"
     elias sourire "Je vote pour."
+    $ kd_direct.shot("wide",duration=.16,hold=1)
     "Tout le monde le regarde."
+    $ kd_direct.shot("close","elias",duration=.16,hold=1)
     elias inquiet "Quoi ? Qu'est-ce que j'ai dit ?"
     lysa neutre "Allez. On va manger avant qu'il fasse une autre proposition."
     kael calme "Je passe prendre quelque chose au dortoir. Je vous rejoins."
     "Personne ne lui demande quoi. Nous nous séparons sans autre décision."
+    $ kd_direct.end()
     jump _4_0_SOIREE_SANS_VOTE
 
 label _4_0_SOIREE_SANS_VOTE:
@@ -1000,20 +1165,26 @@ label _4_0_SOIREE_SANS_VOTE:
         ("noam", "neutre", 0.793),
         ("elias", "sourire", 0.960),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("medium","elen",duration=.17,hold=1)
     elen joie "Noam ! Viens ! On est à deux doigts de disqualifier Elias."
+    $ kd_direct.interrupt("elias",.7)
     elias colere "J'ai RIEN FAIT !"
     noam surpris "Je peux savoir à quoi on joue ?"
     iris taquin "C'est une excellente question. On aimerait bien savoir aussi."
     elen desaccord "Les règles sont très simples."
+    $ kd_direct.shot("reaction","lysa",duration=.16,hold=1)
     lysa blase "Elle a dit ça trois fois. Les règles ont changé quatre fois."
     elen colere "Parce que vous refusez de les comprendre !"
     tomas sourire "Le principe, c'est de lancer deux dés et de former une paire. Enfin, je crois."
     elias inquiet "J'avais une paire !"
+    $ kd_direct.shot("medium","iris",duration=.19,hold=1)
     iris taquin "Oui. Après avoir rattrapé le dé au vol et retourné la face qui ne t'arrangeait pas."
     elias colere "Je l'ai rattrapé parce qu'il allait tomber !"
     noam sourire "Tu pourrais demander au dé son témoignage."
     elias neutre "Ah ah. Très drôle."
     elen joie "On recommence. Cette fois, tout le monde garde les mains sur ses genoux avant de lancer."
+    $ kd_direct.shot("close","lysa",duration=.16,hold=1)
     lysa neutre "Comment on lance, du coup ?"
     "Elen réfléchit. Elle regarde ses mains. Puis les dés."
     elen inquiet "Bon. Sauf celui qui lance."
@@ -1022,23 +1193,28 @@ label _4_0_SOIREE_SANS_VOTE:
     elen surpris "Mais pourquoi tu t'excuses ?!"
     tomas hesitation "J'ai eu de la chance."
     lysa blase "Fais attention, Elen va sûrement l'interdire à la manche suivante."
+    $ kd_direct.interrupt("elen",.7)
     elen colere "JE N'INTERDIS PAS LA CHANCE !"
     ryn sourire "Si tu pouvais l'interdire aux autres, tu le ferais."
     elen desaccord "Toi aussi ?!"
     "Je prends les dés à mon tour. Le premier roule correctement. Le second s'arrête contre la chaussure d'Elias."
+    $ kd_direct.shot("reaction","elias",duration=.16,hold=1)
     elias inquiet "Hé ! Je l'ai pas touché !"
     noam neutre "Personne ne t'accuse."
     elias inquiet "Ah. Bon."
     iris taquin "Il plaide déjà non coupable, ça devient suspect."
     "Elias recule ses pieds si loin sous sa chaise qu'il manque de tomber."
     tomas surpris "Doucement !"
+    $ kd_direct.shot("close","elias",duration=.15,hold=1)
     elias colere "Vous êtes tous contre moi !"
+    $ kd_direct.shot("reaction","lysa",duration=.18,hold=1)
     lysa sourire "Pas tous. Le dé, peut-être."
     "Ryn rit franchement. Il se surprend lui-même et regarde aussitôt ailleurs."
     elen joie "Bon ! Nouvelle manche ! Celui qui perd doit aller chercher les assiettes !"
     lysa determine "Attends. Les assiettes de quoi ?"
     "Elen retire une serviette du plateau caché derrière le canapé. On y découvre des morceaux de pain et un petit récipient de sucre."
     elen joie "Surprise !"
+    $ kd_direct.shot("medium","lysa",duration=.22,hold=1)
     lysa neutre "Tu as promené ça toute la journée ?"
     elen inquiet "Pas toute la journée."
     noam sourire "Je peux témoigner qu'elle l'a fait au moins une partie de l'après-midi."
@@ -1049,6 +1225,7 @@ label _4_0_SOIREE_SANS_VOTE:
     tomas hesitation "Je croyais qu'on jouait pour décider qui allait chercher les assiettes."
     elen inquiet "Oui, bon. Ça aussi."
     "Quelqu'un frappe au cadre de la porte. Kael nous observe, l'air satisfait de découvrir que rien n'a encore brûlé."
+    $ kd_direct.end()
     $ showGroup([
         ("lysa", "blase", 0.040),
         ("kael", "calme", 0.124),
@@ -1059,17 +1236,22 @@ label _4_0_SOIREE_SANS_VOTE:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("medium","kael",duration=.22,hold=1)
     kael calme "J'ai raté quoi ?"
     iris taquin "Les règles, mais nous aussi."
     kael sourire "Parfait. Je déteste arriver au milieu d'une partie que tout le monde comprend."
+    $ kd_direct.interrupt("elias",.8)
     elias colere "PERSONNE NE M'ACCORDERA CETTE VICTOIRE ?!"
     kael reflechit "Tu as gagné ?"
     elias sourire "Merci ! Enfin quelqu'un..."
     lysa blase "Il a attrapé un dé au vol et choisi sa face."
     kael reflechit "Ah. Il faudrait peut-être modifier la manière de lancer."
+    $ kd_direct.shot("close","elias",duration=.14,hold=1)
     elias colere "PAS TOI AUSSI !"
     "Kael prend les dés, les pose dans un gobelet et secoue celui-ci."
     kael calme "Voilà. Plus de contact avec les mains pendant le lancer."
+    $ kd_direct.shot("medium","elen",duration=.17,hold=1)
     elen joie "Mais c'est une idée GÉNIALE !"
     lysa blase "Ça existe depuis très longtemps, Elen."
     elen desaccord "Tu pourrais me laisser être impressionnée cinq minutes ?"
@@ -1080,12 +1262,14 @@ label _4_0_SOIREE_SANS_VOTE:
     "Cette fois, même Tomas éclate de rire. Elias boude environ trois secondes avant de demander sa revanche."
     "Nous finissons par perdre le fil des points. Elen est persuadée d'avoir gagné deux manches de plus que les autres ; personne ne trouve la feuille où elle prétend les avoir notées."
     elen joie "BON. Le grand gagnant, c'est..."
+    $ kd_direct.shot("close","lysa",duration=.14,hold=1)
     lysa neutre "Les assiettes. Va les chercher."
     "Elen ouvre la bouche, mais Iris la pousse doucement vers la porte. Lysa prend finalement le plateau avec un soupir."
     lysa blase "Vous allez me suivre à la cafétéria, et personne ne touche à la poêle tant que j'ai pas fini."
     kael sourire "Je peux regarder ?"
     lysa determine "NON."
     kael calme "Je m'en doutais."
+    $ kd_direct.end()
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.0
     "Goumi nous autorise le comptoir. Lysa émiette le pain sec dans un saladier, puis verse un peu de lait pour l'assouplir. Elle ajoute une pincée de sucre : ce soir, il n'y a ni confiture ni œufs disponibles."
@@ -1100,6 +1284,8 @@ label _4_0_SOIREE_SANS_VOTE:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("casual")
+    $ kd_direct.shot("medium","elen",duration=.23,hold=1)
     elen surpris "Mais c'est tout ?"
     lysa neutre "Aujourd'hui, oui. Avec de la confiture ou un œuf, c'est meilleur. Mais le principe, c'est de faire avec ce qu'on a."
     elen desaccord "On aurait pu faire ça ce matin !"
@@ -1111,16 +1297,23 @@ label _4_0_SOIREE_SANS_VOTE:
     lysa neutre "Goûte avant de faire ton rapport."
     "Elle partage une galette en plusieurs morceaux. Kael en prend un, le mâche lentement et se fige."
     elen inquiet "Alors ?!"
+    $ kd_direct.shot("close","kael",duration=.34,hold=1)
     kael reflechit "C'est... vraiment bon."
+    $ kd_direct.shot("medium","lysa",duration=.26,hold=1)
     lysa taquin "Tu vois ? T'as survécu à une recette sans mode d'emploi."
     elias sourire "Moi aussi, je peux goûter ?"
+    $ kd_direct.profile("comedy")
+    $ kd_direct.interrupt("elen",.6)
     elen colere "Attends ton tour !"
     tomas sourire "Il en reste assez pour tout le monde, je crois."
     "Tomas divise les derniers morceaux en portions si petites qu'il finit par s'excuser de leur taille."
     noam sourire "C'est pas mal, pour du pain dont personne ne voulait ce matin."
     lysa blase "Ce n'est pas « pas mal ». C'est bon."
+    $ kd_direct.profile("intimate")
+    $ kd_direct.shot("medium","noam",duration=.30,hold=1)
     noam calme "C'est bon."
     "Lysa baisse les yeux, satisfaite. Elle fait mine de s'occuper de la plaque, qui est pourtant déjà éteinte."
+    $ kd_direct.shot("medium","ryn",duration=.30,hold=1)
     ryn sourire "Tu pourrais nous en refaire demain ?"
     lysa neutre "Demain ?"
     ryn neutre "Enfin, si tu veux."
@@ -1129,8 +1322,11 @@ label _4_0_SOIREE_SANS_VOTE:
     elen inquiet "On devrait leur en garder ?"
     iris reflechit "Oui. Mais ne va pas frapper chez eux ce soir pour leur faire goûter."
     elen desaccord "J'allais pas faire ça !"
+    $ kd_direct.profile("comedy")
+    $ kd_direct.shot("medium","mara",duration=.18,hold=1)
     mara taquin "C'est bien pour ça que tu as déjà une assiette à la main."
     "Mara vient d'apparaître à l'entrée. Elen cache aussitôt l'assiette derrière son dos."
+    $ kd_direct.end()
     $ showGroup([
         ("lysa", "blase", 0.040),
         ("kael", "calme", 0.124),
@@ -1142,6 +1338,8 @@ label _4_0_SOIREE_SANS_VOTE:
         ("noam", "neutre", 0.793),
         ("elias", "neutre", 0.960),
     ])
+    $ kd_direct.begin("comedy")
+    $ kd_direct.shot("reaction","elen",duration=.16,hold=1)
     elen inquiet "C'est pour demain."
     mara sourire "Bien sûr."
     if j4_frontieres_result == "pont":
@@ -1162,6 +1360,7 @@ label _4_0_SOIREE_SANS_VOTE:
         ])
         tomas inquiet "Je lui en mettrai une de côté."
     "Personne ne relance la discussion sur les frontières. Elen recommence simplement à raconter sa victoire au jeu, avec trois manches de plus que tout à l'heure."
+    $ kd_direct.end()
     jump _4_0_FIN_SOIREE
 
 label _4_0_FIN_SOIREE:
@@ -1189,18 +1388,23 @@ label _4_0_ROUTE_SOIR_LYSA:
     $ j4_soir_lysa_discussion = True
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("lysa", "neutre", 0.30), ("noam", "neutre", 0.70)])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.two_shot("lysa","noam",duration=.35)
     noam sourire "Attends. Finalement, c'était comment, ta soirée ?"
     lysa reflechit "Tu me poses vraiment la question ?"
     noam "Oui."
     lysa blase "Étrange."
     noam "Je peux repartir."
     lysa "Non, reste. C'est juste..."
+    $ kd_direct.shot("medium","lysa",duration=.42,hold=2)
     "Elle regarde le petit morceau de galette qu'elle tient encore."
     lysa neutre "J'avais oublié que je savais faire ça pour d'autres gens."
     noam "Cuisiner ?"
+    $ kd_direct.shot("close","lysa",duration=.38,hold=1)
     lysa "Non. Leur faire plaisir."
     "Elle se renfrogne immédiatement."
     lysa "Et avant que tu fasses une blague, oui, je sais, c'est très inquiétant."
+    $ kd_direct.shot("two",("lysa","noam"),duration=.32,hold=1)
     noam sourire "Je n'allais rien dire."
     lysa "C'est encore pire."
     noam "Tu faisais souvent des miettolunes, chez toi ?"
@@ -1208,11 +1412,14 @@ label _4_0_ROUTE_SOIR_LYSA:
     noam "Avec de la confiture ?"
     lysa "Quand ma mère avait réussi à en garder. Sinon juste avec du lait et du sucre. Parfois rien d'autre."
     noam "Tu les préparais avec elle ?"
+    $ kd_direct.shot("medium","lysa",duration=.42,hold=1)
     lysa neutre "Elle me laissait mélanger. Et elle disait que je mettais toujours trop de lait."
     noam "C'était vrai ?"
     lysa sourire "Oui. Mais elle n'avait pas besoin de me le répéter."
+    $ kd_direct.shot("close","lysa",duration=.42,hold=2)
     "Elle sourit encore un instant, puis relève les yeux."
     lysa reflechit "Par contre, j'aurais préféré qu'on termine la journée sans se hurler dessus au Conclave."
+    $ kd_direct.two_shot("lysa","noam",duration=.35)
     if j4_frontieres_result == "pont":
         noam neutre "Au moins, Ryn et Sael se sont parlé."
         lysa "Ils se sont écoutés deux minutes. C'est déjà plus que d'habitude."
@@ -1223,16 +1430,21 @@ label _4_0_ROUTE_SOIR_LYSA:
         lysa "Oui."
         noam "Tu crois qu'on aurait dû faire quelque chose ?"
         lysa reflechit "Je crois surtout qu'on aurait dû leur laisser un peu d'air."
+    $ kd_direct.shot("medium","lysa",duration=.32,hold=1)
     lysa neutre "Enfin. La soirée, elle, était bien."
     noam sourire "Tu vois. Tu arrives à le dire."
     lysa blase "Ne t'habitue pas."
+    $ kd_direct.shot("two",("lysa","noam"),duration=.35,hold=2)
     "Elle me donne la moitié de son dernier morceau."
     noam surpris "Tu partages, maintenant ?"
     lysa "C'est juste pour que tu arrêtes de parler."
     "Je prends le morceau. Elle attend que je goûte."
+    $ kd_direct.shot("medium","noam",duration=.30,hold=1)
     noam sourire "C'est bon."
     lysa "Je sais."
+    $ kd_direct.shot("retreat",duration=.48,hold=1)
     "Elle s'éloigne vers le dortoir. Je peux la suivre, mais je préfère finir de manger avant."
+    $ kd_direct.end()
     $ hideGroup()
     return
 
@@ -1249,18 +1461,25 @@ label _4_0_RETOUR_CHAMBRE:
         ("mara", "neutre", 0.30),
         ("noam", "neutre", 0.70),
     ])
+    $ kd_direct.begin("intimate")
+    $ kd_direct.two_shot("mara","noam",duration=.30)
     noam inquiet "Tu vas la voir ?"
     mara neutre "Ouais."
     noam neutre "Pour reparler du vote ?"
+    $ kd_direct.shot("medium","mara",duration=.22,hold=1)
     mara agace "Tu sais, parfois, les gens se parlent sans préparer un scrutin."
     noam hesitation "Oui. Pardon."
+    $ kd_direct.shot("close","mara",duration=.35,hold=1)
     mara neutre "Je veux savoir comment elle va. Après, si elle veut me parler de son village, je l'écouterai."
     noam inquiet "Et Ryn ?"
+    $ kd_direct.shot("medium","mara",duration=.18,hold=1)
     mara agace "Quoi, Ryn ? Je dois lui demander la permission ?"
     noam neutre "Non. Je me demandais juste..."
     mara neutre "Alors arrête de te demander des trucs à sa place."
+    $ kd_direct.shot("retreat",duration=.36,hold=1)
     "Mara frappe. Sael entrouvre, regarde dans le couloir, puis s'écarte pour la laisser entrer."
     "Je ne reste pas écouter."
+    $ kd_direct.end()
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_205
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Le dessin de Juliette m'attend sur le bureau, à côté de ma tablette. Je remarque que j'avais oublié un détail : elle m'a aussi dessiné une cape."
