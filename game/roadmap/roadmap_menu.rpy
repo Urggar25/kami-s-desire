@@ -69,8 +69,8 @@ init -2 python:
             "choice": "Tenter d'ouvrir la porte ou rester assis et écouter.",
             "consequence": "Une tentative répétée d'ouverture entraîne la sanction du Conclave ; l'attente permet de poursuivre le jour 1.",
             "requires": ["day_1"],
-            "required_variables": {},
-            "teleportable": False,
+            "required_variables": {"current_period": "Matin", "cafeteria_food_level": "high", "noam_has_juliette_drawing": True},
+            "teleportable": True,
         },
         {
             "id": "ending_day1_asphyxia",
@@ -100,7 +100,7 @@ init -2 python:
             "summary": "Le premier amendement sur le commerce interdistrict est annoncé. Les intérêts de chaque district remontent.",
             "choice": "Observer les positions avant le premier vote.",
             "consequence": "Le débat sur le commerce devient inévitable.",
-            "requires": ["day_1"],
+            "requires": ["choice_day1_door"],
             "required_variables": {},
             "teleportable": True,
         },
@@ -147,7 +147,7 @@ init -2 python:
             "summary": "Le Conclave vote sur l'autorisation du commerce, du transport et du stockage des marchandises.",
             "choice": "Voter pour, voter contre, ou laisser l'abstention agir.",
             "consequence": "Le résultat divise la chronologie en deux routes.",
-            "requires": ["day_3"],
+            "requires": ["debate_phase_1"],
             "required_variables": {
                 "vote_phase3_player_choice": None,
                 "vote_phase3_time_left": 10,
@@ -1535,6 +1535,14 @@ init -2 python:
     # Placement automatique : les x/y inscrits dans la liste sont des indices
     # d'ordre et de voie narrative, jamais des coordonnées finales à maintenir.
     # Chaque journée reçoit une colonne élargie suivant ses embranchements.
+    def roadmap_is_major_event(node):
+        title = node.get("title", "").lower()
+        label = node.get("label", "").upper()
+        return bool(node.get("kind") == "vote"
+                    or title.startswith(("critical choice", "choix critique", "débat"))
+                    or "DEBAT" in label
+                    or node.get("id") in ("choice_day1_door", "split_day_5", "split_noam_iris"))
+
     def roadmap_auto_layout(nodes):
         import re
 
@@ -1585,12 +1593,8 @@ init -2 python:
             visiting.add(node_id)
             parents = [parent for parent in by_id[node_id].get("requires", [])
                        if parent in by_id and days[parent] == days[node_id]]
-            # Un choix critique appartient visuellement à la journée où
-            # le joueur le rencontre. Seules ses conséquences partent à droite.
-            is_day_choice = (node_id == "choice_day1_door"
-                             or node_id.startswith("critical_choice_"))
-            rank = (0 if is_day_choice
-                    else max((rank_for(parent) + 1 for parent in parents), default=0))
+            # Every same-day event advances horizontally, including choices.
+            rank = max((rank_for(parent) + 1 for parent in parents), default=0)
             visiting.remove(node_id)
             ranks[node_id] = rank
             return rank
@@ -1611,31 +1615,23 @@ init -2 python:
                     (node for node in items if ranks[node["id"]] == rank),
                     key=lambda node: (initial[node["id"]][1], initial[node["id"]][0], node["id"])
                 )
-                last_bottom = -100
+                occupied = []
+                # Main choices and debates have priority over side branches.
+                column.sort(key=lambda node: (not roadmap_is_major_event(node), initial[node["id"]][1], node["id"]))
                 for node in column:
-                    # Les anciennes voies verticales sont préservées autant
-                    # que possible, puis écartées de 172 px si nécessaire.
                     preferred_y = max(90, initial[node["id"]][1])
-                    if (node["id"] == "choice_day1_door"
-                            or node["id"].startswith("critical_choice_")):
-                        # Choix placé sous son jour d'origine, dans la même
-                        # colonne, y compris lorsque les coordonnées
-                        # historiques étaient décalées vers la droite.
-                        parent_days = [
-                            by_id[parent] for parent in node.get("requires", [])
-                            if parent in by_id and days[parent] == day
-                            and (by_id[parent].get("kind") == "day"
-                                 or by_id[parent].get("category") == "day")
-                        ]
-                        if parent_days:
-                            preferred_y = max(
-                                preferred_y,
-                                max(initial[parent["id"]][1] for parent in parent_days) + 190
-                            )
-                    y = max(preferred_y, last_bottom + 54)
+                    parents = [by_id[p] for p in node.get("requires", [])
+                               if p in by_id and days[p] == day and ranks[p] < rank]
+                    if roadmap_is_major_event(node) and parents:
+                        preferred_y = parents[0]["y"]
+                    # Preserve branch lanes; search nearest free lane without
+                    # displacing an already aligned main event.
+                    y = preferred_y
+                    while any(abs(y - other_y) < 172 for other_y in occupied):
+                        y += 172
                     node["x"] = next_x + rank * 370
                     node["y"] = y
-                    last_bottom = y + 118
+                    occupied.append(y)
             next_x += (max_rank + 1) * 370 + 55
 
     # ROADMAP_NODES is populated above; layout once before its lookup index.
@@ -1769,7 +1765,7 @@ init -2 python:
         }.get(status, "Statut inconnu"))
 
     def roadmap_can_teleport(node):
-        if not node or not node.get("teleportable", False):
+        if not node or not roadmap_should_show(node) or not node.get("teleportable", False):
             return False
         label = node.get("label")
         if not label or not renpy.has_label(label):
@@ -1876,7 +1872,7 @@ init -2 python:
         return bool(node and node.get("kind") == "divergence")
 
     def roadmap_is_timeline_node(node):
-        return bool(node and (roadmap_is_day(node) or roadmap_is_ending(node) or roadmap_is_divergence(node)))
+        return bool(node and (roadmap_is_day(node) or roadmap_is_ending(node) or roadmap_is_divergence(node) or roadmap_is_major_event(node)))
 
     def roadmap_timeline_predecessors(node):
         """Return the nearest visible roadmap nodes behind a node, skipping hidden technical nodes."""
@@ -1961,7 +1957,7 @@ init -2 python:
         Save only roadmap progress and the destination across a full restart.
         """
         node = ROADMAP_NODE_BY_ID.get(node_id)
-        if not node or not node.get("teleportable", False):
+        if not roadmap_can_teleport(node):
             renpy.notify("Roadmap: destination invalide.")
             return
         label = node.get("label")
@@ -2019,6 +2015,12 @@ init -2 python:
             or label.startswith(tuple("_%d_0_1_1_0" % day for day in range(21, 31)))
         )
         store.mara_dg_body_locked = bool(route_dg)
+        if node_id == "choice_day1_door":
+            return "roadmap_resume_day1_door"
+        if node_id == "debate_phase_1":
+            return "roadmap_resume_day3_debate"
+        if node_id == "split_day_5":
+            return "roadmap_resume_day5_choice"
         return label
 
     def roadmap_jump_to_node(node_id):
@@ -2058,6 +2060,28 @@ transform roadmap_soft_pulse:
     linear 1.6 alpha 0.72
     repeat
 
+# Rebuild the scene after the clean restart before entering mid-day labels.
+label roadmap_resume_day1_door:
+    scene bg_conclave at adaptive_fullscreen
+    play music "music/bgm_calm_not_peace.mp3" fadein 0.4
+    $ day1_group_reaction()
+    jump _1_CHOICE
+
+label roadmap_resume_day3_debate:
+    $ current_period = "Après-midi"
+    $ cafeteria_food_level = "medium"
+    $ noam_has_juliette_drawing = True
+    $ day3_vote_bootstrap()
+    scene bg_conclave at adaptive_fullscreen
+    play music "music/bgm_system_override.mp3" fadein 0.4
+    jump _3_DEBAT1_PHASE1
+
+label roadmap_resume_day5_choice:
+    $ current_period = "Après-midi"
+    scene couloir_dortoir at adaptive_fullscreen
+    play music "music/bgm_world_decline.mp3" fadein 0.4
+    jump _5_0_CRITICAL_CHOICE
+
 label roadmap_perform_teleport:
     $ quick_menu = True
     $ quick_menu_open = False
@@ -2088,7 +2112,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
     default map_zoom = initial_zoom if initial_zoom is not None else 0.78
     default map_filter = "all"
 
-    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node) and (map_filter == "all" or (map_filter == "day" and roadmap_is_day(node)) or (map_filter == "choice" and roadmap_is_divergence(node)) or (map_filter == "ending" and roadmap_is_ending(node)))]
+    $ visible_nodes = [node for node in ROADMAP_NODES if roadmap_is_timeline_node(node) and roadmap_should_show(node) and (map_filter == "all" or (map_filter == "day" and roadmap_is_day(node)) or (map_filter == "choice" and roadmap_is_divergence(node)) or (map_filter == "debate" and roadmap_is_major_event(node) and not roadmap_is_divergence(node)) or (map_filter == "ending" and roadmap_is_ending(node)))]
     $ map_w, map_h = roadmap_map_size(visible_nodes)
     $ fit_zoom = roadmap_fit_zoom(visible_nodes)
     $ z = max(fit_zoom, min(1.40, map_zoom))
@@ -2176,7 +2200,7 @@ screen roadmap_menu(focus_node_id=None, initial_zoom=None):
                 ypos 154
                 spacing 8
                 text "AFFICHER :" style "roadmap_legend_text" yalign 0.5
-                for filter_key, filter_name in [("all", "Tout"), ("day", "Journées"), ("choice", "Choix"), ("ending", "Fins")]:
+                for filter_key, filter_name in [("all", "Tout"), ("day", "Journées"), ("choice", "Choix"), ("debate", "Débats"), ("ending", "Fins")]:
                     textbutton kd_tr(filter_name):
                         style "roadmap_filter_button"
                         selected map_filter == filter_key
@@ -2354,7 +2378,7 @@ screen roadmap_node_details(node):
                     null height 8
 
                     if roadmap_can_teleport(node):
-                        textbutton "Rejoindre cette séquence":
+                        textbutton ("Rejouer le choix / débat" if roadmap_is_major_event(node) else "Rejoindre cette séquence"):
                             style "roadmap_action_button"
                             action [
                                 Hide("roadmap_menu"),
