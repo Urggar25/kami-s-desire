@@ -1,3 +1,18 @@
+# J4_0: local cinematic transforms, no new assets.
+transform j40_cg_push:
+    subpixel True
+    xalign 0.5
+    yalign 0.5
+    zoom 1.0
+    ease 1.2 zoom 1.045
+
+transform j40_cg_rest:
+    subpixel True
+    xalign 0.5
+    yalign 0.5
+    zoom 1.045
+    ease 0.85 zoom 1.0
+
 default j4_cafeteria_ryn_talked = False
 default j4_cafeteria_julian_talked = False
 default j4_route_optional_met = False
@@ -72,8 +87,7 @@ label _4_0_REVEIL_CHAMBRE:
     play sound sfx_drop
     "Un objet métallique tombe dans le couloir, suivi d'un juron qu'on essaie beaucoup trop tard de rendre discret."
     noam "Cinq minutes de sommeil supplémentaire, c'est trop demandé ...?"
-    call kd_vn_cg_impact("#b9dfff")
-    scene bg_cg012 at adaptive_fullscreen with dissolve
+    scene bg_cg012 at adaptive_fullscreen, j40_cg_rest with Dissolve(0.35)
     "Je reste étendu un moment, les yeux ouverts. J'ai encore rêvé de l'urne. Sauf que, cette fois, c'était moi qui devais compter les bulletins et ils n'arrêtaient pas de se multiplier."
     think "Quelle idée, aussi, de laisser mon cerveau organiser des élections pendant mon sommeil."
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -128,6 +142,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     "Je tends la main vers sa tasse pour la mettre à l'abri."
     $ kd_direct.interrupt("elias",.7)
     $ kd_direct.react("noam","surprise")
+    $ kd_direct.react("elias", "recoil")
     elias panique "Hé ! Pas le café !"
     noam surpris "Je voulais juste le poser par terre."
     $ kd_queue_character_motion("elias", "embarrassed")
@@ -142,6 +157,7 @@ label _4_0_NAVIGATION_CAFETERIA:
     elias inquiet "Elle tenait aussi, mais avec une petite résistance. Maintenant elle ferme toute seule."
     $ kd_direct.shot("medium","elias",duration=.28,hold=2)
     "Elias pousse la porte du casier. Elle se ferme. Puis elle se rouvre immédiatement."
+    $ shake(intensity=4, duration=.16)
     elias colere "C'EST PAS POSSIBLE !"
     $ kd_direct.end()
     call kd_vn_reaction("elias", "colere", "#ff9c55")
@@ -162,6 +178,8 @@ label _4_0_NAVIGATION_CAFETERIA:
     noam surpris "Ou-Ouais... Je vois..."
     $ kd_direct.shot("retreat",duration=.30,hold=2)
     "Il ramasse les derniers outils en évitant soigneusement mon regard."
+    play sound sfx_door volume 0.65
+    $ kd_direct.react("elias", "surprise")
     "Nous avançons de quelques pas. Derrière nous, la porte claque enfin. Elias s'arrête, écoute, puis décide de ne surtout pas aller vérifier si tout est enfin bon."
     $ kd_direct.end()
     call CORRIDOR_NAVIGATION(corridor_current) from _call_CORRIDOR_NAVIGATION_4_0_CAFETERIA
@@ -229,7 +247,7 @@ label _4_0_CAFETERIA_ECRANS:
     scene cafeteria2 at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 1.8
     pause 0.8
-    scene bg_cg022 at adaptive_fullscreen with dissolve
+    scene bg_cg022 at adaptive_fullscreen, j40_cg_push with Dissolve(0.25)
     $ unlock_gallery_image("bg_cg022")
     $ kd_queue_character_motion("elen", "anger")
     elen colere "GOUMI ! Regarde-moi bien. Hier, tu avais de la cannelle."
@@ -364,6 +382,7 @@ label _4_0_CAFETERIA_ECRANS:
     "Iris a un sourire qu'elle prend à peine la peine de cacher."
     $ kd_direct.profile("confrontation")
     $ kd_direct.shot("medium","julian",duration=.20,hold=1)
+    stop music fadeout 0.35
     julian decu "Amusant. On est en train de discuter d'un dessert, alors qu'on aurait pu retirer à Kami ce pouvoir hier."
     $ kd_direct.react("kael","silence")
     $ kd_direct.fixed_close("kael", duration=.26)
@@ -380,6 +399,8 @@ label _4_0_CAFETERIA_ECRANS:
     lysa determine "T'as vraiment décidé d'être pénible jusqu'au dernier repas ?"
     julian neutre "On a le droit de parler de ce qu'on a perdu."
     ryn colere "Et de ce qu'on aurait pu perdre en votant oui, non ?"
+    $ kd_direct.react("ryn", "anger")
+    $ kd_direct.react("mara", "step_back")
     "Ryn repousse son plateau. Mara retire sa tasse du bord sans interrompre son geste."
     $ kd_direct.shot("medium","mara",duration=.20,hold=1)
     mara agace "Vous voulez refaire toute la journée d'hier ici ? Dites-le, que je trouve un endroit où manger."
@@ -457,7 +478,7 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
         jump _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE
 
     call kd_news_open(_("LIMEN 24"), _("APRÈS LE VOTE DU CONCLAVE"), _("ÉDITION SPÉCIALE"), "field") from _call_kd_news_open_j40_mandatory
-    scene bg_cg034 at adaptive_fullscreen
+    scene bg_cg034 at adaptive_fullscreen, j40_cg_push
     $ unlock_gallery_image("bg_cg034")
     show screen kd_news_broadcast(_("LIMEN 24"), _("LIMEN — CENTRE DE DISTRIBUTION"), _("La distribution gratuite se poursuit"), (_("Le premier amendement du Conclave a été rejeté."), _("La distribution gratuite des denrées reste en vigueur."), _("Les habitants attendent les prochaines décisions du Conclave.")))
     with Dissolve(0.25)
@@ -495,13 +516,21 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     kael reflechit "Elle allait dire quoi ?"
     nyra reflechit "On n'en saura rien."
     lysa blase "Ils pouvaient lui laisser finir. Ça leur aurait coûté trente secondes."
+    call kd_news_leave_view from _call_kd_news_leave_j40_mandatory
+    scene bg_cafeteria at adaptive_fullscreen with Dissolve(0.18)
+    $ showGroup([("lysa", "blase", .040), ("kael", "calme", .124), ("ryn", "colere", .207), ("julian", "decu", .291), ("mara", "agace", .375), ("tomas", "hesitation", .458), ("iris", "neutre", .625), ("nyra", "neutre", .709), ("noam", "neutre", .793), ("elias", "inquiet", .960)])
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.shot("medium", "elias", duration=.24)
     "Elias remue la cuillère dans sa tasse. Il ne boit pas."
     elias inquiet "J'aimerais bien qu'ils aient quelque chose pour demain aussi."
+    $ kd_direct.shot("medium", "ryn", duration=.18)
     ryn colere "C'est ce que je dis depuis hier."
+    $ kd_direct.shot("reverse", "julian", duration=.16)
     julian decu "Et hier, quelqu'un a quand même préféré ne rien changer."
     $ kd_queue_character_motion("ryn", "exasperation")
     ryn colere "Tu vas recommencer ?"
     julian neutre "Je n'ai cité personne."
+    $ kd_direct.two_shot("ryn", "julian", duration=.20)
     ryn colere "T'as pas besoin de citer mon nom pour me regarder comme ça !"
     julian colere "Alors arrête de prétendre que je te regarde !"
     "Le bruit de leurs voix couvre la fin du reportage. La petite fille réapparaît à l'écran : elle mâche lentement quelque chose, les joues gonflées."
@@ -509,11 +538,16 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     julian decu "Très bien."
     "Julian prend son plateau et se lève. Il regarde brièvement Noam, puis la place vide à côté de Tomas."
     "Tomas entrouvre les lèvres, mais Julian a déjà rejoint la porte."
+    $ kd_direct.leave("julian", fast=True)
+    $ kd_direct.react("tomas", "hesitate")
+    play sound sfx_drop
+    $ kd_direct.react("ryn", "exasperation")
+    $ kd_direct.shot("wide", duration=.30)
     "Ryn se rassoit si brusquement qu'une cuillère tombe sur le sol. Personne ne la ramasse."
     "L'écran continue à diffuser des images de sacs alignés. Pendant quelques secondes, on entend seulement les commentaires de la journaliste."
     "Une porte s'ouvre derrière nous."
     # Noam détourne son attention : la télévision n’est pas éteinte.
-    call kd_news_leave_view from _call_kd_news_leave_j40_mandatory
+    $ kd_direct.end()
     # L'annonce d'Elen se déroule au présent, dans la cafétéria, pas sur la CG télévisée.
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([
@@ -530,6 +564,9 @@ label _4_0_CAFETERIA_TELEVISION_OBLIGATOIRE:
     ])
     $ kd_direct.begin("comedy")
     $ kd_direct.shot("medium","elen",duration=.12,hold=1)
+    $ kd_direct.react("elen", "emphasis")
+    $ kd_direct.react("iris", "surprise")
+    $ kd_direct.react("mara", "step_back")
     elen joie "BON ! J'AI DÉCIDÉ QU'ON ALLAIT FAIRE QUELQUE CHOSE DE FORMIDABLE !"
     "Je me retourne. Elen a les bras levés et un air parfaitement ravi, comme si elle n'avait pas quitté la pièce en déclarant la guerre à un robot."
     iris hesitation "Tu as retrouvé ta cannelle ?"
@@ -898,6 +935,9 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     "Ryn s'appuie sur la table. Il ne la regarde plus de la même manière."
     $ close_up("sael")
     $ kd_direct.shot("medium","sael",duration=.42,hold=1)
+    $ kd_direct.profile("intimate")
+    $ kd_direct.lock()
+    stop music fadeout 0.9
     sael neutre "Avant la fermeture, des groupes armés passaient par chez nous. Ils prenaient de la nourriture, des outils. Et parfois des gens."
     elen inquiet "Des gens ?"
     $ kd_direct.shot("close","sael",duration=.45,hold=1)
@@ -907,10 +947,14 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     $ kd_direct.shot("medium","ryn",duration=.40,hold=1)
     ryn triste "Chez moi, les enfants attendent ceux qui ne pourront plus traverser."
     sael triste "Je sais."
+    $ kd_direct.unlock()
+    play music "music/bgm_world_decline.mp3" fadein 1.0
     ryn colere "Non, je crois pas !"
     $ kd_direct.profile("confrontation")
     $ kd_direct.shot("close","sael",duration=.15,hold=1)
     sael colere "Tu crois être le seul à avoir ramassé des morts ?"
+    $ kd_direct.react("ryn", "emphasis")
+    $ kd_direct.react("tomas", "step_back")
     "Ryn se lève si vite que sa chaise grince, puis se rassoit."
     $ kd_direct.shot("medium","nyra",duration=.22,hold=1)
     nyra raison "Vous ne parlez plus de la même chose. Ryn, laisse-la finir."
@@ -940,6 +984,8 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     sael determine "Même avec des gardiens, je voterai contre. Pas seulement contre ce texte. Contre l'ouverture des frontières. Je ne veux pas de ça."
     elen inquiet "Mais... on a encore deux jours. On peut peut-être en parler autrement ?"
     sael neutre "On peut en parler. Mais pas pour me faire changer mon vote. Je suis contre. Et je le resterai."
+    $ kd_direct.shot("retreat", duration=.52, hold=2)
+    $ kd_direct.lock()
     "Ryn détourne la tête. J'ai envie d'intervenir, mais chaque phrase qui me vient sonne comme un reproche adressé à l'un des deux."
     $ kd_direct.end()
     call day4_thread_debate_game from _call_day4_thread_debate_game
@@ -1061,7 +1107,10 @@ label _4_0_DEBAT_ROMPU:
 
 label day4_thread_debate_game:
 
+    $ kd_direct.begin("confrontation", auto=False)
+    $ kd_direct.simultaneous(("ryn", "sael"))
     think "Si je parle maintenant, il faut au moins que ce soit pour quelque chose. Je vais essayer de reprendre ce qu'ils ont dit, pas de leur faire la leçon."
+    $ kd_direct.end()
     call refutation_run("j4_frontieres") from _call_day4_frontieres_refutation
     if _return[0] == "success":
         call day4_thread_debate_success from _call_day4_thread_debate_success
@@ -1268,7 +1317,13 @@ label _4_0_SOIREE_SANS_VOTE:
     elen joie "Mais c'est une idée GÉNIALE !"
     lysa blase "Ça existe depuis très longtemps, Elen."
     elen desaccord "Tu pourrais me laisser être impressionnée cinq minutes ?"
+    $ kd_direct.shot("wide", duration=.20, hold=2)
+    $ kd_direct.lock()
     "La manche reprend. Kael fait tomber les deux dés sur la table, tous deux montrant la même face."
+    $ kd_direct.react("elias", "shock")
+    $ kd_direct.react("elen", "surprise")
+    $ kd_direct.react("tomas", "laugh")
+    $ kd_direct.unlock()
     elias inquiet "Quoi ?! Mais..."
     iris taquin "Une victoire propre. Elias, prends des notes."
     elias colere "JE SAIS LANCER DES DÉS !"
@@ -1308,11 +1363,16 @@ label _4_0_SOIREE_SANS_VOTE:
     "Lysa fait dorer les galettes sur la plaque du comptoir. Une odeur de pain chaud se répand dans la pièce ; même Ryn se rapproche."
     kael reflechit "C'est drôle. Avec si peu d'ingrédients, je m'attendais à quelque chose de plus sec."
     lysa neutre "Goûte avant de faire ton rapport."
+    $ kd_direct.two_shot("kael", "lysa", duration=.35)
+    $ kd_direct.lock()
     "Elle partage une galette en plusieurs morceaux. Kael en prend un, le mâche lentement et se fige."
     elen inquiet "Alors ?!"
+    $ kd_direct.unlock()
     $ kd_direct.shot("close","kael",duration=.34,hold=1)
     kael reflechit "C'est... vraiment bon."
     $ kd_direct.shot("medium","lysa",duration=.26,hold=1)
+    $ kd_direct.react("lysa", "interest")
+    $ kd_direct.react("elen", "emphasis")
     lysa taquin "Tu vois ? T'as survécu à une recette sans mode d'emploi."
     elias sourire "Moi aussi, je peux goûter ?"
     $ kd_direct.profile("comedy")
@@ -1331,6 +1391,7 @@ label _4_0_SOIREE_SANS_VOTE:
     lysa neutre "Demain ?"
     ryn neutre "Enfin, si tu veux."
     lysa blase "On verra."
+    $ kd_direct.shot("wide", duration=.48, hold=2)
     "Il manque encore deux personnes. Sael et Julian n'ont pas répondu à l'invitation d'Elen."
     elen inquiet "On devrait leur en garder ?"
     iris reflechit "Oui. Mais ne va pas frapper chez eux ce soir pour leur faire goûter."
@@ -1423,12 +1484,14 @@ label _4_0_ROUTE_SOIR_LYSA:
     noam "Tu faisais souvent des miettolunes, chez toi ?"
     lysa reflechit "Souvent ? Quand on n'avait plus de pain frais, oui. Donc assez souvent."
     noam "Avec de la confiture ?"
+    $ kd_direct.fixed_close("lysa", duration=.55)
     lysa "Quand ma mère avait réussi à en garder. Sinon juste avec du lait et du sucre. Parfois rien d'autre."
     noam "Tu les préparais avec elle ?"
     $ kd_direct.shot("medium","lysa",duration=.42,hold=1)
     lysa neutre "Elle me laissait mélanger. Et elle disait que je mettais toujours trop de lait."
     noam "C'était vrai ?"
     lysa sourire "Oui. Mais elle n'avait pas besoin de me le répéter."
+    $ kd_direct.unlock()
     $ kd_direct.shot("close","lysa",duration=.42,hold=2)
     "Elle sourit encore un instant, puis relève les yeux."
     lysa reflechit "Par contre, j'aurais préféré qu'on termine la journée sans se hurler dessus au Conclave."
@@ -1498,7 +1561,7 @@ label _4_0_RETOUR_CHAMBRE:
     "Le dessin de Juliette m'attend sur le bureau, à côté de ma tablette. Je remarque que j'avais oublié un détail : elle m'a aussi dessiné une cape."
     think "Elle m'avait assuré que c'était parce que j'étais nul pour courir et qu'une cape, au moins, ça donnerait l'impression."
     "Je souris malgré moi."
-    scene bg_cg012 at adaptive_fullscreen with dissolve
+    scene bg_cg012 at adaptive_fullscreen, j40_cg_push with Dissolve(0.4)
     $ blink()
     "Dans la chambre voisine, quelqu'un éclate de rire. Une autre voix lui demande de parler moins fort."
     "Ma tablette s'allume. Le dossier du deuxième vote a été actualisé."
