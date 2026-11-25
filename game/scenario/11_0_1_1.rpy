@@ -3,335 +3,349 @@ label _11_0_1_1_REVEIL_CHAMBRE:
     $ current_period = "Matin"
     $ current_day = 11
     $ noam_has_juliette_drawing = False
+    scene black
     play music "music/bgm_fallin_love.mp3" fadein 2.5
     play sound sfx_heartbeat fadeout 3.0
-    "..."
-    iris "Tu comptes dormir jusqu'au prochain vote ?"
-    "Quelque chose de froid se pose sur mon front. J'essaye de répondre, mais ma langue semble avoir oublié comment fonctionner."
-    iris "Ah, voilà. Ça bouge. Bon signe."
-    scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 3.0)
+
+    iris fatigue "Tu comptes dormir jusqu'au prochain vote ?"
+    "Quelque chose de froid se pose sur mon front. J'essaie de répondre. Ma langue, elle, a visiblement démissionné."
+    iris inquiet "Ah. Ça bouge. Bon signe."
+
+    scene bg_chambre at adaptive_fullscreen with Fade(2.0, 0.0, 2.0)
+    $ showGroup([("noam", "faible", 0.28), ("iris", "fatigue", 0.72)])
     noam faible "Iris... ?"
-    iris "Non. Kami, dans un nouveau corps. Tu trouves que je lui ressemble ?"
+    iris taquin "Non. Kami dans un nouveau corps. Tu trouves qu'elle a fait du bon boulot ?"
     noam fatigue "T'es moins agréable."
-    iris "Il EST vivant !"
+    iris colere "Il EST vivant. Et déjà pénible."
+
+    $ hideGroup()
     scene bg_cg031 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg031")
-    "Elle a un linge humide dans la main. Ses cheveux sont défaits et elle a une marque rouge sur la joue, comme si elle s'était endormie dans une mauvaise position."
-    noam hesitation "Qu'est-ce que..."
-    iris fatigue "Tu t'es écroulé. Au Conclave. Devant tout le monde. Très joli spectacle."
+    "Iris tient un linge humide. Ses cheveux partent dans tous les sens et une marque rouge lui traverse la joue."
+    noam hesitation "Qu'est-ce qui s'est passé ?"
+    iris fatigue "Tu t'es écroulé au Conclave. Devant tout le monde. Avec le petit bruit de chaise qui va bien."
     noam inquiet "Hier ?"
-    iris "Non, dans cent ans. Oui, hier !"
-    noam fatigue "Je me souviens de la table. Après..."
-    iris "Après, tu as essayé de faire connaissance avec le sol. Heureusement qu'on t'a rattrapé."
-    "Elle essore le linge. De l'eau tombe sur la couverture."
-    iris "Ah, merde."
-    noam sourire "Tu sais, si tu voulais me noyer, il y avait plus simple."
-    iris colere "Tu peux me remercier aussi, ça se fait !"
+    iris desaccord "Non, dans six mois. Oui, hier !"
+    noam fatigue "Je me rappelle la table. Après... rien."
+    iris neutre "Après, t'as essayé d'embrasser le sol. Sael et Elias t'ont rattrapé."
+
+    "Elle essore le linge au-dessus du bol. Une partie de l'eau tombe sur la couverture."
+    iris fatigue "Merde."
+    noam sourire "Si tu voulais me noyer, fallait prendre un seau."
+    iris colere "Tu peux aussi dire merci. C'est un mot qui existe."
     noam sourire "Merci."
-    iris "..."
-    iris gene "C'était pas une invitation à le dire tout de suite."
-    "Je tente de me redresser. Ma tête proteste immédiatement."
-    iris colere "HÉ ! Tu fais quoi ?!"
-    noam fatigue "Je m'assieds."
-    iris "Tu te recouches."
-    noam sourire "J'ai vraiment aucun droit ici ?"
-    iris desaccord "Pas tant que tu continues à essayer de t'évanouir."
-    "Elle me remet le verre d'eau dans la main. Cette fois, elle attend que je le tienne correctement."
+    iris gene "... Pas aussi vite."
+    noam surpris "Pardon ?"
+    iris colere "Rien ! Bois."
+
+    "Je tente de me redresser. La douleur derrière mes yeux me recouche presque toute seule."
+    iris inquiet "Hé ! Doucement !"
+    noam fatigue "Je m'assois, c'est tout."
+    iris determine "Non. Tu te recouches, tu bois, et après on négocie le droit de t'asseoir."
+    noam sourire "J'ai perdu tous mes droits civiques ?"
+    iris desaccord "Tant que tu continues à tomber dans les pommes, oui."
+
+    "Elle me met un verre dans la main et ne le lâche que lorsqu'elle est sûre que je le tiens."
     noam inquiet "J'ai dormi combien de temps ?"
-    iris fatigue "Toute la nuit. Tu as fait une grosse fièvre, tu parlais à moitié dans ton sommeil, et Sael est venue vérifier que tu n'avais rien de plus grave."
-    noam reflexion "Sael ?"
-    iris "Oui, Sael. C'est elle qui sait s'occuper des gens. Moi je suis surtout là pour t'empêcher de faire une connerie."
-    noam sourire "Mission ambitieuse."
-    iris taquin "Ne me sous-estime pas."
-    "Elle attrape un thermomètre sur la table et le pose hors de ma portée."
-    iris fatigue "Mara a passé deux heures à râler à ton chevet. Elen voulait t'apporter une couverture supplémentaire. Je lui ai dit qu'on avait déjà assez chaud."
-    noam fatigue "Et toi ?"
-    iris desaccord "Moi quoi ?"
-    noam fatigue "T'es restée ?"
-    iris gene "Quelqu'un devait surveiller que tu t'étouffes pas avec ta langue !"
-    noam sourire "Ça arrive souvent ?"
-    iris colere "LA FERME."
-    "Je ris. Une douleur sourde me traverse aussitôt le crâne."
-    iris inquiet "Hé. Ça va ?"
-    noam fatigue "Oui. Je regrette juste ma blague."
-    iris taquin "C'est la première décision raisonnable que tu prends depuis hier."
-    "Pendant quelques secondes, elle ne dit plus rien. Elle regarde le linge dans ses mains."
-    iris fatigue "Ryn est passé aussi. Enfin, il s'est arrêté devant la porte."
+    iris fatigue "Toute la nuit. Fièvre, sueurs, phrases incompréhensibles... Très bonne ambiance."
+    noam reflexion "C'est toi qui m'as soigné ?"
+    iris desaccord "Sael. Moi, j'ai changé le linge et empêché Julian de transformer ta chambre en salle d'attente officielle."
+    noam sourire "Donc t'es restée."
+    iris gene "Quelqu'un devait vérifier que tu t'étouffes pas !"
+    noam taquin "Ça arrive souvent ?"
+    iris colere "Tu veux vraiment tester ma patience au réveil ?"
+
+    "Je ris. Mon crâne me rappelle aussitôt que c'était une mauvaise idée."
+    iris inquiet "Ça va ?"
+    noam fatigue "Je viens de regretter une blague. C'est grave."
+    iris taquin "Enfin un symptôme encourageant."
+    iris fatigue "Ryn est passé. Enfin... il s'est arrêté devant la porte."
     noam inquiet "Il est entré ?"
-    iris "Non. Il a demandé si tu étais mort, j'ai répondu non, et il a dit de pas changer d'avis."
-    noam sourire "C'est touchant."
-    iris neutre "Ouais. Dans son genre."
-    "J'essaye de retrouver la fin de la journée précédente. Les questions. La salle du Conclave. Le couloir."
-    think "Quelque chose me manque. Pas seulement les heures entre mon malaise et maintenant."
+    iris neutre "Non. Il a demandé si t'étais mort. J'ai dit non. Il a répondu : ‘Bon.’"
+    noam sourire "C'est presque affectueux."
+    iris neutre "Dans son dialecte, sûrement."
+
+    "Je cherche la fin de la veille. Le couloir de l'infirmerie. Cette peur arrivée avant la fièvre."
+    think "Il manque quelque chose. Pas juste les heures après ma chute."
     iris reflexion "Quoi ?"
     noam hesitation "Quoi, quoi ?"
-    iris "Tu fais cette tête-là. Celle où tu réfléchis à un truc que tu vas garder pour toi jusqu'à ce que ça t'explose dessus."
-    noam fatigue "J'ai une tête pour ça ?"
-    iris desaccord "Oui. Et elle est insupportable."
+    iris desaccord "Cette tête. Tu viens de retrouver un problème et tu vas le garder jusqu'à ce qu'il t'explose dessus."
+    noam fatigue "J'ai une tête spéciale pour ça ?"
+    iris taquin "Oui. Elle m'énerve."
+
     menu:
         "Lui parler de ce qui s'est passé dans le couloir.":
             jump noam_parle_doppelganger_iris
         "Ne rien lui dire pour le moment.":
             jump noam_garde_secret
 
+    # Durée : 2m15
+
 
 label noam_parle_doppelganger_iris:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
-    $ showGroup([("noam", "fatigue", 0.20), ("iris", "inquiet", 0.80)])
-    noam hesitation "Hier, avant l'annonce de Kami... dans le couloir de l'infirmerie."
-    iris inquiet "Quoi, le coup de chaud ?"
-    noam reflexion "Je crois que j'ai vu quelqu'un."
-    iris "Tu crois ?"
-    noam inquiet "Non. C'est justement ça qui me gêne. Sur le moment, j'étais sûr qu'il y avait un truc. Et maintenant j'arrive même pas à dire quoi."
-    iris reflexion "Sael t'a trouvé là, non ?"
-    noam "Oui. Mais avant elle..."
-    "Je cherche les mots. À chaque fois que je suis sur le point d'en choisir un, il me semble faux."
-    noam fatigue "J'ai regardé le fond du couloir. Après j'ai eu peur. Vraiment peur. Et je sais pas pourquoi."
-    iris desaccord "Tu étais brûlant de fièvre quelques heures plus tard."
-    noam inquiet "Tu crois que j'ai halluciné ?"
-    iris fatigue "J'en sais rien ! Je te dis ce que je sais, pas ce que tu dois penser."
-    "Sa réponse me surprend assez pour que je relève les yeux."
-    iris reflexion "Mais si tu es malade, fatigué, et qu'en plus le système de ventilation fait n'importe quoi... je vais pas appeler ça une preuve."
-    noam fatigue "C'est pas une preuve. Je le sais."
-    iris inquiet "Tu as demandé leurs alibis à tout le monde. Tu te rappelles ?"
-    noam hesitation "Oui."
-    iris "Tu leur as fait peur."
-    noam fatigue "Je voulais pas."
-    iris neutre "Je sais. C'est pour ça que je te le dis."
-    "Elle replie le linge, le pose sur la table, puis se lève."
-    iris reflexion "Si tu veux chercher, cherche quand tu pourras marcher sans tomber. Et évite de refaire ton interrogatoire devant douze personnes."
-    noam sourire "Donc tu me proposes de devenir détective ?"
-    iris desaccord "Je te propose de boire de l'eau et d'arrêter de faire des mouvements stupides !"
-    noam sourire "Très bien, chef."
-    iris gene "Et... si ça recommence, tu m'en parles."
+    $ showGroup([("noam", "fatigue", 0.25), ("iris", "inquiet", 0.75)])
+    noam hesitation "Hier, dans le couloir de l'infirmerie... avant l'annonce de Kami."
+    iris inquiet "Quoi ? Ton coup de chaud ?"
+    noam reflexion "J'ai vu quelqu'un. Enfin, je crois."
+    iris desaccord "Tu crois ou tu l'as vu ?"
+    noam inquiet "Sur le moment, j'en étais sûr. Maintenant, j'arrive même plus à remettre un visage dessus."
+    iris reflexion "Sael t'a trouvé là."
+    noam hesitation "Oui, mais avant elle..."
+    "Je m'accroche au souvenir. Un fond de couloir. Une silhouette. Puis cette peur absurde."
+    noam fatigue "J'ai regardé devant moi et j'ai paniqué. Vraiment. Sans savoir pourquoi."
+    iris inquiet "Tu avais déjà de la fièvre."
+    noam reflexion "Donc j'ai halluciné ?"
+    iris desaccord "J'en sais rien, Noam. Je vais pas choisir une réponse juste pour te rassurer."
     noam fatigue "D'accord."
-    iris fatigue "Je vais te chercher à manger. Ne bouge pas. Ça me fatigue de devoir répéter."
-    "Elle sort sans attendre de réponse."
+    iris reflexion "Mais hier, t'as interrogé tout le monde devant tout le monde."
+    noam culpabilite "Je voulais juste vérifier."
+    iris neutre "Je sais. Eux, ils ont surtout vu un type livide leur demander des alibis."
+    "Elle prend le verre vide et se lève."
+    iris determine "Si tu cherches, tu le fais quand tu peux marcher droit. Et pas en accusant douze personnes d'un coup."
+    noam sourire "Tu me donnes ta bénédiction pour enquêter ?"
+    iris colere "Je te donne l'ordre de rester vivant assez longtemps pour réfléchir !"
+    noam sourire "Très bien, chef."
+    iris gene "Et si ça recommence... tu viens me voir. Tout de suite."
+    noam fatigue "Promis."
+    iris desaccord "T'as intérêt. Je vais chercher à manger. Tu ne bouges pas."
     jump _11_0_1_1_APRES_REVEIL
+
+    # Durée : 1m05
 
 
 label noam_garde_secret:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.5
-    $ showGroup([("noam", "fatigue", 0.20), ("iris", "inquiet", 0.80)])
-    noam hesitation "Rien. J'essayais juste de me souvenir du moment où je suis tombé."
+    $ showGroup([("noam", "fatigue", 0.25), ("iris", "inquiet", 0.75)])
+    noam hesitation "Rien. J'essayais de me rappeler comment je suis tombé."
     iris desaccord "Tu mens mal."
-    noam fatigue "Tu dis ça à chaque fois."
-    iris "Parce que tu mens mal à chaque fois."
-    "Je prends une gorgée d'eau pour éviter de répondre."
-    iris reflexion "Bon. On va pas jouer à ça toute la matinée."
+    noam fatigue "Tu dis toujours ça."
+    iris taquin "Parce que tu mens toujours pareil."
+    "Je bois pour éviter de répondre. Elle attend. Je continue alors que le verre est presque vide."
+    iris fatigue "Bon. Je vais pas te l'arracher. Pas aujourd'hui."
     noam fatigue "Merci."
-    iris taquin "Je peux encore changer d'avis."
-    "Elle ajuste le linge qui glissait de mon front, puis se redresse aussitôt."
-    iris fatigue "Tu as fait assez peur à tout le monde. Le minimum, c'est de manger quelque chose."
-    noam sourire "Tu comptes m'apporter un petit-déjeuner au lit ?"
-    iris desaccord "Te fais pas d'idées. Je t'apporte de quoi éviter que tu t'écroules une deuxième fois."
-    noam sourire "C'est presque romantique."
-    iris colere "J'AI DIT DE PAS TE FAIRE D'IDÉES !"
+    iris taquin "C'était pas un cadeau."
+    "Elle remet le linge en place, puis retire sa main beaucoup trop vite."
+    iris neutre "Tu as déjà fait assez peur à tout le monde. Mange au moins quelque chose."
+    noam sourire "Petit-déjeuner au lit ?"
+    iris desaccord "Ration de survie. Nuance."
+    noam taquin "C'est presque romantique."
+    iris colere "Ne te fais pas d'idées !"
     call kd_vn_reaction("iris", "colere", "#ff9c55")
-    "Elle se dirige vers la porte. Juste avant de sortir, elle jette un dernier regard vers moi."
-    iris gene "Si tu as vraiment quelque chose en tête... tu peux m'en parler. Plus tard."
+    "Elle atteint la porte, s'arrête et garde la main sur la poignée."
+    iris gene "Si ton ‘rien’ devient autre chose... tu peux m'en parler. Plus tard."
     noam fatigue "D'accord."
-    "Elle referme la porte."
+    iris fatigue "Et ne bouge pas. Pour une fois, fais semblant d'être simple."
     jump _11_0_1_1_APRES_REVEIL
+
+    # Durée : 0m50
 
 
 label _11_0_1_1_APRES_REVEIL:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
-    "Une fois seul, je tente de me lever. Mes pieds touchent à peine le sol que je me ravise."
-    noam faible "D'accord. Point pour Iris."
-    "Je reste assis, le verre dans les mains, à regarder la table. Il n'y a toujours pas le dessin de Juliette."
-    think "Je pourrais reprendre mes recherches. Ou tomber tête la première sur le bureau. Ça ferait une belle fin."
-    "Des voix montent du couloir."
-    julian "JE N'AI JAMAIS DIT QU'IL FALLAIT EN METTRE AUTANT !"
-    iris "C'EST TOI QUI AS PRIS LE PLATEAU !"
-    sael "Arrêtez de secouer la porte !"
-    "Je n'ai même pas le temps de comprendre qu'elle s'ouvre."
+    "Une fois seul, je pose les pieds au sol. La pièce bascule légèrement. Je les remonte aussitôt."
+    noam faible "D'accord. Un point pour Iris."
+    "Sur le bureau, l'emplacement du dessin de Juliette est toujours vide."
+    think "Je pourrais reprendre mes recherches. Ou m'ouvrir le crâne sur le coin de la table."
+
+    "Des voix arrivent du couloir avec un bruit de vaisselle malmenée."
+    julian colere "JE N'AI JAMAIS DIT QU'IL FALLAIT TOUT METTRE !"
+    iris colere "C'EST TOI QUI AS PRIS LE PLUS GRAND PLATEAU !"
+    sael desaccord "Arrêtez de pousser."
+    "La porte s'ouvre."
     $ showGroup([
-        ("noam", "fatigue", 0.20), ("iris", "neutre", 0.40),
-        ("sael", "neutre", 0.60), ("julian", "neutre", 0.80),
-        ("nyra", "neutre", 1.00),
+        ("noam", "fatigue", 0.08), ("iris", "neutre", 0.26),
+        ("sael", "neutre", 0.44), ("julian", "neutre", 0.64),
+        ("nyra", "neutre", 0.86),
     ])
-    julian taquin "Messieurs-dames ! Voici le service de restauration le plus prestigieux de l'orbite !"
-    iris colere "Pose. Le. Plateau."
-    julian "Je le pose !"
-    "Le plateau touche la table avec un bruit sinistre. Un morceau de pain roule jusqu'au bord."
-    noam sourire "C'est un repas ou une attaque ?"
-    julian sourire "Les deux, si tu continues."
-    sael desaccord "Julian, écarte-toi."
-    julian "J'essaye de rendre service !"
-    nyra raison "Tu en rendrais davantage en laissant de l'espace autour du lit."
-    julian "Il y a donc une coalition contre les bénévoles."
-    iris taquin "Elle est unanime."
-    "Sael prend ma main, vérifie brièvement mon pouls, puis me rend mon poignet."
-    sael neutre "Tu as moins chaud. La fièvre est tombée, mais tu te reposes aujourd'hui. Pas de discussion."
-    noam fatigue "Les discussions, c'est pourtant notre seule activité ici."
-    sael determine "Alors tu peux faire exception."
-    nyra neutre "J'ai demandé qu'on prépare des portions simples. C'est ce qui nous paraissait le moins risqué après la nuit dernière."
-    julian taquin "Riz, poulet et légumes. La gastronomie du rétablissement. Aucun risque d'y prendre goût."
-    iris colere "Tu peux arrêter d'insulter la nourriture pendant qu'il mange ?!"
-    noam sourire "Je trouve ça délicieux."
-    julian surpris "Tu n'as pas encore goûté !"
-    noam sourire "Je voulais t'embêter. Ça marche plutôt bien."
-    "Nyra détourne les yeux. Elle sourit très légèrement, puis reprend sa posture habituelle."
-    sael reflexion "La ventilation fonctionne mieux ce matin. Les équipes techniques ont remis une partie du circuit en service."
-    iris fatigue "Ça explique pourquoi j'ai pu dormir vingt minutes sans me réveiller en nage."
-    nyra raison "Le Canon a encore sollicité le réseau de refroidissement. Le diagnostic n'est pas terminé."
-    julian "Pourrais-je proposer qu'on interdise les coups de chaud par vote unanime ?"
-    iris desaccord "Non."
-    noam fatigue "Même pas pour mon bien ?"
+    julian joie "Messieurs-dames : le service de restauration le plus prestigieux de l'orbite."
+    iris colere "Pose le plateau avant de tuer le malade."
+    julian agace "Je le pose !"
+    play sound "audio/sfx_metal_clank.mp3"
+    "Le plateau heurte la table. Un morceau de pain roule jusqu'au bord."
+    noam sourire "C'est un repas ou une attaque ciblée ?"
+    julian sourire "Les deux restent possibles."
+    sael desaccord "Écarte-toi, Julian."
+    julian surpris "J'aide !"
+    nyra raison "Tu aiderais davantage en libérant le passage."
+    julian agace "Une coalition contre les bénévoles. Déjà."
+    iris taquin "Et elle est unanime."
+
+    "Sael prend mon poignet, compte les battements, puis pose deux doigts contre mon front."
+    sael neutre "La fièvre est tombée. Tu restes au calme aujourd'hui."
+    noam fatigue "Au Conclave, rester au calme est une activité à plein temps."
+    sael determine "Alors tu as de l'entraînement."
+    nyra neutre "J'ai demandé quelque chose de simple. Riz, poulet, légumes."
+    julian taquin "La gastronomie du rétablissement. Aucun risque d'y prendre goût."
+    iris colere "Tu peux le laisser manger sans critiquer la nourriture ?"
+    noam sourire "C'est délicieux."
+    julian surpris "Tu n'as encore rien goûté."
+    noam taquin "Je voulais voir si ça t'agacerait."
+    julian agace "Succès incontestable."
     sael neutre "Mange."
-    "J'obéis. Pendant quelques minutes, les autres débattent de la quantité de sel dans les légumes et d'une éventuelle redistribution des desserts."
-    julian "Je dis simplement que les malades méritent un dessert supplémentaire."
+
+    "Pendant quelques minutes, ils débattent du sel, des desserts et des portions."
+    julian joie "Un malade mérite un dessert supplémentaire. C'est une question de morale."
     iris taquin "Tu t'es découvert une maladie ?"
-    julian "Le manque de reconnaissance."
-    nyra neutre "Le traitement sera long."
-    "Je manque d'avaler de travers."
-    noam sourire "Nyra !"
-    nyra raison "C'était une observation."
-    sael desaccord "Une observation très pertinente. Et maintenant, laisse-le manger."
-    "Je repose ma cuillère. L'espace d'une seconde, j'oublie le Conclave, le vote et le couloir."
-    "Puis Kael me revient en tête. Sa photographie. Les images qui pourraient montrer qui est entré chez lui."
+    julian neutre "Le manque de reconnaissance."
+    nyra raison "Le traitement risque d'être long."
+    "J'avale de travers."
+    noam surpris "Nyra !"
+    nyra neutre "C'était un diagnostic provisoire."
+
     noam reflexion "Kael n'est pas venu ?"
     iris inquiet "Il est passé cette nuit. Il ne voulait pas te réveiller."
-    sael reflexion "Il a demandé si tu allais mieux. Puis il est reparti."
-    julian neutre "Il n'a toujours pas retrouvé sa photo."
-    iris desaccord "Julian !"
-    julian "Quoi ? Il le sait déjà."
-    noam fatigue "C'est vrai."
-    nyra reflechit "Kael a demandé l'accès aux images de sa chambre. Nous n'avons pas encore de réponse."
-    iris fatigue "On dirait qu'on peut enfin parler d'autre chose que de ma capacité à veiller un malade."
-    noam sourire "C'est toi qui en parles le plus."
-    iris colere "TOI, MANGE."
-    "Je reprends ma cuillère."
+    sael reflexion "Il a demandé si la fièvre baissait, puis il est reparti."
+    julian neutre "Il n'a toujours pas retrouvé la photo de Léa."
+    iris desaccord "Julian."
+    julian agace "Quoi ? Noam le sait déjà."
+    nyra reflechit "Kael a demandé l'accès aux images de sa chambre. Kami ne lui a pas répondu."
+
     call show_custom_title("Une bonne heure plus tard") from _call_show_custom_title_2
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([
-        ("noam", "neutre", 0.20), ("iris", "neutre", 0.40),
-        ("sael", "neutre", 0.60), ("julian", "neutre", 0.80),
-        ("nyra", "neutre", 1.00),
+        ("noam", "neutre", 0.08), ("iris", "neutre", 0.26),
+        ("sael", "neutre", 0.44), ("julian", "neutre", 0.64),
+        ("nyra", "neutre", 0.86),
     ])
-    julian taquin "Voilà. Notre malade a mangé. Je réclame officiellement une médaille."
-    iris fatigue "Tu l'as regardé manger. C'est tout."
-    julian "J'ai aussi transporté le plateau."
-    sael determine "Et failli le renverser."
-    julian "Les critiques sont parfois injustes envers les grands hommes."
-    "Je me lève en m'appuyant sur le rebord du lit."
+    julian joie "Voilà. Il a mangé. Je réclame une médaille."
+    iris fatigue "Tu l'as regardé mâcher."
+    julian neutre "J'ai transporté le plateau."
+    sael desaccord "Tu as failli le renverser."
+    julian agace "La postérité oublie toujours les détails."
+
+    "Je me lève en gardant une main sur le lit."
     sael inquiet "Doucement."
-    noam fatigue "J'ai juste besoin de marcher un peu. Promis, je ne pars pas courir autour de la station."
-    iris desaccord "Tu veux que je te porte, tant qu'on y est ?"
-    noam sourire "Ça dépend. Tu pourrais ?"
-    iris colere "ESSAIE POUR VOIR."
-    nyra reflechit "La salle d'observation est moins chaude. On peut l'y accompagner, si Sael pense que ça ne pose pas de problème."
-    sael neutre "Quelques minutes. Et au moindre vertige, retour au lit."
-    noam sourire "Compris."
+    noam fatigue "J'ai besoin de marcher cinq minutes. Pas de courir autour de la station."
+    iris desaccord "Tu veux que je te porte aussi ?"
+    noam taquin "Tu pourrais ?"
+    iris colere "Essaie pour voir."
+    nyra reflechit "La salle d'observation est plus fraîche. Nous pouvons l'accompagner."
+    sael neutre "Quelques minutes. Au premier vertige, on revient."
+
     $ hideGroup()
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Dans le couloir, Julian se lance dans une description interminable de son système idéal de répartition des desserts. Iris corrige chaque point. Nyra ne participe pas. Sael marche près de moi."
-    julian "Je propose donc trois catégories : les desserts de consolation, les desserts de victoire et les desserts de nécessité diplomatique."
-    iris desaccord "Tu viens d'inventer trois raisons pour en manger."
-    julian "Trois excellentes raisons."
+    "Dans le couloir, Julian développe un système complet de répartition des desserts. Iris démonte chaque règle. Sael marche près de moi sans en avoir l'air."
+    julian joie "Trois catégories : consolation, victoire et nécessité diplomatique."
+    iris desaccord "Tu viens d'inventer trois excuses pour manger du sucre."
+    julian sourire "Trois excellentes excuses."
     sael neutre "On arrive."
-    "Une voix filtre à travers la porte entrouverte de la salle d'observation."
-    stop music fadeout 1.0
-    play music "music/bgm_system_override.mp3" fadein 2.0
-    kami "Oh, Kael... J'aimerais tellement t'aider. Mais tu ne peux pas exiger que la technologie obéisse à tes sentiments."
-    "Nous nous arrêtons. Julian referme aussitôt la bouche."
-    kael "Sept jours. C'est ça que tu me dis ?"
-    "Personne ne bouge. Sael me lance un regard, puis pousse la porte."
+
+    "Une voix traverse la porte entrouverte de la salle d'observation."
+    stop music fadeout 0.5
+    play sound sfx_announce
+    scene bg_diffusion_professeur at adaptive_fullscreen with fade
+    show screen kami_broadcast_ui
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    $ bc_show("kael", "colere")
+    kami "Kael, j'aimerais énormément t'aider. Mais même une technologie parfaite ne peut pas accélérer le temps pour tes beaux yeux."
+    kael colere "Sept jours. C'est ta réponse ?"
+    kami "C'est ma réponse. Tu veux que je la chante ?"
+    kael colere "Je veux les images de ma chambre. Celles de la nuit où la photo a disparu."
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Et moi, je veux un peu de gratitude. Nous allons devoir vivre avec nos déceptions respectives."
+    kael colere "KAMI !"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Les brouilleurs imposent un délai de sept jours avant l'accès aux enregistrements audio et vidéo de la zone protégée."
+    kael doute "Même si le vote échoue ?"
+    kami "Même si le vote échoue. Une interdiction future ne recrée pas les données indisponibles aujourd'hui."
+    $ bc_hide()
+    hide screen kami_broadcast_ui
+
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_42
     scene bg_observation at adaptive_fullscreen with dissolve
     $ current_period = "Après-midi"
+    play music "music/bgm_low_tension.mp3" fadein 1.0
     $ showGroup([
-        ("kael", "neutre", 0.50),
-        ("noam", "fatigue", 0.18), ("iris", "inquiet", 0.34),
-        ("sael", "neutre", 0.66), ("julian", "neutre", 0.82),
-        ("nyra", "neutre", 0.96),
+        ("noam", "fatigue", 0.05), ("iris", "inquiet", 0.22),
+        ("sael", "neutre", 0.39), ("kael", "colere", 0.56),
+        ("julian", "neutre", 0.73), ("nyra", "neutre", 0.90),
     ])
-    kael colere "Je t'ai posé une question simple !"
-    kami "Et je t'ai donné une réponse merveilleusement claire."
-    kael "Je veux les images de ma chambre. Celles de la nuit où ma photo a disparu."
-    kami "Et moi, je veux un peu de gratitude."
-    kael colere "KAMI !"
-    kami "D'accord, d'accord ! Les brouilleurs en vigueur imposent un délai de sept jours sur l'accès aux données vidéo et audio concernées."
-    kami "Ce n'est pas une question de bonne volonté. Même moi, je ne peux pas te donner immédiatement ce que le système ne rendra accessible que plus tard."
-    kael calme "Donc avant sept jours, impossible de vérifier qui est venu."
-    kami "Exactement ! Je vois que tu écoutes quand tu veux."
-    kael triste "Et si le vote échoue ?"
-    kami "Si vous interdisez les brouilleurs, les enregistrements concernés ne redeviendront pas accessibles par magie."
-    "Kael ne répond pas. Il serre les doigts si fort autour du bord de la console que ses phalanges blanchissent."
+    kael colere "Donc celui qui a pris la photo a une semaine. Une semaine où je peux rien vérifier."
     iris inquiet "Kael..."
-    kael calme "..."
-    "Il nous remarque enfin."
-    kael calme "Vous êtes là depuis combien de temps ?"
-    julian taquin "Assez pour découvrir que Kami déteste toujours rendre service."
-    kami "Julian, je suis BLESSÉE !"
-    nyra raison "L'indisponibilité est-elle une propriété du brouilleur, ou une limitation de la base d'archives ?"
-    kami "Une propriété de la protection en place. Et non, je ne vais pas vous remettre son manuel technique."
-    nyra reflechit "C'était pourtant ma question suivante."
-    kael calme "Super. On va donc attendre une semaine pendant que celui qui m'a pris la photo..."
-    "Il s'interrompt."
-    sael neutre "Personne ici ne te demande d'oublier Léa."
+    kael colere "Vous êtes là depuis combien de temps ?"
+    julian taquin "Assez pour confirmer que Kami reste une partenaire administrative remarquable."
+    nyra reflechit "Elle a parlé de la zone protégée. Pas de toute la station."
+    nyra raison "Le délai vient du brouilleur ou de la base d'archives ?"
+
+    play sound sfx_announce
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    $ bc_show("nyra", "raison")
+    kami "Nyra, toujours prête à chercher la petite ligne en bas du contrat."
+    nyra raison "Le délai vient du brouilleur ?"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Oui. Et non, tu n'auras ni le manuel, ni le schéma, ni un joli cours privé."
+    nyra taquin "Tu viens de répondre à ma question."
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Ne prends pas cette habitude."
+    $ bc_hide()
+    hide screen kami_broadcast_ui
+
+    scene bg_observation at adaptive_fullscreen with dissolve
+    play music "music/bgm_low_tension.mp3" fadein 0.8
+    $ showGroup([
+        ("noam", "fatigue", 0.05), ("iris", "inquiet", 0.22),
+        ("sael", "neutre", 0.39), ("kael", "triste", 0.56),
+        ("julian", "neutre", 0.73), ("nyra", "raison", 0.90),
+    ])
+    sael neutre "Personne ne te demande d'oublier Léa."
     kael triste "J'ai pas dit ça."
     sael reflexion "Je sais."
-    iris fatigue "Tu as mangé quelque chose aujourd'hui ?"
-    kael colere "Ça n'a aucun rapport !"
-    iris desaccord "Je sais. Mais t'as quand même besoin de manger."
-    kael calme "... Plus tard."
-    "Il se tourne vers la porte, puis revient vers nous."
-    kael calme "Si vous découvrez quelque chose sur les chambres, vous me le dites. Même un détail."
+    iris desaccord "Tu as mangé ?"
+    kael colere "Ça n'a rien à voir !"
+    iris neutre "Exact. Réponds quand même."
+    kael fatigue "... Non."
+    iris desaccord "Évidemment."
+    kael calme "Si vous trouvez quoi que ce soit sur les chambres, vous me le dites. Même si ça paraît idiot."
     noam fatigue "Oui."
-    "Kael sort. Les autres le regardent partir."
+
     call play_stat_dialogue("j11") from _call_play_stat_dialogue_10
-    julian neutre "Bon. Les desserts diplomatiques peuvent attendre."
-    iris fatigue "Pour une fois, oui."
-    nyra reflechit "La distinction est intéressante. Il a parlé d'images de chambre, pas des couloirs."
-    noam reflexion "Parce que les brouilleurs sont dans les chambres."
-    nyra raison "Exactement."
+
+    "Kael quitte la salle sans attendre."
+    julian neutre "Les desserts diplomatiques attendront."
+    iris fatigue "Pour une fois, ferme-la sans commentaire."
+    nyra reflechit "La distinction reste importante. Les brouilleurs protègent les chambres. Pas les couloirs."
+    noam reflexion "Pas les couloirs..."
     sael inquiet "Noam ?"
-    "Je me suis appuyé contre le mur sans m'en rendre compte."
-    noam fatigue "Je vais retourner m'allonger."
-    iris desaccord "Pour une fois, voilà une bonne idée !"
-    julian taquin "Une décision raisonnable de Noam. Cette journée est historique."
-    noam sourire "Vous pouvez continuer votre débat sur les desserts sans moi."
+    "Je me suis appuyé au mur. La salle vient de pencher, ou c'est moi."
+    noam fatigue "Je retourne m'allonger."
+    iris desaccord "Oui. Maintenant."
     nyra neutre "Tu veux qu'on t'accompagne ?"
-    noam fatigue "C'est juste à côté. Ça ira."
-    sael determine "Tu marches lentement, et tu préviens si ça recommence."
-    noam sourire "Oui, Sael."
-    iris gene "Et repose-toi vraiment cette fois."
-    "Je les laisse dans la salle. Les pas de Julian et la voix d'Iris recommencent presque aussitôt derrière moi."
+    noam fatigue "C'est à côté. Ça va."
+    sael determine "Tu marches lentement. Et tu appelles si ça recommence."
     jump _11_0_1_2_CHAMBRE_INTROSPECTION
+
+    # Durée : 4m00
 
 
 label _11_0_1_2_CHAMBRE_INTROSPECTION:
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_43
     scene bg_chambre at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
-    "Je ferme la porte, retire mes chaussures et m'affale sur le lit."
-    noam fatigue "Voilà. J'obéis. Tout le monde est content."
-    "Le silence de la chambre est agréable pendant une dizaine de secondes. Puis les paroles de Kael me reviennent."
-    think "Sept jours..."
-    "Je me redresse légèrement."
-    noam reflexion "Les brouilleurs..."
-    "Je regarde le petit boîtier fixé au mur. Le voyant continue de pulser."
-    think "Kami dit qu'on ne peut pas consulter les images d'une chambre avant sept jours. D'accord."
-    "Je repense au couloir d'hier. J'étais près de l'infirmerie, pas dans une chambre."
-    noam hesitation "Mais là où j'étais..."
-    "Je m'interromps. J'aimerais vraiment avoir tort, parce que l'autre possibilité m'oblige à me lever."
+    "Je ferme la porte, retire mes chaussures et tombe sur le lit."
+    noam fatigue "Voilà. J'obéis. Tout le monde peut se détendre."
+    "Le silence tient dix secondes. Puis la phrase de Nyra revient."
+    think "Les chambres. Pas les couloirs."
+    "Je regarde le brouilleur fixé au mur. Son voyant pulse tranquillement."
+    noam reflexion "Sept jours pour une zone protégée..."
+    "Hier, je n'étais pas dans une chambre. J'étais devant l'infirmerie."
+    noam inquiet "Et dans le couloir, il n'y a pas de brouilleur."
+
     call _11_0_1_2_MINIJEU_7JOURS from _call__11_0_1_2_MINIJEU_7JOURS
+
     play music "music/bgm_world_decline.mp3" fadein 2.0
-    noam reflexion "Il n'y a pas de brouilleur dans les couloirs."
-    "Je laisse la phrase résonner. Elle paraît simple. Presque bête."
-    noam inquiet "Alors les caméras du couloir... elles devraient être accessibles, non ?"
-    "Je reste encore un instant au bord du lit, à fixer mes chaussures."
-    think "Iris m'étranglerait si elle me voyait me relever. Sael m'ordonnerait de retourner sous les draps."
-    noam sourire "Et Julian ferait un discours sur l'héroïsme des malades."
-    "Je remets mes chaussures."
-    think "Si j'ai imaginé tout ça, les images me le diront. Et si je n'ai rien imaginé..."
-    "Je me relève, plus prudemment que ce matin."
-    noam fatigue "Je vais juste poser une question. Après, je reviens."
+    "Les éléments se remettent en place. Le délai ne bloque pas les caméras du couloir."
+    noam reflexion "Donc les images devraient être accessibles."
+    "Je regarde mes chaussures. Iris m'étranglerait. Sael finirait probablement le travail."
+    noam sourire "Et Julian prononcerait un discours à l'enterrement."
+    "Je les remets. Lentement."
+    think "Si j'ai halluciné, les images me le diront. Si je n'ai pas halluciné..."
+    noam fatigue "Je pose une question. Une seule. Après, je reviens."
+
     call KD_ROUTE_J11_NYRA from _call_optional_kd_route_j11_nyra
     call OFFER_DAILY_EXPLORATION(
         "_11_0_1_3_SALLE_COMMUNICATION", 1,
@@ -339,153 +353,152 @@ label _11_0_1_2_CHAMBRE_INTROSPECTION:
         _("Rejoindre la salle d'Observation"), "observation"
     ) from _call_offer_exploration_j11
 
+    # Durée : 1m00 + mini-jeu/exploration
+
 
 label _11_0_1_3_SALLE_COMMUNICATION:
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_44
     scene bg_observation at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 2.0
-    "Les écrans de la salle d'observation affichent la Terre. Je m'installe devant une console et j'attends une seconde."
+    "La Terre tourne sur les écrans. Je m'installe devant une console et attends."
     noam fatigue "Kami ?"
-    pause 0.8
-    noam sourire "C'est la partie où tu apparais en me disant que j'ai une tête de zombie."
+    pause 0.6
+    noam taquin "C'est le moment où tu apparais pour dire que j'ai une tête de cadavre."
+
+    play sound sfx_announce
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Oh, mais JE PEUX ! Tu es tellement prévisible, Noam."
+    show screen kami_broadcast_ui
+    $ bc_show("noam", "fatigue")
+    kami "Oh, mais je peux le faire ! Tu as une tête épouvantable, Noam. Merci de m'avoir mâché le travail."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "D'ailleurs, je croyais que tu étais censé te reposer. Iris et Sael vont me gronder si je te laisse te fatiguer davantage !"
+    kami "Je croyais que tu devais te reposer. Iris et Sael vont être très déçues de mon encadrement."
     noam fatigue "Elles sont pas là."
-    kami "La désobéissance commence toujours par une phrase comme celle-là."
-    noam fatigue "J'ai besoin d'accéder à des enregistrements."
+    kami "La désobéissance commence toujours par une phrase aussi intelligente."
+    noam reflexion "J'ai besoin des enregistrements d'hier. Couloir de l'infirmerie, juste avant ton annonce."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Oh ? Nous avons un futur archiviste parmi nous ? Quelle vocation passionnante !"
-    noam reflexion "Hier. Dans le couloir près de l'infirmerie. Juste avant ton annonce."
+    kami "Nous avons donc un enquêteur. Fiévreux, désobéissant et sans mandat, mais un enquêteur."
+    noam colere "Les images sont accessibles ou pas ?"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Et tu voudrais voir si tu avais une bonne raison de demander l'alibi de tous tes petits camarades ?"
-    "Je serre les dents. Elle n'a pas oublié."
-    noam inquiet "Oui."
+    kami "Les couloirs ne sont pas protégés par les brouilleurs de vos chambres."
+    noam reflexion "Donc oui."
+    kami "Donc tu peux consulter le catalogue. Si les images existent encore."
+    noam inquiet "Pourquoi elles n'existeraient plus ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Tu pourrais aussi choisir de croire les gens. C'est une méthode très reposante, tu sais."
-    noam colere "Tu vas me donner les images, oui ou non ?"
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Quelle IMPOLITESSE ! Et après, on se demande pourquoi les enfants grandissent si mal."
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Mais enfin, pourquoi pas ? Les caméras des couloirs ne sont pas soumises au brouillage de vos chambres."
-    noam reflexion "Donc les images sont accessibles."
-    kami "Si elles sont encore là, évidemment."
-    "Je relève la tête."
-    noam inquiet "Comment ça, « si » ?"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Un ordinateur, Noam ! Il faut parfois le laisser travailler au lieu de le harceler."
+    kami "Parce que tu poses trop de questions avant même d'avoir regardé."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je t'ouvre le catalogue des archives. Cherche toi-même : heure, secteur, caméra. Rien de plus simple."
-    noam fatigue "C'est gentil, vraiment."
-    kami "Je sais. C'est presque inquiétant."
+    kami "Heure, secteur, caméra. Je t'ouvre le catalogue. Essaie de ne pas t'évanouir sur la console."
+    noam desaccord "Merci pour ta confiance."
+    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    kami "Toujours."
+    $ bc_hide()
+    hide screen kami_broadcast_ui
+
     scene bg_observation at adaptive_fullscreen with dissolve
-    "La console se déverrouille. Plusieurs secteurs apparaissent, chacun subdivisé en dizaines de créneaux horaires."
-    "Je commence à chercher celui que je veux. Mon cœur bat beaucoup trop vite pour un simple menu d'ordinateur."
+    play music "music/bgm_system_override.mp3" fadein 0.8
+    "La console se déverrouille. Des dizaines de secteurs et de créneaux apparaissent."
+    "Je lance la recherche. Mon cœur bat beaucoup trop vite pour un simple menu d'archives."
     call _11_0_1_3_MINIJEU_CAMERAS from _call__11_0_1_3_MINIJEU_CAMERAS
+
+    # Durée : 1m00 + mini-jeu
 
 
 label _11_0_1_1_CONFRONTATION_KAMI:
     scene bg_observation at adaptive_fullscreen with dissolve
-    "Je sélectionne le dernier créneau. La console affiche un aperçu du couloir."
-    "Mon doigt reste suspendu au-dessus de la commande de lecture."
+    "Je sélectionne le dernier créneau. L'aperçu du couloir apparaît."
+    "Mon doigt reste au-dessus de la commande de lecture."
     noam inquiet "Allez..."
-    "L'image disparaît."
+    play sound "audio/sfx_glitch.mp3"
+    "L'image saute."
     "DONNÉES SUPPRIMÉES — ACCÈS IMPOSSIBLE."
     $ investigation_add("videos_supprimees")
-    "Je clique une seconde fois. Puis une troisième."
-    noam colere "Non. Non, NON !"
-    "Même message."
+    "Je clique encore. Même message. Une troisième fois. Rien."
+    noam colere "Non... Non, putain !"
     noam colere "KAMI !"
+
+    play sound sfx_announce
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "OH ! Je ne savais pas que nous en étions déjà à l'étape où tu cries mon nom dans une pièce vide."
+    show screen kami_broadcast_ui
+    $ bc_show("noam", "colere")
+    kami "Oh ! Nous en sommes déjà à l'étape où tu cries mon nom dans une pièce vide."
     noam colere "Les images ont été supprimées !"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Oui. Je sais lire."
     noam colere "C'est toi ?"
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Moi ?! Tu me blesses. Je t'ai ouvert les archives avec toute la gentillesse dont je suis capable."
-    noam colere "Tu pouvais faire semblant de m'y donner accès."
+    kami "Moi ? Après toute la gentillesse dont je viens de faire preuve ?"
+    noam desaccord "Tu pouvais m'ouvrir un faux catalogue."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Quel soupçon désobligeant. La requête d'effacement n'a pas été effectuée par moi."
-    noam reflexion "Une requête ?"
-    kami "Oui, une requête. Je peux même te l'épeler si tu préfères."
-    noam colere "Qui l'a envoyée ?!"
+    kami "La requête d'effacement ne vient pas de moi. Une information gratuite. Profites-en."
+    noam reflexion "Une requête ? Qui l'a envoyée ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ah ! Voilà une question intéressante."
-    noam inquiet "Kami..."
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Elle provient d'un accès autorisé à bord du Conclave. Rien de bien exotique."
-    "Je regarde la console. Une ligne vide apparaît là où aurait dû figurer le fichier."
-    noam reflexion "Tu veux dire qu'un des représentants..."
+    kami "Un accès autorisé à bord du Conclave."
+    noam inquiet "Un représentant ?"
+    kami "Je n'ai pas dit ça. Les mots comptent, surtout quand tu t'apprêtes à accuser tes amis."
+    noam colere "Tu sais qui c'est."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Je n'ai pas dit « un représentant ». J'ai dit « un accès autorisé ». Fais attention, les mots ont un sens."
-    noam colere "Tu sais qui l'a demandé !"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et même si je le savais, tu voudrais que je te le dise comme ça ? Sans effort ?"
-    noam fatigue "Oui."
-    kami "Oh. C'est si décevant."
-    "Je ravale ma colère. Elle attend que je m'emporte, ça se voit."
-    noam reflexion "L'effacement concerne seulement ce créneau ?"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Voilà ! Une question technique ! Tu progresses !"
-    kami "Ce segment est indisponible. Je te laisse regarder le reste du catalogue si ça t'amuse. Je ne peux pas te fabriquer des images qui ne sont plus là."
-    noam inquiet "Il y avait quelque chose sur ces images ?"
+    kami "Peut-être."
+    noam colere "Alors dis-le !"
+    kami "Non."
+
     pause 0.6
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Tu aimerais beaucoup que je réponde « oui », n'est-ce pas ?"
-    noam colere "Je veux juste savoir ce que j'ai vu !"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Pose une meilleure question. Tout a-t-il été effacé ? Quand ? Qui possédait un accès ?"
+    noam reflexion "Seulement ce créneau ?"
+    kami "Seulement ce segment. Tu apprends vite quand tu es contrarié."
+    noam inquiet "Il y avait quelque chose dessus."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais moi aussi, Noam ! C'est ce qui rend notre conversation si palpitante !"
-    "Je ne sais pas si elle plaisante. Le pire, c'est que je crois qu'elle se réjouit sincèrement de ne pas me donner de réponse."
-    noam inquiet "Alors pourquoi tu souris ?"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Parce que je suis ravissante."
-    noam colere "Arrête !"
+    kami "C'est une hypothèse."
+    noam colere "Quelqu'un a supprimé exactement le moment que je cherche !"
+    kami "Ça, c'est un fait."
+
+    call cutin("noam") from _call_kd_cutin_j11_noam
+    noam colere "{shout}ARRÊTE DE JOUER AVEC MOI !{/shout}"
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "NON, TOI, ARRÊTE ! Tu viens dans MA salle, tu M'ACCUSES, et tu crois que je vais tout t'expliquer comme une gentille petite assistante !"
-    "Son visage reste figé une fraction de seconde."
+    kami "TU ES VENU ME VOIR ! Tu m'accuses, tu exiges, et tu voudrais décider du ton ?"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais je vais quand même te donner quelque chose. Un cadeau."
-    noam reflexion "Quoi ?"
-    kami "Cherche du côté des gens qui avaient accès à ce secteur. Ça te fera une occupation."
+    kami "Mais je vais encore t'aider. Cherche qui pouvait accéder à ce secteur."
     noam inquiet "Les autres..."
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Les gens qui mangent avec toi. Qui te donnent de l'eau. Qui viennent à ton chevet. Quelle adorable petite communauté !"
-    "Je pense à Iris qui m'a apporté le linge, à Sael, à Julian et à son plateau ridicule."
-    think "Elle essaye de me faire soupçonner tout le monde."
-    noam colere "Tu n'as rien prouvé."
+    kami "Ceux qui te donnent de l'eau. Qui veillent à ton chevet. Quelle adorable petite communauté."
+    "Iris endormie au bord du lit. Sael, la main sur mon poignet. Julian et son plateau ridicule."
+    think "Elle veut que je transforme chaque geste en mobile."
+    noam desaccord "Tu n'as rien prouvé."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Exact. Et toi non plus."
-    "Je reste silencieux."
-    noam reflexion "Si quelqu'un a effacé ces images, il savait ce que j'allais chercher ?"
+    noam reflexion "Si quelqu'un a effacé les images, il savait ce que j'allais chercher ?"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Voilà que tu recommences à poser les bonnes questions."
-    noam colere "RÉPONDS !"
+    kami "Très bonne question."
+    noam colere "Réponds."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Non."
-    pause 0.8
-    noam fatigue "Tu prends vraiment plaisir à ça, hein ?"
+    kami "Toujours non."
+    noam fatigue "Tu prends vraiment plaisir à ça."
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Énormément !"
-    "Elle ne cherche même pas à le nier. Je crois que c'est ce qui me donne le plus envie de hurler."
+    kami "Énormément."
     noam colere "Va te faire foutre."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "LANGAGE !"
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Allez, au lit, mon petit détective. Tu as déjà réussi à ne pas t'évanouir pendant une conversation entière. C'est un grand progrès."
+    kami "Retourne te coucher, mon petit détective. Tu as tenu toute une conversation sans perdre connaissance."
     noam inquiet "Et les images ?"
-    kami "Toujours supprimées. Tu vois ? Certaines choses restent constantes dans ce monde."
-    "Je tourne les talons."
-    kami "Oh, Noam ?"
-    "Je m'arrête malgré moi."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Si tu avais vu quelque chose d'important, tu crois vraiment que quelqu'un aurait pris le risque de laisser les images en place ?"
-    "Je me retourne. L'écran est déjà noir."
-    think "C'est une question. Pas une réponse."
-    "Je quitte la salle avant qu'elle puisse m'en poser une autre."
-    stop music fadeout 2.0
+    kami "Toujours supprimées. Certaines choses restent stables. C'est rassurant, non ?"
+    $ bc_hide()
+    hide screen kami_broadcast_ui
+
+    scene bg_observation at adaptive_fullscreen with dissolve
+    stop music fadeout 1.0
+    "Je me lève. L'écran derrière moi se rallume une dernière fois."
+    play sound sfx_announce
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    show screen kami_broadcast_ui
+    kami "Noam ? Si tu n'avais rien vu d'important... pourquoi quelqu'un aurait-il pris le risque d'effacer ce passage ?"
+    hide screen kami_broadcast_ui
+    scene black with cut
+    think "Une question. Pas une réponse."
+    "Je quitte la salle avant qu'elle puisse en ajouter une autre."
     jump _11_0_1_1_RETOUR_CHAMBRE
+
+    # Durée : 2m35
 
 
 label _11_0_1_1_RETOUR_CHAMBRE:
@@ -493,57 +506,57 @@ label _11_0_1_1_RETOUR_CHAMBRE:
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_47
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 3.0
-    "Dans le couloir, j'entends une dispute venir de la salle commune."
-    julian "J'AI DIT QUE C'ÉTAIT UNE MÉDAILLE HONORIFIQUE !"
-    iris "T'AS DESSINÉ TON PROPRE VISAGE DESSUS !"
-    "Je m'arrête. Il y a quelques heures, j'aurais ri. Maintenant, je me demande combien de temps ils ont passé ensemble avant de rentrer ici."
+    "Une dispute déborde de la salle commune."
+    julian colere "J'AI DIT QUE C'ÉTAIT UNE MÉDAILLE HONORIFIQUE !"
+    iris colere "T'AS DESSINÉ TON PROPRE VISAGE DESSUS !"
+    "Il y a quelques heures, j'aurais ri. Maintenant, je calcule le temps qu'ils ont passé ensemble et les portes auxquelles ils ont accès."
     think "Non. C'est exactement ce que Kami veut."
-    "Je reprends ma marche."
+
     "Au croisement du dortoir, une porte s'ouvre. Lysa passe la tête dans le couloir."
+    $ showGroup([("noam", "fatigue", 0.25), ("lysa", "neutre", 0.75)])
     lysa neutre "Noam ?"
     noam fatigue "Salut."
-    lysa reflechit "Tu tiens debout. C'est déjà mieux qu'hier."
-    noam sourire "Vous avez tous préparé des remarques sur mon malaise ?"
-    lysa sourire "On a fait un concours. J'ai perdu contre Julian. Il avait dix-sept propositions."
+    lysa reflechit "Tu tiens debout. C'est mieux qu'hier."
+    noam sourire "Vous avez préparé des remarques sur mon malaise ?"
+    lysa sourire "Concours collectif. Julian en avait dix-sept. On a abandonné."
     noam fatigue "Ça lui ressemble."
-    "Elle m'observe un peu trop longtemps."
+    "Elle me regarde vraiment. Pas comme les autres, qui vérifient si je vais tomber."
     lysa reflechit "Tu vas bien ?"
-    noam fatigue "Je suis fatigué."
-    lysa neutre "C'est pas la question."
-    "Je n'ai pas envie de lui mentir. Je n'ai pas non plus envie de lui répondre."
-    noam hesitation "Je cherche encore des choses. J'en trouve pas beaucoup."
-    lysa reflechit "Le dessin ?"
-    noam fatigue "Pas seulement."
-    "Elle ne demande pas lesquelles."
-    lysa neutre "D'accord. Si tu veux parler, évite juste de tomber avant d'arriver à ma porte. Ça devient pénible."
-    noam sourire "Je vais essayer."
-    "Elle rentre dans sa chambre. Je reste encore un instant dans le couloir."
-    think "Elle m'aurait laissé parler. J'en suis sûr."
-    think "Pourquoi est-ce que ça ne m'aide pas à me sentir mieux ?"
+    noam fatigue "Je suis crevé."
+    lysa blase "C'était pas la question."
+    noam hesitation "Je cherche encore le dessin. Et... autre chose."
+    lysa reflechit "Tu trouves ?"
+    noam fatigue "Surtout des questions."
+    lysa neutre "D'accord."
+    "Elle ne me demande pas lesquelles. Ça rend le silence plus difficile."
+    lysa taquin "Si tu veux parler, évite de t'écrouler avant d'atteindre ma porte. C'est mauvais pour ma réputation."
+    noam sourire "Je vais faire un effort."
+    lysa neutre "Fais ça."
+    $ hideGroup()
+
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_48
     scene bg_chambre at adaptive_fullscreen with fade
-    "Je ferme la porte et m'assieds sur le lit."
-    "La chaise du bureau est toujours à sa place. Je me souviens l'avoir bloquée contre la poignée avant de dormir. Je me souviens aussi de la photo de Léa, du dessin de Juliette, des batteries qu'Elias cherchait."
-    think "Des objets disparaissent. Des données disparaissent aussi."
-    noam reflexion "Et moi, je ne suis même pas capable de dire ce que j'ai vu."
-    "Je prends ma tablette pour noter ce que Kami a dit. « Accès autorisé ». « Données supprimées ». « Sept jours »."
-    "Je relis ma liste."
-    think "Aucune de ces trois phrases ne prouve qu'un représentant a fait quoi que ce soit."
-    "Je repose la tablette sur le bureau, à l'endroit où le dessin aurait dû se trouver."
-    noam fatigue "Juliette..."
-    "Je repense à Iris qui s'est endormie au bord du matelas, à Sael qui m'a obligé à boire, à Julian qui a failli renverser un plateau sur moi."
-    think "Tout ça s'est vraiment passé. Leurs gestes ne disparaissent pas parce que Kami a décidé de me faire peur."
-    "Je commence à retirer ma veste."
-    "Un bruit de pas passe devant la porte."
-    "Je m'immobilise."
-    pause 1.0
-    "Les pas s'éloignent. Quelqu'un doit simplement regagner sa chambre."
-    noam sourire "Très bien. Demain, je soupçonnerai le couloir de comploter contre moi."
-    "Je n'arrive pas à rire."
-    "Je me couche sans bloquer la porte avec une chaise. Après quelques secondes, je me redresse pour vérifier le verrou."
-    think "C'est fermé."
-    "Je vérifie une deuxième fois."
+    "Je verrouille la porte et m'assieds devant le bureau."
+    "La photo de Léa. Le dessin de Juliette. Les batteries cherchées par Elias. Maintenant, un segment vidéo."
+    noam reflexion "Des objets disparaissent. Des données aussi."
+    "Sur ma tablette, je note trois expressions : ‘accès autorisé’, ‘segment supprimé’, ‘sept jours’."
+    think "Aucune ne prouve qu'un représentant a fait quoi que ce soit."
+    "J'ajoute une quatrième ligne, puis je l'efface : ‘Quelqu'un savait.’"
+    noam fatigue "Pas encore."
+
+    "Des pas passent devant ma porte. Je me fige, la main sur la tablette."
+    pause 0.8
+    "Ils continuent jusqu'au bout du couloir."
+    noam taquin "Très bien. Demain, j'interroge le sol."
+    "La blague ne sort pas comme une blague."
+    "Je me couche, puis me relève pour vérifier le verrou."
+    think "Fermé."
+    "Trois secondes plus tard, je vérifie encore."
+
     scene black with fade
     stop music fadeout 4.0
     call end_day("12", sleeping=True) from _call_end_day_2
     jump _12_0_1_1_REVEIL_CHAMBRE
+
+    # Durée : 1m25
+    # Total estimé : 12m55 + mini-jeux et exploration
