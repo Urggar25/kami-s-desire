@@ -17,10 +17,10 @@ label _21_0_1_1_0_0_REVEIL:
     $ noam_has_juliette_drawing = False
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
-    "Je me réveille avant l'annonce de Kami, avec cette sensation étrange d'avoir oublié quelque chose d'important."
-    "Il me faut quelques secondes pour comprendre que, cette fois, ce n'est pas un vote, une dispute ou un bruit derrière la grille qui m'attend."
+    "Je me réveille avant l'annonce de Kami avec l'impression d'avoir raté quelque chose."
+    "Puis je vois le sac contre le bureau."
     think "On rentre."
-    "Mon sac est déjà posé contre le bureau. Je l'avais préparé hier soir presque mécaniquement, en remettant deux fois les mêmes affaires dedans avant de comprendre que je les avais déjà rangées."
+    "Je l'ai préparé hier soir. J'ai quand même réussi à ranger deux fois le même tee-shirt avant de m'en rendre compte."
     "La grille d'aération est toujours là, au-dessus du bureau. Je la regarde malgré moi."
     think "Quelques heures."
     "Après ça, elle pourra bien faire tous les bruits qu'elle veut."
@@ -37,22 +37,22 @@ label _21_0_1_1_0_0_REVEIL:
     tomas hesitation "Tu viens de dire exactement la phrase qu'on dit juste avant de découvrir qu'on a oublié quelque chose."
     elen rire "Mais non ! J'ai vérifié deux fois."
     lysa blase "Donc t'as probablement oublié deux fois la même chose."
-    elen "Vous êtes vraiment incapables d'être positifs cinq minutes."
-    tomas "Moi je suis positif."
-    lysa "T'as recompilé mentalement ta valise trois fois depuis que je suis sortie de ma chambre."
+    elen colere "Vous êtes vraiment incapables d'être positifs cinq minutes."
+    tomas hesitation "Moi, je suis positif."
+    lysa blase "T'as recompilé mentalement ta valise trois fois depuis que je suis sortie de ma chambre."
     tomas surpris "Comment tu—"
-    lysa "Parce que tu comptes à voix haute."
+    lysa blase "Parce que tu comptes à voix haute."
     "Tomas ferme immédiatement la bouche."
     noam taquin "Bonjour."
     elen joie "Noam ! T'es prêt ?"
-    noam "Normalement."
+    noam fatigue "Normalement."
     tomas reflexion "Voilà. Lui aussi."
     lysa blase "Magnifique. Trois adultes et pas une certitude."
     "Elle a son sac sur une épaule, à peine rempli. Le mien paraît énorme à côté."
     noam surpris "C'est tout ce que t'as ?"
-    lysa "J'ai pas emménagé ici."
-    elen "Moi non plus !"
-    lysa "Ton sac a l'air de contenir un cadavre."
+    lysa blase "J'ai pas emménagé ici."
+    elen colere "Moi non plus !"
+    lysa blase "Ton sac a l'air de contenir un cadavre."
     elen surpris "Il contient pas de cadavre."
     lysa blase "Merci Elen. C'était important de le préciser."
     "Je souris malgré moi."
@@ -69,7 +69,7 @@ label _21_0_1_1_0_0_SAS:
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
     "Quand j'arrive au sas, presque tout le monde est déjà là."
-    "Une capsule est déjà amarrée derrière la baie. Pendant une seconde, mon cœur accélère avant que je remarque les marquages sur sa coque."
+    "Une capsule est déjà amarrée derrière la baie. Mon cœur accélère avant que je voie les marquages sur sa coque."
 
     think "Livraison."
 
@@ -97,7 +97,7 @@ label _21_0_1_1_0_0_SAS:
     iris blase "Je te laisse celui marqué fragile."
     mara "Sympa."
     kael calme "La navette peut encore arriver."
-    noam "Ouais."
+    noam fatigue "Ouais."
 
     "Personne ne répond vraiment. Au début, les discussions reprennent quand même : Elen parle déjà de ce qu'elle mangera en rentrant, Julian de la première chose qu'il publiera, Tomas vérifie l'heure toutes les deux minutes."
 
@@ -159,6 +159,8 @@ label _21_0_1_1_0_0_SAS:
 
     kami "La navette de retour ne viendra pas aujourd'hui."
 
+    $ shake(8, 0.24)
+
     pause 0.6
 
     hide screen kami_broadcast_ui
@@ -180,6 +182,7 @@ label _21_0_1_1_0_0_SAS:
     ])
 
     ryn colere "QUOI ?!"
+    call kd_vn_reaction("ryn", "colere", "#ff9c55")
     iris colere "Non. Non, tu vas pas nous faire ça maintenant."
     noam colere "Pourquoi elle vient pas ?"
     elen inquiet "Attends, on devait partir aujourd'hui !"
@@ -193,8 +196,8 @@ label _21_0_1_1_0_0_SAS:
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
-    kami "Le départ du jour vingt-et-un était une possibilité anticipée."
-    kami "Une faveur, en quelque sorte."
+    kami "Le départ du jour vingt-et-un n'était qu'une possibilité."
+    kami "Une petite faveur, en quelque sorte."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
@@ -202,9 +205,8 @@ label _21_0_1_1_0_0_SAS:
 
     scene bg_diffusion_fier at adaptive_fullscreen with dissolve
 
-    kami "Continuer les débats."
-    kami "Continuer les votes."
-    kami "Continuer à améliorer le monde !"
+    kami "Ils veulent continuer les débats, les votes..."
+    kami "Bref, continuer à améliorer le monde !"
 
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
 
@@ -310,8 +312,8 @@ label _21_0_1_1_0_0_SAS:
     julian inquiet "Personne ne l'est."
     lysa fatigue "Je suis énervée. Je suis juste pas surprise."
     noam inquiet "Pas surprise ?"
-    lysa "Je pensais pas que ce serait aussi simple, c'est tout."
-    noam "Pourquoi ?"
+    lysa fatigue "Je pensais pas que ce serait aussi simple, c'est tout."
+    noam reflexion "Pourquoi ?"
     lysa blase "Regarde les vingt derniers jours."
     mara "Pour une fois, elle marque un point."
     lysa "Je vais encadrer ça."
@@ -328,9 +330,9 @@ label _21_0_1_1_0_0_SAS:
 
     sael fatigue "Nous aussi."
 
-    "Cette fois, personne ne trouve quoi ajouter."
+    "Personne ne lui répond. Elen remet son sac sur son épaule, puis le laisse retomber au sol."
 
-    lysa blase "Bon. Les cartons vont pas se ranger tout seuls."
+    lysa blase "Bon. Les cartons vont pas se ranger tout seuls, et je refuse de passer neuf jours à les regarder."
     noam fatigue "Je t'aide."
     elen "Moi aussi."
     julian "Je viens."
@@ -346,8 +348,8 @@ label _21_0_1_1_0_0_LIVRAISON:
     scene bg_stockage at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    "Une demi-heure plus tard, le sas s'est vidé de plusieurs sacs mais pas des caisses."
-    "Nyra a fini par répartir les tâches sans vraiment demander l'avis de personne : certains transportent, d'autres ouvrent les cartons, les derniers trient ce qui va à la cafétéria, à l'infirmerie, à la maintenance ou au stockage."
+    "Une demi-heure plus tard, les sacs ont quitté le sas. Les caisses, non."
+    "Nyra répartit les tâches sans demander l'avis de personne : transport, ouverture, puis tri vers la cafétéria, l'infirmerie, la maintenance ou le stockage. Personne ne proteste."
 
     $ showGroup([
         ("nyra", "raison"),
@@ -363,7 +365,7 @@ label _21_0_1_1_0_0_LIVRAISON:
     elen "Je ferai pas ça."
     julian sourire "Je suis prêt à témoigner en ta faveur si ça arrive."
     elen colere "Vous êtes chiants."
-    noam "On commence ?"
+    noam fatigue "On commence ?"
     nyra "Oui. Et si vous hésitez, stockage. On vérifiera après."
 
     $ hideGroup()
@@ -396,7 +398,7 @@ label _21_0_1_1_0_0_LIVRAISON:
     "Depuis quelques minutes, il ne range presque plus rien."
 
     noam reflexion "Tu cherches quoi ?"
-    elias "Attends."
+    elias fatigue "Attends."
 
     "Il ouvre une caisse, pousse des câbles sur le côté, la referme, puis passe à la suivante."
 
@@ -407,7 +409,7 @@ label _21_0_1_1_0_0_LIVRAISON:
     noam "Elias ?"
     elias ecoute "Les plaques."
     noam reflexion "Quelles plaques ?"
-    elias "Celles que j'ai utilisées hier dans les dortoirs."
+    elias ecoute "Celles que j'ai utilisées hier dans les dortoirs."
     noam "Les plaques métalliques ?"
     elias "Ouais."
 
@@ -555,7 +557,7 @@ label _21_0_1_1_0_0_MANIFESTE:
     "Elias souffle, pas convaincu mais incapable de contredire."
 
     elias colere "Ça change pas mon problème."
-    noam "Les chambres."
+    noam reflexion "Les chambres."
     elias "Ouais. Il m'en restait six à fermer aujourd'hui."
 
     "Je mets une seconde à replacer les choses."
@@ -567,7 +569,7 @@ label _21_0_1_1_0_0_MANIFESTE:
     tomas "Merci, ça aide beaucoup."
     elias colere "Des caches, des panneaux inutilisés, des vieux morceaux de châssis. Je vais trouver."
     nyra raison "Tu vérifies avant de démonter quoi que ce soit."
-    elias "Oui maman."
+    elias fatigue "Oui, maman."
     nyra colere "Elias."
     elias fatigue "Oui. Je vérifierai."
 
@@ -588,9 +590,7 @@ label _21_0_1_1_0_0_MANIFESTE:
 label _21_0_1_1_0_0_RECUPERATION:
     scene bg_maintenance at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    "L'après-midi se transforme en chasse au métal."
-    "Pas aux plaques disparues. Elias a manifestement décidé qu'il les retrouverait plus tard."
-    "Pour l'instant, il veut surtout finir ce qu'il avait commencé."
+    "L'après-midi se transforme en chasse au métal. Pas aux plaques disparues : Elias veut d'abord finir ce qu'il a commencé."
     $ showGroup([
         ("elias", "ecoute", 0.20),
         ("tomas", "reflexion", 0.50),
@@ -641,8 +641,7 @@ label _21_0_1_1_0_0_RECUPERATION:
     $ hideGroup()
     scene bg_stockage at adaptive_fullscreen with dissolve
 
-    "On passe ensuite par le stockage, puis par une réserve de maintenance que je n'avais jamais vraiment regardée."
-    "Elias récupère des panneaux, des chutes de tôle et deux morceaux d'un ancien châssis. À chaque fois, Tomas vérifie qu'il ne démonte rien d'utile."
+    "On passe par le stockage, puis par une réserve de maintenance que je n'avais jamais vraiment regardée. Elias récupère des panneaux, des chutes de tôle et deux morceaux d'un ancien châssis. Tomas vérifie chaque pièce avant qu'il y touche."
 
     $ showGroup([
         ("mara", "taquin"),
@@ -652,7 +651,7 @@ label _21_0_1_1_0_0_RECUPERATION:
         ("noam", "fatigue"),
     ])
 
-    "On croise Mara et Ryn en sortant avec une plaque presque aussi large que le couloir."
+    "On croise Mara et Ryn avec une plaque presque aussi large que le couloir."
 
     mara taquin "Ah. Donc c'est ça, votre solution."
     ryn fatigue "Vous allez faire quoi avec ce truc ?"
@@ -674,7 +673,7 @@ label _21_0_1_1_0_0_RECUPERATION:
 
     "Il soulève. Son expression change à peine, ce qui m'agace presque."
 
-    mara "Très bien, monsieur muscles. Moi je supervise."
+    mara taquin "Très bien, monsieur muscles. Moi, je supervise."
     elias "Non."
     mara "Trop tard."
 
@@ -835,8 +834,7 @@ label _21_0_1_1_0_0_SOIR:
     lysa blase "Non. C'est juste des maths."
     tomas "Des maths plutôt déprimantes."
     lysa "C'est les meilleures."
-    "On reste encore quelques minutes à parler de rien. Pas du vote, pas de qui a demandé à rester, pas de la navette."
-    "Juste de trucs suffisamment petits pour ne pas donner envie de cogner dans un mur."
+    "On reste encore quelques minutes à parler de la nourriture du lendemain et du rapport que Tomas refuse d'abandonner. Personne ne reparle de la navette."
     $ hideGroup()
     # Durée : ~1m50
     # Total : ~17m00
@@ -883,16 +881,12 @@ label _21_0_1_1_0_0_FIN_JOURNEE:
     $ hideGroup()
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.0
-    "Mon sac est toujours contre le bureau."
-    "Je pourrais le défaire."
-    "Je ne le fais pas."
-    "Ce matin, je pensais ne passer que quelques heures de plus dans cette pièce. Maintenant il me reste neuf jours."
+    "Mon sac est toujours contre le bureau. Je prends un tee-shirt propre à l'intérieur, puis je referme la fermeture sans le défaire."
+    "Ce matin, je pensais ne passer que quelques heures de plus dans cette pièce. Maintenant, il me reste neuf jours."
     "Je m'allonge sans me changer complètement."
-    think "Certains veulent continuer les votes."
-    "Je ne sais pas qui."
-    think "Six plaques de métal ont disparu."
-    "Je ne sais pas pourquoi."
-    "Pour l'instant, ce sont juste deux problèmes différents dans une journée qui en avait déjà assez."
+    think "Quelqu'un a demandé à continuer les votes."
+    "Je ne sais pas qui. Six plaques ont disparu d'une livraison. Je ne sais pas pourquoi."
+    "J'essaie de ne pas relier les deux juste parce qu'ils sont arrivés le même jour."
     "Je ferme les yeux."
     "Au loin, la perceuse d'Elias reprend une dernière fois."
     pause 0.8
