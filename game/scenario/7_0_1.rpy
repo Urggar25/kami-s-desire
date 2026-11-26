@@ -639,65 +639,50 @@ label _7_0_1_REVEIL_CHAMBRE:
     $ j701_evidence_note = False
     $ current_period = "Matin"
     $ cafeteria_food_level = "high"
+    scene bg_cg012 at adaptive_fullscreen with dissolve
     $ blink()
+    pause 0.5
     play sound sfx_knock
+    $ blink()
     lysa "Noam ? C'est moi."
-    "Je tire la couverture sur ma tête."
-    noam "J'arrive."
-    lysa "Je t'attends dehors. Habille-toi, on est presque à midi."
-    think "À midi ?"
+    "Je remonte la couverture jusqu'à mon nez. On frappe de nouveau."
+    noam "Ouais, j'arrive..."
+    lysa "Il est presque midi, t'es toujours au lit ?"
     "Je regarde ma tablette. 11 h 40."
-    noam "Merde ! Lysa, on avait quelque chose ce matin ?"
-    lysa "Non. Enfin, personne n'a été convoqué. J'ai croisé Iris à huit heures, elle était déjà en train d'appeler Kami."
-    "Je mets une chaussette et cherche l'autre au pied du lit."
-    noam "Attends, je trouve plus ma..."
-    lysa "Prends ton temps. Je suis assise."
-    "J'entrouvre la porte."
+    noam "Merde !"
     scene bg_chambre at adaptive_fullscreen with dissolve
-    call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_278
-    scene bg_dortoir at adaptive_fullscreen with dissolve
-    $ showGroup([("lysa", "neutre", 0.74), ("noam", "fatigue", 0.28)])
-    noam fatigue "T'as pas entendu Kami, toi non plus ?"
-    lysa "Depuis hier, rien. Je suis même descendue prendre mon petit déjeuner à l'heure qui m'arrangeait."
-    lysa "Chez nous, je faisais toujours attention avant de parler dans les lieux publics. Ça m'arrivait de baisser la voix alors que je racontais des trucs parfaitement légaux. Je sais pas pourquoi je continue à le faire ici."
-    noam "À Harmonie, même les gens qui aiment Kami font ça. Juliette me demandait parfois pourquoi les adultes chuchotaient."
-    lysa "Et tu lui répondais quoi ?"
-    noam "Que les gens étaient fatigués. Je me voyais mal lui expliquer le reste."
-    "Je regarde le terminal dans le couloir."
-    noam "Kami ?"
-    pause 0.7
-    noam "Tu nous entends ?"
-    lysa "Laisse. Iris a déjà fait le tour des écrans. Elle s'est même disputée avec Goumi parce qu'il lui proposait de nettoyer le sol."
-    noam inquiet "Ça ne me plaît pas du tout. Hier, elle avait vraiment l'air d'avoir besoin d'aide."
-    lysa "Je sais. J'ai beau détester l'entendre parler, je préférerais savoir ce qui s'est passé."
-    "Elle se décale pour laisser passer un chariot."
-    menu:
-        "Rester un moment avec Lysa.":
-            $ j701_lysa_worry = True
-            noam "Attends-moi ici, si tu veux. Je vais juste chercher mes affaires."
-            lysa "Tu peux prendre ton petit déjeuner d'abord. J'ai vérifié ta porte deux fois ce matin, elle était fermée. J'allais finir par demander à quelqu'un de venir l'ouvrir."
-            noam "Tu pensais qu'il m'était arrivé un truc ?"
-            lysa "Un peu. T'en fais pas une affaire, hein."
-            noam "Je suis désolé."
-            lysa "Oh, arrête. T'as le droit de dormir."
-        "Essayer de la détendre.":
-            noam "Je crois que j'aurais dormi jusqu'à demain sans toi. Ça fait du bien de pas se faire engueuler par un écran dès le réveil."
-            lysa "Profites-en. Mais si tu décides de ne plus sortir de ta chambre, préviens-moi quand même."
-            "Je hoche la tête."
-    nyra "Lysa ? Tu es encore là ?"
-    lysa "Ah oui, j'avais oublié... Nyra a des caisses à déplacer. Je lui ai dit que je t'avais vu."
-    noam "Mais tu m'avais pas encore vu !"
-    lysa "Je comptais sur toi."
-    "Elle file vers le couloir. Je n'ai même pas eu le temps de refermer ma porte."
-    $ hideGroup()
+    "Je me traîne jusqu'à la porte et l'entrouvre. Une silhouette passe au bout du couloir."
+    noam "Rentre, s'il te plaît. J'ai pas envie que tout le monde me voie en pyjama."
     call kd_vn_cg_impact("#e4f0ff")
     scene bg_cg025 at adaptive_fullscreen with dissolve
     $ unlock_gallery_image("bg_cg025")
-    pause 0.4
-    "Je récupère ma chaussette sous le bureau. Le dessin de Juliette est posé près du cadre numérique ; je le soulève pour dégager le tissu coincé dessous."
-    "Je remets le dessin à plat."
+    "Je referme la porte derrière elle."
+    lysa "T'as raté le petit déjeuner. Nyra a commencé à ranger les livraisons, et Iris appelle Kami depuis huit heures. Elle est même allée emmerder Goumi à la cafétéria."
+    noam "Toujours aucune réponse ? Je pensais qu'elle finirait par revenir cette nuit."
+    lysa "J'ai essayé à mon réveil. Sur Terre, ça m'aurait arrangée qu'elle nous foute la paix de temps en temps. Mais ici, j'aimerais bien savoir ce qui se passe."
+    "Je récupère une chaussette au pied du lit. L'autre est coincée sous mon bureau."
+    noam "Je vais pas me plaindre d'avoir pu dormir, mais hier... J'avais vraiment l'impression qu'elle avait besoin de nous."
+    menu:
+        "Rester un moment avec Lysa.":
+            $ j701_lysa_worry = True
+            lysa "J'ai vérifié ta porte deux fois ce matin. J'allais finir par demander à quelqu'un de venir l'ouvrir."
+            noam "Ah... Désolé, je devais vraiment dormir comme une masse."
+            lysa "T'as le droit de dormir. Préviens-moi juste si tu comptes passer la journée ici."
+        "Essayer de la détendre.":
+            noam "Au moins, personne n'est venu commenter ma tronche au réveil."
+            lysa "Je peux encore m'en charger si ça te manque."
+            "Je ramasse mon pantalon."
+    play sound sfx_knock
+    nyra "Lysa ? Tu es là ?"
+    lysa "Oui, j'arrive !"
+    "Lysa se tourne vers moi."
+    lysa "Ah, oui. Je lui ai dit que tu l'aiderais avec les caisses."
+    noam "Mais je dormais ! Bon, je vais dans la salle de bain me changer."
+    lysa "Prends ton temps. Je vais commencer avec elle."
+    "Elle ressort. Je soulève le dessin de Juliette pour dégager ma chaussette, puis je le repose soigneusement sur le bureau."
     $ unlock_gallery_image("bg_cg026")
     scene bg_cg026 at adaptive_fullscreen with dissolve
+    "Je prends mes vêtements et file dans la salle de bain."
     scene bg_cg026_1 at adaptive_fullscreen with dissolve
     window hide
     $ chibi_montage_play(CHIBI_MONTAGE_J701_NOAM)
@@ -776,7 +761,10 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     noam "Me mêle pas à ça, j'ai déjà passé ma matinée à porter des caisses."
     elen "Oh ! Il reste du gâteau au comptoir ?"
     "Elle repart aussitôt. Elle revient avec un morceau et le mange debout, hors de portée de Julian."
-    elen "Ce soir on fait quelque chose. J'en ai marre de manger et de rentrer chacun dans sa chambre. J'ai trouvé un jeu de cartes dans la salle de repos."
+    elen "Che choir on fait quelque chose. J'en ai marre de manger et de rentrer chacun dans cha chambre..."
+    iris "Avale avant de parler, Elen."
+    "Elen termine sa bouchée."
+    elen "J'ai trouvé un jeu de cartes dans la salle de repos ! On pourrait jouer après le dîner."
     mara "Si on joue de l'argent, je viens."
     elen "On n'a pas d'argent."
     mara "On trouvera un truc. J'ai besoin de me divertir, là."
@@ -788,14 +776,14 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     iris colere "Mais elle est peut-être en panne ! C'est pas un concours pour savoir qui la déteste le plus."
     mara "Tu crois que je vais pleurer parce qu'elle peut plus nous dire quoi faire ?"
     "Iris repose sa fourchette."
-    iris "Quand elle est arrivée à Nexus, j'ai perdu tout ce que j'avais préparé pour bosser sur les IA. Je le sais très bien, merci. Ça m'a pas empêchée de passer un an à essayer de comprendre comment elle fonctionne."
+    iris "Tu te rends compte de ce qu'elle est capable de faire ? Elle gère des millions de situations en même temps et elle arrive quand même à nous répondre individuellement. Rien que la façon dont elle adapte ses réponses, j'aimerais comprendre comment elle fait. Et là, elle ne répond plus à rien."
     iris "Si quelque chose est capable de la mettre dans cet état, j'aimerais le savoir avant que ça touche autre chose."
     lysa "Tu lui prêtes beaucoup de bonnes intentions, quand même."
     iris "J'ai pas parlé de ses intentions."
     elias "Moi j'aimerais surtout savoir si dehors c'est pareil. À Axiome, avant Kami, dans mon quartier, on évitait de rentrer seuls le soir. J'ai pas envie que ça recommence."
     mara "Chez moi, on avait des murs de trois mètres pour pas voir ce qui se passait dehors. Depuis Kami, j'ai enfin pu ouvrir la porte à des gens qui avaient besoin d'un endroit où dormir. Et je vais pas non plus lui donner raison sur tout pour ça."
     julian "Nous avons voté hier. Il me semble que nous pourrions, exceptionnellement, profiter de l'occasion pour reprendre une discussion sans qu'une voix nous impose l'ordre du jour."
-    noam "Sauf qu'on a déjà passé trois jours à discuter de la circulation et qu'on n'est même pas fichus de se mettre d'accord. Laisse-nous manger, Julian."
+    noam "Julian, on a passé trois jours à se prendre la tête. Laisse-nous manger, pour une fois."
     julian "Je ne t'ai pas demandé de présider la discussion."
     "Je ravale ce que j'allais lui répondre. Elen me montre le jeu de cartes qu'elle a rapporté."
     elen "On pourra choisir les règles ce soir. Il y en a plein que je connais pas."
@@ -846,14 +834,15 @@ label _7_0_1_TEMPS_LIBRE_1:
     noam "Tu sais que t'es en train de manger ton crayon, là ?"
     kael "Ah."
     "Il pose le pain et nettoie son doigt sur la feuille."
-    kael "Je faisais pareil avec les maquettes. Quand j'avais commencé un voilier, je pouvais rester assis des heures sans bouger. J'en ai cassé un en voulant le ranger dans sa vitrine. J'avais passé un temps fou à monter le gréement."
-    noam "À ta place, je crois que je l'aurais fini à coups de marteau."
-    kael "J'étais assez énervé pour ça. Mais j'avais encore du bois, alors j'ai refait le mât."
-    kael "Je n'ai jamais mis les pieds sur un vrai voilier, d'ailleurs. J'ai le mal de mer."
-    "Je rigole. Il me montre avec les doigts la taille de la maquette."
-    noam "Juliette adore les trucs à construire. Sauf qu'au bout de dix minutes elle me donne les pièces et elle revient quand j'ai fini."
-    kael "Il faudrait lui prendre quelque chose qu'elle peut terminer rapidement. Les petites maquettes en bois, par exemple. Je peux te montrer comment les monter, si tu veux."
-    noam "Avec plaisir. Enfin, après le Conclave."
+    kael "Je faisais pareil avec mes maquettes. J'avais passé un temps fou à monter le gréement d'un voilier et j'ai cassé le mât en voulant le ranger. J'ai dû recommencer toute une partie."
+    noam "Un voilier ?! Je pensais que tu collectionnais des vaisseaux spatiaux, des trucs un peu plus classes."
+    kael "Je voyais des vaisseaux tous les jours sur Orbite. Les voiliers, par contre... J'ai jamais vu la mer. J'ai regardé des tas de vidéos pour comprendre comment ils utilisaient le vent."
+    noam "T'aimerais essayer ?"
+    kael "Bien sûr. Rien que monter à bord, ça me plairait. Après, je laisserais quelqu'un d'autre s'occuper des manœuvres."
+    "Il me montre la taille de la maquette avec ses mains."
+    noam "Ah ouais, c'est carrément un meuble ton truc. J'avais un modèle de vaisseau quand j'étais plus jeune, j'ai perdu une aile et j'ai fini par le jeter."
+    kael "Tu aurais pu la refaire. Je peux te montrer comment, à l'occasion."
+    noam "Tu risques de regretter de m'avoir proposé ça."
     "Il reprend son crayon."
     if j601_fracture_trace_saved:
         kael "Au fait, tu as conservé la trace du piratage sur ta tablette ? Ne la modifie pas. J'aimerais comparer les horodatages avec les relevés originaux."
@@ -861,9 +850,7 @@ label _7_0_1_TEMPS_LIBRE_1:
         kael "Merci. Pas besoin de me l'envoyer pour l'instant."
         $ j701_evidence_note = True
     else:
-        kael "J'aurais aimé pouvoir retrouver un enregistrement complet de ce qui s'est passé hier. Je n'ai que des fragments, et je ne sais pas s'ils sont dans le bon ordre."
-        noam "J'ai encore sa voix dans la tête. Elle avait dit qu'on lui prenait quelque chose, non ?"
-        kael "Sa voix, je crois. Mais je ne veux pas me fier uniquement à mon souvenir."
+        kael "Il me faudrait un enregistrement complet de la diffusion d'hier. Les relevés que j'ai récupérés sont incomplets, je vais voir si la console d'observation a gardé une copie."
     noam "Tu devrais dormir avant de continuer. Tu vas finir par te tromper dans tes propres calculs."
     kael "Possible. Je termine cette colonne et je vais m'allonger."
     "Je le laisse à ses papiers."
@@ -872,16 +859,17 @@ label _7_0_1_TEMPS_LIBRE_1:
 
 label _7_0_1_APRES_MIDI_TOMAS_CANON:
     $ current_period = "Après-midi"
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
-    $ showGroup([("tomas", "inquiet", 0.29), ("noam", "neutre", 0.72)])
-    tomas "Noam ! Je te cherchais. J'ai essayé de comparer les relevés de ce matin avec ceux d'hier, mais il y a un problème de méthode. Il faudrait que quelqu'un les regarde sans savoir exactement ce que je m'attends à trouver."
-    noam "Tomas, je sors à peine d'une discussion avec Kael. Si c'est des calculs, je vais pas être très utile."
-    tomas "Non, non. C'est assez simple. Enfin, une fois qu'on a rétabli la synchronisation. Viens au canon, j'ai laissé la console ouverte."
-    "Il retourne sa tablette contre son torse quand quelqu'un passe."
-    noam "Pourquoi tu me caches ton écran ?"
-    tomas "Je préfère éviter d'en parler ici. Si quelqu'un nous entend et comprend de travers ce que j'ai trouvé, on va avoir un problème."
-    noam inquiet "Bon... allons-y."
+    "Je suis retourné dans ma chambre. Je viens à peine de m'allonger quand quelqu'un frappe."
+    play sound sfx_knock
+    tomas "Noam ? Tu es disponible ?"
+    "J'ouvre la porte."
+    $ showGroup([("tomas", "inquiet", 0.50)])
+    tomas "Excuse-moi de te déranger. J'ai besoin d'un deuxième avis sur des relevés que j'ai trouvés ce matin. Si tu as quelques minutes, j'ai laissé la console ouverte au canon."
+    noam "Si c'est encore des calculs, t'aurais peut-être dû demander à quelqu'un de plus compétent."
+    tomas "Justement, je préfère que tu découvres les données sans savoir ce que j'ai obtenu. Ça ne prendra pas très longtemps."
+    noam "Bon, laisse-moi récupérer ma veste."
     $ hideGroup()
     call MAYBE_PLAY_SCRIPTED_DOOR("canon", "bg_canon") from _call_MAYBE_PLAY_SCRIPTED_DOOR_286
     scene bg_canon at adaptive_fullscreen with dissolve
@@ -904,30 +892,24 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     "Il remonte jusqu'à la veille. Des dizaines de lignes s'affichent."
     noam "Donc depuis ce qu'on a vu hier... plus aucune exécution enregistrée ?"
     tomas "Aucune sur les quatre flux que nous pouvons consulter. Mais je n'ai pas accès à l'archive complète. Ça peut être un problème de transmission, une interruption des sanctions, ou autre chose que nous ne voyons pas."
-    noam "Putain... Si ça s'est vraiment arrêté, les gens pourraient circuler. Ils pourraient enfin aller voir leur famille."
-    "Je prends ma tablette et ouvre la messagerie. J'entre un contact par réflexe."
-    tomas inquiet "Qu'est-ce que tu fais ? Les communications vers l'extérieur sont interdites. Et même si le message partait, on ne sait pas ce qui arriverait à quelqu'un qui le prendrait au sérieux."
-    noam "Je vais pas lui dire de franchir une frontière ! Je veux savoir s'il se passe quelque chose chez nous."
-    tomas "Et si le message est relayé ? Imagine quelqu'un qui attend depuis un an de rejoindre sa famille à Limen. Il apprend que des représentants pensent que les sanctions ne fonctionnent plus. Je ne suis pas certain qu'il attendrait nos vérifications."
-    "Je regarde le nom sur ma tablette. Je ferme la messagerie."
-    noam "Merde. J'avais pas pensé à ça."
-    "Tomas reprend les relevés."
-    tomas "Je voudrais garder les fichiers et les comparer à ceux de demain. Je sais bien que ça ne répond pas à la question que tu te poses."
-    noam "Je trouve ça insupportable, en fait. Si le système marche, des gens meurent. Et là, on regarde un zéro en espérant qu'il soit vrai sans pouvoir rien faire."
-    tomas "On peut au moins éviter de donner une information fausse. J'ai gardé une copie et une photo, au cas où le fichier se corromprait encore."
-    noam "Tu devrais les montrer à Kael. Il a déjà regardé les relais ce matin."
-    tomas "Je voulais être sûr avant de le déranger. Il n'a presque pas dormi, et il aurait peut-être d'autres choses plus urgentes à faire."
+    noam "Zéro... Ça fait bizarre de voir ça. J'espère vraiment que le chiffre est bon."
+    "Tomas remonte quelques lignes et agrandit le graphique."
+    tomas "Moi aussi. Mais regarde, les enregistrements se sont arrêtés alors que les terminaux présentent encore des anomalies. Si on ne reçoit plus certaines données, un total de zéro ne veut pas forcément dire qu'il ne s'est rien passé."
+    noam "Ah... D'accord."
+    tomas "Je vais garder une copie des relevés et refaire la comparaison demain. J'aimerais que ça reste entre nous pour le moment. Enfin, j'hésite à demander à Kael de vérifier les fichiers quand il aura un peu de temps."
+    noam "Tu préfères attendre d'être sûr, c'est ça ?"
+    tomas "Oui. Je voulais surtout savoir si quelqu'un d'autre arrivait au même résultat."
     call play_stat_dialogue("d7_0_1") from _call_stat_dialogue_d7_0_1
     menu:
         "Respecter sa demande de discrétion jusqu'au lendemain.":
             $ j701_tomas_secret_kept = True
             noam "D'accord. On attend demain, mais ne continue pas tout seul toute la nuit. Si on trouve autre chose, on décidera ensemble de ce qu'on en fait."
             tomas neutre "Ça me va. Je te préviendrai si j'obtiens de nouveaux relevés."
-        "Demander à Tomas de prévenir Kael dès maintenant.":
+        "Laisser Tomas décider s'il souhaite demander un avis à Kael.":
             $ j701_tomas_secret_kept = False
             $ j701_tomas_informed = True
-            noam determine "Je préfère que tu lui envoies les fichiers. Il pourra regarder quand il aura le temps, mais au moins on ne dépendra pas seulement de ta tablette."
-            tomas "Bon... je vais préciser qu'il ne s'agit pas d'une confirmation."
+            noam "Fais comme tu le sens. Si tu penses que ça peut t'aider à vérifier, je ne vois pas de problème."
+            tomas "Je vais lui transmettre uniquement les relevés, sans en tirer de conclusion."
             "Il rédige le message et joint les relevés."
             tomas "C'est envoyé."
     "Je reste devant le total encore quelques secondes avant de partir."
