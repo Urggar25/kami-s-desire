@@ -645,8 +645,9 @@ label _7_0_1_REVEIL_CHAMBRE:
     "Je laisse ma tête s'enfoncer dans l'oreiller."
     lysa "Je sais que tu m'entends."
     noam "Non."
-    lysa "Bon. Je repasserai quand le monsieur aura fini de nier son existence."
-    "Je me lève avant qu'elle reparte. Une seule chaussette est à sa place. Ça commence bien."
+    lysa "Bon. Je repasserai quand tu auras fini de faire le bébé."
+    "Je me lève avant qu'elle reparte. J'enfile rapidement une chaussette."
+    think "Merde où j'ai mis la seconde ? Raah, ça commence bien."
     scene bg_chambre at adaptive_fullscreen with dissolve
     call MAYBE_PLAY_SCRIPTED_DOOR("dortoir", "bg_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_278
     scene bg_dortoir at adaptive_fullscreen with dissolve
