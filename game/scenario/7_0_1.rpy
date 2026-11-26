@@ -729,6 +729,7 @@ label _7_0_1_REVEIL_CHAMBRE:
     "Je finis par la retrouver sous le dessin de Juliette, à côté du cadre numérique. Je la tire doucement pour ne pas froisser le papier et je remets le dessin bien à plat."
     $ unlock_gallery_image("bg_cg026")
     scene bg_cg026 at adaptive_fullscreen with dissolve
+    "Je me passe un peu d'eau sur le visage."
     scene bg_cg026_1 at adaptive_fullscreen with dissolve
     window hide
     $ chibi_montage_play(CHIBI_MONTAGE_J701_NOAM)
@@ -759,7 +760,7 @@ label _7_0_1_REVEIL_CHAMBRE:
             noam "Je lis les références, tu les notes ?"
             nyra "Parfait. Lysa, tu peux séparer les consommables ?"
             lysa "Ouais. Donne-moi une caisse vide."
-            "On reprend chaque colis dans l'ordre. Nyra recoupe les références pendant que Lysa et moi séparons le contenu."
+            nyra "On vérifie chaque référence. Pour le tri, on a quatre destinations : cafétéria, infirmerie, maintenance et stockage."
         "Isoler les colis douteux pour gagner du temps.":
             $ j701_nyra_sorting = "rapide"
             noam "On commence par ce qu'on reconnaît et on garde le reste ensemble ?"
@@ -767,8 +768,11 @@ label _7_0_1_REVEIL_CHAMBRE:
             noam "Oui, mais on aura déjà dégagé le passage."
             lysa "Je peux prendre les rations."
             nyra "D'accord. Je note les caisses qu'il reste à examiner."
-            "On sépare les colis identifiables et on met les autres de côté pour Nyra."
+            nyra "Cafétéria, infirmerie, maintenance et stockage. Ce que vous ne reconnaissez pas, vous me le laissez."
 
+    $ hideGroup()
+    call rangement_play from _call_rangement_day7
+    scene couloir_dortoir at adaptive_fullscreen with dissolve
     $ showGroup([("nyra", "neutre", 0.80), ("lysa", "neutre", 0.51), ("noam", "neutre", 0.21)])
     nyra "C'est bon pour celles-ci. Merci."
     lysa "Attends, j'ai trouvé un truc."
@@ -987,19 +991,19 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
     $ showGroup([("tomas", "inquiet", 0.29), ("noam", "neutre", 0.72)])
-    tomas "Noam ! T'as vu Iris depuis ce midi ?"
-    noam "Non. Elle devait passer à l'infirmerie."
-    tomas "J'y suis allé. Elle est pas là."
-    noam "Aux archives, alors."
-    tomas "Ouais. J'en viens."
-    noam "Tu l'as trouvée ?"
+    tomas "Noam ! T'étais avec Iris ce midi, non ?"
+    noam "À table, ouais. Pourquoi ?"
+    tomas "Elle a mangé quelque chose ?"
+    noam "Pas grand-chose. Elle est partie avant la fin du repas."
+    tomas "Je viens de passer aux archives. Je lui avais laissé à manger, elle y a même pas touché."
+    noam "T'as essayé de lui parler ?"
     tomas "Oui. Elle m'a dit qu'elle avait pas besoin de moi."
     noam "Ça m'étonne pas."
     tomas "Je sais, mais... Je l'ai déjà trouvée là-bas cette nuit."
     noam "Cette nuit ?"
     tomas "Vers trois heures. Je dormais pas, je suis sorti chercher de l'eau. Elle avait sorti des dossiers partout et elle regardait les enregistrements d'hier."
     noam "Elle faisait encore ça ce matin ?"
-    tomas "Oui. Elle est pas retournée dans sa chambre. Je lui ai apporté de quoi manger, elle y a même pas touché."
+    tomas "Ouais. Quand je suis repassé ce matin, elle était toujours sur le même écran. Elle avait même pas enlevé sa veste."
     noam "Elle a rien trouvé ?"
     tomas "Elle m'a rien dit."
     "Tomas vérifie quelque chose sur sa tablette."
