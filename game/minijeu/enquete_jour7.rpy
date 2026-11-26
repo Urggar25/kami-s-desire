@@ -521,10 +521,9 @@ label j701_investigation:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "audio/music/bgm_world_decline.mp3" fadein 1.0
     $ showGroup([("nyra", "neutre", 0.25), ("elias", "inquiet", 0.55), ("noam", "reflechit", 0.85)])
-    "Elias veut courir dans toutes les salles. Nyra refuse qu'on éparpille les recherches avant d'avoir vérifié ce qui manque réellement."
-    nyra neutre "On commence par les emplacements vides et l'atelier. Ensuite, chacun pourra poursuivre la piste qui lui paraît la plus inquiétante."
-    elias inquiet "Mes batteries ont disparu ! Toutes les pistes sont inquiétantes !"
-    nyra neutre "C'est précisément pour ça qu'il faut commencer quelque part."
+    elias "On peut demander à Goumi de chercher aussi ? Il passe dans toutes les salles, il a peut-être déplacé mes affaires."
+    nyra "Avant d'envoyer qui que ce soit, je veux voir les emplacements. Ensuite, l'atelier. Si on sait ce qui manque et ce qu'on peut en faire, on saura peut-être où chercher."
+    elias "Bon. Venez, je vais vous montrer."
     $ hideGroup()
     call j701_clue_counterweight from _call_j701_core_counterweight
     $ j701_investigation_collect("counterweight")
@@ -532,10 +531,9 @@ label j701_investigation:
     call j701_clue_negative_blueprint from _call_j701_core_blueprint
     $ j701_investigation_collect("negative_blueprint")
     call screen j701_investigation_evidence("negative_blueprint")
-    "Elias revient sur l'étagère, cherche encore les batteries sous le faux fond, puis se redresse."
-    elias inquiet "Quelqu'un les a prises. Et le capteur n'a même pas compris qu'elles étaient parties."
-    nyra reflechit "On ne va pas ouvrir toutes les salles cette nuit. On choisit les deux pistes les plus utiles."
-    noam reflechit "On commence par quoi ?"
+    "Elias retourne au stockage pour inspecter une nouvelle fois l'étagère."
+    elias inquiet "Si vous retrouvez quelqu'un avec les batteries, appelez-moi, hein. Je veux voir ce qu'il a foutu avec."
+    nyra "Il se fait tard. On a encore le temps de vérifier deux pistes avant de retrouver les autres. Noam, choisis par où tu veux commencer."
     while len(j701_investigation_found) < J701_INVESTIGATION_MAX_TURNS:
         $ _j701_selected_room = renpy.call_screen("j701_investigation_locations")
         $ j701_investigation_prepare_room(_j701_selected_room)
@@ -545,260 +543,194 @@ label j701_investigation:
             $ j701_investigation_collect(_j701_selected_clue)
             play sound "audio/sfx_exclamation.mp3"
             call screen j701_investigation_evidence(_j701_selected_clue)
-
     scene black with fade
-    "Quand je relève enfin la tête, les lumières du couloir ont basculé en mode nocturne."
-    "Nous avons pu vérifier quatre éléments. Les autres salles restent à examiner, et personne n'a envie de recommencer toute la station cette nuit."
+    "Les lumières du couloir passent en mode nocturne. On n'a vérifié que quatre éléments."
     call screen j701_investigation_dossier
     jump j701_investigation_debrief
-
 
 label j701_clue_elias_testimony:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_13
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.28),
-        ("elias", "reflechit", 0.72),
-    ])
-    noam reflechit "Reprends depuis la dernière fois où tu as vu le matériel. Sans raccourci."
-    elias reflechit "Hier soir. Je suis resté au stockage après le repas pour recalibrer mon projet."
-    noam doute "Tu as utilisé quoi, exactement ?"
-    elias neutre "Les deux batteries, le micro-soudeur, puis les stabilisateurs. Je les ai même recomptés. Trois."
-    noam reflechit "Et ensuite ?"
-    elias reflechit "J'ai tout rangé. La porte affiche l'heure quand elle se ferme : 23 h 47."
-    elias fatigue "Je l'ai regardée en me disant que j'allais encore dormir quatre heures. C'est le genre de détail qui reste."
-    noam doute "Tu es certain de ne pas y être retourné ?"
-    elias colere "Certain ! À 23 h 47, tout était encore là. Ce matin, les emplacements étaient vides."
-    "Il ne reconstruit pas un souvenir : il reproduit une routine. Les gestes, l'ordre, jusqu'au voyant de la porte."
-    "Je note l'heure. Elias vérifie que je ne me suis pas trompé d'un chiffre."
+    $ showGroup([("noam", "reflexion", 0.28), ("elias", "reflechit", 0.72)])
+    "Elias me fait une place et sort une feuille pliée de sa poche."
+    elias "Regarde. J'avais fait la liste avant de bosser hier soir. Deux batteries, le micro-soudeur, trois stabilisateurs. J'ai même corrigé le nombre parce que j'avais écrit deux au début."
+    noam "Tu les as utilisés pour ton projet hier soir ?"
+    elias "Ouais, au stockage. J'arrivais pas à faire une calibration propre. Au bout d'un moment j'en ai eu marre, j'ai rangé tout le matos et je suis rentré. Il était 23 h 47, je me rappelle de l'heure sur la porte."
+    noam "T'es sûr de l'heure à la minute près ?"
+    elias "Ben oui ! J'ai regardé parce que j'avais prévu de me coucher tôt pour une fois. Et les pièces étaient toutes là quand j'ai fermé."
+    elias "Noam, je sais que je suis pas le mec le plus soigneux du monde, mais j'ai bossé avec ce genre de matériel bien avant de venir ici. Je laisse pas deux batteries comme ça au milieu d'un couloir."
+    noam "Je te crois. Je vais noter 23 h 47."
+    "Il se penche sur ma tablette et vérifie l'heure que j'inscris."
     $ hideGroup()
     return
-
 
 label j701_clue_foil_crane:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_14
     scene bg_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.14),
-        ("elen", "surpris", 0.50),
-        ("julian", "taquin", 0.86),
-    ])
-    "Sous le rebord de la grande table, une pointe argentée dépasse d'une traînée de graisse."
-    noam surpris "Attendez... Il y a quelque chose de coincé là-dessous."
-    "Je tire doucement. Un minuscule oiseau en papier se déplie dans ma paume, une aile broyée comme si elle avait été prise dans une roue."
+    $ showGroup([("noam", "reflexion", 0.14), ("elen", "surpris", 0.50), ("julian", "taquin", 0.86)])
+    "Une pointe argentée dépasse sous le rebord de la table. Je décolle un petit oiseau en papier de la traînée de graisse qui le retient."
     play sound "audio/sfx_paper.mp3"
-    elen surpris "C'est... une de mes grues. Enfin, je crois. Je les plie avec les emballages des rations."
-    julian taquin "Je préfère le terme d'aviation expérimentale."
-    elen colere "Tu les lances sur Iris quand elle ne te répond pas."
-    julian hesitation "L'aviation expérimentale connaît parfois des dérives militaires."
-    noam doute "Elen, tu en as donné à quelqu'un hier ?"
-    elen inquiet "Non... mais j'en laisse partout. Sur les tables, dans les livres. N'importe qui pouvait en prendre une."
-    "La graisse sur l'aile est fraîche. L'origami, lui, peut avoir changé dix fois de mains."
-    "Je conserve l'origami, mais Elen ne semble pas savoir quoi en penser non plus."
+    elen "Oh, ma grue ! Fais attention, l'aile est toute abîmée."
+    noam "Tu en fais souvent ?"
+    elen "Quand j'ai rien à faire avec mes mains. J'utilise les emballages des rations parce que le papier tient bien. Attends, je peux te montrer le pli, normalement..."
+    "Elle essaie de redresser l'aile, puis s'arrête en voyant la graisse sur ses doigts."
+    julian "J'en ai retrouvé une dans ma chambre. Je serais incapable de te dire comment elle y est arrivée."
+    elen "Je t'en avais donné une ! Tu devais la mettre sur ton bureau."
+    julian "Ah. Je ne l'ai pas jetée, si ça peut te rassurer."
+    noam "Je vais garder celle-ci. Elle est tachée de graisse. Tu te rappelles si quelqu'un t'en a demandé une hier ?"
+    elen "Non, désolée. J'en fais un peu partout et je les laisse sur les tables. Je peux pas te dire à qui elle appartenait."
+    "Elle me laisse l'oiseau. Je le range sans l'aplatir."
     $ hideGroup()
     return
-
 
 label j701_clue_counterweight:
     call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_15
     scene bg_stockage at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.15),
-        ("elias", "surpris", 0.50),
-        ("mara", "doute", 0.85),
-    ])
-    "L'étagère insiste : MASSE CONFORME. Pourtant, les logements des batteries sont vides."
-    noam doute "Le capteur affirme qu'elles sont toujours là."
-    mara taquin "Peut-être qu'elles ont atteint un nouveau stade de discrétion."
-    elias colere "Ou peut-être que le capteur raconte n'importe quoi. Pousse-toi."
-    "Je soulève le faux fond avant lui. Deux poches d'eau aplaties sont sanglées sous la plaque."
+    $ showGroup([("noam", "reflexion", 0.15), ("elias", "surpris", 0.50), ("mara", "doute", 0.85)])
+    elias "Là ! C'est là que je les range. Tu vois bien qu'y a rien."
+    "Le terminal indique MASSE CONFORME."
+    noam "Peut-être que le capteur est tombé en panne comme le reste."
+    elias "Attends, bouge."
+    "Il appuie sur la plaque de l'étagère. L'affichage change."
+    elias "Non, regarde. Il marche. Aide-moi à soulever ça."
+    "Deux poches d'eau aplaties sont sanglées sous le faux fond."
     play sound "audio/sfx_metal_clank.mp3"
-    "Les poches sont presque aussi lourdes que les batteries. Sur l'écran, le capteur indique toujours que l'étagère est pleine."
-    elias surpris "Quelqu'un a pesé mes batteries avant de les prendre ?"
-    noam reflechit "Et préparé les contrepoids avant cette nuit."
-    mara mefiant "Donc le vol a commencé avant que les objets disparaissent."
-    elias inquiet "Il fallait savoir comment le capteur fonctionnait. Et avoir prévu les poches d'eau."
-    "Je repose une poche sur la balance. Elle affiche la même valeur. Je la retire aussitôt."
+    mara "C'est à toi, ça ?"
+    elias "J'ai jamais mis ça là. Putain, c'est lourd..."
+    "On pèse une poche. L'affichage correspond à la masse attendue."
+    elias "Elles ont remplacé les batteries ! Quelqu'un a dû les peser avant de préparer ces trucs. Le capteur vérifie le poids, il sait pas reconnaître ce qu'on pose dessus."
+    noam "Donc c'était pas quelqu'un qui les avait juste empruntées."
+    mara "Ça me paraît difficile à croire, ouais. Garde les poches ici pour que Nyra puisse les voir."
+    "Elias regarde l'étagère vide sans bouger."
     $ hideGroup()
     return
-
 
 label j701_clue_blank_receipt:
     call MAYBE_PLAY_SCRIPTED_DOOR("stockage", "bg_stockage") from _call_MAYBE_PLAY_SCRIPTED_DOOR_16
     scene bg_stockage at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.28),
-        ("kael", "reflechit", 0.72),
-    ])
-    "Le boîtier de la porte ne conserve pas de vidéo, seulement des reçus de transaction."
+    $ showGroup([("noam", "reflexion", 0.28), ("kael", "reflechit", 0.72)])
+    kael "Ce boîtier n'enregistre pas les images. Mais il conserve les transactions. Si on trouve le retrait, on aura peut-être au moins une heure."
     play sound "audio/sfx_beep.mp3"
-    noam reflechit "Il y a bien une transaction à 02 h 14."
-    kael neutre "RETRAIT AUTORISÉ. Quatre références. Masse déclarée : zéro."
-    noam doute "Zéro ? Avec deux batteries ?"
-    kael reflechit "Le capteur a été trompé par les contrepoids. Pour lui, rien n'a quitté l'étagère."
-    "Dans la colonne IDENTITÉ, aucun nom. Seulement un petit carré blanc que le terminal refuse de sélectionner ou de copier."
-    noam surpris "La ligne a été effacée ?"
-    kael mefiant "Non. Une suppression laisserait un trou. Là, le système croit vraiment que personne a effectué le retrait."
-    noam reflechit "Ou qu'il a reçu un nom qu'il n'est pas capable d'afficher."
-    "Kael essaie d'exporter le reçu. L'emplacement du nom reste vide."
-    noam inquiet "Donc quelqu'un a eu le droit d'entrer, mais la porte ne sait pas qui ?"
-    kael "C'est ce que je veux vérifier."
+    "Il ouvre le reçu de 02 h 14 : RETRAIT AUTORISÉ. Quatre références. Masse déclarée : zéro."
+    noam "Ça correspond aux contrepoids. Regarde la colonne à côté, il y a pas de nom."
+    kael "Attends, je vais exporter la ligne."
+    "Il essaie deux fois. À la place de l'identité, le même petit carré blanc apparaît."
+    noam "Ça pourrait être le nom de quelqu'un qui n'est pas enregistré comme représentant ?"
+    kael "Je n'en sais rien. Normalement, le système devrait refuser un identifiant inconnu. Là, il a accepté le retrait."
+    kael "Si la ligne avait simplement été supprimée, on devrait voir une trace différente. Mais je ne connais pas assez bien ce terminal pour exclure une erreur."
+    noam "On garde le reçu. Je veux pas qu'on nous dise demain qu'il a jamais existé."
     $ hideGroup()
     return
-
 
 label j701_clue_brown_hair:
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_17
     scene bg_maintenance at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.28),
-        ("mara", "reflexion", 0.72),
-    ])
-    "Sous la lèvre de l'établi, quelque chose de brun est collé dans une goutte de graisse claire."
-    noam reflechit "Ne touche pas. Passe-moi la pince."
-    mara taquin "J'allais justement le lécher pour identifier son propriétaire."
-    noam blase "La pince, Mara."
-    "Je le dégage délicatement : un cheveu brun, assez court, long d'à peine quatre centimètres."
+    $ showGroup([("noam", "reflexion", 0.28), ("mara", "reflexion", 0.72)])
+    "Un cheveu brun est collé dans de la graisse sous le rebord de l'établi."
+    noam "Mara, passe-moi la pince. Celle à côté du tournevis."
+    "Je dégage le cheveu, long d'environ quatre centimètres."
     play sound "audio/sfx_exclamation.mp3"
-    mara reflexion "Pas de racine. Et regarde l'autre bout."
-    "L'extrémité est droite, nette, presque géométrique. Ce cheveu n'est pas tombé : il a été coupé."
-    noam doute "Donc il ne prouve même pas que son propriétaire est venu ici."
-    mara mefiant "Il prouve surtout que quelqu'un voulait qu'on le trouve."
-    noam inquiet "Brun et court... Ça désigne beaucoup trop de monde."
-    mara neutre "Exactement. Suffisamment précis pour lancer une accusation. Suffisamment vague pour en lancer cinq."
-    "Mara met le cheveu dans un sachet sans y inscrire de nom."
+    mara "T'en fais pas un peu trop ? On est tous passés dans cette salle."
+    noam "Il y a peut-être moyen de savoir à qui il appartient. Elias a les cheveux..."
+    mara "Oh, commence pas. Regarde le bout. Il est coupé net et y a pas de racine."
+    noam "Quelqu'un a pu le laisser ici exprès."
+    mara "Ou quelqu'un s'est coupé les cheveux, ou il traînait sur un vêtement. J'en ai rien à foutre que tu le gardes, mais va pas accuser quelqu'un avec ça."
+    "Elle me tend un sachet. J'y glisse le cheveu."
     $ hideGroup()
     return
-
 
 label j701_clue_negative_blueprint:
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_18
     scene bg_maintenance at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.12),
-        ("elias", "reflechit", 0.50),
-        ("kael", "neutre", 0.88),
-    ])
-    "Le plan de travail paraît impeccable. Trop impeccable."
-    elias reflechit "Normalement, cet établi attire la limaille pendant des jours. Là, il n'y en a presque plus."
-    kael neutre "Presque."
-    "Kael approche un aimant. La limaille oubliée se redresse autour d'une zone parfaitement propre."
-    noam surpris "Elle dessine le contour de ce qui était posé là."
-    "Peu à peu, le vide forme un objet : trois anneaux, un faisceau central, deux attaches asymétriques."
-    elias reflechit "C'est l'ombre d'un adaptateur. Quelqu'un l'a assemblé ici, puis a nettoyé autour."
-    kael reflechit "Le terminal devrait avoir conservé le plan de montage."
-    "Le terminal ne contient aucun fichier correspondant. Son cache garde seulement un titre tronqué : CONVERTISSEUR MULTI-PH..."
-    noam reflechit "Les batteries, le micro-soudeur, les stabilisateurs..."
-    elias inquiet "Tout ce qu'il faut pour que ce truc accepte une énorme charge sans griller."
-    kael mefiant "Et quelqu'un a effacé le mode d'emploi après l'avoir fabriqué."
-    elias inquiet "Tu crois que ce machin est encore dans la station ?"
-    kael "J'en sais rien. Il faudrait déjà savoir ce que c'est."
-    "Kael photographie le contour laissé par la limaille. Elias lui demande de reprendre la photo avec sa propre tablette."
+    $ showGroup([("noam", "reflexion", 0.12), ("elias", "reflechit", 0.50), ("kael", "neutre", 0.88)])
+    elias "Ils ont nettoyé l'établi. Hier, j'avais encore de la limaille dessus."
+    kael "Tu as un aimant ?"
+    "Elias lui tend celui qui se trouve parmi les outils. Kael le rapproche de la surface."
+    "Les restes de limaille se redressent autour d'une zone propre : trois anneaux, un faisceau central et deux attaches asymétriques."
+    noam "On dirait le contour d'un truc qu'on a posé ici."
+    elias "Attends... Kael, ça ressemble pas à un adaptateur ? Si quelqu'un voulait brancher un appareil qui accepte pas la même alimentation que nos équipements, ça pourrait avoir cette forme."
+    kael "Peut-être. Je vais chercher dans les plans."
+    "Le terminal ne retrouve aucun fichier correspondant. Le cache affiche seulement : CONVERTISSEUR MULTI-PH..."
+    elias "Avec mes batteries, les stabilisateurs et le micro-soudeur, y a de quoi faire un montage qui supporte une grosse charge. Mais j'ai besoin de voir le reste pour te dire à quoi ça sert."
+    noam "Ça pourrait servir à réparer les relais de Kami ?"
+    kael "Je ne vois pas pourquoi quelqu'un aurait effacé le plan dans ce cas. On n'a pas assez d'informations."
+    elias "Prends une photo. Et envoie-la-moi, j'aimerais bien regarder ça de plus près."
+    "Kael photographie le contour."
     $ hideGroup()
     return
-
 
 label j701_clue_kael_database:
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_19
     scene bg_observation at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "doute", 0.28),
-        ("kael", "reflechit", 0.72),
-    ])
+    $ showGroup([("noam", "doute", 0.28), ("kael", "reflechit", 0.72)])
     play sound "audio/sfx_gresillement.mp3"
-    "Kael ne m'a pas entendu entrer. Ses doigts enchaînent les commandes sur la base de données des caméras."
-    "Quand mon reflet apparaît dans son écran, il masque sa requête d'un geste sec."
-    noam doute "Tu cherches les images ou tu cherches à les cacher ?"
-    kael surpris "Depuis combien de temps tu es là ?"
-    noam reflechit "Assez pour voir BASE CAMÉRAS et ACCÈS ADMINISTRATEUR."
-    kael mefiant "J'essaie d'obtenir l'accès administrateur. La base refuse même de me dire quels segments existent."
-    noam doute "Alors pourquoi fermer la fenêtre ?"
-    kael gene "Parce que j'ai utilisé un ancien identifiant personnel. Je n'avais pas envie d'expliquer pourquoi il est encore valide ici."
-    noam inquiet "Il est encore valide ?"
-    kael reflechit "Il est reconnu. Ce n'est pas la même chose. Regarde : six refus et une septième tentative marquée EN COURS."
-    noam doute "Tu aurais pu nous prévenir."
-    kael mefiant "Et transformer chaque ligne de code en débat collectif ? J'ai choisi de gagner du temps."
-    "Sa justification tient. Son réflexe, beaucoup moins."
-    "Je ne sais pas si je dois le croire. Kael ne rouvre pas la fenêtre tant que je reste près de lui."
+    "Kael travaille sur la base des caméras. Quand je m'approche, il ferme une fenêtre."
+    noam "Pourquoi tu fermes ça ? Je voulais justement te demander si on pouvait voir les images."
+    kael "Je tentais d'accéder à l'administration. La base refuse de me donner la liste des enregistrements."
+    noam "J'ai vu que tu avais entré un identifiant."
+    kael "Un ancien identifiant personnel. À Orbite, j'avais accès à certains outils de maintenance. J'ai voulu vérifier si le système le reconnaissait."
+    noam "Tu peux utiliser un accès d'Orbite ici ?"
+    kael "Je ne peux rien utiliser pour l'instant. Il reconnaît l'identifiant, ce n'est pas la même chose qu'une autorisation. J'ai six refus et une tentative en cours."
+    "Il me montre les résultats sans rouvrir sa requête."
+    noam "Kael, j'aurais préféré que tu nous préviennes avant. Si on découvre ça dans un journal d'accès, ça risque de mal passer."
+    kael "Je sais. Je voulais obtenir les images avant d'en discuter avec tout le monde. J'ai peut-être eu tort."
+    "Il remet sa tablette devant lui. Je ne vois toujours pas la requête."
     $ hideGroup()
     return
-
 
 label j701_clue_maintenance_log:
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_MAYBE_PLAY_SCRIPTED_DOOR_20
     scene bg_observation at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.12),
-        ("lysa", "inquiet", 0.50),
-        ("kael", "reflechit", 0.88),
-    ])
-    "Une fois l'accès obtenu, Kael ouvre le journal général des portes plutôt que les vidéos."
+    $ showGroup([("noam", "reflexion", 0.12), ("lysa", "inquiet", 0.50), ("kael", "reflechit", 0.88)])
+    "Kael affiche le journal général des portes."
     play sound "audio/sfx_beep.mp3"
-    kael reflechit "Stockage : ouverture autorisée à 02 h 14. Ça correspond au reçu."
-    noam reflechit "Continue après 02 h 23."
-    lysa surpris "Attendez. Là. Maintenance."
-    "Une ligne blanche apparaît au milieu du journal : PORTE MAINTENANCE — OUVERTE — 02 H 34."
-    noam surpris "La porte de la salle de maintenance s'est ouverte à 2 h 34 du matin."
-    lysa inquiet "Vingt minutes après le retrait du matériel."
-    noam doute "Qui est entré ?"
-    kael mefiant "La colonne d'identité est vide. Comme sur le reçu du stockage."
-    lysa reflexion "Le voleur prend le matériel à 02 h 14, puis ouvre la maintenance à 02 h 34..."
-    noam reflechit "Assez de temps pour déplacer une cargaison sans courir."
-    kael doute "Ou assez de temps pour vouloir nous faire croire à ce trajet. Ce journal a déjà accepté une identité impossible."
-    "La ligne de 02 h 34 relie enfin deux salles. Elle ne nous dit toujours pas qui a franchi la porte."
-    lysa "Quelqu'un a dû passer par là."
-    kael "Probablement. Ou quelqu'un veut qu'on le croie."
+    kael "Le stockage a enregistré une ouverture autorisée à 02 h 14. Je vais faire défiler les lignes suivantes."
+    noam "Arrête-toi après 02 h 23."
+    lysa "Là, la maintenance. Deux heures trente-quatre."
+    "L'identité est vide."
+    lysa "Ça laisse vingt minutes pour déplacer les batteries. C'est largement faisable."
+    noam "On devrait demander qui était encore réveillé à cette heure-là."
+    kael "Oui, mais ne partez pas du principe que c'était la même personne. Si le système enregistre des identités vides, on ne sait pas non plus si les heures sont fiables."
+    lysa "Alors on va finir avec douze personnes qui jurent avoir dormi et aucun moyen de vérifier."
+    "Je sauvegarde les deux lignes. Kael reste devant le journal."
     $ hideGroup()
     return
-
 
 label j701_clue_vertical_tracks:
     call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_21
     scene bg_sas at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.12),
-        ("iris", "surpris", 0.50),
-        ("mara", "doute", 0.88),
-    ])
-    "Deux marques de roues traversent le sol jusqu'à la grande porte. Au lieu de s'arrêter, elles remontent sur le métal."
-    iris surpris "D'accord. Le chariot a décidé de marcher sur les murs."
-    mara taquin "Ne le juge pas. Il explore sa verticalité."
-    noam blase "Vous pourriez m'aider à regarder au-dessus ?"
-    "Mara joint les mains. Iris prend appui dessus et se hisse jusqu'au cadre supérieur."
-    iris reflexion "Deux impacts en demi-lune. Même écartement que les roues."
-    noam reflechit "Un plateau magnétique. La cargaison a été plaquée verticalement contre la porte."
-    mara doute "Pour la faire passer quand elle s'ouvre ?"
-    iris inquiet "Ou pour la glisser dans le rail. Il est couvert de poussière noire fraîche."
-    "Quelque chose de lourd a bien circulé au-dessus de la porte, hors du champ de la caméra."
-    "Mara essaie de faire bouger une plaque métallique fixée au-dessus de la porte. Elle ne cède pas."
+    $ showGroup([("noam", "reflexion", 0.12), ("iris", "surpris", 0.50), ("mara", "doute", 0.88)])
+    "Deux marques de roues traversent le sol et se prolongent sur le métal de la porte."
+    iris "Mara, aide-moi à monter. Il y a quelque chose au-dessus du cadre."
+    mara "Mets ton pied là. Accroche-toi à mon épaule."
+    "Iris se hisse avec difficulté."
+    iris "Deux marques en demi-lune. L'écartement correspond aux roues. Et il y a de la poussière noire sur le rail."
+    noam "On aurait pu utiliser un support magnétique pour plaquer la cargaison contre la porte."
+    mara "Je vois pas pourquoi on s'emmerderait à faire ça au lieu de l'ouvrir."
+    iris "Pour ne pas passer devant la caméra ? Si le matériel reste dans le rail ou au-dessus, on peut peut-être le déplacer sans que le terminal voie un passage normal."
+    "Mara tente de bouger une plaque au-dessus de la porte. Elle résiste."
+    iris "Ne force pas. Fais-moi redescendre, j'ai mal au pied."
     $ hideGroup()
     return
-
 
 label j701_clue_impossible_echo:
     call MAYBE_PLAY_SCRIPTED_DOOR("sas", "bg_sas") from _call_MAYBE_PLAY_SCRIPTED_DOOR_22
     scene bg_sas at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("noam", "reflexion", 0.12),
-        ("kael", "reflechit", 0.50),
-        ("mara", "doute", 0.88),
-    ])
-    "Le terminal possède un micro de diagnostic. Il enregistre les sons des verrous pour repérer les pannes mécaniques."
-    noam reflechit "Il reste une séquence audio à 02 h 21."
+    $ showGroup([("noam", "reflexion", 0.12), ("kael", "reflechit", 0.50), ("mara", "doute", 0.88)])
+    kael "Le micro du terminal sert à diagnostiquer les verrous. Il reste un enregistrement à 02 h 21. Écoutez."
     play sound "audio/sfx_beep.mp3"
-    "Un bip d'autorisation retentit. Sept secondes plus tard, exactement le même son revient, jusque dans son grésillement final."
-    mara doute "Deux ouvertures ?"
-    kael reflechit "Impossible. Cette porte met douze secondes à se refermer. Elle ne peut pas valider deux passages espacés de sept secondes."
-    noam doute "Un écho ?"
-    mara taquin "Un écho très ponctuel qui prend sept secondes pour traverser dix mètres ?"
-    kael raison "Le second son a été rejoué. Compare les formes d'onde : elles sont identiques au pixel près."
-    noam inquiet "Quelqu'un a diffusé un faux bip dans la salle."
-    kael mefiant "Oui. Mais pour tromper une personne, un autre capteur... ou notre enquête ?"
-    "Le micro ne répond pas. Il conserve seulement deux sons identiques dans un ordre impossible."
-    "Je réécoute les deux bips. Sans l'analyse de Kael, je n'aurais jamais remarqué qu'ils étaient identiques."
+    "Un bip d'autorisation. Sept secondes plus tard, le même bruit."
+    mara "Ils ont ouvert deux fois ?"
+    kael "La fermeture prend douze secondes. On ne peut pas valider deux passages aussi rapprochés avec cette porte."
+    noam "Tu peux remettre le passage ?"
+    "Kael relance l'enregistrement, puis superpose les formes d'onde."
+    kael "Vous voyez le grésillement à la fin ? Il est exactement identique. Le deuxième signal a été rejoué."
+    mara "Mais ça sert à quoi de faire croire à un micro qu'une porte s'ouvre ? C'est débile."
+    kael "Je ne sais pas si le micro était la cible. Quelqu'un qui attendait dans le sas aurait pu entendre le bip aussi."
+    noam "Ou quelqu'un qui consulte l'enregistrement, comme nous."
+    "Je le réécoute une dernière fois. Sans les courbes de Kael, j'aurais cru à deux passages."
     $ hideGroup()
     return
-
 
 label j701_investigation_debrief:
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_23
@@ -814,73 +746,62 @@ label j701_investigation_debrief:
         ("elen", "inquiet"),
         ("nyra", "reflechit")
     ])
-    "De retour à la cafétéria, Elias étale les relevés sur une table. Il n'a pas touché à son verre."
-    elias inquiet "Bon. Dites-moi que vous avez compris ce qui s'est passé."
-    kael reflechit "Les batteries ont disparu. Le poids sur l'étagère n'a pas changé parce qu'on les a remplacées par des poches d'eau."
-    elias "Donc c'était volontaire."
-    mara "Ça, oui."
-    elias "Et le truc qu'on a trouvé à l'atelier ?"
-    kael "Un adaptateur. Je ne sais pas encore à quoi il était destiné."
-    elias "Mais vous pensez que c'est fait avec mes pièces ?"
-    kael "C'est très probable."
+    "Elias a déplié les relevés sur la table où nous jouions aux cartes."
+    elias "Je veux qu'on retrouve le truc qu'ils ont fabriqué. J'ai besoin de mes pièces, mais surtout, si quelqu'un a fait un montage avec autant de puissance, j'aimerais savoir où il l'a mis."
+    julian "Nous pourrions demander à chacun de nous montrer ce qu'il a dans sa chambre. Si tout le monde coopère, il ne devrait pas y avoir de difficulté."
+    iris colere "T'as pas intérêt à mettre un pied dans la mienne."
+    julian "Je parlais d'une démarche volontaire."
+    lysa "Et ceux qui refusent deviennent suspects, évidemment."
+    nyra "Personne ne va ouvrir les chambres cette nuit. On ne sait même pas si l'appareil est encore au même endroit."
+    elias "J'ai pas demandé qu'on fouille vos chambres ! Si quelqu'un a des infos, c'est tout ce que je veux."
+    kael "On a au moins les contrepoids et le contour à l'atelier. Le montage semble compatible avec les pièces disparues. Ça ne me permet pas de dire qui l'a fait."
     if "blank_receipt" in j701_investigation_found:
-        noam reflechit "Le terminal a autorisé un retrait cette nuit. Il n'a enregistré aucun nom."
-        iris inquiet "Une porte peut s'ouvrir sans savoir qui l'ouvre ?"
-        kael "C'est justement ce qui ne devrait pas arriver."
+        noam "Le reçu du stockage autorise un retrait à 02 h 14, mais il n'y a aucun nom. Ça me dérange plus que l'absence d'images."
+        iris "Kael, il faudra me montrer le reçu. Si le système accepte un identifiant qu'il ne sait pas afficher, je veux voir comment il le présente."
     if "maintenance_log" in j701_investigation_found:
-        nyra reflechit "Une porte s'est ouverte à la maintenance à deux heures trente-quatre. L'identité est vide, elle aussi."
-        elen inquiet "Alors quelqu'un est allé là-bas pendant qu'on dormait ?"
-        mara "Ou le journal a été modifié. On n'a pas de vidéo."
+        lysa "On a aussi une ouverture à la maintenance vingt minutes plus tard, sans identité. Ça pourrait correspondre au déplacement du matériel."
+        mara "Ou pas. On n'a vu personne, alors allez pas raconter demain qu'on a trouvé le trajet du voleur."
     if "kael_database" in j701_investigation_found:
-        iris colere "Et Kael qui a tenté d'ouvrir les caméras avec un ancien identifiant ?"
-        kael mefiant "Je vous ai montré les refus d'accès. Je cherchais des images."
-        iris "Tu aurais pu le dire avant."
-        kael "Oui."
-        "Iris attend une explication supplémentaire. Kael n'en donne pas."
+        iris "Et toi, Kael, pourquoi t'as essayé d'ouvrir les caméras avec un ancien identifiant sans nous prévenir ?"
+        kael "Parce que je pensais pouvoir récupérer les images. J'ai montré les refus à Noam."
+        iris "Envoie-les-moi aussi. Je regarderai."
+        "Kael ne répond pas immédiatement."
     if "brown_hair" in j701_investigation_found:
-        mara neutre "Le cheveu à l'atelier ne nous dit pas qui y est allé. Il a été coupé. N'importe qui pouvait le déposer."
-        elias fatigue "Donc on peut même pas utiliser ça."
+        noam "On a trouvé un cheveu à l'atelier..."
+        mara "Et ça ne désigne personne. Il est coupé, on sait même pas depuis combien de temps il est là."
     if "foil_crane" in j701_investigation_found:
-        elen inquiet "Et l'origami, c'est bien le mien. Mais je les laisse partout."
-        julian "Ça, je peux confirmer."
-        elen "Ce n'est pas le moment."
+        elen "L'oiseau en papier qu'on a trouvé est probablement un des miens. Je peux essayer de me souvenir où j'en ai laissé, mais j'en fais vraiment beaucoup."
+        julian "J'en ai vu plusieurs dans la salle de repos. Ce serait difficile de remonter à une personne."
     if "vertical_tracks" in j701_investigation_found:
-        iris reflechit "Le chariot a laissé des marques jusque sur le haut de la porte du sas."
-        mara "Je veux bien qu'on m'explique comment on fait passer des batteries par là."
-        kael "Avec un support magnétique. Je vérifierai demain."
+        iris "Il faut aussi regarder le rail du sas. Il y a des traces de roues jusque sur la porte. Ça ne correspond pas à un passage normal."
+        kael "Je regarderai le système de guidage demain."
     if "impossible_echo" in j701_investigation_found:
-        kael reflechit "Le micro du sas a enregistré deux ouvertures trop rapprochées. L'une des deux est peut-être un faux signal."
-        lysa "Donc on ne peut même plus se fier aux bruits des portes."
-    "Elias prend une feuille, la plie, puis la déplie aussitôt."
-    elias "Alors, c'est quoi ? Quelqu'un s'est servi ? Quelqu'un essaie de réparer quelque chose ?"
+        kael "Et au sas, quelqu'un a peut-être rejoué un bip d'autorisation. Je ne sais pas pour qui."
+        lysa "Donc même si l'un de nous a entendu une porte s'ouvrir cette nuit, ça ne prouve rien."
+    "Elias froisse le coin de sa feuille."
+    elias "On va faire quoi, là ? On va attendre qu'il manque encore autre chose ?"
     menu:
         "Insister sur le fait que le vol était préparé.":
             $ j701_investigation_theory = "premedite"
-            noam reflechit "Les poches d'eau avaient exactement le poids des batteries. Ça a été préparé avant le vol."
-            elias "Ouais. C'est bien ce que je pensais."
-            mara "Ça ne nous dit toujours pas par qui."
+            noam "Les poches d'eau avaient le bon poids. Pour les préparer, il fallait savoir quelles batteries prendre et comment l'étagère fonctionne. On devrait regarder qui connaissait le matériel."
+            elias "Ouais. Ça, on peut le faire."
+            mara "Sans partir du principe que les ingénieurs sont coupables, merci."
         "S'inquiéter de ce que les systèmes n'ont pas détecté.":
             $ j701_investigation_theory = "securite"
-            noam inquiet "Ce qui m'inquiète, c'est le capteur. Il disait que les batteries étaient là alors qu'on les cherchait depuis des heures."
-            nyra "Je vais demander une vérification des accès aux autres réserves."
-            lysa "Et de nos chambres ?"
-            nyra "Je n'ai pas dit ça."
+            noam "Si on a pu tromper le capteur du stockage, j'aimerais qu'on vérifie les autres systèmes. Je suis pas rassuré à l'idée qu'on se fie tous à ce qu'affichent nos portes."
+            nyra "Je peux faire une liste des accès à vérifier. Pour les chambres, il faudra l'accord de chacun."
+            lysa "Ça me va, tant qu'on garde nos affaires privées."
         "Refuser de désigner un suspect sans preuve.":
             $ j701_investigation_theory = "prudence"
-            noam neutre "On n'a aucun nom. Je préfère qu'on évite d'accuser quelqu'un juste parce qu'il a accès à l'atelier."
+            noam "On devrait continuer à chercher le matériel plutôt que commencer à désigner quelqu'un. Si on se met à accuser tous ceux qui ont accès à l'atelier, on va se faire la gueule pendant une semaine."
             kael "Merci."
-            iris "Ça n'empêche pas de poser des questions."
-            noam "Je n'ai pas dit le contraire."
-    elias inquiet "Je veux juste récupérer mes affaires. J'en ai besoin pour travailler."
-    mara "On recommence demain avec les journaux complets. Là, tout le monde est crevé."
-    elias "Tu dis ça comme si on pouvait les retrouver en rangeant un placard."
-    mara "Non. Je dis qu'on va faire des conneries si on continue jusqu'au matin."
-    "Elias ne répond pas. Il ramasse ses documents en laissant le plan de l'adaptateur au milieu de la table."
-    elen inquiet "Mais... celui qui a fait ça, il est peut-être encore ici ?"
-    "Kael regarde le plan. Nyra ferme son registre."
-    kael "Le matériel n'a pas quitté la station à ma connaissance."
-    elen "C'est pas ce que je demande."
-    "Il n'ajoute rien."
+            iris "On a quand même le droit de demander ce que les gens ont fait. Je compte bien le faire."
+    elias "Bon. Moi je retourne au stockage demain matin. Si quelqu'un veut venir, je serai là."
+    mara "Je viendrai avec toi. Mais là, va te coucher. T'as pas arrêté de chercher depuis ce matin."
+    "Il reprend ses feuilles, en oubliant le plan de l'adaptateur au milieu de la table."
+    elen "Je pensais à un truc... Si quelqu'un a fait tout ça cette nuit, il est peut-être assis avec nous en ce moment."
+    "Julian regarde autour de la table. Kael referme son dossier."
+    "Personne ne lui répond."
     $ hideGroup()
     stop music fadeout 1.0
     jump _7_0_1_FIN_JOURNEE

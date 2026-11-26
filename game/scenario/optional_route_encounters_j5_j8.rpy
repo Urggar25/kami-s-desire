@@ -100,17 +100,22 @@ label KD_ROUTE_J6_JULIAN:
 
 label KD_ROUTE_J7_ELIAS:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    "Elias transporte une caisse de matériel. Il ralentit en me reconnaissant."
+    "Elias transporte une caisse de matériel. Il la pose par terre pour reprendre son souffle."
     menu:
         "Donner un coup de main à Elias.":
             $ showGroup([("elias", "fatigue", 0.35), ("noam", "neutre", 0.65)])
-            elias "Hé, merci pour le rangement tout à l'heure."
-            noam "Il en restait tellement que j'ai cru que les caisses se reproduisaient."
-            elias sourire "J'aurais préféré. Au moins, ça expliquerait pourquoi on manque toujours de pièces."
-            noam "C'était vraiment le bazar."
-            elias "Ouais. Et demain, quelqu'un cherchera forcément le seul machin qu'on aura rangé au mauvais endroit."
-            noam taquin "Tu comptes me faire porter le chapeau ?"
-            elias rire "Évidemment. C'est pour ça que je te remercie maintenant."
+            elias "Ah, merci ! Prends ce côté, ça glisse un peu. Je l'avais mise sur le chariot, mais Nyra en avait besoin."
+            noam "Tu vas où avec tout ça ?"
+            elias "Au stockage. J'essaie de trouver de quoi continuer mon projet. Le truc, c'est que dès que je récupère une pièce, j'en trouve une autre qui va pas avec. Hier soir, j'ai passé deux heures à refaire un réglage."
+            noam "Tu devrais demander un coup de main à Kael."
+            elias "Il m'aide déjà quand il a le temps. Mais j'aimerais bien lui montrer un truc qui marche, tu vois ? Pas débarquer à chaque fois avec un machin démonté dans les mains."
+            "On soulève la caisse. Elias manque de coincer son pied dessous."
+            elias "Attends, attends ! Mon lacet."
+            "Je repose mon côté. Il refait son lacet."
+            noam "T'as besoin que je vienne jusqu'au stockage ?"
+            elias "Non, laisse, t'as déjà aidé. Je te montrerai ce que j'ai fait quand ça sera présentable. Enfin, si j'arrive à le finir avant qu'on rentre."
+            noam "Ça me ferait plaisir."
+            elias sourire "Cool. Va manger, je vais me prendre un café après."
             $ hideGroup()
         "Continuer vers la cafétéria.":
             pass
