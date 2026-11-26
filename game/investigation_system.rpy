@@ -49,8 +49,32 @@ init python:
         },
         "materiel_technique_manquant": {
             "category": "preuves", "title": "VOL DU MATÉRIEL DE MAINTENANCE",
-            "desc": "Des batteries, des outils et plusieurs composants ont disparu de la réserve.",
+            "desc": "Deux batteries, dont celle du robot d'intervention, ainsi que des outils et des composants ont disparu de la maintenance et de la réserve.",
             "day": "J7", "origin": "RÉSERVE TECHNIQUE", "status": "À LOCALISER",
+        },
+        "j7_temoignage_elias": {
+            "category": "personnes", "title": "TÉMOIGNAGE D'ELIAS",
+            "desc": "Elias a vérifié le matériel le matin du jour 7, avant la livraison. Tout était encore à sa place.",
+            "day": "J7", "origin": "CAFÉTÉRIA", "status": "TÉMOIGNAGE",
+            "image": "materiel_technique_manquant",
+        },
+        "j7_batterie_robot": {
+            "category": "preuves", "title": "BATTERIE DU ROBOT",
+            "desc": "Le compartiment d'alimentation du robot d'intervention de la maintenance est vide. Sa batterie a été retirée.",
+            "day": "J7", "origin": "MAINTENANCE", "status": "MANQUANTE",
+            "image": "materiel_technique_manquant",
+        },
+        "j7_demontage_robot": {
+            "category": "preuves", "title": "DÉMONTAGE",
+            "desc": "Les fixations et les connecteurs de la batterie sont intacts. La personne qui l'a démontée savait probablement comment s'y prendre.",
+            "day": "J7", "origin": "MAINTENANCE", "status": "CONSTAT",
+            "image": "materiel_technique_manquant",
+        },
+        "j7_etabli": {
+            "category": "preuves", "title": "ÉTABLI",
+            "desc": "Des traces fraîches de découpe, de grosses chutes métalliques et une large zone de travail indiquent une fabrication récente de taille importante. Elias affirme ne pas avoir utilisé cet établi.",
+            "day": "J7", "origin": "MAINTENANCE", "status": "CONSTAT",
+            "image": "materiel_technique_manquant",
         },
         "silhouette_couloirs": {
             "category": "evenements", "title": "SILHOUETTE DANS LES COULOIRS",
