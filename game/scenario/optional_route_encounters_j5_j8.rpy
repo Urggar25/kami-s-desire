@@ -100,21 +100,26 @@ label KD_ROUTE_J6_JULIAN:
 
 label KD_ROUTE_J7_ELIAS:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    "Elias transporte une caisse de matériel. Il ralentit en me reconnaissant."
+    "Elias transporte une caisse de matériel. Il la pose un instant par terre."
     menu:
         "Donner un coup de main à Elias.":
             $ showGroup([("elias", "fatigue", 0.35), ("noam", "neutre", 0.65)])
-            elias "Hé, merci pour le rangement tout à l'heure."
-            noam "Il en restait tellement que j'ai cru que les caisses se reproduisaient."
-            elias sourire "J'aurais préféré. Au moins, ça expliquerait pourquoi on manque toujours de pièces."
-            noam "C'était vraiment le bazar."
-            elias "Ouais. Et demain, quelqu'un cherchera forcément le seul machin qu'on aura rangé au mauvais endroit."
-            noam taquin "Tu comptes me faire porter le chapeau ?"
-            elias rire "Évidemment. C'est pour ça que je te remercie maintenant."
+            noam "Tu veux de l'aide ?"
+            elias "Ah oui, s'il te plaît. Elle est plus lourde que je pensais."
+            noam "Y a quoi là-dedans ?"
+            elias "Des pièces pour l'atelier. Fais attention, le fond tient pas très bien."
+            "Je change aussitôt la position de mes mains."
+            noam "T'aurais pu me le dire avant que je la soulève."
+            elias "Ah. Pardon."
+            noam "Tu vas où ?"
+            elias "À la maintenance. On peut la poser un peu plus loin, je finirai tout seul."
+            noam "OK."
+            elias "Merci pour tout à l'heure, aussi. Nyra a enfin retrouvé des références que je cherchais depuis trois jours."
             $ hideGroup()
         "Continuer vers la cafétéria.":
             pass
     return
+
 
 label KD_ROUTE_J7_LYSA_SECRET:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
