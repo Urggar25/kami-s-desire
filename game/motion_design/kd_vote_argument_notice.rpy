@@ -15,6 +15,20 @@ init python:
         if renpy.loadable("audio/sfx_question.mp3"):
             renpy.sound.play("audio/sfx_question.mp3", relative_volume=.30)
 
+    # Same card-to-folder animation for the investigation dossier.
+    # Registration remains the responsibility of investigation_add.
+    def kd_investigation_argument_notice(eid):
+        if renpy.is_skipping() or eid not in INVESTIGATION_ENTRIES:
+            return False
+        entry = INVESTIGATION_ENTRIES[eid]
+        item = (entry["title"], investigation_category_color(entry["category"]))
+        renpy.hide_screen("kd_vote_argument_toast")
+        store.kd_vote_notice_items = ()
+        renpy.show_screen("kd_vote_argument_toast", items=(item,), dossier_title=_("DOSSIER D'ENQUÊTE  /  + ARGUMENT"))
+        if renpy.loadable("audio/sfx_question.mp3"):
+            renpy.sound.play("audio/sfx_question.mp3", relative_volume=.30)
+        return True
+
 transform kd_vote_notice_slide:
     subpixel True
     alpha 0.0
@@ -23,7 +37,7 @@ transform kd_vote_notice_slide:
     pause 1.65
     easein .40 alpha 0.0 xoffset 35
 
-screen kd_vote_argument_toast(items):
+screen kd_vote_argument_toast(items, dossier_title=None):
     modal False
     zorder 95
     frame at kd_vote_notice_slide:
@@ -34,7 +48,7 @@ screen kd_vote_argument_toast(items):
         background Solid("#0B1C2AF5")
         vbox:
             spacing 9
-            text _("DOSSIER DE VOTE  /  + ARGUMENT"):
+            text (dossier_title or _("DOSSIER DE VOTE  /  + ARGUMENT")):
                 size 19
                 color "#79DDEF"
             for title, tint in items:
