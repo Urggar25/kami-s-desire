@@ -37,58 +37,50 @@ label _20_0_1_1_0_REVEIL:
     play music "audio/music/bgm_horror_pulse.mp3" fadein 1.0
     $ danger_on()
 
-    think "Je ne sais pas combien de temps je reste devant la table avant de réussir à bouger."
-    think "Mara est là. Allongée devant moi. Dans une pièce que personne n'était censé connaître."
-
-    "Ma lampe tremble entre mes doigts. J'essaie de la stabiliser, mais dès que je regarde son visage, ça recommence."
+    "Je reste devant la table, la lampe braquée sur le visage de Mara."
+    "Ma main tremble. J'essaie de la tenir avec l'autre, sans résultat."
 
     noam peur "Mara...?"
 
-    "Je n'attends pas vraiment de réponse. Son torse ne bouge pas, ses yeux sont fermés et rien, absolument rien dans cette pièce, ne ressemble à quelqu'un qui dort tranquillement."
-
-    think "Je devrais m'approcher. Vérifier son pouls. Faire quelque chose."
-    think "Mais je n'y arrive pas."
+    "Elle ne bouge pas."
+    think "Vérifie son pouls."
+    "Je fais un pas, puis je m'arrête."
 
     "Un bruit métallique résonne dans le conduit derrière moi."
 
-    noam surpris "..." id j20_reveil_silence_noam
+    noam peur "Qui est là ?" id j20_reveil_silence_noam
 
-    "Cette fois, je ne reste pas."
+    "Je recule, puis je cours."
 
     scene bg_conduit_reseau at adaptive_fullscreen with vpunch
     $ flashlight_on(pattern=4)
 
-    "Je remonte dans le réseau aussi vite que l'espace me le permet, la lampe coincée dans une main et le couteau toujours serré dans l'autre. Je me cogne plusieurs fois contre la tôle, mais je continue sans ralentir."
-
-    think "Il faut prévenir les autres."
-    think "Il faut qu'ils viennent voir."
+    "Je remonte dans le réseau avec la lampe dans une main et le couteau dans l'autre. Mon épaule cogne contre la tôle. Je continue."
+    think "Va chercher les autres."
 
     $ flashlight_off()
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "Je me laisse tomber hors de la grille et manque de m'écraser sur le sol de ma chambre. J'ai les genoux en feu, la respiration complètement coupée, mais je me relève presque immédiatement."
+    "Je sors de la grille trop vite et tombe à genoux dans ma chambre."
 
     "Je regarde le couteau dans ma main."
 
-    think "Je devrais le poser."
-
-    "Je ne le fais pas."
+    think "Pose-le."
+    "Je me relève avec."
 
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_200
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
-    "Je traverse le couloir sans même chercher à savoir quelle heure il est. Quelques portes sont encore fermées, d'autres commencent à s'ouvrir. Je n'adresse la parole à personne."
+    "Je traverse le dortoir. Une porte s'ouvre sur mon passage ; je ne m'arrête pas."
 
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
-
-    "Quand j'arrive près de la cafétéria, j'entends plusieurs voix à l'intérieur. Il y a déjà du monde."
 
     scene bg_cafeteria at adaptive_fullscreen with vpunch
 
     stop music fadeout 0.5
     play music "audio/music/bgm_tense_meeting.mp3" fadein 1.0
 
-    "J'ouvre la porte tellement brutalement qu'elle vient frapper le mur."
+    "La porte frappe le mur."
 
     $ showGroup([
         ("noam", "desespoir", 0.05),
@@ -102,38 +94,38 @@ label _20_0_1_1_0_REVEIL:
     ])
 
     call cutin("noam", expr="desespoir", color="#ff2e55") from _call_kd_cutin_20_noam
-    noam desespoir "Mara est morte !"
+    noam desespoir "{shout}MARA EST MORTE !{/shout}"
 
     "Plus personne ne parle."
     call reactions([("ryn", "surpris"), ("elen", "peur"), ("iris", "inquiet")]) from _call_kd_reactions_20_mara
 
     ryn surpris "Quoi ?" id j20_cafeteria_ryn_quoi
 
-    noam desespoir "Mara est morte. Je viens de la trouver dans la salle des Goumi, derrière les conduits. Elle était allongée sur la table de maintenance."
+    noam desespoir "Dans la salle des Goumi. Sur la table de maintenance. Elle bougeait plus."
 
-    elen peur "Attends... Mara ? Notre Mara ?"
+    elen peur "Attends... Mara ?"
 
-    noam colere "Oui, notre Mara ! De qui tu veux que je parle ?!"
+    noam colere "Oui, Mara !"
 
-    iris inquiet "Noam, calme-toi deux secondes et pose déjà ce que tu as dans la main."
+    iris inquiet "Noam. Le couteau."
 
-    "Je baisse les yeux vers le couteau comme si je le découvrais seulement maintenant."
+    "Je baisse les yeux."
 
-    noam "Je l'ai pris pour me défendre dans les conduits, c'est tout. Je ne suis pas venu ici pour menacer quelqu'un."
+    noam inquiet "Je l'avais dans les conduits. C'est tout."
 
-    lysa inquiet "Personne n'a dit ça, mais tu débarques couvert de poussière avec un couteau en hurlant qu'une fille est morte. Tu peux peut-être comprendre qu'on ait besoin de deux secondes pour suivre."
+    lysa inquiet "Pose-le. Après tu recommences depuis le début."
 
-    noam colere "J'ai pas besoin que vous suiviez, j'ai besoin que vous veniez voir !"
+    noam colere "J'ai pas besoin de recommencer ! Venez voir !"
 
-    tomas inquiet "Tu l'as touchée ? Enfin... t'as vérifié son pouls ? T'es sûr qu'elle était morte ?"
+    tomas inquiet "Tu as vérifié son pouls ?"
 
-    noam desaccord "Non, j'ai pas pris son putain de pouls ! Elle bougeait plus, elle respirait plus et elle était sur une table dans une pièce cachée. Ça vous suffit ou il faut vraiment que je vous fasse un rapport ?"
+    noam desaccord "Non. J'ai paniqué. Mais elle respirait pas, Tomas."
 
     sael mefiant "Ça suffit pour qu'on vérifie."
 
     "Des pas arrivent derrière moi avant que quelqu'un puisse répondre."
 
-    mara "Vérifier quoi ?"
+    mara neutre "Vérifier quoi ?"
 
     $ horror_audio_cut(duration=0.52, restore_volume=0.70)
     $ unlock_gallery_image("bg_cg044")
@@ -144,7 +136,7 @@ label _20_0_1_1_0_REVEIL:
     "Je me retourne."
     $ doppelganger_reveal(screamer=False, duration=0.86, restore_volume=0.70)
 
-    "Mara vient d'entrer dans la cafétéria, les cheveux encore un peu en bataille, visiblement réveillée depuis peu."
+    "Mara est dans l'encadrement de la porte."
 
     mara neutre "Pourquoi vous me regardez tous comme ça ?"
 
@@ -158,7 +150,7 @@ label _20_0_1_1_0_REVEIL:
 
     mara colere "Pardon ?"
 
-    noam "Reste là."
+    noam peur "Reste là."
 
     mara colere "Mais qu'est-ce que t'as encore foutu ?"
 
@@ -180,36 +172,34 @@ label _20_0_1_1_0_REVEIL:
 
     mara colere "Et moi je sais que je suis devant toi, là ! Tu veux que je fasse quoi de plus, que je me pince pour te rassurer ?"
 
-    noam "C'est impossible..."
+    noam panne "Non..."
 
     $ investigation_add("mara_vivante")
 
-    ryn desaccord "Noam, regarde-la. Elle est là."
+    ryn desaccord "Noam. Elle est là."
 
     noam colere "Je la regarde ! C'est justement pour ça que je vous demande de venir avec moi ! Il y avait un corps sur cette table, et ce corps avait son visage !"
 
-    "Iris, qui allait répondre, fixe Mara. Elle a l'air moins inquiète pour moi que tout à l'heure."
+    "Iris fixe Mara."
     iris reflexion "Attends. Tu dis que t'as vu son corps ? Pas quelqu'un qui lui ressemble ?"
-    noam colere "Oui, Iris ! C'est ce que je me tue à vous dire !"
+    noam colere "Son visage. Ses cheveux. Tout."
     iris inquiet "Et elle était vraiment morte ? T'as vérifié ?"
-    noam agace "Elle bougeait pas ! Elle était froide !"
-    iris reflexion "D'accord..."
-    "Elle regarde encore Mara, puis baisse les yeux. On dirait qu'elle cherche quelque chose dans sa tête."
-    iris inquiet "Tu es sûr que tu n'as pas simplement..."
+    noam agace "Elle était froide."
+    iris reflexion "Tu l'as touchée, alors ?"
+    noam hesitation "Je... non. Pas vraiment."
+    iris inquiet "Alors comment tu—"
 
     noam colere "Non !"
 
-    "Je coupe Iris avant même qu'elle termine."
-
-    noam "Me dites pas que j'ai rêvé. Pas maintenant. Venez voir la salle, regardez la table, et après vous pourrez me dire que je suis devenu fou si ça vous chante."
+    noam colere "Me dites pas que j'ai rêvé. Venez voir la table. Après, vous pourrez décider que je suis fou."
 
     mara colere "Moi, je vais nulle part avec toi tant que t'as ce couteau."
 
-    noam "Très bien."
+    noam agace "Très bien."
 
     "Je le pose lentement sur une table, manche tourné vers l'extérieur."
 
-    noam determine "Maintenant, quelqu'un vient avec moi."
+    noam determine "Maintenant, qui vient ?"
 
     "Un silence passe."
 
@@ -217,11 +207,11 @@ label _20_0_1_1_0_REVEIL:
 
     kael inquietude "Moi aussi."
 
-    ryn "Je peux venir si—"
+    ryn determine "Je peux venir si—"
 
-    iris desaccord "Non. On va pas être huit à ramper là-dedans. Kael vient, moi aussi. Et surtout, je veux éviter que Noam fasse encore une connerie."
+    iris desaccord "Non. Kael connaît les conduits, moi je garde un œil sur Noam. À trois, ça suffit."
 
-    noam colere "Je ne me mets pas en danger."
+    noam colere "J'ai pas besoin d'être surveillé."
 
     iris blase "Tu as passé la nuit avec un couteau dans une bouche d'aération. On en reparlera."
 
@@ -229,9 +219,7 @@ label _20_0_1_1_0_REVEIL:
 
     "Je tourne la tête vers elle."
 
-    noam desespoir "Il y aura quelque chose."
-
-    "Je le dis sans hésiter. Pourtant, une partie de moi espère presque avoir tort."
+    noam desespoir "Elle était là."
 
     $ hideGroup()
 
@@ -250,21 +238,21 @@ label _20_0_1_1_SALLE_GOUMI:
         ("kael", "inquietude", 0.82),
     ])
 
-    "Nous avançons tous les trois dans le réseau. Iris est juste derrière moi, Kael ferme la marche et, contrairement à la veille, chaque bruit me semble beaucoup plus fort."
+    "Iris rampe derrière moi. Kael ferme la marche."
 
-    iris inquiet "T'es sûr du chemin ? Et je demande sérieusement, hein. J'ai aucune envie de me paumer là-dedans juste avant de partir."
+    iris inquiet "T'es sûr du chemin ?"
 
-    noam "Oui. Je reconnais les bifurcations. La salle est encore un peu plus loin."
+    noam determine "Oui. Encore deux bifurcations."
 
     kael inquietude "Tu étais venu jusque-là tout seul cette nuit ?"
 
-    noam "Oui."
+    noam agace "Oui."
 
-    kael "Avec ton couteau."
+    kael doute "Avec ton couteau."
 
-    noam colere "Je sais très bien à quoi ça ressemble, Kael ! Ça fait plusieurs nuits que j'entends quelqu'un derrière ma chambre, personne m'écoute et j'en ai eu marre. Alors avance."
+    noam colere "Je sais à quoi ça ressemble. J'entendais quelqu'un, personne me croyait... J'y suis allé."
 
-    "Il ne répond pas."
+    kael doute "D'accord."
 
     "Quelques minutes plus tard, je reconnais enfin la grille qui donne sur la salle."
 
@@ -281,7 +269,7 @@ label _20_0_1_1_SALLE_GOUMI:
         ("kael", "inquietude", 0.82),
     ])
 
-    "Mes pieds touchent le sol et je braque immédiatement la lampe vers la table de maintenance."
+    "Je saute dans la salle et braque la lampe vers la table."
 
     pause 1.0
 
@@ -290,17 +278,17 @@ label _20_0_1_1_SALLE_GOUMI:
     "{cps=10}Elle est vide.{/cps}"
     with flash_white
 
-    "Je reste immobile quelques secondes, convaincu que je me suis trompé de table. Puis je regarde celle d'à côté, le sol, l'espace entre les établis."
+    "Je regarde la table d'à côté. Puis le sol."
 
     noam peur "Non..."
 
     iris inquiet "Noam ?"
 
-    noam "Elle était là."
+    noam peur "Elle était là."
 
     "Je m'approche de la table et passe ma main sur la surface métallique."
 
-    noam "Elle était là ! Sur le dos, la tête de ce côté. Je confonds pas, bordel."
+    noam colere "Là ! Sur le dos, la tête de ce côté !"
 
     kael inquietude "Il n'y a rien."
 
@@ -308,39 +296,39 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Je regarde sous la table, derrière les deux Goumi, puis dans les espaces de rangement ouverts sous l'établi."
 
-    iris reflexion "Noam, arrête deux secondes. Si quelqu'un a vraiment déplacé un corps, tu vas pas le retrouver en ouvrant trois tiroirs au pif."
+    iris reflexion "Noam, arrête. Si quelqu'un a déplacé un corps, il l'a pas rangé dans un tiroir."
 
     noam colere "Donc tu admets que quelqu'un a pu le déplacer ?"
 
-    iris "Je dis seulement que ce que tu fais ne sert à rien."
+    iris agace "Je dis que fouiller au hasard sert à rien."
 
-    noam "Parce que vous pensez que j'ai tout inventé."
+    noam desaccord "Vous pensez que j'ai tout inventé."
 
     iris inquiet "Je pense surtout que tu dors presque plus et que t'es terrifié. Ça veut pas dire que tu mens."
 
     noam colere "Arrêtez tous avec ça ! J'étais fatigué, oui. J'avais peur, oui. Ça ne transforme pas une table vide en cadavre !"
 
-    kael inquietude "Et pourtant, maintenant, elle est vide."
+    kael inquietude "Maintenant, elle est vide."
 
     "Je me retourne brutalement vers lui."
 
     noam colere "Tu veux dire quoi par là ?"
 
-    kael "Rien. Je dis juste qu'on est venus vérifier... et qu'il y a personne, Noam."
+    kael doute "Qu'on est venus vérifier. Et qu'il n'y a personne."
 
-    noam "Tu crois que je mens ?"
+    noam colere "Tu crois que je mens ?"
 
-    kael "Depuis trois jours, on découvre que nos souvenirs peuvent nous raconter n'importe quoi. Alors non, je vais pas te dire que t'as forcément raison juste parce que tu gueules."
+    kael doute "Je crois que tu l'as vue. Mais avec M16, ça ne prouve pas qu'elle était là."
 
-    "Je trouve rien à répondre tout de suite."
+    "Je ne réponds pas."
 
     noam desespoir "Je l'ai vue..."
 
-    iris triste "Je sais que tu en es convaincu."
+    iris triste "Je sais."
 
     noam colere "Ne me parle pas comme si j'étais malade."
 
-    iris inquiet "Alors arrête de te comporter comme si on voulait tous te piéger."
+    iris inquiet "Alors arrête de nous parler comme si on était contre toi."
 
     "Je fais un pas vers elle, plus par frustration que par intention réelle, et mon pied heurte quelque chose au sol."
 
@@ -354,15 +342,15 @@ label _20_0_1_1_SALLE_GOUMI:
 
     iris peur "Ne le ramasse pas."
 
-    noam desaccord "Iris, je vais juste le récupérer."
+    noam desaccord "Je le ramasse, c'est tout."
 
     iris determine "Non. Tu le laisses par terre et on remonte."
 
     noam colere "Tu crois vraiment que je vais vous attaquer ?"
 
-    iris "Là, je crois surtout que tu réfléchis plus correctement. Alors pour une fois, tu m'écoutes et tu t'éloignes de ce putain de couteau."
+    iris determine "Là, je crois que tu réfléchis plus. Recule."
 
-    noam colere "J'en ai marre qu'on décide à ma place ce que j'ai vu, ce que j'ai compris et maintenant même ce que j'ai le droit de toucher !"
+    noam colere "J'en ai marre qu'on décide de tout à ma place !"
 
     "Je me penche malgré elle."
 
@@ -370,7 +358,7 @@ label _20_0_1_1_SALLE_GOUMI:
 
     "Je referme ma main sur le manche et me redresse."
 
-    noam "Voilà. Je l'ai. Et maintenant on remonte, d'accord ?"
+    noam agace "Voilà. Maintenant on remonte."
 
     "Iris ne bouge pas."
 
@@ -417,13 +405,13 @@ label _20_0_1_1_GARDER_COUTEAU:
 
     iris colere "Noam..."
 
-    noam "Je vais pas vous attaquer. J'ai juste pas envie de me retrouver encore désarmé pendant que quelqu'un se balade dans les murs."
+    noam colere "Je vais attaquer personne. Je veux juste pas rester désarmé pendant que quelqu'un se balade dans les murs."
 
     "Elle avance d'un pas."
 
     noam inquiet "Iris, reste où tu es."
 
-    iris "Pose le couteau et je reste où je suis."
+    iris determine "Pose-le et je recule."
 
     noam colere "Arrête de me parler comme à un débile !"
 
@@ -472,9 +460,7 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     $ danger_off()
 
-    "Mes doigts restent serrés autour du manche encore une seconde."
-
-    "Puis je souffle et ouvre la main."
+    "Je garde le manche serré une seconde de plus, puis j'ouvre la main."
 
     play sound sfx_drop
 
@@ -484,31 +470,23 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Iris ne répond pas."
 
-    "Elle regarde le couteau, puis ma main vide, comme si elle attendait encore que je change d'avis."
+    "Elle regarde ma main vide."
 
-    noam "Ça va ?"
+    noam inquiet "Ça va ?"
 
     iris colere "Non."
 
     noam surpris "..."
 
-    iris "Non, ça va pas, espèce d'abruti."
-
-    "Sa voix tremble légèrement sur la fin."
-
-    "Je crois que c'est ça qui me fait enfin comprendre."
+    iris colere "Non, ça va pas, espèce d'abruti."
 
     noam inquiet "Iris..."
 
     "Elle s'approche."
 
-    "Par réflexe, je me raidis."
-
     iris fatigue "Bouge pas."
 
-    noam "Je bouge pas."
-
-    "Je m'attends à ce qu'elle m'attrape encore le poignet."
+    noam hesitation "Je bouge pas."
 
     "À la place, ses bras passent autour de moi."
 
@@ -518,49 +496,45 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Iris serre plus fort."
 
-    noam "Euh..."
+    noam gene "Euh..."
 
     iris triste "Ferme-la deux secondes."
 
     "Alors je ferme la bouche."
 
-    "Je sens sa respiration contre mon épaule. Elle est rapide. Beaucoup trop rapide pour quelqu'un qui essayait encore de faire la dure il y a trente secondes."
-
     iris fatigue "J'ai cru que t'allais vraiment faire une connerie."
 
     noam inquiet "Je voulais pas te faire de mal."
 
-    iris "Je sais."
+    iris fatigue "Je sais."
 
     "Elle répond tout de suite."
 
     iris triste "C'est justement ça le pire."
 
-    noam "..."
+    noam fatigue "..."
 
-    iris "Je savais que tu voulais pas. Mais je savais plus ce que t'allais faire non plus."
+    iris triste "Je savais que tu voulais pas. Mais je savais plus ce que t'allais faire."
 
     "Je baisse les yeux."
 
     noam fatigue "Moi non plus."
 
-    "Elle reste contre moi quelques secondes encore."
+    "Kael détourne la tête."
 
-    "Kael détourne légèrement la tête. Pour une fois, il a l'air de trouver le mur passionnant."
-
-    noam "Désolé."
+    noam fatigue "Désolé."
 
     iris fatigue "Ouais."
 
-    noam "C'est tout ?"
+    noam hesitation "C'est tout ?"
 
     iris blase "Tu voulais quoi ? Un discours ?"
 
-    "Je laisse échapper un rire très court. Ça ressemble davantage à de l'air qui sort de mes poumons qu'à autre chose."
+    "Un rire nerveux m'échappe."
 
-    iris "T'as intérêt à pas me refaire un truc pareil."
+    iris colere "T'as intérêt à pas me refaire un truc pareil."
 
-    noam "Je vais essayer."
+    noam fatigue "Je vais essayer."
 
     iris colere "Non. Tu vas pas essayer."
 
@@ -586,35 +560,19 @@ label _20_0_1_1_LACHER_COUTEAU:
     scene bg_conduit_reseau at adaptive_fullscreen with dissolve
     $ flashlight_on(pattern=2)
 
-    "Le retour se fait presque sans un mot."
-
-    "Iris avance devant moi. Kael ferme encore la marche."
-
-    "Je reconnais chaque bifurcation, chaque plaque, chaque virage."
-
-    "Et pourtant, plus j'avance, moins je sais ce qui s'est réellement passé depuis hier."
+    "Iris avance devant. Kael ferme la marche. Personne ne parle."
 
     think "J'ai vu Mara sur cette table."
 
     think "Je l'ai vue."
 
-    "Mais Mara était dans la cafétéria."
-
-    "Vivante."
-
-    "Et je sais maintenant qu'on a touché à mes souvenirs."
+    think "Mais Mara était dans la cafétéria. Vivante."
 
     think "M16."
 
     "Je serre les dents."
 
-    think "Alors quoi ?"
-
-    think "Le corps était faux ?"
-
-    think "Le souvenir était faux ?"
-
-    think "Ou c'est Mara qui..."
+    think "Le corps était faux ? Le souvenir ? Ou Mara..."
 
     "Je bloque la pensée avant même de la terminer."
 
@@ -624,19 +582,19 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     iris blase "Tu sais que t'es vraiment mauvais pour mentir ?"
 
-    noam "Je réfléchis."
+    noam fatigue "Je réfléchis."
 
-    iris "Justement."
+    iris blase "Justement."
 
     "Elle ralentit pour rester à ma hauteur."
 
     iris fatigue "T'es pas obligé de trouver une réponse maintenant."
 
-    noam "Demain on part."
+    noam inquiet "Demain on part."
 
-    iris "Je sais."
+    iris fatigue "Je sais."
 
-    noam "Si j'ai vu quelque chose de réel, demain c'est trop tard."
+    noam inquiet "Si le corps était réel, demain c'est trop tard."
 
     "Iris ouvre la bouche, mais ne répond pas."
 
@@ -661,13 +619,13 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     iris colere "J'ai pas dit ça."
 
-    noam "Je sais."
+    noam fatigue "Je sais."
 
     iris fatigue "Je vais juste leur dire qu'il n'y avait plus de corps. C'est la seule chose qu'on sait."
 
     "Elle hésite une seconde avant de sortir."
 
-    iris "Et tu restes ici."
+    iris determine "Et tu restes ici."
 
     noam blase "Oui, maman."
 
@@ -677,7 +635,7 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Elle me lance encore un regard méfiant, puis ouvre la porte."
 
-    iris "Kael ?"
+    iris reflexion "Kael ?"
 
     kael doute "J'arrive."
 
@@ -687,13 +645,13 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Kael, lui, ne bouge pas tout de suite."
 
-    noam "Tu peux y aller, tu sais."
+    noam fatigue "Tu peux y aller."
 
     kael doute "Ouais."
 
     "Il regarde la grille ouverte derrière nous."
 
-    kael "Je voulais juste..."
+    kael doute "Je voulais juste..."
 
     "Il s'arrête."
 
@@ -703,13 +661,13 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     kael doute "Non, rien."
 
-    noam "Kael."
+    noam reflexion "Kael."
 
     "Il inspire doucement par le nez."
 
     kael inquietude "Je peux te poser une question ?"
 
-    noam "Vas-y."
+    noam calme "Vas-y."
 
     kael doute "C'est un peu... enfin, c'est pas vraiment lié à tout ça."
 
@@ -721,7 +679,7 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Il marque une pause."
 
-    kael "Et que tu sais qu'en partant, quelqu'un resterait coincé ici..."
+    kael doute "Et que quelqu'un resterait coincé ici..."
 
     "Ses yeux quittent les miens."
 
@@ -739,9 +697,9 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Il s'interrompt encore."
 
-    kael "Laisse tomber. C'était une question con."
+    kael doute "Laisse tomber. C'était une question con."
 
-    noam "Non."
+    noam reflexion "Non."
 
     "Il relève les yeux."
 
@@ -751,7 +709,7 @@ label _20_0_1_1_LACHER_COUTEAU:
 
     "Un silence passe."
 
-    kael "Alors ?"
+    kael inquietude "Alors ?"
 
 label _20_0_1_1_KAEL_QUESTION:
 
@@ -781,24 +739,23 @@ label _20_0_1_1_KAEL_PARTIR:
         jump _20_0_1_1_IRIS_CONFRONTATION
 
 
-    noam reflexion "Oui."
+    noam reflexion "Je monte."
 
     kael surpris "..."
 
-    noam "Enfin... si j'ai vraiment aucun moyen de le sortir, oui. Je monte."
+    noam hesitation "Enfin... si j'ai vraiment aucun moyen de le sortir."
 
     kael doute "Même en sachant qu'il reste ici ?"
 
-    noam "Rester avec lui changera rien. Rester ici pour quoi faire ?"
-    noam "On sera juste deux personnes coincées au lieu d'une."
+    noam reflexion "Rester avec lui ne changera rien. On sera juste deux à être coincés."
 
     "Il regarde le sol quelques secondes."
 
     kael inquietude "Ouais..."
 
-    kael "Je vois."
+    kael doute "Je vois."
 
-    noam "T'avais quelqu'un en tête ?"
+    noam inquiet "T'avais quelqu'un en tête ?"
 
     kael surpris "Non."
 
@@ -806,7 +763,7 @@ label _20_0_1_1_KAEL_PARTIR:
 
     kael doute "Non, personne. Je... je me demandais juste."
 
-    noam "D'accord."
+    noam reflexion "D'accord."
 
     "Il hoche la tête, comme s'il venait de prendre une décision qui n'a rien à voir avec moi."
 
@@ -819,27 +776,25 @@ label _20_0_1_1_KAEL_RESTER:
         jump _20_0_1_1_IRIS_CONFRONTATION
 
 
-    noam reflexion "Non."
+    noam reflexion "Je reste."
 
     kael surpris "Tu resterais ?"
 
-    noam "S'il y a encore une chance de le sortir, oui."
+    noam calme "S'il reste une chance de le sortir, oui."
 
     kael inquietude "Même si tu risques de rater la navette ?"
 
-    noam "Je vais pas te dire que je resterais ici pour toujours juste pour faire le héros."
-
-    noam "Mais partir alors que je peux encore faire quelque chose ? Non."
+    noam hesitation "Je vais pas rester ici pour toujours juste pour faire le héros. Mais partir alors que je peux encore faire quelque chose ? Non."
 
     "Kael baisse légèrement les yeux."
 
     kael doute "Même si c'est pas... quelqu'un que tu connais vraiment ?"
 
-    noam "Ça change quoi ?"
+    noam reflexion "Ça change quoi ?"
 
-    kael "..."
+    kael doute "..."
 
-    noam "S'il est coincé ici et que je peux l'aider, j'essaie. Après, si c'est impossible, c'est autre chose."
+    noam calme "S'il est coincé et que je peux l'aider, j'essaie. Si c'est impossible... c'est autre chose."
 
     "Kael reste silencieux longtemps."
 
@@ -851,9 +806,9 @@ label _20_0_1_1_KAEL_RESTER:
 
     "Il cherche ses mots."
 
-    kael "Je voulais savoir."
+    kael doute "Je voulais savoir."
 
-    noam "Tu me fais un peu flipper quand tu parles comme ça."
+    noam inquiet "Tu me fais un peu flipper, là."
 
     kael sourire "Désolé."
 
@@ -874,15 +829,7 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
 
     $ hideGroup()
 
-    "La porte se referme."
-
-    "Je reste assis sur mon lit."
-
-    "Quelques minutes plus tôt, j'étais prêt à me battre avec Iris pour garder un couteau."
-
-    "Maintenant, tout est redevenu calme."
-
-    "Trop calme."
+    "La porte se referme. Je reste assis sur le lit, les mains posées entre mes genoux."
 
     scene black with dissolve
     pause 0.6
@@ -891,44 +838,21 @@ label _20_0_1_1_LACHER_FIN_JOURNEE:
     scene bg_chambre at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
-    "La nuit tombe sans que je trouve la moindre réponse."
-
-    "Mara est vivante."
-
-    "J'en suis sûr."
-
-    "Je suis aussi sûr d'avoir vu son corps."
-
-    "Et ces deux certitudes se cognent dans ma tête depuis des heures."
-
-    think "M16."
-
-    "C'est presque pire de savoir que mes souvenirs ont pu être modifiés."
-
-    "Avant, je pouvais au moins me fier à ce que j'avais vu."
-
-    "Maintenant..."
+    "Des heures plus tard, je n'ai toujours rien compris."
+    think "Mara est vivante. J'ai vu son corps. Les deux ne peuvent pas être vrais."
+    think "Sauf si M16 a encore touché à ma mémoire."
 
     noam fatigue "Putain."
 
-    "Je me laisse tomber sur le dos."
-
-    "Demain, la navette doit arriver."
-
-    "Demain, tout ça est censé être terminé."
-
-    "Je ferme les yeux."
-
-    "La question étrange de Kael me revient en tête."
+    "Je me laisse tomber sur le dos. Demain, la navette doit arriver."
+    "La question de Kael me revient."
 
     if j20_kael_depart_choice == "leave":
         think "Ça fera juste deux personnes coincées au lieu d'une."
     else:
         think "S'il reste une chance de le sortir..."
 
-    "Je ne sais toujours pas pourquoi il m'a demandé ça."
-
-    "Et je suis trop fatigué pour chercher."
+    think "Pourquoi il voulait savoir ça ?"
 
     stop music fadeout 1.5
 
@@ -950,21 +874,20 @@ label _20_0_1_1_IRIS_QTE_ECHEC:
     $ unlock_gallery_image("bg_cg047")
     scene bg_cg047 at adaptive_fullscreen with flash_white
 
-    "Le couteau tombe immédiatement. J'essaie de me dégager par réflexe, mais elle garde mon bras bloqué et me repousse contre la table."
+    "Le couteau tombe. J'essaie de me dégager, mais Iris garde mon bras bloqué contre la table."
 
     iris colere "Arrête de bouger !"
 
     noam colere "Lâche-moi !"
 
-    iris "Je te lâche dès que tu te calmes !"
+    iris colere "Je te lâche dès que tu te calmes !"
 
-    noam "Je suis calme !"
+    noam colere "Je suis calme !"
 
-    kael "Non, Noam, là t'es vraiment pas calme !"
+    kael inquietude "Non. Là, t'es pas calme."
 
-    "Je force pour me relever. Iris change simplement d'appui, me déséquilibre une deuxième fois et, quand j'essaie encore de lui échapper, son mouvement suivant part beaucoup plus vite que le précédent."
-
-    "Je vois son poing arriver sur le côté."
+    "Je force pour me relever. Iris change d'appui et me déséquilibre encore."
+    "Son poing arrive sur le côté."
 
     scene bg_cg047 at adaptive_fullscreen with vpunch
     play sound "audio/sfx_thud.mp3" volume 0.95
@@ -995,9 +918,8 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     $ j20_iris_qte_success = True
 
-    "Je baisse l'épaule au moment où Iris cherche à verrouiller mon bras. Sa prise glisse."
-
-    "Elle revient aussitôt. J'évite son coude de justesse et je tire mon poignet vers moi avant qu'elle puisse le reprendre."
+    "Je baisse l'épaule au moment où Iris verrouille mon bras. Sa prise glisse."
+    "Elle revient aussitôt. J'évite son coude et récupère mon poignet."
 
     iris colere "Arrête de bouger !"
 
@@ -1009,15 +931,15 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     iris colere "Alors lâche-le !"
 
-    noam "Je vais le poser, mais arrête de me sauter dessus deux secondes !"
+    noam inquiet "Je vais le poser ! Arrête de me sauter dessus !"
 
-    iris "Tu dis ça depuis tout à l'heure !"
+    iris colere "Tu dis ça depuis tout à l'heure !"
 
     "Elle attrape mon avant-bras à deux mains."
 
     noam colere "Lâche-moi !"
 
-    iris "Lâche le couteau !"
+    iris colere "Lâche le couteau !"
 
     "Je tire mon bras vers moi. Elle tire dans l'autre sens."
 
@@ -1034,11 +956,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
     scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
     play sound sfx_drop
 
-    "Tout va beaucoup trop vite."
-
-    "Je sens son poids partir vers moi."
-
-    "Puis quelque chose s'arrête net."
+    "Son poids part vers moi. Quelque chose s'arrête net."
 
     pause 0.6
 
@@ -1063,8 +981,6 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     iris panne "..."
 
-    "Pendant une seconde, elle a juste l'air agacée. Comme si son cerveau refusait encore de comprendre."
-
     iris fatigue "T'es... sérieux... ?"
 
     noam desespoir "J'ai pas fait exprès. Putain, Iris, j'ai pas fait exprès !"
@@ -1075,9 +991,9 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Sa voix me coupe."
 
-    iris "Touche pas... laisse-le."
+    iris peur "Touche pas... laisse-le."
 
-    noam "D'accord. D'accord, je touche pas."
+    noam peur "D'accord. Je touche pas."
 
     "Ses jambes commencent à lâcher."
 
@@ -1114,7 +1030,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Il ne répond pas. Il me regarde seulement, parfaitement immobile, comme s'il attendait que je comprenne tout seul."
 
-    noam "Mais bouge, putain !"
+    noam colere "Mais bouge, putain !"
 
     show kael taquin at j20_kael_approach(1.34) with Dissolve(0.22)
 
@@ -1134,7 +1050,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     "Il fait un pas vers nous."
 
-    noam "Qu'est-ce que tu fous ? Va chercher quelqu'un !"
+    noam colere "Qu'est-ce que tu fous ? Va chercher quelqu'un !"
 
     show kael taquin at j20_kael_approach(1.76) with Dissolve(0.16)
 
@@ -1163,7 +1079,7 @@ label _20_0_1_1_IRIS_QTE_REUSSITE:
 
     noam peur "..."
 
-    noam "T'es pas Kael."
+    noam peur "T'es pas Kael."
 
     hide kael
     scene bg_salle_goumi_cachee at adaptive_fullscreen with vpunch
@@ -1299,7 +1215,7 @@ label _20_0_1_1_INFIRMERIE:
 
     "Aucune réponse."
 
-    noam "Sael ?! Iris ?!"
+    noam colere "Sael ?! Iris ?!"
 
     "Je recommence, plus fort."
 
@@ -1309,7 +1225,7 @@ label _20_0_1_1_INFIRMERIE:
 
     "Je me débats encore quelques secondes avant que la douleur dans ma tête m'oblige à arrêter."
 
-    noam "Putain..."
+    noam fatigue "Putain..."
 
     "Je reste allongé, essoufflé, à fixer le plafond."
 
@@ -1361,7 +1277,7 @@ label _20_0_1_1_OBSERVER_INFIRMERIE:
         "Le moniteur" if "moniteur" not in _j20_infirmerie_points:
             $ _j20_infirmerie_points.append("moniteur")
             "Le moniteur derrière mon épaule affiche mon rythme cardiaque, mais une seconde courbe reste figée sous la mienne. Elle porte la même heure de réveil."
-            think "Deux patients enregistrés sur un seul lit. Ou deux versions du même patient."
+            think "Pourquoi il y a une seconde courbe ?"
             jump _20_0_1_1_OBSERVER_INFIRMERIE
 
         "Les sangles" if "sangles" not in _j20_infirmerie_points:
@@ -1383,11 +1299,8 @@ label _20_0_1_1_OBSERVER_INFIRMERIE:
 
 label _20_0_1_1_ATTENTE_INFIRMERIE:
 
-    "Je ne sais pas combien de temps je reste comme ça. Assez longtemps pour avoir la gorge sèche à force d'appeler, puis assez longtemps encore pour que je finisse par me taire."
-
-    "Le pire n'est même plus d'être attaché."
-
-    "Le pire, c'est de savoir que Mara est quelque part dans le Conclave alors que je peux encore voir son corps dès que je ferme les yeux."
+    "J'appelle jusqu'à avoir la gorge sèche, puis je me tais."
+    "Chaque fois que je ferme les yeux, je revois Mara sur la table."
 
     scene bg_infirmerie at adaptive_fullscreen with dissolve
     pause 1.2
@@ -1411,29 +1324,29 @@ label _20_0_1_1_LYSA_SAEL:
         ("sael", "neutre", 0.82),
     ])
 
-    lysa blase "Eh ben... T'as vraiment une tête affreuse."
+    lysa blase "T'as une tête affreuse."
 
     noam colere "Détache-moi."
 
-    lysa "Bonjour Lysa, merci d'être venue voir comment je vais. Non, vraiment, fais comme chez toi."
+    lysa taquin "Bonjour Lysa. Merci d'être venue. Non, surtout, ne change rien."
 
-    noam "Ça fait combien de temps que je suis là ?"
+    noam agace "Ça fait combien de temps que je suis là ?"
 
     lysa reflexion "Quelques heures. Iris t'a pas raté, mais apparemment elle savait exactement où frapper pour t'éteindre sans te casser quelque chose."
 
-    noam colere "Elle m'a mis KO et ensuite vous m'avez attaché à un lit pendant des heures. Tu veux vraiment qu'on parle de ma politesse ?"
+    noam colere "Iris m'a mis KO et vous m'avez attaché. Ma politesse attendra."
 
     "Lysa soupire, puis s'approche du lit. Malgré son ton, elle me regarde attentivement, surtout la tempe."
 
-    lysa fatigue "Je vais te le dire une fois sans me foutre de toi : t'as complètement déconné. T'es revenu avec un couteau en gueulant que Mara était morte alors qu'elle était juste là. Et après, dans les conduits, Iris te dit de laisser le couteau au sol... et toi tu le ramasses quand même."
+    lysa fatigue "Je vais le dire sans me foutre de toi : t'as déconné. Tu débarques avec un couteau, Mara est devant toi, puis Iris te demande de laisser la lame au sol et tu la ramasses."
 
     noam desaccord "Je ne voulais attaquer personne."
 
-    lysa "Je sais."
+    lysa fatigue "Je sais."
 
     noam surpris "Alors pourquoi je suis attaché ?"
 
-    lysa "Parce que ça change rien au fait que t'étais hors de contrôle ! Iris savait pas ce que t'allais faire la seconde d'après. Et franchement ? Moi non plus."
+    lysa fatigue "Parce qu'Iris savait pas ce que t'allais faire après. Moi non plus."
 
     noam colere "J'étais pas hors de contrôle. J'étais énervé parce que personne ne m'écoutait."
     noam fatigue "Bon. Vous voulez une explication ? Alors écoutez jusqu'au bout."
@@ -1446,35 +1359,35 @@ label _20_0_1_1_LYSA_SAEL:
 
     lysa blase "Tu vois, rien que cette phrase, elle résume assez bien le problème."
 
-    noam "Lysa..."
+    noam agace "Lysa..."
 
-    lysa fatigue "Je te crois quand tu dis que t'as eu peur. Je te crois même quand tu dis que t'as vraiment vu Mara sur cette table. Mais tu peux pas demander à tout le monde d'agir comme si elle était morte alors qu'elle est debout devant nous."
+    lysa fatigue "Je te crois quand tu dis que t'as vu Mara. Mais tu peux pas nous demander d'agir comme si elle était morte alors qu'elle est debout devant nous."
 
     noam colere "Arrête de dire 'dans ma tête'."
 
-    lysa "Tu veux que je dise quoi ? Que Mara est morte et vivante en même temps ?"
+    lysa blase "Tu veux que je dise quoi ? Qu'elle est morte et vivante en même temps ?"
 
-    noam "Je veux que tu admettes qu'il y a quelque chose qui ne colle pas !"
+    noam colere "Je veux que tu admettes qu'il y a quelque chose qui colle pas !"
 
     sael raison "Personne ne dit le contraire."
 
     "Je tourne la tête vers Sael, qui est restée près de la porte."
 
-    noam "Alors détache-moi."
+    noam agace "Alors détache-moi."
 
     sael neutre "Non." id j20_infirmerie_sael_non
 
     noam colere "Pourquoi ?"
 
-    sael "Parce que tu t'es réveillé depuis moins d'une heure, que tu cries depuis que nous sommes entrées et que tu essaies encore de tirer sur tes liens toutes les trente secondes."
+    sael neutre "Parce que tu viens de te réveiller, que tu cries et que tu tires encore sur les sangles."
 
-    noam "Parce que je suis attaché !"
+    noam colere "Parce que je suis attaché !"
 
     lysa blase "C'est vrai que le concept tourne un peu en rond."
 
     noam colere "Ça t'amuse ?!"
 
-    lysa "Non. C'est justement pour ça que je plaisante."
+    lysa fatigue "Non. C'est justement pour ça que je plaisante."
 
     "Sa réponse me coupe une seconde."
 
@@ -1488,29 +1401,29 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam colere "Je suis sérieux."
 
-    lysa "Moi aussi."
+    lysa fatigue "Moi aussi."
 
     "Je prends une longue inspiration. J'essaie de parler moins fort, mais ma colère revient dès que je repense à la table vide."
 
-    noam reflexion "Écoutez-moi juste jusqu'au bout. Quand je suis entré dans cette salle cette nuit, Mara était là. Quand je suis revenu avec Iris et Kael, elle avait disparu. Entre les deux, quelqu'un a forcément fait quelque chose."
+    noam reflexion "Écoutez. Cette nuit, Mara était sur la table. Quand je suis revenu, le corps avait disparu. Entre les deux, quelqu'un est entré."
 
     sael mefiant "Ou ton souvenir est faux."
 
     noam colere "Je savais que t'allais dire ça."
 
-    sael "Parce que c'est possible."
+    sael raison "Parce que c'est possible."
 
-    noam "Et c'est pratique, hein ? Depuis qu'on a découvert M16, dès qu'il se passe quelque chose qu'on n'arrive pas à expliquer, on peut juste dire que ma mémoire déconne."
+    noam colere "C'est pratique. Depuis M16, tout ce qui vous arrange pas devient un faux souvenir."
 
     sael raison "J'ai pas dit ça. Je dis juste qu'on peut pas écarter l'idée parce qu'elle te fait peur."
 
-    noam "Ce qui me fait peur, c'est qu'on puisse tous rester là à discuter pendant que quelqu'un se balade dans les murs."
+    noam inquiet "Ce qui me fait peur, c'est que quelqu'un se balade dans les murs pendant qu'on discute."
 
     lysa reflexion "Et qui serait ce quelqu'un ?"
 
-    noam "J'en sais rien."
+    noam agace "J'en sais rien."
 
-    lysa "Voilà."
+    lysa blase "Voilà."
 
     noam colere "Non, justement ! C'est pas 'voilà' ! Le fait que je sache pas qui c'est ne veut pas dire qu'il n'existe pas."
 
@@ -1518,9 +1431,9 @@ label _20_0_1_1_LYSA_SAEL:
 
     sael mefiant "Noam."
 
-    noam "Quelqu'un connaissait cette salle ! Quelqu'un a pu déplacer le corps avant qu'on revienne ! Et demain on quitte tous le Conclave comme si de rien n'était !"
+    noam colere "Quelqu'un connaissait cette salle ! Il a déplacé le corps et demain il peut partir avec nous !"
 
-    sael "Noam, arrête de tirer comme ça. Tu vas te faire mal."
+    sael inquiet "Noam, arrête. Tu vas te faire mal."
 
     noam colere "ARRÊTEZ DE ME DIRE DE ME CALMER !"
 
@@ -1532,7 +1445,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam inquiet "Tu plaisantes ?"
 
-    sael "Non."
+    sael neutre "Non."
 
     lysa blase "Pour une fois, je te conseille vraiment de la croire."
 
@@ -1542,7 +1455,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam hesitation "D'accord... D'accord, je me calme."
 
-    sael "Bien."
+    sael calme "Bien."
 
     "Elle garde tout de même la seringue à portée de main."
 
@@ -1550,7 +1463,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     noam colere "Profite."
 
-    lysa "Je compte bien."
+    lysa taquin "Je compte bien."
 
     "Je respire plus lentement. Cette fois, je fais réellement l'effort de ne pas crier."
 
@@ -1558,7 +1471,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Lysa ne répond pas immédiatement."
 
-    noam "Quelqu'un connaissait ces conduits avant nous. Quelqu'un savait comment atteindre cette salle et... si ce corps était réel, bordel, quelqu'un l'a déplacé pendant que j'étais parti."
+    noam raison "Quelqu'un connaissait ces conduits avant nous. Si le corps était réel, il l'a déplacé pendant que j'étais parti."
 
     sael mefiant "Tu parles d'un traître."
 
@@ -1566,23 +1479,23 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Le mot reste un instant dans la pièce."
 
-    noam "Il y a un traître parmi nous."
+    noam determine "Il y a un traître parmi nous."
 
     lysa reflexion "Tu as un nom ?"
 
-    noam "Non."
+    noam fatigue "Non."
 
-    lysa "Un indice qui désigne quelqu'un en particulier ?"
+    lysa reflexion "Un indice qui désigne quelqu'un ?"
 
-    noam "Non."
+    noam fatigue "Non."
 
     lysa fatigue "Tu vois bien le problème. Si on commence à regarder tout le monde comme un traître à moins de vingt-quatre heures du départ, on va finir par s'entretuer tout seuls."
 
     noam desaccord "Et si on ne fait rien, on peut partir avec cette personne demain."
 
-    sael "Peut-être."
+    sael raison "Peut-être."
 
-    noam "Tu vois ? Même toi tu l'envisages."
+    noam agace "Tu vois ? Même toi tu l'envisages."
 
     sael raison "J'envisage tout. Ça veut pas dire que je vais pointer quelqu'un du doigt sans la moindre preuve."
 
@@ -1594,7 +1507,7 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Sa réponse est moins moqueuse."
 
-    lysa "Mais toi, tu vas rester ici pour l'instant. Tu vas arrêter de courir dans les murs, arrêter de chercher des cadavres tout seul et surtout arrêter de prendre des couteaux dès que tu entends un bruit."
+    lysa fatigue "Mais toi, tu restes ici. Plus de conduits, plus de chasse au cadavre et plus de couteau."
 
     noam colere "Tu dis ça comme si c'était une habitude."
 
@@ -1608,9 +1521,9 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Je la regarde sans savoir quoi répondre."
 
-    noam "Lysa..."
+    noam inquiet "Lysa..."
 
-    lysa "Quoi ?"
+    lysa blase "Quoi ?"
 
     noam inquiet "Si tu entends quelque chose cette nuit, derrière une grille ou dans un mur... ne va pas voir toute seule."
 
@@ -1618,23 +1531,23 @@ label _20_0_1_1_LYSA_SAEL:
 
     lysa sourire "D'accord."
 
-    noam "Je suis sérieux."
+    noam inquiet "Je suis sérieux."
 
-    lysa "Moi aussi. Je te promets que si quelqu'un vient ramper derrière ma chambre cette nuit, je hurlerai suffisamment fort pour réveiller tout le Conclave."
+    lysa sourire "Moi aussi. Si quelqu'un rampe derrière ma chambre, je réveille toute la station."
 
     sael neutre "Nous devrions y aller."
 
     noam inquiet "Attendez."
 
-    sael "Quoi encore ?"
+    sael neutre "Quoi encore ?"
 
-    noam "Vous allez vraiment me laisser ici ?"
+    noam inquiet "Vous allez vraiment me laisser ici ?"
 
     lysa blase "Oui."
 
-    noam "Attaché ?"
+    noam colere "Attaché ?"
 
-    lysa "Tu progresses vite."
+    lysa blase "Tu progresses vite."
 
     noam colere "Lysa..."
 
@@ -1642,11 +1555,11 @@ label _20_0_1_1_LYSA_SAEL:
 
     "Sael ouvre la porte."
 
-    noam "Et le traître ?"
+    noam inquiet "Et le traître ?"
 
     sael mefiant "S'il existe, il sera encore là quand tu te réveilleras."
 
-    noam "C'est justement ce qui m'inquiète."
+    noam inquiet "C'est justement ce qui m'inquiète."
 
     "Elles échangent un regard, mais aucune ne répond."
 
@@ -1669,26 +1582,15 @@ label _20_0_1_1_FIN:
     "Je reste seul dans l'infirmerie, toujours attaché au lit."
     call KD_EXTRA_J20_ELEN from _call_kd_extra_j20_elen
 
-    "Pendant un long moment, je fixe simplement la porte par laquelle Lysa et Sael viennent de sortir. J'aimerais me convaincre qu'elles vont réfléchir à ce que je leur ai dit, mais je n'en sais rien."
-
-    think "Il y a un traître parmi nous."
-    "Je me répète la phrase. J'en sais rien. Mais pour l'instant, c'est la seule chose qui relie encore tout le reste."
-
-    think "Mara dans la salle."
-    think "Mara dans la cafétéria."
-    think "Le corps disparu."
-
-    "Trois faits qui ne peuvent pas exister ensemble, et pourtant je me souviens des trois."
+    "Je fixe la porte après le départ de Lysa et Sael."
+    think "Mara sur la table. Mara dans la cafétéria. Puis plus de corps."
+    think "Quelqu'un a fait disparaître ce que j'ai vu."
 
     noam fatigue "..." id j20_fin_silence_noam
 
     "Je ferme les yeux, puis les rouvre presque aussitôt."
 
-    "Demain, la navette arrivera."
-
-    "Tout le monde quittera le Conclave."
-
-    "Et si j'ai raison, celui qui nous manipule quittera peut-être cet endroit avec nous."
+    "Demain, la navette arrivera. Si j'ai raison, le responsable pourra monter avec nous."
 
     "Je tire une dernière fois, doucement, sur la sangle de mon poignet."
 
@@ -1696,11 +1598,7 @@ label _20_0_1_1_FIN:
 
     noam inquiet "Génial..."
 
-    "Pour la première fois depuis plusieurs nuits, je n'ai même plus accès à la bouche d'aération."
-
-    "Ça devrait me rassurer."
-
-    "Étrangement, ce n'est pas le cas."
+    "Je regarde la grille d'aération, hors de portée depuis le lit."
 
     stop music fadeout 2.0
     call show_chapter_title("Fin du chapitre 6", "Chapitre 6 — Derrière les murs") from _call_show_chapter_title_23
