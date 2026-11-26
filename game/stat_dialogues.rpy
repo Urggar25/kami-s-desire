@@ -102,12 +102,12 @@ init 3 python:
             ],
         },
         "d7_0_1": {
-            "prompt": "Tomas tient son rapport contre lui. « Plus aucune exécution. Tu comprends ce que ça signifie ? »",
+            "prompt": "Tomas tient son rapport contre lui. « On a tous les deux obtenu zéro. »",
             "options": [
                 _sd_option("verifier", "Attends, zéro exécution depuis hier ? Tu es sûr que tes chiffres sont bons ?", "sd_d7_0_1_verifier"),
                 _sd_option("espoir", "Ça veut dire que personne n'a été exécuté depuis hier ? C'est énorme, Tomas !", "sd_d7_0_1_espoir"),
-                _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé au même moment. C'est pas une coïncidence.", "sd_d7_0_1_motif", requires={"logique": 3}),
-                _sd_option("se_risquer", "Il faut le dire aux autres. Ça fait peut-être une journée entière sans exécution !", "sd_d7_0_1_se_risquer"),
+                _sd_option("motif", "Il faudrait comparer l'heure du dernier enregistrement avec les anomalies d'hier.", "sd_d7_0_1_motif", requires={"logique": 3}),
+                _sd_option("se_risquer", "On peut essayer de vérifier encore une fois tout de suite, non ?", "sd_d7_0_1_se_risquer"),
             ],
         },
         "d7_1_0": {
@@ -627,7 +627,7 @@ label sd_d6_1_0_oser:
 
 # JOUR d7_0_1 — nouvelle réponse ordinaire : +1 XP audace.
 label sd_d7_0_1_se_risquer:
-    tomas "Je comprends. Mais si on en parle, il faudra bien préciser ce qu'on a vérifié et ce qu'on ignore encore. Je ne veux pas que quelqu'un prenne ce chiffre pour une autorisation de faire n'importe quoi."
+    tomas "Je veux bien refaire les vérifications avec toi. Mais si les données reçues sont incomplètes, on risque d'obtenir exactement le même résultat."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
