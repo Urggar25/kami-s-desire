@@ -32,27 +32,17 @@ label _21_0_1_1_0_1_REVEIL:
     scene black
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
 
-    "Je me réveille avant l'annonce de Kami."
-
-    "Pendant quelques secondes, je reste allongé sans bouger, les yeux ouverts dans le noir."
+    "Je me réveille avant l'annonce de Kami et je reste allongé dans le noir."
 
     think "Aujourd'hui."
 
-    "C'est la première pensée qui me vient."
-
-    "Pas Mara. Pas la salle des Goumi. Pas M16."
-
-    "Aujourd'hui, on rentre."
+    "Aujourd'hui, on rentre. Pour une fois, Mara, la salle des Goumi et M16 peuvent attendre."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
     "Je me redresse lentement et regarde la grille d'aération au fond de la chambre."
 
-    "Elle est exactement comme hier."
-
-    "Enfin... je crois."
-
-    "Je la fixe encore quelques secondes avant de détourner les yeux."
+    "Elle a l'air exactement comme hier. Je la fixe quelques secondes de trop avant de détourner les yeux."
 
     noam fatigue "Non."
 
@@ -114,11 +104,7 @@ label _21_0_1_1_0_1_REVEIL:
 
     "Je reste debout au milieu de ma chambre."
 
-    think "Seize heures."
-
-    "Quelques heures."
-
-    "C'est tout ce qu'il reste."
+    think "Seize heures. Encore quelques heures."
 
     stop music fadeout 1.0
 
@@ -127,9 +113,7 @@ label _21_0_1_1_0_1_REVEIL:
 
     "Quand je sors, plusieurs portes sont déjà ouvertes."
 
-    "Pour la première fois depuis longtemps, le couloir ressemble presque à celui d'un hôtel le matin d'un départ."
-
-    "Des gens passent d'une chambre à l'autre. On parle de sacs, de vêtements oubliés, de ce qu'on fera une fois en bas."
+    "Pour la première fois depuis longtemps, le couloir ressemble à celui d'un hôtel le matin d'un départ. Des gens passent d'une chambre à l'autre, parlent de sacs, de vêtements oubliés et de ce qu'ils feront une fois en bas."
 
     "Personne ne parle de vote."
 
@@ -209,7 +193,7 @@ label _21_0_1_1_0_1_REVEIL:
 
     noam "Je vois bien que c'est du café. Je demandais pourquoi tu me le donnes."
 
-    iris "Parce que t'as une tête de cadavre et que j'aimerais éviter d'en avoir un deuxième à gérer."
+    iris blase "Parce que t'as une tête de cadavre et que j'aimerais éviter d'en avoir un deuxième à gérer."
 
     "Elle réalise ce qu'elle vient de dire et ferme les yeux une demi-seconde."
 
@@ -235,7 +219,7 @@ label _21_0_1_1_0_1_REVEIL:
 
     iris surpris "Attends, quoi ?"
 
-    kael doute "C'était pas exactement—"
+    kael doute "C'était pas exactement ça."
 
     iris colere "Non mais Kael, sérieusement ? Vous aviez pas un sujet plus léger ? Genre la famine, les lasers, je sais pas ?"
 
@@ -341,11 +325,7 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     stop music fadeout 1.0
 
-    "Le reste de la matinée passe beaucoup trop vite."
-
-    "Tout le monde récupère ses affaires."
-
-    "Kami fait vérifier les badges une première fois, puis une deuxième, parce qu'elle considère apparemment que nous sommes incapables de garder un morceau de plastique sur nous pendant quatre heures."
+    "Le reste de la matinée passe trop vite. Tout le monde récupère ses affaires. Kami fait vérifier les badges deux fois, parce qu'elle nous croit apparemment incapables de garder un morceau de plastique pendant quatre heures."
 
     play sound sfx_announce
     stop music fadeout 0.5
@@ -375,13 +355,7 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
     stop music fadeout 0.7
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
-    "Deux heures."
-
-    "Je devrais être soulagé."
-
-    "Je le suis."
-
-    "Mais quelque chose continue de me gratter derrière le crâne."
+    "Deux heures. Je suis soulagé, mais je continue de surveiller chaque bruit."
 
     play sound "audio/sfx_duct_scrape.wav" volume 0.42
 
@@ -409,11 +383,7 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     noam panne "..."
 
-    "Quelques millimètres."
-
-    "Peut-être un centimètre."
-
-    "Je pourrais jurer qu'elle était fermée ce matin."
+    "Un centimètre, pas plus. Je pourrais jurer qu'elle était fermée ce matin."
 
     "Je pose mon sac sur le lit."
 
@@ -423,9 +393,7 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     "Je déteste immédiatement cette pensée."
 
-    "Avant, quand quelque chose n'allait pas, je pouvais au moins faire confiance à mes propres yeux."
-
-    "Maintenant, même une grille mal fermée suffit à me faire douter de ma tête."
+    "Avant, je pouvais au moins faire confiance à mes propres yeux. Maintenant, une grille mal fermée suffit à me faire douter."
 
     play sound sfx_door
 
@@ -469,7 +437,7 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
 
     noam surpris "Pourquoi ?"
 
-    iris fatigue "Parce qu'hier j'ai passé mon temps à te dire quoi faire, quoi pas toucher, où aller... et ça nous a presque explosé à la gueule."
+    iris fatigue "Parce qu'hier, j'ai passé mon temps à te dire quoi faire, quoi pas toucher, où aller... et ça nous a presque explosé à la gueule."
 
     "Elle s'approche et remet machinalement le col de ma veste en place."
 
@@ -506,13 +474,9 @@ label _21_0_1_1_0_1_MILIEU_JOURNEE:
     hide iris with dissolve
     play sound sfx_door
 
-    "La porte se referme."
-
-    "Et, d'un coup, la chambre paraît beaucoup plus vide."
+    "La porte se referme. La chambre paraît tout de suite beaucoup plus vide."
 
     pause 0.8
-
-    "Je reste seul."
 
     jump _21_0_1_1_0_1_DOPPELGANGER
 
@@ -559,7 +523,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     noam peur "..."
 
-    "Mon cerveau refuse l'image avant même que je comprenne pourquoi."
+    "Mon cerveau refuse l'image avant que je comprenne pourquoi."
 
     "Quelqu'un sort du conduit et retombe lourdement dans ma chambre."
 
@@ -573,7 +537,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     noam panne "..."
 
-    "Même visage, même taille, mêmes cheveux. Il respire vite, les épaules trop hautes, comme quelqu'un qui vient de courir longtemps."
+    "Même visage, même taille, mêmes cheveux. Il respire vite, les épaules hautes, comme s'il venait de traverser toute la station en courant."
 
     "Et dans sa main, il y a mon couteau."
 
@@ -607,7 +571,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     "Il bloque."
 
-    dg_noam doute "Enfin... je sais pas comment te le dire sans que ça sonne complètement dingue."
+    dg_noam doute "Je sais pas comment le dire sans avoir l'air complètement dingue."
 
     noam colere "Essaie."
 
@@ -619,11 +583,11 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     noam "Non, t'as peut-être copié des trucs, je sais pas, mais—"
 
-    dg_noam "Je me souviens de notre mère qui nous criait dessus quand on rentrait trop tard."
+    dg_noam inquiet "Je me souviens de notre mère qui criait quand on rentrait trop tard."
 
     noam colere "Ferme-la."
 
-    dg_noam "Je me souviens de la maison. De l'escalier qui grinçait au milieu. De la poignée de la salle de bain qu'il fallait relever sinon—"
+    dg_noam inquiet "De l'escalier qui grinçait au milieu. De la poignée de la salle de bain qu'il fallait relever sinon—"
 
     noam "FERME-LA."
 
@@ -639,7 +603,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     noam colere "Oui. MA sœur."
 
-    dg_noam colere "Et tu crois que moi, quand je pense à elle, je pense à quoi ? À un fichier ? À une photo ?"
+    dg_noam colere "Et tu crois que, quand je pense à elle, je vois quoi ? Un fichier ?"
 
     noam "T'as volé mes souvenirs."
 
@@ -729,13 +693,13 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     dg_noam "SI !"
 
-    "On se tait tous les deux, à bout de souffle alors qu'aucun de nous n'a encore bougé assez pour justifier ça."
+    "On se tait, tous les deux à bout de souffle."
 
     dg_noam fatigue "Tu l'as dit hier."
 
     noam reflexion "Quoi ?"
 
-    dg_noam "Quand t'as une sortie, tu la prends. Si rester change rien, tu pars."
+    dg_noam fatigue "Quand t'as une sortie, tu la prends. Si rester change rien, tu pars."
 
     noam colere "Ça n'a rien à voir et tu le sais."
 
@@ -747,17 +711,15 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     pause 0.5
 
-    "Sa voix remplit la chambre puis retombe d'un coup."
-
-    "Ses yeux brillent."
+    "Sa voix remplit la chambre. Il baisse aussitôt le ton et jette un regard vers la porte."
 
     show noam desespoir at j21_dg_noam_approach(1.34) with dissolve
 
-    dg_noam "Moi aussi je veux serrer Juliette dans mes bras ! Moi aussi je veux rentrer, ouvrir cette putain de porte et la voir me sauter dessus comme si j'étais parti trois ans !"
+    dg_noam desespoir "Moi aussi, je veux retrouver Juliette. Ouvrir la porte et la voir me sauter dessus comme si j'étais parti trois ans."
 
     noam panne "..."
 
-    dg_noam "Tu crois que ça me fait rien ? Tu crois que parce que je suis arrivé après toi, tout ce que j'ai là-dedans compte moins ?"
+    dg_noam fatigue "Je suis arrivé après toi. D'accord. Ça veut dire que tout ce que j'ai dans la tête compte moins ?"
 
     noam peur "T'es pas moi."
 
@@ -773,7 +735,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     "Il serre les dents, cherche ses mots, puis secoue la tête."
 
-    dg_noam fatigue "Je te demande rien. C'est justement ça le problème."
+    dg_noam fatigue "Je te demande rien. Je sais déjà que tu diras non."
 
     show noam inquiet at j21_dg_noam_approach(1.46) with dissolve
 
@@ -787,7 +749,7 @@ label _21_0_1_1_0_1_DOPPELGANGER:
 
     "Le prénom sort tout seul. Il nous fait hésiter tous les deux."
 
-    noam peur "Attends."
+    noam peur "Attends. On peut encore parler."
 
     show noam colere at j21_dg_noam_approach(1.60) with Dissolve(0.18)
 
@@ -879,11 +841,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     noam panne "..."
 
-    "Je ne sens presque rien au début."
-
-    "Juste un choc."
-
-    "Puis la douleur arrive."
+    "Au début, je sens juste le choc. Puis la douleur arrive."
 
     "Mes jambes lâchent."
 
@@ -891,7 +849,7 @@ label _21_0_1_1_0_1_QTE_ECHEC:
 
     dg_noam peur "Merde... Non, non, non..."
 
-    "Il me rattrape avant que je m'effondre et me descend lentement jusqu'au sol, comme si me laisser tomber maintenant pouvait encore changer quelque chose."
+    "Il me rattrape et me descend jusqu'au sol au lieu de me laisser tomber."
 
     noam peur "Iris..."
 
@@ -958,15 +916,7 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
     scene bg_chambre at adaptive_fullscreen with creep_diss
     play music "audio/music/bgm_epilogue_cold.mp3" fadein 2.0
 
-    "Noam reste assis au sol pendant plusieurs secondes."
-
-    "Il regarde le corps devant lui."
-
-    "Son propre visage."
-
-    "Ses propres mains."
-
-    "Du sang sur ses doigts."
+    "Noam reste assis au sol. Il regarde le corps devant lui, puis le sang sur ses doigts."
 
     $ unlock_gallery_image("bg_cg067")
     scene bg_cg067 at adaptive_fullscreen with creep_diss
@@ -1014,15 +964,7 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "Noam récupère le badge."
-
-    "Le téléphone."
-
-    "Le sac."
-
-    "Tout ce qui appartient à Noam."
-
-    "Tout ce qui lui appartient maintenant."
+    "Noam récupère le badge, le téléphone et le sac. Tout ce qui permet de dire qu'il est Noam."
 
     "L'écran du téléphone s'allume."
 
@@ -1050,9 +992,7 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     dg_noam "J'ai fait tomber mon sac."
 
-    "Elle regarde la chambre."
-
-    "Puis son visage."
+    "Elle regarde la chambre, puis son visage."
 
     iris reflexion "Ça va ?"
 
@@ -1106,11 +1046,7 @@ label _21_0_1_1_0_1_FIN_A_MA_PLACE:
 
     "Noam sort discrètement son téléphone."
 
-    "La photo de Juliette est toujours là."
-
-    "Cette fois, son sourire n'a rien de victorieux."
-
-    "Il a seulement l'air terrifié."
+    "La photo de Juliette est toujours là. Il ne sourit pas. Il a seulement l'air terrifié."
 
     dg_noam "Encore un peu..."
 
@@ -1159,11 +1095,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "Pendant une seconde, j'ai mon propre visage à quelques centimètres du mien."
 
-    "Même peur."
-
-    "Même rage."
-
-    "Même envie de sortir d'ici."
+    "Sur son visage, je retrouve exactement ma peur et ma rage."
 
     play sound sfx_door
     scene bg_chambre at adaptive_fullscreen with vpunch
@@ -1241,10 +1173,11 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
     "Elle a blêmi."
 
     iris panne "Noam..."
+    call kd_vn_reaction("iris", "peur", "#8fd8ff")
 
     noam fatigue "Je sais."
 
-    iris "Non, justement, tu sais pas. Je viens de rentrer et y'en a deux."
+    iris peur "Non, justement, tu sais pas. Je reviens et y en a deux."
 
     noam "Je sais."
 
@@ -1282,7 +1215,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     noam "Je crois."
 
-    "Elle recule d'un pas, comme si cette réponse était pire que le reste."
+    "Elle recule d'un pas. Cette réponse lui fait plus peur que le couteau."
 
     iris fatigue "Putain..."
 
@@ -1346,7 +1279,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     noam reflexion "Tu viens d'essayer de me tuer."
 
-    dg_noam "Parce que moi aussi je veux vivre."
+    dg_noam fatigue "Parce que moi aussi, je veux vivre."
 
     "Sa voix est beaucoup plus basse maintenant."
 
@@ -1393,15 +1326,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     dg_noam "Tu vas vraiment me laisser ici ?"
 
-    "La question me frappe beaucoup plus fort que prévu."
-
-    "Hier, Kael m'a posé exactement la même."
-
-    "Sans visage."
-
-    "Sans couteau."
-
-    "Sans me dire qui resterait derrière."
+    "Hier, Kael m'a posé la même question sans me dire qui resterait derrière. Maintenant, la personne a mon visage."
 
     dg_noam "Noam."
 
@@ -1443,7 +1368,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "Je ramasse mon sac."
 
-    iris triste "Je suis désolée."
+    iris triste "Je suis désolée. Je peux pas te laisser le tuer."
 
     dg_noam "Ouais."
 
@@ -1508,11 +1433,7 @@ label _21_0_1_1_0_1_QTE_REUSSITE:
 
     "Puis sur le couteau qu'elle tient encore."
 
-    "Quelque chose change dans son expression."
-
-    "Pas de surprise."
-
-    "Plutôt une déception très brève."
+    "Quelque chose change dans son expression. Pas de surprise : une déception brève."
 
     noam panne "..."
 
@@ -1543,9 +1464,7 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
     scene bg_navette at adaptive_fullscreen, shuttle_background with fade
 
-    "Les portes se ferment derrière nous."
-
-    "Je reste debout une seconde de trop avant de m'asseoir."
+    "Les portes se ferment derrière nous. Je reste debout une seconde de trop avant de m'asseoir."
 
     "Iris prend la place à côté de moi."
 
@@ -1619,11 +1538,7 @@ label _21_0_1_1_0_1_FIN_LAISSE_DERRIERE:
 
     show noam fatigue at center with dissolve
 
-    "L'autre Noam a cessé de crier."
-
-    "Il est assis contre le bord du lit, les poignets toujours attachés."
-
-    "Le silence de la station revient peu à peu."
+    "L'autre Noam a cessé de crier. Il est assis contre le bord du lit, les poignets toujours attachés. Le silence de la station revient peu à peu."
 
     play sound sfx_announce
     scene bg_diffusion_taquin at adaptive_fullscreen with signal_stutter
