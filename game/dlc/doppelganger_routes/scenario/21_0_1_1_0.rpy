@@ -4,7 +4,6 @@
 
 
 label _21_0_1_1_LEAVE_REVEIL:
-    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité") from _call_show_chapter_title_4
     # Entrée J21 après la réponse "je monte dans la navette".
     # Cette branche conserve pour l'instant le J21 existant.
     $ j20_kael_depart_choice = "leave"
@@ -21,54 +20,47 @@ label _21_0_1_1_STAY_REVEIL:
 
 label _21_0_1_1_0_REVEIL:
 
+    call show_chapter_title("Début du chapitre 7", "Chapitre 7 — Un semblant de normalité") from _call_show_chapter_title_4
+
     $ cafeteria_food_level = "null"
     $ current_period = "Nuit"
     $ current_day = 21
+    $ day_id = 21
     $ noam_has_juliette_drawing = False
 
     scene black
     play music "audio/music/bgm_horror_pulse.mp3" fadein 1.5
     $ danger_on()
 
-    "Je ne sais pas vraiment si j'ai dormi."
+    "Je ne sais pas combien de temps j'ai dormi. Dix minutes, peut-être. Une heure."
 
     if j20_iris_qte_success:
-        "À plusieurs reprises, j'ai l'impression de fermer les yeux quelques minutes avant de me réveiller en sursaut. J'ai accepté les sangles. Ça ne les rend pas moins réelles."
+        "Chaque fois que je rouvre les yeux, les sangles sont toujours là. J'ai accepté qu'on m'attache. Mon corps, lui, n'a pas reçu l'information."
     else:
-        "À plusieurs reprises, j'ai l'impression de fermer les yeux quelques minutes avant de me réveiller en sursaut, toujours attaché au même lit, toujours sous cette lumière blanche qui finit par me brûler les yeux."
+        "Chaque fois que je rouvre les yeux, je suis toujours attaché au même lit, sous la même lumière blanche."
 
-    "Au bout d'un moment, je cesse même d'essayer de compter les heures."
-
-    "Demain n'existe plus vraiment."
-
-    "Il n'y a que cette chambre."
-
-    "Les sangles."
+    "Au bout d'un moment, j'arrête de regarder l'heure. Je teste une sangle, puis l'autre, alors que je sais déjà qu'elles tiennent."
 
     if not j20_iris_qte_success:
-        "La douleur à ma tempe."
+        "Ma tempe me lance encore là où Iris m'a frappé."
 
-    "Et le silence."
+    "Le silence de l'infirmerie est pire que la lumière. Au moindre bruit, je me redresse."
 
     pause 1.0
 
     play sound "audio/sfx_duct_scrape.wav" volume 0.64
 
-    "Puis un bruit résonne derrière le mur."
+    "Un frottement métallique vient du mur."
 
     "Je relève immédiatement la tête."
 
     noam inquiet "..."
 
-    "Je reste immobile quelques secondes, en essayant de savoir si je l'ai réellement entendu."
+    "Je retiens ma respiration."
 
     play sound "audio/sfx_duct_scrape.wav" volume 0.78
 
-    "Le frottement revient."
-
-    "Plus net cette fois."
-
-    "Quelque chose se déplace dans le conduit."
+    "Le frottement revient, plus long. Quelque chose avance dans le conduit."
 
     noam peur "Non..."
 
@@ -82,7 +74,7 @@ label _21_0_1_1_0_REVEIL:
 
     noam colere "Il y a quelqu'un ?!"
 
-    "Le bruit continue derrière le mur, lentement, comme si quelque chose avançait sans chercher à se presser."
+    "Le bruit continue. Pas vite. Pas discrètement non plus."
 
     noam desespoir "SAEL !"
 
@@ -92,7 +84,7 @@ label _21_0_1_1_0_REVEIL:
 
     "Rien."
 
-    "La panique commence à monter beaucoup plus vite que je ne peux la contrôler."
+    "Je tire si fort que la sangle me brûle le poignet."
 
     noam peur "Quelqu'un m'entend ?!"
 
@@ -112,19 +104,17 @@ label _21_0_1_1_0_REVEIL:
 
     noam panne "..."
 
-    mara neutre "Tu fais encore du bruit."
+    mara neutre "Tu vas réveiller tout le couloir."
 
     noam peur "Reste là."
 
     "Elle referme calmement la porte derrière elle."
 
-    mara "Tu vas réveiller tout le monde."
+    mara neutre "Je suis là. Arrête de hurler."
 
-    noam inquiet "Qu'est-ce que tu fous ici ?"
+    noam inquiet "Qu'est-ce que tu fous ici, à cette heure-là ?"
 
-    "Elle ne répond pas immédiatement."
-
-    "Elle regarde la pièce, puis l'écran de surveillance fixé dans l'angle."
+    "Elle regarde l'écran de surveillance dans l'angle au lieu de me répondre."
 
     noam peur "Mara."
 
@@ -146,22 +136,18 @@ label _21_0_1_1_0_REVEIL:
 
     "Elle se retourne."
 
-    "Cette fois, elle sourit."
-
-    "Pas comme lorsqu'elle se moque de quelqu'un. Pas comme lorsqu'elle cherche à provoquer."
-
-    "C'est un sourire beaucoup trop calme."
+    "Cette fois, elle sourit. Un petit sourire calme qui ne lui ressemble pas."
 
     noam peur "Enlève ça."
 
-    mara sourire "Chut."
+    mara sourire "Non."
 
     noam desespoir "ENLÈVE ÇA !"
     call kd_vn_reaction("noam", "desespoir", "#ff9c55")
 
     "Je recommence à tirer sur les sangles."
 
-    mara "Tu vas te faire mal."
+    mara sourire "Continue et tu vas t'ouvrir les poignets."
 
     noam colere "DÉTACHE-MOI !"
 
@@ -181,7 +167,7 @@ label _21_0_1_1_0_REVEIL:
 
     mara sourire "Tu fais vraiment beaucoup de bruit."
 
-    noam "Va chercher quelqu'un ! Lysa, Sael, j'en sais rien... n'importe qui !"
+    noam desespoir "Va chercher Sael. Ou Lysa. N'importe qui, mais détache-moi !"
 
     "Elle se penche brusquement sur moi et plaque sa main sur ma bouche."
 
@@ -193,7 +179,7 @@ label _21_0_1_1_0_REVEIL:
 
     "J'essaie de la mordre, mais elle retire juste assez ses doigts pour m'empêcher de les attraper entre mes dents."
 
-    mara sourire "Je savais que tu essaierais."
+    mara sourire "Je savais que tu mordrais."
 
     "Mon cœur cogne si fort que j'ai l'impression de l'entendre dans mes oreilles."
 
@@ -218,29 +204,15 @@ label _21_0_1_1_0_REVEIL:
 
     noam panne "..."
 
-    "Quelqu'un rampe hors du conduit."
-
-    "Je regarde d'abord ses mains."
-
-    "Puis ses bras."
-
-    "Puis son visage."
+    "Quelqu'un rampe hors du conduit. Je vois ses mains, sa veste, puis son visage."
 
     pause 1.0
 
     noam peur "..."
 
-    "Je ne comprends pas."
+    "Je comprends ce que je vois. C'est justement pour ça que mon cerveau refuse de suivre."
 
-    "Je le vois. Je sais ce que je regarde. Mais non. Ça n'a aucun sens."
-
-    "Même taille."
-
-    "Même visage."
-
-    "Même cheveux."
-
-    "Même expression fatiguée que celle que j'ai vue des dizaines de fois dans un miroir depuis le début du Conclave."
+    "Même taille. Même veste. Même visage fatigué que dans le miroir de ma chambre."
 
     "Il se redresse lentement."
 
@@ -256,7 +228,7 @@ label _21_0_1_1_0_REVEIL:
 
     mara sourire "Calme-toi."
 
-    "L'autre Noam avance sans rien dire."
+    "L'autre Noam avance sans rien dire. Il évite mon regard jusqu'au bord du lit."
 
     "Je tire sur mes poignets jusqu'à sentir les sangles m'entailler la peau."
 
@@ -266,17 +238,7 @@ label _21_0_1_1_0_REVEIL:
 
     "Son regard descend sur moi."
 
-    "Puis il sourit."
-
-    "Pas comme moi."
-
-    "Pas vraiment."
-
-    "Il a mon visage."
-
-    "Mais pas mon sourire."
-
-    "Lui, il a l'air content d'être là."
+    "Puis il sourit. C'est mon visage, mais pas un sourire que je reconnais."
 
     "Mara retire légèrement sa main."
 
@@ -290,11 +252,7 @@ label _21_0_1_1_0_REVEIL:
 
     $ cam_reset(t=0.20)
     scene bg_infirmerie at adaptive_fullscreen with memory_rip
-    "L'autre moi tourne la tête vers le plateau médical."
-
-    "Il tend la main."
-
-    "Ses doigts se referment sur un scalpel."
+    "L'autre moi tourne la tête vers le plateau médical et prend un scalpel."
 
     $ unlock_gallery_image("bg_cg056")
     scene bg_cg056 at adaptive_fullscreen with creep_diss
@@ -315,7 +273,7 @@ label _21_0_1_1_0_REVEIL:
 
     "Elle me regarde sans bouger."
 
-    noam "Mara, putain, je t'en supplie... détache-moi !"
+    noam desespoir "Mara, je t'en supplie... détache-moi."
 
     "Son sourire s'élargit légèrement."
 
@@ -329,29 +287,15 @@ label _21_0_1_1_0_REVEIL:
 
     "Je secoue la tête de toutes mes forces."
 
-    "Je tente de lever les jambes, de casser les sangles, de me tordre suffisamment pour tomber du lit, n'importe quoi."
-
-    "Rien ne fonctionne."
-
-    "Je n'ai plus assez d'air."
-
-    "Je n'arrive plus à respirer correctement."
-
-    "La main de Mara."
-
-    "Les sangles."
-
-    "La peur."
-
-    "Tout se mélange."
+    "Je lève les jambes, je tire sur mes bras, j'essaie même de basculer le lit. Rien ne cède. Avec la main de Mara sur ma bouche, je n'arrive plus à reprendre mon souffle."
 
     "L'autre Noam se penche."
 
     "Son visage est maintenant juste au-dessus du mien."
 
-    "Il me regarde comme s'il cherchait à mémoriser quelque chose."
+    "Il me regarde une dernière fois. Cette fois, il ne sourit plus."
 
-    "Puis son sourire devient presque joyeux."
+    noam peur "Attends..."
 
     pause 0.5
 
@@ -359,37 +303,15 @@ label _21_0_1_1_0_REVEIL:
     scene black with suffocation_cut
     $ shake(16, 0.40)
 
-    "Une douleur brutale traverse ma gorge."
-
-    "Je n'entends même pas immédiatement le bruit qui sort de ma bouche."
-
-    "J'essaie d'inspirer."
-
-    "L'air ne passe presque plus."
-
-    "Je tente encore de tirer sur mes bras, mais mes forces disparaissent beaucoup trop vite."
+    "La douleur traverse ma gorge. J'essaie d'inspirer, mais l'air ne passe presque plus. Mes bras tirent encore une fois sur les sangles, sans force."
 
     "Ma vision se brouille."
 
-    "Mara devient une silhouette."
-
-    "L'autre moi aussi."
-
-    "Je vois encore son visage."
-
-    "Mon visage."
-
-    "Toujours souriant."
+    "Mara devient une silhouette. L'autre moi aussi. Je vois encore mon visage penché au-dessus du lit."
 
     noam panne "..."
 
-    "J'essaie de respirer."
-
-    "Je veux juste respirer."
-
-    "Encore une fois."
-
-    "Une seule."
+    "J'essaie encore de respirer."
 
     scene black
     stop music fadeout 2.0
@@ -410,24 +332,18 @@ label _21_0_1_1_EPILOGUE:
 
     play music "audio/music/bgm_epilogue_cold.mp3" fadein 3.0
 
-    "La navette quitte lentement le Conclave."
+    "La navette quitte le Conclave. Dans les hublots, la station rétrécit pendant que la Terre prend toute la place."
 
-    "À travers les hublots, la station s'éloigne progressivement tandis que la Terre occupe une place de plus en plus importante dans le champ de vision."
-
-    "Les représentants sont installés sur deux rangées de sièges, maintenus par les sangles prévues pour la descente."
-
-    "Personne ne parle beaucoup."
-
-    "Après trois semaines enfermés dans le Conclave, personne ne semble savoir quoi dire. Alors on regarde juste la Terre se rapprocher."
+    "Les représentants sont sanglés sur deux rangées. Au début, personne ne trouve quoi dire."
 
     show elen joie at left with dissolve
     show iris fatigue at right with dissolve
 
-    elen joie "J'arrive toujours pas à croire qu'on rentre vraiment ! J'attends encore que Kami débarque avec un 'surpriiise, dernier vote' juste pour nous emmerder."
+    elen joie "J'attends encore le moment où Kami va annoncer un dernier vote. Juste pour nous emmerder."
 
     iris fatigue "Ne lui donne pas d'idées. Si elle nous rappelle dans cinq minutes, je saute par le hublot."
 
-    elen rire "On est dans l'espace."
+    elen rire "On est dans l'espace, Iris."
 
     iris blase "Oui, merci Elen, j'avais remarqué."
 
@@ -439,13 +355,13 @@ label _21_0_1_1_EPILOGUE:
     show tomas reflexion at left with dissolve
     show ryn fatigue at right with dissolve
 
-    tomas reflexion "Faudra quand même qu'on mette tout ça par écrit en rentrant. Les votes, M16, les conduits, les règles internes... sinon dans une semaine on aura déjà douze versions différentes."
+    tomas reflexion "Il faudra mettre tout ça par écrit en rentrant. Les votes, M16, les conduits... Dans une semaine, on aura déjà douze versions différentes."
 
     ryn fatigue "Tu peux faire tes rapports si ça t'amuse. Moi, je veux juste remettre les pieds au sol et dormir une journée entière."
 
-    tomas "Je sais, mais... on peut pas juste rentrer, dormir, et faire comme si tout ça avait jamais existé."
+    tomas inquiet "Je sais, mais on peut pas faire comme si tout ça n'avait jamais existé."
 
-    ryn "J'ai pas dit ça. J'ai dit que je voulais dormir avant."
+    ryn fatigue "J'ai pas dit ça. J'ai dit que je voulais dormir avant ton rapport."
 
     "Tomas hoche la tête, presque amusé malgré lui."
 
@@ -471,7 +387,7 @@ label _21_0_1_1_EPILOGUE:
 
     noam sourire "Oui. Pourquoi ?"
 
-    lysa reflexion "J'sais pas. Depuis qu'on est montés, t'as une tête... bizarre."
+    lysa reflexion "Depuis qu'on est montés, t'as une tête bizarre."
 
     noam sourire "Une tête bizarre ?"
 
@@ -479,13 +395,13 @@ label _21_0_1_1_EPILOGUE:
 
     "Noam regarde de nouveau par le hublot."
 
-    noam sourire "J'suis juste content de rentrer, c'est tout."
+    noam sourire "Je suis juste content de rentrer."
 
-    lysa blase "Ouais... venant de toi après les deux derniers jours, c'est presque flippant."
+    lysa blase "Venant de toi, après les deux derniers jours, c'est presque flippant."
 
     noam rire "Tu préfères que je recommence à paniquer ?"
 
-    lysa "Non. Clairement pas."
+    lysa blase "Non. Garde celle-là."
 
     "Elle se réinstalle dans son siège."
 
@@ -493,9 +409,7 @@ label _21_0_1_1_EPILOGUE:
 
     noam sourire "Ça me va."
 
-    "La navette continue sa descente."
-
-    "Noam garde les yeux tournés vers la planète."
+    "Lysa se détourne. Noam garde les yeux sur la planète."
 
     $ unlock_gallery_image("bg_cg049")
     scene bg_cg049 at adaptive_fullscreen with dissolve
