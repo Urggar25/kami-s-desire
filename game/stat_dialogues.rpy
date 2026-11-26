@@ -102,12 +102,12 @@ init 3 python:
             ],
         },
         "d7_0_1": {
-            "prompt": "Tomas tient son rapport contre lui. « Plus aucune exécution. Tu comprends ce que ça signifie ? »",
+            "prompt": "Tomas regarde le total. « Tu crois qu'il y a vraiment eu zéro exécution depuis hier ? »",
             "options": [
-                _sd_option("verifier", "Attends, zéro exécution depuis hier ? Tu es sûr que tes chiffres sont bons ?", "sd_d7_0_1_verifier"),
-                _sd_option("espoir", "Ça veut dire que personne n'a été exécuté depuis hier ? C'est énorme, Tomas !", "sd_d7_0_1_espoir"),
-                _sd_option("motif", "Le silence de Kami et l'arrêt des exécutions ont commencé au même moment. C'est pas une coïncidence.", "sd_d7_0_1_motif", requires={"logique": 3}),
-                _sd_option("se_risquer", "Il faut le dire aux autres. Ça fait peut-être une journée entière sans exécution !", "sd_d7_0_1_se_risquer"),
+                _sd_option("verifier", "Il faut vérifier les chiffres sur un autre terminal. Si on retrouve le même résultat, on en saura déjà un peu plus.", "sd_d7_0_1_verifier"),
+                _sd_option("espoir", "Si c'est vrai, personne n'a été exécuté depuis hier. J'aimerais bien que ce soit vrai.", "sd_d7_0_1_espoir"),
+                _sd_option("motif", "Il faut comparer l'heure du piratage avec celle de la dernière sanction enregistrée.", "sd_d7_0_1_motif", requires={"logique": 3}),
+                _sd_option("se_risquer", "On devrait au moins le dire aux autres représentants. Pas aux gens sur Terre, juste à eux.", "sd_d7_0_1_se_risquer"),
             ],
         },
         "d7_1_0": {
@@ -443,26 +443,21 @@ label sd_d6_1_0_hesitation:
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Logique.
 label sd_d7_0_1_verifier:
-    tomas "Merci. J'avais besoin que quelqu'un dise ça."
+    tomas "Ouais. Je vais garder les chiffres de celui-ci pour pouvoir comparer."
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Empathie.
 label sd_d7_0_1_espoir:
-    "Les épaules de Tomas retombent un peu."
-    tomas "Oui. Commençons par ça."
+    tomas "Moi aussi. Vraiment."
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 # JOUR 7, route 0-1 — existe si Logique >= 3. Aucune XP.
 label sd_d7_0_1_motif:
-    tomas "Tu penses que les deux événements sont liés ?"
-    noam "Ils ont commencé au même moment. Pour moi, ça mérite qu'on vérifie."
-    tomas "Ça voudrait dire que Kami n'a peut-être pas choisi d'arrêter les exécutions..."
-    noam "On sait pas encore. Et on sait surtout pas si ça va durer."
-    tomas "Je vais relever les horaires exacts dans le rapport."
-    noam "Et on évite de dire aux autres que le danger est passé."
-    tomas "Oui. Ce serait une erreur."
+    tomas "Attends, je vais noter l'heure de la dernière sanction."
+    noam "Kael a trouvé des différences entre les horloges de la station. Faudra en tenir compte."
+    tomas "Ah, d'accord. Je vais lui demander les relevés qu'il a récupérés."
     return
 
 
@@ -632,7 +627,7 @@ label sd_d6_1_0_oser:
 
 # JOUR d7_0_1 — nouvelle réponse ordinaire : +1 XP audace.
 label sd_d7_0_1_se_risquer:
-    tomas "Je préférerais vérifier deux fois... Mais je comprends pourquoi tu ne veux pas attendre."
+    tomas "Je préférerais qu'on vérifie avant. Au moins avec Kael. On pourra prévenir les autres après."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
