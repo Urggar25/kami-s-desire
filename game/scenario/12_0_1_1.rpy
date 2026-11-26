@@ -6,26 +6,24 @@ label _12_0_1_1_REVEIL_CHAMBRE:
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_fatal_assembly.mp3" fadein 2.0
     play sound sfx_creak volume 0.6
-    "Un bruit me tire du sommeil."
-    "Pas celui de la porte. Quelque chose de plus proche. Un frottement, à peine audible, comme si on avait déplacé un objet sur le sol."
+    "Un frottement me réveille. Ça vient de la chambre, tout près du lit."
     $ investigation_add("bruits_chambre")
-    noam faible "... Qui est là ?"
-    "Je n'obtiens aucune réponse."
-    think "D'accord. Je suis réveillé depuis trois secondes et je commence déjà à parler au mobilier."
-    "Je reste allongé. La ventilation souffle normalement. Dans le couloir, rien ne bouge."
-    "Je tends la main jusqu'à l'interrupteur."
+    noam faible "Y a quelqu'un ?"
+    "Rien. La ventilation tourne et le couloir reste silencieux."
+    think "Soit quelqu'un est entré, soit je viens d'interroger une chaise. Très bon début."
+    "Je tends la main vers l'interrupteur sans quitter la pièce des yeux."
     scene bg_chambre at adaptive_fullscreen with dissolve
-    "L'éclairage me fait cligner des yeux. La porte est fermée. La chaise est à sa place, près du bureau."
-    noam hesitation "..."
-    "Je vérifie le verrou, puis me retourne vers la pièce."
-    think "J'ai entendu quelque chose. J'en suis sûr. Ou alors je recommence à me fabriquer des souvenirs."
-    "Hier, les images du couloir avaient disparu. Maintenant, j'ai peur jusque dans ma chambre."
-    noam fatigue "Non. Cette fois, je vérifie."
+    "La lumière s'allume. Porte fermée. Chaise près du bureau. Rien ne saute aux yeux."
+    "Je teste le verrou deux fois. Il tient."
+    think "J'ai entendu ce bruit. Je vais pas encore laisser Kami m'expliquer que j'ai rêvé."
+    noam fatigue "Je vérifie tout. Après, seulement, je me recouche."
     $ pnc_room = "chambre_j12"
     $ pnc_flags = {}
     $ room_scene_indices["chambre"] = 1
     call screen pnc_chambre_j12()
     return
+
+    # Durée : 0m45 + exploration
 
 
 screen pnc_chambre_j12():
@@ -61,51 +59,50 @@ screen pnc_chambre_j12():
 
 label _12_0_1_1_aeration:
     $ pnc_flags["aeration"] = True
-    "Je m'approche de la grille. Le souffle est régulier, cette fois."
-    noam fatigue "Tu vas pas recommencer, toi aussi."
-    "Je tends l'oreille. Pas de bruit de pas. Juste la ventilation qui tourne."
-    think "Elias serait ravi d'apprendre qu'une machine fait enfin son travail."
+    "Le souffle de la grille est régulier. Je reste quand même l'oreille collée au métal."
+    noam fatigue "Allez. Fais juste ton boulot."
+    "Pas de pas. Pas de frottement. Rien derrière le bruit du ventilateur."
+    think "Elias serait fier. Une machine fonctionne et personne n'a besoin de taper dessus."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_sous_lit:
     $ pnc_flags["lit"] = True
-    "Je soulève la couverture, puis m'accroupis pour regarder sous le lit."
-    noam hesitation "Bon. Si quelqu'un est là, on peut éviter de se faire peur mutuellement ?"
-    "De la poussière, une chaussette et rien d'autre."
-    noam fatigue "Formidable. Un suspect, taille trente-neuf."
-    "Je récupère la chaussette, puis la pose sur le lit. Je reste malgré moi un instant à regarder sous le sommier."
+    "Je m'accroupis et soulève la couverture."
+    noam hesitation "Si quelqu'un est dessous, préviens avant que je fasse une crise cardiaque."
+    "Une chaussette, de la poussière, rien d'autre."
+    noam fatigue "J'ai mon coupable. Il fait du trente-neuf."
+    "Je pose la chaussette sur le lit. Je regarde encore une seconde, juste pour être sûr."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_television:
     $ pnc_flags["television"] = True
-    "Je touche le bord de l'écran mural. Il est froid et éteint."
-    think "Pas d'annonce. Pas de visage souriant pour m'expliquer que j'ai rêvé."
-    noam fatigue "Pourvu que ça dure."
+    "L'écran mural est froid. Aucun voyant, aucune annonce."
+    noam fatigue "Pour une fois, reste éteint."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_placard:
     $ pnc_flags["placard"] = True
-    "J'ouvre le placard d'un coup. Les cintres s'entrechoquent, et je sursaute à mon propre bruit."
+    "J'ouvre le placard d'un coup. Les cintres claquent et je sursaute comme un idiot."
     noam colere "Putain..."
-    "Un sweat est coincé de travers sur l'étagère du haut. Dans la poussière, une marque ressemble à une empreinte de paume."
-    "J'approche ma main. La trace pourrait être la mienne. Je n'arrive plus à me rappeler quand j'ai rangé ce sweat."
-    think "C'est exactement comme le badge : assez pour m'inquiéter, jamais assez pour être sûr."
+    "Un sweat dépasse de l'étagère. À côté, la poussière porte une trace de paume."
+    "Je compare avec ma main. Même taille, peut-être. Impossible de me rappeler quand j'ai touché cette étagère."
+    think "Encore un truc assez bizarre pour m'empêcher de dormir, pas assez pour prouver quoi que ce soit."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_bureau:
     $ pnc_flags["bureau"] = True
-    "La tablette est là. Le badge aussi, retourné."
+    "La tablette est là. Mon badge aussi, face contre le bureau."
     noam reflexion "Je l'avais remis comme ça ?"
-    "Je le retourne, puis m'interromps."
-    think "Voilà. Maintenant, si je le retrouve à l'envers demain, je ne saurai même plus comment je l'ai laissé."
+    "Je le retourne, puis je m'arrête."
+    think "Parfait. Demain, je ne saurai plus dans quel sens je l'ai laissé."
     noam fatigue "Bravo, Noam."
     call screen pnc_chambre_j12()
     return
@@ -113,53 +110,50 @@ label _12_0_1_1_bureau:
 
 label _12_0_1_1_salle_de_bain:
     $ pnc_flags["salle_de_bain"] = True
-    "La salle de bain est vide. Le miroir me renvoie un visage pâle, avec des cernes que je ne me connaissais pas."
-    noam taquin "Belle tête. Tu devrais te présenter aux élections."
-    "L'eau du robinet coule quelques secondes. Je me passe les mains sur le visage."
-    "En ressortant, je vérifie quand même derrière la porte."
+    "La salle de bain est vide. Dans le miroir, j'ai les yeux rouges et la tête de quelqu'un qui ment quand il dit que ça va."
+    noam taquin "Très rassurant."
+    "Je me passe de l'eau sur le visage. En ressortant, je vérifie quand même derrière la porte."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_brouilleur:
     $ pnc_flags["brouilleur"] = True
-    "Le voyant du brouilleur pulse tranquillement."
+    "Le voyant du brouilleur pulse normalement."
     noam reflexion "Sept jours pour revoir une chambre..."
-    "Le boîtier n'a pas l'air abîmé. Je le fixe, comme s'il allait me donner le nom de celui qui a pris le dessin."
-    think "Ce truc est censé protéger ma vie privée. C'est aussi lui qui rendrait une intrusion si difficile à prouver."
+    "Le boîtier n'a pas été forcé. Il protège la chambre de Kami et il protège aussi celui qui entre."
+    think "On doit voter là-dessus dans quelques heures. Évidemment."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_tablette:
     $ pnc_flags["tablette"] = True
-    "J'ouvre l'historique de ma tablette. Aucune activité inhabituelle."
+    "L'historique de la tablette ne montre aucune activité pendant la nuit."
     noam fatigue "Ça aurait été trop simple."
-    "Je passe à deux doigts d'envoyer un message à Elias pour lui demander s'il est réveillé, puis je renonce."
-    think "Il mérite probablement une nuit sans que je lui parle de bruits dans les murs."
+    "J'ouvre la conversation avec Elias, puis je referme avant d'écrire."
+    think "Je vais pas le réveiller pour lui demander si ma chambre a respiré."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_photo_juliette:
     $ pnc_flags["photo_juliette"] = True
-    "L'emplacement du dessin de Juliette est toujours vide."
-    "Je touche le bord du cadre, puis retire ma main."
+    "L'emplacement du dessin de Juliette est toujours vide. Je passe un doigt sur le bord du cadre."
     noam faible "Je vais le retrouver."
-    "Je suis incapable de dire si je fais cette promesse à elle ou à moi."
+    think "Cette fois, je la tiens."
     call screen pnc_chambre_j12()
     return
 
 
 label _12_0_1_1_recoucher:
     if len(pnc_flags) < 3:
-        think "Pas encore. Si je me recouche sans vérifier, je vais simplement rester à écouter le moindre bruit."
+        think "Pas encore. Il me faut au moins trois vérifications, sinon je vais recommencer dans cinq minutes."
         call screen pnc_chambre_j12()
         return
-    "Je reviens au milieu de la pièce. Rien ne manque de plus. Rien ne permet de dire que quelqu'un est entré."
-    noam fatigue "Bon. Je suis officiellement le pire enquêteur du Conclave."
-    "Je coupe l'éclairage, puis me recouche."
-    "Juste avant de fermer les yeux, je vérifie une dernière fois le verrou."
+    "Je reviens au milieu de la chambre. Rien d'autre ne manque. Je n'ai toujours aucune preuve d'une intrusion."
+    noam fatigue "Super enquête. Une chaussette et une trace qui est peut-être la mienne."
+    "Je coupe la lumière et me recouche. Avant de fermer les yeux, je vérifie encore le verrou."
     jump _12_0_1_1_CAFETERIA
 
 
@@ -167,14 +161,12 @@ label _12_0_1_1_CAFETERIA:
     $ current_period = "Matin"
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_soft_neon_morning.mp3" fadein 2.0
-    "Je ne parviens pas à retrouver le sommeil. Au bout d'une heure, je finis par abandonner."
-    noam fatigue "Super. Je vais avoir besoin d'un café assez fort pour réveiller un mort."
-    think "Mauvais choix de mots."
-    "Je m'habille et sors en laissant la chambre exactement comme je l'ai trouvée."
+    "Au bout d'une heure à écouter la ventilation, j'abandonne."
+    noam fatigue "Il me faut du café. Beaucoup."
+    "Je m'habille et sors sans toucher au reste de la chambre."
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_52
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Les couloirs sont déserts. Il fait enfin frais."
-    think "Un moment sans personne. Ça devrait être agréable."
+    "Le couloir est vide et frais. Pour l'instant, personne ne me demande comment je vais."
     call START_EXPLORATION_LIBRE("_12_0_1_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_nav_j12_cafeteria
 
 
@@ -183,40 +175,38 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play sound sfx_door
     $ showGroup([("noam", "fatigue", 0.50)])
-    goumi "Bonjour, Noam. Tu arrives avant le service."
+    goumi vide "Bonjour, Noam. Tu arrives avant le service."
     noam fatigue "C'est interdit ?"
-    goumi "Non. C'est une donnée statistiquement inhabituelle."
+    goumi vide "Non. C'est inhabituel."
     noam taquin "Donc je suis suspect ?"
-    goumi "Je n'ai pas dit cela."
+    goumi vide "Je n'ai pas dit cela."
     noam fatigue "Tant mieux. J'ai eu ma dose d'interrogatoires."
-    "Goumi pivote derrière le comptoir. Un de ses bras range des assiettes tandis que l'autre aligne des tranches de pain d'une précision presque insultante."
-    goumi "Que souhaites-tu manger ?"
+    "Derrière le comptoir, Goumi range des assiettes d'un bras et aligne des tranches de pain de l'autre."
+    goumi vide "Que souhaites-tu manger ?"
     noam neutre "Du pain, des œufs, ce que tu as."
-    goumi "Je peux te servir des œufs. Pour le pain, ce sera une tranche."
+    goumi vide "Des œufs, oui. Pour le pain, une tranche."
     noam taquin "Une seule ? C'est une punition ?"
-    goumi "Non. Le stock est anormalement bas."
+    goumi vide "Non. Le stock est anormalement bas."
     noam reflechit "Anormalement ?"
-    goumi "Oui. Nos réserves ont diminué plus vite que prévu. J'ai revu les portions jusqu'à la livraison du quatorzième jour."
+    goumi vide "Les réserves ont diminué plus vite que prévu. J'ai réduit les portions jusqu'à la livraison du jour quatorze."
     $ investigation_add("manque_nourriture")
-    noam inquiet "On est douze, pourtant. Enfin, douze représentants..."
-    goumi "Je connais le nombre de représentants, Noam."
-    noam fatigue "Ouais. Pardon."
-    goumi "Je ne connais pas la cause de l'écart."
+    noam inquiet "On est toujours douze."
+    goumi vide "Je sais compter les représentants. Je ne connais pas la cause de l'écart."
     noam taquin "Tu veux que je mène une enquête sur les tranches de pain ?"
-    goumi "Je ne possède pas de protocole d'enquête sur les tranches de pain."
+    goumi vide "Je ne possède pas de protocole d'enquête sur les tranches de pain."
     noam fatigue "C'était une blague."
-    goumi "Souhaites-tu que j'en crée un ?"
+    goumi vide "Souhaites-tu que j'en crée un ?"
     noam surpris "Non !"
-    goumi "Compris. Protocole non créé."
-    think "Je ne sais plus ce qui m'inquiète le plus : le pain qui manque ou l'idée de me retrouver à interroger un grille-pain."
-    "Je fixe les réserves visibles derrière le comptoir. Le robot a peut-être seulement recalculé les portions. Mais je n'arrive plus à trouver ça banal."
+    goumi vide "Compris."
+    "Je regarde les étagères derrière lui. Deux compartiments sont presque vides."
+    think "Un dessin, une photo, des batteries, des vidéos. Maintenant de la nourriture."
     noam neutre "Une tranche, ça ira."
-    goumi "Très bien. Et un verre d'eau. Sael m'a indiqué que tu devais t'hydrater régulièrement."
+    goumi vide "Très bien. Avec un verre d'eau. Sael m'a demandé d'y veiller."
     noam taquin "Même les robots me surveillent maintenant."
-    goumi "Je sers des repas. Je ne surveille pas tes pensées."
+    goumi vide "Je surveille ton plateau. Pas tes pensées."
     noam fatigue "Ça nous change."
-    "Je m'assieds avec mon plateau. Pendant quelques minutes, la cafétéria ressemble enfin à un endroit normal."
-    elen "GOUUUUMI !"
+    "Je m'assieds avec mon plateau."
+    elen joie "GOUUUUMI !"
     "Je sursaute si fort que ma fourchette tape contre l'assiette."
     $ showGroup([("noam", "fatigue", 0.55), ("elen", "rire", 0.25)])
     play music "music/bgm_fallin_love.mp3" fadein 2.0
@@ -224,46 +214,45 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     noam fatigue "Je mange."
     elen taquin "Je vois ça ! Je veux dire : VOLONTAIREMENT ?"
     noam taquin "Apparemment, je suis devenu une attraction."
-    elen rire "Une attraction qui a failli mourir au Conclave, oui !"
-    "Elle s'arrête brusquement."
+    elen rire "Une attraction qui s'est écroulée en plein Conclave, oui !"
+    "Son sourire disparaît dès qu'elle entend sa propre phrase."
     elen hesitation "Pardon. C'était nul."
     noam neutre "Un peu."
     elen fatigue "Tu vas mieux ?"
     noam sourire "Je tiens debout. C'est déjà pas mal."
     elen joie "Voilà ! Faut commencer par là ! Goumi, sers-moi le petit-déjeuner de la championne !"
-    goumi "Une portion standard ?"
+    goumi vide "Une portion standard ?"
     elen content "Deux portions de pain et..."
-    goumi "Une portion standard."
+    goumi vide "Une portion standard."
     elen colere "Attends, tu viens de décider à ma place ?!"
-    goumi "Je t'informe des quantités disponibles."
+    goumi vide "Je t'informe des quantités disponibles."
     elen desaccord "Mais hier tu m'as déjà servi moins !"
-    goumi "Les stocks ont encore diminué."
+    goumi vide "Les stocks ont encore diminué."
     elen surpris "Encore ?!"
     noam taquin "Tu as mangé pendant ton sommeil, peut-être."
     elen colere "HÉ ! J'ai jamais fait ça ! Enfin..."
-    "Elle réfléchit avec beaucoup trop de sérieux."
-    elen hesitation "Une fois, quand j'étais petite. Mais c'était un gâteau. Et on avait laissé la boîte à côté du lit."
+    elen hesitation "Une fois. Mais j'étais petite et le gâteau était déjà dans ma chambre, donc ça compte pas."
     noam rire "D'accord. L'enquête est close."
     "Elle se laisse tomber sur la chaise en face de moi, son plateau à peine rempli."
     elen triste "C'est pas drôle, en fait. Si Goumi doit commencer à compter les tranches de pain..."
     noam neutre "On sera livrés le quatorzième."
     elen reflexion "Oui. Je sais. Mais pourquoi il en manque déjà ?"
-    "Je hausse les épaules. Pour une fois, elle ne cherche pas immédiatement une plaisanterie."
+    "Je hausse les épaules. Elle regarde les étagères, puis ma tranche."
     elen neutre "Tu veux ma portion ?"
     noam surpris "Quoi ?"
     elen determine "T'as été malade. Tu devrais manger davantage."
     noam fatigue "Tu vas pas commencer à me surveiller, toi aussi."
     elen desaccord "Non ! Enfin... juste pendant que tu manges."
-    goumi "Les recommandations de Sael ne prévoient pas de surveillance alimentaire permanente."
+    goumi vide "Les recommandations de Sael ne prévoient pas une surveillance permanente."
     elen surpris "Goumi ! T'étais pas obligé de le dire comme ça !"
     noam taquin "Voilà. Même Goumi trouve que tu en fais trop."
     elen taquin "D'accord, d'accord ! Je mange mon pain. Mais si tu tombes dans les pommes, je garde le droit de dire « je te l'avais dit »."
     noam sourire "Marché conclu. Et tu peux arrêter de me regarder mâcher."
-    "Elen protège ses deux tranches comme s'il s'agissait d'un trésor."
+    "Elen ramène son assiette contre elle."
     elen taquin "Je t'en garde quand même une si tu changes d'avis."
     noam sourire "Je note."
 
-    "Elle mange en silence pendant quelques bouchées, puis pose brutalement sa fourchette."
+    "Elle tient trois bouchées avant de reposer sa fourchette."
     elen inquiet "Noam ?"
     noam neutre "Oui ?"
     elen hesitation "Tu es fâché contre nous ?"
@@ -271,33 +260,33 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     elen fatigue "Parce que tu nous évites. Et quand je te demande comment ça va, tu réponds toujours « ça va »."
     noam fatigue "Je suis juste fatigué."
     elen desaccord "Tu vois ?"
-    noam desaccord "Elen, tu peux pas m'obliger à parler si j'ai pas envie."
+    noam desaccord "Elen, j'ai pas envie d'en parler. Tu peux pas me tirer les mots de la bouche."
     "Elle recule légèrement sur sa chaise."
     elen triste "Je voulais juste t'aider."
     noam inquiet "Je sais. Mais..."
-    elen fatigue "Non, t'inquiète. J'ai compris."
-    "Je la regarde reprendre sa fourchette. Elle fait semblant de chercher quelque chose dans son assiette."
+    elen fatigue "D'accord. Je vais pas insister."
+    "Elle se remet à couper un morceau d'œuf déjà trop petit."
     noam fatigue "Je suis pas fâché contre toi."
     elen neutre "D'accord."
     noam hesitation "J'arrive juste pas à expliquer ce qui se passe dans ma tête."
-    elen joie "Alors explique pas. On peut manger, aussi."
+    elen neutre "Alors explique pas. On peut juste manger."
     noam sourire "Ouais. Ça, je sais faire."
 
     elen taquin "Au fait, tu sais ce que j'ai rêvé cette nuit ?"
     noam fatigue "Je vais regretter de demander ?"
-    elen rire "Kami était un cupcake géant et elle nous ordonnait de voter pour choisir qui aurait le droit de la manger."
+    elen rire "Kami était un cupcake géant. Elle nous faisait voter pour choisir qui aurait le droit de la manger."
     noam surpris "Hein ?"
     elen joie "J'ai voté pour tout le monde. Je voulais pas qu'on se dispute."
     noam taquin "Et ça s'est terminé comment ?"
     elen triste "Elle m'a mangée, moi."
-    "Je la regarde. Elen se met à rire, puis s'arrête devant mon expression."
+    "Elle rit toute seule, puis voit ma tête."
     elen neutre "C'était qu'un rêve."
     noam sourire "Ouais."
-    "Nous finissons de manger. Je me surprends à lui raconter que j'ai retrouvé une chaussette sous mon lit, ce qui la lance dans une théorie complètement absurde sur les disparitions de linge."
+    "Je lui parle de la chaussette sous le lit. Elle part immédiatement sur une théorie de recyclage clandestin du linge."
     elen joie "Moi je te dis que la station recycle nos affaires en secret !"
     noam taquin "Un grand complot des chaussettes."
     elen determine "Exactement !"
-    "Pendant quelques minutes, j'oublie pourquoi je suis venu si tôt."
+    "Pendant quelques minutes, on parle d'un truc qui ne peut tuer personne. Ça fait du bien."
     $ hideGroup()
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_54
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
@@ -306,54 +295,52 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
     show screen kami_broadcast_ui
     play music "music/bgm_system_override.mp3" fadein 1.0
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "BONJOUR, mes petits représentants !"
+    kami "BONJOUR, mes petits représentants ! Debout, debout. Nous avons une liberté individuelle à disséquer."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "J'espère que vous avez bien dormi ! Enfin, à part ceux qui ont décidé de refaire leur chambre en pleine nuit."
+    kami "J'espère que vous avez bien dormi. Enfin... certains ont préféré fouiller leur chambre au milieu de la nuit. Très discrètement."
     "Je m'arrête net."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Le vote sur les brouilleurs aura lieu aujourd'hui à QUATORZE HEURES précises."
     $ unlock_dossier_chapter(4)
-    kami "Ne me forcez pas à aller vous chercher. J'ai un emploi du temps chargé et douze enfants déjà beaucoup trop difficiles à gérer."
+    kami "Ne me forcez pas à venir vous chercher. J'ai douze adultes à surveiller et, bizarrement, aucun ne se comporte comme tel."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Vous pouvez débattre. Vous pouvez même essayer de me convaincre que la vie privée est un besoin essentiel. J'adore vos petites demandes de privilèges."
+    kami "Vous pouvez débattre. Vous pouvez même m'expliquer pourquoi ne pas être observé serait un besoin essentiel. J'adore quand vous rebaptisez vos privilèges."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Mais n'oubliez pas : si le texte est rejeté, les zones qui utilisent encore ces appareils seront sanctionnées."
+    kami "Si le texte est rejeté, les zones qui utilisent encore ces appareils seront sanctionnées. Pas les appareils. Les zones. Je préfère éviter les malentendus après coup."
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "À tout à l'heure ! Et faites-vous beaux. Votre vote pourrait bien devenir mémorable !"
+    kami "Quatorze heures. Soyez à l'heure, soyez beaux et essayez de ne pas vous détester avant le scrutin. Gardez-en un peu pour après."
     hide screen kami_broadcast_ui
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 2.0
-    think "Elle a parlé de ma chambre. Elle sait que j'étais réveillé."
-    noam fatigue "Évidemment."
-    "Je prends le couloir de l'infirmerie, presque sans réfléchir. Le mal de tête de la veille est revenu."
+    think "Elle m'a regardé fouiller. Et elle voulait que je le sache."
+    "La douleur derrière mes yeux revient. Je prends le couloir de l'infirmerie."
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "bg_infirmerie") from _call_MAYBE_PLAY_SCRIPTED_DOOR_56
     scene bg_infirmerie at adaptive_fullscreen with dissolve
-    sael "Noam ?"
+    sael surpris "Noam ?"
     "Je m'arrête devant l'armoire à pharmacie. Sael arrive du fond de la pièce."
     sael mefiant "Tu cherches quelque chose ?"
     noam fatigue "J'ai encore mal à la tête."
     sael inquiet "Tu aurais pu commencer par me le dire."
     noam taquin "Ça aurait été trop simple."
     sael neutre "Assieds-toi."
-    "Elle vérifie ma température et me pose quelques questions. Je ne peux pas m'empêcher de regarder vers le couloir."
+    "Elle vérifie ma température, puis suit mon regard vers la porte."
     sael reflechit "Tu ne m'écoutes pas."
     noam hesitation "Si."
     sael desaccord "Alors qu'est-ce que je viens de dire ?"
     noam fatigue "Que..."
     sael neutre "Voilà."
-    "Elle sort une boîte de médicaments et vérifie l'étiquette."
-    sael determine "Si la douleur persiste, on suivra la posologie indiquée. Et tu ne te sers pas au hasard dans l'armoire, compris ?"
+    "Elle sort une boîte de médicaments et lit l'étiquette."
+    sael determine "Si ça continue, tu prends la dose indiquée. Pas plus. Et tu ne fouilles pas cette armoire tout seul."
     noam neutre "Compris."
     sael inquiet "Tu n'as presque pas dormi, c'est ça ?"
     noam fatigue "Pas beaucoup."
-    sael neutre "Alors repose-toi avant le vote. Tu ne rendras service à personne si tu recommences à tomber."
-    noam sourire "Promis."
-    "Elle n'a pas l'air convaincue, mais me laisse partir."
+    sael neutre "Alors tu retournes te reposer avant le vote. Si tu tombes encore, je te ramène moi-même dans ta chambre."
+    noam taquin "C'est une menace ?"
+    sael mefiant "Une promesse."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_57
     scene bg_chambre at adaptive_fullscreen with fade
-    "Je m'allonge sur le lit en regardant l'heure défiler."
-    think "Quatorze heures. Un vote pour décider si l'on doit garder les brouilleurs. Et quelque part, quelqu'un sait peut-être ce que j'ai vu."
-    "J'envisage un instant de retourner parler à Elen. Puis je regarde l'endroit vide où reposait le dessin."
+    "Je m'allonge sans réussir à fermer les yeux. Le vote approche. Quelqu'un sait peut-être ce que j'ai vu et, dans quelques heures, on va décider s'il peut continuer à se cacher."
+    "J'ouvre la conversation d'Elen, puis je regarde le cadre vide."
     noam fatigue "Pas maintenant."
     call KD_ROUTE_J12_JULIAN from _call_optional_kd_route_j12_julian
     call OFFER_DAILY_EXPLORATION(
@@ -361,6 +348,8 @@ label _12_0_1_1_CAFETERIA_ARRIVEE:
         ["dortoir", "cafeteria", "maintenance", "conclave"],
         _("Rejoindre le vote"), "conclave"
     ) from _call_offer_exploration_j12
+
+    # Durée : 4m10 + rencontre optionnelle et exploration
 
 # Compatibilité des sauvegardes créées avant la navigation par destination.
 # Ces deux points étaient générés par les anciens appels de porte du J12 et
@@ -375,7 +364,8 @@ label _12_0_1_1_ATTENTE_VOTE:
     $ current_period = "Après-midi"
     scene bg_conclave at adaptive_fullscreen with fade
     play music "music/bgm_world_decline.mp3" fadein 2.0
-    "Lorsque j'arrive, plusieurs représentants sont debout. Julian gesticule avec une tablette à la main pendant que Mara fait semblant de ne pas l'écouter."
+    call trial_intro(subtitle=_("JOUR [current_day]")) from _call_kd_trial_intro_12_0_1_1
+    "Quand j'arrive, Julian utilise l'écran noir de sa tablette comme miroir. Mara le regarde faire avec un sourire mauvais."
     $ showGroup([
         ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
         ("noam", "fatigue", 0.13), ("lysa", "inquiet", 0.25),
@@ -384,54 +374,54 @@ label _12_0_1_1_ATTENTE_VOTE:
         ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-    julian taquin "Je vous explique qu'on ne peut pas se présenter à un vote pareil sans un minimum de dignité vestimentaire !"
-    mara agace "Et moi je t'explique que ton col est de travers depuis ce matin."
+    julian taquin "Un vote peut être historique. On ne se présente pas devant l'histoire avec un col froissé."
+    mara taquin "Ton col est de travers. Depuis ce matin."
     julian surpris "QUOI ?!"
-    "Il se précipite sur le reflet d'un écran éteint."
+    "Il se retourne vers l'écran mural. Mara éclate de rire."
     lysa blase "T'es cruelle, Mara."
     mara taquin "Je sais. Ça me détend."
-    iris fatigue "Vous pouvez le laisser tranquille ? Il va encore monopoliser une heure à se recoiffer."
-    elen rire "Au moins, on parlerait pas du vote !"
-    "Elle s'interrompt en remarquant les regards des autres."
+    iris fatigue "Génial. On va perdre le vote parce qu'il cherche son bon profil."
+    elen rire "Au moins, pendant ce temps-là, on parle pas du vote !"
+    "Personne ne rit. Elen se tasse dans son siège."
     ryn colere "Moi, j'ai très envie qu'on en parle, du vote."
-    tomas inquiet "On a encore quelques minutes. Ce n'est pas la peine de..."
+    tomas inquiet "On a encore quelques minutes. Ce n'est peut-être pas la peine de..."
     ryn colere "De quoi ? De se préparer ?"
-    tomas "De commencer en s'engueulant."
+    tomas hesitation "De commencer en s'engueulant."
     ryn colere "Bonne chance."
-    "Elias s'est installé devant un verre vide. Il ne participe pas. Kael, lui, garde les mains sur la tablette qu'il n'a pas quittée depuis notre arrivée."
+    "Elias fixe un gobelet vide. Kael garde les deux mains autour de sa tablette."
     noam neutre "Salut."
-    elias fatigue "Tiens. Le survivant."
+    elias fatigue "Tiens. T'es encore debout."
     noam taquin "Je vois que tout le monde est très original aujourd'hui."
     elias sourire "J'ai décidé de suivre la mode."
     iris inquiet "Noam, tu tiens le coup ?"
-    noam fatigue "Sael m'a fait passer un interrogatoire médical. Je suppose que oui."
+    noam fatigue "Sael m'a posé quatre questions et j'en ai raté une. Apparemment, je vis encore."
     sael neutre "J'ai posé quatre questions."
     noam taquin "Et elles étaient toutes difficiles."
     sael mefiant "Tu as dormi combien d'heures ?"
     noam fatigue "Ça fait une cinquième."
-    "Sael soupire. Au fond de la salle, Ryn repousse violemment un siège."
-    ryn colere "BON. Qui est contre les brouilleurs ? Qu'on sache tout de suite."
-    nyra raison "Ce n'est pas comme ça que fonctionne un scrutin secret."
+    "Sael me lance un regard qui promet une sixième question. Ryn repousse son siège."
+    ryn colere "Bon. Qui compte voter contre ? Qu'on perde pas une heure à faire semblant."
+    nyra raison "Le scrutin est secret précisément pour éviter ce genre de question."
     ryn colere "Je pose une question, pas un bulletin."
-    sael determine "Et tu mets les gens sous pression avant qu'ils aient parlé."
-    ryn colere "Je veux éviter un nouveau vote où quelqu'un nous poignarde dans le dos."
-    "Je relève la tête. L'expression me reste désagréablement en travers de la gorge."
-    mara stress "T'as pas besoin de parler de poignarder quelqu'un à chaque fois qu'on entre ici."
+    sael determine "Tu veux surtout mettre la pression avant qu'ils parlent."
+    ryn colere "Je veux pas découvrir après coup qu'un de nous nous a plantés."
+    "Je relève la tête."
+    mara stress "Tu peux choisir un autre mot que 'plantés' ? Juste aujourd'hui ?"
     ryn colere "J'ai pas dit que j'allais le faire !"
     lysa blase "C'est précisément pour ça que tu devrais choisir un autre verbe."
-    "Un rire nerveux traverse la table, trop bref pour faire oublier ce qui s'est passé au jour neuf."
+    "Deux personnes rient. Ça s'arrête tout de suite."
     play sound sfx_announce
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "VOILÀÀÀ ! Vous êtes presque à l'heure ! Et quel joli brouhaha, j'aurais dû vendre des billets."
+    kami "VOILÀÀÀ ! Douze représentants, douze avis et déjà plusieurs menaces avant l'ouverture. Vous êtes efficaces aujourd'hui."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Aujourd'hui, vous devez décider si les dispositifs de brouillage peuvent être possédés, fabriqués et utilisés librement dans les limites des autres Commandements."
+    kami "Vous devez décider si les dispositifs de brouillage peuvent être possédés, fabriqués et utilisés librement, dans les limites des autres Commandements."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Unanimité favorable : l'autorisation entre en vigueur. Sinon, les interdictions et les sanctions prévues s'appliqueront aux zones qui continueront à les utiliser."
+    kami "Il faut l'unanimité. Un seul vote contraire, une seule petite main qui tremble, et les interdictions restent en place."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Je vous laisse un dernier instant pour exprimer vos idées. Et rappelez-vous : parler n'a jamais suffi à éviter un vote."
+    kami "Je vous laisse débattre. Dites tout ce que vous n'oserez plus vous dire après le résultat."
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.0
@@ -443,84 +433,88 @@ label _12_0_1_1_ATTENTE_VOTE:
         ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-    mara stress "Moi je vote oui. J'en ai marre de devoir baisser la voix quand je vais aux toilettes."
-    julian taquin "La confidentialité de tes conversations avec toi-même est une cause noble."
-    mara taquin "Tu veux un exemple ? Tu vas voir, c'est très intime."
+    mara stress "Moi, c'est oui. J'en ai marre de baisser la voix jusque dans ma salle de bain."
+    julian taquin "La liberté de tes conversations avec toi-même mérite effectivement notre mobilisation."
+    mara taquin "Tu veux que je te raconte ce que j'y fais ?"
     julian surpris "Non merci !"
-    elen inquiet "Moi, je veux pouvoir parler dans ma chambre sans me demander si Kami écoute tout."
+    elen inquiet "Je veux pouvoir parler dans ma chambre sans me demander si Kami garde chaque mot. C'est tout."
     $ unlock_dossier_arg("p4_intimite")
-    iris reflechit "J'aimerais surtout savoir si elle peut encore observer les signaux de brouillage. Parce que techniquement..."
-    ryn colere "Iris, c'est pas un concours pour savoir qui comprend Kami le mieux."
-    iris colere "Je parle d'une faille qui pourrait nous protéger !"
-    kael triste "Moi, j'aurais bien aimé avoir les images du moment où on a pris ma photo."
-    "Un silence tombe, puis Elias pose sa tablette."
-    elias fatigue "Et si quelqu'un profite du brouilleur pour entrer dans une chambre ?"
-    nyra raison "Alors il faut distinguer le droit de se cacher de la possibilité de couvrir un crime."
+    iris reflechit "Ce qui m'intéresse, c'est ce qu'elle détecte encore quand un brouilleur tourne. Le signal ? La consommation ? Une anomalie dans son propre réseau ?"
+    ryn colere "C'est pas un examen sur Kami, Iris."
+    iris colere "Non, c'est exactement le problème ! Si elle voit encore le brouilleur, on doit savoir ce qu'il cache vraiment."
+    kael triste "Il cache assez pour qu'on ne voie pas qui est entré dans ma chambre."
+    "Elias pose son gobelet vide."
+    elias reflechit "Ouais. Si quelqu'un entre pendant que ça tourne, on fait quoi ? On attend sept jours ?"
+    nyra raison "On doit séparer deux droits : pouvoir s'isoler et pouvoir effacer les traces d'un acte. Ce n'est pas la même chose."
     $ unlock_dossier_arg("p4_preuves")
-    ryn colere "Tu comptes laisser Kami fouiller les chambres dès qu'il manque une chaussette ?"
-    kael calme "Je demande juste qu'on arrête de me dire que c'est pas grave."
+    ryn colere "Donc on laisse Kami fouiller nos chambres dès qu'il manque une chaussette ?"
+    kael colere "Il ne manque pas une chaussette. On m'a pris la photo de ma sœur."
     $ unlock_dossier_arg("p4_voleur")
-    sael mefiant "Personne ne dit ça, Kael."
-    tomas raison "Et il y a toujours le délai de sept jours. On ne pourra pas avoir les images tout de suite, brouilleur ou non."
+    sael mefiant "Ryn, arrête. Personne n'a dit que ce vol n'était pas grave."
+    tomas raison "Même si le texte passe, le délai d'accès reste de sept jours. Les images sont bloquées, pas détruites. Enfin... normalement."
     $ unlock_dossier_arg("p4_delai")
-    julian taquin "Parfait. Sept jours pour que mon prochain grand discours soit oublié."
+    julian taquin "Sept jours ? Mon prochain discours aura déjà été remplacé par deux autres."
     lysa blase "On peut commencer dès maintenant."
-    noam reflexion "Et les couloirs... On sait au moins qui y passe ?"
+    noam reflexion "Et les couloirs ? Les brouilleurs bloquent aussi les images dehors ?"
     iris inquiet "Noam, pourquoi tu demandes ça ?"
     noam fatigue "Pour rien. Laissez tomber."
-    lysa blase "Tu veux qu'on t'écoute ou tu veux qu'on devine ?"
+    lysa blase "Soit tu poses ta question, soit tu arrêtes de nous demander de la deviner."
     noam inquiet "J'ai dit laissez tomber."
     "Elle ne répond pas. Son regard reste posé sur moi un instant de trop."
-    ryn colere "J'en ai marre ! Je veux pouvoir fermer ma porte sans me demander si Kami regarde !"
-    sael neutre "Moi aussi. Mais ça ne rend pas les risques imaginaires."
+    ryn colere "J'en ai marre de demander la permission pour fermer ma propre porte !"
+    sael neutre "Moi aussi. Ça n'efface pas ce qui est arrivé à Kael."
     noam inquiet "Et si quelqu'un se sert déjà de ces appareils pour entrer dans nos chambres ?"
     mara stress "Noam..."
-    noam colere "On en parle depuis des jours, et on n'a toujours rien trouvé !"
+    noam colere "On en parle depuis des jours et on n'a toujours rien trouvé ! Pas une trace !"
     nyra raison "On n'a surtout pas de preuve que les brouilleurs aient servi à ces disparitions."
-    "Elle le dit doucement. J'ai pourtant l'impression qu'elle vient de me couper la parole."
+    "Nyra parle sans hausser le ton. Je l'entends quand même comme un reproche."
 
 
     call play_stat_dialogue("j12") from _call_play_stat_dialogue_11
-    iris reflechit "On sait déjà tout ça. Kael a essayé d'accéder aux archives."
-    kael fatigue "Oui. J'ai essayé."
+    iris reflechit "Kael a déjà demandé les archives. On sait pourquoi elles sont bloquées."
+    kael fatigue "Je sais surtout qu'on me demande d'attendre."
     noam reflexion "Et les couloirs, eux..."
     "Je m'interromps. Lysa me regarde."
     lysa reflechit "Quoi, les couloirs ?"
     noam fatigue "Rien. Continuez."
-    lysa blase "Formidable. C'est devenu une habitude."
-    ryn colere "Je vote pour, et c'est tout ! Je suis pas venu jusqu'ici pour demander à une caméra la permission d'aller pisser."
+    lysa blase "Ouais. Encore rien."
+    ryn colere "Je vote pour. Je vais pas demander à une caméra la permission d'aller pisser."
     mara taquin "Ça te ferait pas de mal de demander la permission avant certaines choses."
     ryn colere "QUOI, ENCORE ?!"
     call kd_vn_reaction("ryn", "colere", "#ff9c55")
-    sael determine "On peut être favorables au texte sans nier les risques. Et on peut parler des risques sans vouloir condamner ceux qui utilisent ces appareils."
-    elias reflechit "Merci. C'est à peu près ce que j'essayais de dire."
+    sael determine "On peut vouloir garder les brouilleurs et admettre qu'ils ont peut-être servi à quelqu'un. Les deux sont vrais."
+    elias reflechit "Voilà. C'est ça que j'essayais de dire."
     iris taquin "En beaucoup moins clair."
     elias fatigue "Je sais."
-    "J'ai l'impression que nous rejouons la même dispute depuis des jours, avec des arguments différents et les mêmes visages de plus en plus fatigués."
+    "Les voix se recouvrent. Chacun défend sa chambre, sa peur, son vol. Personne ne parle de la même chose."
     noam inquiet "Et si quelqu'un se sert des brouilleurs pour nous faire du mal ?"
     "La question m'échappe plus sèchement que je ne le voudrais."
-    julian inquiet "C'est une possibilité. Mais on ne peut pas retirer toute liberté simplement parce que quelqu'un pourrait mal agir."
+    julian inquiet "Alors on cherche qui. On ne rend pas nos chambres à Kami parce que l'un de nous pourrait mal agir."
     noam reflechit "Et si c'est déjà arrivé ?"
     iris inquiet "Noam..."
-    kael calme "C'est déjà arrivé. On m'a pris la photo de Léa."
-    mara stress "Et Noam a perdu le dessin de sa sœur."
+    kael triste "Quelqu'un est déjà entré. Ma photo a disparu."
+    mara stress "Et le dessin de Juliette aussi."
     lysa reflechit "Personne n'a encore prouvé que les brouilleurs avaient servi à ces vols."
     "Elle dit ça en me regardant. Je détourne les yeux."
-    nyra raison "On devrait éviter de confondre ce qu'on sait et ce qu'on imagine."
-    "C'est une remarque raisonnable. Elle me donne pourtant envie de taper sur la table."
+    nyra raison "On sait qu'il y a eu des vols. On ne sait pas encore comment ils ont été commis. Si on mélange les deux, on choisira notre coupable avant d'avoir les faits."
+    "Elle a raison. C'est précisément ce qui m'énerve."
     jump _12_0_1_1_DEBAT_VOTE
+
+    # Durée : 3m40 + choix statistique
 
 
 label _12_0_1_1_DEBAT_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
-    "Le débat se poursuit, malgré les rappels de Kami. Je voudrais qu'on tranche, puis je me rappelle ce qui peut arriver lorsqu'on tranche trop vite."
+    "Kami lance une simulation censée nous forcer à choisir. À chaque manche, protéger quelqu'un revient à retirer quelque chose à tous les autres."
     call j12_play_trolley_problem from _call_j12_play_trolley_problem
     $ j12011_vote_data = _return
     scene bg_conclave at adaptive_fullscreen with fade
-    "Je reste assis après la simulation. Plusieurs représentants ont déjà recommencé à parler autour de moi."
-    think "Quoi qu'on choisisse, on ne peut pas faire disparaître les risques en refusant d'y penser."
+    "Quand l'interface disparaît, les discussions reprennent avant même que j'aie lâché la commande."
+    think "Cinq choix. Cinq façons de finir avec une raison de s'en vouloir."
     jump _12_0_1_1_DEBAT_TRAITRE
+
+    # Durée : 0m35 + mini-jeu
 
 
 label _12_0_1_1_DEBAT_SECURITE:
@@ -538,10 +532,12 @@ label _12_0_1_1_DEBAT_SECURITE:
     noam desaccord "Je sais ! C'est ça qui m'énerve."
     nyra raison "Il n'y a pas de choix qui efface les deux risques."
     noam fatigue "Super. On est bien avancés."
-    "Mara cherche une plaisanterie, puis regarde Kael et se tait."
+    "Mara ouvre la bouche, regarde Kael et renonce à sa plaisanterie."
 
 
     jump _12_0_1_1_DEBAT_TRAITRE
+
+    # Durée : 0m35
 
 
 label _12_0_1_1_DEBAT_LIBERTE:
@@ -562,6 +558,8 @@ label _12_0_1_1_DEBAT_LIBERTE:
 
     jump _12_0_1_1_DEBAT_TRAITRE
 
+    # Durée : 0m30
+
 
 label _12_0_1_1_DEBAT_TRAITRE:
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
@@ -573,136 +571,133 @@ label _12_0_1_1_DEBAT_TRAITRE:
         ("kael", "calme", 0.84), ("nyra", "raison", 0.96),
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
-    mara stress "Bon. On a fait le tour, non ? On peut enfin voter ?"
-    tomas inquiet "Il manque encore quelques précisions sur le texte."
+    mara stress "Bon. On a retourné le problème dans tous les sens. On vote ?"
+    tomas inquiet "Il reste deux précisions sur le texte. Peut-être trois."
     ryn colere "Sérieusement, Tomas ?!"
-    tomas raison "Oui, sérieusement. Le statut des dispositifs existants, par exemple."
+    tomas raison "Oui. Le texte ne dit pas clairement ce qu'on fait des dispositifs déjà installés."
     elias fatigue "Oh, non. On va refaire l'épisode des campements."
     elen inquiet "Ne dis pas ça..."
-    julian taquin "Je propose qu'on vote pour ne plus jamais entendre l'expression « déclaration préalable »."
+    julian taquin "Je propose un amendement interdisant l'expression « déclaration préalable »."
     iris desaccord "Julian, ferme-la une seconde."
-    "Les discussions repartent. Je regarde successivement les visages. Elen qui se mord la lèvre, Elias qui s'enfonce dans son fauteuil, Kael qui ne lâche pas sa tablette."
-    think "Hier, ils étaient tous dans ma chambre. Ils m'ont apporté à manger. J'ai même ri avec eux."
-    think "Les données de la caméra ont été supprimées. Kami a dit qu'un accès autorisé était responsable."
-    "Je regarde le siège de Lysa. Elle me fixe déjà."
+    "Tout le monde repart en même temps. Elen se mord la lèvre. Elias s'enfonce dans son fauteuil. Kael serre sa tablette contre la table."
+    think "Hier, ils étaient dans ma chambre. Aujourd'hui, je cherche lequel d'entre eux pourrait effacer une caméra."
+    "Je croise le regard de Lysa. Elle a déjà compris que je n'écoute plus."
     lysa inquiet "Noam ?"
     noam fatigue "..."
-    mara agace "Non, mais c'est bon, on peut discuter pendant trois jours de toute façon, ça changera rien au..."
+    mara agace "De toute façon, on peut y passer trois jours, ça changera rien au..."
     noam colere "ARRÊTEZ !"
     with vpunch
-    "Ma voix claque plus fort que prévu. Mara tourne la tête vers moi, stupéfaite."
+    play sound sfx_metal_clank
+    "Ma chaise heurte le sol derrière moi."
     elen inquiet "Noam ?"
-    noam colere "Vous pouvez arrêter de parler des brouilleurs pendant trente secondes ?!"
+    noam colere "Vous pouvez vous taire trente secondes ?!"
     ryn colere "C'est littéralement le sujet du vote !"
     noam colere "JE SAIS !"
-    "Je me lève. Ma chaise recule brutalement."
     iris inquiet "Noam, assieds-toi."
     noam inquiet "Non. J'ai besoin de vous dire un truc."
-    sael mefiant "Alors dis-le. Mais sans hurler."
-    noam reflexion "Hier, j'ai demandé à Kami les enregistrements du couloir près de l'infirmerie. À l'heure où j'ai cru voir quelque chose."
+    sael mefiant "Alors parle. Mais arrête de crier sur tout le monde."
+    noam reflexion "Hier, j'ai consulté les caméras du couloir près de l'infirmerie. Le moment où j'ai cru voir quelqu'un."
     julian hesitation "Et ?"
     noam inquiet "Ils ont été supprimés."
-    "Le silence n'arrive pas immédiatement. Ryn commence à répondre, mais Tomas le coupe."
+    "Ryn inspire pour répondre. Tomas parle avant lui."
     tomas surpris "Supprimés ? Pas simplement indisponibles à cause du brouillage ?"
     noam colere "SUPPRIMÉS. Le terminal l'a affiché."
-    kael calme "Tu es sûr du créneau ?"
+    kael inquiet "Tu es sûr de l'heure ?"
     noam desaccord "J'ai vérifié !"
     lysa reflechit "Et Kami t'a dit quoi ?"
     noam inquiet "Que ça venait d'un accès autorisé. Pas d'elle."
-    "Nyra relève la tête. Elle ne dit rien tout de suite."
+    "Nyra cesse enfin de prendre des notes."
     mara stress "Un accès autorisé à bord de la station ?"
     noam reflexion "Oui."
-    elias reflechit "Attends, ça peut être un compte technique. Les consoles de maintenance ont des accès..."
+    elias reflechit "Attends. Un accès autorisé, ça peut être une console de maintenance. Y en a plusieurs qui..."
     noam colere "Tu crois que j'ai pas pensé à ça ?!"
     elias colere "JE DEMANDE !"
-    "Je le vois se raidir. Je comprends trop tard que je viens de lui sauter dessus sans raison."
+    "Il se raidit. Je viens de lui tomber dessus alors qu'il essaie seulement de comprendre."
     noam fatigue "Désolé."
     elias fatigue "Ouais."
-    nyra raison "Une suppression effective est importante. Mais elle ne désigne pas son auteur."
+    nyra raison "C'est une vraie suppression, donc c'est important. Mais ça ne nous donne pas l'auteur."
     noam inquiet "Je sais !"
     ryn colere "Alors pourquoi tu nous regardes comme si l'un de nous avait fait le coup ?"
-    "Je n'ai pas de réponse."
+    "Je regarde la table. Je n'ai pas de réponse qui ne les accuse pas."
     iris inquiet "Noam, tu as encore mal à la tête ?"
     noam colere "Arrête avec ça, Iris !"
     iris colere "Je te pose une question !"
-    noam desespoir "Je sais plus ce que j'ai vu. Je sais plus si j'ai eu peur pour une vraie raison. Et la seule chose qui aurait pu me répondre a disparu !"
-    "Je sens ma gorge se serrer. Les mots sortent de travers."
+    noam desespoir "Je sais même plus ce que j'ai vu ! Peut-être que y avait rien, peut-être que quelqu'un était vraiment là... et le seul truc qui pouvait me répondre a disparu !"
     elen inquiet "Mais on peut chercher ensemble..."
     call cutin("noam") from _call_kd_cutin_12_noam
     noam colere "Et si c'était justement quelqu'un ici qui l'avait effacé ?!"
-    "Cette fois, tout s'arrête."
+    "Cette fois, personne ne répond."
     pause 0.6
     call reactions([("mara", "stress"), ("ryn", "colere"), ("julian", "inquiet")]) from _call_kd_reactions_12_accusation
-    mara stress "Tu nous accuses ?"
-    noam peur "Je... Je sais pas."
+    mara stress "Tu crois que c'est l'un de nous ?"
+    noam peur "J'en sais rien. C'est ça le problème."
     ryn colere "C'est trop facile, ça. Tu balances un truc pareil et après tu sais pas ?"
     sael determine "Ryn, recule."
     ryn colere "Je suis assis !"
     sael mefiant "Alors reste-le."
-    "Elen regarde Mara, puis moi. Kael fixe obstinément la table."
-    julian inquiet "Il faut vérifier. Pas se mettre à désigner des coupables parce que Kami s'est amusée avec toi."
+    "Elen regarde autour de la table comme si quelqu'un allait lever la main."
+    julian inquiet "Il faut vérifier les accès. Mais on ne va pas choisir un coupable parce que Kami t'a poussé jusque-là."
     noam colere "Tu crois que je m'amuse ?!"
-    julian colere "NON ! Je crois que quelqu'un devrait t'empêcher de te faire manipuler pendant que tu vas mal !"
-    "Je me tais. Julian aussi. Il semble immédiatement regretter le ton qu'il vient d'employer."
-    kael calme "Les images de ma chambre sont bloquées pendant sept jours. Celles du couloir sont supprimées. Ce sont deux problèmes différents."
+    julian colere "NON ! Je crois que tu vas mal et qu'elle s'en sert ! Et là, tu lui facilites le travail !"
+    "Julian se tait. Toute sa belle assurance a disparu."
+    kael calme "Les images de ma chambre sont bloquées sept jours. Celles du couloir ont été supprimées. Ce sont deux choses différentes."
     noam fatigue "Je sais."
-    kael triste "Alors arrête de parler comme si tu avais déjà une réponse."
-    "Il ne hausse pas la voix. Je baisse les yeux."
-    lysa reflechit "Noam, tu as le droit d'avoir peur. Tu n'as pas besoin d'être certain pour le dire."
-    lysa inquiet "Mais si tu commences à nous accuser tous, tu vas finir par nous pousser à te répondre comme si on était coupables."
-    "Je regarde ses mains. Elles sont posées à plat sur la table."
+    kael colere "Alors arrête de tout mélanger. Moi aussi, je veux une réponse."
+    $ close_up("lysa")
+    lysa reflechit "Noam. Tu peux dire que t'as peur. T'as même de bonnes raisons."
+    lysa inquiet "Mais si tu nous regardes tous comme des coupables, on va finir par te répondre comme si on l'était."
     noam fatigue "Je voulais juste savoir."
-    nyra raison "Alors conservons les faits : le segment a été effacé, l'accès était autorisé selon Kami, et tu ignores ce que montraient ces images."
-    noam desaccord "Tu peux arrêter de résumer ma vie en trois points ?!"
-    "Nyra ne répond pas. Elle serre légèrement la mâchoire."
+    nyra raison "Alors on garde ce qu'on sait : un segment effacé, un accès autorisé d'après Kami, aucun auteur identifié."
+    noam desaccord "Tu peux arrêter de transformer ça en liste ?!"
+    "Nyra serre la mâchoire, puis se tait."
     iris desaccord "Elle essaye de t'aider, idiot."
     noam colere "J'ai pas besoin que tout le monde m'aide !"
-    "Ma voix se brise. Je déteste le silence qui suit."
+    "Ma voix se casse sur le dernier mot."
     elen fatigue "D'accord..."
-    "Elle baisse les yeux sur sa tablette. Je me rappelle qu'elle m'a proposé son pain ce matin."
-    "Je voudrais lui dire que je ne parlais pas d'elle. Je n'arrive pas à ouvrir la bouche."
+    "Elen baisse les yeux. Ce matin, elle m'a proposé la moitié de son petit-déjeuner."
     ryn fatigue "On a encore un vote."
-    tomas inquiet "Et rien de tout ça n'a répondu à la question des brouilleurs."
+    tomas inquiet "Et... on doit toujours prendre une décision sur les brouilleurs."
     noam fatigue "Alors votez."
     iris inquiet "Noam..."
     noam desaccord "Je veux juste sortir."
-    "Je tourne les talons avant que quelqu'un se lève pour me retenir."
+    "Je pars avant que quelqu'un puisse répondre."
     jump _12_0_1_1_APRES_EXPLOSION
+
+    # Durée : 3m25
 
 
 label _12_0_1_1_APRES_EXPLOSION:
     stop music fadeout 1.0
-    "Personne ne me suit immédiatement. J'entends une chaise bouger derrière moi, puis la voix d'Elen."
-    elen "Il faudrait peut-être..."
-    sael "Laisse-le."
-    "Je ne sais pas si elle a raison. Je suis seulement soulagé qu'on ne m'arrête pas."
+    "Une chaise bouge derrière moi."
+    elen inquiet "Je devrais peut-être..."
+    sael neutre "Laisse-le respirer."
+    "Je ne sais pas si elle a raison. Je suis juste soulagé que personne ne me rattrape."
     play sound sfx_door
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_65
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Je marche trop vite. Au bout de quelques mètres, je m'arrête contre le mur pour reprendre mon souffle."
+    "Je marche trop vite et dois m'appuyer contre le mur au premier croisement."
     think "J'ai parlé des images. Au moins, ça, je l'ai fait."
     think "Et j'ai accusé tout le monde de quelque chose que je ne peux pas prouver."
     noam fatigue "Merde..."
-    "Je repense à Elias qui m'a aidé avec la ventilation, à Elen et son pain, à Julian qui s'est énervé pour me défendre malgré lui."
-    "Ce ne sont pas des preuves. Ce sont des gens."
+    "Elias m'a aidé avec la ventilation. Elen voulait partager son pain. Julian vient de m'engueuler parce qu'il pense que Kami me manipule."
+    think "Et moi, je les ai tous mis dans la même case."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_66
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ current_period = "Soir"
     play music "music/bgm_calm_not_peace.mp3" fadein 2.0
-    "La chambre est exactement comme je l'ai laissée. Le bureau, le lit, la chaise. Il me faut une seconde pour oser refermer la porte."
+    "La chambre est comme je l'ai laissée. Je reste une seconde dans l'entrée avant de refermer."
     noam fatigue "Quel abruti..."
-    "Je m'assieds au bord du matelas. Ma tablette affiche l'heure. Le vote a lieu sans moi."
-    think "Je ne sais même pas comment ils vont voter. Hier, j'aurais cru que ça m'importait plus que tout."
-    "Je laisse la tablette de côté. Un instant, j'imagine retourner là-bas pour m'excuser."
+    "Je m'assieds au bord du lit. Sur la tablette, l'heure du vote passe sans moi."
+    think "Ils vont décider. Je ne sais même pas si j'ai encore le droit de leur en vouloir."
+    "J'ouvre la messagerie. Le nom d'Elen est en haut. Je n'écris rien."
     "Je ne bouge pas."
-    "Le silence est interrompu par un léger bruit dans le conduit."
-    "Je lève immédiatement les yeux."
+    "Un frottement vient du conduit. Je lève les yeux d'un coup."
     pause 1.0
-    "Cette fois, c'est la ventilation. Le souffle augmente, puis redescend."
+    "Le ventilateur accélère, puis reprend son rythme. Cette fois, je reconnais le bruit."
     noam fatigue "D'accord. Pas ce soir."
-    "Je tire la couverture sur moi. Il fait encore assez chaud pour que je la repousse aussitôt."
-    think "J'espère qu'Elen ne croit pas que je lui en veux."
-    "C'est la dernière pensée claire que j'ai avant de m'endormir."
+    "Je m'allonge sans retirer mes vêtements."
+    think "Demain, je lui parle. Pour de vrai."
+    "Je m'endors avant de pouvoir décider par quoi commencer."
     scene black with fade
     stop music fadeout 3.0
     call show_chapter_title("Fin du chapitre 4", "Chapitre 4 — Quelque chose ne tourne pas rond") from _call_show_chapter_title_18
@@ -711,3 +706,6 @@ label _12_0_1_1_APRES_EXPLOSION:
     if getattr(store, "j12011_wire_result", "security") != "security":
         call screen kd_route_vote_convergence
     jump _13_0_1_1_0_REVEIL_CHAMBRE
+
+    # Durée : 1m35
+    # Total estimé : 14m40 + exploration, choix statistique et mini-jeu
