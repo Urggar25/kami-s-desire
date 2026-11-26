@@ -5,13 +5,12 @@ label _23_0_1_1_0_0_REVEIL:
     scene bg_chambre at adaptive_fullscreen with fade
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
 
-    "Je me réveille avant l'alarme."
-    "Pas à cause d'un bruit, cette fois. Justement."
-    "Je reste allongé quelques secondes à écouter la chambre, puis les conduits. Rien."
+    "Je me réveille avant l'alarme et tends aussitôt l'oreille."
+    "La chambre est calme. Les conduits aussi."
 
     think "J'ai dormi normalement. Ça faisait longtemps."
 
-    "Le bureau est à sa place. Je lève malgré moi les yeux vers la grille, trop haute pour que je puisse la bloquer avec un meuble. Mon sac est encore prêt au pied du lit."
+    "Le bureau est à sa place. Je lève les yeux vers la grille, trop haute pour que je puisse la bloquer avec un meuble. Mon sac est toujours prêt au pied du lit."
     "Sept jours avant de partir, si Kami tient parole et si personne ne trouve une nouvelle façon de tout faire dérailler."
 
     "Je m'habille et passe devant le miroir."
@@ -19,14 +18,14 @@ label _23_0_1_1_0_0_REVEIL:
 
     think "Mara morte derrière les conduits. Mara vivante hier soir. Il y a forcément une explication entre les deux."
 
-    "Je préfère aller manger avant de recommencer à tourner en rond."
+    "Je vais manger avant de recommencer à tourner en rond."
 
     # Durée : ~1m00
     # Total : ~1m00
 
 
 label _23_0_1_1_0_0_PETIT_DEJEUNER:
-    call MAYBE_PLAY_SCRIPTED_DOOR("bg_cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_28
+    call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_28
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
@@ -78,7 +77,7 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Mara arrête de jouer avec sa tasse."
 
-    sael "Je ne sais pas trop ce que tu as vu, alors je veux vérifier que tu vas bien."
+    sael raison "Je ne sais pas ce que tu as vu. Je peux au moins vérifier que tu vas bien."
 
     noam inquiet "Tu penses que je deviens fou ?"
 
@@ -108,11 +107,11 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     sael desaccord "J'ai pas besoin de toi."
 
-    iris "La dernière fois que t'as voulu aider Noam avec tes histoires de signes, Ryn l'a plaqué contre un mur et vous l'avez couvert de sel."
+    iris colere "La dernière fois que vous avez voulu aider Noam, Ryn l'a plaqué contre un mur et vous l'avez couvert de sel."
 
     sael colere "J'ai jamais demandé à Ryn de le plaquer contre un mur."
 
-    iris "Super. Ça me rassure énormément."
+    iris blase "Super. Ça me rassure énormément."
 
     "Sael souffle par le nez."
 
@@ -128,7 +127,7 @@ label _23_0_1_1_0_0_PETIT_DEJEUNER:
 
     call play_stat_dialogue("j23") from _call_play_stat_dialogue_2
 
-    sael "Tu veux savoir si ce que t'as vu peut venir de toi ou pas ?"
+    sael raison "Tu veux savoir si ce que t'as vu peut venir de toi ou pas ?"
 
     "Je regarde Mara. Elle évite mes yeux."
 
@@ -189,7 +188,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam reflexion "Tu pourrais avoir l'air plus contente."
 
-    sael "J'ai pas fini."
+    sael neutre "J'ai pas fini."
 
     "Elle rapproche une chaise."
 
@@ -201,17 +200,17 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     "Iris ricane. Je fixe Sael pendant qu'elle bouge les doigts à la limite de mon champ de vision."
 
-    sael "Droite."
+    sael raison "Droite."
 
     noam neutre "Vu."
 
-    sael "Gauche."
+    sael raison "Gauche."
 
-    noam "Vu."
+    noam neutre "Vu."
 
     "Elle recommence."
 
-    sael "Gauche."
+    sael raison "Gauche."
 
     "Je ne vois rien."
 
@@ -225,7 +224,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     iris inquiet "Qu'est-ce qu'il y a ?"
 
-    sael "Attends."
+    sael reflexion "Attends."
 
     "Troisième essai. Cette fois j'aperçois le mouvement, mais très tard."
 
@@ -244,7 +243,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     sael desaccord "J'ai pas dit ça."
 
-    noam "Mais ça peut venir du cerveau."
+    noam inquiet "Mais ça peut venir du cerveau."
 
     sael fatigue "Ou de l'œil. Ou de l'éclairage. On recommence."
 
@@ -260,7 +259,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     iris inquiet "T'avais l'air presque soulagé."
 
-    noam "N'importe quoi."
+    noam desaccord "N'importe quoi."
 
     iris desaccord "Si."
 
@@ -276,7 +275,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     sael raison "Fenêtre. Orange. Cheval. Métal. Pluie."
 
-    noam "Fenêtre, orange, cheval, métal, pluie."
+    noam neutre "Fenêtre, orange, cheval, métal, pluie."
 
     "Elle vérifie ensuite la date, le lieu et quelques souvenirs récents."
 
@@ -286,21 +285,21 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam inquiet "Pourquoi ?"
 
-    sael "Je veux voir ce dont tu te souviens exactement."
+    sael raison "Je veux voir ce dont tu te souviens exactement."
 
     "Je prends quelques secondes."
 
     noam faible "J'ai trouvé la salle. Il y avait quelqu'un au sol. J'ai reconnu Mara."
 
-    sael "Comment ?"
+    sael reflexion "Comment ?"
 
     noam reflexion "Son visage. Ses cheveux. Ses vêtements. Je sais pas. C'était elle."
 
-    sael "Tu l'as touchée ?"
+    sael reflexion "Tu l'as touchée ?"
 
     noam desaccord "Non."
 
-    sael "Vérifié sa respiration ?"
+    sael reflexion "Vérifié sa respiration ?"
 
     noam colere "Non."
 
@@ -334,7 +333,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam neutre "C'est pas pareil."
 
-    sael "Non."
+    sael desaccord "Non."
 
     "Au moins elle ne ment pas."
 
@@ -342,7 +341,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam surpris "Sérieux ?"
 
-    sael "Oui."
+    sael neutre "Oui."
 
     noam reflexion "Fenêtre. Orange. Cheval. Métal..."
 
@@ -360,7 +359,7 @@ label _23_0_1_1_0_0_INFIRMERIE:
 
     noam neutre "Il reste l'IRM."
 
-    sael "Oui."
+    sael neutre "Oui."
 
     # Durée : ~5m00
     # Total : ~9m00
@@ -385,9 +384,9 @@ label _23_0_1_1_0_0_IRM:
 
     noam colere "J'ai pas peur."
 
-    iris "Tu viens de demander combien de temps tu vas rester enfermé."
+    iris taquin "Tu viens de demander combien de temps tu vas rester enfermé."
 
-    noam "Je me renseigne."
+    noam desaccord "Je me renseigne."
 
     sael fatigue "Tu as un bouton. Si tu paniques, tu appuies."
 
@@ -448,25 +447,44 @@ label _23_0_1_1_0_0_IRM:
 
     think "Ventilation. Machine. Mon propre souffle. Il y a assez d'explications avant d'en inventer une quatrième."
 
-    "Un frottement suit."
+    "Un frottement suit. Mon pouce se pose sur le bouton d'arrêt."
 
-    "Je serre le bouton."
+    menu:
+        "Appuyer sur le bouton":
+            "J'appuie. La machine s'arrête presque aussitôt."
 
-    sael neutre "Noam ?"
+            sael inquiet "Noam ? Qu'est-ce qui se passe ?"
 
-    noam inquiet "Oui."
+            noam inquiet "J'ai entendu quelqu'un respirer."
 
-    sael raison "Tu bouges."
+            "Un silence passe derrière la vitre."
 
-    noam fatigue "Désolé."
+            iris inquiet "Tu veux qu'on te sorte ?"
 
-    iris inquiet "Ça va ?"
+            "Je pourrais dire oui. Au lieu de ça, je desserre les doigts."
 
-    noam "Oui."
+            noam fatigue "Non. Relance."
 
-    iris colere "Mens mieux."
+            iris determine "Seulement si t'es sûr."
 
-    "Je laisse échapper un souffle qui ressemble presque à un rire."
+            noam determine "Je suis sûr."
+
+            sael raison "D'accord. Ne bouge plus."
+
+        "Continuer sans interrompre l'examen":
+            "Je garde le pouce sur le bouton sans appuyer."
+
+            sael neutre "Noam ? Tu bouges."
+
+            noam fatigue "Désolé."
+
+            iris inquiet "Ça va ?"
+
+            noam desaccord "Oui."
+
+            iris colere "Mens mieux."
+
+            "Je souffle par le nez. Elle m'arrache presque un rire."
 
     "Le reste de l'examen paraît interminable, mais rien d'autre ne se passe."
 
@@ -485,7 +503,7 @@ label _23_0_1_1_0_0_IRM:
 
     iris inquiet "Dans la machine ?"
 
-    noam "Une respiration. Ou un frottement. J'en sais rien."
+    noam inquiet "Une respiration. Ou un frottement. J'en sais rien."
 
     sael raison "On était derrière la vitre. On a rien entendu."
 
@@ -495,7 +513,7 @@ label _23_0_1_1_0_0_IRM:
 
     noam neutre "J'ai rien dit."
 
-    iris "Tu le pensais."
+    iris agace "Tu le pensais."
 
     "Sael fait défiler les coupes."
 
@@ -507,7 +525,7 @@ label _23_0_1_1_0_0_IRM:
 
     noam inquiet "Sael ?"
 
-    sael "Attends."
+    sael reflexion "Attends."
 
     "Quelques secondes de plus."
 
@@ -515,7 +533,7 @@ label _23_0_1_1_0_0_IRM:
 
     noam surpris "Rien ?"
 
-    sael "Pas de lésion visible. Pas d'hémorragie. Pas de signe évident de manque d'oxygène ou de traumatisme."
+    sael raison "Pas de lésion visible. Pas d'hémorragie. Aucun signe évident de manque d'oxygène ou de traumatisme."
 
     iris reflexion "Et ça exclut les hallucinations ?"
 
@@ -525,7 +543,7 @@ label _23_0_1_1_0_0_IRM:
 
     sael neutre "Oui."
 
-    noam "Et j'ai quand même vu Mara morte."
+    noam inquiet "Et j'ai quand même vu Mara morte."
 
     "Sael ne répond pas."
 
@@ -541,7 +559,7 @@ label _23_0_1_1_0_0_IRM:
 
     "Elle pose la tablette."
 
-    sael "La fatigue, le stress ou une hallucination restent possibles. Mais j'ai rien qui me permette de dire : voilà, c'est ça."
+    sael fatigue "La fatigue, le stress ou une hallucination restent possibles. Mais je peux pas te dire : voilà, c'est ça."
 
     "Je hoche la tête."
 
@@ -591,13 +609,13 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     sael neutre "Sur ce qu'on a testé."
 
-    mara "Ah."
+    mara reflexion "Ah."
 
     "Elle cherche une blague, puis renonce."
 
     mara reflexion "C'est quand même plutôt bien, non ?"
 
-    noam "Ouais."
+    noam fatigue "Ouais."
 
     "Mara tend la main vers mon assiette."
 
@@ -607,9 +625,9 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     "Ses doigts touchent mon poignet."
 
-    "Le souvenir revient d'un coup."
+    call kd_vn_reaction("noam", "peur", "#d9edff")
 
-    "Sa main au sol. Immobile."
+    "Pendant une seconde, ce n'est plus sa main sur mon poignet. C'est celle que j'ai vue au sol, derrière les conduits."
 
     "Je retire mon bras brutalement."
 
@@ -623,7 +641,7 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     noam fatigue "Rien."
 
-    mara "Noam, t'as reculé comme si je t'avais frappé."
+    mara reflexion "Noam, t'as reculé comme si je t'avais frappé."
 
     noam desaccord "J'ai dit que t'avais rien fait."
 
@@ -641,9 +659,9 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     noam surpris "Attends."
 
-    mara "Pourquoi ?"
+    mara fatigue "Pourquoi ?"
 
-    "Je n'ai aucune réponse correcte."
+    "Je pourrais lui dire la vérité. Devant tout le monde, les mots ne sortent pas."
 
     "Elle récupère son plateau."
 
@@ -659,7 +677,7 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     noam agace "Quoi ?"
 
-    iris "Elle sait même pas ce qui vient de se passer."
+    iris colere "Elle sait même pas ce qui vient de se passer."
 
     noam colere "Moi non plus !"
 
@@ -675,7 +693,7 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     noam reflexion "Quoi ?"
 
-    sael "Ta réaction quand elle t'a touché."
+    sael raison "Ta réaction quand elle t'a touché."
 
     noam agace "Tu veux faire quoi ? Me la faire toucher dix fois pour voir si je panique ?"
 
@@ -685,9 +703,7 @@ label _23_0_1_1_0_0_APRES_IRM:
 
     "Je me tais."
 
-    "Le problème est simple : voir Mara vivante ne suffit plus à effacer le souvenir."
-
-    "Et maintenant mon corps réagit avant moi."
+    "Voir Mara vivante ne suffit plus. Mon corps réagit avant que j'aie le temps de réfléchir."
 
     $ hideGroup()
 
@@ -720,11 +736,11 @@ label _23_0_1_1_0_0_IRIS:
 
     noam agace "Je lui ai rien dit."
 
-    iris "Justement."
+    iris colere "Justement."
 
     "Je la regarde."
 
-    iris "Elle te touche, tu bondis, tu refuses de lui expliquer et tu la laisses partir en pensant qu'elle a fait quelque chose."
+    iris colere "Elle te touche, tu bondis, tu refuses de lui expliquer et tu la laisses partir en pensant qu'elle a fait quelque chose."
 
     noam colere "Tu veux que je lui dise quoi ? Que pendant une seconde j'ai revu son cadavre à la place de sa main ?"
 
@@ -736,7 +752,7 @@ label _23_0_1_1_0_0_IRIS:
 
     iris inquiet "C'était vraiment ça ?"
 
-    noam "Oui."
+    noam fatigue "Oui."
 
     noam fatigue "Le contact a ramené le souvenir immédiatement. C'était pas une image floue. J'ai eu l'impression de revoir exactement la scène."
 
@@ -744,9 +760,9 @@ label _23_0_1_1_0_0_IRIS:
 
     noam colere "Je sais."
 
-    iris "Alors arrête de la traiter comme une preuve."
+    iris desaccord "Alors arrête de la traiter comme une preuve."
 
-    noam "Tu crois que je fais quoi depuis ce matin ?"
+    noam agace "Tu crois que je fais quoi depuis ce matin ?"
 
     "Je me lève."
 
@@ -764,7 +780,7 @@ label _23_0_1_1_0_0_IRIS:
 
     noam neutre "Et elle a rien trouvé."
 
-    iris "Non."
+    iris fatigue "Non."
 
     "Le silence retombe."
 
@@ -774,11 +790,11 @@ label _23_0_1_1_0_0_IRIS:
 
     iris blase "Tu passes chaque nuit à surveiller cette fichue grille."
 
-    noam "Parce que quelqu'un se balade dans les conduits."
+    noam desaccord "Parce que quelqu'un se balade dans les conduits."
 
     iris colere "Peut-être. Mais tu mélanges tout."
 
-    noam "Et toi tu fais quoi ?"
+    noam colere "Et toi tu fais quoi ?"
 
     iris surpris "Quoi ?"
 
@@ -786,17 +802,17 @@ label _23_0_1_1_0_0_IRIS:
 
     "Iris ouvre la bouche, puis s'arrête."
 
-    noam "Donc toi aussi tu crois qu'il y a quelque chose."
+    noam determine "Donc toi aussi tu crois qu'il y a quelque chose."
 
     iris agace "Je crois surtout que t'es assez con pour retourner là-dedans tout seul."
 
-    noam "C'est pas une réponse."
+    noam desaccord "C'est pas une réponse."
 
     iris colere "Parce que j'en ai pas !"
 
     "Le ton monte d'un coup."
 
-    iris "J'en sais rien, d'accord ? Je sais pas ce que t'as vu, je sais pas qui fait du bruit, je sais pas pourquoi tu te souviens de Mara morte alors qu'elle mange avec nous !"
+    iris colere "J'en sais rien, d'accord ? Je sais pas ce que t'as vu, qui fait du bruit, ni pourquoi tu te souviens de Mara morte alors qu'elle mange avec nous !"
 
     "Elle reprend son souffle."
 
@@ -818,9 +834,9 @@ label _23_0_1_1_0_0_IRIS:
 
     iris blase "Oui."
 
-    noam "Tu pourrais au moins faire semblant d'hésiter."
+    noam blase "Tu pourrais au moins faire semblant d'hésiter."
 
-    iris "Non."
+    iris blase "Non."
 
     "Je souris malgré moi."
 
@@ -830,11 +846,11 @@ label _23_0_1_1_0_0_IRIS:
 
     iris colere "Je viens de te dire que j'en sais rien."
 
-    noam "D'accord."
+    noam neutre "D'accord."
 
     iris determine "Mais tu n'y vas pas seul."
 
-    noam "D'accord."
+    noam neutre "D'accord."
 
     "Elle se lève."
 
@@ -866,7 +882,7 @@ label _23_0_1_1_0_0_SOIREE:
 
     noam neutre "Toujours aussi gros."
 
-    elias "C'est chaud. J'aime pas ces trucs."
+    elias fatigue "C'est chaud. J'aime pas ces trucs."
 
     tomas reflexion "En réalité, une IRM est plutôt sûre si—"
 
@@ -886,15 +902,15 @@ label _23_0_1_1_0_0_SOIREE:
 
     mara taquin "Pour la frite ?"
 
-    noam "Pour le reste."
+    noam fatigue "Pour le reste."
 
     "Elle me regarde quelques secondes."
 
     mara reflexion "J'avais compris que c'était pas contre moi."
 
-    noam "Ça change rien."
+    noam fatigue "Ça change rien."
 
-    mara "Un peu."
+    mara fatigue "Un peu."
 
     noam fatigue "Quand tu m'as touché, j'ai revu ce que j'avais vu derrière les conduits."
 
@@ -902,21 +918,21 @@ label _23_0_1_1_0_0_SOIREE:
 
     mara neutre "Mon cadavre."
 
-    noam "Oui."
+    noam fatigue "Oui."
 
     "Mara baisse les yeux vers son assiette."
 
     mara fatigue "C'est quand même une phrase sacrément bizarre à entendre sur soi."
 
-    noam "Je sais."
+    noam fatigue "Je sais."
 
-    mara "T'as encore peur de moi ?"
+    mara reflexion "T'as encore peur de moi ?"
 
     "La question me prend de court."
 
     noam surpris "Non."
 
-    mara "T'as répondu vite."
+    mara reflexion "T'as répondu vite."
 
     noam desaccord "Parce que c'est vrai."
 
@@ -926,9 +942,9 @@ label _23_0_1_1_0_0_SOIREE:
 
     noam blase "Une."
 
-    mara "Deux."
+    mara taquin "Deux."
 
-    noam "Une."
+    noam blase "Une."
 
     "Elle en prend deux."
 
@@ -944,17 +960,17 @@ label _23_0_1_1_0_0_SOIREE:
 
     iris fatigue "Tomas."
 
-    tomas "Je sais. Mais c'était utile cette fois."
+    tomas hesitation "Je sais. Mais c'était utile cette fois."
 
     "Je hausse les épaules."
 
     noam reflexion "Sael m'a dit la même chose."
 
-    tomas "Alors elle a raison."
+    tomas raison "Alors elle a raison."
 
-    elias fatigue "Donc on sait toujours rien."
+    elias neutre "Donc on sait toujours rien. On passe à autre chose."
 
-    noam "Voilà."
+    noam fatigue "Voilà."
 
     mara taquin "Super journée."
 
@@ -968,7 +984,7 @@ label _23_0_1_1_0_0_SOIREE:
 
     iris blase "Personne n'a demandé."
 
-    noam "Je prends de l'avance."
+    noam blase "Je prends de l'avance."
 
     "Mara ne plaisante pas."
 
@@ -980,11 +996,11 @@ label _23_0_1_1_0_0_SOIREE:
 
     iris inquiet "Tu veux que je vienne ?"
 
-    noam "Non."
+    noam neutre "Non."
 
     "Je vois son regard."
 
-    noam fatigue "Et je ne vais pas dans les conduits."
+    noam fatigue "Et je ne vais pas retourner dans les conduits."
 
     iris neutre "Bien."
 
