@@ -521,10 +521,10 @@ label j701_investigation:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "audio/music/bgm_world_decline.mp3" fadein 1.0
     $ showGroup([("nyra", "neutre", 0.25), ("elias", "inquiet", 0.55), ("noam", "reflechit", 0.85)])
-    "Elias veut courir dans toutes les salles. Nyra refuse qu'on éparpille les recherches avant d'avoir vérifié ce qui manque réellement."
-    nyra neutre "On commence par les emplacements vides et l'atelier. Ensuite, chacun pourra poursuivre la piste qui lui paraît la plus inquiétante."
-    elias inquiet "Mes batteries ont disparu ! Toutes les pistes sont inquiétantes !"
-    nyra neutre "C'est précisément pour ça qu'il faut commencer quelque part."
+    elias inquiet "On peut aussi regarder à l'observatoire. Kael y a laissé du matériel hier. Et au sas, et..."
+    nyra neutre "Elias, attends. On va au stockage avec toi. Puis à l'atelier."
+    elias "Mais j'ai déjà regardé !"
+    nyra "Je sais. Montre-nous exactement où elles étaient. Après, on décidera où chercher."
     $ hideGroup()
     call j701_clue_counterweight from _call_j701_core_counterweight
     $ j701_investigation_collect("counterweight")
@@ -532,10 +532,9 @@ label j701_investigation:
     call j701_clue_negative_blueprint from _call_j701_core_blueprint
     $ j701_investigation_collect("negative_blueprint")
     call screen j701_investigation_evidence("negative_blueprint")
-    "Elias revient sur l'étagère, cherche encore les batteries sous le faux fond, puis se redresse."
-    elias inquiet "Quelqu'un les a prises. Et le capteur n'a même pas compris qu'elles étaient parties."
-    nyra reflechit "On ne va pas ouvrir toutes les salles cette nuit. On choisit les deux pistes les plus utiles."
-    noam reflechit "On commence par quoi ?"
+    "Elias vérifie encore une fois sous le faux fond de l'étagère."
+    elias inquiet "Je comprends pas... Comment j'ai pu passer à côté des poches d'eau ?"
+    nyra reflechit "Il se fait tard. On a le temps de vérifier encore deux endroits. Noam, où tu veux qu'on aille ?"
     while len(j701_investigation_found) < J701_INVESTIGATION_MAX_TURNS:
         $ _j701_selected_room = renpy.call_screen("j701_investigation_locations")
         $ j701_investigation_prepare_room(_j701_selected_room)
@@ -547,8 +546,7 @@ label j701_investigation:
             call screen j701_investigation_evidence(_j701_selected_clue)
 
     scene black with fade
-    "Quand je relève enfin la tête, les lumières du couloir ont basculé en mode nocturne."
-    "Nous avons pu vérifier quatre éléments. Les autres salles restent à examiner, et personne n'a envie de recommencer toute la station cette nuit."
+    "Les lumières du couloir passent en mode nocturne. Nous avons quatre éléments à examiner, mais il nous reste encore des salles à vérifier."
     call screen j701_investigation_dossier
     jump j701_investigation_debrief
 
@@ -560,16 +558,16 @@ label j701_clue_elias_testimony:
         ("noam", "reflexion", 0.28),
         ("elias", "reflechit", 0.72),
     ])
-    noam reflechit "Reprends depuis la dernière fois où tu as vu le matériel. Sans raccourci."
+    noam reflechit "Tu les as utilisées quand, pour la dernière fois ?"
     elias reflechit "Hier soir. Je suis resté au stockage après le repas pour recalibrer mon projet."
     noam doute "Tu as utilisé quoi, exactement ?"
     elias neutre "Les deux batteries, le micro-soudeur, puis les stabilisateurs. Je les ai même recomptés. Trois."
     noam reflechit "Et ensuite ?"
     elias reflechit "J'ai tout rangé. La porte affiche l'heure quand elle se ferme : 23 h 47."
-    elias fatigue "Je l'ai regardée en me disant que j'allais encore dormir quatre heures. C'est le genre de détail qui reste."
+    elias fatigue "J'ai regardé l'heure en sortant. Je devais me lever tôt ce matin, ça m'a fait chier."
     noam doute "Tu es certain de ne pas y être retourné ?"
     elias colere "Certain ! À 23 h 47, tout était encore là. Ce matin, les emplacements étaient vides."
-    "Il ne reconstruit pas un souvenir : il reproduit une routine. Les gestes, l'ordre, jusqu'au voyant de la porte."
+    "Il me montre sur sa tablette où il avait rangé chaque pièce. Il n'a pas besoin de réfléchir longtemps."
     "Je note l'heure. Elias vérifie que je ne me suis pas trompé d'un chiffre."
     $ hideGroup()
     return
@@ -588,12 +586,12 @@ label j701_clue_foil_crane:
     "Je tire doucement. Un minuscule oiseau en papier se déplie dans ma paume, une aile broyée comme si elle avait été prise dans une roue."
     play sound "audio/sfx_paper.mp3"
     elen surpris "C'est... une de mes grues. Enfin, je crois. Je les plie avec les emballages des rations."
-    julian taquin "Je préfère le terme d'aviation expérimentale."
+    julian taquin "Ah ! C'est toi qui les plies ?"
     elen colere "Tu les lances sur Iris quand elle ne te répond pas."
-    julian hesitation "L'aviation expérimentale connaît parfois des dérives militaires."
+    julian hesitation "Pas toutes !"
     noam doute "Elen, tu en as donné à quelqu'un hier ?"
     elen inquiet "Non... mais j'en laisse partout. Sur les tables, dans les livres. N'importe qui pouvait en prendre une."
-    "La graisse sur l'aile est fraîche. L'origami, lui, peut avoir changé dix fois de mains."
+    "La graisse sur l'aile n'a pas encore séché. Mais je ne sais pas qui a pris cette grue en dernier."
     "Je conserve l'origami, mais Elen ne semble pas savoir quoi en penser non plus."
     $ hideGroup()
     return
@@ -609,14 +607,14 @@ label j701_clue_counterweight:
     ])
     "L'étagère insiste : MASSE CONFORME. Pourtant, les logements des batteries sont vides."
     noam doute "Le capteur affirme qu'elles sont toujours là."
-    mara taquin "Peut-être qu'elles ont atteint un nouveau stade de discrétion."
-    elias colere "Ou peut-être que le capteur raconte n'importe quoi. Pousse-toi."
+    mara "Le chiffre bouge si on appuie sur l'étagère ?"
+    elias "Attends, pousse-toi un peu."
     "Je soulève le faux fond avant lui. Deux poches d'eau aplaties sont sanglées sous la plaque."
     play sound "audio/sfx_metal_clank.mp3"
     "Les poches sont presque aussi lourdes que les batteries. Sur l'écran, le capteur indique toujours que l'étagère est pleine."
     elias surpris "Quelqu'un a pesé mes batteries avant de les prendre ?"
     noam reflechit "Et préparé les contrepoids avant cette nuit."
-    mara mefiant "Donc le vol a commencé avant que les objets disparaissent."
+    mara mefiant "Ça se prépare, un truc pareil. On fait pas ça en cinq minutes."
     elias inquiet "Il fallait savoir comment le capteur fonctionnait. Et avoir prévu les poches d'eau."
     "Je repose une poche sur la balance. Elle affiche la même valeur. Je la retire aussitôt."
     $ hideGroup()
@@ -656,16 +654,16 @@ label j701_clue_brown_hair:
     ])
     "Sous la lèvre de l'établi, quelque chose de brun est collé dans une goutte de graisse claire."
     noam reflechit "Ne touche pas. Passe-moi la pince."
-    mara taquin "J'allais justement le lécher pour identifier son propriétaire."
-    noam blase "La pince, Mara."
+    mara "Quoi ? C'est un cheveu ?"
+    noam "Ouais. Elle est à côté de toi, la pince."
     "Je le dégage délicatement : un cheveu brun, assez court, long d'à peine quatre centimètres."
     play sound "audio/sfx_exclamation.mp3"
     mara reflexion "Pas de racine. Et regarde l'autre bout."
-    "L'extrémité est droite, nette, presque géométrique. Ce cheveu n'est pas tombé : il a été coupé."
+    "L'extrémité est droite. On dirait qu'elle a été coupée aux ciseaux."
     noam doute "Donc il ne prouve même pas que son propriétaire est venu ici."
-    mara mefiant "Il prouve surtout que quelqu'un voulait qu'on le trouve."
+    mara mefiant "Quelqu'un a très bien pu le déposer."
     noam inquiet "Brun et court... Ça désigne beaucoup trop de monde."
-    mara neutre "Exactement. Suffisamment précis pour lancer une accusation. Suffisamment vague pour en lancer cinq."
+    mara neutre "Ouais. On le garde, mais on évite de balancer des noms pour l'instant."
     "Mara met le cheveu dans un sachet sans y inscrire de nom."
     $ hideGroup()
     return
@@ -679,8 +677,8 @@ label j701_clue_negative_blueprint:
         ("elias", "reflechit", 0.50),
         ("kael", "neutre", 0.88),
     ])
-    "Le plan de travail paraît impeccable. Trop impeccable."
-    elias reflechit "Normalement, cet établi attire la limaille pendant des jours. Là, il n'y en a presque plus."
+    "L'établi a été nettoyé. Elias passe un doigt sur le rebord."
+    elias reflechit "Normalement, y a de la limaille partout ici. Qui a nettoyé ?"
     kael neutre "Presque."
     "Kael approche un aimant. La limaille oubliée se redresse autour d'une zone parfaitement propre."
     noam surpris "Elle dessine le contour de ce qui était posé là."
@@ -708,7 +706,7 @@ label j701_clue_kael_database:
     play sound "audio/sfx_gresillement.mp3"
     "Kael ne m'a pas entendu entrer. Ses doigts enchaînent les commandes sur la base de données des caméras."
     "Quand mon reflet apparaît dans son écran, il masque sa requête d'un geste sec."
-    noam doute "Tu cherches les images ou tu cherches à les cacher ?"
+    noam doute "Pourquoi t'as fermé la fenêtre ?"
     kael surpris "Depuis combien de temps tu es là ?"
     noam reflechit "Assez pour voir BASE CAMÉRAS et ACCÈS ADMINISTRATEUR."
     kael mefiant "J'essaie d'obtenir l'accès administrateur. La base refuse même de me dire quels segments existent."
@@ -717,8 +715,8 @@ label j701_clue_kael_database:
     noam inquiet "Il est encore valide ?"
     kael reflechit "Il est reconnu. Ce n'est pas la même chose. Regarde : six refus et une septième tentative marquée EN COURS."
     noam doute "Tu aurais pu nous prévenir."
-    kael mefiant "Et transformer chaque ligne de code en débat collectif ? J'ai choisi de gagner du temps."
-    "Sa justification tient. Son réflexe, beaucoup moins."
+    kael mefiant "Pour vous montrer six messages d'erreur ? Je comptais vous prévenir si j'arrivais à entrer."
+    "Je voudrais revoir la fenêtre. Kael garde sa main sur le clavier."
     "Je ne sais pas si je dois le croire. Kael ne rouvre pas la fenêtre tant que je reste près de lui."
     $ hideGroup()
     return
@@ -744,8 +742,8 @@ label j701_clue_maintenance_log:
     kael mefiant "La colonne d'identité est vide. Comme sur le reçu du stockage."
     lysa reflexion "Le voleur prend le matériel à 02 h 14, puis ouvre la maintenance à 02 h 34..."
     noam reflechit "Assez de temps pour déplacer une cargaison sans courir."
-    kael doute "Ou assez de temps pour vouloir nous faire croire à ce trajet. Ce journal a déjà accepté une identité impossible."
-    "La ligne de 02 h 34 relie enfin deux salles. Elle ne nous dit toujours pas qui a franchi la porte."
+    kael doute "Si les heures sont correctes. On a déjà un problème avec ce journal, ne l'oubliez pas."
+    "Je note l'heure à côté de celle du stockage."
     lysa "Quelqu'un a dû passer par là."
     kael "Probablement. Ou quelqu'un veut qu'on le croie."
     $ hideGroup()
@@ -761,9 +759,9 @@ label j701_clue_vertical_tracks:
         ("mara", "doute", 0.88),
     ])
     "Deux marques de roues traversent le sol jusqu'à la grande porte. Au lieu de s'arrêter, elles remontent sur le métal."
-    iris surpris "D'accord. Le chariot a décidé de marcher sur les murs."
-    mara taquin "Ne le juge pas. Il explore sa verticalité."
-    noam blase "Vous pourriez m'aider à regarder au-dessus ?"
+    iris surpris "Attends, c'est aussi des traces de roues, ça ?"
+    mara "On dirait bien."
+    noam "Vous pouvez regarder au-dessus de la porte ? Je vois rien d'ici."
     "Mara joint les mains. Iris prend appui dessus et se hisse jusqu'au cadre supérieur."
     iris reflexion "Deux impacts en demi-lune. Même écartement que les roues."
     noam reflechit "Un plateau magnétique. La cargaison a été plaquée verticalement contre la porte."
@@ -790,11 +788,11 @@ label j701_clue_impossible_echo:
     mara doute "Deux ouvertures ?"
     kael reflechit "Impossible. Cette porte met douze secondes à se refermer. Elle ne peut pas valider deux passages espacés de sept secondes."
     noam doute "Un écho ?"
-    mara taquin "Un écho très ponctuel qui prend sept secondes pour traverser dix mètres ?"
+    mara "Sept secondes ? Tu veux pas réessayer ?"
     kael raison "Le second son a été rejoué. Compare les formes d'onde : elles sont identiques au pixel près."
     noam inquiet "Quelqu'un a diffusé un faux bip dans la salle."
-    kael mefiant "Oui. Mais pour tromper une personne, un autre capteur... ou notre enquête ?"
-    "Le micro ne répond pas. Il conserve seulement deux sons identiques dans un ordre impossible."
+    kael mefiant "Oui. Je sais pas à quoi ça devait servir."
+    "Je relance l'enregistrement. Le deuxième bip est bien identique au premier."
     "Je réécoute les deux bips. Sans l'analyse de Kael, je n'aurais jamais remarqué qu'ils étaient identiques."
     $ hideGroup()
     return
@@ -815,8 +813,8 @@ label j701_investigation_debrief:
         ("nyra", "reflechit")
     ])
     "De retour à la cafétéria, Elias étale les relevés sur une table. Il n'a pas touché à son verre."
-    elias inquiet "Bon. Dites-moi que vous avez compris ce qui s'est passé."
-    kael reflechit "Les batteries ont disparu. Le poids sur l'étagère n'a pas changé parce qu'on les a remplacées par des poches d'eau."
+    elias inquiet "Bon... On peut au moins me dire ce qu'ils ont fait de mes batteries ?"
+    kael reflechit "On sait comment elles ont été prises. Les poches d'eau ont suffi à tromper le capteur."
     elias "Donc c'était volontaire."
     mara "Ça, oui."
     elias "Et le truc qu'on a trouvé à l'atelier ?"
@@ -852,7 +850,7 @@ label j701_investigation_debrief:
         kael reflechit "Le micro du sas a enregistré deux ouvertures trop rapprochées. L'une des deux est peut-être un faux signal."
         lysa "Donc on ne peut même plus se fier aux bruits des portes."
     "Elias prend une feuille, la plie, puis la déplie aussitôt."
-    elias "Alors, c'est quoi ? Quelqu'un s'est servi ? Quelqu'un essaie de réparer quelque chose ?"
+    elias "Mais pourquoi on m'a rien demandé ? Si quelqu'un avait besoin de pièces, j'aurais pu les lui donner !"
     menu:
         "Insister sur le fait que le vol était préparé.":
             $ j701_investigation_theory = "premedite"
@@ -872,9 +870,9 @@ label j701_investigation_debrief:
             iris "Ça n'empêche pas de poser des questions."
             noam "Je n'ai pas dit le contraire."
     elias inquiet "Je veux juste récupérer mes affaires. J'en ai besoin pour travailler."
-    mara "On recommence demain avec les journaux complets. Là, tout le monde est crevé."
-    elias "Tu dis ça comme si on pouvait les retrouver en rangeant un placard."
-    mara "Non. Je dis qu'on va faire des conneries si on continue jusqu'au matin."
+    mara "On reprendra demain. Regardez un peu vos têtes."
+    elias "Et moi, je fais quoi en attendant ?"
+    mara "Tu dors. Kael aussi. Vous allez faire des conneries si vous continuez comme ça."
     "Elias ne répond pas. Il ramasse ses documents en laissant le plan de l'adaptateur au milieu de la table."
     elen inquiet "Mais... celui qui a fait ça, il est peut-être encore ici ?"
     "Kael regarde le plan. Nyra ferme son registre."
