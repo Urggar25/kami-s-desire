@@ -443,26 +443,21 @@ label sd_d6_1_0_hesitation:
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Logique.
 label sd_d7_0_1_verifier:
-    tomas "Merci. J'avais besoin que quelqu'un dise ça."
+    tomas "C'est aussi ce qui me gêne. Si les données sont incomplètes, notre calcul peut être correct et le résultat complètement faux."
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
 # JOUR 7, route 0-1 — toujours disponible. Gain : +1 XP Empathie.
 label sd_d7_0_1_espoir:
-    "Les épaules de Tomas retombent un peu."
-    tomas "Oui. Commençons par ça."
+    tomas "J'espère que oui. Ça fait un moment que je regarde ce tableau, et je n'arrive même plus à me réjouir de ce chiffre."
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 # JOUR 7, route 0-1 — existe si Logique >= 3. Aucune XP.
 label sd_d7_0_1_motif:
-    tomas "Tu penses que les deux événements sont liés ?"
-    noam "Ils ont commencé au même moment. Pour moi, ça mérite qu'on vérifie."
-    tomas "Ça voudrait dire que Kami n'a peut-être pas choisi d'arrêter les exécutions..."
-    noam "On sait pas encore. Et on sait surtout pas si ça va durer."
-    tomas "Je vais relever les horaires exacts dans le rapport."
-    noam "Et on évite de dire aux autres que le danger est passé."
-    tomas "Oui. Ce serait une erreur."
+    tomas "Je me suis posé la même question. Si les deux événements sont liés, ça voudrait dire que l'interruption des sanctions n'est peut-être pas volontaire."
+    noam "On pourrait comparer l'heure du dernier enregistrement avec les anomalies d'hier. Ça nous donnerait au moins quelque chose à vérifier."
+    tomas "Je vais joindre les horaires exacts au rapport. Mais je préfère qu'on ne présente pas ça comme une preuve que les sanctions ont cessé."
     return
 
 
@@ -632,7 +627,7 @@ label sd_d6_1_0_oser:
 
 # JOUR d7_0_1 — nouvelle réponse ordinaire : +1 XP audace.
 label sd_d7_0_1_se_risquer:
-    tomas "Je préférerais vérifier deux fois... Mais je comprends pourquoi tu ne veux pas attendre."
+    tomas "Je comprends. Mais si on en parle, il faudra bien préciser ce qu'on a vérifié et ce qu'on ignore encore. Je ne veux pas que quelqu'un prenne ce chiffre pour une autorisation de faire n'importe quoi."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
