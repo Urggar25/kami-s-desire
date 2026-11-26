@@ -106,7 +106,7 @@ label KD_ROUTE_J7_ELIAS:
             $ showGroup([("elias", "fatigue", 0.35), ("noam", "neutre", 0.65)])
             elias "Ah, merci ! Prends ce côté, ça glisse un peu. Je l'avais mise sur le chariot, mais Nyra en avait besoin."
             noam "Tu vas où avec tout ça ?"
-            elias "Au stockage. J'essaie de trouver de quoi continuer mon projet. Le truc, c'est que dès que je récupère une pièce, j'en trouve une autre qui va pas avec. Hier soir, j'ai passé deux heures à refaire un réglage."
+            elias "Au stockage, avec les caisses. J'essaie de remettre en marche le gros robot de la maintenance. Ce matin, avant la livraison, j'ai vérifié ses connexions. J'aimerais bien pouvoir le faire bouger pour de vrai."
             noam "Tu devrais demander un coup de main à Kael."
             elias "Il m'aide déjà quand il a le temps. Mais j'aimerais bien lui montrer un truc qui marche, tu vois ? Pas débarquer à chaque fois avec un machin démonté dans les mains."
             "On soulève la caisse. Elias manque de coincer son pied dessous."
