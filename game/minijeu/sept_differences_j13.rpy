@@ -50,7 +50,7 @@ screen j13_sept_differences_screen(interactive=True, reaction_text=None, reactio
     add Solid("#0D1822") xsize 1920 ysize 150
     add Solid("#7FD8EE55") xsize 1920 ysize 2 ypos 149
 
-    text "LES 7 DIFFÉRENCES":
+    text "LES 4 DIFFÉRENCES":
         xpos 82
         ypos 38
         size 42
