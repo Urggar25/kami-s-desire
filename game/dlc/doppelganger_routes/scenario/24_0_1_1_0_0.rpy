@@ -15,11 +15,11 @@ label _24_0_1_1_0_0_REVEIL:
 
     $ blink()
 
-    "Je me réveille avec la lumière de ma chambre encore allumée et la joue écrasée contre l'oreiller, dans une position suffisamment inconfortable pour me faire comprendre que je n'ai presque pas bougé de la nuit."
+    "Je me réveille la joue écrasée contre l'oreiller. La lumière est toujours allumée."
 
     scene bg_chambre at adaptive_fullscreen with dissolve
 
-    "Pendant quelques secondes, je reste allongé à fixer le plafond sans vraiment penser à quoi que ce soit, puis mon regard descend presque automatiquement vers la grille d'aération."
+    "Mon regard passe du plafond à la grille d'aération."
 
     "Le bureau est toujours poussé devant."
 
@@ -27,7 +27,7 @@ label _24_0_1_1_0_0_REVEIL:
 
     "C'est une pensée parfaitement normale à avoir au réveil."
 
-    "Je soupire et me redresse, encore engourdi. Ma tablette est restée allumée sur la table de chevet, avec le compte rendu de Sael ouvert exactement là où je l'avais abandonné hier soir."
+    "Je me redresse. Ma tablette est restée allumée sur le compte rendu de Sael."
 
     "Réflexes normaux, mémoire normale, perception normale, aucune anomalie visible à l'imagerie."
 
@@ -35,7 +35,7 @@ label _24_0_1_1_0_0_REVEIL:
 
     "Je referme le document avant d'avoir la mauvaise idée de le relire une quatrième fois."
 
-    "Aujourd'hui, au moins, je devrais avoir autre chose à faire que d'essayer de comprendre si j'ai réellement vu Mara morte ou si mon cerveau a décidé de me faire vivre la pire blague de l'histoire."
+    "Aujourd'hui, j'aurai au moins autre chose à faire que de décider si j'ai vu Mara morte ou si mon cerveau me joue la pire blague de l'histoire."
 
     "Le vote annoncé il y a deux jours doit avoir lieu cet après-midi."
 
@@ -45,9 +45,7 @@ label _24_0_1_1_0_0_REVEIL:
 
     think "Donc avec notre talent, on devrait réussir à transformer ça en catastrophe avant midi."
 
-    "Je me lève, enfile mes vêtements et m'approche du bureau pour le remettre à sa place, mais ma main reste quelques secondes sur le dossier de la chaise."
-
-    "Je finis par ne déplacer le meuble que de quelques centimètres, juste assez pour pouvoir prétendre à moi-même que j'ai fait un effort."
+    "Je m'habille, puis pose la main sur le bureau pour le remettre à sa place. Je ne le déplace que de quelques centimètres."
 
     noam fatigue "C'est déjà ça."
 
@@ -59,7 +57,7 @@ label _24_0_1_1_0_0_REVEIL:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    "Le dortoir est beaucoup plus animé que les jours précédents. Une porte est ouverte au bout du couloir, j'entends quelqu'un rire derrière une autre et, quelque part vers la cafétéria, Elen parle suffisamment fort pour être parfaitement identifiable sans même comprendre ce qu'elle raconte."
+    "Le dortoir est plus animé que ces derniers jours. Une porte reste ouverte, quelqu'un rit derrière une autre et la voix d'Elen porte depuis la cafétéria."
 
     think "Bizarrement, ça fait du bien."
 
@@ -75,7 +73,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     play music "music/bgm_quiet_routine.mp3" fadein 0.8
 
-    "Quand j'entre, presque tout le monde est déjà installé. La conversation traverse la pièce dans tous les sens et, pour une fois, personne ne semble parler à voix basse comme s'il craignait qu'un mot de travers fasse exploser la station."
+    "Presque tout le monde est déjà installé. Les conversations se croisent sans que personne baisse la voix."
 
     $ showGroup([
         ("julian", "joie", -0.08),
@@ -96,7 +94,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     noam reflexion "Vous avez commencé sans moi ?"
 
-    iris blase "On a surtout commencé à manger sans toi. Tu sais, le monde continue de tourner, tu n'es pas central à toutes nos discussions."
+    iris blase "On a surtout commencé à manger sans toi. Le monde a survécu."
 
     mara taquin "Personnellement, je voulais attendre. Je trouve ça important de partager les moments de plaisir."
 
@@ -106,7 +104,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     "Je récupère un plateau pendant que Julian se redresse sur sa chaise avec l'air d'un candidat sur le point de prononcer son discours de victoire."
 
-    julian joie "Mon cher Noam, tu arrives au meilleur moment. Nous étions précisément en train de constater que, pour une fois, l'humanité avait réussi à nous proposer quelque chose sur lequel douze adultes raisonnables devraient pouvoir tomber d'accord."
+    julian joie "Tu arrives au meilleur moment. Pour une fois, douze adultes devraient pouvoir tomber d'accord."
 
     lysa blase "Onze adultes raisonnables et Julian."
 
@@ -142,9 +140,9 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     sael raison "C'est le minimum pour vivre. Il ne devrait même pas y avoir besoin de voter pour ça."
 
-    kael calme "Sur certaines stations d'Orbite, la question de l'eau suffit déjà à déterminer combien de personnes peuvent rester dans un habitat. Une garantie comme celle-là aurait un vrai effet."
+    kael calme "Sur certaines stations d'Orbite, l'eau décide déjà du nombre de personnes qu'un habitat peut garder. Cette garantie changerait vraiment des choses."
 
-    nyra raison "À condition qu'elle soit réellement appliquée, mais oui. Le principe est difficile à contester."
+    nyra raison "Si elle est réellement appliquée. Mais le principe est difficile à contester."
 
     elias neutre "Moi je vois même pas ce qu'on peut raconter pendant le débat. T'as faim, on te donne à bouffer. T'as soif, on te donne de l'eau. T'as nulle part où dormir, on te trouve un toit."
 
@@ -160,11 +158,11 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     elen rire "Arrêtez !"
 
-    "La discussion continue quelques secondes dans la même ambiance, suffisamment légère pour que je commence presque à croire que Ryn avait raison et que le débat pourrait réellement être expédié sans drame."
+    "Pendant quelques secondes, je crois presque que Ryn a raison et que le débat sera expédié sans drame."
 
     "Puis je remarque Tomas."
 
-    "Depuis que je suis arrivé, il n'a pratiquement rien dit. Il garde les yeux fixés sur sa tablette et fait tourner sa cuillère dans une tasse qui, à en juger par le bruit du métal contre la céramique, est vide depuis un bon moment."
+    "Depuis mon arrivée, il fixe sa tablette en faisant tourner sa cuillère dans une tasse vide."
 
     noam reflexion "Tomas ?"
 
@@ -318,7 +316,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
-    "Après le petit-déjeuner, je tourne quelques minutes dans les couloirs sans destination précise. Je pourrais retourner dans ma chambre, mais l'idée de rester seul avec le bureau, la grille et le rapport médical de Sael suffit à me faire continuer tout droit."
+    "Après le petit-déjeuner, je tourne quelques minutes dans les couloirs. Retourner dans ma chambre signifie retrouver la grille et le rapport de Sael. Je continue tout droit."
 
     think "Finalement, Tomas et son problème incompréhensible ont au moins l'avantage de m'occuper."
 
@@ -348,7 +346,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
     noam reflexion "Pourquoi t'as trois fois le texte ?"
 
-    tomas raison "Non, attends, c'est pas trois fois pareil. Là, c'est le texte déposé. Au milieu, celui que Kami a enregistré. Et le dernier, c'est moi qui l'ai recopié pour comparer. Enfin... pour vérifier les mots."
+    tomas raison "Non. Là, c'est le texte déposé. Au milieu, celui enregistré par Kami. Et le dernier, je l'ai recopié pour comparer les mots."
 
     noam reflexion "Et il y en a une ?"
 
@@ -358,7 +356,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
 
     tomas fatigue "Oui."
 
-    noam taquin "C'était une manière très longue de répondre oui."
+    noam taquin "Donc oui. En beaucoup plus long."
 
     tomas colere "Je sais."
 
@@ -375,7 +373,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
     tomas colere "NOAM !"
     noam fatigue "Pardon."
     tomas fatigue "C'est pas le mot. Enfin si, le mot est mauvais, mais c'est pas ça..."
-    "Il passe d'une fenêtre à l'autre. Trois exemplaires du même texte. J'ai envie de lui arracher la tablette des mains."
+    "Il passe encore d'une fenêtre à l'autre. J'ai envie de lui retirer la tablette des mains."
     noam agace "Tu fais trois fois le même travail."
     tomas reflexion "Parce que si je rate une différence..."
     noam fatigue "Il n'y en a pas. Tu me l'as dit."
@@ -391,7 +389,7 @@ label _24_0_1_1_0_0_ARCHIVES_ARRIVEE:
     tomas reflexion "Bon. On essaie autrement."
     noam reflexion "Le texte te fait peur, ou ce que Kami pourrait en faire ?"
     tomas hesitation "Je... c'est peut-être la même chose."
-    "Pour la première fois depuis mon arrivée, il ne cherche pas immédiatement à me corriger."
+    "Pour une fois, il ne cherche pas à me corriger."
 
 
     menu (screen="critical_choice", noam_expr="reflexion", cc_targets={"On ne peut pas attendre un texte parfait.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRINCIPE"},"Vérifions ce que Kami devra produire.":{"label":"_24_0_1_1_0_0_ARCHIVES_PRODUCTION"}}):
@@ -412,7 +410,7 @@ label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
     noam reflexion "Je peux t'aider à formuler ce que t'as trouvé."
     tomas colere "Tu veux encore m'expliquer ma propre question ?"
     noam agace "Non ! Mais tu me demandes de t'écouter depuis une heure et dès que je parle, tu me sautes dessus !"
-    "Tomas me dévisage. J'ai envie de récupérer ma phrase et de la remettre dans ma bouche."
+    "Tomas me dévisage. Je regrette aussitôt d'avoir haussé le ton."
     noam fatigue "Pardon. Je suis aussi crevé que toi."
     tomas fatigue "Non. T'as raison. Je suis insupportable."
     noam taquin "Ça, je voulais pas le dire."
@@ -437,7 +435,7 @@ label _24_0_1_1_0_0_ARCHIVES_PRINCIPE:
 
     scene couloir_dortoir at adaptive_fullscreen with dissolve
 
-    "Une fois la porte refermée, je reste quelques secondes dans le couloir en repensant à la conversation."
+    "Une fois la porte refermée, je reste dans le couloir."
 
     think "Fatigué."
 
@@ -501,7 +499,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
     scene bg_repos at adaptive_fullscreen with dissolve
     play music "music/bgm_quiet_routine.mp3" fadein 1.0
 
-    "Une bonne partie du groupe s'est retrouvée dans la salle commune avant de rejoindre le Conclave. Julian et Elen ont lancé une partie de baby-foot, Ryn commente chaque action sans qu'on lui ait rien demandé et Iris essaie de lire sur le canapé en donnant l'impression qu'elle pourrait tuer quelqu'un si le niveau sonore augmente encore."
+    "Avant le vote, une bonne partie du groupe s'est retrouvée dans la salle commune. Julian et Elen jouent au baby-foot, Ryn commente chaque action et Iris essaie de lire sur le canapé."
 
     $ showGroup([
         ("ryn", "sourire", 0.10),
@@ -619,7 +617,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     "La remarque devrait probablement m'agacer davantage qu'elle ne le fait."
 
-    "Depuis plusieurs jours, j'ai surtout l'impression de courir derrière des problèmes que je ne comprends pas, des souvenirs impossibles et des choses cachées dans les murs du Conclave. L'idée de devoir simplement écouter quelqu'un et essayer de comprendre son raisonnement paraît presque reposante."
+    "Depuis plusieurs jours, je cours derrière des souvenirs impossibles et des choses cachées dans les murs. Écouter Tomas et essayer de comprendre son raisonnement paraît presque reposant."
 
     think "Ça, au moins, je sais faire."
 
@@ -682,7 +680,7 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
 
-    kami "Enfin... On se comprends !"
+    kami "Enfin... On se comprend !"
 
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
@@ -814,11 +812,10 @@ label _24_0_1_1_0_0_CONCLAVE:
     call refutation_run("j24_tomas")
     if _return[0] == "success":
         call play_noam_interupt
-        tomas fatigue "Merci. Je suis pour le principe. J'ai juste peur qu'on vote un texte vide."
+        noam raison "Il ne cherche pas une raison de voter contre. Il cherche à savoir si sa réserve suffit à bloquer le texte."
+        tomas fatigue "Merci. C'est exactement ça."
     else:
-        tomas colere "Je ne suis pas contre ! Je demande juste qu'on écoute ma réserve !" 
-
-    tomas colere "Non ! J'essaie de comprendre si ma réserve est suffisamment importante pour qu'on la prenne en compte ! C'est pas la même chose !"
+        tomas colere "Je suis pas contre ! J'essaie de savoir si ma réserve est assez grave pour bloquer le texte. C'est pas la même chose !"
 
     ryn colere "Bah explique-la alors !"
 
@@ -835,17 +832,17 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     ryn neutre "..."
 
-    noam agace "Bon, arrêtez de lui demander s'il est pour ! Il l'a dit trois fois."
+    noam agace "Arrêtez de lui demander s'il est pour. Il l'a dit trois fois."
     ryn colere "Et nous on attend quoi, exactement ?"
     tomas colere "J'en sais rien ! C'est ça qui me rend dingue !"
     noam reflexion "Attends... tout à l'heure, t'as parlé d'un puits à vingt kilomètres."
     tomas surpris "Hein ?"
     noam raison "Tu disais que Kami pouvait prétendre donner de l'eau à quelqu'un sans qu'il puisse réellement aller la chercher."
     elen inquiet "Mais elle ferait vraiment ça ?"
-    iris desaccord "Elen, c'est Kami. Elle pourrait appeler une flaque « accès universel à l'eau » juste pour nous voir râler."
+    iris desaccord "Elen, c'est Kami. Elle pourrait appeler une flaque « accès universel à l'eau » juste pour nous regarder râler."
     tomas raison "Exactement ! On va peut-être lui offrir un moyen de dire que tout va bien alors que des gens crèvent encore."
     sael raison "Chez moi, une source qui reste inaccessible n'a jamais nourri personne."
-    julian sourire "Épatant. Nous avons donc découvert que les mots peuvent mentir. Peut-on voter ?"
+    julian sourire "Très bien. Les mots peuvent mentir. On peut voter ?"
     tomas colere "Tu vois ? C'est pour ça que je voulais pas en parler !"
     noam agace "Julian, tu peux arrêter de faire le présentateur deux secondes ?"
     julian fatigue "Je... oui. Bon."
@@ -860,11 +857,11 @@ label _24_0_1_1_0_0_CONCLAVE:
     tomas colere "J'AI PAS DIT ÇA !"
     noam fatigue "Ryn, laisse-le finir. S'il te plaît."
     ryn fatigue "Ouais, bon..."
-    noam hesitation "J'aime pas non plus ce texte. Enfin... je l'aime bien, mais pas comme il est écrit."
+    noam hesitation "J'aime le principe. La formulation, beaucoup moins."
     iris blase "C'est très clair, Noam."
     noam fatigue "Je sais. Je fais de mon mieux."
     tomas reflexion "Tu trouves aussi qu'il manque quelque chose ?"
-    noam raison "Ouais. Sauf qu'on a pas de texte de remplacement. Et les gens qui ont faim aujourd'hui, ils attendent pas qu'on trouve le mot parfait."
+    noam raison "Ouais. Mais on n'a pas de texte de remplacement. Les gens qui ont faim aujourd'hui n'attendent pas qu'on trouve le mot parfait."
     sael raison "Ça, je peux le comprendre. Mais une promesse vide peut faire plus de mal qu'une absence de promesse."
     elen inquiet "Et quelqu'un qui n'a pas mangé depuis hier, on lui dit quoi ? Qu'on recommence dans trois jours ?"
     "Sael ne répond pas tout de suite."
@@ -879,7 +876,7 @@ label _24_0_1_1_0_0_CONCLAVE:
     noam fatigue "Alors tu pourras me le rappeler. Très fort, même. Je sais que tu sais faire."
     "Quelques rires nerveux passent autour de la table. Tomas, lui, ne sourit pas."
     noam hesitation "Je peux pas te promettre que ça se passera bien. Franchement, ça me fout la trouille."
-    noam raison "Mais j'ai encore plus peur de dire non et de rentrer chez moi en sachant qu'on pouvait au moins leur donner ça."
+    noam raison "Mais j'ai encore plus peur de dire non alors qu'on pouvait au moins leur donner ça."
     tomas fatigue "Tu sais que ça me rassure pas ?"
     noam sourire "Ouais. Moi non plus."
     "Tomas revient au texte. Cette fois, il le lit sans le faire défiler."
@@ -1020,15 +1017,15 @@ label _24_0_1_1_0_0_CONCLAVE:
 
 
 label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
-    julian sourire "Bon. Pour une fois, on peut être tous d'accord en moins de cinq minutes ?"
+    julian sourire "Pour une fois, on peut être tous d'accord en moins de cinq minutes ?"
     elen joie "Oui !"
     ryn neutre "Pareil."
     tomas fatigue "Attendez."
     julian fatigue "Non..."
-    tomas agace "Je peux juste finir une phrase ?"
+    tomas agace "Je peux finir une phrase avant que tu souffres ?"
     nyra raison "Vas-y."
     tomas reflexion "J'ai regardé les projections de production, ce matin. Avec Noam."
-    noam neutre "On a trouvé une installation dont on avait jamais entendu parler."
+    noam neutre "On a trouvé une installation dont on n'avait jamais entendu parler."
     tomas raison "Keyper-IIB. Si ce Commandement passe, les quotas de certaines unités là-bas augmentent."
     elias surpris "Des unités de quoi ?"
     tomas fatigue "Je sais pas. C'est ça qui m'embête."
@@ -1036,7 +1033,7 @@ label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
     tomas neutre "Non. Accès refusé."
     kael calme "Ça peut être une station automatisée."
     tomas raison "Oui. Mais on n'en sait rien."
-    ryn agace "Donc on va tout bloquer parce qu'un tableau est pas assez détaillé ?"
+    ryn agace "On va tout bloquer parce qu'un tableau est pas assez détaillé ?"
     tomas colere "J'ai pas dit ça !"
     julian agace "Tu le sous-entends assez fort."
     tomas colere "J'essaie de comprendre comment elle va tenir sa promesse !"
@@ -1046,8 +1043,8 @@ label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
     tomas raison "Voilà ! Merci."
     iris reflexion "Et s'il s'agit juste de machines ?"
     tomas fatigue "Alors j'aurai eu peur pour rien. Je l'espère, même."
-    julian agace "Ça reste une hypothèse. Les gens qui ont faim, eux, c'est pas une hypothèse."
-    noam raison "C'est moi qui lui ai demandé de vérifier. Ça vaut le coup qu'on l'écoute."
+    julian agace "Ça reste une hypothèse. La faim, non."
+    noam raison "C'est moi qui lui ai demandé de vérifier. Laissez-le aller au bout."
     julian colere "Et pendant qu'on écoute, qu'est-ce qu'on fait pour ceux qui attendent sur Terre ?!"
     tomas colere "Tu peux arrêter de me parler comme si je voulais les laisser crever ?!"
     ryn colere "Bah dis-nous ce que tu veux faire, alors !"
@@ -1095,13 +1092,13 @@ label _24_0_1_1_0_0_VOTE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.2
 
-    "Le texte apparaît une dernière fois sur l'écran central tandis que le système ouvre les votes."
+    "Le texte réapparaît sur l'écran central. Les pupitres s'allument."
 
     "Toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
 
     think "Après toute cette discussion, la phrase paraît presque ridiculement courte."
 
-    "Tomas garde encore quelques secondes les yeux sur son interface avant de valider son choix. Les autres font de même et les pupitres s'éteignent progressivement autour de la table."
+    "Tomas garde les yeux sur son interface avant de valider. Les pupitres s'éteignent les uns après les autres."
 
     "Cette fois, il ne reste plus que le mien."
 
@@ -1122,7 +1119,7 @@ label _24_0_1_1_0_0_VOTE:
     else:
         $ j24_vital_vote = "abstain"
 
-    # Les onze autres représentants votent POUR.
+    # Les autres votes dépendent de la piste suivie aux Archives.
     # Noam est ajouté avec le choix effectué dans l'interface.
     $ vote_phase3_counts = {"pour": 0, "abstention": 0, "contre": 0}
     $ vote_phase3_current_name = ""
@@ -1239,7 +1236,7 @@ label _24_0_1_1_0_0_RESULTAT:
 
     elen joie "On l'a fait !"
 
-    julian joie "Enfin une victoire qui ne nécessite pas d'expliquer pourquoi personne n'est mort !"
+    julian joie "Enfin une victoire sans cadavre ni explication gênante !"
 
     iris blase "Tu avais vraiment besoin de préciser ça ?"
 
@@ -1255,7 +1252,7 @@ label _24_0_1_1_0_0_RESULTAT:
 
     lysa neutre "Je préviens."
 
-    "Elen contourne la table avec suffisamment d'enthousiasme pour que je comprenne trop tard ce qu'elle prépare."
+    "Elen contourne la table. Je comprends trop tard ce qu'elle prépare."
 
     noam inquiet "Elen, non."
 
@@ -1265,7 +1262,7 @@ label _24_0_1_1_0_0_RESULTAT:
     $ unlock_gallery_image("bg_cg062")
     scene bg_cg062 at adaptive_fullscreen with dissolve
 
-    "Elle m'attrape dans ses bras malgré ma tentative extrêmement convaincante de reculer d'environ dix centimètres."
+    "Elle m'attrape dans ses bras malgré ma tentative de reculer."
 
     noam gene "Pourquoi moi ?!"
 
@@ -1319,21 +1316,15 @@ label _24_0_1_1_0_0_RESULTAT:
 
     ryn rire "Connard."
 
-    "Les discussions repartent progressivement tandis que tout le monde commence à quitter la salle."
+    "Les discussions reprennent tandis que tout le monde commence à quitter la salle."
 
-    "Je reste encore quelques secondes assis, juste assez longtemps pour regarder le nouveau Commandement s'ajouter à la liste sur l'écran central."
+    "Je reste assis le temps de voir le nouveau Commandement s'ajouter à la liste."
 
     think "On a vraiment réussi."
 
-    "Pas évité une catastrophe."
+    "Cette fois, nous n'avons pas seulement évité une catastrophe ou limité les dégâts. Nous avons ajouté quelque chose qui n'existait pas avant."
 
-    "Pas limité les dégâts d'un mauvais choix."
-
-    "Pas trouvé une manière de survivre à une règle de Kami."
-
-    "Nous avons réellement ajouté quelque chose qui n'existait pas avant."
-
-    "Et, pour une fois, j'ai le sentiment d'avoir participé autrement qu'en étant celui à qui les choses arrivent."
+    "Et j'y ai participé autrement qu'en étant celui à qui les choses arrivent."
 
     $ hideGroup()
 
@@ -1453,18 +1444,18 @@ label _24_0_1_1_0_0_APRES_VOTE:
             julian determine "Noam ! Prends la deuxième manette. Elen refuse de reconnaître mon talent."
             elen rire "J'ai gagné trois fois !"
             noam taquin "Tu sais qu'un champion est censé gagner de temps en temps ?"
-            julian "J'ai surtout un sens aigu du suspense."
+            julian sourire "J'ai surtout un sens aigu du suspense."
             "Je m'installe entre eux. Julian perd encore une partie, puis insiste pour une revanche jusqu'à ce qu'Elen menace de débrancher la machine."
             elen joie "Tu vas raconter quoi sur Terre ? Que tu t'es fait battre par moi ?"
             julian sourire "Que j'ai généreusement offert la victoire pour célébrer notre vote."
             noam rire "Je raconterai la vraie version."
-            julian "Traître. Tu viens de ruiner ma légende."
+            julian agace "Traître. Tu viens de ruiner ma légende."
 
         "Échanger quelques mots avec Tomas et Nyra.":
             $ showGroup([("tomas", "reflexion", 0.25), ("nyra", "neutre", 0.50), ("noam", "neutre", 0.75)])
             "Tomas et Nyra ont quitté le canapé pour comparer leurs tablettes, malgré la fête."
             noam taquin "Vous avez vraiment décidé de travailler aujourd'hui ?"
-            tomas "On essaie juste de comprendre comment expliquer le vote aux gens, sans leur promettre davantage que ce qu'il change."
+            tomas reflexion "On essaie juste de comprendre comment expliquer le vote aux gens, sans leur promettre davantage que ce qu'il change."
             nyra raison "Je lui ai dit d'attendre demain pour rédiger son discours."
             tomas inquiet "Ça ne sera pas un discours. Juste un compte rendu."
             noam sourire "On vient de gagner. Vous pouvez poser vos tablettes dix minutes."
@@ -1477,7 +1468,7 @@ label _24_0_1_1_0_0_APRES_VOTE:
             "Lysa s'est installée près du distributeur, assez loin pour échapper aux cris de Julian."
             noam sourire "Tu ne joues pas ?"
             lysa blase "Je préfère regarder le naufrage à une distance raisonnable."
-            noam "On dirait quand même que tu t'amuses."
+            noam taquin "On dirait quand même que tu t'amuses."
             lysa taquin "Ne répète pas ça. J'ai une réputation."
             "Elle pousse vers moi un gobelet qu'elle n'a pas touché."
             lysa neutre "Tiens. J'en ai pris deux sans faire attention."
@@ -1487,9 +1478,9 @@ label _24_0_1_1_0_0_APRES_VOTE:
 
     $ hideGroup()
 
-    "Je ris avec les autres sans avoir besoin de me forcer, ce qui m'arrive suffisamment peu ces derniers jours pour que je le remarque immédiatement."
+    "Je ris avec les autres sans avoir besoin de me forcer. Ça m'arrive assez peu pour que je le remarque."
 
-    "Pendant un moment, le Conclave ressemble presque à ce qu'il aurait dû être dès le départ : douze personnes qui viennent de prendre une décision ensemble et qui peuvent passer une heure à se moquer du mauvais perdant de service sans penser à ce qu'il y a derrière les murs."
+    "Pendant un moment, nous sommes juste douze personnes qui viennent de prendre une décision ensemble et qui se moquent du mauvais perdant de service."
 
     julian determine "Revanche."
 
@@ -1523,7 +1514,7 @@ label _24_0_1_1_0_0_APRES_VOTE:
     noam taquin "Mon discours ? Tu veux que je recommence ?"
     iris agace "N'ose même pas."
     "Je ris. Elle détourne les yeux vers la partie de Julian."
-    iris neutre "T'avais pas l'air de chercher des fantômes partout, pour une fois."
+    iris neutre "Pendant le débat, t'étais vraiment avec nous. Pas en train de surveiller les murs."
     noam fatigue "Sympa."
     iris inquiet "Je voulais pas dire ça comme ça."
     noam reflexion "Je sais."
@@ -1532,12 +1523,9 @@ label _24_0_1_1_0_0_APRES_VOTE:
     iris sourire "Quoi ? Tu surveilles chaque goutte, maintenant ?"
     noam taquin "Si c'est toi qui me les piques, ouais."
     "Elle me rend le gobelet avec un air satisfait."
-    iris neutre "Profite un peu. T'as pas besoin de trouver une nouvelle catastrophe avant ce soir."
+    iris neutre "Profite un peu. T'as pas besoin de trouver une nouvelle catastrophe ce soir."
     noam fatigue "Je vais essayer."
     iris sourire "Ce serait déjà un progrès."
-
-
-    iris blase "Malheureusement."
 
     "Elle me donne un petit coup d'épaule avant de se lever."
 
@@ -1562,13 +1550,13 @@ label _24_0_1_1_0_0_SOIR:
     scene couloir_dortoir at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 1.0
 
-    "Il est déjà tard quand je quitte finalement les autres. Julian conteste toujours le résultat de sa deuxième partie, Elen lui propose une troisième revanche et j'entends encore Mara rire au bout du couloir lorsque je rejoins les dortoirs."
+    "Il est tard quand je quitte les autres. Julian conteste toujours sa défaite, Elen lui propose une nouvelle revanche et Mara rit au bout du couloir."
 
     "Sa voix me fait ralentir pendant une fraction de seconde."
 
     "Hier soir, le simple fait de l'entendre derrière ma porte m'avait glacé."
 
-    "Aujourd'hui, la sensation est toujours là, quelque part au fond de mon ventre, mais elle ne prend pas toute la place."
+    "Aujourd'hui, la crispation revient, mais elle ne prend plus toute la place."
 
     think "C'est déjà mieux."
 
@@ -1578,7 +1566,7 @@ label _24_0_1_1_0_0_SOIR:
 
     "En entrant dans ma chambre, je retrouve le bureau à sa place et la grille d'aération toujours dégagée. Cela ne m'empêche pas de regarder le conduit avec méfiance."
 
-    "Je le regarde quelques secondes avant de le tirer encore un peu, suffisamment pour libérer presque entièrement l'aération sans pour autant le remettre complètement à sa place."
+    "Je tire encore un peu le bureau. La grille est presque entièrement dégagée."
 
     think "On avance."
 
@@ -1590,23 +1578,23 @@ label _24_0_1_1_0_0_SOIR:
 
     "Toute personne doit pouvoir disposer d'un toit où dormir, d'eau potable et d'une alimentation suffisante."
 
-    "Je relis la phrase plusieurs fois, non pas parce que j'y cherche un piège, mais parce qu'elle me paraît étrangement concrète."
+    "Je relis la phrase. Pas pour y chercher un piège. Parce qu'elle me paraît enfin concrète."
 
     "Quelque part sur Terre, des gens qui n'avaient aucune garantie hier en ont désormais une, aussi imparfaite soit-elle."
 
-    "Ce n'est probablement pas la révolution que Julian voudrait raconter dans ses mémoires, mais c'est quelque chose qui n'existait pas ce matin."
+    "Ce n'est pas la révolution que Julian racontera dans ses mémoires. Mais ça n'existait pas ce matin."
 
     think "Et j'ai participé à ça."
 
     "Je reste un moment avec cette pensée."
 
-    "Elle me paraît presque prétentieuse, mais pour une fois je n'essaie pas immédiatement de la corriger."
+    "La pensée me paraît prétentieuse. Pour une fois, je la laisse passer."
 
     noam sourire "Pas mal."
 
     "Je pose la tablette à côté de moi puis repense malgré moi à Tomas."
 
-    "Sa tasse vide qu'il essayait de boire, sa tablette oubliée, les trois versions identiques du texte et cette manière étrange de perdre le fil d'une idée qu'il semblait pourtant avoir parfaitement en tête."
+    "Sa tasse vide, sa tablette oubliée, les trois versions du texte, sa manière de perdre une idée qu'il semblait pourtant tenir."
 
     think "Il était juste crevé."
 
@@ -1624,13 +1612,13 @@ label _24_0_1_1_0_0_SOIR:
 
     "Pour une fois, je refuse de transformer une journée normale en enquête avant même d'avoir une raison de le faire."
 
-    "Si Tomas agit encore bizarrement demain, je lui parlerai. S'il va mieux, j'aurai simplement passé dix minutes à m'inquiéter pour quelqu'un qui avait mal dormi."
+    "Si Tomas agit encore bizarrement demain, je lui parlerai. S'il va mieux, il était simplement épuisé."
 
     "Je coupe la tablette et m'allonge."
 
     "Avant d'éteindre la lumière, mon regard revient une dernière fois vers la grille d'aération."
 
-    "Elle ne bouge pas, aucun bruit ne vient du conduit et, pendant quelques secondes, elle redevient simplement ce qu'elle est censée être : une grille dans un mur."
+    "Elle ne bouge pas. Aucun bruit ne vient du conduit. Pendant quelques secondes, ce n'est plus qu'une grille dans un mur."
 
     think "Aujourd'hui, j'ai été utile."
 
