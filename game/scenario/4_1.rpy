@@ -104,8 +104,8 @@ label _4_1_CAFETERIA_ECRANS:
     iris desaccord "Choisir avec quel argent ? Ceux qui n'ont rien regarderont les autres acheter depuis le bout de la file."
     iris colere "On savait que supprimer les rations ferait ça. On a quand même voté pour."
 
-    nyra raison "Alors il faut regarder ce qui manque au nouveau système au lieu de prétendre qu'il fonctionne déjà parfaitement."
-    nyra reflechit "Sans règles communes, les premiers marchés profiteront forcément à ceux qui possèdent déjà le plus."
+    nyra raison "On a voté pour, Iris. Maintenant, il faut s'occuper de ce qui ne marche pas. Kael, est-ce qu'on sait déjà quels approvisionnements sont concernés ?"
+    nyra reflechit "Si on laisse les marchés se mettre en place sans règles communes, ceux qui possèdent déjà le plus seront les premiers servis."
 
     noam reflexion "On a remplacé les bons du jour au lendemain. Les gens n'ont même pas eu le temps de comprendre avec quoi ils allaient payer."
     noam inquiet "Ça ne veut pas dire qu'on a forcément eu tort. Mais on aurait dû mieux prévoir la transition."
@@ -210,7 +210,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     kael reflechit "Les conséquences du dernier vote ne sont même pas encore stabilisées. C'est beaucoup trop tôt pour décider autre chose."
 
-    nyra raison "Nous aurons trois jours pour le faire. Pour le moment, il faut seulement écouter."
+    nyra raison "On a trois jours. Écoutons la proposition, et ensuite on s'occupera des points sur lesquels on n'arrive pas à se mettre d'accord."
 
     noam neutre "Enfin une proposition raisonnable. Attendons au moins que Kami nous donne une raison de paniquer."
 
@@ -381,7 +381,7 @@ label _4_1_RETOUR_CONCLAVE_ANALYSE:
 
     kael inquiet "Elle a ses raisons. Les ignorer ne la fera pas revenir."
 
-    nyra raison "On connaît maintenant le principal point de blocage. Il faudra trouver une réponse concrète avant le vote."
+    nyra raison "Très bien. On sait ce qui bloque. Tomas, si tu as des idées pour les contrôles, garde-les : il nous faudra des propositions précises avant le vote."
 
     tomas hesitation "On pourrait peut-être parler de contrôles aux frontières, ou d'une ouverture progressive... Enfin, si le texte nous le permet."
     $ unlock_dossier_arg("p2_controles")
@@ -445,11 +445,11 @@ label _4_1_APRES_CLASH_PRE_FETE:
     elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Je pense qu'elles t'écouteront plus facilement."
 
     $ kd_queue_character_motion("nyra", "recoil")
-    nyra surpris "Moi ? Pourquoi est-ce que ce serait plus facile avec moi ?"
+    nyra surpris "Tu as déjà essayé de leur parler toutes les deux ?"
 
     elen taquin "Parce que tu sais parler aux gens sans les énerver en moins de dix secondes. C'est un talent rare ici."
 
-    nyra reflexion "Je vais essayer. Mais je ne te garantis pas qu'elles accepteront."
+    nyra reflexion "D'accord, je vais les voir. Mais si elles ne veulent pas venir, tu ne me demandes pas de les traîner jusqu'ici."
 
     $ showGroup([
         ("lysa", kd_current_expr("lysa", "blase"), 0.040),

@@ -196,37 +196,37 @@ label _4_0_ROUTE_MATIN_NYRA:
     $ kd_direct.two_shot("nyra", "noam")
     "Nyra tente de faire passer un chariot dans le couloir. Deux cartons dépassent de chaque côté et bloquent le virage."
     noam sourire "Tu prépares un déménagement ?"
-    nyra reflechit "Les couverts du petit-déjeuner. Le chariot est plus large que l'espace entre les deux angles."
+    nyra reflechit "Les couverts du petit-déjeuner. J'ai chargé un peu trop large. Si tu as deux minutes, j'ai besoin de tes mains."
     noam "Il a peut-être maigri depuis tout à l'heure."
     $ kd_direct.shot("close","nyra",duration=.14,hold=1)
-    nyra neutre "Non."
+    nyra neutre "Très drôle. Prends la caisse du haut."
     noam "Je peux aider ?"
-    nyra reflechit "Si tu tiens la caisse du haut pendant que je tourne, oui."
+    nyra reflechit "Tiens-la bien droite pendant que je tourne. Je te dirai quand la poser."
     $ kd_direct.shot("two",("nyra","noam"),duration=.28,hold=1)
     "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."
     $ kd_direct.profile("comedy")
     $ kd_direct.react("noam", "surprise")
     $ kd_queue_character_motion("nyra", "emphasis")
-    nyra colere "Pas comme ça. Tu inclines la caisse."
+    nyra colere "Non, Noam, redresse-la ! Elle glisse."
     noam surpris "Je fais ce que je peux !"
-    nyra "Alors incline-la dans l'autre sens."
+    nyra "Attends, bouge plus. Je recule un peu."
     "Le chariot finit par franchir le passage sans rien renverser."
     noam "On aurait pu enlever les caisses avant."
     $ kd_direct.shot("reaction", "nyra", duration=0.3, hold=2)
     "Nyra regarde successivement le chariot et les cartons."
-    nyra reflechit "Oui. On aurait pu."
+    nyra reflechit "Oui. J'aurais dû y penser avant de te faire soulever ça."
     "Elle soupire, puis reprend la poignée."
     $ kd_direct.profile("casual")
     $ kd_direct.two_shot("nyra","noam",duration=.25)
-    nyra neutre "Merci. Au fait, tu sais pourquoi Elen a demandé trois fois plus de cannelle que prévu ?"
+    nyra neutre "Merci. Dis-moi, tu sais pourquoi Elen a demandé trois fois plus de cannelle que prévu ?"
     noam reflechit "Aucune idée."
-    nyra "Sa demande fait trois pages."
+    nyra "Trois pages. Elle a même détaillé les quantités par pancake."
     noam sourire "Tu crois qu'elle prépare une révolution ?"
-    nyra "Je crois surtout qu'elle ne comprend pas les restrictions de stock."
+    nyra "Je vais lui demander de refaire sa demande avec ce qu'on a réellement en stock."
     $ kd_direct.shot("wide",duration=.18,hold=2)
     "Un cri indigné traverse la porte de la cafétéria. Nyra tourne la tête."
     noam "Je pense que tu vas avoir ta réponse."
-    nyra reflechit "Ça promet."
+    nyra reflechit "Bon, allons voir. Je vais lui laisser sa cannelle si on en a encore."
     $ kd_direct.end()
     $ hideGroup()
     return
@@ -256,11 +256,11 @@ label _4_0_CAFETERIA_ECRANS:
     elias inquiet "Il reste du pain au moins ? Parce que j'aimerais éviter un petit-déjeuner composé uniquement d'eau chaude."
     goumi "Les apports nutritionnels nécessaires sont maintenus. Provisions non essentielles réaffectées aux distributions terrestres."
     elen colere "Non essentielles ?! Depuis quand la cannelle est devenue un objet de luxe ?!"
-    nyra reflechit "La liste des produits réaffectés est consultable ?"
+    nyra reflechit "Goumi, donne-nous la liste des produits qui ont été retirés."
     goumi "Oui."
-    nyra neutre "Alors affiche-la."
+    nyra neutre "Affiche-la, s'il te plaît. Elen, attends qu'on voie ce qui reste."
     goumi "Affichage indisponible sur le comptoir de préparation. Consultation possible sur la tablette commune."
-    nyra reflechit "D'accord. C'est déjà une réponse."
+    nyra reflechit "D'accord, je regarderai sur la tablette. On trouvera autre chose pour les pancakes si on n'en a plus."
     elen desaccord "Mais moi je veux une réponse qui se mange !"
     elen triste "Comment je vais faire pour manger mes pancakes sans cannelle, moi !"
     noam sourire "Tu veux que je te trouve un panneau de réclamation ?"
@@ -827,7 +827,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     $ kd_direct.interrupt("tomas",.6)
     tomas colere "Quoi ?! Je peux être en colère contre lui sans avoir envie qu'il reste seul !"
     "Mara ouvre la bouche, puis la referme. Tomas regarde sa tablette comme s'il envisageait de tout recommencer."
-    nyra neutre "Il a demandé à être tranquille. On peut respecter ça pendant une journée."
+    nyra neutre "Il a demandé à être seul, Tomas. Ne va pas chez lui maintenant. Si demain il ne veut toujours voir personne, on avisera."
     ryn neutre "Pour une fois, je suis d'accord."
     $ kd_direct.shot("reaction","mara",duration=.18,hold=1)
     mara taquin "Profite bien de cet instant, Nyra."
@@ -957,7 +957,7 @@ label _4_0_RETOUR_CONCLAVE_ANALYSE:
     $ kd_direct.react("tomas", "step_back")
     "Ryn se lève si vite que sa chaise grince, puis se rassoit."
     $ kd_direct.shot("medium","nyra",duration=.22,hold=1)
-    nyra raison "Vous ne parlez plus de la même chose. Ryn, laisse-la finir."
+    nyra raison "Ryn, laisse-la terminer. Je veux savoir ce qu'elle propose avant de décider si c'est acceptable."
     ryn colere "Elle a fini ! Elle veut garder les frontières fermées !"
     tomas hesitation "Et des passages autorisés ? Avec des gardiens, des listes..."
     ryn colere "Des listes ? On en a déjà assez, Tomas ! Des noms de gens qu'on doit prévenir, tu veux les voir ?!"

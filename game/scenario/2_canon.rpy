@@ -158,14 +158,14 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     mara taquin "Vous organisez une cérémonie d'enterrement ou un petit-déjeuner ? On vous entend depuis le couloir."
     mara neutre "À droite, ceux qui veulent paniquer. À gauche, ceux qui veulent manger. Je peux m'asseoir avec les gens normaux ?"
 
-    nyra taquin "Tu as vraiment pris le temps d'écouter avant d'entrer ?"
+    nyra taquin "Il reste une place là, Mara. Assieds-toi avant que quelqu'un te demande ton avis."
 
     elen joie "Mara ! Viens ici ! Il reste de la place, et je te promets qu'on ne parle pas QUE de mourir !"
 
     mara taquin "Adorable invitation, mais d'ici je vois tout le monde. Et je préfère voir venir les mauvaises surprises."
     elen joie "Moi je préfère voir les desserts !"
     mara sourire "Au moins, on est deux à avoir des priorités."
-    nyra neutre "Ne vous y trompez pas, elle regarde les gens pour savoir qui aura le dernier mot."
+    nyra neutre "Elle a déjà repéré les gens les plus susceptibles de se disputer."
     mara taquin "C'est plus divertissant que le menu."
 
     pause 0.4
@@ -265,7 +265,7 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     sael triste "Le commerce... Comme avant ? Avant quoi, exactement ?"
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra taquin "Je crois que quelqu'un vient de proposer de refaire toute l'économie mondiale en douze mots."
+    nyra taquin "Douze mots pour refaire tout le commerce mondial. Tomas, tu peux garder une copie du texte ? Il va falloir qu'on le relise."
 
     $ bc_show("iris", "triste", px=-70, py=-50, pz=0.85)
     iris colere "Pour une fois, je m'attendais à pire. Le problème, c'est qu'on n'a toujours aucune idée de ce qu'on vote."
@@ -349,13 +349,13 @@ label _2_CAFETERIA_ANNONCE_KAMI:
     iris blase "Tomas. On est censés débattre du commerce mondial. Tu peux gagner ton combat contre une brioche, non ?"
     "Iris lui prend le paquet et l'ouvre d'un geste. Elen éclate de rire lorsque quelques miettes tombent sur la table."
     ryn reflechit "Vous avez fini avec les viennoiseries ? Parce qu'on ne sait même pas ce que cette règle nous autoriserait vraiment."
-    nyra neutre "La formulation compte autant que l'intention. Avec une phrase aussi vague, Kami peut faire presque ce qu'elle veut."
+    nyra neutre "Relis la formulation, Ryn. Elle ne dit pas ce que les districts auront réellement le droit d'échanger."
     ryn colere "Donc on vote pour quoi ? Ce qu'elle décide ?!"
-    nyra reflexion "On devrait attendre le texte final."
+    nyra reflexion "Je veux voir le texte final avant qu'on promette quoi que ce soit aux gens."
     ryn colere "Et en attendant, ceux qui ont besoin de matériel font quoi ? Ils attendent aussi ?"
-    nyra sourire "Tu peux me dire ce qu'il te faudrait en premier ? Pas tout un programme, juste une chose."
+    nyra sourire "Dis-moi ce qui manque à Limen en ce moment. Si on a un exemple précis, on pourra demander à Kami si le texte permet de régler le problème."
     ryn reflechit "Des pièces pour les pompes. Pourquoi ?"
-    nyra reflexion "Parce que c'est plus simple de discuter d'une pompe cassée que de tout le commerce mondial."
+    nyra reflexion "Très bien, les pompes. Elias, tu as déjà travaillé sur ce genre de matériel ?"
     elias sourire "Ah, pour les pompes j'ai peut-être une solution !"
     iris blase "Évidemment. On a enfin une conversation politique et il faut qu'on parle de plomberie."
     elias taquin "La plomberie, au moins, ça marche quand on l'entretient."
@@ -451,7 +451,7 @@ label _2_CAFETERIA_POST_ANNONCE:
     "Ryn repousse légèrement sa chaise. Je crois qu'il va partir, mais il reprend sa tasse et reste assis."
     elias reflechit "Et moi je parlais de boulons, il y a cinq minutes... J'ai l'air malin."
     mara neutre "Voilà pourquoi je me méfie des propositions qui tiennent sur une serviette. Chacun entend ce qui l'arrange."
-    nyra neutre "On aura un texte rédigé par Kami avant le vote. C'est ce texte-là qu'il faudra juger, pas nos souvenirs du commerce."
+    nyra neutre "Quand Kami nous donnera le texte, on reprend la liste des problèmes qu'on vient de soulever. Si le texte n'en règle aucun, on le dit."
     iris fatigue "Formidable. Maintenant que vous avez fini de régler les problèmes du monde, je peux réchauffer mon repas ?"
     elen content "Moi, j'aimerais bien visiter ton village ! Enfin... quand on aura le droit de quitter cette boîte."
     sael sourire "Si tu veux."
@@ -972,7 +972,7 @@ label _2_CAFETERIA_SOIR:
     $ kd_direct.begin("casual")
     think "Je reviens à la cafétéria. Mes bras protestent dès que j'essaie de tenir le plateau. À une table, Nyra raconte quelque chose qui a l'air de passionner Elen."
 
-    nyra sourire "À Orbite, on pouvait finir un repas sans qu'il se transforme en débat. Vous parlez toujours autant, à Harmonie ?"
+    nyra sourire "J'avais l'habitude de manger avec des gens qui parlaient beaucoup, mais vous êtes assez forts. J'ai même pas fini mon assiette."
     noam sourire "Non. C'est un effet secondaire de trente jours d'enfermement avec des inconnus."
     elen joie "Moi j'adore ! Enfin, sauf quand quelqu'un crie ou menace de partir. Ou quand on parle de cadavres."
     kael neutre "Chez nous, il fallait surtout se dépêcher. Une équipe finissait, la suivante prenait la place. Pas de place pour les grands discours."
@@ -985,10 +985,10 @@ label _2_CAFETERIA_SOIR:
     elen content "C'est nul ! Je voulais voir une purée faire un looping !"
     kael sourire "Je peux te garantir que ce serait surtout un cauchemar à nettoyer."
     $ kd_direct.shot("reaction", "nyra", duration=0.25, hold=1)
-    nyra taquin "Et nous voilà revenus aux problèmes les plus importants d'Orbite."
+    nyra taquin "Kael, ne lui explique pas comment on nettoie le plafond, s'il te plaît. On en a pour une heure."
     noam sourire "Je crois que j'ai raté le début de cette réunion scientifique."
     tomas hesitation "On est en train de décider de ce que vous pourrez acheter, mais... je sais même pas comment vous mangez. Ça me paraît un peu inquiétant."
-    nyra neutre "On peut t'expliquer. Mais pas en un repas. Tu veux commencer par les rations ou les filtres à air ?"
+    nyra neutre "Je peux te raconter comment on faisait pour les repas. Kael pourra compléter si tu veux les détails techniques."
     $ kd_direct.profile("intimate")
     $ kd_direct.shot("wide", duration=0.55)
     noam inquiet "Kael m'a raconté ce qui arrive quand une sanction perce la coque. J'arrive pas à me sortir ça de la tête."
@@ -999,11 +999,11 @@ label _2_CAFETERIA_SOIR:
     $ kd_direct.profile("comedy")
     $ kd_direct.shot("medium", "elen", duration=0.30, hold=1)
     elen joie "Oh ! Attendez, vous avez goûté la purée ? Je suis sûre qu'ils ont changé la recette !"
-    nyra taquin "Je crois surtout qu'elle a eu le temps de refroidir pendant notre conversation sur le vide spatial."
+    nyra taquin "Elen, je veux bien goûter la tienne. La mienne est complètement froide."
     tomas sourire "Il paraît qu'on cherche une raison de voter à l'unanimité. On pourrait commencer par la purée."
     elen joie "Moi je vote pour !"
     kael calme "Je m'abstiens. Je n'ai pas encore lu la recette."
-    nyra sourire "Un vrai parlement, finalement."
+    nyra sourire "D'accord, je vous laisse finir le scrutin. Je vais chercher du pain."
     $ kd_direct.shot("retreat", duration=0.55)
     think "Je ris avec eux. Ça ne dure pas longtemps, mais ça fait du bien."
     think "Elen examine les assiettes comme un jury gastronomique. Kael essaie de lui expliquer la préparation des repas sur Orbite sans qu'elle lui demande si les pommes de terre flottent."

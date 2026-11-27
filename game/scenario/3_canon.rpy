@@ -752,14 +752,14 @@ label _3_PAUSE_CHAMBRE:
         ("nyra", "neutre", 0.60),
     ])
 
-    nyra stress "Noam, viens. Julian a coincé Tomas dans la salle de repos. Il ne le laisse pas partir."
+    nyra stress "Habille-toi, je t'explique en route. Julian retient Tomas dans la salle de repos et il refuse de le laisser tranquille."
     noam inquiet "Coincé comment ? Il l'a menacé ?"
-    nyra colere "Il veut lui faire promettre un vote pour. Et lui faire dire devant les caméras qu'il le soutient. Tomas a dit qu'il voulait réfléchir seul."
+    nyra colere "Il veut qu'il s'engage à voter pour et qu'il dise devant les caméras qu'il le soutient. Tomas lui a déjà demandé de le laisser réfléchir."
     $ kd_queue_character_motion("noam", "anger")
     noam colere "Il s'en prend à Tomas ?! Il sait très bien que Tomas va pas lui rentrer dedans !"
-    nyra stress "Tomas m'a écrit parce qu'il n'arrive plus à s'en débarrasser. Il faut y aller, pas lui faire un cours sur le vote."
+    nyra stress "Tomas m'a écrit. Je veux qu'on le fasse sortir, et je préfère ne pas être seule avec Julian s'il s'énerve."
     noam determine "On y va. Avant qu'ils se mettent à voter pour savoir qui a le droit de quitter la pièce."
-    nyra neutre "Et Noam ? On vient chercher Tomas. Pas régler tes comptes avec Julian."
+    nyra neutre "Noam, écoute-moi. Si tu commences à l'insulter, on va perdre du temps. Laisse Tomas sortir d'abord."
 
     stop music fadeout 0.5
     play music "music/bgm_world_decline.mp3" fadein 0.6
@@ -844,7 +844,7 @@ label _3_PAUSE_CHAMBRE:
 
     noam colere "Julian ! Il vient de te dire qu'il voulait partir. Tu as un problème avec le mot non ?"
     julian colere "Ah, Noam. Parfait. Nyra a recruté la police des bonnes intentions ?"
-    nyra neutre "Tomas m'a demandé de venir. Il ne voulait plus discuter avec toi. C'est assez clair."
+    nyra neutre "Julian, il t'a dit non. Tu peux défendre ton texte devant les douze tout à l'heure, tu n'as pas besoin de le coincer ici."
     julian reflexion "Je lui explique pourquoi son choix compte. Vous voulez interdire les discussions maintenant ?"
     tomas inquiet "Non ! Tu veux que je dise que je TE soutiens ! Tu n'as même pas demandé ce qui me faisait hésiter !"
     julian hesitation "C'est... ce n'est pas ce que je voulais dire."
@@ -868,8 +868,8 @@ label _3_PAUSE_CHAMBRE:
     julian hesitation "Tomas, je ne voulais pas..."
     tomas inquiet "NON ! Vous m'écoutez pour une fois !"
     tomas inquiet "J'ai peut-être envie de voter pour, d'accord ? Mais maintenant, j'ai surtout envie de vous envoyer promener tous les deux !"
-    nyra raison "Vous avez fini de vous disputer sur le dos de Tomas ?"
-    nyra neutre "Julian, dehors. Noam, attends deux secondes."
+    nyra raison "Noam, regarde Tomas deux secondes. Il essaie de vous parler depuis tout à l'heure."
+    nyra neutre "Julian, laisse-nous. S'il te plaît, ne m'oblige pas à aller chercher les autres."
     julian colere "Très bien. Mais si une seule hésitation nous fait perdre, rappelez-vous qui aura essayé de l'éviter."
     noam colere "Et rappelle-toi que les gens ont le droit de te dire non !"
     julian colere "Oui. On verra."
@@ -882,11 +882,11 @@ label _3_PAUSE_CHAMBRE:
     tomas hesitation "Je lui ai dit non à la discussion. Je sais pas pourquoi c'est plus difficile à comprendre qu'un non au vote."
     noam triste "J'étais venu t'aider. J'ai juste crié plus fort que lui. Désolé."
     tomas hesitation "Je veux que les choses changent, moi aussi. Mais si on supprime les rations et que les gens n'ont plus rien, ça va être de ma faute ?"
-    nyra neutre "Tu voteras sur le texte. Pas pour faire plaisir à Julian. Pas pour remercier Noam d'être venu."
+    nyra neutre "Tomas, je ne vais pas te demander ce que tu comptes voter. Tu n'as rien à nous promettre, même après ce qu'on vient de faire."
     tomas inquiet "J'aurais juste voulu avoir peur tranquillement, vous voyez ? Sans que quelqu'un transforme ça en problème."
     noam determine "Prends le temps qui reste. On se retrouvera au Conclave."
     tomas hoche_la_tete "Ouais. Mais je vous en supplie, ne faites pas encore de moi l'enjeu de votre dispute."
-    nyra sourire "Je reste avec lui. Et merci d'être venu sans casser une porte, Noam."
+    nyra sourire "Tu veux que je reste un peu ? Noam, je te rejoins au Conclave."
     think "Nyra reste auprès de Tomas. Je repars seul."
     think "J'ai envie de rattraper Julian pour lui dire ses quatre vérités. Après ce que Tomas vient de me dire, ce serait vraiment malin."
     $ hideGroup()
@@ -1008,7 +1008,7 @@ label _3_DEBAT1_PHASE1:
     kami "Votre petite phrase tenait sur un coin de nappe. La loi, elle, doit tenir debout devant le monde entier. Ça demande quelques mots de plus."
 
     $ bc_show("nyra", "stress", px=-70, py=-50, pz=0.85)
-    nyra "Tu as corrigé sa forme... ou tu as modifié ce qu'il signifie ?"
+    nyra "Attends, Kami. Tu as seulement corrigé la rédaction ou tu as ajouté des dispositions ?"
     $ bc_hide()
 
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -1042,7 +1042,7 @@ label _3_DEBAT1_PHASE1:
 
     tomas inquiet "Attendez ! Si elle a ajouté une condition à la fin, on pourrait tout approuver sans s'en rendre compte. Il faut vérifier chaque phrase."
 
-    nyra raison "Commencez par les liaisons logiques. Les virgules, les conséquences, les renvois. Le texte a une structure, même si Kami veut nous la faire chercher."
+    nyra raison "Tomas, vérifie les renvois. Si quelqu'un voit une condition qui n'était pas dans le texte d'hier, qu'il nous la lise. On va reprendre dans l'ordre."
 
     noam "Bon. Mettons les morceaux dans l'ordre. Je refuse de voter sur un texte qu'on ne comprend pas."
 
@@ -1085,7 +1085,7 @@ label _3_DEBAT1_PHASE1:
     $ kd_direct.end()
     iris colere "KAMI ! Tu t'es bien gardée de nous prévenir de cette petite conséquence, hein ?!"
     mara colere "Et voilà ! On m'a traitée de rabat-joie parce que je voulais LIRE ! C'était vraiment trop demander ?!"
-    nyra stress "Attendez. On doit d'abord savoir si cette disposition est définitive. Arrêtez de parler tous en même temps !"
+    nyra stress "Mara, attends ! Kami, cette disposition est définitive ? Réponds à ça avant qu'on continue."
 
 
     jump _3_DEBAT1_PHASE2
@@ -1118,7 +1118,7 @@ label _3_DEBAT1_PHASE2:
     $ kd_queue_character_motion("noam", "shock")
     noam surpris "Attends. La suppression des bons, c'était dans la proposition d'hier ?"
     tomas inquiet "NON ! J'ai tout relu ! Il n'y avait pas ça !"
-    nyra reflechit "Et là, c'est partout. Même dans les districts qui n'ont aucun commerce prêt à prendre le relais."
+    nyra reflechit "Regardez les districts concernés. Rien n'est prévu pour ceux qui n'ont pas de commerces capables de remplacer les rations."
     ryn colere "Donc à Limen, demain, tu retires les bons et tu dis aux gens de se débrouiller ?!"
     kael inquiet "Demain ? Mais les cargaisons sont déjà programmées ! On peut pas changer toute la chaîne en une nuit !"
     lysa reflechit "Attendez... Je crois que je vois ce qu'elle essaie de faire."
@@ -1126,7 +1126,7 @@ label _3_DEBAT1_PHASE2:
     lysa blase "Tu veux vendre ? Alors il faut acheter. Pour acheter, il faut des revenus. Elle nous force à entrer dans son nouveau système."
     ryn colere "Et ceux qui n'ont rien, ils font quoi en attendant ?!"
     lysa colere "Justement, Ryn ! C'est ça le problème !"
-    nyra reflechit "Il nous faudrait des mois pour organiser la transition. Pas quelques heures."
+    nyra reflechit "Kael a raison. Il faudrait des mois pour organiser les livraisons et la distribution. Même en s'y mettant aujourd'hui, on ne sera pas prêts demain."
     sael triste "Des mois qu'on n'a pas. Et les gens, eux, devront manger dès demain."
     sael reflechit "Kami ! Qui a demandé la fin des rations ? Donne-nous un nom !"
     "L'écran ne change pas."
@@ -1294,7 +1294,7 @@ label _3_DEBAT1_PHASE3:
     tomas hesitation "Lysa a pas complètement tort... Mais hier, j'ai regardé les chiffres à la Forge. On produit parfois quatre fois moins qu'avant."
     ryn colere "Tu veux dire que les gens travaillent quatre fois moins ?!"
     tomas inquiet "Non ! Enfin... pas exactement ! On manque de pièces, de commandes, de tout !"
-    nyra reflechit "Et quand produire davantage ne sert à rien, on finit aussi par ralentir. C'est une partie du problème."
+    nyra reflechit "Il y a aussi des gens qui produisent moins parce qu'ils n'ont aucun intérêt à faire davantage. Ne mettez pas tout sur le compte des pénuries."
     mara taquin "Fantastique. Même nos problèmes ont des problèmes."
 
     # Cadrage de Kami : moins clownesque, plus prédatrice.
@@ -1383,7 +1383,7 @@ label _3_DEBAT1_PHASE3:
     julian colere "Vous pouvez me laisser finir au lieu de me faire dire n'importe quoi ?!"
     mara colere "JULIAN ! C'est Kami qui choisit les contrats ! Tu le comprends ? Elle enlève les rations et elle décide qui aura un salaire !"
     tomas inquiet "E-Et le salaire... Il tombe quand ? Si quelqu'un commence demain, il mange demain aussi ?"
-    nyra raison "C'est précisément ce que j'essaie de demander depuis tout à l'heure ! Kami, on aura les contrats à quelle date ? Et les livraisons, qui les organise ?!"
+    nyra raison "Tomas, garde cette question. Kami, donne-nous une date pour les premiers contrats et dis-nous qui organise les livraisons. On ne peut pas décider sans ça."
     show screen kami_broadcast_ui
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Contrats disponibles dès l'entrée en vigueur ! Pour l'approvisionnement, vous découvrirez les joies de l'organisation humaine. Après tout, vous vouliez reprendre les choses en main !"
@@ -1450,7 +1450,7 @@ label _3_DEBAT1_PHASE3:
     pause 0.3
 
     noam inquiet "On peut discuter encore des heures. On ne saura pas tout. À un moment, il faudra choisir en acceptant cette incertitude."
-    nyra neutre "On connaît les bénéfices possibles et les risques immédiats. Personne ne peut décider à la place des autres."
+    nyra neutre "On a assez parlé pour savoir où chacun se situe. Relisez le texte si vous en avez besoin, mais je ne veux plus entendre quelqu'un réclamer une promesse de vote."
 
     # ── CLIFFHANGER 2 : le dernier indécis, avant le vote ──
     think "Je cherche Kael du regard. Chaque mot du débat semble l'avoir un peu plus éloigné d'une réponse."
@@ -1663,7 +1663,7 @@ label _3_VOTE_CONTRE:
 
     kael doute "Je suis soulagé pour les livraisons. Enfin... non, pas vraiment. Les pénuries sont toujours là."
 
-    nyra raison "Stop ! Vous savez même pas qui a voté non ! Vous allez vous hurler dessus tous les douze ?!"
+    nyra raison "Julian, arrête. Tu n'as aucune idée de qui a voté non. Si tu veux qu'on puisse encore discuter demain, laisse les autres tranquilles."
 
     think "Julian frappe brusquement la table. Elen sursaute et Tomas lui demande de se calmer, mais il ne l’écoute pas."
 
@@ -1678,7 +1678,7 @@ label _3_VOTE_CONTRE:
     ryn colere "BAISSE D'UN TON, OU JE VAIS TE FAIRE ASSEOIR !"
     mara colere "Pendant ce temps, ceux qui ont les moyens de contourner les règles continueront à se débrouiller. Quelle surprise."
     noam colere "Julian, arrête ! On ne peut pas refaire le scrutin en hurlant plus fort que les autres !"
-    nyra neutre "Personne ne changera le résultat aujourd'hui. Sortez, reposez-vous, et évitez de vous accuser tant que vous ne savez rien."
+    nyra neutre "La séance est terminée. Je vous propose qu'on rentre chacun de notre côté. Si vous avez encore quelque chose à régler, faites-le quand vous serez calmés."
 
     think "Julian examine les visages un à un. Personne ne soutient son regard longtemps."
 

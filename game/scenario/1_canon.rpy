@@ -494,8 +494,8 @@ label _1_CANON:
     ryn colere "Et c'était quoi, la pire ?!"
     kael calme "Je voulais pas désigner de volontaire."
 
-    nyra triste "Si elle voulait nous parler elle pourrait le faire à tout moment."
-    nyra neutre "Elle contrôle tout ici, non ?"
+    nyra triste "Si elle voulait nous parler, elle l'aurait déjà fait. Ça sert à rien d'attendre devant un terminal."
+    nyra neutre "Elle contrôle tout ici. Il faut trouver ce qu'on peut faire sans elle."
 
     kael calme "Mouais, si elle a envie."
     kael calme "Si ça se trouve ça la fait marrer de voir douze inconnus enfermés dans une pièce."
@@ -551,14 +551,14 @@ label _1_CANON:
     ryn determine "Voilà une idée ! Allez, poussez-vous."
     lysa blase "Tu veux vraiment faire la queue pour te faire recaler par une porte ?"
     ryn colere "Tu préfères rester là à rien faire ?"
-    nyra hesitation "Ce serait utile de savoir si les refus sont identiques."
+    nyra hesitation "Ryn, note les portes qui refusent de s'ouvrir. Si les messages sont différents, on aura au moins quelque chose à comparer."
     mara taquin "Parfait. Un interrogatoire de poignées. On progresse."
 
     lysa blase "T'en as d'autres des idées de génie ?"
     lysa fatigue "Je vois pas pourquoi l'un d'entre nous aurait des permissions que les autres n'auraient pas."
 
     $ day1_group_shot(("nyra",), 1.20, 0.40)
-    nyra hesitation "Sauf si elle veut créer des tensions dans le groupe dès le début ?"
+    nyra hesitation "Ou alors elle nous laisse nous engueuler. Ça fonctionne assez bien pour l'instant."
 
     pause 0.4
 
@@ -1193,15 +1193,15 @@ label _1_PNC_CONCLAVE_NYRA:
         ("nyra", "reflexion", 0.6),
     ])
 
-    nyra reflexion "Vous êtes tous obsédés par les portes."
-    nyra hesitation "Mais personne ne se demande encore pourquoi cette salle existe."
+    nyra reflexion "J'ai laissé les autres essayer les portes. Je voulais voir cette salle."
+    nyra hesitation "Regarde la table. Il y a douze places."
     noam "Tu as une idée ?"
-    nyra sourire "Kami avait annoncé qu'on devrait voter sur des trucs ? Vu la salle, ça se fera ici."
-    nyra raison "Peut-être qu'il faut chercher quelque chose en rapport avec ça ?"
-    noam reflexion "Tu regardes toujours les pièces comme des problèmes à résoudre ?"
-    nyra sourire "Non. Parfois, je regarde les gens."
-    noam inquiet "Et tu vois quoi, là ?"
-    nyra neutre "Douze personnes qui préfèrent avoir une réponse à se demander si la question est la bonne."
+    nyra sourire "Kami nous a parlé de votes. À mon avis, c'est ici qu'on va devoir se mettre d'accord."
+    nyra raison "Regarde de ton côté. S'il y a des instructions, appelle-moi."
+    noam reflexion "Tu distribues toujours le boulot comme ça ?"
+    nyra sourire "Pardon, je te demande pas de travailler pour moi. Tu voulais savoir ce qu'il y avait ici, non ?"
+    noam inquiet "Ouais, mais je comptais quand même faire le tour à mon rythme."
+    nyra neutre "D'accord. Je vais regarder les sièges, alors."
     jump _1_PNC_CONCLAVE_SOFT_RETURN
 
 
@@ -1734,7 +1734,7 @@ label _1_KAMI_APPARITION:
     julian sourire "Au moins, on pourrait en discuter entre nous."
     $ bc_hide()
     $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
-    nyra neutre "Et tu penses que tout le monde te dira la vérité ?"
+    nyra neutre "Et comment tu vérifies ce qu'on te raconte ? Quelqu'un peut très bien te dire ce que tu veux entendre."
     $ bc_hide()
     $ bc_show("julian", "reflexion", px=-80, py=-45, pz=0.85)
     julian reflexion "Je pense qu'on peut essayer."
@@ -1945,7 +1945,7 @@ label _1_KAMI_APPARITION:
     lysa blase "On évite de lui tourner le dos, déjà."
     think "Personne ne rit cette fois. Jusqu'ici, je cherchais surtout comment sortir. Maintenant, je me demande avec qui je vais devoir vivre pendant trente jours."
     tomas reflechit "Il doit bien y avoir des règles pour ça, même si les Commandements ne s'appliquent pas ici."
-    nyra reflechit "Attends, ces règles doivent bien être écris quelque part."
+    nyra reflechit "Cherchez dans vos tablettes. On doit bien avoir un règlement quelque part."
 
     kael reflechit "J'ai trouvé ! Vous avez une tablette sur vous, non ? Les infos sont dessus !"
 
@@ -2208,7 +2208,7 @@ label _1_KAMI_CONVOCATION_CONCLAVE:
     sael raison "Ou gagner si personne ne s'y oppose."
     $ bc_hide()
     $ bc_show("nyra", "neutre", px=-80, py=-45, pz=0.85)
-    nyra neutre "Ce n'est pas la même chose qu'obtenir un accord."
+    nyra neutre "Ne compte pas les gens qui t'écoutent comme des gens qui sont d'accord avec toi."
     $ bc_hide()
     $ bc_show("julian", "sourire", px=-80, py=-45, pz=0.85)
     julian sourire "C'est à nous de convaincre."
@@ -2299,7 +2299,7 @@ label _1_CONCLAVE_DEBAT_DEPOT:
     lysa blase "On attend de voir ça."
     kael calme "On pourrait quand même se donner un avis, même rapide. Ça éviterait peut-être une grosse erreur."
     ryn reflechit "Non, merci. Je vais pas laisser des inconnus choisir à ma place."
-    nyra neutre "Et si quelqu'un ment sur ce qu'il écrit, cette discussion n'aura servi à rien."
+    nyra neutre "Je préfère discuter du texte quand on l'aura sous les yeux. Pour l'instant, rien ne garantit que chacun nous dit ce qu'il compte écrire."
     kael reflechit "Ou elle nous aura permis de savoir qui ment mal."
     tomas hesitation "C-C'est pas forcément très rassurant..."
     mara sourire "Moi, j'aimerais bien voir ça."
@@ -2515,7 +2515,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     think "Évidemment..."
 
-    nyra sourire "Ah, Noam ? Qu'est-ce qui t'amène ici ? Tu ne voulais pas supporter le silence de ta chambre, ou ces reproches qu'on se fait tous au fond de nous ?"
+    nyra sourire "Ah, Noam ! Viens t'asseoir, on a encore de la place. Julian nous explique pourquoi il lui fallait trois versions de son texte."
 
     noam sourire "Ouais, me poser un coup me fera du bien. Cette journée était stressante..."
 
@@ -2524,7 +2524,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian detendu "J'ai recommencé mon texte trois fois. Trois !"
     mara taquin "Trois versions du même discours sur toi-même ?"
     julian sourire "Je voulais être précis."
-    nyra taquin "Tu as réussi à garder ton nom hors du titre ?"
+    nyra taquin "Tu peux nous faire lire la dernière ? J'ai pas besoin des deux autres."
     julian detendu "Très drôle. Ça vous amuse, mais si le texte est tiré..."
     mara sourire "Tu feras une quatrième version pour la postérité."
     julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
@@ -2536,9 +2536,9 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian detendu "On peut proposer un truc qui change la vie de millions de gens, et même pas être tirés au sort."
     julian inquiet "Imaginez que mon texte soit même pas tiré. Tout ça pour rien. Ça me rend dingue !"
 
-    nyra taquin "T'es surtout inquiet qu'on parle pas de toi, non ?"
+    nyra taquin "Attends, si le texte n'est pas tiré, tu pourras toujours défendre tes idées au débat. Et je pense que tu feras ça mieux que la plupart d'entre nous."
     julian detendu "Je peux vouloir les deux, non ?"
-    nyra sourire "J'ai pas dit le contraire."
+    nyra sourire "Bon, garde quand même une copie. On aura peut-être besoin de toi."
 
     pause 1.0
 
@@ -2571,7 +2571,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian detendu "Ah, enfin quelqu'un qui a pensé à ramener à boire !"
 
     $ bc_show("nyra", "joie", px=-70, py=-50, pz=0.85)
-    nyra sourire "Tu veux qu'on libère la table, ou tu préfères réussir seul ?"
+    nyra sourire "Tomas, attends, je te fais de la place. Pose ça ici."
     $ bc_hide()
 
     tomas hesitation "Si je renverse tout, je vous jure que je sors plus de ma chambre."
@@ -2596,7 +2596,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     tomas gene "Je savais pas combien on allait être alors j'en ai pris quelques-uns..."
     tomas "Voilà. Rien de cassé. Enfin, pas encore."
     mara taquin "Quel dommage. On avait presque un premier incident."
-    nyra sourire "Détendez-vous. Pour une fois, personne ne vote."
+    nyra sourire "Laissez-le boire un peu, vous allez finir par lui faire renverser sa tasse."
     julian sourire "Je vote pour qu'on laisse le thé tranquille."
     think "Et, bizarrement, tout le monde a l'air d'accord."
 
@@ -2638,7 +2638,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
 
     "L'ambiance retombe un peu."
     tomas vide "Demain… À neuf heures on saura…"
-    nyra vide "Si l'un de nous a écrit quelque chose que les autres ne pourront pas accepter."
+    nyra vide "On verra ce que chacun a écrit. J'aimerais surtout savoir si on aura le droit de modifier les propositions."
     julian vide "C'est un peu tôt pour supposer le pire."
     mara vide "C'est même pas le pire. C'est juste une réunion."
     tomas hesitation "Une réunion où une voix peut tout bloquer."
@@ -2656,8 +2656,8 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     mara vide "Bon bah voilà. C'était sympa."
     mara vide "Je vais aller essayer d'aller me pieuter avant de péter un câble."
 
-    nyra vide "Moi aussi. Avant de recommencer à réfléchir."
-    nyra "Et je t'avoue que j'espère avoir des douches dans la chambre !"
+    nyra vide "Je vais faire pareil. J'ai mal à la tête."
+    nyra "Et j'espère vraiment qu'on a des douches dans les chambres !"
 
     julian "Ouais, clairement !"
     julian vide "Excellente idée."
