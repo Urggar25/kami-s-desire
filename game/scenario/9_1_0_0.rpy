@@ -798,19 +798,19 @@ label _9_1_0_0_APRES_DEBAT:
 
     "Elle s'arrête et m'observe quelques secondes."
 
-    nyra reflexion "Tu me cherches depuis ce matin, non ?"
+    nyra reflexion "Iris m'a dit que tu me cherchais. J'allais justement passer te voir."
 
     noam surpris "Comment tu sais ça ?"
 
-    nyra "Iris me l'a dit avant le débat."
+    nyra "Elle est venue me voir avant le débat."
 
     noam desaccord "Elle aurait aussi pu me dire qu'elle t'avait trouvée."
 
-    nyra taquin "Elle avait l'air de très mauvaise humeur."
+    nyra taquin "Elle avait surtout l'air de vouloir retourner se coucher."
 
     noam "Elle a passé la nuit avec Anya."
 
-    nyra "Ça explique probablement une partie du problème."
+    nyra "Ah, d'accord. Je lui demanderai si elle veut qu'on prenne le relais."
 
     "Je vérifie que les autres représentants se sont suffisamment éloignés avant de reprendre plus bas."
 
@@ -818,15 +818,15 @@ label _9_1_0_0_APRES_DEBAT:
 
     "Le sourire discret de Nyra disparaît."
 
-    nyra reflexion "Tu l'as vu entrer ?"
+    nyra reflexion "Attends, tu l'as vu entrer ou seulement sortir ?"
 
     noam "Non. Seulement sortir."
 
-    nyra "Et Iris était dans la chambre ?"
+    nyra "Est-ce qu'Iris était avec lui ?"
 
     noam "Je sais pas. Je lui ai demandé ce matin, elle avait pas l'air de savoir pourquoi il était venu."
 
-    nyra reflexion "D'accord."
+    nyra reflexion "Bon. Continue, je t'écoute."
 
     noam inquiet "Et Ryn m'a évité à la cafétéria. Dès que j'ai parlé de la chambre d'Iris, il a trouvé une excuse pour partir."
 
@@ -834,51 +834,51 @@ label _9_1_0_0_APRES_DEBAT:
 
     noam "Tu crois qu'il l'a vue ?"
 
-    nyra reflexion "Probablement."
+    nyra reflexion "Je partirais du principe qu'il l'a vue, oui."
 
     noam inquiet "Alors il faut faire quelque chose."
 
-    nyra "Pourquoi ?"
+    nyra "Attends. Tu veux lui parler ou tu veux le surveiller ?"
 
-    noam surpris "Comment ça, pourquoi ? Il est pas censé savoir qu'elle est là."
+    noam surpris "J'en sais rien, mais il est pas censé savoir qu'elle est là."
 
-    nyra raison "Justement. S'il l'a découverte hier soir et qu'il voulait prévenir Kami, pourquoi attendre jusqu'à maintenant ?"
+    nyra raison "Écoute, s'il voulait la dénoncer, il avait toute la nuit pour le faire. Je ne veux pas aller lui mettre la pression sans savoir ce qui s'est passé."
 
     noam reflexion "Peut-être qu'il réfléchit."
 
-    nyra "Possible."
+    nyra "Oui, c'est possible. Il peut aussi avoir une raison de ne rien dire."
 
     noam "Ou qu'il attend quelque chose."
 
-    nyra "Possible aussi."
+    nyra "On vérifiera."
 
     "Elle se tourne enfin vers moi."
 
-    nyra raison "Mais ce sont deux hypothèses parmi beaucoup d'autres. Pour l'instant, tout ce que nous savons, c'est que Ryn est entré dans cette chambre et qu'il ne veut pas t'expliquer pourquoi."
+    nyra raison "Ce que tu sais, c'est qu'il est sorti de la chambre et qu'il t'évite. Ça ne nous dit pas ce qu'il est allé y faire."
 
     noam desaccord "C'est déjà pas mal."
 
-    nyra "C'est suffisant pour vérifier. Pas pour décider qu'il nous a trahis."
+    nyra "Je suis d'accord qu'il faut s'en occuper. Mais je ne vais pas l'accuser de nous avoir trahis sur cette base."
 
     "Je soupire, légèrement frustré par son calme."
 
     noam reflexion "Tu proposes quoi ?"
 
-    nyra "On demande à la seule personne qui était forcément là."
+    nyra "On va voir Anya. Elle saura au moins nous dire ce qu'il lui a raconté."
 
     noam "Anya."
 
-    nyra "Anya."
+    nyra "Oui. Je préfère qu'on l'écoute avant d'aller voir Ryn."
 
     "Elle prend immédiatement la direction de la chambre d'Iris."
 
     noam surpris "Maintenant ?"
 
-    nyra taquin "Tu me cherchais depuis ce matin et maintenant que je suis disponible, tu veux attendre ?"
+    nyra taquin "Autant y aller maintenant. Iris nous mettra dehors si elle a besoin de dormir."
 
     noam gene "Vu comme ça..."
 
-    nyra "Viens."
+    nyra "Viens, je te suis."
 
     $ hideGroup()
 
@@ -949,7 +949,7 @@ label _9_1_0_0_ANYA:
 
     "Une fois la porte fermée, Nyra attend quelques secondes avant d'aller droit au sujet."
 
-    nyra raison "Ryn est venu ici hier soir."
+    nyra raison "Anya, on a besoin que tu nous racontes la visite de Ryn hier soir. Noam l'a vu sortir d'ici."
 
     "Anya cligne des yeux, puis acquiesce avec une simplicité qui suffit déjà à me faire comprendre que mes soupçons étaient fondés."
 
@@ -975,7 +975,7 @@ label _9_1_0_0_ANYA:
 
     "Nyra intervient avant que je poursuive."
 
-    nyra raison "Raconte-nous simplement ce qui s'est passé. Depuis le moment où il est entré."
+    nyra raison "Non, attends, Noam. On ne lui avait pas donné la liste des gens au courant. Anya, raconte-nous ce qui s'est passé, sans essayer de deviner ce qu'on cherche."
 
     "Anya s'adosse contre le mur et réfléchit quelques secondes."
 
@@ -991,7 +991,7 @@ label _9_1_0_0_ANYA:
 
     anya reflexion "Quand j'ai compris que c'était pas Iris, il était déjà dans la chambre."
 
-    nyra "Et sa réaction ?"
+    nyra "Prends ton temps. Ce qui m'intéresse, c'est ce qu'il a fait en te voyant."
 
     anya "C'est ça qui était bizarre."
 
@@ -1011,7 +1011,7 @@ label _9_1_0_0_ANYA:
 
     "Nyra et moi échangeons un regard."
 
-    nyra raison "Il savait donc probablement que quelqu'un était ici."
+    nyra raison "D'accord. Il était peut-être venu te chercher, alors. Mais ça ne veut pas dire qu'il savait qui tu étais."
 
     anya "C'est l'impression que j'ai eue."
 
@@ -1029,11 +1029,11 @@ label _9_1_0_0_ANYA:
 
     anya "Pas au début."
 
-    nyra "Est-ce qu'il a donné l'impression de reconnaître ton visage ?"
+    nyra "Tu crois qu'il t'avait déjà vue ?"
 
     anya "Non. Ça, je pense pas."
 
-    nyra reflexion "Donc il ne te connaissait probablement pas personnellement."
+    nyra reflexion "Ça nous évite au moins de partir du principe qu'il te connaissait personnellement."
 
     anya "J'imagine."
 
@@ -1057,7 +1057,7 @@ label _9_1_0_0_ANYA:
 
     anya reflexion "Mais il a dit qu'il ne raconterait rien. À personne."
 
-    nyra "Il t'a demandé quelque chose en échange ?"
+    nyra "Il t'a demandé un service en échange de son silence ?"
 
     anya "Non."
 
@@ -1079,11 +1079,11 @@ label _9_1_0_0_ANYA:
 
     "Anya esquisse un petit sourire, mais Nyra reste concentrée sur son récit."
 
-    nyra raison "Tu as dit qu'il t'avait posé des questions."
+    nyra raison "Tu as raison, Anya. On s'emballe un peu. Tu disais qu'il t'avait posé des questions."
 
     anya reflexion "Oui."
 
-    nyra "Lesquelles ?"
+    nyra "Raconte-nous ce dont tu te souviens, même si ça n'a pas l'air important."
 
     anya "Au début, des trucs assez normaux. D'où je venais, depuis combien de temps j'étais coincée à Limen, pourquoi j'avais pris ce risque."
 
@@ -1093,7 +1093,7 @@ label _9_1_0_0_ANYA:
 
     anya reflexion "Ensuite il a commencé à parler du réseau."
 
-    nyra "Le réseau qui t'a fait entrer dans le conteneur ?"
+    nyra "Attends, le réseau qui t'a fait entrer dans le conteneur ?"
 
     anya "Oui."
 
@@ -1105,7 +1105,7 @@ label _9_1_0_0_ANYA:
 
     anya "J'avais un contact qui me donnait les instructions et c'est tout. Même le type qui m'a amenée jusqu'au dépôt ne m'a jamais donné son vrai nom."
 
-    nyra raison "Et Ryn s'est arrêté là ?"
+    nyra raison "Il a insisté sur les noms ou il voulait surtout savoir comment ils s'organisaient ?"
 
     anya "Non."
 
@@ -1121,7 +1121,7 @@ label _9_1_0_0_ANYA:
 
     "Nyra relève légèrement le menton."
 
-    nyra reflexion "Les scellés ?"
+    nyra reflexion "Attends. C'est lui qui a parlé des scellés ?"
 
     anya "Oui."
 
@@ -1137,7 +1137,7 @@ label _9_1_0_0_ANYA:
 
     "Malgré la situation, je retiens difficilement un sourire."
 
-    nyra raison "Il a utilisé des mots particuliers ? Des noms de zones, des procédures, quelque chose que toi tu n'avais pas mentionné avant ?"
+    nyra raison "Essaie de retrouver ses mots. Il y a des termes qu'on utilise dans le transport de marchandises et qu'on ne connaît pas forcément quand on passe simplement une frontière."
 
     "Anya réfléchit plus longtemps cette fois."
 
@@ -1147,7 +1147,7 @@ label _9_1_0_0_ANYA:
 
     anya "À un moment, il m'a demandé si le conteneur avait été placé dans une file de contrôle normale ou dans une zone de transit secondaire."
 
-    nyra reflexion "Tu lui avais parlé de zones de transit ?"
+    nyra reflexion "Et c'est lui qui a mentionné la zone de transit, pas toi ?"
 
     anya "Non."
 
@@ -1155,7 +1155,7 @@ label _9_1_0_0_ANYA:
 
     anya inquiet "Pourquoi ?"
 
-    nyra "Parce que ce n'est pas le genre de détail qu'on demande au hasard."
+    nyra "Il connaît peut-être les procédures de contrôle. Je ne veux pas en tirer davantage pour l'instant."
 
     anya reflexion "J'avais surtout l'impression qu'il savait déjà comment ça fonctionnait."
 
@@ -1185,11 +1185,11 @@ label _9_1_0_0_ANYA:
 
     "Nyra garde le silence quelques secondes, puis pose enfin la question que je n'avais moi-même pas formulée clairement."
 
-    nyra raison "Anya."
+    nyra raison "Il reste un truc que je ne comprends pas."
 
     anya "Hm ?"
 
-    nyra "Comment savait-il que tu étais là ?"
+    nyra "Avant même de te poser ces questions, comment savait-il qu'il te trouverait dans cette chambre ?"
 
     "Anya ouvre la bouche, puis s'arrête."
 
@@ -1201,11 +1201,11 @@ label _9_1_0_0_ANYA:
 
     anya "Je sais pas."
 
-    nyra "Tu ne l'avais jamais vu avant hier ?"
+    nyra "Tu es sûre que vous ne vous étiez jamais croisés avant hier ?"
 
     anya "Jamais."
 
-    nyra "Tu n'as parlé à personne d'autre depuis ton réveil ?"
+    nyra "Depuis ton réveil, qui est venu te voir ? Même quelqu'un qui est resté deux minutes."
 
     anya "À vous. Iris. Tomas."
 
@@ -1213,15 +1213,15 @@ label _9_1_0_0_ANYA:
 
     anya "Non."
 
-    nyra reflexion "Alors il y a deux possibilités."
+    nyra reflexion "D'accord. Il a pu l'apprendre par l'un de nous."
 
     noam inquiet "Quelqu'un lui a parlé."
 
-    nyra "Ou il savait déjà quelque chose avant d'entrer."
+    nyra "Ou il avait une autre source d'information avant de venir ici."
 
     anya inquiet "Mais comment ?"
 
-    nyra "C'est précisément ce qu'on ignore."
+    nyra "Je ne sais pas encore. Je vais essayer de comprendre."
 
     "Je repense à Ryn dans la cafétéria, puis à son regard pendant l'annonce de Kami sur les contrôles."
 
@@ -1233,7 +1233,7 @@ label _9_1_0_0_ANYA:
 
     noam "Je sais."
 
-    nyra raison "Ça confirme au moins une chose : il ne veut pas que Noam sache ce qu'il cherchait réellement."
+    nyra raison "Il ne nous a pas donné la même version. Je préfère qu'on garde ça pour nous jusqu'à ce qu'on sache pourquoi."
 
     anya inquiet "Et maintenant ?"
 
@@ -1384,47 +1384,47 @@ label _9_1_0_0_ANYA:
 
     "Nyra lève néanmoins une main avant que la discussion ne se termine complètement."
 
-    nyra raison "Une chose avant."
+    nyra raison "Iris, deux secondes. Avant qu'on sorte, je veux qu'on se mette d'accord sur un truc."
 
     "Iris soupire mais se tait."
 
-    nyra "À partir de maintenant, personne ne vient voir Anya seul."
+    nyra "On évite les visites sans prévenir. À partir d'aujourd'hui, je veux qu'une deuxième personne soit au courant chaque fois que quelqu'un vient ici."
 
-    anya reflexion "Même vous ?"
+    anya reflexion "Même vous ? Et moi, je peux encore décider qui entre dans cette chambre ?"
 
-    nyra "Même nous. Si quelqu'un doit entrer ici, au moins une autre personne parmi celles qui connaissent la situation doit être au courant."
+    nyra "Bien sûr. Si tu veux voir quelqu'un, tu nous le dis. Je ne vais pas te demander de prendre un rendez-vous pour chaque visite."
 
     iris reflexion "Vu ce qui s'est passé hier soir, ça me paraît pas stupide."
 
-    nyra "Et si une nouvelle personne découvre Anya, volontairement ou non, on se le dit immédiatement."
+    nyra "Et si quelqu'un d'autre te découvre, préviens-nous aussitôt. Pas besoin de nous raconter toute la conversation, juste de nous dire qui c'était."
 
     noam "Pour Ryn, on fait quoi ?"
 
     "Nyra réfléchit une seconde."
 
-    nyra raison "Rien, pour l'instant."
+    nyra raison "On ne va pas l'interroger pour l'instant."
 
     noam surpris "Rien ?"
 
-    nyra "Il a eu plusieurs heures pour prévenir Kami et il ne l'a pas fait. Lui tomber dessus sans savoir ce qu'il cherche ne ferait que lui montrer que nous paniquons."
+    nyra "Il ne nous a pas dénoncés. Je préfère qu'il continue à penser qu'on n'est pas au courant de sa visite, le temps de savoir ce qu'il cherchait."
 
     noam reflexion "Donc on lui fait confiance ?"
 
-    nyra "Non."
+    nyra "Non, je ne lui confierais rien de plus."
 
     "Elle jette un bref regard vers Anya."
 
-    nyra raison "On considère qu'il sait."
+    nyra raison "Il sait qu'Anya est ici. Il faudra en tenir compte quand on décidera de quelque chose."
 
     pause 0.5
 
-    nyra "Pas qu'il est avec nous."
+    nyra "Mais on ne lui doit pas d'explication sur nos plans."
 
     "Cette distinction suffit à faire disparaître les derniers sourires de la pièce."
 
-    iris reflexion "Ça me va."
+    iris reflexion "Ça me va tant que tu ne décides pas qui vient dans MA chambre à ma place."
 
-    anya "Moi aussi."
+    anya "Et que je peux encore parler aux gens sans remplir un formulaire."
 
     noam reflexion "D'accord."
 

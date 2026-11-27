@@ -239,15 +239,15 @@ label _10_1_0_0_CAFETERIA:
 
     "Son regard rencontre le mien une fraction de seconde, à peine assez longtemps pour être remarqué. Nyra, elle, le remarque."
 
-    nyra reflexion "Noam."
+    nyra reflexion "Noam, tu as une minute ?"
 
     noam inquiet "Hm ?"
 
-    nyra raison "Viens avec moi deux minutes."
+    nyra raison "Viens avec moi, j'ai quelque chose à te dire."
 
     mara "Vous avez fini de manger ?"
 
-    nyra "Pas vraiment."
+    nyra "Non. Garde-moi mon assiette, s'il te plaît."
 
     "Elle se lève pourtant immédiatement."
 
@@ -270,107 +270,107 @@ label _10_1_0_0_NYRA:
 
     "Nyra attend que la porte de la cafétéria se referme derrière nous avant de ralentir."
 
-    nyra raison "On a un problème, et je préfère vérifier que tu as compris exactement lequel."
+    nyra raison "Écoute, il faut qu'on parle du vote. J'ai vu la tête que tu as faite tout à l'heure."
 
     noam desaccord "Si les brouilleurs disparaissent, Kami récupère le son et l'image de toutes les chambres. Oui, j'avais remarqué."
 
     noam inquiet "Si les brouilleurs disparaissent..."
 
-    nyra raison "Kami récupère le son et l'image de toutes les chambres."
+    nyra raison "Oui, et il ne suffira pas de débrancher une caméra. Si Kami récupère les chambres, elle récupère aussi les micros."
 
     noam "Et Anya tient probablement moins d'une heure."
 
-    nyra "Probablement beaucoup moins."
+    nyra "Je ne prendrais même pas le risque de compter sur une heure."
 
     "Elle garde son calme, mais ses bras sont croisés beaucoup plus fermement que d'habitude."
 
     noam reflexion "On peut peut-être la déplacer."
 
-    nyra raison "Où ?"
+    nyra raison "Tu as déjà un endroit en tête ?"
 
     noam "Je sais pas."
 
-    nyra "Toutes les salles communes sont surveillées. L'infirmerie est surveillée. Les couloirs sont surveillés. Les chambres sans brouilleur seront surveillées."
+    nyra "J'y ai pensé aussi. Les salles communes, l'infirmerie, les couloirs... Sans brouilleur, je ne vois pas où on pourrait la laisser."
 
-    nyra "Et même si nous trouvions un endroit temporaire, elle devrait manger, se laver et dormir."
+    nyra "Et même si on trouve une pièce pour quelques heures, il faudra bien la nourrir et lui permettre de dormir."
 
     noam fatigue "D'accord."
 
-    nyra reflexion "Donc non. Nous ne devons pas préparer un plan B."
+    nyra reflexion "Je ne veux pas qu'on passe toute la journée à chercher une cachette qui n'existe peut-être pas."
 
     noam surpris "Pardon ?"
 
-    nyra determine "Nous devons faire passer le vote."
+    nyra determine "Il faut qu'on fasse passer le vote."
 
     noam inquiet "Donc il nous faut l'unanimité."
 
-    nyra determine "Oui. Une seule voix contre, et Anya n'a plus de cachette."
+    nyra determine "C'est ça. Et je ne veux pas découvrir au dernier moment qu'un seul d'entre nous est contre."
 
     pause 0.5
 
     noam inquiet "Tu crois que quelqu'un votera contre ?"
 
-    nyra raison "Oui."
+    nyra raison "Il faut partir du principe que oui."
 
     noam surpris "Qui ?"
 
-    nyra "Je n'en sais rien."
+    nyra "Je ne vais pas te donner un nom au hasard."
 
     noam desaccord "Très rassurant."
 
-    nyra reflexion "Tomas défend souvent les systèmes de sécurité. Elias aussi. Ryn peut considérer la surveillance comme nécessaire pour maintenir l'ordre. Mara pourrait demander des garanties."
+    nyra reflexion "Tomas et Elias tiennent à la sécurité. Ryn aussi, même si ce n'est pas forcément pour les mêmes raisons. Mara voudra savoir ce qui empêche quelqu'un de brouiller une caméra pendant une agression."
 
-    nyra "Sael peut avoir peur de ce que les gens feront avec une protection totale contre les caméras."
+    nyra "Sael, elle, risque de s'inquiéter de ce qu'on pourrait faire aux gens sans que personne le voie. Il faut qu'on ait une réponse pour chacun."
 
     noam "Donc pratiquement tout le monde."
 
-    nyra "Exactement."
+    nyra "Oui. Et ils ne sont pas idiots, Noam. Ils ont de bonnes raisons d'hésiter."
 
     "Elle s'approche légèrement."
 
-    nyra raison "Le problème, c'est que pour eux, ce vote est théorique."
+    nyra raison "Ils ne savent pas qu'on cache Anya. On ne pourra pas leur demander de voter pour nous rendre service."
 
     noam reflexion "Et pour nous, il décide si Anya survit."
 
-    nyra "Oui."
+    nyra "Oui, mais je ne veux pas qu'on leur révèle ça."
 
     noam inquiet "On peut pas leur dire."
 
-    nyra "Évidemment que non."
+    nyra "Non, on ne peut pas."
 
     "Elle soupire doucement."
 
-    nyra reflexion "Il va donc falloir les convaincre pour d'autres raisons."
+    nyra reflexion "On va donc partir de leurs objections. Si on répond à ce qui les inquiète vraiment, certains changeront peut-être d'avis."
 
     noam "Tu penses pouvoir le faire ?"
 
     "Nyra me regarde avec une expression parfaitement neutre."
 
-    nyra taquin "Noam."
+    nyra taquin "Je vais essayer. Je ne peux pas te promettre les douze voix."
 
-    noam "Oui ?"
+    noam "T'as déjà une idée de ce que tu vas leur dire ?"
 
-    nyra "C'est littéralement mon travail."
+    nyra "Oui, au moins pour Tomas et Elias. Je veux qu'ils expliquent eux-mêmes à quoi servent les caméras."
 
     pause 0.4
 
-    noam sourire "Vu comme ça."
+    noam sourire "Et ensuite ?"
 
-    nyra raison "Pendant le débat, laisse-moi parler."
+    nyra raison "Laisse-les terminer avant d'intervenir. J'aimerais mener cette partie de la discussion."
 
     noam surpris "C'est tout ?"
 
-    nyra "Non. S'ils commencent à défendre la surveillance, ne les contredis pas."
+    nyra "Si quelqu'un défend les caméras, laisse-le faire. On n'a pas besoin de lui donner tort pour défendre les brouilleurs."
 
     noam reflexion "Pourquoi ?"
 
-    nyra taquin "Parce qu'ils feront une partie du travail à ma place."
+    nyra taquin "Parce qu'ils auront plus de mal à rejeter une solution qu'ils auront contribué à construire."
 
     "Elle tourne déjà les talons."
 
-    noam reflexion "Je sens que je vais regretter de demander."
+    noam reflexion "D'accord. Mais si tu racontes n'importe quoi, je te le dirai."
 
-    nyra "Probablement."
+    nyra "Je compte sur toi."
 
     $ hideGroup()
 
@@ -426,45 +426,45 @@ label _10_1_0_0_DEBAT_ARRIVEE:
     call refutation_run("j10_brouilleurs")
     if _return[0] == "success":
         call play_noam_interupt
-        nyra raison "Noam a raison. Personne n'a demandé qu'on retire toutes les caméras."
+        nyra raison "Noam a raison. Tomas, on peut garder les caméras dans la rue et autoriser des brouilleurs dans certaines situations. Ce sont deux décisions différentes."
     else:
-        nyra raison "Une chose est sûre : le vote ne concerne pas la suppression générale des caméras."
+        nyra raison "Attends, Tomas. Personne n'a proposé de retirer les caméras de la rue. On parle du droit d'utiliser un brouilleur."
 
     tomas inquiet "Je sais pas encore. Je dis juste qu'en les autorisant partout, on crée aussi des zones où quelqu'un peut faire n'importe quoi sans laisser de trace."
 
     elias "C'est surtout ça qui me gêne."
 
-    nyra raison "Et vous avez raison sur ce point : les caméras sont utiles. Elles dissuadent certains crimes, facilitent les enquêtes et peuvent sauver des gens. Mais le vote ne porte pas sur leur suppression ; il porte sur la possibilité de s'y soustraire ponctuellement."
+    nyra raison "Je suis d'accord avec vous sur la sécurité. Une caméra peut permettre de retrouver quelqu'un après une agression. Je ne veux pas qu'on supprime ça."
 
     "Tomas se redresse légèrement, déjà prêt à répondre, mais Nyra enchaîne avant qu'il puisse reprendre son argument."
 
-    nyra "Si je suis votre raisonnement jusqu'au bout, parce qu'une caméra peut protéger quelqu'un, personne ne devrait jamais pouvoir échapper à une caméra. Pourtant, j'imagine qu'aucun de vous n'accepterait d'en avoir une dans sa chambre, dans un vestiaire, pendant une consultation médicale ou au milieu d'une conversation privée."
+    nyra "Elias, imagine qu'on installe une caméra dans ta chambre et que je te dise qu'elle peut te protéger. Tu la laisserais ? Même quand tu te changes ou que tu reçois quelqu'un ?"
 
     elias reflexion "Évidemment que non, mais ce sont des espaces privés. Une rue, c'est différent."
 
-    nyra raison "Justement. La vraie question est de savoir qui décide où commence la vie privée. Une réunion syndicale dans un local public ? Une discussion entre un avocat et son client ? Une réunion politique ? Un rendez-vous médical dans un bâtiment appartenant à l'État ? La frontière est beaucoup moins évidente qu'entre une chambre et une rue."
+    nyra raison "D'accord. Mais une consultation médicale dans un bâtiment public, c'est aussi une situation privée. Mara, tu serais d'accord pour que Kami écoute une conversation entre un avocat et son client juste parce qu'ils sont dans un local public ?"
 
     mara reflexion "Là-dessus, elle a raison. On ne peut pas simplement décréter que tout ce qui n'est pas chez toi appartient à la surveillance."
 
     tomas raison "D'accord, mais un brouilleur peut aussi être utilisé volontairement dans la rue pour masquer un crime. Ce risque existe toujours."
 
-    nyra "Bien sûr, et je ne cherche pas à prétendre le contraire. Une voiture peut servir à fuir après un crime, un médicament peut être détourné, un réseau informatique peut servir à voler des données. Le fait qu'un outil puisse être mal utilisé n'implique pas forcément qu'il faille l'interdire."
+    nyra "C'est vrai, Tomas. Et il faut répondre à ce risque. Est-ce qu'il te suffirait qu'on interdise leur utilisation dans certains lieux, ou tu veux vraiment interdire l'appareil partout ?"
 
-    mara "On réglemente son utilisation."
+    mara "On peut réglementer son utilisation. Mais je veux savoir qui fixe les limites."
 
-    nyra sourire "Exactement. Et c'est beaucoup plus facile de réglementer une filière légale que des appareils clandestins dont personne ne connaît ni le fabricant, ni la puissance, ni l'utilisateur."
+    nyra sourire "C'est justement plus facile si les appareils sont légaux. On peut alors imposer des normes aux fabricants, les contrôler et savoir ce qu'ils vendent."
 
     elias reflechit "Donc tu voudrais autoriser les brouilleurs mais définir des endroits où ils resteraient interdits."
 
-    nyra raison "Oui. Hôpitaux, zones de sécurité, certains bâtiments administratifs, éventuellement certains événements. On protège les endroits où la surveillance est réellement nécessaire sans considérer que chaque citoyen doit être observable en permanence."
+    nyra raison "C'est ce que je propose. Les lieux où une surveillance est indispensable, les hôpitaux notamment, devront avoir des règles claires. Elias, tu sais comment on pourrait limiter la puissance de ces appareils ?"
 
     tomas reflexion "Ça règle une partie du problème, mais si tu légalises ces appareils, tu vas forcément en multiplier le nombre."
 
-    nyra "Oui, et c'est aussi là que l'interdiction me semble économiquement absurde. Une filière légale signifie de l'extraction de matières premières, du transport, de la transformation, de l'assemblage, de la maintenance, de la certification et du développement logiciel."
+    nyra "Oui, et leur fabrication ferait travailler du monde. Il faut extraire les matériaux, les transporter, assembler les appareils, les tester et les réparer."
 
     elias reflexion "Donc beaucoup d'emplois."
 
-    nyra "Exactement. Et surtout des appareils qu'on peut enregistrer, tester et limiter techniquement. Avec une interdiction totale, les brouilleurs ne disparaissent pas ; ils deviennent simplement un marché clandestin réservé à ceux qui savent où les trouver."
+    nyra "Entre autres. Et tu pourrais acheter un appareil qui respecte des normes, au lieu de devoir le trouver sur un marché clandestin. Ça ne supprime pas tous les abus, mais au moins on peut contrôler ce qu'on vend."
 
     iris taquin "Je crois que Nyra vient de transformer un débat sur la surveillance en politique industrielle."
 
@@ -472,29 +472,29 @@ label _10_1_0_0_DEBAT_ARRIVEE:
 
     "Tomas soupire en regardant Nyra, plus amusé qu'agacé."
 
-    tomas desaccord "J'ai quand même l'impression que tu nous fais dire ce qui t'arrange depuis dix minutes."
+    tomas desaccord "Attends, Nyra. Tu nous fais construire ton argument depuis tout à l'heure. Je n'ai pas encore dit que j'étais d'accord avec toi."
 
-    nyra taquin "Je vous pose des questions. Si vos réponses m'arrangent, je n'y peux rien."
+    nyra taquin "Je sais. Tu as raison, j'ai un avis sur le sujet. Mais je veux quand même savoir quelle garantie te ferait changer d'avis."
 
-    noam sourire "C'est exactement ce qu'elle m'avait annoncé ce matin."
+    noam sourire "Elle avait prévu le coup. Tomas aussi, visiblement."
 
     tomas reflexion "Je reste convaincu qu'on sous-estime le rôle protecteur des caméras."
 
-    nyra raison "Et moi je pense que tu viens justement de donner le meilleur argument pour conserver les caméras là où elles sont utiles. Mais conserver la surveillance n'oblige pas à interdire toute possibilité d'intimité."
+    nyra raison "Je ne te demande pas de renoncer à ça. Si tu veux protéger les endroits où les caméras sont utiles, je suis prête à discuter des restrictions avec toi."
 
     "Elle marque une courte pause avant de regarder successivement Tomas puis Elias."
 
-    nyra "Le choix n'est pas entre surveillance totale et absence totale de surveillance. Il est entre un système où la caméra reste la règle mais où certaines personnes peuvent créer un espace privé, et un système où personne n'a jamais le droit de dire : ici, maintenant, je ne veux pas être observé."
+    nyra "Ce que je ne veux pas, c'est qu'on interdise aux gens toute possibilité de parler ou de vivre un moment sans être observés. On peut autoriser les brouilleurs et encadrer leur usage. Si certaines restrictions vous manquent, dites-le maintenant."
 
     "Cette fois, Tomas ne répond pas immédiatement. Elias baisse les yeux, réfléchit quelques secondes puis se redresse."
 
     elias reflechit "Présenté comme ça, je voterais probablement pour l'autorisation, à condition qu'il y ait des restrictions claires sur certains lieux."
 
-    tomas reflexion "Moi, j'ai encore besoin d'y réfléchir. Mais je suis moins opposé qu'au début."
+    tomas reflexion "Je vais y réfléchir. Mais ne considère pas mon silence comme un oui, Nyra."
 
     iris sourire "Ça ressemble beaucoup à une victoire."
 
-    nyra taquin "Pas encore. Il nous faut l'unanimité."
+    nyra taquin "Non. On n'a pas encore l'unanimité, et Tomas a raison de vouloir relire le texte."
 
     "La phrase paraît parfaitement innocente pour les autres. Pour moi, elle signifie tout autre chose."
 

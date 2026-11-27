@@ -241,7 +241,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     ryn colere "QUOI, ENCORE ?!"
     tomas inquiet "Le mot « idéalement » me gêne. Et rien ne garantit que les campements déjà formés seront régularisés."
     iris colere "Elle peut donc nous faire voter pour un truc et punir les gens quand même ?!"
-    nyra raison "Il faut envisager cette possibilité."
+    nyra raison "Oui, Iris. Kami, dis-nous clairement si les sanctions seront suspendues dès le vote ou seulement quand tu auras mis en place le nouveau système."
     julian "C'est une escroquerie !"
     lysa blase "Un contrat dont elle écrit seule les petites lignes."
     kael reflechit "Si nous devons agir, il nous faut des images des campements et un moyen de diffuser des instructions."
@@ -301,7 +301,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     sael neutre "Je voudrais que tu me laisses finir une phrase."
     "Ryn ouvre la bouche, se ravise, puis frappe le dossier de sa chaise."
     noam reflechit "Certains nous ont entendus. C'est déjà ça."
-    nyra reflechit "Ce n'est pas la même chose que de les avoir mis à l'abri."
+    nyra reflechit "Oui. Mais on ne sait pas si ceux qui sont encore dans les campements ont compris le message. Il faudra vérifier."
     noam neutre "Je sais."
     "Je regarde les zones encore grises sur la carte. Ce sont des endroits où des gens vivent, et je n'ai même pas le moyen de savoir si l'un d'eux m'a entendu."
     $ hideGroup()
@@ -350,7 +350,7 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     sael determine "Et elle ne l'a pas fait."
     ryn colere "Tu vas quand même pas la remercier !"
     sael mefiant "Je constate un fait. Ne me prête pas tes propres pensées."
-    nyra reflechit "La retransmission est publique. Elle aurait montré à tous qu'elle nous empêchait d'alerter des innocents."
+    nyra reflechit "Elle aurait dû nous couper devant tout le monde. Ça ne veut pas dire qu'elle nous laisse faire ce qu'on veut."
     mara doute "Ou alors elle aime juste regarder les gens courir."
     "Je pense à l'enthousiasme de Kami. Les deux explications me paraissent possibles."
     tomas inquiet "Il nous faut encore du temps. Même quelques minutes."
@@ -387,7 +387,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     tomas reflechit "Je demande une précision technique sur le texte."
     ryn colere "MAINTENANT ?!"
     tomas inquiet "Précisément maintenant. L'expression « idéalement avec déclaration préalable » reste ambiguë."
-    nyra raison "Une fois le texte adopté, les campements constitués avant le vote seront-ils couverts ?"
+    nyra raison "Kami, réponds à Tomas. Les gens déjà installés dans les campements seront-ils couverts dès l'adoption du texte ?"
     sael determine "C'est une question légitime."
     lysa blase "Et accessoirement une question qui prend du temps."
     noam determine "Kami, on ne te laissera pas esquiver ça aussi facilement."
@@ -396,7 +396,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
         call play_noam_interupt
         tomas raison "On a encore le droit de demander des précisions avant de voter !"
     else:
-        nyra reflexion "Elle ne nous donnera pas plus. Il va falloir avancer avec ce qu'on sait."
+        nyra reflexion "On n'obtiendra rien de plus. Tomas, garde une copie de cette réponse ; on en aura besoin quand on relira le texte."
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -440,7 +440,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
     ])
     "Les pupitres s'éclairent. POUR. CONTRE. Deux mots, et toutes les nuances qui nous ont occupés depuis ce matin disparaissent."
     elen inquiet "On a gagné un peu de temps, non ?"
-    nyra reflechit "Oui. Combien de vies, je l'ignore."
+    nyra reflechit "Oui. On a fait ce qu'on pouvait pour les prévenir. Je ne vais pas t'inventer un bilan, Elen."
     ryn colere "Alors on vote pour. TOUS."
     iris colere "Arrête de nous donner des ordres !"
     ryn colere "TU VEUX QU'ILS MEURENT ?!"
