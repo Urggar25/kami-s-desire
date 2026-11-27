@@ -248,9 +248,11 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
 
     # Ambient sprite is a non-interactive layer. Navigation stays available.
     default ambient_visible = ambient_encounter is not None
-    if ambient_visible and ambient_encounter is not None:
+    if ambient_visible and ambient_encounter is not None and not kd_j78_corridor_encounters(shown_corridor):
         use kd_corridor_ambient_actor(ambient_encounter)
         timer 2.45 action SetScreenVariable("ambient_visible", False)
+
+    use kd_j78_corridor_actors(shown_corridor)
 
     # Rencontre du jour 4 réellement facultative : le joueur clique sur Nyra
     # avant d'entrer en cafétéria, comme les rencontres du jour 2 et du jour 3.

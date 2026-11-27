@@ -37,6 +37,7 @@ screen pnc_infirmerie():
     add Solid("#000")
     use room_scene_background("infirmerie")
     use room_scene_interactions("infirmerie")
+    use kd_j78_room_actor("j7_iris", "iris", "reflechit", "taquin", "KD_J701_FREE_IRIS")
 
 
 label infirmerie1_porte_couloir_infirmerie:

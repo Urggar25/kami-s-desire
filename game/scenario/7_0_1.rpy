@@ -738,7 +738,6 @@ label _7_0_1_REVEIL_CHAMBRE:
     jump _7_0_1_CAFETERIA
 
 label _7_0_1_CAFETERIA:
-    call KD_ROUTE_J7_ELIAS from _call_optional_kd_route_j7_elias
     call START_EXPLORATION_LIBRE("_7_0_1_CAFETERIA_ARRIVEE", title="Rejoindre la cafétéria", destination_room="cafeteria") from _call_exploration__7_0_1_CAFETERIA
 
 label _7_0_1_CAFETERIA_ARRIVEE:
@@ -799,23 +798,6 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     kael "Je n'avais rien de fiable à te donner."
     iris "Tu m'envoies ce que tu as, même si c'est incomplet. Je vais regarder depuis l'infirmerie."
     "Elle se lève. Elen écarte son verre pour la laisser passer."
-    menu:
-        "Suivre Iris jusqu'à la porte.":
-            $ j701_table_choice = "inquietude"
-            $ j701_iris_defense = True
-            noam "Iris, attends. Je peux t'aider à regarder les terminaux après manger."
-            iris "Tu vas surtout me poser des questions pendant que j'essaie de bosser. Laisse-moi faire, d'accord ? Si tu entends quelque chose sur ta tablette, tu me le dis."
-            noam "D'accord. Je te garde ton assiette."
-        "Rester auprès d'Elen.":
-            $ j701_table_choice = "complicite"
-            elen "Je voulais juste qu'on passe un bon moment. J'ai peut-être choisi le mauvais jour."
-            noam "Viens, montre-moi les cartes. On peut préparer le jeu quand même."
-            "Elle étale les cartes sur la table et me demande de l'aider à les trier."
-        "Demander à Julian de changer de sujet.":
-            $ j701_table_choice = "julian"
-            noam "Julian, si tu veux vraiment faire quelque chose d'utile, aide Elen à organiser sa soirée."
-            julian "Très bien. Mais je refuse qu'on me rende responsable de la mauvaise humeur générale."
-            "Il reprend le paquet de cartes sans attendre ma réponse."
     "Kael se lève avec sa tablette branchée à une batterie externe."
     elias "Kael, t'as même pas fini ton pain. Tu veux que je te garde le reste ?"
     kael "Je vais l'emporter, merci."
@@ -826,43 +808,7 @@ label _7_0_1_CAFETERIA_ARRIVEE:
     jump _7_0_1_TEMPS_LIBRE_1
 
 label _7_0_1_TEMPS_LIBRE_1:
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir_cafeteria", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_284
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    $ showGroup([("kael", "reflechit", 0.31), ("noam", "neutre", 0.72)])
-    "Kael a posé une feuille sur une caisse et essaie de noter quelque chose en mangeant son pain."
-    noam "Je peux m'asseoir ? J'ai pas envie de retourner dans ma chambre tout de suite."
-    kael "Oui. Fais attention au crayon."
-    "Je m'installe. Il continue ses calculs."
-    noam "Ça fait longtemps que tu bosses là-dessus ?"
-    kael "Depuis cette nuit. J'ai dormi un peu entre deux vérifications. Les relevés du Conclave et ceux de l'observatoire ne concordent pas. Je les recopie parce que les terminaux ne sont même pas d'accord sur l'ordre des événements."
-    noam "Je croyais que tu pouvais faire ça automatiquement."
-    kael "D'habitude, oui. Mais je préfère retrouver une heure que je peux vérifier moi-même. À Orbite, j'ai appris à ne pas faire confiance à un affichage simplement parce qu'il est précis."
-    "Il efface une colonne. Un peu de graphite a taché le pain."
-    noam "Tu sais que t'es en train de manger ton crayon, là ?"
-    kael "Ah."
-    "Il pose le pain et nettoie son doigt sur la feuille."
-    kael "Je faisais pareil avec mes maquettes. J'avais passé un temps fou à monter le gréement d'un voilier et j'ai cassé le mât en voulant le ranger. J'ai dû recommencer toute une partie."
-    noam "Un voilier ?! Je pensais que tu collectionnais des vaisseaux spatiaux, des trucs un peu plus classes."
-    kael "Je voyais des vaisseaux tous les jours sur Orbite. Les voiliers, par contre... J'ai jamais vu la mer. J'ai regardé des tas de vidéos pour comprendre comment ils utilisaient le vent."
-    noam "T'aimerais essayer ?"
-    kael "Bien sûr. Rien que monter à bord, ça me plairait. Après, je laisserais quelqu'un d'autre s'occuper des manœuvres."
-    "Il me montre la taille de la maquette avec ses mains."
-    noam "Ah ouais, c'est carrément un meuble ton truc. J'avais un modèle de vaisseau quand j'étais plus jeune, j'ai perdu une aile et j'ai fini par le jeter."
-    kael "Tu aurais pu la refaire. Je peux te montrer comment, à l'occasion."
-    noam "Tu risques de regretter de m'avoir proposé ça."
-    "Il reprend son crayon."
-    if j601_fracture_trace_saved:
-        kael "Au fait, tu as conservé la trace du piratage sur ta tablette ? Ne la modifie pas. J'aimerais comparer les horodatages avec les relevés originaux."
-        noam "Je te la laisse quand tu veux."
-        kael "Merci. Pas besoin de me l'envoyer pour l'instant."
-        $ j701_evidence_note = True
-    else:
-        kael "Il me faudrait un enregistrement complet de la diffusion d'hier. Les relevés que j'ai récupérés sont incomplets, je vais voir si la console d'observation a gardé une copie."
-    noam "Tu devrais dormir avant de continuer. Tu vas finir par te tromper dans tes propres calculs."
-    kael "Possible. Je termine cette colonne et je vais m'allonger."
-    "Je le laisse à ses papiers."
-    $ hideGroup()
-    call START_FREE_TIME("_7_0_1_APRES_MIDI_TOMAS_CANON") from _call_START_FREE_TIME_7_0_1
+    call START_FREE_TIME("_7_0_1_APRES_MIDI_TOMAS_CANON", start_corridor="cafeteria") from _call_START_FREE_TIME_7_0_1
 
 label _7_0_1_APRES_MIDI_TOMAS_CANON:
     $ current_period = "Après-midi"

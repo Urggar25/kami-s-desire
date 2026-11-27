@@ -243,13 +243,13 @@ init python:
         return "{}_link_{}".format(character_id, memory_index)
 
 
-label START_FREE_TIME(next_label=None):
+label START_FREE_TIME(next_label=None, start_corridor="dortoir"):
 
     $ free_time_active = True
     $ free_time_next_label = next_label
     $ conclave_lock = False
     $ dortoir_lock = False
-    $ corridor_current = "dortoir"
+    $ corridor_current = start_corridor
 
     call show_custom_title("Temps libre") from _call_show_custom_title_free_time
     jump START_FREE_TIME_MAP

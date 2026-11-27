@@ -74,7 +74,15 @@ screen pnc_cafeteria():
             yalign 1.00
             action [SetVariable("last_room_label", "CAFETERIA_TP"), SetVariable("free_time_selected_character", "lysa"), Jump("FREE_TIME_CHARACTER_INTERACT")]
 
-    if social_free_time_active() and character_has_available_free_time("elen"):
+    # Répartir les rencontres par angle pour ne pas masquer les autres personnages.
+    $ j7_elen_here = room_scene_stem("cafeteria") == "cafeteria1" and kd_j78_available("j7_elen")
+    $ j8_julian_here = room_scene_stem("cafeteria") == "cafeteria3" and kd_j78_available("j8_julian_afternoon")
+    if j7_elen_here:
+        use kd_j78_room_actor("j7_elen", "elen", "joie", "content", "KD_J701_FREE_ELEN")
+    if j8_julian_here:
+        use kd_j78_room_actor("j8_julian_afternoon", "julian", "sourire", "taquin", "KD_J801_FREE_JULIAN")
+
+    if social_free_time_active() and character_has_available_free_time("elen") and not j7_elen_here and not j8_julian_here:
         imagebutton:
             idle Transform(character_image("elen", "joie"), zoom=1.00)
             hover Transform(character_image("elen", "content"), zoom=1.00)

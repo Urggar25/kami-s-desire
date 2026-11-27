@@ -45,7 +45,11 @@ screen pnc_repos():
     use room_scene_background("repos")
     use room_scene_interactions("repos")
 
-    if social_free_time_active() and character_has_available_free_time("iris"):
+    $ j7_julian_here = room_scene_stem("repos") == "repos2" and kd_j78_available("j7_julian")
+    if j7_julian_here:
+        use kd_j78_room_actor("j7_julian", "julian", "sourire", "taquin", "KD_J701_FREE_JULIAN")
+
+    if social_free_time_active() and character_has_available_free_time("iris") and not j7_julian_here:
         imagebutton:
             idle Transform(character_image("iris", "colere"), zoom=1.00)
             hover Transform(character_image("iris", "taquin"), zoom=1.00)
