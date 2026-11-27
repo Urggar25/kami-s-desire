@@ -228,11 +228,11 @@ label _29_0_1_1_0_1_RECONSTITUTION:
     play music "music/bgm_cold_metadata.mp3" fadein 0.8
     "Nyra a mis nos notes dans l'ordre sur deux tablettes. Ça fait un drôle d'effet de voir les dernières heures de Tomas réduites à une liste."
     $ showGroup([("lysa", "neutre", 0.22), ("nyra", "neutre", 0.45), ("noam", "neutre", 0.70)])
-    nyra raison "On sait certaines choses. D'autres, on les suppose. Si on mélange, on va accuser n'importe qui."
-    noam neutre "On fait comment ?"
-    lysa blase "Tu lis ce qui est écrit et tu essaies de pas te planter."
-    noam taquin "Merci, c'est gentil."
-    nyra sourire "Elle a pas tort."
+    nyra raison "J'ai mis les témoignages dans l'ordre. Noam, prends la tablette de gauche. On va vérifier ensemble ce qu'on peut retenir de chaque événement."
+    noam neutre "T'as déjà fait une partie du tri toute seule ?"
+    lysa blase "Bah oui. Tu peux aussi relire ses notes avant d'approuver tout ce qu'elle a mis."
+    noam taquin "C'est ce que je comptais faire."
+    nyra sourire "Très bien, et si quelque chose te paraît incorrect, tu me le dis."
     "Je reprends la chronologie. Pour chaque étape, je dois choisir ce qu'on peut réellement déduire."
     jump _29_0_1_1_0_1_RECON_MENU
 # Durée : ~1m00.
@@ -246,7 +246,7 @@ label _29_0_1_1_0_1_RECON_MENU:
             "Elen et Tomas ont échangé leurs chambres.":
                 $ j29a_reconstitution = 1
                 noam raison "Je les ai vus parler. Elen a confirmé qu'ils avaient échangé."
-                nyra neutre "Ça, on peut le garder."
+                nyra neutre "Oui. Elen pourra le confirmer devant les autres."
             "Tomas avait décidé de se suicider.":
                 $ j29a_erreurs += 1
                 lysa colere "On en sait rien. C'est justement ce qu'on vérifie."
@@ -257,7 +257,7 @@ label _29_0_1_1_0_1_RECON_MENU:
             "Une substance a pu entrer par la ventilation.":
                 $ j29a_reconstitution = 2
                 noam raison "Le verrou ne protège pas de ce qui passe par l'air."
-                nyra neutre "C'est possible. Pas encore démontré pour cette nuit."
+                nyra neutre "D'accord. On garde cette possibilité, mais on n'écrit pas que c'est ce qui s'est passé."
             "Quelqu'un a forcément forcé le verrou.":
                 $ j29a_erreurs += 1
                 lysa raison "Elias a forcé le verrou devant nous. Rien ne montrait qu'il avait été abîmé avant."
@@ -268,7 +268,7 @@ label _29_0_1_1_0_1_RECON_MENU:
             "L'intoxication par inhalation est plausible et l'homicide probable.":
                 $ j29a_reconstitution = 3
                 noam raison "C'est ce que dit Iris. Pas plus."
-                nyra raison "OK."
+                nyra raison "Bien. Garde sa formulation exacte."
             "Les somnifères prouvent le suicide.":
                 $ j29a_erreurs += 1
                 lysa blase "Non, Noam. Iris a littéralement passé trois jours à nous dire le contraire."
@@ -279,7 +279,7 @@ label _29_0_1_1_0_1_RECON_MENU:
             "L'identité de celui qui a préparé le dispositif et son mobile.":
                 $ j29a_reconstitution = 4
                 noam raison "On a une méthode possible. Pas un coupable."
-                nyra neutre "Voilà. On avance."
+                nyra neutre "Oui. C'est ce qui nous manque avant de pouvoir désigner quelqu'un."
             "Le nom de celui qui a ouvert la porte de l'intérieur.":
                 $ j29a_erreurs += 1
                 lysa raison "Personne n'avait besoin d'ouvrir si le dispositif était déjà dans les conduits."
@@ -292,7 +292,7 @@ label _29_0_1_1_0_1_MOBILE:
     $ showGroup([("lysa", "reflexion", 0.21), ("nyra", "neutre", 0.45), ("noam", "neutre", 0.69)])
     lysa reflexion "Julian et Ryn lui en voulaient. Il a reçu des menaces sur Terre. C'est quand même pas rien."
     noam raison "Mais il cherchait Keyper et il avait trouvé cet appareil dans l'observation."
-    nyra reflexion "Les deux pistes existent. On ne peut pas savoir laquelle a un lien avec sa mort, pour l'instant."
+    nyra reflexion "Tomas avait reçu des menaces, Noam. On a au moins des témoignages là-dessus. Pour l'appareil, on ne sait toujours pas à quoi il servait."
     menu:
         "Quelle piste approfondir en premier ?"
         "Les représailles liées au vote":
@@ -302,10 +302,10 @@ label _29_0_1_1_0_1_MOBILE:
         "Le secret que Tomas avait découvert":
             $ j29a_mobile = "secret"
             noam raison "Je voudrais comprendre pourquoi ses recherches auraient pu déranger quelqu'un."
-            nyra raison "D'accord. Sans oublier les gens qui le détestaient pour son vote."
+            nyra raison "Très bien, je te laisse reprendre ses documents. Mais je veux aussi qu'on vérifie les menaces, on aurait tort de les écarter."
     "Mon téléphone vibre. C'est Kael : il a trouvé un relevé dans la maintenance."
     noam surpris "Kael veut nous montrer quelque chose."
-    nyra neutre "J'allais regarder de mon côté dans les archives. Je vous rejoins après."
+    nyra neutre "Allez-y. Je vais terminer ce que j'ai commencé aux archives et je vous rejoins."
     lysa raison "OK. On y va."
     $ hideGroup()
     jump _29_0_1_1_0_1_MAINTENANCE
@@ -608,34 +608,34 @@ label _29_0_1_1_0_1_NYRA:
     play music "music/bgm_calm_not_peace.mp3" fadein 0.8
     "Nyra est près de la table commune. Elle referme sa tablette en nous voyant arriver."
     $ showGroup([("nyra", "neutre", 0.24), ("lysa", "neutre", 0.49), ("noam", "neutre", 0.74)])
-    nyra sourire "Alors ? Vous avez trouvé quelque chose ?"
+    nyra sourire "Ah, vous voilà. Kael a trouvé ce qu'il cherchait ?"
     noam reflexion "Ouais. On a un relevé de maintenance."
-    nyra neutre "D'accord."
+    nyra neutre "Montre-moi, alors."
     noam raison "La nuit où Tomas est mort, un badge a ouvert l'accès technique vers les conduits des dortoirs."
-    nyra reflexion "Lequel ?"
+    nyra reflexion "À qui appartenait le badge ?"
     noam neutre "Le tien."
     pause 0.4
-    nyra surpris "Mon badge ?"
+    nyra surpris "Attends, le mien ? Tu es sûr de l'identifiant ?"
     lysa raison "C'est ce que dit le boîtier. À 02 h 17."
-    nyra reflexion "Je suis allée me coucher, Noam. Tu m'as croisée."
+    nyra reflexion "Noam, on s'est croisés le soir où Tomas est mort. Je suis rentrée dans ma chambre juste après."
     noam raison "Oui. Tu m'as dit que tu allais dormir. Mais je te demande juste si tu avais ton badge."
-    nyra neutre "Normalement, oui. Je l'ai presque toujours avec moi."
+    nyra neutre "Oui, normalement. Je le garde presque toujours sur moi."
     lysa reflexion "Et quelqu'un aurait pu te l'emprunter ?"
-    nyra hesitation "J'en sais rien. C'est possible. Je vérifie pas toutes les heures si quelqu'un l'a touché."
+    nyra hesitation "Je ne sais pas, Lysa. Je n'ai jamais remarqué qu'il me manquait, mais je ne vais pas te garantir que personne n'y a touché."
     noam reflexion "Tu te souviens d'être passée par la maintenance cette nuit-là ?"
-    nyra raison "Non. Je viens de te dire que je dormais."
+    nyra raison "Non. Je suis rentrée dormir, je viens de te le dire."
     noam neutre "D'accord."
-    nyra reflexion "Tu penses que je suis entrée dans le conduit pour faire quelque chose à Tomas ?"
+    nyra reflexion "Tu comptes m'interroger parce que tu veux comprendre ce relevé, ou parce que tu penses que j'ai tué Tomas ?"
     noam fatigue "Je pense que j'ai besoin de comprendre pourquoi ton autorisation apparaît là."
-    nyra raison "Alors montre-moi le relevé."
+    nyra raison "Passe-moi la tablette. Je veux voir ce que Kael a relevé."
     "Je lui montre l'écran. Elle lit la ligne, puis agrandit l'identifiant du lecteur."
-    nyra neutre "Kael a raison de dire que ça ne montre pas la personne. Juste une autorisation."
+    nyra neutre "Regarde l'intitulé. C'est mon autorisation, pas une identification de la personne qui était présente. Kael vous a bien expliqué la différence ?"
     noam raison "Ouais."
-    nyra inquiet "Tu sais, je t'ai aidé pendant trois jours. Je vois bien que ça te met mal à l'aise de me demander."
+    nyra inquiet "Noam, ça fait trois jours que je t'aide à vérifier les témoignages. Je ne vais pas te reprocher de vérifier le mien aussi."
     noam fatigue "Un peu."
-    nyra neutre "Je préfère que tu le fasses, plutôt que tu racontes aux autres que j'ai tué Tomas dans mon dos."
+    nyra neutre "Mais j'aimerais que tu me laisses répondre devant tout le monde, au lieu de leur présenter ce relevé sans moi."
     lysa blase "Là-dessus, on est d'accord."
-    nyra raison "Je viens à la réunion. Je répondrai aux questions."
+    nyra raison "Je viens à la réunion avec vous. Si quelqu'un a une question, je lui répondrai."
     "Elle reprend sa tablette. Personne ne se met à hurler. Je pensais que j'allais être soulagé, mais je suis encore plus mal à l'aise."
     $ hideGroup()
     jump _29_0_1_1_0_1_REUNION
@@ -656,7 +656,7 @@ label _29_0_1_1_0_1_REUNION:
     ryn agace "Et nous, on est encore dans la liste des suspects à cause de cette plante ?"
     sael calme "Ryn, laisse-le parler."
     noam raison "On va reprendre les éléments, sans essayer de choisir quelqu'un avant."
-    nyra neutre "C'est ce qu'il faut faire."
+    nyra neutre "Oui. Noam, présente d'abord les documents. Ensuite chacun pourra répondre."
     elen triste "Je veux juste savoir. Même si c'est horrible, je préfère savoir."
     noam neutre "Ouais. Moi aussi."
     if "elias" in investigation_pa_completed or "kael" in investigation_pa_completed:
@@ -743,13 +743,13 @@ label _29_0_1_1_0_1_ACCUSATION:
     pause 0.5
     elen surpris "Nyra ?"
     julian surpris "Attends, quoi ?!"
-    nyra neutre "Oui. Noam m'en a parlé. Je lui ai dit que je ne m'étais pas rendue dans la maintenance cette nuit-là."
+    nyra neutre "Oui, on en a parlé cet après-midi. Je vous confirme que je ne suis pas passée en maintenance cette nuit-là."
     lysa raison "Le système a enregistré ton autorisation, pas ton visage."
-    nyra raison "Exactement. Si mon badge a été utilisé par quelqu'un d'autre, ça ne dit rien sur moi."
+    nyra raison "Merci, Lysa. C'est important que tout le monde comprenne ce que montre réellement le relevé."
     julian inquiet "Mais tu l'avais avec toi ?"
-    nyra reflexion "Normalement. Je ne peux pas certifier chaque minute de la nuit."
+    nyra reflexion "Je pense que oui. Mais j'étais seule dans ma chambre et je ne l'ai pas vérifié en pleine nuit."
     noam neutre "Je peux pas prouver que tu étais dans le conduit. Mais je peux pas faire comme si ce relevé existait pas."
-    nyra raison "Alors ne fais pas comme si c'était une vidéo de moi."
+    nyra raison "Je ne te demande pas de l'ignorer. Je te demande d'appliquer le même raisonnement que tu as appliqué aux autres."
     elen inquiet "Noam, tu soupçonnes Nyra ?"
     noam fatigue "Je soupçonne plusieurs personnes. Je vais devoir dire ce que je pense."
     iris reflexion "Et tu sais que ça peut se retourner contre quelqu'un qui n'a rien fait."
@@ -798,7 +798,7 @@ label _29_0_1_1_0_1_FAUSSE_ACCUSATION:
     pause 0.3
     $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.176), ("julian", "fatigue", 0.271), ("elen", "triste", 0.367), ("ryn", "agace", 0.462), ("sael", "neutre", 0.558), ("nyra", "neutre", 0.653), ("kael", "calme", 0.749), ("lysa", "neutre", 0.844), ("elias", "fatigue", 0.940)])
     elen inquiet "Noam, je comprends que tu veuilles trouver quelqu'un... mais on peut pas enfermer une personne juste avec ça."
-    nyra raison "Elen a raison. Et le badge retrouvé, on n'a toujours pas expliqué pourquoi il a été utilisé."
+    nyra raison "Je suis d'accord avec Elen. Laissez Kael vérifier les autorisations plutôt que de continuer à vous disputer. On est tous censés partir demain."
     noam fatigue "Je sais."
     julian reflexion "On va pas décider d'une arrestation sur un vote de popularité."
     iris raison "Il n'y a pas assez pour conclure. Ça n'efface pas la mort de Tomas."
@@ -815,15 +815,15 @@ label _29_0_1_1_0_1_NYRA_ACCUSATION:
     $ showGroup([("noam", "neutre", 0.080), ("iris", "fatigue", 0.176), ("julian", "fatigue", 0.271), ("elen", "triste", 0.367), ("ryn", "agace", 0.462), ("sael", "neutre", 0.558), ("nyra", "neutre", 0.653), ("kael", "calme", 0.749), ("lysa", "neutre", 0.844), ("elias", "fatigue", 0.940)])
     noam raison "Nyra. Je pense que tu es impliquée dans la mort de Tomas."
     pause 0.6
-    nyra surpris "Moi ?"
+    nyra surpris "D'accord... Tu es sérieux."
     elen surpris "Noam..."
-    nyra neutre "D'accord. Explique-moi."
+    nyra neutre "Très bien, Noam. Je t'écoute. Les autres, laissez-le terminer, s'il vous plaît."
     noam raison "Le badge de maintenance, d'abord. Il a été utilisé vers la branche des dortoirs pendant la nuit."
-    nyra reflexion "Je viens de dire que ce relevé ne montre pas qui l'avait. Tu le sais."
+    nyra reflexion "Oui. Et on vient de convenir que le relevé ne prouve pas que j'étais là. Tu étais d'accord, tout à l'heure."
     noam neutre "Oui."
-    nyra raison "Et le fait que je sache utiliser des appareils orbitaux ne fait pas de moi une meurtrière."
+    nyra raison "J'ai aussi répondu à tes questions sur les transmissions. Je ne vois pas pourquoi le fait de t'avoir aidé devient maintenant une raison de me soupçonner."
     noam fatigue "Je sais."
-    nyra reflexion "Alors qu'est-ce que tu as de plus ?"
+    nyra reflexion "Alors explique-moi ce qui te fait penser que c'était moi, en dehors de ces deux choses."
     "Je regarde les autres. Aucun ne parle. Je repense à toutes les fois où Nyra m'a aidé, jusqu'à cet après-midi."
     jump _29_0_1_1_0_1_CONFRONTATION
 # Durée : ~1m30.
@@ -834,23 +834,23 @@ label _29_0_1_1_0_1_CONFRONTATION:
         "Le badge utilisé à 02 h 17 et son affirmation qu'elle n'a pas quitté sa chambre":
             $ j29a_contradiction = True
             noam raison "Tu m'as dit que tu allais dormir. Aujourd'hui, tu dis que tu n'es jamais passée en maintenance. Pourtant, ton autorisation a ouvert un accès qui mène à la chambre où Tomas est mort."
-            nyra raison "Il reste possible que quelqu'un ait utilisé mon badge."
+            nyra raison "Je n'écarte pas le relevé. Je te dis que quelqu'un a pu utiliser mon badge sans que je le sache."
             noam neutre "Oui. Mais tu dis l'avoir eu sur toi. Et tu ne nous as jamais signalé sa disparition."
-            nyra reflexion "Parce que j'ai jamais constaté sa disparition."
+            nyra reflexion "Je ne l'ai jamais retrouvé manquant, Noam. Qu'est-ce que tu veux que je te dise de plus ?"
             noam raison "Je te demande pas d'avouer. Je te demande d'expliquer ce relevé autrement qu'en disant que quelqu'un a peut-être pris ton badge."
-            nyra neutre "Je ne peux pas. Pas plus que toi tu ne peux prouver que je l'ai utilisé."
-            lysa raison "C'est vrai. Mais on a désormais une contradiction qu'il faut vérifier."
+            nyra neutre "Je n'ai pas d'autre explication. Ça m'énerve autant que toi, mais je ne vais pas en inventer une pour que tu me laisses tranquille."
+            lysa raison "D'accord. Ça reste une contradiction, Nyra. Et tu le sais aussi bien que nous."
             jump _29_0_1_1_0_1_CONSEQUENCE_NYRA
         "La plante, parce qu'Orbite possède des zones arides":
             noam raison "Tu viens d'Orbite. Le Bulbuma y pousse peut-être."
-            nyra reflexion "Comme à Limen. Et comme dans certaines marchandises qu'on reçoit ici. Tu sais que ça ne prouve rien."
+            nyra reflexion "On reçoit des marchandises de Limen, d'Orbite et d'ailleurs. Tu vas interroger tous ceux qui connaissent cette plante ?"
             iris raison "Je l'ai dit moi-même. Ce n'est pas un indice suffisant."
             noam fatigue "Ouais..."
             $ j29a_erreurs += 1
             jump _29_0_1_1_0_1_CONFRONTATION
         "Le livre Yanma, parce qu'elle connaît les transmissions spatiales":
             noam raison "Tu connais la résonance Yanma. Tomas lisait un livre là-dessus."
-            nyra raison "Kael la connaît aussi. Et tu n'as même pas identifié l'appareil que Tomas tenait."
+            nyra raison "Kael connaît aussi Yanma. Et on n'a toujours pas identifié la boîte que tu as vue avec Tomas. Tu te souviens de ce que tu m'as dit à l'Observation ?"
             lysa neutre "On peut pas accuser quelqu'un pour ses connaissances techniques."
             $ j29a_erreurs += 1
             jump _29_0_1_1_0_1_CONFRONTATION
@@ -863,20 +863,20 @@ label _29_0_1_1_0_1_CONSEQUENCE_NYRA:
     elen inquiet "Vous voulez l'enfermer ?"
     julian reflexion "On va quand même pas prendre une décision définitive avec une seule ligne dans un journal."
     noam raison "Pas une décision définitive. Mais le départ approche. Si elle peut accéder aux conduits, on peut pas juste faire comme si on avait rien trouvé."
-    nyra neutre "Je n'ai touché à aucun conduit. Tu me crois ou non, c'est tout ce que je peux dire."
+    nyra neutre "Je ne suis pas entrée dans les conduits cette nuit-là. Si vous avez des questions sur mes déplacements, posez-les. Je n'ai rien d'autre à vous donner."
     iris raison "Ça n'est pas une preuve complète de culpabilité. Il faut être clair là-dessus."
     sael reflexion "On peut néanmoins la placer sous surveillance jusqu'à ce qu'on puisse vérifier ce relevé."
     elen triste "Je veux pas qu'il arrive quelque chose à quelqu'un d'autre."
-    nyra reflexion "Et moi, je dois accepter d'être enfermée parce qu'on n'a pas compris qui a utilisé mon badge ?"
+    nyra reflexion "Sael, on parle de m'enfermer sur la base d'un badge. Tu ferais la même chose avec Elen si son nom était sur le relevé ?"
     julian fatigue "Je sais pas quoi penser. Mais pour cette nuit, je préfère qu'on évite de laisser les accès techniques libres."
     noam neutre "On peut garder Nyra dans une chambre surveillée. Pas la condamner. On continuera l'enquête sur Terre."
     iris neutre "Si c'est provisoire et que personne n'y touche, je peux accepter. Je veux pouvoir lui parler si elle en a besoin."
     sael raison "Je surveillerai la porte avec Kael. Et on conservera son badge séparément."
     nyra fatigue "..."
     pause 0.4
-    nyra neutre "D'accord. Mais ne me demandez pas de vous remercier."
+    nyra neutre "Très bien. Je vous laisse le badge. Mais je veux pouvoir parler à Iris si j'en ai besoin."
     noam inquiet "Nyra..."
-    nyra raison "Tu as fait ton choix, Noam. Tu m'as même laissé répondre. Je n'ai rien d'autre à ajouter."
+    nyra raison "Non, Noam. Tu as déjà dit ce que tu pensais devant les autres. Je n'ai pas envie de recommencer cette discussion maintenant."
     "Elle se lève. Personne ne la touche. Sael lui indique simplement la sortie, et Kael l'attend à l'extérieur."
     $ j29a_nyra_detained = True
     $ hideGroup()

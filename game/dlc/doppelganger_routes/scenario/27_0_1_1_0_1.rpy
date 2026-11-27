@@ -230,7 +230,7 @@ label _27_0_1_1_0_1_CAFETERIA:
     elen colere "C'est ce que tout le monde me répète. Mais personne n'en sait rien !"
     call kd_vn_reaction("elen", "colere", "#ff9c55")
     pause 0.4
-    nyra raison "Je peux accompagner Noam. On photographie les documents et on remet tout en place."
+    nyra raison "Je viens avec Noam. On fera des copies de ce que Tomas a laissé, et personne n'aura besoin de déplacer ses affaires pour les lire."
     noam neutre "D'accord."
     play sound sfx_announce
     $ hideGroup()
@@ -250,7 +250,7 @@ label _27_0_1_1_0_1_CAFETERIA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     $ showGroup([("julian", "fatigue", 0.080), ("iris", "fatigue", 0.248), ("elen", "triste", 0.416), ("lysa", "blase", 0.584), ("noam", "fatigue", 0.752), ("nyra", "neutre", 0.920)])
     iris agace "Elle pourrait fermer sa gueule cinq minutes."
-    nyra neutre "Noam, on y va ?"
+    nyra neutre "Noam, viens. On sera mieux dans sa chambre pour discuter."
     noam neutre "Ouais."
     $ hideGroup()
     jump _27_0_1_1_0_1_CHAMBRE
@@ -265,9 +265,9 @@ label _27_0_1_1_0_1_CHAMBRE:
     "Les étagères débordent d’ouvrages spécialisés, et son bureau est couvert de plans, de feuilles annotées et de piles de documents classés avec soin."
     $ showGroup([("nyra", "neutre", 0.37), ("noam", "reflexion", 0.68)])
     noam fatigue "Il serait capable de revenir pour nous demander de ne pas déplacer ses dossiers."
-    nyra sourire "Et d'expliquer pendant dix minutes pourquoi leur ordre est important."
+    nyra sourire "Il m'a déjà fait ça aux archives. J'avais déplacé un seul dossier et il a passé cinq minutes à m'expliquer son classement."
     "Je souris. Puis je réalise que nous parlons de lui au passé."
-    nyra raison "On note ce qu'on touche. Si Iris doit revenir, elle saura ce qui a changé."
+    nyra raison "Bon. Je prends les photos, toi tu regardes ce qu'il a laissé sur le bureau. On note ce qu'on déplace pour Iris."
     noam neutre "D'accord. Je commence par le bureau."
     $ hideGroup()
     jump _27_0_1_1_0_1_FOUILLE
@@ -280,11 +280,11 @@ label _27_0_1_1_0_1_FOUILLE:
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             "Sur le coin gauche du bureau, un épais livre sur les transmissions spatiales est posé parmi les notes. Plusieurs pages sont marquées."
             noam reflexion "« Résonance Yanma — Transmissions à très faible intensité ». Ça te parle ?"
-            nyra reflexion "De nom. C'est une méthode de transmission dans l'espace."
+            nyra reflexion "Oui, c'est une technique utilisée pour les communications dans l'espace."
             noam neutre "Comment ça marche ?"
-            nyra raison "On envoie des signaux très faibles. Difficiles à détecter sans un récepteur adapté. Mais je connais pas tous les détails."
+            nyra raison "Le signal est très faible. Sans le bon récepteur, tu peux passer à côté sans même le remarquer. Pour les détails techniques, il faudrait demander à Kael."
             noam surpris "Pourquoi Tomas lisait ça ?"
-            nyra neutre "Il cherchait des coordonnées orbitales. Peut-être qu'il a voulu comprendre un système."
+            nyra neutre "Je suppose que c'est lié à ses recherches sur les coordonnées orbitales. Mais photographie le titre, on regardera ça plus tard."
             noam raison "Je prends une photo du livre."
             $ hideGroup()
             call investigation_take_manual_photo("j27_photo_yanma", "bg_chambre_tomas", (0.23, 0.73), 2.5) from _call_j27_photo_yanma
@@ -298,10 +298,10 @@ label _27_0_1_1_0_1_FOUILLE:
             noam reflexion "Voilà. Keyper-IIB."
             "Une ligne indique « UNITÉS ÉID-0 — EFFECTIFS », suivie de chiffres. Plus bas, des quotas de production."
             noam surpris "Des effectifs ? On dirait qu'ils comptent des employés."
-            nyra raison "Ou des machines. Dans les registres industriels, ce terme désigne parfois des unités automatisées."
+            nyra raison "Attends, ne pars pas tout de suite sur des employés. Dans certains registres industriels, les effectifs peuvent aussi désigner des machines."
             noam neutre "Et ici, il y a les quotas qu'on devait augmenter."
             "Tomas a écrit dans la marge : « ÉID-0 = personnes ? machines ? »"
-            nyra neutre "Il n'avait pas encore la réponse."
+            nyra neutre "Il avait noté les deux possibilités. Évite de trancher à sa place."
             noam fatigue "Non. Mais il a voté contre à cause de ça."
             "Je photographie la page du registre qui mentionne les unités ÉID-0."
             $ hideGroup()
@@ -315,9 +315,9 @@ label _27_0_1_1_0_1_FOUILLE:
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "neutre", 0.67)])
             "Les dernières feuilles contiennent des références orbitales et un tracé de trajet."
             noam reflexion "C'est ce qu'il m'avait montré. Keyper serait à quelques heures de vol."
-            nyra raison "Si ses calculs sont bons. Il a entouré plusieurs positions possibles."
+            nyra raison "Regarde les positions qu'il a entourées. Il n'avait pas encore réussi à en retenir une seule."
             noam neutre "Il avait encore des trucs à vérifier."
-            nyra reflexion "Oui. On peut photographier ça aussi."
+            nyra reflexion "Prends tout le document. Je comparerai les positions avec les cartes que je connais."
             "Je remarque trois questions sous le trajet : « Pourquoi station non déclarée ? », « Quels effectifs ? », « Accès aux quotas ? »"
             noam fatigue "Il a passé toute la journée là-dessus."
             $ hideGroup()
@@ -328,9 +328,9 @@ label _27_0_1_1_0_1_FOUILLE:
             $ showGroup([("nyra", "neutre", 0.38), ("noam", "reflexion", 0.67)])
             "J'examine le verrou, puis la grille d'aération. Les fixations semblent intactes, mais j'ai appris à ne plus tirer de conclusion de ce seul détail."
             noam reflexion "Elen a dormi ici. Et Tomas s'est retrouvé dans sa chambre à elle."
-            nyra neutre "Oui. On sait juste qu'ils ont échangé la veille."
+            nyra neutre "Oui. Et on ne sait pas encore qui d'autre en avait été informé."
             noam raison "Il faudrait vérifier qui connaissait l'échange, exactement."
-            nyra reflexion "On pourra reprendre les témoignages. Il faut juste que chacun puisse préciser ce dont il se souvient."
+            nyra reflexion "D'accord. Mais ne donne pas toi-même les détails aux gens que tu interroges. Laisse-les te raconter ce qu'ils savent."
             noam neutre "Ouais."
             $ hideGroup()
             jump _27_0_1_1_0_1_FOUILLE
@@ -341,11 +341,11 @@ label _27_0_1_1_0_1_FOUILLE:
 label _27_0_1_1_0_1_APPAREIL:
     $ showGroup([("nyra", "reflexion", 0.38), ("noam", "neutre", 0.68)])
     noam reflexion "Attends. Ce livre sur Yanma me rappelle un truc."
-    nyra neutre "Quoi ?"
+    nyra neutre "Attends, tu te souviens de quelque chose ?"
     noam raison "Le jour 25, Tomas manipulait un petit boîtier dans la salle d'observation. Une boîte métallique, avec un voyant. Il l'a posée quand je suis arrivé."
-    nyra reflexion "Tu sais à quoi il servait ?"
+    nyra reflexion "Tu l'as vu fonctionner, ou tu l'as seulement vu posé sur le bureau ?"
     noam neutre "Non. Il avait pas l'air de savoir non plus."
-    nyra raison "Alors autant voir s'il est toujours là. On saura au moins de quoi on parle."
+    nyra raison "Viens, on va voir s'il est encore à l'Observation."
     $ hideGroup()
     scene couloir_cafeteria at adaptive_fullscreen with dissolve
     call MAYBE_PLAY_SCRIPTED_DOOR("observation", "bg_observation") from _call_j27a_door_3
@@ -355,18 +355,18 @@ label _27_0_1_1_0_1_APPAREIL:
     "Je retrouve le pupitre, le tiroir inférieur et la zone dégagée où Tomas avait posé sa boîte."
     noam reflexion "C'était ici."
     "Je soulève un dossier, vérifie derrière l'écran, puis ouvre chaque compartiment. Je regarde même l'espace entre le pupitre et le mur."
-    nyra neutre "Tu cherches toujours l'appareil ?"
+    nyra neutre "Noam, tu es en train de vérifier le même compartiment pour la deuxième fois."
     noam inquiet "Il était là, je m'en souviens."
     "Je reviens au premier tiroir, que j'avais pourtant déjà vérifié."
     noam surpris "Il a disparu."
-    nyra reflexion "Tu es sûr que Tomas l'avait laissé ici en partant ?"
+    nyra reflexion "Tu l'as vu le poser, d'accord. Mais est-ce qu'il était encore là quand tu es parti ?"
     noam raison "Je l'ai vu le poser. Je sais pas ce qu'il en a fait après."
     $ j27a_appareil_absent = True
-    nyra raison "Il a pu le reprendre. Ou quelqu'un a pu le ranger. Kael et Elias manipulent souvent le matériel de cette salle."
+    nyra raison "Il a pu le reprendre, ou quelqu'un a pu le ranger. Kael et Elias utilisent régulièrement cette salle. Ne leur dis pas encore à quoi tu penses."
     noam reflexion "Mais pourquoi cet appareil-là ?"
-    nyra neutre "On peut leur demander. Ce sera plus fiable qu'une supposition."
+    nyra neutre "Je préfère qu'on leur demande directement."
     noam raison "Et toi, tu saurais reconnaître un récepteur Yanma ?"
-    nyra reflexion "Pas à partir de la description d'un voyant. Si on retrouve le modèle, je regarderai."
+    nyra reflexion "Une boîte avec un voyant, ça pourrait être n'importe quoi. Retrouve-moi une référence et je pourrai t'aider."
     "Je vérifie encore le meuble, sans rien découvrir. Deux jours plus tôt, je n'avais même pas songé à prendre l'objet en photo."
     $ hideGroup()
     jump _27_0_1_1_0_1_QUESTIONS
@@ -377,9 +377,9 @@ label _27_0_1_1_0_1_QUESTIONS:
     "J'ai les documents de Tomas, mais il manque toujours l'appareil. Si je veux avancer, il faut confronter ce que j'ai trouvé à ce que les autres savent."
     $ showGroup([("nyra", "neutre", 0.33), ("noam", "fatigue", 0.69)])
     noam raison "Je vais vérifier les accès et parler à quelques personnes. On a trop d'hypothèses."
-    nyra raison "Note séparément ce que tu as vu et ce qu'on t'a raconté. Sinon, on finira par confondre les deux."
+    nyra raison "D'accord. Et garde les témoignages séparés de tes observations. J'aimerais pouvoir relire tes notes sans avoir à te demander d'où vient chaque information."
     noam reflexion "Tu viens ?"
-    nyra neutre "Je vais reprendre les copies de Keyper. On gagnera du temps en se répartissant les recherches."
+    nyra neutre "Non, je reprends les documents sur Keyper. Je te rejoindrai avant la réunion."
     noam neutre "On se retrouve avant la réunion."
     "J'ai le temps de vérifier cinq pistes. À moi de choisir lesquelles."
     $ investigation_pa_begin(27, 5)
@@ -603,34 +603,34 @@ label _27_0_1_1_0_1_NYRA:
     "Je retrouve Nyra avec deux plateaux. Elle pousse le second vers moi sans commentaire."
     $ showGroup([("nyra", "neutre", 0.38), ("noam", "fatigue", 0.68)])
     noam sourire "Tu m'as gardé à manger ?"
-    nyra sourire "Il restait une portion. Tu réfléchiras mieux après avoir mangé."
+    nyra sourire "Oui, je savais que tu finirais par oublier de venir manger. Assieds-toi, c'est encore chaud."
     "Je pose la tablette entre nous et affiche les preuves recueillies."
     noam raison "Tout se mélange. La mort de Tomas, ses recherches sur Keyper, cet appareil... J'ai du mal à savoir ce qui a vraiment un lien."
-    nyra reflexion "Peut-être qu'il y en a un. Mais ce ne serait pas la première fois que deux événements se suivent sans avoir la même cause."
+    nyra reflexion "Je comprends. Mais tu n'as pas encore de preuve que l'appareil soit lié à sa mort. Qu'est-ce que tu as pu vérifier depuis tout à l'heure ?"
     noam reflexion "Sauf que je refuse de classer ça comme un suicide."
-    nyra raison "Et tu as raison de refuser une conclusion sans preuve. Ça marche aussi dans l'autre sens."
+    nyra raison "On est d'accord. On ne va pas dire que Tomas s'est suicidé juste parce que ça arrange quelqu'un. On ne va pas non plus annoncer un meurtre sans éléments suffisants."
     if "kael" in investigation_pa_completed:
         noam reflexion "Kael connaît Yanma de nom, mais ne reconnaît pas la boîte. Il dit ne pas l'avoir déplacée."
-        nyra neutre "Alors on garde son témoignage, sans lui faire dire davantage."
+        nyra neutre "D'accord. On note qu'il ne reconnaît pas la boîte et qu'il dit ne pas l'avoir déplacée."
     if "elias" in investigation_pa_completed:
         noam raison "Elias ne se rappelle pas l'avoir rangée. Il doit vérifier ses bacs."
-        nyra raison "Une incertitude honnête est plus utile qu'une certitude inventée."
+        nyra raison "Laisse-le vérifier ses bacs. On lui demandera demain s'il a trouvé quelque chose."
     if "iris" in investigation_pa_completed:
         noam raison "Iris croit avoir déjà vu une désignation proche d'ÉID-0."
-        nyra raison "Si elle retrouve la référence, on aura quelque chose à comparer."
+        nyra raison "Bien. Demande-lui de garder une copie si elle remet la main dessus."
     if "julian" in investigation_pa_completed:
         noam fatigue "Julian s'en veut d'avoir repoussé Tomas. Il ne savait pas ce qu'il voulait lui montrer."
-        nyra neutre "La culpabilité n'est pas une preuve. Mais il pourra peut-être se souvenir de leur discussion."
+        nyra neutre "Ne lui mets pas la pression là-dessus. Il a déjà assez de mal à accepter de ne pas avoir écouté Tomas. Il pourra nous reparler de leur discussion plus tard."
     if "grille" in investigation_pa_completed:
         noam raison "Et la protection de l'aération dans la chambre d'Elen ne bloquait pas l'air."
-        nyra reflexion "C'est important à noter. Pas assez pour conclure à une intervention par ce passage."
+        nyra reflexion "Garde la photo avec les autres. On ne sait pas encore si quelqu'un est passé par cette grille."
     noam inquiet "Le plus dur, c'est qu'on était tous là. Et maintenant chacun peut raconter quelque chose de différent."
-    nyra raison "C'est pour ça que je préfère les faits matériels. Reprends les heures, les objets et les déplacements. Les intentions viendront après."
+    nyra raison "On commence par les heures, les objets qu'on a réellement retrouvés et les déplacements confirmés. Passe-moi tes notes, je vais t'aider à faire le tri."
     noam fatigue "Tu crois qu'on trouvera quelque chose ?"
-    nyra neutre "Je pense qu'on comprendra mieux si on arrête de chercher un coupable avant de savoir s'il y a eu un crime."
+    nyra neutre "Je ne sais pas, Noam. Mais j'aimerais que tu présentes ce que tu as trouvé sans avancer de nom devant tout le monde."
     pause 0.3
     noam neutre "D'accord. Je présenterai les documents sans accuser personne."
-    nyra sourire "C'est tout ce que je te demande."
+    nyra sourire "Merci. Termine ton repas, je m'occupe des copies."
     "Je mange pendant qu'elle classe les copies en deux dossiers : les travaux sur Keyper d'un côté, les circonstances de la mort de Tomas de l'autre. L'ordre me semble raisonnable, alors je le conserve."
     $ hideGroup()
     jump _27_0_1_1_0_1_REUNION
@@ -662,9 +662,9 @@ label _27_0_1_1_0_1_REUNION:
     lysa surpris "L'appareil a disparu ?"
     noam reflexion "Je ne l'ai pas retrouvé. Mais je sais pas s'il était encore là quand Tomas est parti."
     julian colere "Et on va vraiment faire comme si ça n'avait aucune importance ?"
-    nyra raison "Personne ne dit ça. On cherche juste à savoir si Tomas l'a emporté, si quelqu'un l'a rangé, ou s'il manque réellement."
+    nyra raison "Julian, personne n'a dit que ça n'avait pas d'importance. Pour l'instant, on ne sait même pas si l'appareil a été déplacé par Tomas ou par quelqu'un d'autre."
     julian reflexion "Qui s'occupe de ces appareils ?"
-    nyra neutre "Kael et Elias manipulent régulièrement le matériel de la salle. On peut commencer par vérifier avec eux."
+    nyra neutre "Kael et Elias. On peut leur demander s'ils ont rangé du matériel, avant de les soupçonner de quoi que ce soit."
     if "kael" in investigation_pa_completed:
         noam raison "Kael ne reconnaît pas l'appareil avec ma description. Il ne se souvient pas de l'avoir déplacé."
     if "elias" in investigation_pa_completed:
@@ -689,7 +689,7 @@ label _27_0_1_1_0_1_REUNION:
     "Julian ouvre la bouche, puis la referme. Il n'essaie pas de répondre."
     lysa reflexion "On devrait pouvoir se demander si quelqu'un lui a fait du mal sans devoir pointer du doigt la première personne qui passe."
     iris raison "Oui. Mais pas de procès improvisé avant les analyses. Si vous commencez à vous accuser entre vous, on n'obtiendra plus un seul témoignage fiable."
-    nyra raison "Alors faisons simple. Chacun note ses derniers déplacements connus de Tomas et les documents restent accessibles à tous. Aucune accusation tant qu'on n'a rien de vérifiable."
+    nyra raison "Iris a raison. Notez quand vous avez vu Tomas pour la dernière fois. Je laisserai les copies de ses documents à disposition de tous, mais ne commencez pas à vous accuser."
     noam raison "Et on ne conclut pas au suicide à partir d'un flacon."
     iris neutre "Ça, je peux le soutenir."
     elen triste "Je voudrais juste qu'on arrête de parler de ma chambre comme si c'était une preuve contre moi."

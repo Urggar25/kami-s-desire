@@ -86,10 +86,10 @@ label _30_0_1_1_0_0_1_0_CAFETERIA:
     noam inquiet "Julian, tu dois m'écouter, je suis pas celui que tu crois !"
     julian colere "Tu m'as poursuivi dans les conduits, espèce de malade !"
     $ showGroup([("julian", "peur", 0.18), ("nyra", "inquiet", 0.50), ("elias", "surpris", 0.81)])
-    nyra inquiet "Julian, recule doucement, tu vas te faire mal."
+    nyra inquiet "Julian, reste où tu es. Personne ne va s'approcher de toi si tu ne le veux pas."
     julian peur "..."
     julian peur "Toi... Je t'ai vue."
-    nyra raison "Tu me vois maintenant, oui. Respire."
+    nyra raison "Oui, je suis là. Dis-moi ce que tu as vu."
     julian colere "NON ! JE T'AI VUE MORTE !"
     elias surpris "Hein ?!"
     julian peur "Et lui ! Je l'ai vu aussi ! Elias ! Vous étiez allongés là-bas, tous les deux, je... J'ai vu vos corps !"
@@ -97,7 +97,7 @@ label _30_0_1_1_0_0_1_0_CAFETERIA:
     julian peur "JE SAIS ! C'EST ÇA QUE JE COMPRENDS PAS !"
     "Il recule encore, jusqu'au mur. Ses yeux passent de Nyra à Elias, puis à chacun des autres visages."
     julian peur "Y en avait d'autres... Je sais plus qui... Merde, je sais plus !"
-    nyra raison "Personne ne va te toucher, d'accord ?"
+    nyra raison "D'accord. On recule. Julian, personne ne te touchera."
     julian colere "Toi, t'approche pas !"
     "Autour des tables, plus personne ne mange."
     $ showGroup([("noam", "inquiet", 0.18), ("lysa", "reflexion", 0.51), ("ryn", "colere", 0.82)])
