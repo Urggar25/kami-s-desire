@@ -445,9 +445,9 @@ label _12_0_1_1_ATTENTE_VOTE:
     kael triste "Il cache assez pour qu'on ne voie pas qui est entré dans ma chambre."
     "Elias pose son gobelet vide."
     elias reflechit "Ouais. Si quelqu'un entre pendant que ça tourne, on fait quoi ? On attend sept jours ?"
-    nyra raison "Elias, je comprends que tu veuilles pouvoir retrouver quelqu'un qui est entré chez toi. Mais on peut chercher une solution sans donner à Kami accès à tout ce qu'on fait dans nos chambres."
+    nyra raison "Elias, je comprends que tu veuilles qu'on puisse identifier quelqu'un qui entre dans une chambre. Mais on peut chercher une solution sans donner à Kami accès à tout ce qu'on fait chez nous."
     $ unlock_dossier_arg("p4_preuves")
-    ryn colere "Donc on laisse Kami fouiller nos chambres dès qu'il manque une chaussette ?"
+    ryn colere "Et tu proposes quoi ? Qu'on laisse Kami fouiller nos chambres dès qu'il manque une chaussette ?"
     kael colere "Il ne manque pas une chaussette. On m'a pris la photo de ma sœur."
     $ unlock_dossier_arg("p4_voleur")
     sael mefiant "Ryn, arrête. Personne n'a dit que ce vol n'était pas grave."
@@ -650,7 +650,7 @@ label _12_0_1_1_DEBAT_TRAITRE:
     nyra raison "Noam, donne-moi ce qu'on a de concret. Un segment effacé, un accès que Kami dit autorisé, aucun nom. Si tu veux qu'on retrouve quelqu'un, il faut partir de là."
     noam desaccord "Arrête avec tes listes, Nyra ! C'est de moi qu'on parle, là !"
     "Nyra serre la mâchoire, puis se tait."
-    iris desaccord "Elle essaye de t'aider, idiot."
+    iris desaccord "Noam, ça suffit. Elle essaie de t'aider."
     noam colere "J'ai pas besoin que tout le monde m'aide !"
     "Ma voix se casse sur le dernier mot."
     elen fatigue "D'accord..."

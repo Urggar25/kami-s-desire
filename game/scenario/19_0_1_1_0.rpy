@@ -322,11 +322,11 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     nyra neutre "Attends, Kael. Il n'a pas vu de caméra, mais ça ne nous garantit pas qu'on ne puisse pas être surveillés là-dedans."
 
-    kael "Tu viens de l'entendre. Il n'a vu aucune caméra."
+    kael "J'ai compris. Mais si Kami avait surveillé les conduits, tu crois vraiment qu'elle aurait laissé Noam aller aussi loin ?"
 
-    nyra raison "Je l'ai entendu. Je ne veux juste pas qu'on envoie quelqu'un dans les conduits en lui promettant qu'il ne sera pas vu."
+    nyra raison "Peut-être. Je ne connais pas son système aussi bien que toi, mais je préfère qu'on vérifie avant de partir du principe qu'on est seuls."
 
-    kael inquietude "Ça ne veut pas dire qu'il y en a non plus."
+    kael inquietude "Ouais. De toute façon, ça ne change rien pour les chambres."
 
     "Il regarde autour de lui, de plus en plus tendu."
 
@@ -392,7 +392,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     sael mefiant "Pas seuls."
 
-    nyra "Je suis d'accord avec Sael. Et je préfère qu'on attende un peu. On vient de passer une journée à se méfier les uns des autres."
+    nyra "Pas seuls, et pas tant que les chambres ne sont pas sécurisées. Je préfère qu'on termine ça avant de retourner là-dedans."
 
     ryn colere "On part dans deux jours."
 

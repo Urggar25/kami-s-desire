@@ -188,12 +188,12 @@ label _11_0_1_1_APRES_REVEIL:
     sael neutre "Mange."
 
     "Pendant quelques minutes, ils débattent du sel, des desserts et des portions."
-    julian joie "Un malade mérite un dessert supplémentaire. C'est une question de morale."
-    iris taquin "Tu t'es découvert une maladie ?"
-    julian neutre "Le manque de reconnaissance."
+    julian joie "Un malade mérite un dessert supplémentaire. D'ailleurs, je me sens assez mal depuis ce matin."
+    iris taquin "Tu veux que je prenne ta température ?"
+    julian neutre "C'est pas nécessaire. Je manque surtout de reconnaissance."
     nyra raison "Julian, si tu veux un deuxième dessert, demande-le directement à Goumi."
-    "J'avale de travers."
-    noam surpris "Attends, il en reste ?"
+    "Julian regarde le petit pot de compote à côté de mon plateau."
+    noam surpris "Attends, c'est pour moi, ça ?"
     nyra neutre "Oui, mais finis déjà ton assiette. Je t'en ai gardé un."
 
     noam reflexion "Kael n'est pas venu ?"
@@ -269,17 +269,17 @@ label _11_0_1_1_APRES_REVEIL:
     kael colere "Vous êtes là depuis combien de temps ?"
     julian taquin "Assez pour confirmer que Kami reste une partenaire administrative remarquable."
     nyra reflechit "Attends, Kael. Elle a dit que la zone protégée était concernée. Elle n'a pas parlé du reste de la station."
-    nyra raison "Kami, je veux savoir si le délai vient du brouilleur lui-même ou de la base d'archives."
+    nyra raison "Kami, le délai de sept jours vient du brouilleur lui-même ?"
 
     play sound sfx_announce
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     $ bc_show("nyra", "raison")
     kami "Nyra, toujours prête à chercher la petite ligne en bas du contrat."
-    nyra raison "Je n'ai pas demandé le manuel. Réponds-moi sur le délai."
+    nyra raison "Réponds-moi juste sur le brouilleur. C'est lui qui impose ce délai ?"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Oui. Et non, tu n'auras ni le manuel, ni le schéma, ni un joli cours privé."
-    nyra taquin "Très bien, merci. Kael, ça te permet déjà d'écarter une hypothèse."
+    nyra taquin "D'accord, merci. Kael, au moins, on sait d'où vient le délai."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Ne prends pas cette habitude."
     $ bc_hide()

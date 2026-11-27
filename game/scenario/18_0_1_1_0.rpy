@@ -828,9 +828,9 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     ryn taquin "Je la trouvais pas mal."
 
-    nyra "Elen, je sais ce que tu essaies de faire. Je ne pense pas qu'on ait besoin d'un slogan, mais j'apprécie que tu essaies de réunir tout le monde."
+    nyra "Laissez-la avec sa pancarte. Elle y a passé un moment, quand même."
 
-    elen "Je sais."
+    elen "Merci. Je sais bien qu'un carton va pas suffire à convaincre Kami."
 
     "Son sourire retombe un peu."
 
@@ -848,7 +848,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     tomas "Parce que quelqu'un doit parler des conséquences avant qu'on arrive au jour vingt et un en faisant semblant de les découvrir."
 
-    nyra "Tomas a raison. On doit en parler maintenant, même si ça ne nous plaît pas. Ryn, laisse-le finir."
+    nyra "Ryn, je lui ai demandé de faire ce calcul. Si tu veux t'en prendre à quelqu'un parce qu'on envisage de reprendre les votes, parle-moi."
 
     "Ryn se renfonce dans sa chaise, visiblement peu convaincu."
 

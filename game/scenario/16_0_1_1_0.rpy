@@ -186,11 +186,11 @@ label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     call play_stat_dialogue("j16") from _call_play_stat_dialogue_15
 
-    mara mefiant "Super. Donc maintenant on a Kael qui barricade sa chambre et regarde sous les lits. Je l'ai toujours trouvée chelou, mais là de plus en plus."
+    mara mefiant "Super. Maintenant Kael vérifie tout le couloir avant de fermer sa porte. Il va finir par démonter sa chambre."
 
     lysa blase "Je donne encore trois jours avant qu'on commence tous à dormir avec une chaise sous la poignée."
 
-    ryn desaccord "Si quelque chose se passe dans les dortoirs, on devrait au moins savoir quoi."
+    ryn desaccord "On peut pas le laisser tout vérifier dans son coin. Et si quelqu'un est réellement entré chez lui ?"
 
     nyra raison "Ryn, je vais essayer de lui parler plus tard. Si on débarque tous devant sa chambre, il ne nous dira plus rien. Laissez-moi au moins lui demander s'il veut de l'aide."
 

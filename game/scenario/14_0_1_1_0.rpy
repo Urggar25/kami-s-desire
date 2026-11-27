@@ -41,7 +41,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra neutre "Tu as manqué l'annonce de ce matin. Il s'est passé quelque chose à la livraison."
     noam fatigue "J'avais compris."
-    nyra raison "Non, je ne crois pas que tu aies compris. Sinon tu serais probablement en train de manger avec les autres."
+    nyra raison "Tu as entendu de quoi il s'agissait, au moins ?"
 
     noam reflexion "Pourquoi ?"
 
@@ -114,7 +114,7 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra neutre "Habille-toi et descends quand tu es prêt. J'ai gardé de quoi te faire un vrai repas."
     noam fatigue "Tu parles comme Goumi."
-    nyra sourire "Oui, et je te rappelle que j'ai déjà faim depuis une heure."
+    nyra sourire "Ah, oui ? Lui, au moins, il ne passe pas dix minutes à essayer de te faire sortir de ton lit."
 
     "Elle ouvre la porte puis s'arrête une seconde."
 

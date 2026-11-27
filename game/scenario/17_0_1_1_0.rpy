@@ -197,9 +197,9 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Je baisse instinctivement les yeux. Sael me regarde brièvement, mais ne dit rien."
 
-    nyra neutre "On ne sait pas quand cette information a été ajoutée. Mara, tu as une date quelque part sur le tien ?"
+    nyra neutre "Pas si quelque chose est arrivé à nos souvenirs. Mais on ne sait même pas si cette procédure les modifie réellement."
 
-    mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
+    mara colere "Ouais, bah je veux savoir quand on a utilisé ce truc sur moi. Et pourquoi."
 
 
     ryn "Et par qui."
@@ -385,10 +385,10 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Elle ferme sa tablette."
 
-    nyra "Je propose qu'on arrête de participer aux votes tant qu'elle ne nous a pas répondu."
+    nyra "Si elle refuse de nous donner une réponse, on a un moyen de pression. On peut arrêter de participer."
 
 
-    elen inquiet "Arrêtons quoi ?"
+    elen inquiet "Attends... arrêter quoi ?"
 
     nyra "Les votes. Les propositions aussi. On suspend tout."
 
@@ -425,9 +425,9 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     tomas "Je n'ai pas dit ça."
 
-    nyra "Alors dis-moi ce que tu voudrais faire. Je suis prête à entendre une autre solution, mais je ne veux pas qu'on se contente d'attendre."
+    nyra "Alors propose autre chose. Mais j'aimerais qu'on décide aujourd'hui de ce qu'on est prêts à faire."
 
-    tomas inquiet "Je dis juste qu'on devrait pas décider ça maintenant, alors que tout le monde est à cran."
+    tomas inquiet "J'aimerais déjà qu'on finisse de discuter avant que tout le monde s'engage. Tu vois bien qu'Elias est furieux !"
 
 
     ryn colere "C'est pas de la colère. C'est du bon sens."
@@ -484,7 +484,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     "La réponse déstabilise tout le monde."
 
     $ bc_show("nyra", "surpris")
-    nyra surpris "Attends. Tu veux annuler le Conclave ?"
+    nyra surpris "Tu nous laisses vraiment arrêter les votes comme ça ?"
     $ bc_hide()
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -603,9 +603,9 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     tomas inquiet "Quatre jours."
 
-    nyra fatigue "Oui, Tomas, je sais. Je n'avais pas prévu qu'elle menacerait d'annuler le reste."
+    nyra fatigue "Oui, Tomas. J'ai mal évalué sa réaction. Je pensais qu'elle tenait davantage à ce qu'on termine le Conclave."
 
-    tomas "Je dis pas qu'il faut céder. Je dis qu'on vient peut-être de réduire tout ce qu'il nous reste à quatre jours... et qu'on n'a aucun plan derrière."
+    tomas "Bon, alors on fait quoi ? Je veux pas qu'on cède maintenant, mais on peut pas tenir quatre jours sans avoir de solution derrière."
 
     ryn colere "On en trouvera un."
 
@@ -646,7 +646,7 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     ryn desaccord "Moi je change pas d'avis."
 
-    nyra "Je ne te le demande pas, Ryn. Je veux surtout qu'on arrête de se faire des promesses qu'on ne pourra peut-être pas tenir."
+    nyra "D'accord. Mais laisse aussi Tomas nous dire ce qu'il en pense demain."
 
     "Je reste un peu en retrait. Tout le monde discute désormais des quatre jours qui nous restent, de ce qu'on pourrait demander à Kami, de ce qu'on peut encore consulter dans les Archives."
     "Moi, je n'arrive pas à quitter M16 des yeux."
