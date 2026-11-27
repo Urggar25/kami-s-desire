@@ -487,7 +487,7 @@ label _6_0_1_CONCLAVE_START:
     $ kd_direct.end()
     elen triste "Tu... Tu ne veux pas que les familles séparées puissent se rejoindre ?"
     sael neutre "Ce n'est pas le débat. On peut toujours demander des dérogations pour traverser..."
-    nyra reflechit "C'est possible mais... Les dérogations prennent parfois plusieurs mois."
+    nyra reflechit "Les dérogations peuvent prendre des mois, Sael. Pour quelqu'un qui a besoin de partir maintenant, ce n'est pas une solution."
     $ showGroup([("mara", "neutre"), ("ryn", "colere"), ("sael", "neutre"), ("iris", "reflechit"), ("noam", "inquiet"), ("nyra", "raison"), ("kael", "reflechit"), ("elen", "inquiet")])
     mara neutre "Ce qui me gêne, c'est le mot « libre ». On enlève les interdictions, mais qui surveille les routes le lendemain ?"
     ryn "Tu crois que Kami n'a pas les moyens de tout surveiller ? Elle surveille déjà le monde entier !"
@@ -495,7 +495,7 @@ label _6_0_1_CONCLAVE_START:
     ryn colere "Tu as une meilleure idée ?"
     sael reflechit "Imaginons, on ouvre les frontières."
     elen joie "Hein ?! T'as changé d'avis ?!"
-    nyra reflechit "Ecoute-la jusqu'au bout !"
+    nyra reflechit "Elen, attends. Laisse-la expliquer ce qu'elle propose."
     sael "... Demain, cinquante personnes arrivent dans mon village. On n'a pas assez de logements, pas assez de nourriture et personne pour assurer leur sécurité. Je fais quoi ?"
     sael colere "Je te rappelle que chez nous, on a pas de bons de rationnement. On a pas de distribution de nourriture."
     sael triste "On fait tout nous-mêmes. On produit nous-mêmes. On récolte nous-mêmes."
@@ -504,7 +504,7 @@ label _6_0_1_CONCLAVE_START:
     ryn reflechit "..."
     ryn colere "Mais j'en sais rien, moi ! J'ai jamais dit qu'il fallait envoyer tout le monde dans ton village !"
     elias triste "C'est pas évident votre truc, là."
-    nyra "Attends, Sael. Les jeunes peuvent déjà quitter ton village pour aller ailleurs dans Limen, non ?"
+    nyra "Sael, prenons ton village. Les jeunes peuvent déjà partir ailleurs dans Limen, non ?"
     sael triste "Certains sont déjà partis et on en a payé les conséquences."
     sael "Alors oui, en tant que cheffe de village, je fais tout pour les inciter à rester."
 
@@ -565,7 +565,7 @@ label _6_0_1_CONCLAVE_START:
     "Mara n'a pas de réponse. Pour une fois, personne ne plaisante."
     ryn desaccord "Vous pensez vraiment qu'elle va tomber en panne pendant le vote ?"
     iris "Je pense qu'elle EST déjà en panne !"
-    nyra reflechit "Ce n'est pas forcément la même chose. Les commandes locales peuvent continuer à fonctionner."
+    nyra reflechit "Attendez. Kael, les commandes locales peuvent fonctionner sans Kami, c'est bien ça ?"
     iris "Oui. Ou on peut avoir quelque chose qui répond à sa place."
     elias peur "Quoi ?"
     iris "Je n'ai pas dit que c'était le cas. J'ai dit que c'était possible."
@@ -681,11 +681,11 @@ label _6_0_1_CONCLAVE_START:
     $ bc_hide()
     kami "Je vous rappelle que le scrutin doit commencer à quatorze heures."
     $ bc_show("nyra", "raison")
-    nyra "Nous n'avons reçu aucune confirmation que le canal fonctionne normalement."
+    nyra "Avant de continuer, je veux une confirmation que le canal fonctionne normalement. On ne l'a toujours pas."
     $ bc_hide()
     kami "La procédure est parfaitement sécurisée."
     $ bc_show("nyra", "reflechit")
-    nyra "Ce n'est pas une confirmation."
+    nyra "Non, ça ne nous dit pas qui contrôle la procédure."
     $ bc_hide()
     kami "La procédure est parfaitement sécurisée."
     $ bc_show("tomas", "peur")
@@ -732,7 +732,7 @@ label _6_0_1_CONCLAVE_START:
     "Les lumières restent allumées. Le ventilateur au-dessus de la table continue de tourner."
     "Puis les douze tablettes vibrent ensemble."
     elias peur "Oh non."
-    nyra inquiet "Personne ne valide rien."
+    nyra inquiet "Ne validez surtout rien. Attendez qu'on ait compris ce qui s'affiche."
     jump _6_0_1_SIGNAL_INSTABLE
 
 label _6_0_1_SIGNAL_INSTABLE:
@@ -760,12 +760,12 @@ label _6_0_1_SIGNAL_INSTABLE:
     iris reflechit "Elle peut répondre. C'est déjà bon signe."
     $ bc_hide()
     $ bc_show("nyra", "reflechit")
-    nyra reflechit "Kami, peux-tu afficher le même texte sur nos douze tablettes ? Sans lancer le scrutin."
+    nyra reflechit "Kami, affiche le même texte sur les douze tablettes, sans ouvrir le vote. Kael, vérifie le tien."
     $ bc_hide()
     kami "Bien sûr !"
     "L'écran de Nyra reste vide."
     $ bc_show("nyra", "neutre")
-    nyra "Je n'ai toujours rien."
+    nyra "Rien ici. Les autres ?"
     $ bc_hide()
     kami "Tout est affiché."
     $ bc_show("nyra", "neutre")
@@ -774,7 +774,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     kami "Tout est affiché."
     "Nyra retourne sa tablette pour la montrer à l'écran."
     $ bc_show("nyra", "neutre")
-    nyra "Regarde."
+    nyra "Attends, regarde mon écran."
     $ bc_hide()
     kami "Je regarde."
     "Iris se lève."
@@ -806,7 +806,7 @@ label _6_0_1_SIGNAL_INSTABLE:
     tomas surpris "Hein ? Déjà ?"
     $ bc_hide()
     $ bc_show("nyra", "inquiet")
-    nyra inquiet "Personne ne touche à rien !"
+    nyra inquiet "Posez vos tablettes. Elias, ne valide surtout rien."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     $ bc_hide()
     kami "Ha ! Non, non, non. C'était une blague. Une petite blague."
@@ -863,8 +863,8 @@ label _6_0_1_SIGNAL_INSTABLE:
     sael mefiant "Alors on fait quoi ? On attend qu'il vote à notre place ?"
     kael "Elle peut couper elle-même sa connexion vers l'extérieur. Si elle le fait, celui qui parle à sa place perd l'accès."
     mara agace "Elle ne le fera pas. Elle refuse même d'admettre qu'il y a un problème."
-    nyra raison "Alors il faut le lui montrer. Phrase par phrase."
-    nyra "Tant qu'on ne sait pas qui parle, rien de ce qui sort de ces haut-parleurs n'a valeur de séance."
+    nyra raison "Dans ce cas, on reprend ce qu'on a entendu et on lui montre les contradictions."
+    nyra "Je ne reconnaîtrai pas une séance tant qu'on ne saura pas qui parle. Si vous avez une objection, dites-le maintenant."
     julian taquin "Je propose qu'on inscrive ça au règlement."
     lysa blase "Julian."
     julian neutre "Oui, bon. Plus tard."
@@ -945,9 +945,9 @@ label _6_0_1_APRES_COUPURE:
     iris "Elle a dit qu'on lui prenait sa voix."
     lysa neutre "C'est ce qu'on a tous entendu."
     iris colere "Non, on n'a pas entendu la même chose ! Elle a eu peur. Vous l'avez entendue avoir peur, vous ?"
-    nyra reflechit "Nous avons entendu une voix qui disait avoir peur. Nous ne savons pas ce qui lui est arrivé."
+    nyra reflechit "Iris, je ne nie pas ce qu'on a entendu. Mais je refuse qu'on prenne une décision en supposant qu'on sait ce qui lui arrive."
     iris "Tu veux que je te montre les enregistrements ?"
-    nyra "Je veux simplement qu'on évite de conclure trop vite."
+    nyra "Oui, garde-les. On les écoutera ensemble dès qu'on pourra."
     iris "Je ne conclus RIEN ! Je vous dis qu'elle a demandé de l'aide !"
     "Iris prend une grande inspiration, puis regarde Kael."
     iris inquiet "Elle va revenir ?"
@@ -1005,17 +1005,17 @@ label _6_0_1_APRES_COUPURE:
     iris "C'est justement ce qui me fait peur."
     mara "Kael. Le vote, il est sûr ?"
     kael reflechit "Les écrans affichent le même texte. Je ne peux pas certifier ce qui contrôle la procédure."
-    nyra raison "Alors on ne peut pas voter pour l'ouverture aujourd'hui."
+    nyra raison "Très bien. Dans ces conditions, je voterai contre l'ouverture aujourd'hui."
     ryn colere "QUOI ?!"
-    nyra "Nous venons de voir une intervention extérieure prendre la main sur les commandes. Approuver une modification aussi importante sans vérifier les garanties..."
+    nyra "Ryn, quelqu'un vient de prendre la main sur les commandes. Je ne vais pas approuver une modification des frontières tant qu'on ne sait pas si ça peut recommencer."
     ryn "Mais on vient de la récupérer ! C'est fini !"
-    nyra "Tu n'en sais rien."
+    nyra "Tu n'as aucun moyen de le vérifier."
     ryn "Et toi non plus !"
-    nyra "Justement."
+    nyra "Non. Et c'est bien pour ça que je refuse de prendre ce risque."
     ryn "Putain... On va pas renoncer parce qu'elle a commencé à dire n'importe quoi pendant dix minutes !"
     elen inquiet "Ryn, elle a essayé de voter pour nous."
     ryn "Ou quelqu'un a essayé ! On l'a empêché !"
-    nyra "Et tu proposes de lui confier immédiatement un nouveau système de frontières ?"
+    nyra "Alors explique-moi comment tu comptes garantir que la modification qu'on vote sera bien celle qui sera appliquée."
     ryn "Je propose qu'on vote sur ce qu'on a discuté, pas sur une panne !"
     "Sael s'apprête à répondre. Ryn la regarde."
     ryn "Toi, je sais que t'es contre. Ça me plaît pas, mais au moins tu me l'as dit en face."
@@ -1034,7 +1034,7 @@ label _6_0_1_APRES_COUPURE:
     ryn inquiet "Elen..."
     elen "Mais là, je sais même pas à qui on est en train de répondre."
     "Ryn secoue la tête, incapable de trouver quelque chose à lui dire."
-    nyra reflechit "Nous pouvons refuser la proposition sans prétendre que la question est réglée."
+    nyra reflechit "On peut reprendre cette proposition au prochain vote. Je sais que trois jours, c'est beaucoup pour les gens qui attendent."
     ryn colere "Pour ceux qui attendent derrière les barrières, elle est réglée pour trois jours !"
     "Julian, qui n'a presque pas ouvert la bouche, soupire."
     julian neutre "Vous allez recommencer exactement la même dispute."
@@ -1042,7 +1042,7 @@ label _6_0_1_APRES_COUPURE:
     julian "Je n'ai plus envie de parler de ça."
     noam inquiet "Tu vas où ?"
     julian "Dans ma chambre."
-    nyra "Le vote commence dans quelques minutes."
+    nyra "Julian, tu peux attendre dans le couloir si tu veux, mais il faut être là pour le scrutin dans quelques minutes."
     julian "J'ai entendu."
     elen inquiet "Tu peux pas partir comme ça..."
     julian "Si. Regarde."
@@ -1054,7 +1054,7 @@ label _6_0_1_APRES_COUPURE:
     $ j601_julian_left_vote = True
     "Il reste onze représentants dans la salle. La chaise vide de Julian attire davantage mon regard que l'écran."
     elias peur "On a le droit de voter s'il est parti ?"
-    nyra raison "Les bulletins manquants ne comptent pas comme des votes favorables. L'unanimité est de toute façon impossible sans lui."
+    nyra raison "Sans son bulletin favorable, on n'aura pas l'unanimité. Je ne vais pas le ramener de force."
     ryn colere "Alors pourquoi elle nous demande encore de voter ?!"
     kael reflechit "Parce que la procédure est lancée."
     "Une sonnerie propre, parfaitement normale, résonne dans la salle."
@@ -1230,10 +1230,10 @@ label _6_0_1_VOTE:
     kael reflechit "C'est le total qui s'affiche. Je ne peux pas te garantir autre chose."
     tomas "Je sais que tu peux pas, mais..."
     kael "On va vérifier ce qu'on peut vérifier."
-    nyra raison "Et personne ne cherchera à reconstituer les votes individuels. Les résultats restent secrets."
+    nyra raison "Kael, garde les relevés techniques. Et je ne veux pas qu'on utilise ces données pour essayer de retrouver les votes de chacun."
     $ kd_queue_character_motion("tomas", "embarrassed")
     tomas gene "Je demandais juste pour le nombre."
-    nyra "C'est bien ce que je te réponds."
+    nyra "D'accord, excuse-moi. Je voulais être claire là-dessus."
     "Iris ne regarde pas le résultat. Elle fixe l'écran noir au-dessus de la table."
     iris inquiet "Kami ?"
     "Rien."
@@ -1241,7 +1241,7 @@ label _6_0_1_VOTE:
     elias inquiet "Elle est encore coupée, Iris."
     iris colere "Je sais !"
     "Elle range sa tablette sans ajouter un mot."
-    nyra reflechit "Nous devrions conserver les relevés locaux de la panne."
+    nyra reflechit "Il faut conserver les relevés locaux avant de rentrer. Kael, dis-moi si tu as besoin d'aide."
     if j601_fracture_trace_saved:
         kael calme "Noam, transfère-moi la trace quand tu pourras. Je veux comparer les horaires."
         noam neutre "D'accord."

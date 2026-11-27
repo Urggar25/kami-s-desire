@@ -175,7 +175,7 @@ label _5_1_KAEL_NYRA:
 
     kael triste "Je viens seulement de voir l'alerte dans le relevé de Kami."
 
-    nyra raison "Je sais. Tu l'as lue combien de fois ?"
+    nyra raison "Kael, donne-moi la tablette deux secondes. Tu as relu ce message combien de fois depuis ton réveil ?"
 
     kael triste "Sept fois. J'aurais dû la voir cette nuit."
 
@@ -185,7 +185,7 @@ label _5_1_KAEL_NYRA:
 
     kael triste "J'aurais dû vérifier avant d'aller me coucher."
 
-    nyra raison "Tu avais besoin de dormir, Kael."
+    nyra raison "Tu avais besoin de dormir. Et ça ne change rien à ce qui s'est passé là-bas."
 
     kael triste "Léa a six ans, Nyra. Cette nuit, il y avait une alerte et moi, j'étais là à..."
 
@@ -195,7 +195,7 @@ label _5_1_KAEL_NYRA:
 
     kael triste "Pendant qu'elle devait peut-être enfiler un scaphandre pour survivre."
 
-    nyra raison "Tu ne pouvais pas le savoir. Et même si tu étais resté éveillé, tu n'aurais rien pu faire depuis le Conclave."
+    nyra raison "Même si tu avais passé la nuit devant cette tablette, tu n'aurais pas pu intervenir. Arrête de refaire la soirée dans ta tête, ça ne t'aidera pas."
 
     kael inquiet "Tu sais ce qui se passe quand un sas lâche à Orbite ?"
 
@@ -205,7 +205,7 @@ label _5_1_KAEL_NYRA:
     kael reflechit "Pour le scaphandre, il faut verrouiller le col, puis la gauche, la droite et le verrou central."
     kael inquiet "Après trente secondes, tu commences déjà à perdre tes forces. Peut-être quarante-cinq si tu es entraîné et que tu ne paniques pas."
 
-    nyra raison "Et Léa sait le faire. Tu lui as appris."
+    nyra raison "Justement, elle sait le faire. Tu as pris le temps de lui apprendre."
 
     kael triste "Oui."
     kael triste "C'est justement ça, le problème."
@@ -218,29 +218,29 @@ label _5_1_KAEL_NYRA:
     kael triste "Comme un jeu, pendant quatre jours cet été. Elle riait chaque fois qu'elle ratait l'attache gauche."
     kael triste "Elle disait que le scaphandre lui faisait une tête de grenouille."
 
-    nyra raison "Tu lui as peut-être sauvé la vie cette nuit. Tu n'as pas à t'en vouloir de lui avoir appris."
+    nyra raison "Si elle a réussi à se protéger, c'est peut-être grâce à toi. Garde ça en tête avant de te reprocher le reste."
 
     kael triste "Elle a six ans."
 
-    nyra raison "Je sais. Mais elle aura toujours six ans même si tu te détruis ici."
+    nyra raison "Je sais qu'elle a six ans. C'est pour ça que je veux que tu sois en état de lui parler si on arrive à la joindre."
 
     think "Nyra ne lui promet pas que tout va bien. Kael ne la croirait pas."
 
-    nyra reflechit "Le C-3, c'est bien le module résidentiel ?"
+    nyra reflechit "Attends, montre-moi le plan du module C-3. C'est bien celui des logements ?"
 
     kael triste "Oui. Il est dans le bloc réservé aux familles."
 
-    nyra reflechit "Combien de personnes ?"
+    nyra reflechit "Il y avait combien de personnes dans ce module ?"
 
     kael triste "Cent quarante."
     kael triste "Dont Léa."
 
-    nyra reflechit "Il peut s'isoler du reste de la station ?"
+    nyra reflechit "Et si le reste de la station perd de la pression, on peut isoler cette partie ?"
 
     kael inquiet "Oui. Il y a sept modules : quatre résidentiels, deux de production et un central. Chaque jonction possède ses propres sas."
     kael triste "Si une section est compromise, elle peut rester isolée plusieurs jours."
 
-    nyra raison "Donc le système a tenu cette nuit."
+    nyra raison "D'accord. Au moins, les protections ont fonctionné cette nuit."
 
     kael triste "Ouais, heureusement. Cette fois."
 
@@ -248,17 +248,17 @@ label _5_1_KAEL_NYRA:
 
     kael triste "Tu vois ? Même toi, tu dis « cette fois »."
 
-    nyra raison "Parce que c'est vrai. Je ne vais pas te dire que ça ne recommencera jamais juste pour te rassurer."
+    nyra raison "Kael, tu me demandes ce que j'en pense. Je ne vais pas t'inventer une garantie que je n'ai pas."
 
     $ kd_queue_character_motion("kael", "sigh")
     kael fatigue "Charmant."
 
-    nyra raison "Mais tu préfères que je sois honnête."
+    nyra raison "Je peux me taire si tu préfères. Mais tu m'as demandé de rester."
 
     kael triste "Je pourrai demander à la contacter ce soir."
     kael triste "Pendant les protocoles, les communications sont coupées ou filtrées."
 
-    nyra raison "Kami peut refuser. Mais si elle accepte, qu'est-ce que tu diras à Léa ?"
+    nyra raison "On va demander un appel à Kami. Elle peut refuser, mais prépare quand même ce que tu veux dire à Léa."
 
     kael triste "Que je suis désolé."
 
@@ -266,27 +266,27 @@ label _5_1_KAEL_NYRA:
 
     kael triste "Parce que je n'étais pas là quand elle avait peut-être besoin de moi."
 
-    nyra raison "Tu pouvais réparer le sas à distance depuis le Conclave ?"
+    nyra raison "Tu pouvais réellement réparer le sas d'ici ? Réfléchis avant de me répondre."
 
     kael triste "Non, évidemment."
 
-    nyra raison "Alors ne commence pas l'appel en lui demandant de te pardonner. Demande-lui comment elle va. C'est ce qu'elle attendra de toi."
+    nyra raison "Alors, si on obtient cet appel, demande-lui comment elle va avant de lui parler de tes regrets. Elle sera déjà contente de t'entendre."
 
     kael triste "..."
 
     kael triste "Tu pourrais essayer d'être un peu moins dure."
 
-    nyra neutre "Et toi, tu pourrais arrêter de chercher une raison de te punir."
+    nyra neutre "Et mange quelque chose. Tu te fais du mal pour rien depuis ce matin."
 
     think "Kael laisse échapper un petit rire. Il ne va pas mieux, mais au moins il relève enfin les yeux."
 
     kael triste "J'ai la tête qui tourne."
 
-    nyra taquin "Alcool ou culpabilité ?"
+    nyra taquin "Attends, tu parles de ta cuite ou de la station ?"
 
     kael fatigue "Les deux."
 
-    nyra taquin "Certains conseillent de reboire après une cuite. C'est une idée catastrophique, donc parfaitement adaptée à notre semaine."
+    nyra taquin "On m'a déjà conseillé de reboire le lendemain. Ne fais surtout pas ça. Je ne me suis jamais sentie aussi mal."
 
     kael triste "Tu veux me tuer ? Déjà que…"
 
@@ -294,11 +294,11 @@ label _5_1_KAEL_NYRA:
 
     kael triste "Rien."
 
-    nyra raison "Je crois savoir exactement à quoi tu viens de repenser."
+    nyra raison "Ah, ça y est. Je crois que tu te souviens de la soirée."
 
     kael triste "Ne te moque pas."
 
-    nyra raison "Je ne me moque pas. Ça nous a fait du bien de penser à autre chose pendant quelques heures."
+    nyra raison "Je ne te reproche rien. J'ai passé un bon moment moi aussi, et je ne vais pas m'en excuser."
 
     "Kael se relève lentement."
 
@@ -310,27 +310,27 @@ label _5_1_KAEL_NYRA:
     kael calme "Je vais essayer d'avaler un bout."
     kael calme "Après... je verrai."
 
-    nyra raison "Après, tu verras."
+    nyra raison "On règle ce qu'on peut régler maintenant. Pour le reste, on verra."
 
     think "Il passe devant moi sans rien dire. À son regard, je comprends qu'il sait que j'ai tout entendu."
 
     hide kael
     with moveoutright
 
-    nyra raison "Tu as tout entendu ?"
+    nyra raison "Noam, depuis combien de temps tu es là ?"
 
     noam inquiet "Oui."
 
-    nyra neutre "Bien."
+    nyra neutre "D'accord. Garde ça pour toi, s'il te plaît."
 
     noam inquiet "Bien ?"
 
     nyra raison "Oui."
-    nyra raison "Une crise à Orbite ne se gère jamais seul. Kael avait besoin de parler à quelqu'un."
+    nyra raison "À Orbite, on apprend vite à ne pas laisser quelqu'un gérer une crise seul. Kael avait surtout besoin qu'on reste avec lui."
 
     noam inquiet "Tu n'y es pas allée doucement."
 
-    nyra raison "Il ne voulait pas que j'y aille doucement. Il voulait une réponse honnête."
+    nyra raison "J'aurais pu lui dire que tout allait bien. Il m'aurait demandé de sortir."
 
     hide nyra
     with moveoutright
@@ -744,26 +744,26 @@ label _5_1_INFIRMERIE_KAEL:
 
     kael triste "Si je vote demain, je ne saurai même pas si c'est vraiment mon choix ou seulement ma peur."
 
-    nyra raison "Alors ne force pas une réponse. Repose-toi."
+    nyra raison "Kael, pose la tablette. Tu peux te reposer avant de décider."
 
     mara stress "Demain n'est pas exactement la journée idéale pour rester au lit."
 
-    nyra raison "Je n'ai pas dit que c'était idéal. J'ai dit qu'il avait le droit de ne pas voter."
+    nyra raison "Je n'ai jamais dit que c'était une bonne solution. Je rappelle juste qu'il peut s'abstenir."
 
     elias inquiet "La participation n'est pas obligatoire ?"
 
     think "Elias pose la question mécaniquement, puis découvre nos regards."
 
-    nyra raison "Elle ne l'est pas. Les règles sont claires : une absence retire seulement le bulletin du décompte."
+    nyra raison "Attendez. Regardez les règles sur vos tablettes : un bulletin absent est simplement retiré du décompte."
 
     kael triste "Mais si je ne vote pas…"
 
-    nyra raison "Ton absence sera enregistrée, mais elle ne comptera pas comme un vote contre. C'est la même chose qu'une abstention."
+    nyra raison "Kael, ton absence sera enregistrée, mais ce n'est pas un vote contre. Ça revient à t'abstenir."
 
     mara mefiant "Tu dis ça comme si c'était simple."
 
-    nyra raison "Non."
-    nyra raison "Je répète la règle. Pour une fois, elle est assez claire."
+    nyra raison "Non, ne me fais pas dire ça."
+    nyra raison "Je vous explique la règle. Je ne suis pas en train de choisir à sa place."
 
     think "Tout le monde se tait. Cette règle n'avait encore jamais semblé aussi importante."
 
@@ -771,13 +771,13 @@ label _5_1_INFIRMERIE_KAEL:
 
     think "Je le dis presque pour moi. Si quelqu'un ne participe pas, il ne peut pas empêcher un texte d'être adopté."
 
-    nyra raison "Oui."
+    nyra raison "Oui, c'est ce que prévoit le règlement."
 
     think "Mara réfléchit. Elias baisse les yeux. Kael semble déjà avoir pris sa décision."
 
     kael calme "Je vais voter."
 
-    nyra raison "Dans cet état ?"
+    nyra raison "Tu veux vraiment le faire venir dans cet état ?"
 
     kael triste "Oui."
 

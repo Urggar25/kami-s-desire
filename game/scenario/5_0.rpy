@@ -1095,7 +1095,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     "Deux coups métalliques résonnent derrière la porte."
     kael "Elias ? Noam ? Vous m'entendez ?"
     elias sourire "OUI !"
-    nyra "On vous entend. Éloignez-vous du panneau."
+    nyra "On vous entend. Reculez tous les deux, on ouvre."
     "Un cliquetis, puis le verrou cède."
     hide screen j50_emergency_lighting
     stop music fadeout 0.5
@@ -1105,7 +1105,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     kael inquiet "Vous avez respiré de la fumée ? Quelqu'un est blessé ?"
     noam "Non. On va bien."
     elias "La ventilation n'a pas lâché."
-    nyra reflechit "Je voudrais d'abord savoir pourquoi l'alerte automatique n'a rien envoyé."
+    nyra reflechit "Kael, vérifie le contrôleur. Je vais reprendre les alertes, il y a forcément quelque chose à comprendre."
     kael reflechit "Et moi, pourquoi le contrôleur d'accès a pris une panne locale pour un problème de pression."
     elias gene "Je peux expliquer le début."
     kael "Je t'écoute."
@@ -1123,7 +1123,7 @@ label _5_0_1_OBSERVATION_ARRIVEE:
     $ kd_direct.simultaneous(("kael", "nyra"))
     "Kael se passe une main sur le visage."
     $ kd_direct.end()
-    nyra neutre "C'est donc une erreur humaine, suivie d'une erreur de diagnostic du système."
+    nyra neutre "D'accord. Elias, on parlera du café après. Ce qui m'intéresse maintenant, c'est pourquoi le système a verrouillé la salle."
     noam "On peut dire ça."
     if j50_wire_completed:
         kael reflechit "Le secours est rétabli. C'est déjà ça."
@@ -1144,16 +1144,16 @@ label _5_0_1_OBSERVATION_ARRIVEE:
         kael "Et vous n'avez pas insisté après ?"
         noam "Non."
         kael "Tant mieux. Les connecteurs auraient pu chauffer davantage."
-    nyra reflechit "Je vais consigner l'incident. Et surtout la réaction du verrou. Le café n'explique pas pourquoi la salle s'est isolée."
+    nyra reflechit "Je note tout. Même si on règle la panne, je veux qu'on garde une trace de ce qui s'est passé."
     noam "Ça pourrait se reproduire ?"
-    nyra "Nous n'en savons rien. C'est précisément ce que nous allons vérifier."
+    nyra "Je ne sais pas. Pour l'instant, on ne laisse personne intervenir seul sur ce matériel."
     kael calme "Elias, tu restes avec moi pour regarder le contrôleur. Pas de réparation solitaire."
     elias "D'accord."
     kael "Et tu poses ton prochain café dans le couloir."
     elias sourire "Je vais surtout prendre une tasse avec un couvercle."
     kael "Et la boire loin des consoles."
     "Elias se penche déjà vers les relevés interrompus."
-    nyra reflechit "Ne touche plus aux données. Pas avant qu'on ait tout sauvegardé."
+    nyra reflechit "Elias, attends. Laisse les données comme elles sont, je veux une copie avant qu'on les modifie."
     elias inquiet "Oui. Pardon."
     "En quittant la pièce, je remarque que le dernier rapport affiché à l'écran ne correspond plus à celui que nous regardions avant l'accident."
     think "Probablement à cause de la coupure. Il faudra que je demande à Elias."
@@ -1317,15 +1317,15 @@ label _5_0_NUIT_ECOUTER:
         "Il soupire et reprend sa marche."
     else:
         "Les pas s'éloignent dans le couloir. Un peu plus loin, deux voix de femmes me parviennent, étouffées par la porte."
-        nyra "Et à Nexus, vous vous connaissiez déjà ?"
+        nyra "Au fait, Iris, tu connaissais déjà Julian avant d'arriver ici ?"
         iris "Qui, Julian ?"
         "Une porte coulisse quelque part. Je perds la réponse d'Iris."
-        nyra "Je demandais juste si vous aviez travaillé ensemble."
+        nyra "Il parle beaucoup de Nexus. Je me demandais si vous aviez fréquenté les mêmes personnes."
         iris "Non, enfin... pas vraiment. Il était surtout..."
         "Un chariot passe en grinçant. La fin de sa phrase disparaît sous le bruit des roues."
-        nyra "Ah. D'accord."
+        nyra "Je vois. Il ne t'en a jamais parlé, alors."
         iris "Pourquoi ?"
-        nyra "Pour rien. Bonne nuit, Iris."
+        nyra "Je voulais savoir si je pouvais lui demander un service. Laisse tomber, je verrai avec lui demain. Bonne nuit."
         "Je n'entends plus que des pas. Je n'ai même pas compris ce qui les intéressait tant chez Julian."
     jump _5_0_NUIT_RETOUR
 

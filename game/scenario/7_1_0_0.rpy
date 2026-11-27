@@ -146,7 +146,7 @@ label _7_1_0_CHAMBRE_NOAM:
 
     noam surpris "Qu'est-ce qui se passe ?"
 
-    nyra inquiet "Laisse-nous entrer."
+    nyra inquiet "Laisse-nous entrer, Noam. Ferme la porte derrière nous."
 
     noam inquiet "Vous êtes déjà pratiquement dedans."
 
@@ -170,7 +170,7 @@ label _7_1_0_CHAMBRE_NOAM:
 
     noam inquiet "{i}Vous me faites peur.{/i}"
 
-    nyra inquiet "{i}C'est préférable. Tu comprendras plus vite.{/i}"
+    nyra inquiet "{i}Viens voir. On n'a pas le temps de tout t'expliquer ici.{/i}"
 
     think "Nyra se penche jusqu'à mon oreille."
 
@@ -188,13 +188,13 @@ label _7_1_0_CHAMBRE_NOAM:
 
     noam surpris "{i}Vous êtes sûrs ?{/i}"
 
-    nyra raison "{i}Nous avons vu une main entre deux caisses. Iris l'a touchée.{/i}"
+    nyra raison "{i}On a vu une main entre les caisses. Iris a vérifié qu'elle était vivante. Pour l'instant, personne d'autre ne doit approcher du sas.{/i}"
 
     iris inquiet "{i}Elle est glacée. Je ne sais même pas si elle est encore consciente.{/i}"
 
     noam determine "{i}Pourquoi vous ne l'avez pas sortie ?{/i}"
 
-    nyra colere "{i}Parce qu'il y a trois caméras dans le sas et que nous ignorons si Kami l'a déjà repérée.{/i}"
+    nyra colere "{i}Il y a trois caméras dans le sas. Si Kami ne l'a pas déjà repérée, évitons de lui faciliter le travail.{/i}"
 
     tomas inquiet "{i}On a replacé la bâche exactement comme elle était. Enfin... je crois.{/i}"
 
@@ -204,7 +204,7 @@ label _7_1_0_CHAMBRE_NOAM:
 
     noam inquiet "{i}Qui d'autre est au courant ?{/i}"
 
-    nyra neutre "{i}Personne. La livraison est arrivée plus tôt que prévu. Nous étions les premiers dans le sas.{/i}"
+    nyra neutre "{i}Personne à notre connaissance. La livraison est arrivée en avance et on était les premières sur place.{/i}"
 
     iris determine "{i}Mais elle ne tiendra pas longtemps dans cet état. Il faut y retourner maintenant.{/i}"
 
@@ -267,7 +267,7 @@ label _7_1_0_SAS_DECOUVERTE:
 
     think "Nous dégageons son visage. Un souffle faible passe entre ses lèvres, suivi d'un bruit rauque."
 
-    nyra inquiet "Combien de temps peut-elle tenir ?"
+    nyra inquiet "Iris, combien de temps on a avant que son état s'aggrave ?"
 
     iris colere "Je ne sais pas. Pas longtemps si on la laisse ici."
 
@@ -282,17 +282,17 @@ label _7_1_0_SAS_DECOUVERTE:
 
     tomas inquiet "On pourrait l'emmener à l'infirmerie."
 
-    nyra raison "L'infirmerie est surveillée. Les entrées, le matériel utilisé, les stocks médicaux. Tout."
+    nyra raison "Si on va à l'infirmerie, il faudra expliquer l'entrée et le matériel qu'on utilise. Les stocks médicaux sont surveillés aussi."
 
     noam reflechit "Et si Kami la voit ?"
 
-    nyra raison "Elle a franchi une frontière sans autorisation. Tu connais la sanction."
+    nyra raison "Elle a franchi une frontière sans autorisation. On ne la livre pas à Kami avant d'avoir évalué nos options."
 
     tomas inquiet "L'exécution immédiate."
 
     iris desaccord "Pas ici. Les Commandements ne s'appliquent pas dans le Conclave."
 
-    nyra raison "Nous l'espérons. Elle n'est pas représentante et Kami adore les interprétations qui l'arrangent."
+    nyra raison "Je ne compterais pas là-dessus. Elle n'est pas représentante, et Kami pourrait décider que l'exception ne s'applique pas à elle."
 
     pause 0.4
 
@@ -316,7 +316,7 @@ label _7_1_0_SAS_DECOUVERTE:
 
     tomas inquiet "{i}Tu crois vraiment qu'on peut la cacher ? Parce que ça signifie mentir à Kami. Et manipuler les caméras. Et les registres de livraison.{/i}"
 
-    nyra raison "{i}Et si on la prévient on sait très bien comment elle va finir...{/i}"
+    nyra raison "{i}Je veux d'abord savoir si on peut la mettre à l'abri. Si on prévient Kami maintenant, on ne pourra plus revenir en arrière.{/i}"
 
     iris colere "{i}Pendant que nous discutons, cette fille gèle. On a pas le temps de débattre.{/i}"
 
@@ -350,13 +350,13 @@ label _7_1_0_CACHER_PLAN:
 
     iris determine "Il faut d'abord la réchauffer. Ma chambre est la plus proche et j'ai un brouilleur."
 
-    nyra raison "Le problème n'est pas la destination. C'est le trajet."
+    nyra raison "Iris, tu connais le matériel dont elle aura besoin. Moi, je vais m'occuper de dégager le trajet."
 
     noam reflechit "Les caméras couvrent le sas, le couloir et l'entrée du dortoir."
 
     tomas panne "Donc c'est impossible."
 
-    nyra colere "Si tu répètes ça assez souvent, elle finira effectivement par mourir."
+    nyra colere "Ça, j'ai compris. Donne-moi une estimation du temps qu'il nous reste, qu'on puisse décider."
 
     tomas inquiet "Je cherche seulement à être réaliste."
 
@@ -377,13 +377,13 @@ label _7_1_0_CACHER_PLAN:
 
     noam neutre "Je lui expliquerai."
 
-    nyra raison "Pas dans le couloir. Tu entres dans sa chambre avant de lui dire quoi que ce soit."
+    nyra raison "Ne lui en parle pas dans le couloir. Fais-le entrer chez lui avant de lui montrer quoi que ce soit."
 
     iris determine "Je reste ici avec elle."
 
     tomas inquiet "Moi aussi."
 
-    nyra raison "Je vais vérifier le trajet jusqu'à la chambre d'Iris. Si quelqu'un approche, je trouve une raison de l'éloigner."
+    nyra raison "Je vérifie le trajet jusqu'à la chambre d'Iris. Si je croise quelqu'un, je m'arrange pour qu'il ne soit pas sur votre route."
 
     noam determine "Je reviens avec Kael."
 
@@ -529,11 +529,11 @@ label _7_1_0_PANNE:
 
     kael reflechit "Le routeur est derrière ce panneau."
 
-    nyra raison "Le couloir est vide. J'ai bloqué la porte de la salle de repos avec un chariot. Si quelqu'un sort, il perdra quelques secondes."
+    nyra raison "Le couloir est dégagé. J'ai mis un chariot devant la salle de repos pour ralentir les gens qui voudraient sortir."
 
     tomas inquiet "C'est vraiment notre plan ? On a quelques secondes pour la transporter à l'autre bout du Conclave ?"
 
-    nyra raison "Tu préfères demander l'autorisation ? Tu as un meilleur plan ?"
+    nyra raison "Oui, je sais que j'ai pris cette décision toute seule. Si tu as une autre solution, je t'écoute."
 
     tomas panne "N-Non."
 
@@ -557,7 +557,7 @@ label _7_1_0_PANNE:
 
     kael reflechit "J'accède au serveur logistique... puis à la surveillance..."
 
-    nyra inquiet "Combien de temps ?"
+    nyra inquiet "Kael, dis-moi combien de temps on a. Il faut qu'on soit prêts quand tu coupes."
 
     kael calme "Maintenant."
 
@@ -633,7 +633,7 @@ label _7_1_0_TRANSFERT_DEBUT:
     think "Nous sortons du sas. Le dortoir entier baigne dans le rouge."
     think "Nyra court devant nous et vérifie chaque embranchement."
 
-    nyra determine "Personne à gauche. Continuez."
+    nyra determine "À gauche, c'est dégagé. Avancez, je vous couvre."
 
     tomas inquiet "Elle respire encore ?"
 
@@ -653,7 +653,7 @@ label _7_1_0_TRANSFERT_DEBUT:
 
     think "Une porte s'ouvre au bout du couloir. Nyra pousse brutalement le chariot devant l'entrée."
 
-    nyra colere "Maintenance électrique ! Restez dans votre chambre !"
+    nyra colere "Maintenance électrique ! Ne sortez pas, on vous préviendra quand ce sera terminé !"
 
     elias "C'était quoi, ce bruit ?"
 
@@ -684,7 +684,7 @@ label _7_1_0_TRANSFERT_DEBUT:
 
     noam inquiet "Nyra, la porte."
 
-    nyra determine "Je l'ai. Sortez. Il ne faut pas qu'on nous voie tous ici quand les caméras reviennent."
+    nyra determine "Je m'en occupe. Partez, on ne doit pas tous être ici quand les caméras se rallumeront."
 
     iris determine "Je reste avec elle."
 
@@ -722,17 +722,17 @@ label _7_1_0_TRANSFERT_DEBUT:
 
     tomas inquiet "{i}On l'a fait ?{/i}"
 
-    nyra raison "{i}Ne regarde pas la porte d'Iris.{/i}"
+    nyra raison "{i}Noam, arrête de surveiller la porte d'Iris. Regarde-moi quand je te parle.{/i}"
 
     tomas inquiet "{i}Je ne la regardais pas.{/i}"
 
-    nyra raison "{i}Tu la fixes depuis que les lumières sont revenues.{/i}"
+    nyra raison "{i}Ça fait deux minutes que tu la fixes. Quelqu'un va finir par te demander ce qu'il y a.{/i}"
 
     noam determine "{i}On se sépare. On agit normalement.{/i}"
 
     tomas panne "{i}Normalement. Oui. Je suis parfaitement normal.{/i}"
 
-    nyra taquin "{i}Tu ressembles à quelqu'un qui vient de cacher un cadavre.{/i}"
+    nyra taquin "{i}Tu as une tête épouvantable. Si on te demande, dis que tu t'es cogné pendant la coupure.{/i}"
 
     tomas inquiet "{i}Ce n'est pas un cadavre !{/i}"
 
@@ -742,7 +742,7 @@ label _7_1_0_TRANSFERT_DEBUT:
 
     noam inquiet "{i}Kael est encore dans le sas.{/i}"
 
-    nyra raison "{i}Il nous rejoindra. Si tu retournes le chercher maintenant, tu attireras l'attention.{/i}"
+    nyra raison "{i}Il sait où nous retrouver. Ne retourne pas le chercher, on attirera l'attention sur lui.{/i}"
 
     think "Elle a raison. Pourtant, quelque chose me dérange dans le silence du sas."
 
@@ -858,7 +858,7 @@ label _7_1_0_APRES_MIDI:
 
     mara mefiant "Et notre spécialiste d'Orbite a disparu juste après. Quelle coïncidence."
 
-    nyra neutre "Kael aime les systèmes. Une panne lui donne probablement l'impression d'avoir été personnellement invité."
+    nyra neutre "Kael est probablement encore devant une console. Je lui ai dit de me prévenir quand il aurait fini."
 
     tomas panne "Oui. Voilà. C'est exactement ça."
 

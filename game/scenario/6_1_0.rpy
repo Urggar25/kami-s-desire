@@ -152,7 +152,7 @@ label _6_1_0_CAFETERIA:
 
     noam hesitation "Vous avez tous bien dormi ?"
 
-    nyra taquin "Tentative admirable. Transition catastrophique."
+    nyra taquin "Tu peux changer de sujet, tu sais. Personne ne t'oblige à faire une transition."
 
     noam sourire "Je fais ce que je peux."
 
@@ -605,7 +605,7 @@ label _6_1_0_DEBAT:
 
     noam inquiet "Ce n'était pas une bagarre."
 
-    nyra degout "Effectivement. Pour une bagarre, il faudrait que les deux personnes aient frappé."
+    nyra degout "Une bagarre ? Attends. Qui d'autre a frappé ? Parce que pour l'instant, je n'en vois qu'un."
 
     ryn triste "J'ai déconné."
 
@@ -625,7 +625,7 @@ label _6_1_0_DEBAT:
 
     ryn colere2 "Merci, Kael. Vraiment. J'avais besoin de ton analyse."
 
-    nyra colere "Tu recommences."
+    nyra colere "Arrête. On vient de te demander de ne pas recommencer."
 
     tomas inquiet "On devrait peut-être... enfin... laisser Noam s'asseoir avant de continuer."
 

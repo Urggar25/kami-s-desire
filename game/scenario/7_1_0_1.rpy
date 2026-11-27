@@ -37,7 +37,7 @@ label _7_1_0_DECLARER_PLACEHOLDER:
 
     noam inquiet "Si on la déplace en secret et qu'elle meurt, on ne pourra même pas appeler à l'aide."
 
-    nyra raison "Et si Kami décide de l'exécuter ?"
+    nyra raison "Et si elle décide de l'exécuter ? Vous avez prévu quoi dans ce cas ?"
 
     noam determine "Alors on l'en empêchera. Mais là, elle a besoin de soins tout de suite."
 
@@ -51,11 +51,11 @@ label _7_1_0_DECLARER_PLACEHOLDER:
 
     pause 0.4
 
-    nyra raison "Très bien. Mais nous parlons avant qu'elle impose sa version des règles."
+    nyra raison "Très bien. Alors on lui parle ensemble, et on lui demande de citer les règles avant qu'elle prenne une décision."
 
     think "Nyra se tourne vers la caméra fixée au-dessus de la porte. Son voyant reste parfaitement blanc."
 
-    nyra determine "Kami. Nous savons que tu nous regardes. Il y a une personne vivante dans la livraison."
+    nyra determine "Kami, écoute-nous. On a trouvé une personne vivante dans la livraison. On a besoin de savoir ce que tu comptes faire."
 
     pause 0.8
 
@@ -107,7 +107,7 @@ label _7_1_0_1_KAMI_SAS:
 
     tomas inquiet "Elle va vraiment tirer ici ?"
 
-    nyra determine "Personne ne bouge."
+    nyra determine "Restez où vous êtes. Laissez-moi lui parler."
 
     noam colere "Kami, arrête."
 
@@ -130,22 +130,22 @@ label _7_1_0_1_KAMI_SAS:
         ("noam", "colere"),
     ])
 
-    nyra raison "En vertu de quelle règle ?"
+    nyra raison "Kami, cite-nous la règle exacte qui te permet de faire ça."
     noam determine "Attends. Tu veux vraiment tuer quelqu'un ici ? Alors on va reprendre tes propres règles."
     call refutation_run("j7_anya")
     if _return[0] == "success":
         call play_noam_interupt
-        nyra raison "Voilà. Ce que tu trouves gênant n'est pas forcément interdit."
+        nyra raison "Tu viens de le confirmer. Maintenant, explique-nous ce qu'elle a enfreint ici."
     else:
-        nyra determine "Tu peux t'énerver autant que tu veux. Montre-nous l'article qui t'autorise à tirer."
+        nyra determine "Je veux le texte, pas ton avis sur elle. Montre-nous l'article qui t'autorise à tirer."
 
     pause 0.5
 
-    nyra determine "Les Commandements sont suspendus dans le Conclave. Tu nous l'as toi-même confirmé."
+    nyra determine "Tu nous as dit que les Commandements étaient suspendus dans le Conclave. Tu peux difficilement nous reprocher de te prendre au mot."
 
     noam surpris "Nyra..."
 
-    nyra raison "Et aucune règle du Conclave n'interdit à une personne non représentante d'y entrer."
+    nyra raison "Et le règlement du Conclave n'interdit pas la présence d'une personne qui n'est pas représentante."
 
     iris determine "Elle n'a agressé personne. Elle n'a rien volé. Elle est juste en train de mourir de froid."
 
@@ -172,7 +172,7 @@ label _7_1_0_1_KAMI_SAS:
         ("noam", "determine"),
     ])
 
-    nyra raison "Tu peux trouver ça impoli. Kael vient de démontrer hier que l'impolitesse n'est pas une infraction."
+    nyra raison "Hier, Kael t'a parlé comme il voulait et tu ne l'as pas sanctionné. Il n'y a donc pas de règle qui interdit de te déplaire."
 
     iris taquin "Elle marque un point."
 
@@ -199,7 +199,7 @@ label _7_1_0_1_KAMI_SAS:
 
     noam determine "Dans les deux cas, ton Conclave s'arrête aujourd'hui. Plus de représentants, plus de votes, plus de petit jeu."
 
-    nyra raison "Et même si le sas résistait, tu contaminerais ou détruirais une partie des ressources que tu viens de nous envoyer."
+    nyra raison "Si tu abîmes le sas, tu risques aussi de détruire les provisions. Tu veux vraiment gérer une deuxième livraison pour nous débarrasser d'une personne ?"
 
     iris colere "Alors rengaine ton jouet et laisse-nous la soigner."
 
@@ -291,7 +291,7 @@ label _7_1_0_1_TRANSPORT_INFIRMERIE:
 
     think "Nous la soulevons avec les couvertures de transport. Son corps est léger, beaucoup trop léger."
 
-    nyra raison "Je passe devant."
+    nyra raison "Je passe devant. Iris, garde un œil sur elle."
 
     iris inquiet "Gardez sa tête droite. Sa respiration est déjà assez mauvaise comme ça."
 
@@ -310,7 +310,7 @@ label _7_1_0_1_TRANSPORT_INFIRMERIE:
     if not _j7111_qte_2["success"]:
         call _7_1_1_1_QTE_ECHEC(2) from _call_j7111_qte_fail_2
 
-    nyra determine "L'infirmerie est ouverte. Encore quelques mètres."
+    nyra determine "La porte est ouverte. Allez-y, je tiens le passage."
 
     think "Le seuil est étroit. Tomas pivote le premier pendant que je dois maintenir tout le poids sans cogner le chambranle."
 
@@ -348,7 +348,7 @@ label _7_1_1_1_QTE_ECHEC(qte_index=1):
     else:
         think "Le montant de la porte accroche la couverture et nous force à nous immobiliser."
         pause 1.0
-        nyra colere "Ne tirez pas, vous allez la faire tomber. Je dégage le tissu."
+        nyra colere "Attendez, arrêtez de tirer ! Elle va tomber. Je dégage le tissu."
         pause 1.0
         iris inquiet "Maintenez sa tête. Sa respiration devient irrégulière."
         pause 1.0
@@ -394,7 +394,7 @@ label _7_1_0_1_INFIRMERIE_MATIN:
 
     elias colere "Je sais, bordel. J'essaie juste de pas faire une connerie."
 
-    nyra raison "Vous avez besoin de nous ?"
+    nyra raison "Iris, dis-nous ce qu'il te faut. Si on n'est pas utiles ici, on sort."
 
     sael determine "Pas tous. Trop de monde ne fera que nous gêner. Iris peut rester."
 
@@ -410,7 +410,7 @@ label _7_1_0_1_INFIRMERIE_MATIN:
 
     tomas inquiet "On devrait peut-être chercher son identité. Dans les registres de la livraison, il y a forcément..."
 
-    nyra raison "Plus tard. Laissons-les travailler."
+    nyra raison "On en parlera après. Laisse-les travailler."
 
     noam neutre "Prévenez-nous dès qu'elle se réveille."
 
@@ -544,7 +544,7 @@ label _7_1_0_1_ANNONCE_INVITEE:
 
     noam determine "On répartira nos portions. Personne ne la laissera mourir de faim."
 
-    nyra raison "Et puisque tu as officiellement reconnu sa présence, chaque prélèvement à l'infirmerie sera justifié."
+    nyra raison "Puisque tu reconnais officiellement qu'elle est ici, je te demande aussi de reconnaître les prélèvements médicaux nécessaires pour la soigner."
 
     $ hideGroup()
 
@@ -828,7 +828,7 @@ label _7_1_0_1_ANNONCE_VOTE:
     sael mefiant "Ou aux réseaux qui utilisent les cargaisons de recruter plus facilement."
     $ unlock_dossier_arg("p3_reseaux")
 
-    nyra raison "Nous ignorons encore si cette femme appartenait à un réseau."
+    nyra raison "On ne sait même pas si cette femme appartenait à un réseau. Je ne veux pas qu'on présente ça comme un fait."
 
     lysa blase "Attendez au moins qu'elle se réveille avant de transformer son coma en argument électoral."
 
