@@ -1281,6 +1281,14 @@ Il peut soutenir une modification des Commandements, mais seulement s'il estime 
 - **Ambivalence :** ses méthodes peuvent protéger le groupe, mais aussi le priver d'une part de son autonomie. Montrer les résultats autant que les objections et les échecs.
 - **Progression :** J1–J6, autorité pratique et légitimité acquise par ses actes ; J7–J15, influence plus visible lorsque Kami devient imprévisible ; après J16, le besoin de contrôle et ses intérêts personnels rendent ses décisions plus contestables. Ne pas anticiper les révélations de son passé.
 
+### Direction d'écriture — J11 à J20
+- J11–J15 : elle s'appuie sur les habitudes déjà acquises dans le groupe. Elle propose des solutions concrètes, négocie les responsabilités et s'attend parfois à une adhésion qu'elle n'a pas obtenue. Les autres peuvent lui rappeler qu'elle n'est pas leur supérieure.
+- J16–J20 : devant les anomalies et les crises, elle cherche à contrôler l'accès aux informations, la vérification des faits et la coordination du groupe. Elle peut avoir raison sur le danger et tort sur la manière de traiter quelqu'un. Sa peur de l'enfermement peut rendre son jugement moins souple, sans révéler son secret au joueur.
+- Ne pas confondre autorité et certitude : elle reconnaît ce qu'elle ignore, respecte les compétences techniques et médicales, et ne peut déduire une identité ou une culpabilité sans indice. Laisser Kael, Iris, Sael, Lysa et Noam défendre leurs propres décisions.
+- Ses interventions ordinaires restent humaines : elle peut s'amuser, se fatiguer, perdre patience pour une broutille ou aider sans contrepartie. Pas de succession d'ordres, de maximes ou de répliques en staccato.
+- Préserver les informations et les conséquences propres à chaque branche. Son intérêt pour la logistique ne constitue pas à lui seul une preuve de ses activités clandestines. Ne pas accélérer les révélations ultérieures.
+
+
 ## 5. Histoire personnelle et fantômes
 
 ### Avant la prise de pouvoir de Kami
