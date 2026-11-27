@@ -223,6 +223,11 @@ init -20 python:
         if kd_gamepad_cursor_suspended():
             return mapped
 
+        # X est réservé à l'accélération pendant la réfutation :
+        # ne pas générer de clic droit ni d'action secondaire concurrente.
+        if renpy.get_screen("refutation_screen") is not None and event_name in ("pad_x_press", "pad_x_release", "repeat_pad_x_press"):
+            return [event_name]
+
         if event_name == "pad_a_press":
             mapped = ["dismiss", "button_ignore", "bar_activate", "drag_activate", "viewport_drag_start"]
             kd_gamepad_cursor_sync_from_mouse()
@@ -279,8 +284,9 @@ screen gamepad_virtual_cursor():
         key "pad_dpdown_release" action Function(kd_gamepad_cursor_set_dir, "down", False)
 
         # Clic secondaire : A est mappe plus bas niveau pour preserver l'avance dialogue.
-        key "pad_x_press" action Function(kd_gamepad_cursor_button_down, 3)
-        key "pad_x_release" action Function(kd_gamepad_cursor_button_up, 3)
+        if renpy.get_screen("refutation_screen") is None:
+            key "pad_x_press" action Function(kd_gamepad_cursor_button_down, 3)
+            key "pad_x_release" action Function(kd_gamepad_cursor_button_up, 3)
 
         # Confort : R1 accelere le curseur, les gachettes simulent la molette.
         key "pad_rightshoulder_press" action Function(kd_gamepad_cursor_set_fast, True)

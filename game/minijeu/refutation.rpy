@@ -21,6 +21,7 @@ init -1 python:
     import re as _rf_re
     import math as _rf_math
     import time as _rf_time
+    import pygame_sdl2 as _rf_pygame
 
     REFUTATIONS = {}
 
@@ -36,6 +37,14 @@ init -1 python:
     RF_CHIP_W = 540
     RF_CHIP_H = 64
     RF_CHIP_GAP = 8
+    RF_FAST_MULTIPLIER = 3.0
+
+    def rf_ctrl_held():
+        # Lire l'état physique : pas de Ctrl bloqué après un changement de fenêtre.
+        try:
+            return bool(_rf_pygame.key.get_focused() and (_rf_pygame.key.get_mods() & _rf_pygame.KMOD_CTRL))
+        except Exception:
+            return False
 
     _RF_FAULT = _rf_re.compile(r"\[\[(.+?)\]\]")
 
@@ -111,6 +120,8 @@ init -1 python:
             self.last_fragment = None
             self.result = None
             self._clock = None
+            self.fast_pad = False
+            self.fast_active = False
             _rf_runtime.state = self
 
         @property
@@ -153,6 +164,9 @@ init -1 python:
         def chip_y(self, index):
             return RF_CHIP_Y + index * (RF_CHIP_H + RF_CHIP_GAP)
 
+        def set_fast_pad(self, enabled):
+            self.fast_pad = bool(enabled)
+
         def tick(self, dt):
             # Temps réel (et non nombre de déclenchements du timer) : le
             # rythme reste juste même si l'affichage ralentit.
@@ -162,6 +176,12 @@ init -1 python:
             self._clock = now
             if self.result is not None:
                 return self.result
+            # Seules les affirmations et leur chrono sont accélérés.
+            # Le tutoriel, l'ouverture et le verdict gardent leur rythme.
+            self.fast_active = bool(self.intro <= 0 and self.shot is None and
+                (getattr(self, "fast_pad", False) or rf_ctrl_held()))
+            if self.fast_active:
+                dt *= RF_FAST_MULTIPLIER
             self.total += dt
             if self.intro > 0:
                 self.intro -= dt
@@ -206,6 +226,7 @@ init -1 python:
                 return
             frag = self.fragment_id()
             self.last_fragment = frag
+            self.fast_active = False
             self.shot_xy = renpy.get_mouse_pos()
             self.shot_origin = (RF_CHIP_X + RF_CHIP_W, self.chip_y(self.fragment) + RF_CHIP_H // 2)
             self.shot_t = 0.0
@@ -411,12 +432,17 @@ screen refutation_screen(refutation_id):
 
     key "rollback" action NullAction()
     key "rollforward" action NullAction()
-    key "mousedown_4" action Function(rf.cycle, -1)
-    key "mousedown_5" action Function(rf.cycle, 1)
-    key "K_UP" action Function(rf.cycle, -1)
-    key "K_DOWN" action Function(rf.cycle, 1)
-    key "K_q" action Function(rf.cycle, -1)
-    key "K_e" action Function(rf.cycle, 1)
+    key "skip" action NullAction()
+    key "toggle_skip" action NullAction()
+    key "fast_skip" action NullAction()
+    key "pad_x_press" action Function(rf.set_fast_pad, True)
+    key "pad_x_release" action Function(rf.set_fast_pad, False)
+    key "anymod_mousedown_4" action Function(rf.cycle, -1)
+    key "anymod_mousedown_5" action Function(rf.cycle, 1)
+    key "anymod_K_UP" action Function(rf.cycle, -1)
+    key "anymod_K_DOWN" action Function(rf.cycle, 1)
+    key "anymod_K_q" action Function(rf.cycle, -1)
+    key "anymod_K_e" action Function(rf.cycle, 1)
     key "pad_leftshoulder_press" action Function(rf.cycle, -1)
     key "pad_rightshoulder_press" action Function(rf.cycle, 1)
 
@@ -503,6 +529,26 @@ screen refutation_screen(refutation_id):
                     add RF_ASSETS + "hex_lost.png" at rf_flash(1.0)
                 else:
                     add RF_ASSETS + "hex_off.png"
+
+        # --- Accélération commune à toutes les réfutations.
+        frame:
+            background Frame(RF_ASSETS + "panel.png", 26, 26)
+            xpos 1440
+            ypos 182
+            xsize 440
+            padding (26, 12)
+            vbox:
+                spacing 3
+                text (_("ACCÉLÉRATION  ×3") if getattr(rf, "fast_active", False) else _("VITESSE  ×1")):
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    color (RF_CYAN if getattr(rf, "fast_active", False) else "#b9c9d6")
+                    size 28
+                    kerning 1
+                text _("MAINTENIR CTRL / X (MANETTE)"):
+                    font "fonts/Rajdhani-SemiBold.ttf"
+                    color "#b9c9d6"
+                    size 20
+                    kerning 1
 
         # --- Affirmation en cours, failles cliquables.
         if rf.intro <= 0:
@@ -725,7 +771,10 @@ screen rf_confirmation_tutorial():
                     text_size 32
                     text_color RF_BLUE
 
-label refutation_run(refutation_id):
+label refutation_run(refutation_id, _skipping=False):
+    # Paramètre local au label : Ctrl ne déclenche pas le skip narratif.
+    # Ren'Py restaure _skipping automatiquement au retour du label.
+    $ renpy.stop_skipping()
     if REFUTATIONS[refutation_id].get("confirmations") and not rf_confirmation_tutorial_seen:
         call screen rf_confirmation_tutorial
         $ rf_confirmation_tutorial_seen = True
