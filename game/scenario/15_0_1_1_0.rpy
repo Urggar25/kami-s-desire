@@ -295,17 +295,17 @@ label _15_0_1_1_0_COULOIR:
 
     ryn fatigue "Fait chier..."
 
-    nyra raison "Noam, je vais seulement te demander une chose."
+    nyra raison "Noam, attends avant de partir. Vous avez prévu comment vous allez revenir ?"
 
     "Nyra s’avance légèrement, sans colère apparente."
 
-    nyra raison "Tu comptes revenir ce soir ?"
+    nyra raison "Je te demande ça sérieusement. Vous comptez être de retour ce soir ?"
     noam surpris "Hein ? Oui. Enfin, j'espère."
-    nyra raison "Et si vous vous séparez ?"
+    nyra raison "D'accord. Et si vous vous perdez de vue en chemin, où est-ce que vous vous retrouvez ?"
     noam hesitation "On y a pas pensé."
-    nyra raison "Voilà. Alors avant de partir, prenez deux minutes pour y penser."
+    nyra raison "Alors prenez le temps d'en parler avec Kael. Je ne vais pas vous suivre, mais je veux au moins savoir quand je dois commencer à m'inquiéter."
     ryn colere "Tu vas l'aider à sécher le vote ?"
-    nyra raison "Je veux surtout éviter qu'on passe la soirée à le chercher dans les conduits."
+    nyra raison "Non, Ryn. J'aurais préféré qu'ils restent au vote, mais ils ont déjà pris leur décision. Je ne vais pas les laisser partir sans leur poser ces questions."
     iris inquiet "Ça veut pas dire qu'on approuve."
     mara agace "On a compris, Iris. Personne lui a préparé une médaille."
     "Je regarde Kael. Il me fixe comme s'il attendait de savoir si je vais finalement reculer."

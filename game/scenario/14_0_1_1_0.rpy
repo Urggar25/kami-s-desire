@@ -17,14 +17,14 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     "Je finis par me rendormir quelques minutes avant que des coups légers contre ma porte me tirent à nouveau du sommeil."
 
-    nyra inquiet "Noam ? C'est Nyra."
-    nyra hesitation "Je peux entrer ?"
+    nyra inquiet "Noam ? C'est moi, Nyra."
+    nyra hesitation "Ouvre-moi quand tu peux. J'ai deux choses à te dire."
 
     "Je garde les yeux fermés en espérant qu'elle comprenne le message toute seule."
 
     play sound sfx_knock volume 0.9
 
-    nyra raison "Je sais que tu es là. J'en ai pour deux minutes, promis."
+    nyra raison "Je t'ai entendu bouger. Je ne vais pas rentrer sans ton accord, mais j'aimerais que tu m'écoutes."
 
     "Je souffle dans mon oreiller avant de me redresser difficilement."
 
@@ -39,86 +39,86 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
         ("nyra", "raison", 0.75),
     ])
 
-    nyra neutre "Tu as raté l'annonce de ce matin."
+    nyra neutre "Tu as manqué l'annonce de ce matin. Il s'est passé quelque chose à la livraison."
     noam fatigue "J'avais compris."
-    nyra raison "J'en doute, sinon tu serais déjà sorti."
+    nyra raison "Non, je ne crois pas que tu aies compris. Sinon tu serais probablement en train de manger avec les autres."
 
     noam reflexion "Pourquoi ?"
 
-    nyra sourire "La livraison est arrivée."
+    nyra sourire "Les provisions sont arrivées."
     $ investigation_add("livraison_j14")
 
     "Je relève enfin les yeux vers elle."
 
     noam surpris "La nourriture ?"
-    nyra sourire "Oui. La vraie."
-    nyra neutre "Goumi a récupéré les caisses ce matin. Il paraît qu'Elen a failli l'embrasser en voyant du pain."
+    nyra sourire "Oui, et pas seulement les rations habituelles."
+    nyra neutre "Goumi a rentré les caisses ce matin. Elen était tellement contente de retrouver du pain qu'elle a failli lui sauter dessus."
 
     "Malgré moi, un début de sourire me vient."
 
     noam fatigue "Je peux la comprendre."
-    nyra raison "Tout le monde peut la comprendre. On était à deux cafés de commencer à se manger entre nous."
+    nyra raison "J'ai déjà demandé qu'on garde une portion pour ceux qui n'étaient pas là. Tu pourras manger quand tu sortiras."
 
-    noam sourire "Mara aurait commencé par Julian."
-    nyra taquin "Probablement parce qu'il parle trop."
+    noam sourire "T'as pensé à tout, même au petit-déjeuner des gens qui dorment ?"
+    nyra taquin "J'avais surtout pas envie qu'Elen distribue tout avant midi. Elle était très enthousiaste."
 
     "Le sourire disparaît presque aussitôt. Nyra aussi redevient plus sérieuse."
 
-    nyra raison "Je ne suis pas venue uniquement pour t'annoncer qu'on a retrouvé des glucides."
+    nyra raison "Bon. Il faut aussi qu'on parle du vote de demain."
     noam fatigue "Évidemment."
 
-    nyra reflexion "Le vote de demain concerne [codex_dialogue_link('archive', 'ARCHIVE')]."
-    nyra raison "La proposition est simple sur le papier : rendre consultables par tous les citoyens toutes les informations qu'ARCHIVE détient."
+    nyra reflexion "Ça concerne [codex_dialogue_link('archive', 'ARCHIVE')]. J'ai relu la proposition ce matin."
+    nyra raison "Ils veulent rendre accessibles à tous les citoyens toutes les informations qu'ARCHIVE possède. Le texte ne précise pas les exceptions."
     $ unlock_dossier_chapter(5)
     $ unlock_dossier_arg("p5_transparence")
 
     noam reflexion "Toutes ?"
-    nyra raison "Toutes."
+    nyra raison "C'est le mot qu'ils emploient."
 
     noam inquiet "Les rapports sur l'extérieur, les décisions de Kami, les anciennes données..."
-    nyra neutre "Oui."
+    nyra neutre "Entre autres."
     noam reflexion "Alors c'est une bonne chose."
 
     call play_stat_dialogue("j14") from _call_play_stat_dialogue_13
 
-    nyra hesitation "En partie."
+    nyra hesitation "Attends, Noam. Je suis pour une partie de cette proposition, pas forcément pour tout le reste."
 
     "Je la regarde plus attentivement."
 
     noam inquiet "Qu'est-ce qui coince ?"
-    nyra raison "Quand ils disent toutes les informations... Qu'est-ce que ça concerne ?"
+    nyra raison "Avant de nous réjouir, je veux savoir ce qui sera rendu public. Est-ce qu'on aura le droit de consulter les données personnelles des gens aussi ?"
     $ unlock_dossier_arg("p5_donnees_privees")
 
     "L'idée de transparence devient soudain beaucoup moins confortable."
 
-    nyra reflexion "Je pense qu'on a besoin des informations sur l'extérieur."
-    nyra colere "Mais est-ce que c'est la solution ?!"
+    nyra reflexion "Moi aussi, je veux savoir ce qui se passe à l'extérieur. C'est même une des raisons pour lesquelles j'aimerais que ce texte passe."
+    nyra colere "Mais pas comme ça. Il faut qu'on sache précisément à quoi on donne accès avant de voter."
 
     "Un silence plus léger s'installe quelques secondes, puis Nyra croise les bras."
 
-    nyra raison "Mais on aura tout le temps pour en parler. Il y a autre chose."
-    nyra inquiet "Ryn pose des questions sur toi."
+    nyra raison "On en reparlera avec les autres. Ce qui m'amène ici, surtout, c'est Ryn."
+    nyra inquiet "Il pose des questions sur toi depuis le dernier vote."
 
     noam inquiet "Quel genre de questions ?"
-    nyra raison "Si tu avais déjà eu des absences avant le Conclave. Si tu entendais des choses. Si ton comportement avait déjà changé brutalement avant ces derniers jours."
+    nyra raison "Il cherche à savoir si tu avais déjà des absences avant d'arriver ici, si tu entendais des voix ou si tu avais déjà eu des changements de comportement comme ceux de ces derniers jours."
 
     noam colere "Il fait mon diagnostic maintenant ?"
-    nyra neutre "Non. Il cherche une explication à ce qu'il s'est passé lors du dernier vote."
+    nyra neutre "Il essaie de comprendre ce qui s'est passé. Je ne sais pas ce qu'il compte faire de ses réponses, et ça ne me plaît pas beaucoup."
 
     "Sa réponse me coupe un peu dans mon élan."
 
-    nyra inquiet "Je ne te demande pas de faire confiance à tout le monde. Je te demande juste d'éviter de leur donner davantage de raisons de penser que tu deviens imprévisible."
-    nyra triste "Je préfère être désagréable maintenant que te regarder t'isoler complètement."
+    nyra inquiet "Viens manger avec nous aujourd'hui. Je ne te demande pas de faire semblant d'aller bien, mais si tu restes enfermé ici, Ryn va continuer à chercher des réponses auprès des autres plutôt qu'auprès de toi."
+    nyra triste "Et moi, je préfère savoir comment tu vas vraiment. Même si tu m'en veux de venir t'embêter."
 
     "Elle se relève."
 
-    nyra neutre "Va manger. Ça ne réglera rien, mais tu réfléchiras mieux avec autre chose que du café dans le ventre."
+    nyra neutre "Habille-toi et descends quand tu es prêt. J'ai gardé de quoi te faire un vrai repas."
     noam fatigue "Tu parles comme Goumi."
-    nyra sourire "C'est probablement la faim."
+    nyra sourire "Oui, et je te rappelle que j'ai déjà faim depuis une heure."
 
     "Elle ouvre la porte puis s'arrête une seconde."
 
-    nyra inquiet "Et Noam... demain, on aura besoin de toi. Alors viens."
+    nyra inquiet "Demain, j'aimerais que tu sois là. Ne laisse pas les autres décider de ce que tu penses en ton absence."
     noam reflexion "Compris."
 
     "Elle sort."

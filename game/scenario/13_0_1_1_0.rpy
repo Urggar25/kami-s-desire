@@ -243,16 +243,16 @@ label _13_0_1_1_DISCUSSION_ECOUTEE:
     tomas hesitation "Peut-être qu'il ne sait pas comment le dire."
     ryn hesitation "Ou qu'il cache quelque chose."
     elias fatigue "Il cache quelque chose. Ça se voit."
-    nyra raison "Ça ne veut pas dire qu'il a tort."
+    nyra raison "Vous pouvez lui reprocher de nous avoir accusés. Ça ne nous dispense pas de vérifier ce qu'il raconte."
 
     "Personne ne répond tout de suite."
 
     ryn surpris "Tu le défends, maintenant ?"
-    nyra neutre "Non. Je distingue deux problèmes. Sa façon d'agir est mauvaise. Ce qu'il a remarqué peut quand même être réel."
+    nyra neutre "Je défends pas sa façon de nous parler, Ryn. Mais si on a raté quelque chose, c'est dans notre intérêt de le savoir."
     elias agace "Il a accusé la moitié de la salle au hasard."
-    nyra raison "Oui. C'était stupide. Ça ne prouve pas qu'il a tout inventé."
+    nyra raison "Oui, Elias, j'étais là. Et je lui demanderai des explications quand il sera en état de nous les donner."
     tomas reflexion "Tu penses qu'il a vu quelque chose ?"
-    nyra hesitation "Je pense qu'on ne peut pas l'écarter juste parce qu'il l'explique mal."
+    nyra hesitation "Je n'en sais rien, Tomas. Je préférerais qu'on le laisse raconter ce qu'il a vu plutôt que de commencer par lui expliquer qu'il délire."
     ryn colere "Moi, j'écarte rien. Mais sa prochaine crise, je veux pas la découvrir pendant un vote."
     elias fatigue "Là-dessus, on est d'accord."
 

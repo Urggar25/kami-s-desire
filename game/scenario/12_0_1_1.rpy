@@ -401,7 +401,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     noam fatigue "Ça fait une cinquième."
     "Sael me lance un regard qui promet une sixième question. Ryn repousse son siège."
     ryn colere "Bon. Qui compte voter contre ? Qu'on perde pas une heure à faire semblant."
-    nyra raison "Le scrutin est secret précisément pour éviter ce genre de question."
+    nyra raison "Non, Ryn. On ne va pas demander à chacun de déclarer son vote devant les autres. Tu connais la règle."
     ryn colere "Je pose une question, pas un bulletin."
     sael determine "Tu veux surtout mettre la pression avant qu'ils parlent."
     ryn colere "Je veux pas découvrir après coup qu'un de nous nous a plantés."
@@ -445,7 +445,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     kael triste "Il cache assez pour qu'on ne voie pas qui est entré dans ma chambre."
     "Elias pose son gobelet vide."
     elias reflechit "Ouais. Si quelqu'un entre pendant que ça tourne, on fait quoi ? On attend sept jours ?"
-    nyra raison "On doit séparer deux droits : pouvoir s'isoler et pouvoir effacer les traces d'un acte. Ce n'est pas la même chose."
+    nyra raison "Elias, je comprends que tu veuilles pouvoir retrouver quelqu'un qui est entré chez toi. Mais on peut chercher une solution sans donner à Kami accès à tout ce qu'on fait dans nos chambres."
     $ unlock_dossier_arg("p4_preuves")
     ryn colere "Donc on laisse Kami fouiller nos chambres dès qu'il manque une chaussette ?"
     kael colere "Il ne manque pas une chaussette. On m'a pris la photo de ma sœur."
@@ -466,7 +466,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     noam inquiet "Et si quelqu'un se sert déjà de ces appareils pour entrer dans nos chambres ?"
     mara stress "Noam..."
     noam colere "On en parle depuis des jours et on n'a toujours rien trouvé ! Pas une trace !"
-    nyra raison "On n'a surtout pas de preuve que les brouilleurs aient servi à ces disparitions."
+    nyra raison "Noam, rien ne nous permet encore de dire que les brouilleurs ont servi à ça. J'aimerais qu'on ne parte pas de cette hypothèse pour décider du vote."
     "Nyra parle sans hausser le ton. Je l'entends quand même comme un reproche."
 
 
@@ -496,7 +496,7 @@ label _12_0_1_1_ATTENTE_VOTE:
     mara stress "Et le dessin de Juliette aussi."
     lysa reflechit "Personne n'a encore prouvé que les brouilleurs avaient servi à ces vols."
     "Elle dit ça en me regardant. Je détourne les yeux."
-    nyra raison "On sait qu'il y a eu des vols. On ne sait pas encore comment ils ont été commis. Si on mélange les deux, on choisira notre coupable avant d'avoir les faits."
+    nyra raison "On va continuer à chercher vos affaires, tous les deux. Mais je refuse qu'on décide que les brouilleurs sont responsables simplement parce qu'on n'a rien trouvé d'autre."
     "Elle a raison. C'est précisément ce qui m'énerve."
     jump _12_0_1_1_DEBAT_VOTE
 
@@ -530,7 +530,7 @@ label _12_0_1_1_DEBAT_SECURITE:
     kael triste "Pas pour ma chambre. Pas tout de suite."
     mara stress "Et si on dit non, ça veut dire que Kami pourra nous écouter quand elle veut."
     noam desaccord "Je sais ! C'est ça qui m'énerve."
-    nyra raison "Il n'y a pas de choix qui efface les deux risques."
+    nyra raison "Je ne peux pas te promettre que tu retrouveras ton dessin si on vote contre. Et si on vote pour, je ne peux pas non plus te promettre que personne ne recommencera."
     noam fatigue "Super. On est bien avancés."
     "Mara ouvre la bouche, regarde Kael et renonce à sa plaisanterie."
 
@@ -615,7 +615,7 @@ label _12_0_1_1_DEBAT_TRAITRE:
     "Il se raidit. Je viens de lui tomber dessus alors qu'il essaie seulement de comprendre."
     noam fatigue "Désolé."
     elias fatigue "Ouais."
-    nyra raison "C'est une vraie suppression, donc c'est important. Mais ça ne nous donne pas l'auteur."
+    nyra raison "Attends. Un segment a réellement été supprimé, ça mérite qu'on s'en occupe. Mais on n'a toujours pas le nom de la personne qui l'a fait."
     noam inquiet "Je sais !"
     ryn colere "Alors pourquoi tu nous regardes comme si l'un de nous avait fait le coup ?"
     "Je regarde la table. Je n'ai pas de réponse qui ne les accuse pas."
@@ -647,8 +647,8 @@ label _12_0_1_1_DEBAT_TRAITRE:
     lysa reflechit "Noam. Tu peux dire que t'as peur. T'as même de bonnes raisons."
     lysa inquiet "Mais si tu nous regardes tous comme des coupables, on va finir par te répondre comme si on l'était."
     noam fatigue "Je voulais juste savoir."
-    nyra raison "Alors on garde ce qu'on sait : un segment effacé, un accès autorisé d'après Kami, aucun auteur identifié."
-    noam desaccord "Tu peux arrêter de transformer ça en liste ?!"
+    nyra raison "Noam, donne-moi ce qu'on a de concret. Un segment effacé, un accès que Kami dit autorisé, aucun nom. Si tu veux qu'on retrouve quelqu'un, il faut partir de là."
+    noam desaccord "Arrête avec tes listes, Nyra ! C'est de moi qu'on parle, là !"
     "Nyra serre la mâchoire, puis se tait."
     iris desaccord "Elle essaye de t'aider, idiot."
     noam colere "J'ai pas besoin que tout le monde m'aide !"

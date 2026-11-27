@@ -170,15 +170,15 @@ label _11_0_1_1_APRES_REVEIL:
     julian sourire "Les deux restent possibles."
     sael desaccord "Écarte-toi, Julian."
     julian surpris "J'aide !"
-    nyra raison "Tu aiderais davantage en libérant le passage."
-    julian agace "Une coalition contre les bénévoles. Déjà."
+    nyra raison "Julian, pousse-toi un peu, Sael n'a même pas la place de passer."
+    julian agace "Ça va, ça va. Je vais m'asseoir."
     iris taquin "Et elle est unanime."
 
     "Sael prend mon poignet, compte les battements, puis pose deux doigts contre mon front."
     sael neutre "La fièvre est tombée. Tu restes au calme aujourd'hui."
     noam fatigue "Au Conclave, rester au calme est une activité à plein temps."
     sael determine "Alors tu as de l'entraînement."
-    nyra neutre "J'ai demandé quelque chose de simple. Riz, poulet, légumes."
+    nyra neutre "J'ai demandé à Goumi du riz, du poulet et des légumes. Si tu n'as pas d'appétit, mange au moins un peu de riz."
     julian taquin "La gastronomie du rétablissement. Aucun risque d'y prendre goût."
     iris colere "Tu peux le laisser manger sans critiquer la nourriture ?"
     noam sourire "C'est délicieux."
@@ -191,10 +191,10 @@ label _11_0_1_1_APRES_REVEIL:
     julian joie "Un malade mérite un dessert supplémentaire. C'est une question de morale."
     iris taquin "Tu t'es découvert une maladie ?"
     julian neutre "Le manque de reconnaissance."
-    nyra raison "Le traitement risque d'être long."
+    nyra raison "Julian, si tu veux un deuxième dessert, demande-le directement à Goumi."
     "J'avale de travers."
-    noam surpris "Nyra !"
-    nyra neutre "C'était un diagnostic provisoire."
+    noam surpris "Attends, il en reste ?"
+    nyra neutre "Oui, mais finis déjà ton assiette. Je t'en ai gardé un."
 
     noam reflexion "Kael n'est pas venu ?"
     iris inquiet "Il est passé cette nuit. Il ne voulait pas te réveiller."
@@ -202,7 +202,7 @@ label _11_0_1_1_APRES_REVEIL:
     julian neutre "Il n'a toujours pas retrouvé la photo de Léa."
     iris desaccord "Julian."
     julian agace "Quoi ? Noam le sait déjà."
-    nyra reflechit "Kael a demandé l'accès aux images de sa chambre. Kami ne lui a pas répondu."
+    nyra reflechit "Kael a demandé les images de sa chambre. Je lui ai proposé de faire la demande avec lui, mais pour l'instant Kami ne lui répond même pas."
 
     call show_custom_title("Une bonne heure plus tard") from _call_show_custom_title_2
     scene bg_chambre at adaptive_fullscreen with dissolve
@@ -223,7 +223,7 @@ label _11_0_1_1_APRES_REVEIL:
     iris desaccord "Tu veux que je te porte aussi ?"
     noam taquin "Tu pourrais ?"
     iris colere "Essaie pour voir."
-    nyra reflechit "La salle d'observation est plus fraîche. Nous pouvons l'accompagner."
+    nyra reflechit "On peut aller à l'Observation si tu veux sortir un peu. Il y fait plus frais. Sael, tu viens avec nous ?"
     sael neutre "Quelques minutes. Au premier vertige, on revient."
 
     $ hideGroup()
@@ -268,18 +268,18 @@ label _11_0_1_1_APRES_REVEIL:
     iris inquiet "Kael..."
     kael colere "Vous êtes là depuis combien de temps ?"
     julian taquin "Assez pour confirmer que Kami reste une partenaire administrative remarquable."
-    nyra reflechit "Elle a parlé de la zone protégée. Pas de toute la station."
-    nyra raison "Le délai vient du brouilleur ou de la base d'archives ?"
+    nyra reflechit "Attends, Kael. Elle a dit que la zone protégée était concernée. Elle n'a pas parlé du reste de la station."
+    nyra raison "Kami, je veux savoir si le délai vient du brouilleur lui-même ou de la base d'archives."
 
     play sound sfx_announce
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     show screen kami_broadcast_ui
     $ bc_show("nyra", "raison")
     kami "Nyra, toujours prête à chercher la petite ligne en bas du contrat."
-    nyra raison "Le délai vient du brouilleur ?"
+    nyra raison "Je n'ai pas demandé le manuel. Réponds-moi sur le délai."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Oui. Et non, tu n'auras ni le manuel, ni le schéma, ni un joli cours privé."
-    nyra taquin "Tu viens de répondre à ma question."
+    nyra taquin "Très bien, merci. Kael, ça te permet déjà d'écarter une hypothèse."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Ne prends pas cette habitude."
     $ bc_hide()
@@ -308,13 +308,13 @@ label _11_0_1_1_APRES_REVEIL:
     "Kael quitte la salle sans attendre."
     julian neutre "Les desserts diplomatiques attendront."
     iris fatigue "Pour une fois, ferme-la sans commentaire."
-    nyra reflechit "La distinction reste importante. Les brouilleurs protègent les chambres. Pas les couloirs."
+    nyra reflechit "Si le problème vient du brouilleur, on devrait encore pouvoir consulter les images des couloirs. Les chambres seules sont protégées."
     noam reflexion "Pas les couloirs..."
     sael inquiet "Noam ?"
     "Je me suis appuyé au mur. La salle vient de pencher, ou c'est moi."
     noam fatigue "Je retourne m'allonger."
     iris desaccord "Oui. Maintenant."
-    nyra neutre "Tu veux qu'on t'accompagne ?"
+    nyra neutre "Attends, tu es sûr de tenir debout ? Je peux te raccompagner."
     noam fatigue "C'est à côté. Ça va."
     sael determine "Tu marches lentement. Et tu appelles si ça recommence."
     jump _11_0_1_2_CHAMBRE_INTROSPECTION
