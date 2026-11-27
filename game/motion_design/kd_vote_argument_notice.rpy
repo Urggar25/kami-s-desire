@@ -95,11 +95,11 @@ transform kd_arg_card_motion:
     pos (960, 505)
     zoom .74
     alpha 0.0
-    rotate -7
+    rotate -2
     easeout .30 alpha 1.0 zoom 1.035 rotate 0
     easein .12 zoom 1.0
     pause 1.98
-    easein .39 pos (1680, 180) zoom .10 rotate 8
+    easein .39 pos (1680, 180) zoom .10 rotate 3
     linear .08 alpha 0.0
 
 transform kd_arg_reveal(delay=.12):
@@ -153,6 +153,8 @@ transform kd_arg_particles(dx, dy, delay):
     alpha .9
     easeout .54 xoffset dx yoffset dy alpha 0.0
 
+# Présentation typographique uniquement : aucune texture, photo ou icône.
+# La structure du payload reste compatible avec les sauvegardes précédentes.
 screen kd_argument_acquisition(serial, payload):
     modal True
     zorder 280
@@ -160,7 +162,6 @@ screen kd_argument_acquisition(serial, payload):
     $ is_evidence = kind == "investigation"
     $ destination = _("DOSSIER D'ENQUÊTE") if is_evidence else _("DOSSIER DE VOTE")
     $ headline = _("NOUVELLE PREUVE") if is_evidence else _("NOUVEL ARGUMENT")
-    # Les événements du joueur ne doivent pas avancer le dialogue sous la carte.
     key "dismiss" action NullAction()
     key "rollback" action NullAction()
     key "rollforward" action NullAction()
@@ -176,91 +177,59 @@ screen kd_argument_acquisition(serial, payload):
         xysize (1920, 1080)
         add Solid("#030810") at kd_arg_dark
         add Solid(tint) at kd_arg_flash
-        for yy in range(170, 940, 62):
-            add Solid("#36576C22", xysize=(1920, 1)) ypos yy at kd_arg_dark
-        for xx in range(80, 1920, 110):
-            add Solid("#36576C18", xysize=(1, 1080)) xpos xx at kd_arg_dark
-        add Solid(tint, xysize=(1920, 2)) ypos 225 at kd_arg_trace
-        add Solid(tint, xysize=(1920, 2)) ypos 805 at kd_arg_trace
-        fixed at kd_arg_ring:
-            pos (960, 505)
-            xysize (1250, 560)
-            add Solid(tint, xysize=(1250, 2))
-            add Solid(tint, xysize=(1250, 2)) ypos 558
-            add Solid(tint, xysize=(2, 560))
-            add Solid(tint, xysize=(2, 560)) xpos 1248
-        # Particules géométriques issues du noyau, sans texture supplémentaire.
-        for i in range(18):
-            $ angle = i * 0.34906585
-            $ distance = 350 + (i % 4) * 95
-            add Solid(tint, xysize=(3 + i % 4, 3 + i % 4)):
+
+        # Quelques traits et particules, sans cadre de fiche ni illustration.
+        add Solid("#36576C44", xysize=(1920, 1)) ypos 310 at kd_arg_dark
+        add Solid("#36576C44", xysize=(1920, 1)) ypos 700 at kd_arg_dark
+        for i in range(8):
+            $ angle = i * 0.78539816
+            $ distance = 310 + (i % 3) * 80
+            add Solid(tint, xysize=(3, 3)):
                 pos (960, 505)
                 at kd_arg_particles(int(kd_arg_math.cos(angle)*distance), int(kd_arg_math.sin(angle)*distance), .08 + (i%3)*.035)
 
         fixed at kd_arg_card_motion:
-            xysize (1180, 510)
-            add Solid("#00000099", xysize=(1180, 510)) pos (8, 12)
-            add Solid("#07121EF8", xysize=(1180, 510))
-            add Solid(tint, xysize=(1180, 3))
-            add Solid("#36556A", xysize=(1180, 1)) ypos 509
-            add Solid("#36556A", xysize=(1, 510)) xpos 1179
-            add Solid(tint, xysize=(6, 510))
-            # Corners, serialisation and split header.
-            for px, py in [(14, 14), (1118, 14), (14, 488), (1118, 488)]:
-                add Solid(tint, xysize=(48, 2)) pos (px, py)
-            text _("CONCLAVE OS  /  ACQUISITION"):
-                pos (44, 25) size 21 color tint font "fonts/Rajdhani-SemiBold.ttf" kerning 3
-            text ("%03d" % serial):
-                xanchor 1.0 xpos 1136 ypos 25 size 21 color "#90ADBF" font "fonts/Rajdhani-SemiBold.ttf"
-            add Solid("#294252", xysize=(1092, 1)) pos (44, 65)
-            fixed:
-                pos (44, 93)
-                xysize (235, 330)
-                add Solid("#102638", xysize=(235, 330))
-                add Solid(tint, xysize=(235, 2))
-                add Solid(tint, xysize=(235, 2)) ypos 328
-                if is_evidence:
-                    add Transform(investigation_evidence_image(eid), xysize=(215, 215), fit="contain") pos (10, 29)
-                else:
-                    add Transform(glyph, xysize=(114, 114), fit="contain") xalign .5 ypos 75 at kd_arg_reveal(.23)
-                text kd_tr(category):
-                    xalign .5 ypos 273 xmaximum 215 text_align .5 size 21 color tint font "fonts/Rajdhani-SemiBold.ttf"
-                add Solid(tint, xysize=(235, 4)) at kd_arg_scan
+            xysize (1460, 330)
             vbox:
-                pos (315, 94)
-                xsize 815
-                spacing 13
+                xalign .5
+                yalign .5
+                xsize 1460
+                spacing 18
                 text headline:
-                    size 32 color tint font "fonts/Rajdhani-SemiBold.ttf" kerning 4 at kd_arg_reveal(.12)
+                    xalign .5
+                    size 27 color tint font "fonts/Rajdhani-SemiBold.ttf" kerning 6
+                    at kd_arg_reveal(.12)
+                add Solid(tint, xysize=(160, 3)) xalign .5 at kd_arg_trace
                 text kd_tr(heading):
-                    size 46 color "#F1FAFF" font "fonts/Rajdhani-SemiBold.ttf" xmaximum 815 at kd_arg_reveal(.22)
-                add Solid(tint, xysize=(810, 2)) at kd_arg_trace
-                if description:
-                    text kd_tr(description):
-                        size 24 color "#D1E1EB" xmaximum 815 at kd_arg_reveal(.40)
-                if origin:
-                    text (_("SOURCE") + "  /  " + kd_tr(origin)):
-                        size 20 color "#91B9CA" font "fonts/Rajdhani-SemiBold.ttf" xmaximum 815 at kd_arg_reveal(.55)
-            fixed:
-                pos (44, 444)
-                xysize (1092, 42)
-                add Solid("#142D3C", xysize=(1092, 42))
-                add Solid(tint, xysize=(1092, 2))
-                text _("ENREGISTRÉ  //  DISPONIBLE DANS LA TABLETTE"):
-                    xalign .5 yalign .5 size 23 color tint font "fonts/Rajdhani-SemiBold.ttf" kerning 2 at kd_arg_confirm
+                    xalign .5
+                    text_align .5
+                    xmaximum 1380
+                    size 72 color "#F1FAFF" font "fonts/Rajdhani-SemiBold.ttf"
+                    outlines [(2, "#03081099", 0, 2)]
+                    at kd_arg_reveal(.22)
+                add Solid(tint, xysize=(620, 2)) xalign .5 at kd_arg_trace
+                text _("ENREGISTRÉ DANS LA TABLETTE"):
+                    xalign .5
+                    size 22 color tint font "fonts/Rajdhani-SemiBold.ttf" kerning 3
+                    at kd_arg_confirm
 
+        # La destination reste purement typographique.
         fixed at kd_arg_receiver:
             anchor (.5, .5)
             pos (1680, 180)
-            xysize (340, 118)
-            add Solid("#07121EF8", xysize=(340, 118))
-            add Solid(tint, xysize=(340, 3))
-            add Transform("hud/dossier/ic_box.png", xysize=(65, 65), fit="contain") pos (14, 23)
+            xysize (400, 94)
+            add Solid("#07121EF8", xysize=(400, 94))
+            add Solid(tint, xysize=(400, 2))
             vbox:
-                pos (90, 22)
+                xalign .5
+                yalign .5
                 spacing 3
-                text destination size 21 color tint font "fonts/Rajdhani-SemiBold.ttf"
-                text (_("PREUVE AJOUTÉE") if is_evidence else _("ARGUMENT AJOUTÉ")) size 22 color "#F1FAFF" font "fonts/Rajdhani-SemiBold.ttf"
+                text destination:
+                    xalign .5
+                    size 21 color tint font "fonts/Rajdhani-SemiBold.ttf"
+                text (_("PREUVE AJOUTÉE") if is_evidence else _("ARGUMENT AJOUTÉ")):
+                    xalign .5
+                    size 22 color "#F1FAFF" font "fonts/Rajdhani-SemiBold.ttf"
 
 # Anciens écrans sauvegardés : fermeture sans réintroduire les anciennes animations.
 screen kd_vote_argument_toast(items=(), dossier_title=None):
