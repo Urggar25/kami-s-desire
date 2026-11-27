@@ -5,13 +5,13 @@ label KD_ROUTE_J22_NYRA:
     menu:
         "Discuter des préparatifs avec Nyra.":
             $ showGroup([("nyra", "neutre", 0.35), ("noam", "neutre", 0.65)])
-            nyra "Tu as déjà refait ton sac ?"
+            nyra "Tu as défait ton sac, finalement ? Je vois que la moitié des gens ont laissé leurs affaires emballées."
             noam "Pas vraiment. J'avais tout préparé pour partir, alors j'ai laissé l'essentiel dedans."
-            nyra "Tu n'es pas le seul. Les livraisons et le départ repoussé ont compliqué l'inventaire."
+            nyra "Je comprends. On a de nouveau du matériel à ranger, alors j'essaie de ne pas mélanger ce qu'on emporte avec ce qui appartient au Conclave."
             noam taquin "Tu fais aussi l'inventaire de nos valises ?"
-            nyra "Seulement du matériel commun. Tes chaussettes ne m'intéressent pas."
+            nyra "Non, rassure-toi. Je n'ai aucune envie de compter tes chaussettes."
             noam sourire "Me voilà rassuré."
-            nyra reflexion "Vérifie quand même ton badge avant le dernier jour. Ce serait dommage de tout retrouver sauf ça."
+            nyra reflexion "Pense juste à vérifier que tu as encore ton badge avant de partir. Avec tous ces sacs, on va bien finir par en perdre un."
             noam "Bonne idée. Merci."
             $ hideGroup()
         "Rejoindre la cafétéria.":

@@ -120,14 +120,14 @@ label _21_0_1_1_0_0_SAS:
     tomas "Pourquoi ?"
     lysa blase "Parce qu'ici, quand quelque chose doit être simple, ça finit rarement simple."
     elen inquiet "Elle va venir quand même."
-    nyra raison "On n'en sait rien."
+    nyra raison "Elen, assieds-toi si tu veux. On va attendre encore un peu, mais je n'ai aucune confirmation qu'elle arrive."
     elen "Merci Nyra."
-    nyra "Je préfère ça à te mentir."
+    nyra "J'aimerais autant que toi savoir ce qui se passe."
 
     ryn colere "KAMI !"
     call kd_vn_reaction("ryn", "colere", "#ff9c55")
     "Sa voix claque dans le sas."
-    nyra raison "Elle t'entend."
+    nyra raison "Ryn, elle nous entend. Laisse-lui le temps de répondre."
     ryn "Alors qu'elle réponde."
     sael fatigue "Crier changera rien."
     ryn colere "Je sais, Sael."
@@ -231,7 +231,7 @@ label _21_0_1_1_0_0_SAS:
     ])
 
     mara colere "Qui ?"
-    nyra determine "Combien de personnes ?"
+    nyra determine "Combien de personnes ont fait cette demande ? Est-ce qu'une seule suffit ?"
     tomas inquiet "Et ça suffit pour annuler notre départ ?"
     ryn colere "Donne les noms."
     noam colere "On devait partir ensemble."
@@ -302,9 +302,9 @@ label _21_0_1_1_0_0_SAS:
     ryn "J'en sais rien, mais j'aimerais bien qu'elle assume."
     tomas inquiet "Ryn, on sait même pas combien ils sont."
     ryn "Ça change quoi ?"
-    nyra raison "Ça change qu'on ne va pas accuser les gens au hasard."
+    nyra raison "Ryn, je veux aussi savoir qui nous a fait rester. Mais si tu commences à interroger les autres ici, tu vas obtenir des accusations, pas des réponses."
     ryn colere "Quelqu'un vient de nous rajouter neuf jours ici."
-    nyra "Je sais."
+    nyra "Oui, j'ai entendu. Et ça m'emmerde autant que toi."
     sael determine "Et gueuler sur tout le monde n'en enlèvera aucun."
     ryn "Vous êtes tous super calmes, ça fait plaisir."
     iris colere "Je suis pas calme du tout."
@@ -322,7 +322,7 @@ label _21_0_1_1_0_0_SAS:
 
     ryn fatigue "Moi, je range rien maintenant."
 
-    nyra "Personne t'oblige à le faire tout de suite."
+    nyra "Laisse ton sac là si tu veux. On s'occupera du rangement plus tard."
 
     "Il repart sans répondre. Elen reste encore quelques secondes à regarder la baie vide avant de reprendre son sac."
 
@@ -336,7 +336,7 @@ label _21_0_1_1_0_0_SAS:
     noam fatigue "Je t'aide."
     elen "Moi aussi."
     julian "Je viens."
-    nyra raison "On s'y met à plusieurs, ça ira plus vite."
+    nyra raison "Elen, Julian, venez avec moi. On va au moins mettre les provisions à l'abri."
 
     $ hideGroup()
 
@@ -359,14 +359,14 @@ label _21_0_1_1_0_0_LIVRAISON:
         ("noam", "fatigue"),
     ])
 
-    nyra raison "Les étiquettes sont déjà faites. Vous regardez, vous triez, vous évitez de poser le matériel médical avec la bouffe."
-    elen joie "Ça semble à ma portée."
-    lysa blase "C'est exactement ce qu'on dit avant de mettre une seringue dans une caisse de soupe."
+    nyra raison "Les étiquettes sont prêtes. Elen, tu prends la nourriture. Julian, le médical. Si vous ne savez pas où va quelque chose, laissez-le de côté."
+    elen joie "Attends, toute la nourriture ? Même les trucs qui vont au frais ?"
+    lysa blase "Elle t'a donné une mission, pas un diplôme de cuisine."
     elen "Je ferai pas ça."
     julian sourire "Je suis prêt à témoigner en ta faveur si ça arrive."
     elen colere "Vous êtes chiants."
     noam fatigue "On commence ?"
-    nyra "Oui. Et si vous hésitez, stockage. On vérifiera après."
+    nyra "Oui. Les caisses douteuses au stockage, je les vérifierai avec Elias."
 
     $ hideGroup()
 
@@ -517,7 +517,7 @@ label _21_0_1_1_0_0_MANIFESTE:
     tomas "Oui. Enfin... le bordereau dit qu'elles sont arrivées avec cette livraison."
     elias colere "Donc elles sont arrivées."
 
-    nyra raison "Le registre sait uniquement ce qui a été demandé et ce qui a été réceptionné. Après ça, il ne suit pas chaque objet dans la station."
+    nyra raison "Le registre s'arrête à la réception. Si quelqu'un a déplacé les plaques ensuite, on ne le verra pas ici."
     noam "Donc impossible de savoir où elles sont maintenant."
     tomas "Exactement."
 
@@ -533,24 +533,24 @@ label _21_0_1_1_0_0_MANIFESTE:
     noam inquiet "Sauf les plaques."
     elias fatigue "Sauf les plaques."
 
-    nyra "Vous avez vérifié toutes les caisses ?"
+    nyra "Même les caisses dont les étiquettes ne correspondaient pas ?"
     elias "Deux fois."
     noam "Trois, pour certaines."
     elias colere "Merci."
 
     tomas reflexion "Une caisse peut avoir été ouverte avant qu'on commence à ranger."
-    nyra "Ou le bordereau peut être faux."
+    nyra "Ou quelqu'un a validé un bordereau qui n'était pas exact. Il faut garder cette possibilité."
     elias "Ou quelqu'un les a prises."
     noam reflexion "Pourquoi quelqu'un ferait ça ?"
 
     "Elias secoue la tête, déjà agacé de ne pas avoir de réponse."
 
     elias fatigue "J'en sais rien."
-    nyra raison "Alors on ne part pas plus loin que ça."
+    nyra raison "D'accord. Alors ne commençons pas à chercher un voleur avant d'avoir vérifié la livraison."
 
     "Elle pointe le terminal."
 
-    nyra "On sait qu'elles ont été commandées. On sait qu'elles apparaissent à l'arrivée. On sait qu'elles sont introuvables. Le reste, pour l'instant, c'est des suppositions."
+    nyra "Tomas, garde une copie du bordereau. Elias, on va voir si on peut retrouver ces plaques autrement. Pour l'instant, je ne veux pas qu'on annonce qu'elles ont été volées."
 
     tomas "Oui."
 
@@ -568,9 +568,9 @@ label _21_0_1_1_0_0_MANIFESTE:
     elias "Du métal."
     tomas "Merci, ça aide beaucoup."
     elias colere "Des caches, des panneaux inutilisés, des vieux morceaux de châssis. Je vais trouver."
-    nyra raison "Tu vérifies avant de démonter quoi que ce soit."
+    nyra raison "Elias, vérifie à quoi servent les pièces avant de les récupérer. Je n'ai pas envie qu'on provoque une autre panne."
     elias fatigue "Oui, maman."
-    nyra colere "Elias."
+    nyra colere "Je suis sérieuse. Demande à Kael si tu as un doute."
     elias fatigue "Oui. Je vérifierai."
 
     noam taquin "Donc on démonte le Conclave, mais proprement."

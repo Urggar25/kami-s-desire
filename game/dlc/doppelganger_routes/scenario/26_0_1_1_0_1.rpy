@@ -71,7 +71,7 @@ label _26_0_1_1_0_1_CAFETERIA:
     "Il repose sa cuillère avec un bruit sec. Personne ne répond."
     lysa inquiet "En tout cas, manquer le petit-déjeuner, c'est pas son genre."
     elen fatigue "Il voulait juste dormir. Je lui ai dit de mettre son réveil."
-    nyra neutre "Alors n'allez pas lui tomber dessus à six."
+    nyra neutre "Elen, va le voir avec Noam si tu veux, mais ne faites pas venir tout le monde pour un réveil manqué."
     noam neutre "Elen, on va frapper. S'il dort, on le laisse tranquille."
     elen content "Ouais. Viens."
     lysa neutre "Je viens aussi. Il me doit un café."
@@ -167,9 +167,9 @@ label _26_0_1_1_0_1_DECOUVERTE:
     elen peur "Un corps ? Elle parle de Tomas ?"
     "Des pas résonnent dans le couloir. Nyra apparaît sur le seuil presque aussitôt."
     $ showGroup([("kael", "reflexion", 0.06), ("elias", "fatigue", 0.207), ("elen", "peur", 0.353), ("sael", "triste", 0.500), ("noam", "vide", 0.647), ("lysa", "inquiet", 0.793), ("nyra", "inquiet", 0.94)])
-    nyra inquiet "Qu'est-ce qui s'est passé ?"
+    nyra inquiet "Qu'est-ce qui se passe ? Sael, tu as besoin de quelque chose ?"
     "Elle ouvre la porte en grand et la cale pour qu'elle ne puisse plus se refermer."
-    nyra raison "Il faut aérer. Cette odeur est irrespirable."
+    nyra raison "Je laisse la porte ouverte. Vous avez besoin d'air, là."
     sael fatigue "Merci, Nyra. Elle commence à me monter à la tête."
     noam inquiet "Sael... ?"
     "Sael retire lentement ses mains. Elle regarde Elen."
@@ -197,12 +197,12 @@ label _26_0_1_1_0_1_DECOUVERTE:
     sael triste "Je sais, Noam. Écoute... va t'asseoir un peu. Je viens te voir après."
     "Je sors. Nyra est toujours près de la porte, qu'elle maintient grande ouverte."
     $ showGroup([("nyra", "inquiet", 0.30), ("noam", "fatigue", 0.69)])
-    nyra inquiet "Sael n'a pas encore trouvé ce qui lui est arrivé ?"
+    nyra inquiet "Sael a pu te dire quelque chose sur ce qui lui est arrivé ?"
     noam fatigue "Non."
     "Nyra jette un regard vers l'intérieur de la pièce. Elle ne lâche pas la porte."
-    nyra reflexion "Je vais la laisser ouverte encore un moment. L'air doit circuler."
+    nyra reflexion "Je reste ici pour que personne ne rentre. Il faut encore un peu d'air."
     noam neutre "Sael a demandé qu'on ne touche à rien."
-    nyra raison "Je sais. Je ne rentre pas."
+    nyra raison "J'ai entendu. Je ne toucherai à rien dans la chambre."
     $ hideGroup()
     jump _26_0_1_1_0_1_APRES_CHOC
 
@@ -242,9 +242,9 @@ label _26_0_1_1_0_1_APRES_CHOC:
     "Ryn ouvre la bouche, prêt à me répondre. Il regarde mes mains, qui tremblent tellement que j'ai dû les serrer dans mes poches, et se tait."
     $ showGroup([("elen", "peur", 0.070), ("lysa", "inquiet", 0.177), ("noam", "fatigue", 0.285), ("julian", "inquiet", 0.393), ("mara", "agace", 0.500), ("kael", "inquiet", 0.607), ("elias", "fatigue", 0.715), ("ryn", "inquiet", 0.823), ("nyra", "inquiet", 0.930)])
     elen peur "Mais attendez... c'est ma chambre."
-    nyra inquiet "Oui ?"
+    nyra inquiet "Elen, viens t'asseoir un instant."
     elen colere "C'était moi qui devais être là. Vous comprenez pas ? S'il y a quelqu'un qui..."
-    nyra fatigue "On sait pas si quelqu'un est entré."
+    nyra fatigue "Attends, je ne sais même pas si quelqu'un est entré dans ta chambre cette nuit."
     elen colere "Alors arrête de parler comme si tu savais tout !"
     "Nyra baisse les yeux. Je m'attends à ce qu'elle réponde, mais elle ne le fait pas."
     noam fatigue "Elen, on va pas régler ça dans ce couloir."
@@ -519,12 +519,12 @@ label _26_0_1_1_0_1_ENQUETE:
     lysa fatigue "Elen dort enfin. Si quelqu'un la réveille pour lui poser des questions, je lui casse les jambes."
     noam reflexion "Je vais devoir lui parler à un moment."
     lysa inquiet "Bah pas maintenant."
-    nyra raison "On peut déjà voir ailleurs. Les gens vont commencer à se raconter des choses, et demain on saura plus ce qui s'est vraiment passé."
+    nyra raison "Noam, si tu veux parler aux autres, fais-le avant qu'ils aient tous entendu dix versions différentes de ce qui s'est passé."
     noam fatigue "J'ai pas envie de passer pour le type qui suspecte tout le monde."
     lysa neutre "Alors commence par leur parler normalement. Et si quelqu'un te dit de dégager, tu dégages."
     noam neutre "OK."
     "Je cherche sur la tablette les dernières notes de Tomas. Il y a tellement de pistes que je pourrais y passer la nuit."
-    nyra raison "Tu vas t'épuiser si tu veux tout faire aujourd'hui."
+    nyra raison "Commence par deux ou trois pistes. Si tu veux tout vérifier maintenant, tu ne dormiras pas de la nuit."
     lysa reflexion "Commence par ce qui te semble important. On n'aura pas le temps de retourner toute la station aujourd'hui."
     noam sourire "Tu comptes ça comme un conseil médical ?"
     lysa fatigue "Comme une menace."
@@ -754,21 +754,21 @@ label _26_0_1_1_0_1_PA_NYRA:
     scene bg_cafeteria at adaptive_fullscreen with dissolve
     play music "music/bgm_calm_not_peace.mp3" fadein 0.7
     $ showGroup([("nyra", "neutre", 0.36), ("noam", "neutre", 0.70)])
-    nyra reflexion "T'as une sale tête. Assieds-toi."
+    nyra reflexion "Assieds-toi, Noam. Je viens de me faire du café, il en reste."
     noam fatigue "Je voulais te demander..."
-    nyra sourire "Hier soir ? Tu cherches qui a croisé qui. J'imagine que je suis sur la liste."
-    noam neutre "Tu me facilites pas la tâche."
-    nyra raison "Je suis rentrée après qu'on s'est croisés. Je n'ai pas revu Tomas."
+    nyra sourire "Je me doutais que tu viendrais me voir. Tu cherches à savoir où on était hier soir, non ?"
+    noam neutre "J'aurais préféré te demander autre chose, oui."
+    nyra raison "Je suis rentrée chez moi après t'avoir croisé. Je n'ai pas revu Tomas depuis notre dernier repas."
     noam reflexion "Tu savais pour l'échange de chambres ?"
-    nyra hesitation "Qu'Elen voulait l'aider, oui. Pas où Tomas allait dormir exactement."
+    nyra hesitation "Je savais qu'Elen voulait l'aider. Je ne savais pas exactement où il passerait la nuit."
     "Nyra pousse une tasse vers moi."
-    nyra neutre "Et toi ? À quelle heure tu es rentré ?"
+    nyra neutre "Au fait, quand on s'est croisés, tu rentrais directement dans ta chambre ?"
     noam surpris "Moi ?"
-    nyra sourire "Je réponds à tes questions. Je me disais qu'on pouvait essayer dans les deux sens."
+    nyra sourire "J'essaie aussi de me rappeler la soirée. Tu as regardé l'heure quand tu es rentré ?"
     noam fatigue "J'ai pas regardé l'heure."
-    nyra raison "Voilà. Tu vois pourquoi les souvenirs de chacun ne suffisent pas."
+    nyra raison "D'accord. Moi non plus. Si on veut une heure précise, il faudra autre chose que nos souvenirs."
     noam inquiet "Tu crois que quelqu'un ment ?"
-    nyra neutre "Je crois qu'on est tous fatigués. Si tu pars de l'idée qu'on te ment, tu n'entendras plus rien d'autre."
+    nyra neutre "Je ne sais pas. Mais quelqu'un peut se tromper d'heure sans te mentir. Ne te ferme pas à cette possibilité."
     "Elle reprend sa tasse. Je ne sais toujours pas si elle essaie de m'aider ou d'orienter mes questions."
     $ j26_alt_nyra = True
     $ hideGroup()
@@ -860,14 +860,14 @@ label _26_0_1_1_0_1_BILAN:
     $ showGroup([("lysa", "fatigue", 0.21), ("nyra", "neutre", 0.46), ("noam", "fatigue", 0.70)])
     lysa reflexion "T'as trouvé quelque chose ?"
     noam fatigue "Plein de choses. Une réponse, non."
-    nyra raison "Montre-moi ce que tu as noté, pas ce que tu crois."
+    nyra raison "Passe-moi ta tablette, je vais regarder tes notes avec toi."
     "Je fais défiler les témoignages sur la tablette. Lysa ne regarde même pas l'écran."
     if "iris" in investigation_pa_completed:
         noam neutre "Sael ne sait toujours pas comment il est mort."
         lysa fatigue "Et elle va pas le deviner parce qu'on lui demande plus fort."
     if "flacon" in investigation_pa_completed:
         noam reflexion "Il y a ce flacon pour dormir. Presque vide."
-        nyra raison "Mais aucune preuve que Tomas ait pris ces comprimés."
+        nyra raison "Attends, on ne sait pas s'il a réellement pris ces comprimés. Note le flacon, pas la conclusion."
     if "elen" in investigation_pa_completed:
         noam inquiet "Elen a entendu quelqu'un frapper très fort à la porte de Tomas. Elle n'a pas vu qui."
         lysa inquiet "J'espère que tu lui as pas fait répéter ça cinq fois."
@@ -878,7 +878,7 @@ label _26_0_1_1_0_1_BILAN:
         noam fatigue "Ryn confirme leur soirée. Il a surtout envie de cogner dans un mur."
         lysa blase "Ça, c'est pas une nouveauté."
     if "nyra" in investigation_pa_completed:
-        nyra neutre "Et je t'ai dit que je suis rentrée me coucher. Sans témoin."
+        nyra neutre "Et je ne peux pas te donner un témoin pour mon retour dans ma chambre. Je suis rentrée seule."
     if "kael" in investigation_pa_completed:
         noam reflexion "Elias a dû forcer le verrou. Sur ça, lui et Kael sont formels."
     if "grille" in investigation_pa_completed:
@@ -895,7 +895,7 @@ label _26_0_1_1_0_1_BILAN:
     noam reflexion "Avec cette porte fermée... je me demande s'il s'est pas donné la mort."
     lysa inquiet "T'as même pas une cause de décès, Noam !"
     noam agace "Je dis pas que j'en suis sûr. J'essaie de comprendre."
-    nyra raison "Alors ne transforme pas une possibilité en conclusion. Ni devant Elen, ni devant les autres."
+    nyra raison "Noam, ne va pas raconter ça à Elen comme si tu savais déjà ce qui s'était passé. Elle a assez de mal à tenir aujourd'hui."
     noam fatigue "Ouais. D'accord."
     "Je ferme la tablette. Lysa a toujours son café entre les mains, mais elle n'y a pas touché."
 
@@ -905,7 +905,7 @@ label _26_0_1_1_0_1_BILAN:
     lysa fatigue "Il s'est levé direct. Et après, il m'a demandé si je voulais son dessert. Quel idiot..."
     "Elle essaie de rire, mais ça ne sort pas. Elle essuie rapidement ses yeux et repousse sa tasse."
     lysa fatigue "Bon. On a rendez-vous avec les autres, non ?"
-    nyra reflexion "Ouais. Faudra leur dire qu'on n'a pas trouvé de réponse."
+    nyra reflexion "Oui. On va leur dire où on en est, même si on n'a pas de réponse."
     noam raison "Ils vont adorer."
     $ hideGroup()
     jump _26_0_1_1_0_1_REUNION
@@ -944,7 +944,7 @@ label _26_0_1_1_0_1_REUNION:
         julian reflexion "Donc tu penses que quelqu'un ment ?"
         noam raison "Non, Julian. Je dis juste que j'ai rien pu vérifier."
     sael raison "Hé. On a déjà passé assez de temps à s'en vouloir ces derniers jours. Vous allez pas recommencer ici."
-    nyra neutre "Sael a dit qu'elle cherchait encore. On peut peut-être lui laisser une nuit avant de tout retourner."
+    nyra neutre "Sael n'a pas fini son examen. Pour ce soir, laissez-la travailler et arrêtez de lui demander de confirmer vos hypothèses."
     noam raison "Ouais. Pour ce soir, on arrête."
     if "flacon" in investigation_pa_completed:
         noam neutre "Et le flacon, on sait même pas à qui étaient les comprimés."

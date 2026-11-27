@@ -391,7 +391,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     ryn colere "Ce qui me gonfle, c'est pas juste qu'on reste. C'est que quelqu'un a demandé ça et que depuis hier tout le monde fait comme si de rien n'était."
 
-    nyra raison "Personne fait comme si de rien n'était. On n'a aucun nom. Tu veux faire quoi, interroger tout le monde ?"
+    nyra raison "Ryn, si tu as une piste, donne-la-nous. Sinon je ne vais pas te laisser transformer chaque petit-déjeuner en interrogatoire."
 
     ryn fatigue "J'en sais rien. Mais attendre neuf jours en se regardant de travers, ça va être sympa."
 
@@ -481,7 +481,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
 
     tomas hesitation "Mais le principe est évident. Oui. Je suis pour le principe."
 
-    nyra raison "On vérifiera le texte demain. Si la formulation correspond vraiment à ce que Kami vient de lire, je vois pas de raison de bloquer."
+    nyra raison "Sur le principe, je suis pour. Mais demain, je veux qu'on lise le texte avant de s'engager. On sait déjà ce que Kami peut faire avec une formulation vague."
 
     "Julian sourit déjà."
 
@@ -500,7 +500,7 @@ label _22_0_1_1_0_0_ANNONCE_VOTE:
     julian fatigue "Oui. Évidemment. Mais tu es pour, hein ?"
     tomas reflexion "Pour le principe, oui."
     julian sourire "Parfait. Donc, presque unanime."
-    nyra raison "On n'a pas encore voté."
+    nyra raison "Julian, ne compte pas encore les voix. On vient justement de dire qu'on attendrait le texte."
     julian fatigue "Vous pourriez me laisser être content au moins dix secondes ?"
     noam taquin "On a dépassé les dix secondes."
     julian fatigue "Noam, je te déteste."

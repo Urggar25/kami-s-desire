@@ -142,7 +142,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     kael calme "Sur certaines stations d'Orbite, l'eau décide déjà du nombre de personnes qu'un habitat peut garder. Cette garantie changerait vraiment des choses."
 
-    nyra raison "Si elle est réellement appliquée. Mais le principe est difficile à contester."
+    nyra raison "Kael, garde cet exemple pour le débat. Si le texte garantit vraiment cet accès, on pourra difficilement lui reprocher de ne servir à rien."
 
     elias neutre "Moi je vois même pas ce qu'on peut raconter pendant le débat. T'as faim, on te donne à bouffer. T'as soif, on te donne de l'eau. T'as nulle part où dormir, on te trouve un toit."
 
@@ -206,7 +206,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
     tomas inquiet "Non ! Enfin... merci. Mais non."
     "Il replie sa tablette, puis la rouvre aussitôt. Je commence à comprendre pourquoi il a l'air épuisé."
     tomas fatigue "Je vais aux archives. Il me manque quelque chose, j'en suis sûr."
-    nyra raison "Si tu trouves, viens au débat avec des faits, pas juste une intuition."
+    nyra raison "D'accord. Si tu trouves quelque chose, apporte-nous les documents. Même si tu n'as pas encore compris ce qu'ils veulent dire."
     tomas neutre "Ouais."
 
 
@@ -248,7 +248,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     ryn neutre "Ouais, enfin il oublie sa tablette alors qu'il vient de dire qu'il va relire un texte dessus."
 
-    nyra raison "La fatigue suffit largement à expliquer ça."
+    nyra raison "Il est épuisé, Ryn. Ramasse sa tablette au lieu de commenter."
 
     lysa blase "Chez les Romains, on aurait probablement ouvert un poulet pour vérifier."
 
@@ -280,7 +280,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     noam reflexion "Mais s'il est le seul à avoir un doute, autant éviter de lui gueuler dessus jusqu'à ce qu'il vote comme nous juste pour qu'on soit tranquilles."
 
-    nyra raison "Ce serait effectivement une assez mauvaise manière d'obtenir l'unanimité."
+    nyra raison "Ryn, je préfère qu'il nous dise ce qui le gêne maintenant plutôt que de découvrir son objection au dépouillement."
 
     ryn agace "J'ai compris."
 
@@ -531,7 +531,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     "Je m'installe sur l'accoudoir du canapé en regardant Elen marquer un deuxième but pendant que Julian accuse cette fois la table d'être légèrement inclinée."
 
-    nyra reflexion "Tu as vu Tomas ?"
+    nyra reflexion "Noam, tu as pu parler à Tomas ? Il n'est toujours pas revenu avec ses documents."
 
     noam neutre "Oui."
 
@@ -543,7 +543,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     noam raison "Mais au moins, je crois que son problème concerne surtout la manière dont le Commandement pourra être interprété."
 
-    nyra raison "Ça correspond à ce qu'il disait ce matin."
+    nyra raison "D'accord. Alors il faut le laisser expliquer précisément ce qu'il craint avant qu'on essaie de le convaincre."
 
     ryn desaccord "Ça reste quand même un putain de toit et de la bouffe."
 
@@ -577,7 +577,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     "Nyra laisse échapper un petit rire."
 
-    nyra raison "Il n'a pas tort."
+    nyra raison "C'est quand même une question qu'il faut poser à Kami."
 
     ryn agace "J'ai pas dit qu'il avait tort."
 
@@ -591,7 +591,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     noam reflexion "Laissez-le parler pendant le débat. S'il n'arrive pas à expliquer ce qui lui pose problème, on lui posera les bonnes questions jusqu'à ce qu'on comprenne."
 
-    nyra reflexion "Tu sembles déjà avoir décidé que tu allais t'en charger."
+    nyra reflexion "Noam, tu as déjà passé du temps avec lui. Tu pourrais l'aider à présenter son problème au groupe."
 
     noam surpris "Moi ?"
 
@@ -734,7 +734,7 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     sael raison "Il n'y a rien à discuter sur le principe. Personne ne devrait manquer de ces choses."
 
-    nyra sourire "Tout le monde semble être d'accord."
+    nyra sourire "Très bien, on est d'accord sur l'objectif. Gardons ça en tête quand on parlera du texte."
     julian sourire "Voilà ! Une fois dans notre vie, nous pouvons faire quelque chose sans nous arracher la tête."
     elen joie "Je propose qu'on fête ça après !"
     iris blase "On n'a pas encore voté."
@@ -795,7 +795,7 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     tomas raison "Si on considère qu'une personne « dispose » d'eau simplement parce qu'il existe un point d'eau quelque part dans sa région, est-ce que le Commandement est respecté ?"
 
-    nyra raison "Probablement pas si l'accès est irréaliste."
+    nyra raison "Je dirais que non. Mais tu veux une garantie écrite, et je ne peux pas t'en donner une qui n'existe pas."
 
     tomas reflexion "Probablement. Mais ce mot-là n'est pas dans le texte."
 
@@ -867,7 +867,7 @@ label _24_0_1_1_0_0_CONCLAVE:
     "Sael ne répond pas tout de suite."
     tomas fatigue "Vous croyez que j'ai pas pensé à ces gens ?"
     noam agace "Personne dit ça. C'est justement pour eux que tu t'acharnes."
-    nyra raison "On ne peut pas réécrire la proposition ici. C'est ce texte-là ou rien."
+    nyra raison "On ne peut plus modifier cette proposition, Tomas. Si tu veux qu'on l'accepte, on peut encore demander à Kami de s'engager sur son application."
     julian neutre "Alors la question, c'est : ce rien, on en fait quoi ?"
     noam reflexion "Tomas... si Kami applique le Commandement au strict minimum, est-ce que ça aide quand même quelqu'un ?"
     tomas hesitation "Peut-être. Au moins ceux qui n'ont absolument rien."
@@ -902,7 +902,7 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     tomas raison "Et si dans une semaine on découvre que Kami considère qu'une ration ridicule remplit le Commandement, je veux que personne ne prétende qu'on n'avait pas vu le problème."
 
-    nyra neutre "Ce sera noté."
+    nyra neutre "Je garde ta remarque. Je ne prétendrai pas qu'on n'en a jamais parlé."
 
     tomas reflexion "Mais..."
 
@@ -928,7 +928,7 @@ label _24_0_1_1_0_0_CONCLAVE:
 
     noam agace "J'ai rien sauvé du tout."
 
-    nyra raison "Tu as identifié précisément ce qui bloquait la discussion."
+    nyra raison "Tu lui as permis d'expliquer son objection sans que Julian lui saute dessus. Ça nous a au moins servi à comprendre ce qu'on votait."
 
     noam reflexion "J'ai juste reformulé ce qu'il disait."
 
@@ -1023,13 +1023,13 @@ label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
     tomas fatigue "Attendez."
     julian fatigue "Non..."
     tomas agace "Je peux finir une phrase avant que tu souffres ?"
-    nyra raison "Vas-y."
+    nyra raison "Julian, attends. Tomas, termine."
     tomas reflexion "J'ai regardé les projections de production, ce matin. Avec Noam."
     noam neutre "On a trouvé une installation dont on n'avait jamais entendu parler."
     tomas raison "Keyper-IIB. Si ce Commandement passe, les quotas de certaines unités là-bas augmentent."
     elias surpris "Des unités de quoi ?"
     tomas fatigue "Je sais pas. C'est ça qui m'embête."
-    nyra reflexion "Tu n'as pas réussi à ouvrir la fiche ?"
+    nyra reflexion "Tu as essayé d'ouvrir la fiche de cette installation ?"
     tomas neutre "Non. Accès refusé."
     kael calme "Ça peut être une station automatisée."
     tomas raison "Oui. Mais on n'en sait rien."
@@ -1051,7 +1051,7 @@ label _24_0_1_1_0_0_CONCLAVE_PRODUCTION_DEBAT:
     tomas stress "J'EN SAIS RIEN !"
     "Il s'arrête, ferme les yeux et reprend plus bas."
     tomas fatigue "Si. Je sais que je veux pas voter pour un truc que j'ai même pas pu vérifier."
-    nyra neutre "On ne pourra pas le vérifier aujourd'hui. Alors il faut choisir."
+    nyra neutre "On n'aura probablement pas la réponse avant le scrutin. Tomas, je ne vais pas te demander de prétendre le contraire, mais il faut que tu saches ce que ton refus implique."
     elen inquiet "Tomas... tu vas voter contre ?"
     tomas hesitation "Je..."
     pause 0.4
@@ -1288,9 +1288,9 @@ label _24_0_1_1_0_0_RESULTAT:
 
     noam colere "Arrêtez avec ça."
 
-    nyra neutre "Tu l'as laissé parler quand plus personne voulait l'écouter. C'était pas gagné."
+    nyra neutre "Tu as bien fait de le laisser aller au bout. J'étais prête à passer à autre chose moi aussi."
     noam taquin "Ça me fait une ligne sur mon CV ?"
-    nyra sourire "Pas avant qu'on voie si le vote tient trois jours."
+    nyra sourire "Attends, on va déjà voir ce que Kami fait du texte."
     noam fatigue "Merci pour la confiance."
 
 
@@ -1456,11 +1456,11 @@ label _24_0_1_1_0_0_APRES_VOTE:
             "Tomas et Nyra ont quitté le canapé pour comparer leurs tablettes, malgré la fête."
             noam taquin "Vous avez vraiment décidé de travailler aujourd'hui ?"
             tomas reflexion "On essaie juste de comprendre comment expliquer le vote aux gens, sans leur promettre davantage que ce qu'il change."
-            nyra raison "Je lui ai dit d'attendre demain pour rédiger son discours."
+            nyra raison "Je lui ai proposé qu'on attende demain. Il veut absolument terminer son compte rendu ce soir."
             tomas inquiet "Ça ne sera pas un discours. Juste un compte rendu."
             noam sourire "On vient de gagner. Vous pouvez poser vos tablettes dix minutes."
             "Nyra éteint immédiatement la sienne. Tomas la regarde, hésite, puis l'imite."
-            nyra taquin "Voilà. C'était assez simple, finalement."
+            nyra taquin "Bon, c'est fait. Tomas, laisse-la éteinte, s'il te plaît."
             tomas sourire "J'espère que tu n'as pas l'intention de noter cette conversation dans le compte rendu."
 
         "Retrouver Lysa à l'écart.":
