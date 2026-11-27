@@ -238,10 +238,10 @@ label _8_FIN_RECHERCHE:
     noam fatigue "Bon, j'ai fait tout ce que je pouvais pour l'instant."
     "Il est déjà tard et j'ai faim. Je vais manger avant de décider à qui je pourrais demander de l'aide."
     menu:
-        "Laisser la chambre telle quelle pour conserver mes repères.":
+        "Je laisse tout comme ça pour l'instant.":
             "Je photographie le bureau pour garder une trace de l'endroit où sont mes affaires."
             $ chambre_range = False
-        "Remettre les affaires en place avant de sortir.":
+        "Je vais ranger un peu avant de sortir.":
             "Je range les vêtements que j'ai sortis et remets le tiroir en place. Je n'ai pas envie de retrouver la chambre dans cet état ce soir."
             $ chambre_range = True
     if j701_lysa_search_help:
@@ -339,12 +339,12 @@ label _8_0_1_CAFETERIA_ARRIVEE:
     mara neutre "Ça me paraît évident. Je voudrais surtout qu'on évite de raconter aux absents que les sanctions ont cessé, parce qu'après on va passer la journée à corriger ce qu'ils ont compris."
     "Tomas récupère sa tablette. Il n'a presque pas touché à son repas."
     menu:
-        "Soutenir Tomas devant le groupe.":
-            noam neutre "Je trouve qu'il a eu raison de vérifier avant de nous en parler. S'il avait annoncé ça hier soir avec encore moins d'informations, on aurait passé la nuit à se demander si c'était vrai."
+        "Tomas a bien fait de vérifier avant de nous en parler.":
+            noam neutre "Tomas a bien fait de vérifier avant de nous en parler. S'il nous avait dit ça hier soir, on aurait passé la nuit à se demander si c'était vrai."
             tomas gene "Merci. Je voulais pas vous cacher quelque chose d'important."
             mara "Je sais. J'aurais juste préféré qu'on soit au courant plus tôt, même si c'était incertain."
-        "Demander comment vérifier sans mettre quelqu'un en danger.":
-            noam reflechit "Kael, si tu arrives à récupérer les journaux locaux, on pourra au moins vérifier s'il y a encore des données qui arrivent ? J'aimerais bien qu'on n'ait besoin de demander à personne d'enfreindre une règle."
+        "Kael, on peut vérifier ça sans prendre de risques ?":
+            noam reflechit "Kael, on peut vérifier ça sans prendre de risques ? Avec les données qu'on a à bord, je veux dire. Pas en demandant à quelqu'un d'enfreindre une règle."
             kael "C'est ce que je vais essayer de déterminer. Il faut déjà que je voie ce qui a été conservé à bord."
             iris "Viens me chercher si tu veux de l'aide. Je vais arrêter de te demander toutes les cinq minutes où tu en es."
             kael "Merci, ça m'arrangerait."
@@ -408,11 +408,11 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     elias colere "Je vous en prie, arrêtez avec ces batteries. J'ai vérifié les livraisons et je ne les ai pas déplacées. Si on veut refaire le compte, je veux bien, mais je vais pas m'excuser chaque fois que quelqu'un cherche du matériel."
     "Je repense à la matinée que j'ai passée dans ma chambre."
     menu:
-        "Proposer d'aller chercher Kael.":
-            noam inquiet "Je veux bien aller le voir. S'il tourne en rond depuis ce matin, il a peut-être besoin qu'on l'aide, même s'il n'ose pas demander."
+        "Je peux aller voir comment il va.":
+            noam inquiet "Je peux aller voir comment il va. S'il tourne en rond depuis ce matin, il a peut-être besoin d'aide et il ose pas nous le demander."
             ryn neutre "Je viens avec toi. Je voulais justement lui parler."
-        "Lui laisser du temps.":
-            noam hesitation "S'il t'a demandé de le laisser tranquille, on devrait peut-être attendre un peu. J'ai pas envie qu'on se retrouve tous devant sa porte alors qu'il a juste besoin d'être seul."
+        "On devrait peut-être le laisser tranquille un moment.":
+            noam hesitation "On devrait peut-être le laisser tranquille un moment. J'ai pas envie qu'on débarque tous devant sa porte alors qu'il a juste besoin d'être seul."
             lysa reflechit "Oui, on peut lui demander quand il reviendra."
     play sound "audio/sfx_door.mp3" volume 1.0
     with hpunch

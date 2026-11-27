@@ -670,12 +670,13 @@ label _7_0_1_REVEIL_CHAMBRE:
     "Je récupère une chaussette au pied du lit. L'autre est coincée sous mon bureau."
     noam "Je vais pas me plaindre d'avoir pu dormir, mais hier... J'avais vraiment l'impression qu'elle avait besoin de nous."
     menu:
-        "Rester un moment avec Lysa.":
+        "Ça va, toi ? T'as réussi à dormir ?":
             $ j701_lysa_worry = True
+            noam "Ça va, toi ? T'as réussi à dormir ?"
             lysa "J'ai vérifié ta porte deux fois ce matin. J'allais finir par demander à quelqu'un de venir l'ouvrir."
             noam "Ah... Désolé, je devais vraiment dormir comme une masse."
             lysa "T'as le droit de dormir. Préviens-moi juste si tu comptes passer la journée ici."
-        "Essayer de la détendre.":
+        "Au moins, personne n'est venu commenter ma tronche au réveil.":
             noam "Au moins, personne n'est venu commenter ma tronche au réveil."
             lysa "Je peux encore m'en charger si ça te manque."
             "Je ramasse mon pantalon."
@@ -713,15 +714,15 @@ label _7_0_1_REVEIL_CHAMBRE:
     "Je pose le carton sur le sol. Il contient des pansements, de la nourriture et un appareil emballé."
     noam "Bon, je commence par quoi ? J'ai pas encore mangé et je sens que je vais faire des erreurs."
     menu:
-        "Faire un inventaire complet avec Nyra.":
+        "Passe-moi une feuille, je vais tout noter.":
             $ j701_nyra_sorting = "inventaire"
-            noam "Passe-moi une feuille. Je note le contenu, et toi tu vérifies les références."
+            noam "Passe-moi une feuille, je vais tout noter. Tu vérifies les références pendant ce temps ?"
             nyra "Parfait. Écris assez grand, il faudra que je puisse relire."
             "Elle me tend son crayon."
             lysa "Je vais chercher un truc à boire. Je reviens."
-        "Isoler les colis douteux pour gagner du temps.":
+        "On met de côté les colis qui posent problème ?":
             $ j701_nyra_sorting = "rapide"
-            noam "On pourrait mettre les colis qui posent problème de côté et ranger le reste. On serait déjà débarrassés de la moitié."
+            noam "On met de côté les colis qui posent problème ? Si on range le reste, on sera déjà débarrassés de la moitié."
             nyra "Ça me convient si on note où ils sont. Pas dans le passage, s'il te plaît."
     "Au bout d'un moment, Lysa revient avec trois verres d'eau et un paquet de biscuits trouvé parmi les rations."
     lysa "Vous en voulez ?"
@@ -854,14 +855,14 @@ label _7_0_1_APRES_MIDI_TOMAS_CANON:
     tomas "Oui. Je voulais surtout savoir si quelqu'un d'autre arrivait au même résultat."
     call play_stat_dialogue("d7_0_1") from _call_stat_dialogue_d7_0_1
     menu:
-        "Respecter sa demande de discrétion jusqu'au lendemain.":
+        "D'accord, ça reste entre nous jusqu'à demain.":
             $ j701_tomas_secret_kept = True
-            noam "D'accord. On attend demain, mais ne continue pas tout seul toute la nuit. Si on trouve autre chose, on décidera ensemble de ce qu'on en fait."
+            noam "D'accord, ça reste entre nous jusqu'à demain. Mais passe pas la nuit là-dessus. Si on trouve autre chose, on décidera ensemble de ce qu'on en fait."
             tomas neutre "Ça me va. Je te préviendrai si j'obtiens de nouveaux relevés."
-        "Laisser Tomas décider s'il souhaite demander un avis à Kael.":
+        "Si tu veux demander à Kael, vas-y.":
             $ j701_tomas_secret_kept = False
             $ j701_tomas_informed = True
-            noam "Fais comme tu le sens. Si tu penses que ça peut t'aider à vérifier, je ne vois pas de problème."
+            noam "Si tu veux demander à Kael, vas-y. Ça te rassurera peut-être d'avoir son avis."
             tomas "Je vais lui transmettre uniquement les relevés, sans en tirer de conclusion."
             "Il rédige le message et joint les relevés."
             tomas "C'est envoyé."
@@ -981,10 +982,10 @@ label _7_0_1_FIN_JOURNEE:
     noam inquiet "Qui est entré ici ?"
     "Je prends ma tablette. Le nom de Lysa apparaît dans mes conversations récentes."
     menu:
-        "Demander à Lysa de m'aider à chercher demain.":
+        "Je vais demander à Lysa si elle peut venir demain.":
             $ j701_lysa_search_help = True
             call messenger_play("j7_lysa_dessin", "lysa", [("noam", "T'es réveillée ? Il me manque quelque chose dans ma chambre. Tu pourrais venir voir demain ?"), ("lysa", "Oui. Laisse les affaires comme elles sont, j'arrive demain matin."), ("noam", "Merci.")], objective_text="Envoyer un message à Lysa", notify=False) from _call_j701_messenger_lysa_dessin
-        "Garder la disparition pour moi cette nuit.":
+        "Non, je préfère chercher encore un peu tout seul.":
             "J'écris à Lysa, puis j'efface le message. Je veux encore vérifier avant de lui en parler."
     $ noam_has_juliette_drawing = False
     "Je pose la boîte vide sur le bureau. Je vérifie la serrure de ma porte."
