@@ -1689,7 +1689,9 @@ init -2 python:
 
     def roadmap_label_seen(node):
         label = node.get("label")
-        return bool(label and renpy.seen_label(label))
+        return bool(label and (renpy.seen_label(label) or (
+            label == "_8_0_1_REVEIL_CHAMBRE" and renpy.seen_label("_8_1_0_0_CANON")
+        )))
 
     def roadmap_is_discovered(node):
         node_id = node["id"]

@@ -1050,4 +1050,4 @@ label _7_0_1_FIN_JOURNEE:
     $ hideGroup()
     scene black with fade
     call end_day("8", sleeping=True) from _call_end_day_11
-    jump _8_1_0_0_CANON
+    jump _8_0_1_REVEIL_CHAMBRE

@@ -42,7 +42,10 @@ init python:
     ]
 
     def _story_node_seen(node):
-        return renpy.seen_label(node["label"])
+        label = node["label"]
+        return renpy.seen_label(label) or (
+            label == "_8_0_1_REVEIL_CHAMBRE" and renpy.seen_label("_8_1_0_0_CANON")
+        )
 
     def _story_node_visible(node):
         return _story_node_seen(node)

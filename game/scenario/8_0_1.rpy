@@ -6,6 +6,10 @@
 # --------------------------------------------------------------------------------------------
 
 label _8_1_0_0_CANON:
+    # Compatibilité avec les sauvegardes et anciens sauts du J8_0_1.
+    jump _8_0_1_REVEIL_CHAMBRE
+
+label _8_0_1_REVEIL_CHAMBRE:
     scene black
     $ current_day = 8
     $ noam_has_juliette_drawing = False
