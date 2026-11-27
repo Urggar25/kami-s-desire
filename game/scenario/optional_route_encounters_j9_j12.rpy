@@ -2,22 +2,24 @@
 # Aucun changement d'indice, de vote ou de relation. Un seul passage par trajet.
 
 label KD_ROUTE_J9_ELEN:
+    $ j901_elen_route_seen = True
     scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Elen sort de sa chambre en ajustant sa veste. Elle ralentit en me voyant."
-    menu:
-        "Discuter avec Elen.":
-            $ showGroup([("elen", "inquiet", 0.35), ("noam", "neutre", 0.65)])
-            elen inquiet "Tu crois que maintenant que Kami est revenue, tout va recommencer comme avant ?"
-            noam reflexion "Avant quoi ?"
-            elen "Avant sa panne. Les annonces, les votes, les journées qui se ressemblent..."
-            noam "Elle a déjà repris ses habitudes, non ?"
-            elen triste "Oui, mais pendant deux jours j'ai cru qu'on allait enfin pouvoir souffler."
-            noam "Moi aussi."
-            elen sourire "Bon. On ferait mieux d'y aller avant qu'elle nous reproche d'être en retard."
-            noam sourire "Ce serait bien son genre."
-            $ hideGroup()
-        "Rejoindre le Conclave sans s'arrêter.":
-            pass
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.6
+    $ showGroup([("elen", "inquiet", 0.32), ("noam", "neutre", 0.68)])
+    "Elen arrive en trottinant derrière moi. Elle me prend par le poignet."
+    elen "Noam ! Viens, vite ! J'ai FAIM !"
+    noam surpris "Attends, je vais aussi au Conclave !"
+    elen "J'ai demandé à Goumi un bout de pain, même ça il a refusé. Il m'a répété l'annonce de Kami trois fois !"
+    noam "Tu comptais manger pendant la réunion ?"
+    elen "Bah oui ! Si elle voulait pas perdre de temps, elle avait qu'à nous laisser manger !"
+    window hide
+    with hpunch
+    pause 0.25
+    "Elle me tire en avant. Je dois accélérer pour ne pas trébucher."
+    elen triste "J'aimais bien ces deux journées, moi. On pouvait se lever tranquillement, faire des trucs ensemble..."
+    noam "Moi aussi. On aurait pu en avoir une troisième."
+    elen "Bon, on entre et on règle ça vite. Après, je prends deux petits-déjeuners."
+    $ hideGroup()
     return
 
 label KD_ROUTE_J9_TOMAS:

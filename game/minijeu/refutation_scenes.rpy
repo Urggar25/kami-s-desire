@@ -84,6 +84,30 @@ init python:
     )
 
     refutation_register(
+        "j9_nyra_confirmation", title=_("REGROUPEMENTS — LE TEXTE"), bg="bg_conclave",
+        statements=[
+            ("ryn", "colere", _("Si on vote tous pour, [[les campements seront forcément sauvés]] !")),
+            ("elen", "peur", _("Il faut [[voter tout de suite]], ils n'ont pas le temps d'attendre !")),
+            ("lysa", "blase", _("Je préfère qu'on vote plutôt que de [[perdre du temps sur un mot]].")),
+            ("nyra", "raison", _("Relisez le texte : [[rien ne garantit que les campements non déclarés seront épargnés]].")),
+            ("tomas", "inquiet", _("Dans mes données, je n'ai trouvé [[aucune déclaration enregistrée]].")),
+        ],
+        fragments=[
+            ("p3_declaration", _("Intitulé de l'amendement"), lambda: dossier_arg_unlocked("p3_declaration")),
+            ("p3_absence_declaration", _("Campements non déclarés"), lambda: dossier_arg_unlocked("p3_absence_declaration")),
+            ("p3_suspension", _("Suspension des sanctions"), lambda: dossier_arg_unlocked("p3_suspension")),
+        ],
+        confirmations={(3, 0), (4, 0)},
+        solution={(3, 0): "p3_declaration"},
+        miss={
+            (3, 0): _("Il faut montrer le texte lui-même, pas seulement l'état des campements."),
+            (4, 0): _("Ce constat est déjà établi. Il faut montrer pourquoi le vote ne garantit pas leur sécurité."),
+            "default": _("L'urgence ne suffit pas à prouver ce que l'amendement garantit. Écoute Nyra."),
+        },
+        lives=3, line_time=6.5,
+    )
+
+    refutation_register(
         "j9_regroupements", title=_("REGROUPEMENTS — LE PIÈGE"), bg="bg_conclave",
         statements=[
             ("kami", "taquin", _("Une seule abstention et [[tout sera réglé]] !")),

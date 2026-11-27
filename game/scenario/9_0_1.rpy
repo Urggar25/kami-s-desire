@@ -1,169 +1,141 @@
-# --------------------------------------------------------------------------------------------
-# JOUR 9 — Réveil chambre
-# Kami revient après deux jours de silence.
-# Elle réveille directement Noam par annonce matinale.
-# Convocation immédiate dans la salle du Conclave pour annoncer le prochain vote.
-# --------------------------------------------------------------------------------------------
+# JOUR 9 — Retour de Kami, réunion d'urgence et vote.
+default j901_elen_route_seen = False
+default j901_nyra_confirmed = False
+default j901_julian_delay_success = False
+default j901_julian_discours_done = False
 
 label _9_0_1_REVEIL_CHAMBRE:
     scene black
     $ current_day = 9
+    $ current_period = "Soir"
     $ cafeteria_food_level = "medium"
-    $ current_period = "Matin"
     $ noam_has_juliette_drawing = False
-    play music "music/bgm_calm_not_peace.mp3" fadein 2.5
-    $ blink()
-    "Quelque chose me cogne le genou."
-    "J'ouvre un œil. C'est la chaise que j'ai bloquée sous la poignée hier soir."
-    think "Parfait. Première victime de notre grand complot nocturne : moi."
-    "Je la repousse du pied, puis regarde le bureau. La place du dessin de Juliette est toujours vide."
-    think "Je recommence à calculer combien de personnes ont pu entrer dans ma chambre, et combien de fois je me suis déjà posé cette question."
-    "Une seconde, je crois entendre du bruit dans le couloir."
-    noam inquiet "Qui est là... ?"
-    "Aucune réponse."
-    think "Je deviens ridicule. Je n'ai qu'à attendre que quelqu'un vienne me demander si je peux prêter mon tiroir pour bloquer une autre porte."
-    "Je remets la tête contre l'oreiller."
-    stop music fadeout 0.5
+    $ j901_elen_route_seen = False
+    $ j901_nyra_confirmed = False
+    $ j901_julian_delay_success = False
+    $ j901_julian_discours_done = False
+    stop music fadeout 0.2
+    pause 0.65
+    scene bg_chambre at adaptive_fullscreen with vpunch
+    "Je me redresse d'un coup dans mon lit. J'ai le cœur qui bat à toute vitesse."
+    pause 0.65
+    "Il fait encore noir. Je passe une main sur ma nuque, elle est trempée."
+    think "Qu'est-ce qui m'a réveillé ?"
+    "J'attends un peu, sans bouger. Je n'entends plus rien."
+    "Je finis par me lever et prends ma tablette. L'heure est affichée, beaucoup trop tôt pour me préparer."
+    scene chambre2 at adaptive_fullscreen with dissolve
+    "Le voyant de la serrure est allumé. Je vérifie le verrou sans actionner l'ouverture."
+    think "Elle est fermée. Rien n'a bougé."
+    pause 0.8
+    "Je reste devant la porte quelques secondes, la main sur la poignée. Je ne sais même pas ce que j'attends."
+    scene bg_chambre at adaptive_fullscreen with dissolve
+    "Je regarde le bureau. Toujours pas de dessin."
+    think "J'ai dû faire un mauvais rêve."
+    "Je retourne me coucher. Il me faut un moment avant de réussir à fermer les yeux."
+    scene black with fade
+    pause 0.85
+    $ current_period = "Matin"
     play sound sfx_announce
-    pause 0.6
-    think "..."
-    think "Non."
-    $ hideGroup()
+    $ blink()
     play music "music/bgm_system_override.mp3" fadein 0.7
     show screen kami_broadcast_ui
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "BONJOUUUUR, mes adorables petits rescapés !"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Alors ? Qui a bien dormi ? Qui a pleuré ? Qui a profité de mes deux jours de congé pour devenir une personne intéressante ?"
-    noam fatigue "Toi, en tout cas, tu n'as pas changé."
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Oh, Noam ! Déjà debout ? Tu me déçois, j'avais misé sur une troisième grasse matinée."
-    noam colere "Qu'est-ce qui t'est arrivé ?!"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Bonjour à toi aussi. Dans la civilisation, on répond au salut avant l'interrogatoire."
-    noam inquiet "Tu as cessé de répondre pendant deux jours. Après les pannes du vote, on a cru que..."
+    kami "Bonjour, mes chéris ! Tout le monde au Conclave. Maintenant, s'il vous plaît."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Que j'étais MORTE ?!"
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "C'est touchant. Et très vexant. Une petite maintenance, mes chéris ! Rien qu'une maintenance."
-    noam reflechit "Et les exécutions ?"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Quoi, les exécutions ?"
-    noam colere "Le compteur est resté à zéro !"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Ah ! Les chiffres. Vous avez donc appris à lire autre chose que vos menus de cafétéria. J'en suis émue."
-    noam inquiet "Tu n'as pas répondu."
+    kami "Ne passez pas par la cafétéria. J'ai demandé à Goumi de ne rien servir avant la réunion."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Je ne suis pas tenue de fournir un compte rendu détaillé de mes opérations internes à chaque enfant qui s'inquiète parce qu'on l'a laissé sans surveillance !"
-    pause 0.5
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "En parlant de surveillance... certains ont transformé leurs chambres en forteresses. Une chaise contre une porte ? Sérieusement ?"
-    think "Mon regard descend vers la chaise, encore couchée près du lit."
-    kami "J'espère au moins que la révolution du mobilier vous a apporté le sommeil."
-    noam reflechit "Tu as vu ce qu'il s'est passé dans nos chambres ?"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Tu parles de la poussière ? Du désordre ? De ton goût très discutable pour les vêtements froissés ?"
-    noam inquiet "Je parle des affaires qui ont disparu."
-    pause 0.7
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je parle, moi, du troisième vote."
-    think "Elle a entendu. Elle a choisi de ne pas répondre."
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Vous êtes TOUS convoqués dans la salle du Conclave ! Immédiatement ! Et essayez de ne pas traîner. Nous avons un programme chargé."
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ah, et remettez les meubles à leur place. Je refuse de présider un parlement qui a peur des chaises."
+    kami "Je n'ai pas toute la matinée. Dépêchez-vous !"
     hide screen kami_broadcast_ui
     scene bg_chambre at adaptive_fullscreen with dissolve
-    $ showGroup([("noam", "inquiet", 0.50)])
-    "L'écran s'éteint. Je reste un instant sans bouger, la manche de ma veste dans la main."
-    think "Elle me nargue pour une chaise, mais ne dit rien d'une photo et d'un dessin volés."
-    noam reflechit "Maintenance, hein..."
-    "Je soulève la chaise pour dégager la porte. Elle a laissé une marque au sol."
-    think "Voilà. Si quelqu'un entre encore ce soir, au moins le plancher pourra témoigner."
+    think "Deux jours sans un mot et elle reprend comme si de rien n'était."
+    "Je m'habille à la hâte et vérifie que ma tablette est bien dans ma poche."
     $ hideGroup()
-    stop music fadeout 1.5
-    scene black with fade
-    call KD_ROUTE_J9_ELEN from _call_optional_kd_route_j9_elen
-    call OFFER_DAILY_EXPLORATION(
-        "_9_0_1_CONCLAVE_ANNONCE", 1,
-        ["conclave", "cafeteria", "archive"],
-        "Sur le chemin du Conclave", "conclave"
-    ) from _call_offer_exploration_j9_main
+    stop music fadeout 0.8
+    $ current_scene_active = "_9_0_1_ROUTE_CONCLAVE"
+    $ corridor_current = "dortoir"
+    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_j901_leave_chambre
+    call CORRIDOR_NAVIGATION("dortoir") from _call_offer_exploration_j9_main
+    $ current_scene_active = None
+    jump _9_0_1_CONCLAVE_ANNONCE
 
 label _9_0_1_CONCLAVE_ANNONCE:
-    call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_303
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
-    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.5
-    $ showGroup([
-        ("lysa", "blase", 0.08), ("ryn", "fatigue", 0.25),
-        ("noam", "inquiet", 0.42), ("iris", "fatigue", 0.58),
-        ("mara", "stress", 0.75), ("elen", "peur", 0.92),
-    ])
-    iris colere "JE REFUSE !"
-    call kd_vn_reaction("iris", "colere", "#ff9c55")
-    mara taquin "Ah. Voilà une excellente manière de commencer le vote."
-    iris colere "Je refuse qu'elle appelle ça une maintenance ! Une maintenance, ça se planifie ! Ça se documente !"
-    lysa blase "Tu veux qu'elle t'envoie son agenda ?"
-    iris inquiet "Je veux juste savoir comment une IA qui contrôle la planète peut s'arrêter deux jours sans laisser de trace !"
-    ryn fatigue "Moi, je veux juste qu'on arrive à cette foutue salle."
-    elen sourire "Au moins, elle a l'air d'aller mieux !"
-    mara stress "Elle allait mieux aussi quand elle nous a fait voter pour des gens qui allaient mourir."
-    elen peur "Je sais. Je voulais seulement..."
-    lysa neutre "Tu voulais qu'on ait une bonne nouvelle. Je sais."
-    "Elen se tait. Iris regarde un écran mural, comme si elle espérait y voir apparaître une explication."
-    julian "Mes chers collègues !"
-    "Julian nous rejoint, les cheveux encore ébouriffés, les bras ouverts comme s'il venait inaugurer une statue."
-    mara taquin "Tu as oublié ton peigne ou tu t'es coiffé avec une brosse à chaussures ?"
-    julian "J'ai privilégié la ponctualité sur l'esthétique."
-    lysa blase "Une première historique."
-    julian "J'apprécierais que cette date soit enregistrée."
-    ryn colere "ON PEUT AVANCER ?!"
-    "Il part devant nous. Personne ne se moque de lui."
-    noam reflechit "Ryn..."
-    ryn fatigue "Quoi ?"
-    noam inquiet "Tu as pensé aux gens des frontières ?"
-    "Il s'arrête si brutalement que Julian manque de le heurter."
-    ryn colere "Depuis le vote ? Pas une minute sans y penser."
-    sael "Alors regarde où tu marches."
-    "Sael arrive par l'autre bout du couloir. Elle dépasse Ryn sans ralentir."
-    ryn colere "Tu as quelque chose à dire ?"
-    sael "Oui. Nous sommes en retard."
-    lysa blase "Une réponse parfaite. Personne ne devrait pouvoir se disputer avec ça."
-    "Ryn lui emboîte le pas en serrant les dents."
-    $ hideGroup()
-
-    call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_304
+    $ current_scene_active = None
+    $ exploration_libre_active = False
+    $ exploration_libre_next_label = None
+    $ exploration_libre_destination_room = None
     scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("lysa", "blase", 0.10), ("ryn", "fatigue", 0.27),
-        ("sael", "inquiet", 0.43), ("kael", "fatigue", 0.57),
-        ("tomas", "inquiet", 0.73), ("iris", "fatigue", 0.90),
-    ])
-    "Kael est déjà assis. Il fixe la table sans toucher à sa tablette."
-    iris reflechit "Kael ?"
-    kael fatigue "Elle était sous mon oreiller."
-    iris hesitation "Quoi ?"
-    kael fatigue "La photo. Elle était sous mon oreiller. Je l'ai vérifié encore ce matin."
-    "Iris ouvre la bouche, puis s'installe en silence."
-    tomas inquiet "J'ai trouvé un élément dans les données de Limen. Enfin... j'espère qu'il ne s'agit pas de..."
-    ryn fatigue "Tomas, si tu as quelque chose à dire, dis-le."
-    tomas reflechit "Des mouvements de population. À proximité des frontières."
-    sael inquiet "Combien ?"
-    tomas inquiet "Les chiffres sont incomplets. Je vérifie."
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
+    $ showGroup([("elen", "inquiet", 0.10), ("iris", "fatigue", 0.27), ("nyra", "neutre", 0.43), ("kael", "fatigue", 0.57), ("lysa", "blase", 0.73), ("noam", "inquiet", 0.90)])
+    elen "Je vous préviens, je mange dès qu'on sort d'ici. Même si c'est déjà l'heure du déjeuner."
+    iris "Tu te rends compte qu'elle vient de disparaître pendant deux jours ? Une maintenance, ça se prépare !"
+    lysa "Elle t'a pas envoyé son planning ?"
+    iris colere "C'est pas drôle ! Elle a arrêté de répondre et le compteur des sanctions est resté à zéro."
+    nyra raison "On lui posera la question quand elle sera là. Kael, tu as vu Tomas en venant ?"
+    kael fatigue "Non. Pourquoi ?"
+    "Nyra regarde les sièges, puis l'heure sur sa tablette."
+    nyra reflexion "Il manque Tomas. C'est vraiment pas dans ses habitudes."
+    elen inquiet "Il était peut-être encore en train de dormir ?"
+    lysa neutre "Lui ? Il serait capable d'arriver dix minutes en avance à son propre enterrement."
+    nyra raison "Je lui ai envoyé un message. Il répond pas."
+    stop music fadeout 1.1
+    noam inquiet "Quelqu'un est passé devant sa chambre ce matin ?"
+    iris reflechit "Non, j'ai rejoint les autres directement."
+    kael fatigue "Attends, pourquoi tu demandes ça ?"
+    think "Il a juste raté l'annonce. Il ne peut rien lui être arrivé, si ?"
+    window hide
+    $ cinematic_focus("kael", t=0.35)
+    pause 0.75
+    $ cinematic_focus("nyra", t=0.40)
+    pause 0.80
+    $ cinematic_focus("lysa", t=0.40)
+    pause 0.65
+    $ cinematic_focus("noam", t=0.40)
+    pause 0.80
+    $ cinematic_reset(t=0.25)
+    play sound sfx_door
+    with hpunch
+    $ hideGroup()
+    $ showGroup([("tomas", "gene", 0.25), ("nyra", "reflexion", 0.50), ("noam", "surpris", 0.75)])
+    "Tomas déboule dans la salle, complètement rouge, la chemise collée au dos."
+    tomas gene "Pardon ! Excusez-moi, vraiment, j'ai couru dès que j'ai vu l'heure et... désolé !"
+    noam fatigue "Ah, putain."
+    tomas inquiet "J'ai raté quelque chose ? J'étais aux archives, il fallait absolument que je vérifie des données avant de venir."
+    nyra raison "Assieds-toi. Tu vas nous expliquer ce que tu as trouvé."
+    tomas gene "Oui, pardon. J'aurais dû vous prévenir. Je suis désolé de vous avoir fait attendre."
+    noam "C'est bon, Tomas. Respire."
+    play music "music/bgm_introspective_atmosphere.mp3" fadein 0.8
+    tomas inquiet "Ça concerne Limen. J'ai trouvé des mouvements de population près des frontières, mais il me manque encore des chiffres."
+    nyra reflechit "Garde tes données ouvertes. On en parle dès que Kami a fini."
     play sound sfx_announce
     stop music fadeout 0.8
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     play music "music/bgm_system_override.mp3" fadein 1.0
-    kami "Oh, quel comité d'accueil ! Vous êtes presque tous là. Ça me change de ces deux journées où vous avez fait semblant de savoir vous gouverner."
+    kami "Ah ! Vous voilà tous. Bien, on commence."
+    $ bc_show("iris", "colere", px=-70, py=-50, pz=0.85)
+    iris "Deux jours ! Tu nous as laissés deux jours sans la moindre explication ! Qu'est-ce qui s'est passé ?"
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Une maintenance, Iris. Je suis de retour, tu peux être contente."
+    $ bc_show("noam", "inquiet", px=-70, py=-50, pz=0.85)
+    noam "Et les exécutions ? Le compteur est resté à zéro."
+    $ bc_hide()
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Aujourd'hui : troisième vote ! Et je vous ai choisi une question qui devrait vous passionner."
+    kami "Je n'ai pas à te fournir le détail de mes opérations internes, Noam. Nous avons un vote à organiser."
+    $ bc_show("kael", "fatigue", px=-70, py=-50, pz=0.85)
+    kael "Est-ce qu'on peut au moins te poser des questions sur ce qui s'est passé ici ?"
+    $ bc_hide()
+    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    kami "Pas maintenant. Écoutez-moi !"
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Aujourd'hui, troisième vote. Voici votre amendement."
     play sound sfx_tambour
     pause 0.5
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
     kami "Autoriser les regroupements de plus de vingt personnes, idéalement avec déclaration préalable."
     $ unlock_dossier_chapter(3)
+    $ unlock_dossier_prop("p3_vote_regroupements")
     $ unlock_dossier_arg("p3_declaration")
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Je vous rappelle le Commandement IV : les rassemblements non déclarés de plus de vingt individus sont interdits."
@@ -193,6 +165,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     tomas inquiet "Attendez. Les campements rassemblent peut-être des milliers de personnes."
     kael reflechit "Sans déclaration préalable ?"
     tomas neutre "Il n'y a aucune déclaration enregistrée."
+    $ unlock_dossier_arg("p3_absence_declaration")
     "Le silence tombe plus vite que je ne l'aurais cru."
     noam inquiet "Le Commandement IV..."
     iris inquiet "Kami n'a pas appliqué les sanctions pendant deux jours."
@@ -210,10 +183,13 @@ label _9_0_1_CONCLAVE_ANNONCE:
     kami "Oh, vous avez trouvé ! Je commençais à croire que vous aviez perdu la capacité de relier deux informations."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Plusieurs campements limenois dépassent largement le seuil autorisé. Aucun n'a été déclaré."
-    kami "J'ai suspendu temporairement l'application du Commandement à leur égard. Je voulais vous laisser la possibilité de trancher."
+    kami "J'ai suspendu l'application du Commandement à leur égard jusqu'au résultat du vote. Je voulais vous laisser la possibilité de trancher."
+    $ unlock_dossier_arg("p3_suspension")
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "J'aurais pu régler le problème sans vous consulter. Mais ce n'aurait pas été très amusant, vous ne trouvez pas ?"
+    $ bc_show("ryn", "colere", px=-70, py=-50, pz=0.85)
     ryn "Tu te fous de nous ?!"
+    $ bc_hide()
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Oh, Ryn. Du calme. J'ai été d'une patience exemplaire."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -229,32 +205,51 @@ label _9_0_1_CONCLAVE_ANNONCE:
         ("mara", "stress"), ("iris", "inquiet"), ("elen", "peur"),
         ("elias", "fatigue"), ("julian", "inquietude"), ("kael", "fatigue"),
     ])
-    ryn colere "ELLE LES A LAISSÉS SE RASSEMBLER ! POUR NOUS REGARDER LES CONDAMNER !"
-    sael determine "Alors il faut voter pour."
-    ryn colere "Tu viens de dire quoi ?"
-    sael determine "Pour. Tu m'as bien entendue."
-    ryn surpris "..."
-    sael mefiant "Ne me remercie pas. Je refuse encore l'ouverture des frontières. Je refuse aussi qu'on tue des familles pour s'être arrêtées au même endroit."
-    mara neutre "Il y a une différence entre ouvrir les passages et laisser les gens s'asseoir ensemble."
-    elen inquiet "Ils ne se sont pas assis pour s'amuser ! Ils attendent qu'on les laisse partir !"
-    mara agace "Je sais, Elen ! Je n'ai pas dit le contraire !"
-    elias reflechit "Et si le vote passe, les camps sont sauvés ?"
-    tomas hesitation "Pas forcément."
-    ryn colere "QUOI, ENCORE ?!"
-    tomas inquiet "Le mot « idéalement » me gêne. Et rien ne garantit que les campements déjà formés seront régularisés."
-    iris colere "Elle peut donc nous faire voter pour un truc et punir les gens quand même ?!"
-    nyra raison "Oui, Iris. Kami, dis-nous clairement si les sanctions seront suspendues dès le vote ou seulement quand tu auras mis en place le nouveau système."
-    julian "C'est une escroquerie !"
-    lysa blase "Un contrat dont elle écrit seule les petites lignes."
-    kael reflechit "Si nous devons agir, il nous faut des images des campements et un moyen de diffuser des instructions."
-    noam reflechit "La séance est retransmise sur Terre..."
-    sael determine "Alors utilisons-la."
-    ryn colere "On leur dit de se disperser. Tout de suite."
-    tomas reflechit "Par groupes de moins de vingt, hors des points de passage et sans traverser les frontières. Ce n'est pas une garantie, mais..."
-    elen peur "Et ceux qui ne peuvent pas marcher ?"
-    "Personne ne répond immédiatement."
-    noam inquiet "Il faut au moins leur faire parvenir l'alerte. Même si ça ne suffit pas."
+    ryn colere "ELLE LES A LAISSÉS SE RASSEMBLER ! On vote pour, maintenant. On attend quoi ?!"
+    elen peur "Oui, on peut voter tout de suite, non ? Kami vient de dire qu'on pouvait les sauver !"
+    sael determine "Je voterai pour. Mais il faut savoir ce que le texte autorise."
+    ryn "Tu viens de dire que tu voterais pour ! Alors pourquoi tu veux encore discuter ?!"
+    lysa blase "Ryn, baisse d'un ton. Pour une fois qu'on est d'accord, votons."
+    nyra raison "Attendez. Tomas, montre-moi l'intitulé exact."
+    elen inquiet "Mais elle vient de le lire !"
+    tomas inquiet "Je l'ai là. Je te l'envoie."
+    mara "Et nous, on fait quoi pendant que vous relisez trois lignes ?"
+    nyra stress "Laissez-moi une minute. Le mot « idéalement », là. Est-ce que quelqu'un sait ce que ça veut dire pour les rassemblements non déclarés ?"
+    ryn colere "ÇA VEUT DIRE QU'ILS PEUVENT SE RASSEMBLER !"
+    elias inquiet "Attends, Ryn, elle demande juste..."
+    ryn "Non ! Il y a des familles entières qui attendent aux frontières !"
+    $ unlock_dossier_arg("p3_familles")
+    lysa neutre "On risque de perdre du temps pour un mot, Nyra. Si on attend trop, Kami va décider à notre place."
+    nyra raison "Je veux aussi qu'on vote pour. Mais il y a quelque chose qui ne colle pas."
+    noam reflexion "Attends, je regarde le texte."
+    call refutation_run("j9_nyra_confirmation") from _call_j901_nyra_confirmation
+    $ j901_nyra_confirmed = (_return[0] == "success")
+    if j901_nyra_confirmed:
+        call play_noam_interupt
+        noam determine "Nyra a raison. Regardez l'intitulé : il ne dit nulle part ce qui arrive aux campements qui n'ont pas fait de déclaration."
+        lysa reflechit "Ah, merde. Elle pourrait nous dire qu'ils sont toujours en infraction."
+        nyra raison "Exactement. Ryn, je ne veux pas retarder le vote pour le plaisir. Je veux qu'on les prévienne avant."
+    else:
+        noam inquiet "Je ne sais pas comment le prouver autrement."
+        tomas inquiet "Attendez, je vous montre. Rien ne garantit que les campements déjà formés seront régularisés."
+        nyra stress "C'est ce que j'essaie de vous dire depuis tout à l'heure. On ne peut pas leur promettre qu'un vote suffira."
+        lysa "D'accord, j'ai compris. Mais il faut faire vite."
     $ unlock_dossier_arg("p3_campements")
+    sael mefiant "Je refuse toujours l'ouverture des frontières. Et je refuse que des familles meurent pour s'être réunies. Si certains utilisent les rassemblements pour recruter des gens, on pourra en discuter ensuite."
+    $ unlock_dossier_arg("p3_reseaux")
+    ryn "Ensuite, oui ! On pourra discuter de tout ce que tu veux ensuite !"
+    elen peur "Et les gens qui ne peuvent pas partir ? Les enfants, les personnes âgées ?"
+    "Tomas ouvre une carte sur sa tablette. Ryn essaie de regarder par-dessus son épaule et manque de la lui faire tomber."
+    tomas inquiet "Attention ! Je n'ai pas toutes les zones, attendez."
+    kael reflechit "Passe-moi le fichier. Elias, rapproche-toi, j'ai besoin que tu regardes la connexion."
+    elias "Je peux essayer, mais si on passe par le réseau du Canon..."
+    iris "Il y a aussi la retransmission du débat ! On peut leur parler, non ?"
+    noam reflechit "Oui. On est diffusés sur Terre. Il faut qu'on leur dise de se disperser."
+    ryn "En petits groupes, surtout. Qu'ils restent du côté de Limen, qu'ils ne franchissent pas la frontière."
+    sael determine "On ne sait pas s'ils nous entendent tous."
+    nyra raison "Alors on commence par vérifier le signal. Tomas, aide Kael. Les autres, écartez-vous un peu."
+    elen inquiet "Et ceux qui ne pourront pas marcher ?"
+    noam inquiet "On va essayer de leur faire parvenir l'alerte aussi. C'est tout ce qu'on peut faire pour l'instant."
     call play_stat_dialogue("d9") from _call_stat_dialogue_d9
     tomas inquiet "J'ai les données de la salle du Canon. Il faut les relier aux tablettes."
     kael neutre "Passe-moi la tienne."

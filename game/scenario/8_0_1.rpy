@@ -544,7 +544,7 @@ label _8_0_1_SOIREE:
         "Elle me répond qu'elle passera le voir demain s'il ne vient pas déjeuner."
     else:
         "J'ouvre la conversation avec Lysa. Je lui ai dit ce midi que je lui demanderais de l'aide si je n'arrivais pas à m'en sortir, mais il est tard et je ne sais pas si elle est encore réveillée. Je lui parlerai demain."
-    "Je déplace la chaise devant la porte. Je doute qu'elle soit assez lourde pour empêcher quelqu'un d'entrer, mais je devrais au moins l'entendre tomber si la porte s'ouvre pendant la nuit."
+    "Je tire une dernière fois sur la poignée sans actionner l'ouverture. Le verrou est bien engagé. Je laisse ma tablette sur la table de chevet."
     "Je me glisse sous les draps et tends la main pour éteindre la lampe. L'espace à côté du pied de la lampe est toujours vide."
     "Je laisse ma tablette à portée de main et essaie de dormir."
     $ hideGroup()

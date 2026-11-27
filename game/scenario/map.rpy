@@ -139,6 +139,9 @@ init python:
         return True
 
     def corridor_target_enabled(corridor_key, target_type, target_key):
+        if getattr(store, "current_scene_active", None) == "_9_0_1_ROUTE_CONCLAVE":
+            return corridor_key == "dortoir" and (target_type, target_key) == ("room", "conclave")
+
         if getattr(store, "current_scene_active", None) == "_6_0_1_ROUTE_CAFETERIA":
             if corridor_key == "dortoir":
                 return (target_type, target_key) == ("corridor", "cafeteria")
@@ -515,6 +518,8 @@ label CORRIDOR_NAVIGATION(start_corridor=None):
 
     $ kd_corridor_visit_pending = True
     $ _corridor_room = _corridor_action[1]
+    if current_scene_active == "_9_0_1_ROUTE_CONCLAVE" and _corridor_room == "conclave" and not j901_elen_route_seen:
+        call KD_ROUTE_J9_ELEN from _call_optional_kd_route_j9_elen
     $ corridor_current = corridor_for_room(_corridor_room)
     $ scripted_room_current = _corridor_room
     call PLAY_DOOR_OPEN(door_room_background(_corridor_room)) from _call_PLAY_DOOR_OPEN
