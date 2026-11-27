@@ -56,6 +56,30 @@ init python:
         solution={(0, 0): "regle", (2, 0): "regle"}, lives=3, line_time=5.8,
     )
 
+    # J8 : première confirmation, fondée sur les preuves de la fouille.
+    refutation_register(
+        "j8_kael_confirmation", title=_("KAEL — UNE SECONDE DISPARITION"), bg="bg_cafeteria",
+        statements=[
+            ("elias", "inquiet", _("On pourrait encore demander à Goumi s'il a retrouvé ta photo.")),
+            ("kael", "colere", _("J'avais encore la photo hier soir. J'ai tout retourné ce matin !")),
+            ("ryn", "inquiet", _("Pour l'instant, c'est peut-être juste [[une affaire égarée]].")),
+            ("kael", "inquiet", _("Vous trouvez ça normal, vous ? J'ai l'impression qu'[[il se passe quelque chose d'étrange ici]].")),
+            ("lysa", "neutre", _("On peut prendre ce que tu dis au sérieux sans accuser quelqu'un.")),
+        ],
+        fragments=[
+            ("dessin_juliette_disparu", _("Dessin de Juliette disparu"), lambda: investigation_has("dessin_juliette_disparu")),
+            ("j8_porte_verrouillee", _("Porte verrouillée"), lambda: investigation_has("j8_porte_verrouillee")),
+        ],
+        confirmations={(3, 0)},
+        solution={(3, 0): "dessin_juliette_disparu"},
+        miss={
+            ("j8_porte_verrouillee", 3, 0): _("Le verrou ne montre pas qu'un autre objet a disparu. Il faut une autre preuve."),
+            (2, 0): _("On ne sait pas comment Kael a perdu sa photo. Cherche plutôt à appuyer son constat."),
+            "default": _("Cette preuve ne permet pas de trancher ce passage. Écoute encore Kael."),
+        },
+        lives=3, line_time=6.5,
+    )
+
     refutation_register(
         "j9_regroupements", title=_("REGROUPEMENTS — LE PIÈGE"), bg="bg_conclave",
         statements=[

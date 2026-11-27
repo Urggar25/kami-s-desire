@@ -49,7 +49,7 @@ label _8_0_1_REVEIL_CHAMBRE:
     else:
         "J'ouvre la messagerie de Lysa. J'ai presque envie de lui demander de venir, mais je ne saurais même pas lui dire quoi chercher en priorité."
         think "Je vais d'abord essayer de me souvenir de ce que j'ai fait avant de sortir hier."
-    tuto "(Examine les objets pour reconstituer les derniers moments où tu as vu le dessin.)"
+    tuto "(Examine les objets et la porte pour reconstituer la matinée d'hier. Les preuves seront enregistrées dans ta tablette.)"
     $ hideGroup()
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ pnc_room = "chambre_j8"
@@ -95,7 +95,7 @@ screen pnc_chambre_j8():
         use room_scene_navigation_band("chambre", -1, 0)
         use room_scene_navigation_band("chambre", 1, config.screen_width - ROOM_SCENE_NAV_WIDTH)
 
-    $ j8_required = ("lit", "tiroir", "armoire", "tablette")
+    $ j8_required = ("lit", "tiroir", "armoire", "tablette", "porte")
     $ j8_search_count = sum(1 for key in j8_required if pnc_flags.get(key))
 
     frame:
@@ -107,7 +107,7 @@ screen pnc_chambre_j8():
         vbox:
             spacing 2
             text "RECONSTITUER LA MATINÉE D'HIER" xalign 0.5 size 22 color "#D6E8F0"
-            text "Souvenirs examinés : [j8_search_count] / 4" xalign 0.5 size 16 color "#7FCFEA"
+            text "Éléments examinés : [j8_search_count] / 5" xalign 0.5 size 16 color "#7FCFEA"
 
 # -------------------------------------------------------
 # LABELS PnC
@@ -118,6 +118,10 @@ label _8_PNC_BOUCLE:
     call screen pnc_chambre_j8()
     $ j8_selected_interaction = _return
     call expression j8_selected_interaction from _call_expression_5
+    if all(pnc_flags.get(key) for key in ("lit", "tiroir", "armoire", "tablette")):
+        $ investigation_add("dessin_juliette_disparu")
+    if _return == "j8_search_done":
+        jump _8_FIN_RECHERCHE
     jump _8_PNC_BOUCLE
 
 label _8_PNC_AERATION:
@@ -204,16 +208,23 @@ label _8_PNC_BROUILLEUR:
 
 label _8_PNC_TABLETTE:
     if pnc_flags.get("tablette"):
-        think "Le dessin était bien à côté de la lampe quand j'ai pris ma tablette."
+        think "J'avais vu le dessin près de la lampe hier matin et j'avais ma tablette sur moi en sortant."
         return
 
     $ pnc_flags["tablette"] = True
     $ showGroup([("noam", "inquiet", 0.50)])
     "Je pose ma tablette sur sa station d'accueil et me rappelle avoir fait la même chose hier. J'étais revenu vers le bureau pour la reprendre avant de sortir."
     think "J'avais parlé au dessin un peu plus tôt. Je l'avais même soulevé pour voir si ma chaussette était en dessous, mais je ne me souviens pas de l'avoir regardé au moment de partir."
-    "Je note l'heure approximative à laquelle j'ai quitté la chambre. Si quelqu'un me demande quand la feuille a disparu, je pourrai au moins lui donner une estimation."
+    "Je note l'heure approximative à laquelle j'ai quitté la chambre. Je suis sûr d'avoir gardé ma tablette sur moi toute la journée. Je l'avais encore dans la main en rentrant."
     return
 label _8_PNC_SORTIE:
+    if not pnc_flags.get("porte"):
+        $ pnc_flags["porte"] = True
+        $ showGroup([("noam", "reflexion", 0.50)])
+        "Je regarde la serrure. Les portes des chambres se verrouillent automatiquement dès qu'on les ferme. Depuis le couloir, il faut l'empreinte biométrique du résident ou sa tablette pour les ouvrir."
+        think "Je me souviens d'avoir entendu le verrou hier en sortant. Et j'ai gardé ma tablette sur moi toute la journée. La porte était bien verrouillée."
+        "Je vérifie la poignée et le lecteur. Rien ne paraît abîmé. Je note tout ça sur ma tablette."
+        $ investigation_add("j8_porte_verrouillee")
     $ j8_required = ("lit", "tiroir", "armoire", "tablette")
     $ j8_remaining = sum(1 for key in j8_required if not pnc_flags.get(key))
 
@@ -225,13 +236,15 @@ label _8_PNC_SORTIE:
             think "Il reste encore [j8_remaining] endroits évidents à vérifier. Je ne peux pas partir maintenant."
         return
 
-    jump _8_FIN_RECHERCHE
+    return "j8_search_done"
 
 # -------------------------------------------------------
 # FIN DE RECHERCHE
 # -------------------------------------------------------
 
 label _8_FIN_RECHERCHE:
+    $ investigation_add("dessin_juliette_disparu", notify=False)
+    $ investigation_add("j8_porte_verrouillee", notify=False)
     scene bg_chambre at adaptive_fullscreen with dissolve
     $ showGroup([("noam", "inquiet", 0.50)])
     "Je relis les notes que j'ai prises. J'ai bien vu le dessin hier matin, mais je ne suis pas capable de dire s'il était encore là quand j'ai quitté la chambre."
@@ -248,7 +261,7 @@ label _8_FIN_RECHERCHE:
         "Je termine le café que Lysa m'a apporté. Il est complètement froid."
     "Je récupère ma veste et ma tablette."
     $ hideGroup()
-    "Je ferme la porte et vérifie deux fois qu'elle est verrouillée. Je ne me rappelle pas l'avoir fait hier."
+    "Je ferme la porte. Le verrou automatique s'enclenche comme hier. Je tire une fois sur la poignée pour vérifier."
     stop music fadeout 1.0
     jump _8_0_1_CAFETERIA
 
@@ -453,8 +466,11 @@ label _8_0_1_APRES_MIDI_KAEL_CRISE:
     kael colere "Si quelqu'un ici l'a prise, qu'il me la rende ! Je m'en fiche de savoir pourquoi, je veux juste récupérer ma photo !"
     stop music fadeout 0.8
     play music "music/bgm_system_override.mp3" fadein 0.8
-    call j801_play_stabilisation from _call_j801_play_stabilisation
-    $ j801_stabilisation_result = _return
+    # Rattrapage silencieux pour les sauvegardes antérieures à l'ajout des preuves.
+    $ investigation_add("dessin_juliette_disparu", notify=False)
+    $ investigation_add("j8_porte_verrouillee", notify=False)
+    call refutation_run("j8_kael_confirmation") from _call_j801_play_stabilisation
+    $ j801_stabilisation_result = (_return[0] == "success") if isinstance(_return, (tuple, list)) else bool(_return)
     jump _8_0_1_APRES_STABILISATION
 
 
@@ -466,35 +482,46 @@ label _8_0_1_APRES_STABILISATION:
         ("kael", "effondre", 0.50), ("elias", "choc", 0.72),
         ("noam", "neutre", 0.88)
     ])
+    if getattr(store, "j801_stabilisation_result", False):
+        noam inquiet "Attends, Kael. Il m'est arrivé la même chose. Hier matin, j'avais encore le dessin que ma sœur m'a fait. Quand je suis rentré, il avait disparu. J'ai fouillé toute ma chambre, et j'ai noté ce que j'ai trouvé sur ma tablette."
+        kael inquiet "Toi aussi ? Attends, tu veux dire que t'as cherché toute la matinée ?"
+        noam "Oui. Je ne sais pas ce qui s'est passé, mais tu n'es pas le seul à avoir perdu quelque chose."
+        "Kael regarde les notes que je lui montre. Il lâche enfin le dossier de la chaise."
+    else:
+        "J'essaie de lui expliquer ce que j'ai découvert, mais Kael me coupe avant que je puisse lui montrer mes notes."
+        lysa neutre "Kael, attends. Laisse Noam finir, s'il te plaît."
+        noam inquiet "Le dessin de ma sœur a disparu. Je l'avais hier matin, il n'était plus là quand je suis rentré. J'ai passé la matinée à le chercher."
+        kael inquiet "Pourquoi tu l'as pas dit plus tôt ?"
+        noam "Parce que je pensais l'avoir perdu. Maintenant que tu me parles de ta photo, je commence à en douter."
+        "Je lui montre mes notes. Kael les lit sans rien dire."
     "Kael accepte finalement de s'asseoir. Lysa pose un verre d'eau devant lui et recule pour lui laisser un peu de place."
     elias inquiet "Désolé pour ce que j'ai dit tout à l'heure. Je voulais pas te donner l'impression que je te prenais pas au sérieux. J'ai juste pensé que quelqu'un avait pu la retrouver sans faire exprès."
     kael effondre "C'est pas contre toi. J'ai passé la matinée à chercher et j'en ai marre de ne rien trouver."
     "Elias tire une chaise vers lui, puis décide finalement de rester debout."
     ryn desaccord "Il doit bien y avoir un historique des accès aux chambres. Je peux demander à Goumi si on a moyen de le consulter sans passer par Kami."
     lysa "Essaie, oui. Mais tant qu'on ne l'a pas, on ne pourra pas savoir si quelqu'un est entré chez lui."
-    "Kael rapproche le verre. J'hésite à lui parler de Juliette, parce que je ne voudrais pas qu'il prenne ça pour une tentative de changer de sujet."
-    noam hesitation "Il m'est arrivé quelque chose de similaire hier. J'avais un dessin que ma sœur m'avait fait avant mon départ. Il était posé sur mon bureau le matin et quand je suis revenu le soir, il n'y était plus. J'ai passé des heures à fouiller ma chambre, moi aussi."
-    "Kael relève la tête."
-    kael effondre "Tu te souviens si tu avais fermé la porte en partant ?"
-    noam "Je pense que oui, mais je n'arrive pas à me souvenir du moment précis. Je peux seulement te dire que le dessin était sur le bureau avant que je sorte."
+    "Kael rapproche le verre et regarde de nouveau mes notes."
+    kael effondre "Ta porte était fermée quand t'es sorti ?"
+    noam "Oui. Elle se verrouille automatiquement, comme les autres. Il faut mon empreinte ou ma tablette pour l'ouvrir de l'extérieur. Et j'avais ma tablette sur moi tout le temps."
+    kael inquiet "Alors comment quelqu'un aurait pu entrer ?"
+    noam "C'est ce que je comprends pas. Le verrou n'a pas l'air abîmé. Mais on sait pas encore si quelqu'un est réellement entré."
     kael inquiet "Moi, je l'avais avec moi hier soir. Je me rappelle même l'avoir remise sous l'oreiller quand j'ai éteint la lampe. C'est ça que je comprends pas."
     "Il prend une gorgée d'eau."
     ryn reflechit "Attendez, on a déjà du matériel qui manque depuis hier, et maintenant deux personnes ne retrouvent plus des affaires dans leurs chambres. Vous trouvez pas ça bizarre ?"
     lysa desaccord "Si, mais on n'a aucune raison de penser que les batteries ont disparu de la même manière que la photo. On peut vérifier ce qui manque sans décider tout de suite qu'une personne ici vole les affaires des autres."
     ryn "Je dis pas que c'est forcément la même personne. Je voudrais juste savoir si d'autres ont perdu quelque chose. Si c'est le cas, j'aimerais autant l'apprendre avant de rentrer chez moi ce soir."
     elias "Je peux ressortir les registres de livraison et refaire le compte. Pour les chambres, je sais pas comment on s'y prend, mais je peux au moins vérifier ça."
+    $ investigation_add("photo_lea_disparue")
+    call play_stat_dialogue("d8") from _call_stat_dialogue_d8
     kael triste "Faites comme vous voulez. Je vais retourner dans ma chambre, je n'ai même pas remis le matelas en place."
     noam inquiet "Je peux venir t'aider à le remettre si tu veux. Je toucherai pas au reste."
     kael "Merci, mais je préfère être seul un moment. Je suis désolé de vous avoir crié dessus."
     "Il finit son verre avant de repartir. Ryn se lève à son tour, mais Lysa lui demande d'attendre un peu."
     "Je reste avec eux. J'ai envie de retourner vérifier ma propre chambre, même si je sais très bien que je l'ai déjà fait ce matin."
-    $ investigation_add("photo_lea_disparue")
-    $ investigation_add("dessin_juliette_disparu")
     $ investigation_add("materiel_technique_manquant", notify=False)
     $ investigation_add("cafe_renverse", notify=False)
     $ investigation_add("livraison_j7", notify=False)
     $ investigation_add("kami_hors_ligne", notify=False)
-    call play_stat_dialogue("d8") from _call_stat_dialogue_d8
 
     $ hideGroup()
     stop music fadeout 2.0

@@ -130,10 +130,10 @@ init 3 python:
             ],
         },
         "d8": {
-            "prompt": "Kael serre sa photo disparue contre son souvenir. « Dis-moi que ce n'est pas quelqu'un d'ici. »",
+            "prompt": "Kael regarde les notes de Noam. « J'aimerais savoir si quelqu'un est entré chez nous. »",
             "options": [
                 _sd_option("promesse", "Kael, je comprends pas non plus pourquoi quelqu'un nous ferait ça. Mais on va chercher.", "sd_d8_promesse"),
-                _sd_option("indices", "On sait qu'on nous a pris deux objets personnels. On peut peut-être retracer qui est passé dans les chambres.", "sd_d8_indices"),
+                _sd_option("indices", "Deux objets personnels ont disparu. On peut peut-être vérifier les accès aux chambres.", "sd_d8_indices"),
                 _sd_option("cible", "La photo de Léa et mon dessin ont le même point commun : ce sont des souvenirs de nos proches.", "sd_d8_cible", requires={"logique": 3}),
                 _sd_option("garder_calme", "Je veux pas qu'on accuse quelqu'un sans preuve. Ça nous aidera pas à retrouver nos affaires.", "sd_d8_garder_calme"),
             ],

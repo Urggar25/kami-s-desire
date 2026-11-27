@@ -47,6 +47,11 @@ init python:
             "desc": "Le dessin conservé par Noam n'est plus dans sa chambre malgré une fouille complète.",
             "day": "J7–8", "origin": "CHAMBRE DE NOAM", "status": "NON RÉSOLU",
         },
+        "j8_porte_verrouillee": {
+            "category": "preuves", "title": "PORTE VERROUILLÉE",
+            "desc": "La porte de Noam se verrouille automatiquement à sa fermeture. Son ouverture depuis le couloir exige son empreinte biométrique ou sa tablette, qu'il a gardée sur lui pendant toute son absence. Aucune trace visible de dégradation du verrou.",
+            "day": "J8", "origin": "CHAMBRE DE NOAM", "status": "CONSTAT",
+        },
         "materiel_technique_manquant": {
             "category": "preuves", "title": "VOL DU MATÉRIEL DE MAINTENANCE",
             "desc": "Deux batteries, dont celle du robot d'intervention, ainsi que des outils et des composants ont disparu de la maintenance et de la réserve.",

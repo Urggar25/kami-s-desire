@@ -11,7 +11,10 @@
 #
 # Les affirmations marquent leurs failles avec [[ ]] :
 #   _("Il n'y a [[aucune règle]] qui nous interdit d'appeler l'extérieur !")
-# Chaque faille est identifiée par (index de l'affirmation, index de la faille).
+# Chaque cible est identifiée par (index de l'affirmation, index du passage).
+# confirmations={(index, passage)} : le passage est à appuyer, pas à contredire.
+
+default rf_confirmation_tutorial_seen = False
 # ============================================================
 
 init -1 python:
@@ -23,6 +26,8 @@ init -1 python:
 
     RF_CYAN = "#5cd3ff"
     RF_AMBER = "#ffb84d"
+    RF_RED = "#ff646e"
+    RF_BLUE = "#65baff"
     RF_KAMI = "#ff2e8a"
     RF_ASSETS = "minijeu/refutation_assets/"
 
@@ -44,20 +49,21 @@ init -1 python:
         """
         REFUTATIONS[refutation_id] = data
 
-    def rf_markup(text):
-        """Convertit [[faille]] en hyperliens cliquables, après traduction."""
+    def rf_markup(text, statement_index=None, confirmations=()):
+        """Convertit les passages traduits en liens rouges ou bleus."""
         text = kd_tr(text)
         counter = [0]
 
         def _sub(match):
             index = counter[0]
             counter[0] += 1
-            return "{a=rf:%d}%s{/a}" % (index, match.group(1))
+            prefix = "rfc" if (statement_index, index) in confirmations else "rf"
+            return "{a=%s:%d}%s{/a}" % (prefix, index, match.group(1))
 
         return _RF_FAULT.sub(_sub, text)
 
     def rf_fault_style(target):
-        return style.rf_fault
+        return style.rf_confirmation if str(target).startswith("rfc:") else style.rf_fault
 
     def rf_fault_hovered(target):
         state = getattr(_rf_runtime, "state", None)
@@ -68,9 +74,10 @@ init -1 python:
 
     def rf_fault_clicked(target):
         state = getattr(_rf_runtime, "state", None)
-        if state is None or not str(target).startswith("rf:"):
+        target = str(target)
+        if state is None or not target.startswith(("rf:", "rfc:")):
             return None
-        state.fire(int(str(target)[3:]))
+        state.fire(int(target.split(":", 1)[1]))
         renpy.restart_interaction()
         return None
 
@@ -96,6 +103,7 @@ init -1 python:
             self.locked_hint = ""
             self.hover = False
             self.shot = None
+            self.shot_kind = "refute"
             self.shot_t = 0.0
             self.shot_xy = (960, 400)
             self.shot_origin = (RF_CHIP_X + RF_CHIP_W, RF_CHIP_Y)
@@ -201,6 +209,7 @@ init -1 python:
             self.shot_xy = renpy.get_mouse_pos()
             self.shot_origin = (RF_CHIP_X + RF_CHIP_W, self.chip_y(self.fragment) + RF_CHIP_H // 2)
             self.shot_t = 0.0
+            self.shot_kind = "confirm" if (self.line, fault) in self.data.get("confirmations", ()) else "refute"
             if self.data["solution"].get((self.line, fault)) == frag:
                 self.shot = "hit"
                 renpy.sound.play("audio/sfx_interrupt_impact.wav", channel="kd_fx")
@@ -229,10 +238,14 @@ init -1 python:
 
 
 style rf_fault:
-    color RF_AMBER
+    color RF_RED
     hover_color "#ffffff"
     underline True
     bold True
+
+style rf_confirmation is rf_fault:
+    color RF_BLUE
+    hover_color "#c8e8ff"
 
 
 # ------------------------------------------------------------
@@ -333,6 +346,39 @@ transform rf_shatter:
     easeout 0.08 xoffset 0
     linear 0.25 alpha 0.0 zoom 1.06
 
+transform rf_confirm_pulse:
+    alpha 1.0 zoom 1.0
+    easeout 0.12 zoom 1.025
+    easein 0.22 zoom 1.0
+
+transform rf_tutorial_beam:
+    alpha 0.0 xzoom 0.0
+    pause 0.65
+    alpha 1.0
+    easeout 0.35 xzoom 1.0
+    pause 0.25
+    linear 0.35 alpha 0.0
+    pause 0.9
+    repeat
+
+transform rf_tutorial_verdict:
+    alpha 0.0 zoom 1.12
+    pause 1.0
+    easeout 0.2 alpha 1.0 zoom 1.0
+    pause 0.5
+    linear 0.35 alpha 0.0
+    pause 0.45
+    repeat
+
+transform rf_tutorial_glow:
+    alpha 0.65
+    pause 1.0
+    easeout 0.2 alpha 1.0
+    pause 0.5
+    easein 0.35 alpha 0.65
+    pause 0.45
+    repeat
+
 transform rf_shake:
     easeout 0.04 xoffset 14
     easeout 0.04 xoffset -12
@@ -359,6 +405,7 @@ screen refutation_screen(refutation_id):
     $ statement = data["statements"][rf.line]
     $ speaker, speaker_expr = statement[0], statement[1]
     $ speaker_color = kd_char_color(speaker)
+    $ shot_kind = getattr(rf, "shot_kind", "refute")
 
     timer 0.04 repeat True action Function(rf.tick, 0.04)
 
@@ -467,7 +514,7 @@ screen refutation_screen(refutation_id):
                         ypos 230
                         xmaximum 1100
                         padding (52, 38)
-                        text rf_markup(entry[2]):
+                        text rf_markup(entry[2], index, data.get("confirmations", ())):
                             font "fonts/Rajdhani-SemiBold.ttf"
                             size 54
                             color "#ffffff"
@@ -475,7 +522,7 @@ screen refutation_screen(refutation_id):
                             line_spacing 6
                             substitute False
                             hyperlink_functions (rf_fault_style, rf_fault_clicked, rf_fault_hovered)
-                            at (rf_shatter if rf.shot == "hit" else rf_still)
+                            at (rf_confirm_pulse if rf.shot == "hit" and shot_kind == "confirm" else rf_shatter if rf.shot == "hit" else rf_still)
 
         # --- Tablette de Noam : fragments d'arguments.
         add RF_ASSETS + "tablet_header.png" xpos RF_CHIP_X ypos (RF_CHIP_Y - 62)
@@ -517,7 +564,7 @@ screen refutation_screen(refutation_id):
                             color "#ffb84d"
                             yalign 0.5
 
-        text _("MOLETTE OU Q / E : CHANGER DE FRAGMENT     •     CLIC SUR UNE FAILLE : INJECTER"):
+        text (_("Q / E OU MOLETTE : FRAGMENT  •  ROUGE : RÉFUTER  •  BLEU : CONFIRMER") if data.get("confirmations") else _("MOLETTE OU Q / E : CHANGER DE FRAGMENT     •     CLIC SUR UNE FAILLE : INJECTER")):
             font "fonts/Rajdhani-SemiBold.ttf"
             size 22
             color "#8fb4c8"
@@ -528,7 +575,7 @@ screen refutation_screen(refutation_id):
         # --- Tir : faisceau, impact, verdict.
         if rf.shot is not None:
             $ beam_x, beam_y, beam_len, beam_angle = rf.beam()
-            $ beam_color = (RF_CYAN if rf.shot == "hit" else RF_KAMI)
+            $ beam_color = (RF_BLUE if shot_kind == "confirm" else RF_CYAN) if rf.shot == "hit" else RF_KAMI
             add Solid(beam_color, xysize=(beam_len, 14)) at rf_beam(beam_angle):
                 xpos beam_x
                 ypos beam_y
@@ -539,18 +586,18 @@ screen refutation_screen(refutation_id):
             add RF_ASSETS + "reticle.png" at rf_impact_ring:
                 xpos rf.shot_xy[0]
                 ypos rf.shot_xy[1]
-            add Solid("#ffffff" if rf.shot == "hit" else RF_KAMI) at rf_flash(0.3 if rf.shot == "hit" else 0.22)
+            add Solid((RF_BLUE if shot_kind == "confirm" else "#ffffff") if rf.shot == "hit" else RF_KAMI) at rf_flash(0.3 if rf.shot == "hit" else 0.22)
 
             frame at rf_stamp:
                 background Frame(RF_ASSETS + "panel.png", 26, 26)
                 xalign 0.36
                 ypos 520
                 padding (46, 18)
-                text (_("FAILLE CONFIRMÉE") if rf.shot == "hit" else _("INCOHÉRENT")):
+                text ((_("PROPOS CONFIRMÉ") if shot_kind == "confirm" else _("FAILLE CONFIRMÉE")) if rf.shot == "hit" else _("INCOHÉRENT")):
                     font "fonts/Rajdhani-SemiBold.ttf"
                     size 80
                     kerning 6
-                    color ("#ffffff" if rf.shot == "hit" else RF_KAMI)
+                    color (RF_BLUE if rf.shot == "hit" and shot_kind == "confirm" else "#ffffff" if rf.shot == "hit" else RF_KAMI)
                     outlines [(3, beam_color, 0, 0)]
 
             if rf.shot == "miss":
@@ -583,7 +630,7 @@ screen refutation_screen(refutation_id):
                     kerning 10
                     outlines [(4, RF_CYAN, 0, 0)]
                     xalign 0.5
-                text _("Trouve la faille. Injecte le bon fragment."):
+                text (_("Réfute une affirmation ou confirme-la avec une preuve.") if data.get("confirmations") else _("Trouve la faille. Injecte le bon fragment.")):
                     font "fonts/Rajdhani-SemiBold.ttf"
                     size 34
                     color RF_AMBER
@@ -593,7 +640,95 @@ screen refutation_screen(refutation_id):
         add RF_ASSETS + "reticle.png" at (rf_reticle_hot if rf.hover else rf_reticle)
 
 
+screen rf_confirmation_tutorial():
+    modal True
+    zorder 310
+    default page = 0
+    key "rollback" action NullAction()
+    key "rollforward" action NullAction()
+    add Solid("#040914f2")
+    add "gui/main_menu_kami/scanlines.png" alpha 0.22
+    frame:
+        background Frame(RF_ASSETS + "panel.png", 26, 26)
+        xalign 0.5
+        yalign 0.5
+        xsize 1380
+        ysize 820
+        padding (64, 46)
+        fixed:
+            vbox:
+                spacing 22
+                text _("NOUVELLE MÉCANIQUE // CONFIRMATION") font "fonts/Rajdhani-SemiBold.ttf" size 46 color RF_BLUE
+                if page == 0:
+                    text _("Une preuve ne sert pas seulement à contredire quelqu'un. Elle peut aussi appuyer ce qu'il dit.") size 33 color "#eef7ff" xmaximum 1200
+                    frame:
+                        background Solid("#241421")
+                        xfill True
+                        padding (28, 26)
+                        vbox:
+                            spacing 10
+                            text _("ROUGE — RÉFUTER") size 30 color RF_RED bold True
+                            text _("{color=#ff646e}{u}Personne ne peut le prouver.{/u}{/color}") size 42
+                            text _("Choisis un argument qui contredit le passage souligné.") size 28 color "#c4d4df"
+                    frame:
+                        background Solid("#10273e")
+                        xfill True
+                        padding (28, 26)
+                        vbox:
+                            spacing 10
+                            text _("BLEU — CONFIRMER") size 30 color RF_BLUE bold True
+                            text _("{color=#65baff}{u}Ce n'est pas un cas isolé.{/u}{/color}") size 42
+                            text _("Choisis une preuve qui appuie le passage souligné.") size 28 color "#c4d4df"
+                else:
+                    text _("Sélectionne la preuve dans ta tablette, puis clique sur le passage bleu quand il défile.") size 33 color "#eef7ff" xmaximum 1200
+                    fixed:
+                        xysize (1252, 415)
+                        add Solid("#0a1727") xysize (1252, 415)
+                        frame:
+                            background Frame(RF_ASSETS + "holo_frame.png", 44, 44)
+                            xpos 280
+                            ypos 32
+                            xsize 915
+                            padding (34, 30)
+                            vbox:
+                                spacing 10
+                                text _("AFFIRMATION") color "#a7c4d7" size 22
+                                text _("{color=#65baff}{u}Ce n'est pas un cas isolé.{/u}{/color}") size 42 at rf_tutorial_glow
+                        frame:
+                            background Frame(RF_ASSETS + "frag_selected.png", 30, 26)
+                            xpos 35
+                            ypos 255
+                            xsize 550
+                            padding (45, 20)
+                            text _("01  •  Une seconde disparition") color "#ffffff" size 32
+                        add Solid(RF_BLUE, xysize=(380, 8)):
+                            xpos 540
+                            ypos 245
+                            rotate -22
+                            at rf_tutorial_beam
+                        text _("PROPOS CONFIRMÉ"):
+                            xpos 720
+                            ypos 307
+                            size 40
+                            bold True
+                            color RF_BLUE
+                            at rf_tutorial_verdict
+                    text _("Même commande, résultat différent : tu renforces le propos au lieu de briser l'affirmation.") size 25 color "#b9c9d6" xmaximum 1200
+            hbox:
+                xalign 1.0
+                yalign 1.0
+                spacing 24
+                if page == 1:
+                    textbutton _("RETOUR") action SetScreenVariable("page", 0)
+                textbutton (_("SUIVANT  →") if page == 0 else _("COMMENCER")):
+                    action (SetScreenVariable("page", 1) if page == 0 else Return(True))
+                    text_size 32
+                    text_color RF_BLUE
+
 label refutation_run(refutation_id):
+    if REFUTATIONS[refutation_id].get("confirmations") and not rf_confirmation_tutorial_seen:
+        call screen rf_confirmation_tutorial
+        $ rf_confirmation_tutorial_seen = True
     play kd_fx "audio/trailer/trl_riser_short.wav"
     call screen refutation_screen(refutation_id)
     $ _rf_runtime.state = None
