@@ -84,15 +84,15 @@ label KD_ROUTE_J11_NYRA:
     menu:
         "Parler à Nyra.":
             $ showGroup([("nyra", "neutre", 0.35), ("noam", "fatigue", 0.65)])
-            nyra "Tu es sûr de pouvoir marcher jusque-là ?"
-            noam "Oui. Pourquoi ?"
-            nyra raison "Tu tiens à peine debout. Tu as dormi combien d'heures ?"
+            nyra "Noam, attends. Tu as une tête affreuse. Tu comptes aller où comme ça ?"
+            noam "À l'Observation. Je vais bien."
+            nyra raison "Tu tiens à peine debout. Tu as au moins dormi cette nuit ?"
             noam "J'en sais rien. Pas assez."
-            nyra "Alors évite de prendre une décision importante dans cet état."
+            nyra "Assieds-toi cinq minutes si tu en as besoin. Ce que tu veux vérifier peut attendre que tu sois capable de lire un écran."
             noam desaccord "Je vais simplement vérifier quelque chose."
-            nyra reflexion "Dans ce cas, note ce que tu sais avant de commencer. Avec la fatigue, on mélange vite ce qu'on a vu et ce qu'on suppose."
+            nyra reflexion "D'accord, je vais pas te retenir. Mais note ce que tu observes avant d'essayer d'en tirer une conclusion. Je sais ce que ça fait de travailler sans avoir dormi."
             noam fatigue "Je vais essayer."
-            nyra "Et demande de l'aide si tu te sens mal."
+            nyra "Et si tu te sens mal, appelle quelqu'un. Même moi, si tu veux."
             $ hideGroup()
         "Continuer jusqu'à l'Observation.":
             pass

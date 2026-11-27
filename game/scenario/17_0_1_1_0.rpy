@@ -86,7 +86,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     lysa blase "Moi ça me donne surtout envie de retourner me coucher."
 
-    nyra reflexion "Tu l'as trouvée dans ton propre dossier ?"
+    nyra reflexion "Attends, Sael, montre-moi où tu l'as trouvée dans ton dossier. Je veux comparer avec le mien."
 
     sael "Oui."
 
@@ -121,7 +121,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Mara tourne sa tablette vers nous. La même référence apparaît au milieu de son dossier."
 
-    nyra neutre "Moi aussi."
+    nyra neutre "J'ai la même référence. Gardez vos dossiers ouverts, on va vérifier si elle apparaît chez tout le monde."
 
 
     lysa blase "Bon. Super. Génial même."
@@ -137,7 +137,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     ryn colere "Tous ceux qui sont ici."
 
-    nyra reflexion "Kael aussi ?"
+    nyra reflexion "Et Kael ? Quelqu'un a pu voir son dossier ?"
 
     noam hesitation "Oui."
 
@@ -197,7 +197,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Je baisse instinctivement les yeux. Sael me regarde brièvement, mais ne dit rien."
 
-    nyra neutre "Pas forcément. C'est justement ça, le problème."
+    nyra neutre "On ne sait pas quand cette information a été ajoutée. Mara, tu as une date quelque part sur le tien ?"
 
     mara colere "Ouais, bah moi je veux savoir quand ça a été fait. Et pourquoi."
 
@@ -220,11 +220,11 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     sael "J'en ai cherché trois. C'était la seule référence que j'ai trouvée."
 
 
-    nyra raison "Ça suffit."
+    nyra raison "Attendez. On a tous la même référence et aucun de nous ne sait ce qu'elle signifie."
 
     "Sa voix n'est pas forte, mais elle coupe progressivement le brouhaha."
 
-    nyra "On peut continuer à tourner en rond toute la matinée... ou demander directement à celle qui contrôle tout ici."
+    nyra "Sael a déjà cherché dans les archives. Inutile de recommencer chacun de notre côté. Kami, on a besoin de toi."
 
     ryn "Kami !"
 
@@ -293,7 +293,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     $ bc_show("nyra", "neutre")
-    nyra neutre "Qu'est-ce qui t'empêche de répondre ? Quelle règle ?"
+    nyra neutre "Kami, tu refuses de répondre. Très bien, mais dis-nous au moins ce qui t'interdit de le faire."
     $ bc_hide()
 
     "Kami ne répond pas immédiatement. Pour la première fois depuis le début de l'échange, son silence ressemble presque à une hésitation."
@@ -301,7 +301,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     kami "Mes règles internes."
 
     $ bc_show("nyra", "reflexion")
-    nyra reflexion "Quel Commandement ?"
+    nyra reflexion "C'est lié à un Commandement, ou à une autre règle ?"
     $ bc_hide()
 
     kami "Aucun."
@@ -323,7 +323,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     $ bc_hide()
 
     $ bc_show("nyra", "colere")
-    nyra colere "Et on est censés modifier quoi, exactement, si tu nous caches la moitié du système ?"
+    nyra colere "Alors comment veux-tu qu'on sache ce qu'on est en train de décider ? On vient de découvrir un truc qui nous concerne tous et tu refuses de nous expliquer pourquoi."
     $ bc_hide()
 
     kami "Vous n'êtes pas censés modifier mon système."
@@ -381,24 +381,24 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Il s'arrête, le souffle court."
 
-    nyra neutre "Très bien."
+    nyra neutre "D'accord. Je ne vais pas lui reposer la question une quatrième fois."
 
     "Elle ferme sa tablette."
 
-    nyra "Alors arrêtons."
+    nyra "Je propose qu'on arrête de participer aux votes tant qu'elle ne nous a pas répondu."
 
 
     elen inquiet "Arrêtons quoi ?"
 
-    nyra "De participer."
+    nyra "Les votes. Les propositions aussi. On suspend tout."
 
     "Plusieurs regards convergent vers elle."
 
-    nyra raison "On est censés voter librement, en sachant ce qu'on fait. Là, on découvre M16 dans tous nos dossiers et celle qui organise les votes refuse même de nous dire ce que c'est."
+    nyra raison "On ne sait même pas ce que M16 veut dire. Si Kami peut nous cacher ça, elle peut nous cacher des informations dont on aurait besoin pour voter."
 
     tomas inquiet "Nyra..."
 
-    nyra "Alors non. Faire comme si nos décisions étaient encore éclairées, ça n'a plus aucun sens."
+    nyra "Moi, je ne voterai pas dans ces conditions. Elias, tu en penses quoi ?"
 
 
     elias neutre "Plus de votes."
@@ -421,11 +421,11 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     tomas raison "C'est ça qui me fait peur. On devrait peut-être réfléchir deux minutes avant d'en faire une décision pour tout le monde."
 
-    nyra colere "Et voter demain comme si nous n'avions rien découvert serait plus raisonnable ?"
+    nyra colere "Tomas, si on reprend les votes demain, qu'est-ce qu'on aura comme moyen de lui faire lâcher une réponse ensuite ?"
 
     tomas "Je n'ai pas dit ça."
 
-    nyra "Alors qu'est-ce que tu proposes ?"
+    nyra "Alors dis-moi ce que tu voudrais faire. Je suis prête à entendre une autre solution, mais je ne veux pas qu'on se contente d'attendre."
 
     tomas inquiet "Je dis juste qu'on devrait pas décider ça maintenant, alors que tout le monde est à cran."
 
@@ -471,7 +471,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     "Même Ryn laisse échapper un bref rire nerveux. La tension retombe à peine quelques secondes, puis Nyra revient vers l'écran."
 
-    nyra determine "Tu as entendu. Pas de réponse sur M16, pas de vote. C'est aussi simple que ça."
+    nyra determine "Kami, tu as entendu ce que plusieurs d'entre nous proposent. Donne-nous une réponse sur M16 et on pourra reprendre les votes."
 
     $ hideGroup()
     play sound "audio/sfx_announce.mp3"
@@ -484,7 +484,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     "La réponse déstabilise tout le monde."
 
     $ bc_show("nyra", "surpris")
-    nyra surpris "... Quoi ?"
+    nyra surpris "Attends. Tu veux annuler le Conclave ?"
     $ bc_hide()
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
@@ -549,7 +549,7 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 
     $ bc_show("nyra", "colere")
-    nyra colere "Donc c'est ça, ta réponse ? Tu t'assois et t'attends quatre jours qu'on craque ?"
+    nyra colere "Tu préfères annuler tous les votes plutôt que nous expliquer une référence dans nos dossiers ? Tu es sérieuse ?"
     $ bc_hide()
 
     kami "Je n'ai pas besoin de répondre à votre protestation."
@@ -603,7 +603,7 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     tomas inquiet "Quatre jours."
 
-    nyra fatigue "J'ai entendu."
+    nyra fatigue "Oui, Tomas, je sais. Je n'avais pas prévu qu'elle menacerait d'annuler le reste."
 
     tomas "Je dis pas qu'il faut céder. Je dis qu'on vient peut-être de réduire tout ce qu'il nous reste à quatre jours... et qu'on n'a aucun plan derrière."
 
@@ -638,15 +638,15 @@ label _17_0_1_1_APRES_PROTESTATION:
 
     call play_stat_dialogue("j17") from _call_play_stat_dialogue_16
 
-    nyra neutre "On maintient la position pour aujourd'hui. Pas de vote, pas de nouvelle proposition."
+    nyra neutre "Pour aujourd'hui, je maintiens ma position. Mais Tomas a raison sur un point : il faut qu'on sache ce qu'on fait si elle ne cède pas."
 
     tomas reflechit "Et demain ?"
 
-    nyra "Demain, on réévalue. Mais personne ne décide seul."
+    nyra "On se retrouve demain et on en reparle. Si quelqu'un veut changer d'avis d'ici là, qu'il nous en parle. Je ne déciderai pas à sa place."
 
     ryn desaccord "Moi je change pas d'avis."
 
-    nyra "Je n'ai pas dit que tu devais."
+    nyra "Je ne te le demande pas, Ryn. Je veux surtout qu'on arrête de se faire des promesses qu'on ne pourra peut-être pas tenir."
 
     "Je reste un peu en retrait. Tout le monde discute désormais des quatre jours qui nous restent, de ce qu'on pourrait demander à Kami, de ce qu'on peut encore consulter dans les Archives."
     "Moi, je n'arrive pas à quitter M16 des yeux."

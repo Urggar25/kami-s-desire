@@ -290,7 +290,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     noam "Non. Il traverse une grande partie du Conclave."
 
-    nyra raison "Quelles zones, exactement ?"
+    nyra raison "Noam, donne-nous les endroits que tu as reconnus. Même si tu ne sais pas comment ils sont reliés, ça nous aidera."
 
     noam reflexion "Je peux pas te faire un plan précis. On a reconnu les dortoirs, la cafétéria, plusieurs couloirs... et une salle qu'on connaissait même pas."
 
@@ -320,11 +320,11 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     kael "Donc on peut circuler là-dedans sans être vu."
 
-    nyra neutre "On ne sait pas ça."
+    nyra neutre "Attends, Kael. Il n'a pas vu de caméra, mais ça ne nous garantit pas qu'on ne puisse pas être surveillés là-dedans."
 
     kael "Tu viens de l'entendre. Il n'a vu aucune caméra."
 
-    nyra raison "T'en as pas vu. Ça veut pas dire qu'il y en a pas."
+    nyra raison "Je l'ai entendu. Je ne veux juste pas qu'on envoie quelqu'un dans les conduits en lui promettant qu'il ne sera pas vu."
 
     kael inquietude "Ça ne veut pas dire qu'il y en a non plus."
 
@@ -386,13 +386,13 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     "Quelques rires nerveux parcourent la pièce, mais ils disparaissent vite."
 
-    nyra reflexion "Une fois les grilles sécurisées, faudra décider ce qu'on fait de ce réseau."
+    nyra reflexion "D'abord, on sécurise les grilles. Ensuite on décide qui retourne dans les conduits, et pour chercher quoi."
 
     ryn "Le fouiller."
 
     sael mefiant "Pas seuls."
 
-    nyra "Et pas maintenant. Regardez-vous, tout le monde est à cran."
+    nyra "Je suis d'accord avec Sael. Et je préfère qu'on attende un peu. On vient de passer une journée à se méfier les uns des autres."
 
     ryn colere "On part dans deux jours."
 
@@ -404,7 +404,7 @@ label _19_0_1_1_RESEAU_PUBLIC:
 
     lysa blase "C'est souvent le problème avec les dates."
 
-    nyra raison "Justement. On ne se disperse pas. Elias sécurise les chambres. Ensuite on réfléchit."
+    nyra raison "Elias, tu nous préviens quand les chambres sont sécurisées. Ryn, si tu veux explorer le réseau, prépare un plan avec Kael. On en reparlera avant de partir."
 
     "Je hoche la tête sans répondre."
 
@@ -588,13 +588,13 @@ label _19_0_1_1_SECURISATION:
 
     mara "Parce que c'est drôle depuis ce matin."
 
-    nyra raison "Ça le sera moins si quelqu'un utilise réellement le réseau."
+    nyra raison "Mara, j'aimerais bien qu'on ait tort de s'inquiéter. Mais il faut partir du principe que quelqu'un peut se servir de ce réseau tant que les grilles ne sont pas sécurisées."
 
     "Mara perd aussitôt son sourire."
 
     iris inquiet "Tu penses vraiment que quelqu'un passe là-dedans ?"
 
-    nyra "Je n'en sais rien."
+    nyra "Je ne sais pas si quelqu'un l'utilise déjà. C'est ce qu'on doit vérifier."
 
     iris "Très rassurant."
 

@@ -802,7 +802,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     tomas "Désolé."
 
-    nyra "Vas-y."
+    nyra "Non, continue, Tomas. Je veux entendre ce que tu as calculé."
 
     tomas "Si on tient jusqu'au jour vingt-et-un, on perd le prochain vote. Et très probablement tout le reste avant le départ."
 
@@ -810,7 +810,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     tomas "Je sais. Je dis juste que maintenant... chaque journée qu'on perd, on la récupérera pas."
 
-    nyra reflexion "Et si on reprend maintenant sans réponse, on lui apprend juste qu'elle a qu'à attendre qu'on cède."
+    nyra reflexion "Et si on reprend demain, elle saura qu'elle peut nous faire renoncer en nous menaçant d'annuler le Conclave. Il faut aussi compter ça dans les risques."
 
     iris "Donc on a le choix entre perdre du temps et perdre du temps autrement. Fantastique."
 
@@ -828,7 +828,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     ryn taquin "Je la trouvais pas mal."
 
-    nyra "Le problème n'est pas le slogan."
+    nyra "Elen, je sais ce que tu essaies de faire. Je ne pense pas qu'on ait besoin d'un slogan, mais j'apprécie que tu essaies de réunir tout le monde."
 
     elen "Je sais."
 
@@ -836,7 +836,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     elen inquiet "Je veux juste pas qu'on commence à se retourner les uns contre les autres encore une fois."
 
-    nyra "Alors on ne le fera pas."
+    nyra "Je vais essayer de faire en sorte qu'on puisse encore discuter. Mais je ne peux pas te promettre qu'on sera tous d'accord."
 
     tomas "Ça risque quand même d'arriver si on n'est pas tous d'accord sur la durée du boycott."
 
@@ -848,7 +848,7 @@ label _18_0_1_1_CAFETERIA_MIDI:
 
     tomas "Parce que quelqu'un doit parler des conséquences avant qu'on arrive au jour vingt et un en faisant semblant de les découvrir."
 
-    nyra "Il a raison sur ce point."
+    nyra "Tomas a raison. On doit en parler maintenant, même si ça ne nous plaît pas. Ryn, laisse-le finir."
 
     "Ryn se renfonce dans sa chaise, visiblement peu convaincu."
 

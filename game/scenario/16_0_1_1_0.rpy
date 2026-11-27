@@ -164,25 +164,25 @@ label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     "Elle retourne à son assiette sans insister. Les autres aussi font semblant de reprendre leur conversation, mais l'ambiance vient clairement de perdre quelque chose."
 
-    nyra reflexion "Kael n'est pas venu."
+    nyra reflexion "Quelqu'un a vu Kael depuis ce matin ? Il n'est pas venu manger."
 
     "Je relève la tête avant même d'avoir le temps de faire semblant que ça ne m'intéresse pas."
 
     noam inquiet "Il est où ?"
 
-    nyra neutre "Dans les dortoirs, probablement. Je l'ai croisé tôt ce matin."
+    nyra neutre "Je l'ai croisé dans les dortoirs assez tôt. Il était devant sa chambre."
 
     mara mefiant "Et ? Vu ta tête, y'a un 'mais'."
 
-    nyra "Il m'a demandé si quelqu'un était entré dans sa chambre cette nuit. Puis il m'a demandé si j'avais vu quelqu'un toucher à ses affaires, si les caméras fonctionnaient normalement et si je savais qui avait accès aux enregistrements."
+    nyra "Il m'a demandé si j'avais vu quelqu'un entrer chez lui cette nuit. Ensuite, il a voulu savoir si les caméras fonctionnaient et qui pouvait consulter les enregistrements."
 
     ryn fatigue "Ça lui ressemble pas."
 
-    nyra reflexion "Non."
+    nyra reflexion "Je lui ai proposé de regarder les relevés avec lui. Il n'a pas voulu."
 
     elias inquiet "Il s'est fait voler autre chose ?"
 
-    nyra "Je ne sais pas. Il n'a pas voulu me répondre. Quand j'ai essayé de continuer la discussion, il a vérifié deux fois derrière moi avant de refermer sa porte."
+    nyra "Il ne m'a rien dit de plus. Il a même regardé deux fois derrière moi avant de fermer sa porte. Je l'ai laissé tranquille."
 
     call play_stat_dialogue("j16") from _call_play_stat_dialogue_15
 
@@ -192,7 +192,7 @@ label _16_0_1_1_CAFETERIA_TENSION_ARRIVEE:
 
     ryn desaccord "Si quelque chose se passe dans les dortoirs, on devrait au moins savoir quoi."
 
-    nyra raison "Je suis d'accord. Mais il est inutile d'aller le coincer à dix devant sa porte. Dans son état, ça ne fera que renforcer ce qu'il pense déjà."
+    nyra raison "Ryn, je vais essayer de lui parler plus tard. Si on débarque tous devant sa chambre, il ne nous dira plus rien. Laissez-moi au moins lui demander s'il veut de l'aide."
 
     "Je serre les doigts autour de ma tasse."
 

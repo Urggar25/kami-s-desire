@@ -124,27 +124,27 @@ label sd_j13_calmer:
     return
 
 label sd_j14_donnees:
-    nyra raison "Voilà. Le texte ne le précise pas."
+    nyra raison "Exactement. Je veux qu'on demande une liste précise des données concernées avant le vote."
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
 label sd_j14_respect:
-    nyra neutre "Moi non plus. Il faut le dire clairement."
+    nyra neutre "Moi non plus. Je vais le dire demain, et j'aimerais que tu me soutiennes là-dessus."
     $ _stat_xp_results = award_stats_xp({"empathie": 1})
     return
 
 label sd_j14_soulever:
-    nyra raison "Oui. C'est ce que je compte faire."
+    nyra raison "Oui. Je comptais soulever la question. Si tu as d'autres objections, garde-les pour demain."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
 # Bonus j14 : observation 3, sans XP.
 label sd_j14_precision:
-    nyra reflexion "Il manque deux choses : qui consulte les données personnelles et comment on les retire."
+    nyra reflexion "Il faut qu'on sache qui pourra consulter les données personnelles et si on pourra demander leur retrait."
     noam "Et si une information est fausse ?"
-    nyra "Avec ce texte, rien ne garantit qu'on puisse la corriger."
+    nyra "Pour l'instant, rien ne garantit qu'on pourra faire corriger une information fausse. Ça m'inquiète aussi."
     noam "Alors il faut le demander avant de voter."
-    nyra raison "Exactement."
+    nyra raison "Oui. Note cette question, je risque d'en oublier une au milieu du débat."
     return
 
 label sd_j15_horaires:
@@ -172,7 +172,7 @@ label sd_j15_journal:
     return
 
 label sd_j16_aller:
-    nyra reflexion "D'accord. N'insiste pas s'il refuse."
+    nyra reflexion "D'accord. Va le voir, mais s'il te demande de partir, laisse-le tranquille."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
@@ -182,12 +182,12 @@ label sd_j16_espace:
     return
 
 label sd_j16_discret:
-    nyra raison "Je peux vérifier ça."
+    nyra raison "Je vais m'en charger. Je te dirai ce que j'ai pu vérifier."
     $ _stat_xp_results = award_stats_xp({"observation": 1})
     return
 
 label sd_j17_plan:
-    nyra raison "C'est prévu. On fait le point demain."
+    nyra raison "C'est ce que je propose. On se retrouve demain, et si ça n'a pas avancé, on devra discuter des autres options."
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
@@ -197,17 +197,17 @@ label sd_j17_autres:
     return
 
 label sd_j17_calme:
-    nyra neutre "Oui. Personne ne cède sous la pression."
+    nyra neutre "Oui. Et si quelqu'un commence à douter, je préfère qu'il nous le dise plutôt qu'il se sente obligé de faire comme les autres."
     $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
     return
 
 # Bonus j17 : audace 3, sans XP.
 label sd_j17_conditions:
-    nyra reflexion "Pour éviter qu'elle change de version ?"
+    nyra reflexion "Tu veux qu'on ait tous entendu la même réponse de sa bouche, c'est ça ?"
     noam "Oui. Au moins, tout le monde aura entendu la même chose."
     ryn "Et si elle nous envoie balader ?"
     noam "On aura au moins essayé."
-    nyra raison "D'accord. Mais pas de provocation inutile."
+    nyra raison "D'accord. Mais laissons-la répondre avant de lui tomber dessus."
     return
 
 label sd_j18_passer:
@@ -236,7 +236,7 @@ label sd_j19_comprendre:
     return
 
 label sd_j19_acces:
-    nyra raison "Je peux aider à faire la liste."
+    nyra raison "Je m'occupe de la liste avec Elias. Si tu te souviens d'un autre accès, viens me le dire."
     $ _stat_xp_results = award_stats_xp({"observation": 1})
     return
 
