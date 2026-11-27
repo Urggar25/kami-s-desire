@@ -121,7 +121,7 @@ init 3 python:
             ],
         },
         "d7_1_0_1": {
-            "prompt": "Nyra fixe la caméra. « Si nous appelons Kami, il faut contrôler les premiers mots. »",
+            "prompt": "Nyra fixe la caméra. « On va appeler Kami. Il faut qu'on soit d'accord sur ce qu'on lui dit. »",
             "options": [
                 _sd_option("medical", "On lui dit qu'on a trouvé une femme blessée et qu'elle a besoin de soins. Pas besoin de raconter toute l'histoire d'un coup.", "sd_d7_1_0_1_medical"),
                 _sd_option("responsable", "Je vais parler en premier. Si Kami cherche un responsable, elle pourra s'en prendre à moi plutôt qu'aux autres.", "sd_d7_1_0_1_responsable"),
@@ -498,27 +498,27 @@ label sd_d7_1_0_peur:
 
 # JOUR 7, route déclaration — toujours disponible. Gain : +1 XP Logique.
 label sd_d7_1_0_1_medical:
-    nyra "Des faits précis. Aucun espace pour son théâtre."
+    nyra "D'accord. On commence par son état et ce dont elle a besoin. Si Kami change de sujet, on revient là-dessus."
     $ _stat_xp_results = award_stats_xp({"logique": 1})
     return
 
 # JOUR 7, route déclaration — toujours disponible. Gain : +1 XP Audace.
 label sd_d7_1_0_1_responsable:
     "Nyra refuse d'abord, puis comprend."
-    nyra "Alors nous restons derrière toi."
+    nyra "Tu peux parler en premier si tu y tiens, mais on reste tous avec toi. Je ne veux pas que tu portes ça tout seul."
     $ _stat_xp_results = award_stats_xp({"audace": 1})
     return
 
 
 # JOUR 7, route déclaration — existe si Sang-froid >= 3. Aucune XP.
 label sd_d7_1_0_1_unite:
-    nyra "Oui. Personne ne répond seul si Kami cherche à désigner un coupable."
+    nyra "Oui. Si Kami cherche un responsable, on répond tous la même chose. Pas question d'en désigner un pour se protéger."
     noam "On explique ce qu'on a trouvé et ce qu'on demande. Pas besoin de se rejeter la faute."
-    nyra "Et si elle menace celui qui prend la parole ?"
+    nyra "Et si elle s'en prend directement à toi, tu fais quoi ?"
     noam "On revient aux faits : il y a une femme blessée, elle a besoin de soins."
-    nyra "Très bien. Tu gardes cette version, même si elle essaie de te faire sortir de tes gonds."
+    nyra "Très bien. Tiens-toi à ça, même si elle t'insulte."
     noam "Je vais faire de mon mieux."
-    nyra "Il faudra faire mieux que ça. On va répéter une fois."
+    nyra "On va répéter une fois. Je préfère que tu sois prêt avant qu'elle nous réponde."
     return
 
 # JOUR 8 — toujours disponible. Gain : +1 XP Empathie.
@@ -639,7 +639,7 @@ label sd_d7_1_0_porter:
 
 # JOUR d7_1_0_1 — nouvelle réponse ordinaire : +1 XP sang_froid.
 label sd_d7_1_0_1_tenir_calme:
-    nyra "C'est la seule façon d'avoir une conversation utile avec elle. Ne sortons pas de ce cadre."
+    nyra "D'accord. Si elle commence à chercher la dispute, laisse-moi reprendre. Et fais pareil si je m'énerve."
     $ _stat_xp_results = award_stats_xp({"sang_froid": 1})
     return
 

@@ -272,11 +272,11 @@ label _10_1_0_0_NYRA:
 
     nyra raison "Écoute, il faut qu'on parle du vote. J'ai vu la tête que tu as faite tout à l'heure."
 
-    noam desaccord "Si les brouilleurs disparaissent, Kami récupère le son et l'image de toutes les chambres. Oui, j'avais remarqué."
+    noam desaccord "J'ai bien compris ce qui va se passer si les brouilleurs deviennent interdits."
 
-    noam inquiet "Si les brouilleurs disparaissent..."
+    noam inquiet "Mais tu crois vraiment qu'on peut pas faire autrement ?"
 
-    nyra raison "Oui, et il ne suffira pas de débrancher une caméra. Si Kami récupère les chambres, elle récupère aussi les micros."
+    nyra raison "Sans les brouilleurs, Kami récupère le son et l'image dans toutes les chambres. Il ne suffira pas de débrancher une caméra."
 
     noam "Et Anya tient probablement moins d'une heure."
 
@@ -456,7 +456,7 @@ label _10_1_0_0_DEBAT_ARRIVEE:
 
     elias reflechit "Donc tu voudrais autoriser les brouilleurs mais définir des endroits où ils resteraient interdits."
 
-    nyra raison "C'est ce que je propose. Les lieux où une surveillance est indispensable, les hôpitaux notamment, devront avoir des règles claires. Elias, tu sais comment on pourrait limiter la puissance de ces appareils ?"
+    nyra raison "C'est ce que je propose. On garde des restrictions dans les lieux où la surveillance est indispensable, comme les hôpitaux ou les zones de sécurité. Ensuite, il faudra voir avec Kael et Iris ce qu'on peut réellement limiter sur les appareils."
 
     tomas reflexion "Ça règle une partie du problème, mais si tu légalises ces appareils, tu vas forcément en multiplier le nombre."
 

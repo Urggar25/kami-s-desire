@@ -199,8 +199,8 @@ label _4_0_ROUTE_MATIN_NYRA:
     nyra reflechit "Les couverts du petit-déjeuner. J'ai chargé un peu trop large. Si tu as deux minutes, j'ai besoin de tes mains."
     noam "Il a peut-être maigri depuis tout à l'heure."
     $ kd_direct.shot("close","nyra",duration=.14,hold=1)
-    nyra neutre "Très drôle. Prends la caisse du haut."
-    noam "Je peux aider ?"
+    nyra neutre "Non. Si seulement..."
+    noam "Bon, tu veux que je t'aide à le faire tourner ?"
     nyra reflechit "Tiens-la bien droite pendant que je tourne. Je te dirai quand la poser."
     $ kd_direct.shot("two",("nyra","noam"),duration=.28,hold=1)
     "Je soulève un côté du carton. Nyra pousse le chariot, centimètre par centimètre."

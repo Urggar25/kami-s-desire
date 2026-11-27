@@ -864,7 +864,7 @@ label _9_1_0_0_APRES_DEBAT:
 
     noam reflexion "Tu proposes quoi ?"
 
-    nyra "On va voir Anya. Elle saura au moins nous dire ce qu'il lui a raconté."
+    nyra "On va voir la personne à qui il a rendu visite, avant de lui courir après."
 
     noam "Anya."
 
@@ -1105,7 +1105,7 @@ label _9_1_0_0_ANYA:
 
     anya "J'avais un contact qui me donnait les instructions et c'est tout. Même le type qui m'a amenée jusqu'au dépôt ne m'a jamais donné son vrai nom."
 
-    nyra raison "Il a insisté sur les noms ou il voulait surtout savoir comment ils s'organisaient ?"
+    nyra raison "Il s'est arrêté aux noms des personnes qu'il cherchait ?"
 
     anya "Non."
 
@@ -1213,9 +1213,9 @@ label _9_1_0_0_ANYA:
 
     anya "Non."
 
-    nyra reflexion "D'accord. Il a pu l'apprendre par l'un de nous."
+    nyra reflexion "Il a pu l'apprendre de quelqu'un d'autre."
 
-    noam inquiet "Quelqu'un lui a parlé."
+    noam inquiet "De l'un de nous, tu veux dire ?"
 
     nyra "Ou il avait une autre source d'information avant de venir ici."
 

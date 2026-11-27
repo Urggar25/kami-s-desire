@@ -8,15 +8,15 @@ label KD_ROUTE_J5_NYRA:
     menu:
         "Échanger quelques mots avec Nyra.":
             $ showGroup([("nyra", "neutre", 0.35), ("noam", "neutre", 0.65)])
-            nyra "Tu vas à l'Observation ?"
+            nyra "Tu vas à l'Observation ? J'ai une demande à te faire si tu y passes."
             noam "Je voudrais voir ce qui se passe en bas."
-            nyra "Pour chercher quoi ?"
-            noam reflexion "Je sais pas exactement. Voir comment les choses évoluent."
-            nyra raison "Alors commence par choisir une question. Sinon tu vas passer une heure devant des images sans rien apprendre."
-            noam taquin "Tu fais toujours un programme avant de regarder par une fenêtre ?"
-            nyra "Non. Mais je ne confonds pas regarder et comprendre."
-            noam "Je te dirai si je trouve quelque chose."
-            nyra neutre "Seulement si tu sais ce que tu as trouvé."
+            nyra "Regarde si on peut encore consulter les anciennes images. J'aimerais comparer ce qu'on reçoit aujourd'hui avec ce qu'on recevait hier."
+            noam reflexion "Je comptais surtout regarder un peu ce qui se passe en bas, mais je peux vérifier."
+            nyra raison "Merci. Si tu ne trouves rien, ce n'est pas grave, je passerai moi-même plus tard."
+            noam taquin "Tu distribues toujours du boulot aux gens que tu croises ?"
+            nyra "Non, mais tu m'as dit que tu y allais. Je t'épargne un deuxième voyage."
+            noam "À moi ou à toi ?"
+            nyra neutre "À moi, cette fois. Merci, Noam."
             $ hideGroup()
         "Continuer vers l'Observation.":
             pass
@@ -143,15 +143,15 @@ label KD_ROUTE_J7_NYRA_GUEST:
     menu:
         "Discuter avec Nyra.":
             $ showGroup([("nyra", "neutre", 0.35), ("noam", "inquiet", 0.65)])
-            nyra "Tu vas voir l'invitée ?"
+            nyra "Tu vas à l'infirmerie ? Demande à Iris si elle a tout ce qu'il lui faut, s'il te plaît."
             noam "Oui. Je voulais savoir si son état s'améliore."
-            nyra "J'espère aussi. Mais il faudra régler la question des rations."
+            nyra "Bien. Je vais aussi vérifier les rations. Si on doit nourrir une personne de plus, je préfère savoir ce qu'on a en réserve."
             noam "Tu penses déjà à la nourriture ?"
-            nyra raison "Il faudra bien que quelqu'un y pense. Kami ne nous en donnera pas davantage par gentillesse."
+            nyra raison "Oui. Elle aura besoin de manger quand elle se réveillera, et je ne compte pas attendre que Kami décide de nous aider."
             noam "Elle est à peine consciente, Nyra."
-            nyra "Je ne lui reproche rien. Je dis seulement qu'on devra répartir autrement ce qu'il nous reste."
+            nyra "Je sais, Noam. Je ne parle pas de lui retirer quoi que ce soit. Je vais simplement faire le compte avant qu'on ait un problème."
             noam reflexion "D'accord. On en reparle quand on en saura plus."
-            nyra "C'est ce que je comptais faire."
+            nyra "D'accord. Tu me donneras des nouvelles si Iris a le temps de te répondre."
             $ hideGroup()
         "Aller directement à l'infirmerie.":
             pass

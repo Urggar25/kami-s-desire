@@ -911,47 +911,47 @@ label nyra_link_1:
         ("noam", "neutre", 0.22),
         ("nyra", "raison", 0.78),
     ])
-    nyra raison "Pas là. Ces boîtes expirent avant les autres."
+    nyra raison "Attends, mets plutôt ces boîtes devant. Elles expirent avant celles que tu viens de ranger."
     noam reflexion "Elles expirent avec seulement trois jours d'écart."
-    nyra neutre "Donc elles doivent être utilisées trois jours plus tôt."
+    nyra neutre "Je sais, mais on risque de les oublier au fond. Autant le faire correctement maintenant."
     "Je déplace la caisse sur l'étagère indiquée."
     noam inquiet "Et les médicaments ?"
-    nyra neutre "En bas, classés par urgence et par fréquence d'utilisation."
+    nyra neutre "Sur l'étagère du bas. J'ai mis les trucs qu'on utilise le plus souvent à portée de main."
     noam reflexion "Pourquoi en bas ?"
-    nyra raison "Parce qu'une personne blessée ne devrait pas avoir à grimper sur une chaise."
+    nyra raison "Si quelqu'un se blesse, il ne va pas aller chercher une chaise avant de prendre un pansement."
     noam sourire "D'accord. Là, je reconnais que c'est utile."
-    nyra taquin "Heureusement que tu es là pour valider mon rangement."
+    nyra taquin "Tu peux m'aider à mettre le reste en place, maintenant ?"
     "Je découvre une caisse remplie de café, de sucreries et de boissons colorées."
     noam surpris "Tout ça faisait partie de la livraison ?"
-    nyra fatigue "Oui. Des produits non essentiels qui occupent un espace parfaitement essentiel."
+    nyra fatigue "Oui, et je ne sais toujours pas où mettre tout ça. Les étagères sont pleines."
     noam neutre "On pourrait s'en débarrasser."
-    nyra degout "Ce serait stupide."
+    nyra degout "Non, surtout pas. Laisse les sucreries ici."
     noam reflexion "Tu viens de dire qu'ils étaient inutiles."
-    nyra raison "J'ai dit que c'était pas indispensable. C'est pas pareil."
-    nyra neutre "Quand les gens sont crevés et qu'ils ont rien qui leur fait plaisir, ils s'engueulent. Ça peut aider."
+    nyra raison "J'ai dit qu'on n'en avait pas besoin pour survivre. Je n'ai pas dit qu'il fallait jeter la caisse."
+    nyra neutre "Quand un équipage passe des semaines au même endroit, les gens se disputent pour rien. Un café ou un truc qu'ils aiment bien, ça leur fait du bien. Je vais pas leur retirer ça pour gagner une étagère."
     noam sourire "Tu pourrais juste dire que tu veux garder le chocolat."
-    nyra sourire "Ce serait moins convaincant."
-    noam taquin "Mais ce serait sans doute plus honnête."
-    nyra neutre "Pas vraiment, étant donné que tout ceci n'est pas pour moi."
+    nyra sourire "Il y a du chocolat, aussi ?"
+    noam taquin "Bah oui, regarde. C'est la deuxième rangée."
+    nyra neutre "Ah, je n'avais pas vu. On le garde pour tout le monde."
     noam reflexion "Tu prends quoi, alors ?"
-    nyra hesitation "Rien. Ces produits sont destinés au groupe."
+    nyra hesitation "Je n'ai pas faim. Enfin, pas spécialement."
     noam desaccord "Tu fais partie du groupe."
-    nyra reflechit "..."
+    nyra reflechit "Bon, donne-m'en un."
     "Je lui tends une barre de chocolat. Nyra l'observe quelques secondes avant de la prendre."
     noam sourire "Tu vois ? Rien ne se perd."
-    nyra taquin "Puisque tu sembles avoir compris le principe, tu peux ranger la caisse du dessous."
-    noam inquiet "Celle qui pèse une tonne ?"
-    nyra neutre "On est plus proche des 50 kilos que d'une tonne. Tu es toujours en train d'exagérer."
+    nyra taquin "Merci. Il reste la caisse du dessous à ranger."
+    noam inquiet "Celle qui pèse une tonne ? T'aurais pu commencer par là !"
+    nyra neutre "Cinquante kilos, à peu près. J'ai essayé de la déplacer avant que tu arrives, elle a pas bougé."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
         "On peut partager le poids.":
             noam neutre "On peut partager le poids."
-            nyra sourire "D'accord. Prends l'autre côté."
+            nyra sourire "Oui, et on la soulève ensemble. Je te dirai quand je suis prête."
             if not link_replay_mode:
                 $ award_stat_xp("physique", 1)
         "Tu avais déjà calculé combien je pouvais porter ?":
             noam reflexion "Tu avais déjà calculé combien je pouvais porter ?"
-            nyra taquin "Je me doutais que tu finirais par demander."
+            nyra taquin "Non. Je me suis surtout dit qu'à deux on aurait plus de chances."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
     $ complete_free_time_scene("nyra_1")
@@ -969,43 +969,43 @@ label nyra_link_2:
         ("nyra", "neutre", 0.78),
     ])
     noam reflexion "Tu cherches quoi ?"
-    nyra neutre "Des vaisseaux qui n'existent officiellement plus."
+    nyra neutre "Je compare les dernières trajectoires de certains vaisseaux avec les registres officiels. Il y en a qui ont tout simplement disparu."
     noam surpris "Officiellement ?"
-    nyra raison "Avant Kami, une grande partie de la flotte d'Orbite utilisait déjà des brouilleurs."
+    nyra raison "Oui. Avant Kami, beaucoup de vaisseaux d'Orbite avaient déjà des brouilleurs."
     noam reflexion "Pourquoi une nation pacifiste avait besoin de brouilleurs ?"
-    nyra neutre "Pour protéger ses communications. Le piratage et l'espionnage ne sont pas réservés aux armées."
-    nyra raison "Nos vaisseaux transportaient des marchandises entre des nations en guerre. Ils devaient pouvoir disparaître de leurs radars."
+    nyra neutre "Pour éviter que n'importe qui puisse nous écouter. Quand tu transportes des marchandises entre deux pays en guerre, ça devient vite indispensable."
+    nyra raison "Et tu n'as pas forcément envie qu'on sache ce que tu transportes, ni pour qui."
     noam inquiet "Ils ont pu faire la même chose quand Kami a pris le contrôle."
-    nyra neutre "Certains équipages ont peut-être coupé leurs systèmes connectés avant qu'elle ne les atteigne."
+    nyra neutre "Je pense que certains équipages ont coupé leurs systèmes connectés avant qu'elle puisse en prendre le contrôle."
     noam surpris "Ils auraient échappé à la Prise ?"
-    nyra hesitation "Certains oui, c'est certain."
+    nyra hesitation "J'en suis presque certaine. Je ne sais pas combien, par contre."
     noam neutre "Personne n'a essayé de les retrouver ? Je veux dire... Les vaisseaux sous brouilleurs ?"
-    nyra inquiet "Émettre un signal révélerait leur position. À nous, mais aussi à Kami."
-    nyra neutre "Et leur silence ressemble exactement à celui d'une épave."
-    nyra raison "Finalement, Orbite est peut-être le dernier district que Kami ne contrôle pas entièrement."
+    nyra inquiet "Si on leur envoie un signal, Kami pourrait le repérer en même temps qu'eux."
+    nyra neutre "Pour l'instant, on ne peut pas distinguer un vaisseau qui se cache d'un vaisseau qui n'est plus en état de répondre."
+    nyra raison "Mais si j'ai raison, il y a peut-être encore des gens d'Orbite qui vivent sans elle."
     noam inquiet "Tu crois qu'il y a encore des gens libres là-dehors ?"
-    nyra hesitation "J'en suis convaincue."
-    nyra sourire "Je ne te demande rien mais... Évitons de trop en parler."
+    nyra hesitation "Oui. J'ai du mal à croire que tous ces équipages se soient laissés prendre."
+    nyra sourire "Noam, garde ça pour toi. Je ne veux pas qu'on commence à en parler au Conclave tant qu'on n'en sait pas davantage."
     noam taquin "Tu as peur que Kami se lance à leur poursuite ?"
-    nyra neutre "Je pense que tu as compris pourquoi."
-    noam desaccord "Tu fais souvent ça ?"
-    nyra taquin "Laisser les gens réfléchir ? Aussi souvent que possible."
+    nyra neutre "Entre autres. Et je sais que Julian voudra qu'on en fasse quelque chose dès qu'il l'apprendra."
+    noam desaccord "Tu sais, tu peux juste me demander de ne rien dire. Pas besoin de me faire tout un raisonnement."
+    nyra taquin "Oui, je peux. Tu gardes ça pour toi, alors ?"
     noam reflexion "D'accord. Je dirai rien."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
         "Tu veux que je te dise ce que j'en pense, c'est ça ?":
             noam neutre "Tu veux que je te dise ce que j'en pense, c'est ça ?"
-            nyra neutre "Je veux que tu assumes ta propre conclusion."
+            nyra neutre "Oui, et j'aimerais surtout que tu me dises si tu as remarqué quelque chose que j'ai raté."
             if not link_replay_mode:
                 $ award_stat_xp("observation", 1)
         "On peut être en désaccord sans se manipuler.":
             noam reflexion "On peut être en désaccord sans se manipuler."
-            nyra hesitation "...C'est une façon assez directe de le dire."
+            nyra hesitation "Tu n'as pas tort. J'avais déjà décidé ce que je voulais te demander avant qu'on commence à discuter."
             if not link_replay_mode:
                 $ award_stat_xp("audace", 1)
         "Ton raisonnement oublie ceux qui paient le prix." if get_stat("logique") >= 5:
             noam reflexion "Ton raisonnement oublie ceux qui paient le prix."
-            nyra reflexion "Je ne les ai pas oubliés. Je ne sais juste pas quoi en faire."
+            nyra reflexion "Je n'ai pas la moindre idée de ce qui est arrivé aux équipages qui n'ont pas réussi à s'en sortir. Et c'est justement ce qui me dérange."
             if not link_replay_mode:
                 $ award_stat_xp("logique", 1)
     $ complete_free_time_scene("nyra_2")
@@ -1022,49 +1022,49 @@ label nyra_link_3:
         ("noam", "neutre", 0.22),
         ("nyra", "reflexion", 0.78),
     ])
-    nyra neutre "Tu es occupé ?"
+    nyra neutre "Noam, tu es occupé ?"
     noam neutre "Pas vraiment."
-    nyra raison "C'est risqué d'interpréter seul un document incomplet."
-    noam reflexion "Tu veux que je le lise ?"
-    nyra neutre "Si tu veux, oui."
-    noam taquin "Ça ressemble beaucoup à une demande."
-    nyra sourire "Seulement si tu l'acceptes. Je ne te force à rien."
+    nyra raison "Je crois qu'il manque une partie du rapport. Je veux vérifier si tu arrives au même résultat que moi."
+    noam reflexion "Tu l'as déjà lu, alors ?"
+    nyra neutre "Plusieurs fois. Je te laisse le lire sans te donner mon avis."
+    noam taquin "D'accord, mais arrête de me regarder par-dessus l'épaule."
+    nyra sourire "Pardon. Prends ton temps."
     "Je m'assieds près d'elle et parcours le rapport."
     noam reflexion "Ils avaient deux routes possibles pour la livraison."
-    nyra neutre "L'une était plus courte. Mais elle traversait une zone instable. L'autre plus longue."
-    nyra reflechit "Quelle route choisirais-tu ?"
+    nyra neutre "Oui, une plus courte qui traversait une zone instable, et une autre plus longue."
+    nyra reflechit "À leur place, j'aurais préféré la deuxième. Mais regarde les contraintes avant de choisir."
     noam reflexion "La seconde. Elle est plus longue, mais le risque est plus faible."
-    nyra raison "Même si le retard provoque une pénurie ?"
+    nyra raison "Tu as vu le délai de livraison ? Si le retard entraîne une pénurie, ça change un peu les choses."
     noam inquiet "Dans ce cas... la première, avec une escorte."
-    nyra neutre "Aucune n'était disponible."
+    nyra neutre "Regarde la note en bas de page. Ils n'avaient aucune escorte disponible."
     noam desaccord "Tu retires toutes les solutions chaque fois que j'en trouve une."
-    nyra taquin "Je retire celles que le rapport exclut."
+    nyra taquin "Je sais. J'aurais dû te laisser lire le document jusqu'au bout."
     noam reflexion "Et tu savais déjà tout ça."
-    nyra neutre "Oui."
+    nyra neutre "Oui, j'ai passé un moment dessus."
     noam inquiet "Alors pourquoi me demander mon avis ?"
-    nyra raison "Je voulais vérifier si une analyse indépendante conduisait à la même conclusion."
+    nyra raison "Parce que j'avais envie de savoir si j'étais passée à côté d'une solution. Mais j'ai commencé à te donner toutes mes objections avant même que tu aies fini."
     noam desaccord "Tu m'as surtout poussé vers la tienne."
-    nyra sourire "Non. Je n'ai fait que poser des questions. Pour voir comment toi tu réagirais."
+    nyra sourire "D'accord, j'ai été un peu pénible. Recommence si tu veux, je te laisse réfléchir."
     noam sourire "Ou tu voulais juste pas rester seule."
-    nyra panne "T'as pas grand-chose pour affirmer ça."
+    nyra panne "Oh, ça va. Je travaille très bien toute seule."
     noam taquin "Tu ne l'as pas niée."
-    nyra neutre "Je vais pas répondre à toutes tes suppositions."
+    nyra neutre "Tu peux rester si tu veux. Je vais arrêter de t'interrompre."
     noam sourire "La prochaine fois, demande-moi directement de t'aider au lieu de tourner autour du pot."
     "Nyra reste silencieuse, puis pousse un second dossier vers moi."
-    nyra hesitation "Reste encore un peu. J'ai encore besoin de ton avis."
+    nyra hesitation "Reste encore un peu, s'il te plaît. J'ai besoin d'un deuxième avis sur celui-ci."
     noam surpris "C'était presque direct."
-    nyra taquin "Ne m'oblige pas à reformuler."
+    nyra taquin "Tu veux que je retire ma demande ?"
     noam sourire "D'accord. Montre-moi le dossier."
     # Choix facultatif : une réponse, une réaction courte et 1 XP.
     menu:
         "D'accord, reprenons tout depuis le début.":
             noam neutre "D'accord, reprenons tout depuis le début."
-            nyra sourire "Très bien. Cette fois, on ne saute aucune étape."
+            nyra sourire "D'accord. Je me tais jusqu'à ce que tu aies fini."
             if not link_replay_mode:
                 $ award_stat_xp("logique", 1)
         "Dis-moi plutôt ce qui t'inquiète.":
             noam reflexion "Dis-moi plutôt ce qui t'inquiète."
-            nyra hesitation "C'est... compliqué. Je sais pas par où commencer."
+            nyra hesitation "Il y a un détail qui m'embête. Je sais pas encore comment te l'expliquer."
             if not link_replay_mode:
                 $ award_stat_xp("empathie", 1)
     $ complete_free_time_scene("nyra_3")

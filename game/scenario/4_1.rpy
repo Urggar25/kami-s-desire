@@ -445,9 +445,9 @@ label _4_1_APRES_CLASH_PRE_FETE:
     elen reflexion "Nyra, tu peux aller chercher Mara et Sael ? Je pense qu'elles t'écouteront plus facilement."
 
     $ kd_queue_character_motion("nyra", "recoil")
-    nyra surpris "Tu as déjà essayé de leur parler toutes les deux ?"
+    nyra surpris "Pourquoi moi ? Tu t'es disputée avec elles ?"
 
-    elen taquin "Parce que tu sais parler aux gens sans les énerver en moins de dix secondes. C'est un talent rare ici."
+    elen taquin "Non ! Mais toi, t'arrives à parler aux gens sans les énerver en moins de dix secondes."
 
     nyra reflexion "D'accord, je vais les voir. Mais si elles ne veulent pas venir, tu ne me demandes pas de les traîner jusqu'ici."
 

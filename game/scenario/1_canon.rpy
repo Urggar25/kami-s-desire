@@ -497,7 +497,7 @@ label _1_CANON:
     nyra triste "Si elle voulait nous parler, elle l'aurait déjà fait. Ça sert à rien d'attendre devant un terminal."
     nyra neutre "Elle contrôle tout ici. Il faut trouver ce qu'on peut faire sans elle."
 
-    kael calme "Mouais, si elle a envie."
+    kael calme "D'accord, mais on ne sait pas encore ce qu'on peut faire sans elle."
     kael calme "Si ça se trouve ça la fait marrer de voir douze inconnus enfermés dans une pièce."
 
     elen inquiet "Hein ?? On est enfermés ?!"
@@ -2525,7 +2525,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     mara taquin "Trois versions du même discours sur toi-même ?"
     julian sourire "Je voulais être précis."
     nyra taquin "Tu peux nous faire lire la dernière ? J'ai pas besoin des deux autres."
-    julian detendu "Très drôle. Ça vous amuse, mais si le texte est tiré..."
+    julian detendu "Je vous le montrerai peut-être demain. Mais si le texte est tiré..."
     mara sourire "Tu feras une quatrième version pour la postérité."
     julian sourire "Je voulais pas me planter sur les mots. Les gens vont peut-être la lire, cette proposition."
     julian detendu "Ça me ferait chier qu'on la rejette juste parce que je l'ai mal écrite !"
@@ -2537,7 +2537,7 @@ label _1_SALLE_DE_REPOS_OPTIONNELLE:
     julian inquiet "Imaginez que mon texte soit même pas tiré. Tout ça pour rien. Ça me rend dingue !"
 
     nyra taquin "Attends, si le texte n'est pas tiré, tu pourras toujours défendre tes idées au débat. Et je pense que tu feras ça mieux que la plupart d'entre nous."
-    julian detendu "Je peux vouloir les deux, non ?"
+    julian detendu "C'est gentil, mais je préférerais quand même que ce soit le mien."
     nyra sourire "Bon, garde quand même une copie. On aura peut-être besoin de toi."
 
     pause 1.0
