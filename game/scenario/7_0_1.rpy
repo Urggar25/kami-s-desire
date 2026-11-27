@@ -1014,12 +1014,11 @@ label _7_0_1_FIN_JOURNEE:
     elen "Au moins, s'il a faim, il aura quelque chose."
     noam "Je crois que c'est une bonne idée."
     "On se sépare devant les chambres."
+    "Ma tablette vibre. Tomas m'a envoyé un message."
     if j701_tomas_secret_kept:
-        "Ma tablette vibre. Tomas m'écrit : « Je revérifie demain matin. Je n'ai rien dit. »"
-        "Je réponds : « Dors quand même. »"
+        call messenger_play("j7_tomas_releves", "tomas", [("tomas", "Je revérifie demain matin. Je n'ai rien dit."), ("noam", "Dors quand même.")], objective_text="Lire le message de Tomas") from _call_j701_messenger_tomas_secret
     else:
-        "Ma tablette vibre. Tomas m'écrit : « Kael a reçu les fichiers. Il regarde demain. »"
-        "Je réponds : « Merci. »"
+        call messenger_play("j7_tomas_releves", "tomas", [("tomas", "Kael a reçu les fichiers. Il regarde demain."), ("noam", "Merci.")], objective_text="Lire le message de Tomas") from _call_j701_messenger_tomas_kael
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_289
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je retire ma veste. Le tiroir de mon bureau est entrouvert."
@@ -1038,9 +1037,7 @@ label _7_0_1_FIN_JOURNEE:
     menu:
         "Demander à Lysa de m'aider à chercher demain.":
             $ j701_lysa_search_help = True
-            "Je lui écris : « T'es réveillée ? Il me manque quelque chose dans ma chambre. Tu pourrais venir voir demain ? »"
-            lysa "Oui. Laisse les affaires comme elles sont, j'arrive demain matin."
-            noam "Merci."
+            call messenger_play("j7_lysa_dessin", "lysa", [("noam", "T'es réveillée ? Il me manque quelque chose dans ma chambre. Tu pourrais venir voir demain ?"), ("lysa", "Oui. Laisse les affaires comme elles sont, j'arrive demain matin."), ("noam", "Merci.")], objective_text="Envoyer un message à Lysa", notify=False) from _call_j701_messenger_lysa_dessin
         "Garder la disparition pour moi cette nuit.":
             "J'écris à Lysa, puis j'efface le message. Je veux encore vérifier avant de lui en parler."
     $ noam_has_juliette_drawing = False

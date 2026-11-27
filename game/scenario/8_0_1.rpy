@@ -90,6 +90,11 @@ screen pnc_chambre_j8():
                 ypos 0
                 action Return(target_label)
 
+    # Les bandes doivent être au-dessus des hotspots, comme dans l'exploration standard.
+    if room_scene_has_variants("chambre"):
+        use room_scene_navigation_band("chambre", -1, 0)
+        use room_scene_navigation_band("chambre", 1, config.screen_width - ROOM_SCENE_NAV_WIDTH)
+
     $ j8_required = ("lit", "tiroir", "armoire", "tablette")
     $ j8_search_count = sum(1 for key in j8_required if pnc_flags.get(key))
 
