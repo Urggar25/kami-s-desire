@@ -606,7 +606,7 @@ label _27_0_1_1_0_1_NYRA:
     nyra sourire "Oui, je savais que tu finirais par oublier de venir manger. Assieds-toi, c'est encore chaud."
     "Je pose la tablette entre nous et affiche les preuves recueillies."
     noam raison "Tout se mélange. La mort de Tomas, ses recherches sur Keyper, cet appareil... J'ai du mal à savoir ce qui a vraiment un lien."
-    nyra reflexion "Je comprends. Mais tu n'as pas encore de preuve que l'appareil soit lié à sa mort. Qu'est-ce que tu as pu vérifier depuis tout à l'heure ?"
+    nyra reflexion "Je comprends. Mais on n'a pas encore de preuve que l'appareil soit lié à sa mort. On a plusieurs choses à vérifier avant de pouvoir relier tout ça."
     noam reflexion "Sauf que je refuse de classer ça comme un suicide."
     nyra raison "On est d'accord. On ne va pas dire que Tomas s'est suicidé juste parce que ça arrange quelqu'un. On ne va pas non plus annoncer un meurtre sans éléments suffisants."
     if "kael" in investigation_pa_completed:

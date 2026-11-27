@@ -248,7 +248,7 @@ label _24_0_1_1_0_0_PETIT_DEJEUNER:
 
     ryn neutre "Ouais, enfin il oublie sa tablette alors qu'il vient de dire qu'il va relire un texte dessus."
 
-    nyra raison "Il est épuisé, Ryn. Ramasse sa tablette au lieu de commenter."
+    nyra raison "Il est épuisé, Ryn. Je lui rapporterai sa tablette si elle est encore là."
 
     lysa blase "Chez les Romains, on aurait probablement ouvert un poulet pour vérifier."
 
@@ -577,7 +577,7 @@ label _24_0_1_1_0_0_AVANT_VOTE:
 
     "Nyra laisse échapper un petit rire."
 
-    nyra raison "C'est quand même une question qu'il faut poser à Kami."
+    nyra raison "Noam a raison sur ce coup-là. Laisse-lui au moins le temps d'expliquer ce qui l'inquiète."
 
     ryn agace "J'ai pas dit qu'il avait tort."
 
@@ -867,7 +867,7 @@ label _24_0_1_1_0_0_CONCLAVE:
     "Sael ne répond pas tout de suite."
     tomas fatigue "Vous croyez que j'ai pas pensé à ces gens ?"
     noam agace "Personne dit ça. C'est justement pour eux que tu t'acharnes."
-    nyra raison "On ne peut plus modifier cette proposition, Tomas. Si tu veux qu'on l'accepte, on peut encore demander à Kami de s'engager sur son application."
+    nyra raison "On ne peut plus modifier cette proposition, Tomas. On peut demander des garanties à Kami, mais au moment du vote, ce sera ce texte ou rien."
     julian neutre "Alors la question, c'est : ce rien, on en fait quoi ?"
     noam reflexion "Tomas... si Kami applique le Commandement au strict minimum, est-ce que ça aide quand même quelqu'un ?"
     tomas hesitation "Peut-être. Au moins ceux qui n'ont absolument rien."
@@ -1456,7 +1456,7 @@ label _24_0_1_1_0_0_APRES_VOTE:
             "Tomas et Nyra ont quitté le canapé pour comparer leurs tablettes, malgré la fête."
             noam taquin "Vous avez vraiment décidé de travailler aujourd'hui ?"
             tomas reflexion "On essaie juste de comprendre comment expliquer le vote aux gens, sans leur promettre davantage que ce qu'il change."
-            nyra raison "Je lui ai proposé qu'on attende demain. Il veut absolument terminer son compte rendu ce soir."
+            nyra raison "Je lui ai proposé d'attendre demain pour rédiger son discours. Il veut absolument commencer maintenant."
             tomas inquiet "Ça ne sera pas un discours. Juste un compte rendu."
             noam sourire "On vient de gagner. Vous pouvez poser vos tablettes dix minutes."
             "Nyra éteint immédiatement la sienne. Tomas la regarde, hésite, puis l'imite."

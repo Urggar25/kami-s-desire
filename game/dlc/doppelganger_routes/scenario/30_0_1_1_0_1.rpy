@@ -141,7 +141,7 @@ label _30_0_1_1_0_1_REVELATION:
     julian colere "Mais c'est qui ces gens ?!"
     nyra neutre "C'est mon équipage, Julian."
     elen surpris "Ton équipage ?"
-    nyra fatigue "Je commande une flotte depuis plusieurs années. Vous les appelleriez probablement des pirates."
+    nyra fatigue "Je commande une flotte. Des pirates, si vous préférez."
     $ j30a_pirate_reveal = True
     julian surpris "QUOI ?!"
     noam reflexion "Depuis quand ?"

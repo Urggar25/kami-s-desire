@@ -702,7 +702,7 @@ label _28_0_1_1_0_1_NYRA:
     noam raison "Avec une plaque qui dirigeait l'air vers la chambre d'Elen."
     nyra reflexion "Montre-moi les photos. Je voudrais voir ce que vous avez trouvé."
     lysa reflexion "Sael pense qu'une intoxication est possible."
-    nyra inquiet "Merde. Sael a dit qu'elle pouvait le confirmer ?"
+    nyra inquiet "Merde... D'accord. Je comprends mieux pourquoi elle veut qu'on en parle."
     noam reflexion "On n'a pas réussi à savoir quand le montage a été installé."
     nyra raison "Il faudra savoir à quel moment ça a été posé. Sinon on ne pourra même pas dire si Tomas était la personne visée."
     lysa inquiet "Ouais."

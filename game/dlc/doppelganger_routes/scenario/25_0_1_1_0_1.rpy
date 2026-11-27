@@ -204,7 +204,7 @@ label _25_0_1_1_0_1_NYRA:
     nyra sourire "J'ai déjà essayé de convaincre des gens en me mettant en colère. Avec quelqu'un comme Tomas, ça ne fonctionne pas."
     noam neutre "Ouais."
     nyra raison "J'aurais préféré qu'il vote pour. Mais je ne lui reproche pas d'avoir essayé de vérifier ce qu'on allait accepter."
-    noam reflexion "Non."
+    noam reflexion "Ouais. Je suis d'accord avec toi."
     nyra sourire "Tant mieux. Il a déjà assez de monde sur le dos."
     noam neutre "T'as déjà entendu parler de Keyper ?"
     nyra reflexion "Keyper ? Je ne reconnais pas ce nom."

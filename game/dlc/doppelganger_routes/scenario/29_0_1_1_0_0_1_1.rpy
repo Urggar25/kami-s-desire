@@ -54,7 +54,7 @@ label _29_0_1_1_0_0_1_1_REVEIL:
     kael calme "Noam, baisse d'un ton."
     noam colere "Je sais qu'on a pas le temps ! Mais Julian a rien fait, il était encore avec tout le monde à la cafétéria !"
     elias fatigue "Hé, crie pas, putain. On est juste derrière les conduits."
-    nyra reflexion "Oui, Noam. On en a discuté pendant que tu dormais. J'aurais dû venir te chercher."
+    nyra reflexion "On en a discuté pendant que tu dormais. J'aurais dû venir te chercher."
     noam colere "Vous avez décidé sans moi ?"
     kael raison "On s'est organisés. On voulait te prévenir avant de bouger."
     noam agace "Ah, merci ! Sympa de me prévenir."

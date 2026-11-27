@@ -360,8 +360,8 @@ label _21_0_1_1_0_0_LIVRAISON:
     ])
 
     nyra raison "Les étiquettes sont prêtes. Elen, tu prends la nourriture. Julian, le médical. Si vous ne savez pas où va quelque chose, laissez-le de côté."
-    elen joie "Attends, toute la nourriture ? Même les trucs qui vont au frais ?"
-    lysa blase "Elle t'a donné une mission, pas un diplôme de cuisine."
+    elen joie "Ça va, je sais faire !"
+    lysa blase "Oui, mais ne range pas une seringue avec la soupe, cette fois."
     elen "Je ferai pas ça."
     julian sourire "Je suis prêt à témoigner en ta faveur si ça arrive."
     elen colere "Vous êtes chiants."
