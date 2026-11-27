@@ -109,6 +109,8 @@ label _14_0_1_1_0_REVEIL_CHAMBRE:
 
     nyra inquiet "Viens manger avec nous aujourd'hui. Je ne te demande pas de faire semblant d'aller bien, mais si tu restes enfermé ici, Ryn va continuer à chercher des réponses auprès des autres plutôt qu'auprès de toi."
     nyra triste "Et moi, je préfère savoir comment tu vas vraiment. Même si tu m'en veux de venir t'embêter."
+    noam desaccord "Tu pourrais aussi dire à Ryn de venir me parler. J'ai pas envie que vous discutiez tous de ma santé derrière mon dos."
+    nyra neutre "D'accord. Je lui dirai de venir te voir. Mais tu n'es pas obligé de lui répondre si tu n'en as pas envie."
 
     "Elle se relève."
 

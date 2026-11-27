@@ -427,7 +427,8 @@ label _17_0_1_1_CAFETERIA_M16_ARRIVEE:
 
     nyra "Alors propose autre chose. Mais j'aimerais qu'on décide aujourd'hui de ce qu'on est prêts à faire."
 
-    tomas inquiet "J'aimerais déjà qu'on finisse de discuter avant que tout le monde s'engage. Tu vois bien qu'Elias est furieux !"
+    tomas inquiet "J'aimerais déjà qu'on finisse de discuter avant que tout le monde s'engage. Tu vois bien qu'Elias est furieux ! On sait même pas ce qu'elle peut nous retirer si on refuse de continuer. Tu lui as demandé, ça ?"
+    nyra raison "Non. Il faut lui demander, tu as raison. Mais je ne veux pas qu'on abandonne l'idée avant d'avoir sa réponse."
 
 
     ryn colere "C'est pas de la colère. C'est du bon sens."
@@ -647,6 +648,8 @@ label _17_0_1_1_APRES_PROTESTATION:
     ryn desaccord "Moi je change pas d'avis."
 
     nyra "D'accord. Mais laisse aussi Tomas nous dire ce qu'il en pense demain."
+    tomas reflechit "Alors demain, j'aimerais qu'on discute aussi de la possibilité d'arrêter le boycott. Même si tu n'en as pas envie."
+    nyra neutre "D'accord. Je t'écouterai."
 
     "Je reste un peu en retrait. Tout le monde discute désormais des quatre jours qui nous restent, de ce qu'on pourrait demander à Kami, de ce qu'on peut encore consulter dans les Archives."
     "Moi, je n'arrive pas à quitter M16 des yeux."
