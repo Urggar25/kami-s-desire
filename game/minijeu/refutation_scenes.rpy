@@ -108,16 +108,23 @@ init python:
     )
 
     refutation_register(
-        "j9_regroupements", title=_("REGROUPEMENTS — LE PIÈGE"), bg="bg_conclave",
+        "j9_regroupements", title=_("REGROUPEMENTS — GAGNER DU TEMPS"), bg="bg_conclave",
         statements=[
-            ("kami", "taquin", _("Une seule abstention et [[tout sera réglé]] !")),
-            ("tomas", "inquiet", _("Tu as ajouté une conséquence [[qu'on n'avait pas comprise]].")),
-            ("kami", "neutre", _("Le vote est binaire. [[Je l'ai annoncé]].")),
-            ("ryn", "colere", _("On ne peut pas traiter [[des milliers de gens]] comme un détail !")),
-            ("kami", "sourire", _("Je vous ai donné les règles. [[Vous ne pouvez plus discuter]].")),
+            ("julian", "determine", _("Je demande simplement [[une réponse sur l'application du texte]].")),
+            ("kami", "taquin", _("Vous avez [[déjà toutes les informations nécessaires]] !")),
+            ("tomas", "inquiet", _("Des gens [[sont encore en train de se disperser]].")),
+            ("kami", "colere", _("Quelques minutes de discussion [[ne changeront rien au sort de ces campements]] !")),
+            ("lysa", "neutre", _("On peut au moins [[la faire répondre une dernière fois]].")),
         ],
-        fragments=[("formulation", _("Exiger une précision du texte")), ("urgence", _("Campements déjà présents")), ("delai", _("Le débat n'est pas clos"))],
-        solution={(4, 0): "delai"}, lives=3, line_time=5.8,
+        fragments=[
+            ("p3_declaration", _("Intitulé de l'amendement"), lambda: dossier_arg_unlocked("p3_declaration")),
+            ("p3_absence_declaration", _("Campements non déclarés"), lambda: dossier_arg_unlocked("p3_absence_declaration")),
+            ("p3_suspension", _("Suspension des sanctions"), lambda: dossier_arg_unlocked("p3_suspension")),
+        ],
+        confirmations={(0, 0), (2, 0), (4, 0)},
+        solution={(3, 0): "p3_suspension"},
+        miss={"default": _("Il faut montrer que tant que le résultat n'est pas proclamé, les campements peuvent encore agir.")},
+        lives=3, line_time=6.0,
     )
 
     refutation_register(

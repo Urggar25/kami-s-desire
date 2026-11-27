@@ -1432,7 +1432,7 @@ screen j901_signal_vivant_bilan(tier):
     $ _tier_msg = {
         "excellent": "Les quatre fronts ont reçu le signal. La majorité des campements s'est dispersée à temps. Kami semble presque impressionnée.",
         "bon":       "Le message est passé sur la plupart des fronts. Plusieurs campements ont entendu et se sont écartés des frontières.",
-        "moyen":     "Le signal a vacillé. Plusieurs quadrants ont été coupés trop longtemps. Le Commandement a fait du dégât.",
+        "moyen":     "Le signal a vacillé. Plusieurs quadrants ont été coupés trop longtemps. Des campements restent exposés aux sanctions.",
         "echec":     "Le signal s'est éteint. Les orbes de Kami ont fait leur œuvre. Le Commandement IV s'est appliqué dans toute sa logique froide.",
     }.get(tier, "")
 

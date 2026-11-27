@@ -558,6 +558,10 @@ label _10_0_1_1_2_ANNONCE_KAMI:
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
     julian taquin "Ah ! Le dernier représentant arrive enfin. Nous envisagions de faire voter une motion pour constater ton absence."
+    if j901_julian_discours_done:
+        julian "Je tiens à préciser qu'hier, mon intervention a peut-être permis à des milliers de personnes de se disperser."
+        lysa blase "Oui, Julian. Tu nous l'as déjà dit."
+        julian "Je pensais qu'il convenait de le rappeler à notre collègue."
     mara taquin "Ça lui prendrait au moins trois discours pour le faire."
     julian surpris "Je pourrais être bref !"
     lysa blase "Tu n'en as jamais apporté la preuve."
@@ -616,13 +620,13 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Mara, tu as une manière extraordinairement vulgaire de résumer les choses."
     julian "Tu ne peux pas décider de retirer notre vie privée sur un coup de tête !"
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Votre vie privée ? Oh, mes chéris... Les brouilleurs empêchent l'enregistrement et la diffusion de vos conversations privées. Pas mes petites oreilles de vous entendre."
-    iris "Attends. Tu veux dire que..."
+    kami "Vos brouilleurs perturbent mes capteurs audio et vidéo. Tant qu'ils fonctionnent, je ne peux ni vous entendre ni vous observer dans les zones qu'ils couvrent."
+    iris "Et les enregistrements ? Tu peux les récupérer ?"
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je peux même vous dire qui ronfle, si vous voulez."
-    elias "Ça répond pas vraiment à la question !"
+    kami "Pas pendant le brouillage, Iris. Je ne reçois pas vos conversations en direct."
+    elias "Donc si quelqu'un entre dans une chambre, tu ne le vois pas non plus ?"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Quant aux enregistrements, ils sont indisponibles pendant la période de brouillage. C'est le prix à payer pour une certaine discrétion."
+    kami "C'est exactement le problème. Les enregistrements sont indisponibles pendant la période de brouillage."
     $ unlock_dossier_arg("p4_preuves")
     noam inquiet "Donc si quelqu'un entre dans une chambre..."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve

@@ -319,12 +319,16 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
         kami "Quelques campements ont reçu votre message. Les autres ont surtout eu droit à une démonstration de votre enthousiasme."
     else:
         kami "Votre transmission ? Un chef-d'œuvre de confusion. J'hésite entre vous donner une mauvaise note et vous demander de recommencer pour le spectacle."
+    $ bc_show("ryn", "neutre", px=-70, py=-50, pz=0.85)
     ryn "Alors laisse-nous recommencer !"
+    $ bc_hide()
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "NON."
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Vous avez utilisé ma retransmission officielle pour détourner le débat. C'est une initiative que j'inscris précieusement dans vos dossiers."
+    $ bc_show("iris", "neutre", px=-70, py=-50, pz=0.85)
     iris "Qu'elle nous colle une punition, alors ! Ça changera de ses sermons !"
+    $ bc_hide()
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Mais je ne vous punirai pas aujourd'hui. Voyez comme je suis patiente."
     kami "Vous avez voulu prévenir ces campements. Très bien. Maintenant, vous allez choisir ce qu'il adviendra d'eux."
@@ -350,83 +354,85 @@ label _9_0_1_CONCLAVE_DEBAT_PARTIE_2:
     nyra reflechit "Elle aurait dû nous couper devant tout le monde. Ça ne veut pas dire qu'elle nous laisse faire ce qu'on veut."
     mara doute "Ou alors elle aime juste regarder les gens courir."
     "Je pense à l'enthousiasme de Kami. Les deux explications me paraissent possibles."
-    tomas inquiet "Il nous faut encore du temps. Même quelques minutes."
-    lysa reflechit "Tu as quelque chose à proposer ?"
-    tomas gene "Plusieurs choses, mais aucune très honnête."
-    julian "Alors c'est le moment idéal pour me laisser intervenir !"
-    iris colere "Non, Julian. Pour une fois, ce n'est pas de toi qu'on parle !"
-    julian "Je voulais seulement gagner du temps !"
-    elias "Et tu comptais le faire en parlant jusqu'à demain ?"
-    julian "Exactement !"
-    "Un rire nerveux passe autour de la table. Il s'éteint lorsque les pupitres s'illuminent."
-    sael determine "On ne peut pas l'empêcher de lancer la procédure."
-    noam reflechit "Mais on peut peut-être la retenir dans une conversation."
-    lysa blase "Si la survie de milliers de gens dépend du talent de Julian pour ennuyer son public, nous sommes condamnés."
-    julian "Je n'ai jamais eu autant envie de te donner tort."
+    tomas inquiet "Il nous faut encore du temps. Même quelques minutes. Je vois encore des gens près des points de passage."
+    julian "Laissez-moi parler."
+    iris colere "Julian, pas maintenant !"
+    julian "Iris, c'est précisément le moment. Ne me coupe pas, surtout."
+    nyra raison "Tu veux la retenir ?"
+    julian "C'est l'idée. Tomas, continue de surveiller les données pendant que je parle."
+    lysa blase "Je retire tout ce que j'ai dit sur tes discours, pour les cinq prochaines minutes."
     $ hideGroup()
-    play sound sfx_gresillement
-    show screen kami_broadcast_ui
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "J'ai entendu ce petit conciliabule. Et non, Julian, je ne vais pas écouter ton discours."
-    julian "C'est de la censure !"
-    kami "C'est de l'hygiène."
-    hide screen kami_broadcast_ui
     jump _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS
 
 
 label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
-    scene bg_conclave at adaptive_fullscreen with dissolve
-    $ showGroup([
-        ("ryn", "colere"), ("sael", "determine"), ("noam", "reflechit"),
-        ("tomas", "culpabilite"), ("lysa", "blase"), ("nyra", "stress"),
-        ("kael", "inquiet"),
-    ])
-    tomas reflechit "Je demande une précision technique sur le texte."
-    ryn colere "MAINTENANT ?!"
-    tomas inquiet "Précisément maintenant. L'expression « idéalement avec déclaration préalable » reste ambiguë."
-    nyra raison "Kami, réponds à Tomas. Les gens déjà installés dans les campements seront-ils couverts dès l'adoption du texte ?"
-    sael determine "C'est une question légitime."
-    lysa blase "Et accessoirement une question qui prend du temps."
-    noam determine "Kami, on ne te laissera pas esquiver ça aussi facilement."
-    call refutation_run("j9_regroupements")
-    if _return[0] == "success":
-        call play_noam_interupt
-        tomas raison "On a encore le droit de demander des précisions avant de voter !"
-    else:
-        nyra reflexion "On n'obtiendra rien de plus. Tomas, garde une copie de cette réponse ; on en aura besoin quand on relira le texte."
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Mes chers élèves, je vois que vous avez découvert les subtilités de la langue française !"
+    $ bc_show("julian", "sourire", px=-70, py=-50, pz=0.85)
+    julian "Kami, avant de procéder au scrutin, je voudrais revenir sur un élément de ta déclaration. Tu as employé le terme de regroupement. Je suppose que tu fais une distinction entre un rassemblement organisé et un rassemblement qui s'est constitué spontanément ?"
+    $ bc_hide()
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Quel dommage que le dictionnaire ne puisse pas vous servir de bouclier."
-    noam "Tu pourrais au moins nous communiquer le nombre de campements encore concernés."
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Vous savez, Noam, les chiffres sont parfois si tristes. Et vous avez déjà l'air d'une assemblée à un enterrement."
-    ryn "COMBIEN ?!"
+    kami "Julian, tu connais parfaitement le sujet du vote."
+    $ bc_show("julian", "determine", px=-70, py=-50, pz=0.85)
+    julian "Justement. Prenons un exemple. Vingt personnes attendent un véhicule. Une vingt et unième arrive. À quel moment considère-t-on qu'elles forment un groupe ? Doivent-elles toutes se connaître ? Doivent-elles attendre le même véhicule ? Et si l'une d'elles s'en va pendant que deux autres arrivent ?"
+    $ bc_hide()
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Ryn ! Je ne répondrai certainement pas à quelqu'un qui me hurle dessus !"
-    lysa "Alors réponds à celui qui a demandé poliment."
-    pause 0.6
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Vous avez compris le principe du jeu, n'est-ce pas ? Vous essayez de me faire parler pour donner aux campements quelques minutes supplémentaires."
-    noam determine "Tu as créé cette situation. Ils se sont regroupés pendant ton absence."
+    kami "Ce n'est pas un cours de droit, Julian."
+    $ bc_show("julian", "sourire", px=-70, py=-50, pz=0.85)
+    julian "Non, bien sûr. Mais nous votons une règle de droit, et je ne voudrais surtout pas que nos concitoyens aient à compter le nombre de personnes devant eux chaque fois qu'ils attendent quelque part. Ce serait tout de même assez difficile pour quelqu'un qui a le malheur d'être vingt et unième sans le savoir."
+    $ bc_hide()
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Je ne suis pas responsable de chaque mauvaise décision prise par un humain quand je cesse de lui tenir la main."
-    sael "Et pourtant tu t'es attribué le droit de les tuer."
-    pause 0.5
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "J'APPLIQUE LES COMMANDEMENTS."
-    elen "Mais tu peux les suspendre ! Tu viens de le faire !"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Pour vous laisser choisir. C'est ce qu'on appelle la générosité."
-    noam colere "Non. C'est ce qu'on appelle nous faire porter ta responsabilité !"
+    kami "Le contexte est pris en compte. Question suivante, si tu en as une de réellement pertinente."
+    $ bc_show("julian", "sourire", px=-70, py=-50, pz=0.85)
+    julian "J'en ai justement plusieurs. Si la déclaration est préalable, à quoi doit-elle être préalable ? À l'arrivée de la première personne, à la constitution du groupe, ou au début de l'activité elle-même ? Parce que dans le premier cas..."
+    $ bc_hide()
     scene bg_diffusion_colere at adaptive_fullscreen with vpunch
-    kami "ASSEZ !"
-    stop music fadeout 0.5
-    "Le son s'interrompt. Pendant une seconde, je n'entends que le souffle des autres."
+    kami "JULIAN !"
+    $ bc_show("julian", "neutre", px=-70, py=-50, pz=0.85)
+    julian "Je n'avais pas tout à fait terminé."
+    $ bc_hide()
+    hide screen kami_broadcast_ui
+    scene bg_conclave at adaptive_fullscreen with dissolve
+    $ showGroup([("tomas", "reflechit", 0.22), ("nyra", "raison", 0.44), ("noam", "reflexion", 0.65), ("lysa", "neutre", 0.86)])
+    tomas "Attendez, je reçois encore des mises à jour. Des gens quittent les points de rassemblement."
+    lysa "Continue, Julian. Surtout, continue."
+    nyra raison "Elle va le faire taire. Il faut lui donner une raison de répondre."
+    $ j901_julian_discours_done = True
+    call refutation_run("j9_regroupements") from _call_j901_delay_refutation
+    $ j901_julian_delay_success = (_return[0] == "success")
+    if j901_julian_delay_success:
+        call play_noam_interupt
+        noam determine "Tu as suspendu les sanctions jusqu'au résultat. Tant que tu ne l'as pas proclamé, des gens peuvent encore se mettre à l'abri."
+        nyra raison "Réponds au moins à la question de Julian sur les déclarations. Tout le monde doit savoir comment tu vas appliquer ce texte."
+    else:
+        noam inquiet "Je n'arrive pas à lui faire entendre raison."
+        nyra reflexion "On a quand même gagné quelques minutes. Tomas, continue de vérifier les déplacements."
+    $ hideGroup()
+    show screen kami_broadcast_ui
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Fin des questions. Fin des commentaires. Vote immédiat."
+    kami "Bon, je vais répondre à cette dernière question. Les campements actuels ont été constitués sous le Commandement en vigueur aujourd'hui. Vous ne votez pas une amnistie pour les infractions antérieures."
+    $ bc_show("ryn", "colere", px=-70, py=-50, pz=0.85)
+    ryn "TU VAS LES TUER MÊME SI ON VOTE POUR ?!"
+    $ bc_hide()
+    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    kami "Tout dépend de leur situation au moment où je reprendrai les sanctions. Vous leur avez transmis un avertissement, n'est-ce pas ?"
+    $ bc_show("noam", "inquiet", px=-70, py=-50, pz=0.85)
+    noam "Combien de campements sont encore concernés ?"
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    kami "Tu sais, Noam, il serait beaucoup plus agréable de ne pas devoir répéter les mêmes choses."
+    $ bc_show("julian", "sourire", px=-70, py=-50, pz=0.85)
+    julian "Dans ce cas, permets-moi de reformuler la question de mon collègue afin de..."
+    $ bc_hide()
+    scene bg_diffusion_colere at adaptive_fullscreen with vpunch
+    kami "NON ! J'ai compris ce que vous faites !"
+    $ bc_show("elen", "peur", px=-70, py=-50, pz=0.85)
+    elen "Mais laisse-les partir, s'il te plaît ! Ils sont encore en train de bouger !"
+    $ bc_hide()
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Fin des questions. Vote immédiat."
+    stop music fadeout 0.5
     hide screen kami_broadcast_ui
     scene bg_conclave at adaptive_fullscreen with dissolve
     play music "music/bgm_fatal_assembly.mp3" fadein 1.0
@@ -545,6 +551,18 @@ label _9_0_1_VOTE:
     else:
         jump _9_0_1_FIN_JOURNEE_VOTE_REFUSE
 
+# Séquence de tirs distincts, pas un unique son décrit plusieurs fois.
+# Le volume reste dans l'intervalle habituel du mixage Ren'Py.
+label j901_canon_volley(shots):
+    stop music fadeout 0.25
+    window hide
+    while shots > 0:
+        play sound sfx_laser_canon volume 1.0
+        with vpunch
+        pause 0.85
+        $ shots -= 1
+    return
+
 label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     $ hideGroup()
     $ current_period = "Soir"
@@ -567,10 +585,14 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     elif j901_signal_result_tier == "moyen":
         kami "Votre signal n'a atteint qu'une partie des campements. Certains groupes ont pu s'éloigner, mais beaucoup demeurent concernés par les sanctions applicables."
     else:
-        kami "Votre transmission a surtout semé la confusion. Certains campements ont pu se disperser, d'autres non. Quelques sanctions ont même précédé la validation du scrutin."
+        kami "Votre transmission a surtout semé la confusion. Certains campements ont pu se disperser, d'autres non. Je vais maintenant reprendre les sanctions."
+    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    kami "Je rappelle que vous n'avez pas voté d'amnistie pour les rassemblements constitués avant l'entrée en vigueur du texte."
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Mais ne faites pas cette tête ! Après tout, vous avez gagné votre vote."
+    $ bc_show("noam", "neutre", px=-70, py=-50, pz=0.85)
     noam "Combien de personnes ?"
+    $ bc_hide()
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Tu sais, Noam, tu as vraiment le chic pour gâcher les beaux moments."
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
@@ -583,10 +605,15 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
         ("kael", "fatigue"),
     ])
     elen hesitation "On l'a fait..."
-    julian "Unanimité. Pour la première fois depuis..."
-    lysa blase "Ne gâche pas ça avec un discours."
-    julian "Je n'allais pas..."
-    mara "Si. Tu allais."
+    play sound sfx_gresillement
+    "Un grondement monte sous nos pieds. Elen se tourne vers les écrans."
+    $ _j901_shots = {"excellent": 2, "bon": 3, "moyen": 4, "echec": 5}.get(j901_signal_result_tier, 4)
+    call j901_canon_volley(_j901_shots) from _call_j901_canon_adopted
+    elen peur "Mais... On a voté pour !"
+    tomas inquiet "Ceux qui n'ont pas réussi à se mettre en règle avant le résultat..."
+    lysa triste "On avait raison de se méfier du texte."
+    julian "J'espère au moins que mon intervention leur a donné assez de temps."
+    "Personne ne lui répond."
     ryn fatigue "Combien sont encore là-bas ?"
     tomas inquiet "Je vais essayer d'avoir les chiffres."
     sael neutre "Ceux qui ont survécu n'ont plus à se cacher pour rester ensemble."
@@ -605,15 +632,18 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     noam neutre "Moi aussi."
     julian "C'est une victoire, tout de même."
     noam reflechit "Oui. Je suppose."
-    julian "Tu sais, pour une fois, je n'essayais pas de faire un discours."
-    noam taquin "C'est dommage. Il aurait été très court."
-    julian "Tu vois ? On se moque toujours des grands hommes."
+    if j901_julian_discours_done:
+        julian "Tu crois que j'ai gagné combien de minutes ?"
+        noam "Je sais pas. Mais Tomas voyait encore des gens quitter les campements pendant que tu parlais."
+        julian "Il faudra que je lui demande le chiffre. Je compte bien le retenir."
+    else:
+        julian "J'aurais aimé qu'on ait un peu plus de temps."
     "Je souris malgré moi. Au bout du couloir, il me laisse devant ma porte."
     call MAYBE_PLAY_SCRIPTED_DOOR("chambre", "bg_chambre") from _call_MAYBE_PLAY_SCRIPTED_DOOR_320
     scene bg_chambre at adaptive_fullscreen with dissolve
     "Je regarde la place vide sur le bureau. Le dessin de Juliette n'est pas revenu."
     think "Douze votes pour. Et je ne sais toujours pas combien de personnes nous avons sauvées."
-    "Je ferme la porte, sans déplacer de meuble."
+    "Je ferme la porte et vérifie que le verrou s'est enclenché."
     think "Ce soir, je n'ai pas envie de croire que la peur doit gagner à chaque fois."
     $ hideGroup()
     call show_chapter_title("Fin du chapitre 3", "Chapitre 3 — La confiance ne suffit pas") from _call_show_chapter_title_26
@@ -643,7 +673,9 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     $ interject("REJETÉ", color="#FF4D6D")
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "L'amendement est rejeté. Le Commandement IV demeure en vigueur, sans modification."
+    $ bc_show("noam", "neutre", px=-70, py=-50, pz=0.85)
     noam "Kami, attends ! Les campements, ils..."
+    $ bc_hide()
     scene bg_diffusion_zen at adaptive_fullscreen with dissolve
     kami "Les campements ? Oui. J'avais promis de reprendre l'application du Commandement après le vote."
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
@@ -652,7 +684,7 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     scene bg_conclave at adaptive_fullscreen with dissolve
     "Une chaise recule. Quelqu'un dit quelque chose, mais je n'entends pas les mots."
     play sound sfx_gresillement
-    scene bg_conclave at adaptive_fullscreen, heavy_shake
+    scene bg_conclave at adaptive_fullscreen
     $ showGroup([
         ("ryn", "colere2", 0.25), ("noam", "surpris", 0.50), ("sael", "peur", 0.75),
     ])
@@ -669,12 +701,12 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     sael determine "Non."
     "Je voudrais croire que quelqu'un va trouver une nouvelle procédure, une phrase oubliée dans le règlement, n'importe quoi qui empêcherait le canon de tirer."
     "Il n'y a que le grondement."
-    play sound sfx_laser_canon volume 8.0
-    scene bg_conclave at adaptive_fullscreen, heavy_shake
-    "La première détonation secoue la salle si fort que je manque de tomber. La deuxième arrive avant que quelqu'un puisse reprendre son souffle."
-    "Elen crie. Je ne sais pas si elle a vu quelque chose sur un écran ou si elle a simplement compris."
+    call j901_canon_volley(2) from _call_j901_canon_refused_first
+    "Je me rattrape au bord de la table. Elen crie derrière moi."
+    $ _j901_shots = {"excellent": 2, "bon": 3, "moyen": 4, "echec": 5}.get(j901_signal_result_tier, 4)
+    call j901_canon_volley(_j901_shots) from _call_j901_canon_refused_rest
     think "Sur Terre, ils devaient encore courir. Certains ont dû entendre notre avertissement. D'autres..."
-    "Je ferme les yeux, mais le sol continue de trembler."
+    "Julian ne dit plus rien. Tomas garde les yeux rivés sur sa tablette."
     think "Un seul vote suffisait."
     $ hideGroup()
     scene black with Fade(0.1, 0.2, 0.8)

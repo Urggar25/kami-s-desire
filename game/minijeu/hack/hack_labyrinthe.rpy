@@ -1337,6 +1337,115 @@ screen j901_hack_howto():
     add "hk_bezel"
 
 
+# Tutoriel animé du J9 : la démonstration ne touche pas au plateau réel.
+transform j901_demo_move(a, b, delay=0.2):
+    subpixel True
+    xpos a
+    pause delay
+    ease 0.45 xpos b
+    pause 0.75
+    ease 0.30 alpha 0.0
+    xpos a
+    alpha 1.0
+    repeat
+
+transform j901_demo_stun:
+    alpha 1.0
+    pause 0.65
+    linear 0.10 alpha 0.25
+    linear 0.10 alpha 1.0
+    repeat 3
+
+transform j901_demo_pulse:
+    alpha .55
+    ease .35 alpha 1.0
+    ease .35 alpha .55
+    repeat
+
+screen j901_hack_tutorial():
+    modal True
+    zorder 500
+    default page = 0
+    add Solid("#02060B")
+    add Tile("hk_hexfield") alpha .45
+    add Solid("#1AE4FF12", xsize=1920, ysize=22) at hk_scan_sweep
+    vbox:
+        xalign .5
+        ypos 60
+        spacing 10
+        text _("INFILTRATION DU RÉSEAU") style "hk_h1" size 54 xalign .5
+        text (_("DÉPLACEMENT ET OBJECTIF") if page == 0 else _("MODULES DU PLATEAU") if page == 1 else _("SENTINELLE ET PARE-FEU")) style "hk_label" size 23 color "#4AE3FF" xalign .5
+
+    frame:
+        xalign .5
+        ypos 205
+        xysize (1510, 400)
+        background Frame("minijeu/hack/assets/hk_panel.png", 34, 34)
+        padding (0, 0)
+        fixed:
+            id ("j901_demo_%d" % page)
+            xysize (1510, 400)
+            for row in range(3):
+                for col in range(13):
+                    add Transform("hk_floor", xysize=(96, 96)) pos (120+col*96, 50+row*96)
+            for col in (0, 12):
+                for row in range(3):
+                    add Transform("hk_wall_0", xysize=(96, 96)) pos (120+col*96, 50+row*96)
+            if page == 0:
+                add Transform("hk_goal", xysize=(96, 96)) pos (1176, 146) at j901_demo_pulse
+                add Transform("hk_player", xysize=(96, 96)):
+                    ypos 146
+                    at j901_demo_move(216, 1176)
+                text _("ATTEINDRE LE NOYAU") style "hk_label" size 22 color "#5CFFC0" xalign .5 ypos 347
+            elif page == 1:
+                add Transform("hk_boost", xysize=(96, 96)) pos (408, 146) at j901_demo_pulse
+                add Transform("hk_oneway", xysize=(96, 96)) pos (792, 146)
+                add Transform("hk_trap", xysize=(96, 96)) pos (1080, 146) at j901_demo_pulse
+                add Transform("hk_player", xysize=(96, 96)):
+                    ypos 146
+                    at j901_demo_move(408, 600)
+                add Transform("hk_enemy", xysize=(96, 96)) pos (1080, 146) at j901_demo_stun
+                text _("PROPULSION +2   /   SENS UNIQUE   /   IMMOBILISATION") style "hk_label" size 21 color "#4AE3FF" xalign .5 ypos 347
+            else:
+                add Transform("hk_firewall", xysize=(96, 96)) pos (600, 146) at j901_demo_pulse
+                add Transform("hk_beacon", xysize=(96, 96)) pos (1080, 50)
+                add Transform("hk_player", xysize=(96, 96)) pos (504, 146)
+                add Transform("hk_enemy", xysize=(96, 96)):
+                    ypos 146
+                    at j901_demo_move(1080, 696, .15)
+                text _("Z  Q  S  D  Z") style "hk_h2" size 34 color "#CF8CFF" xalign .5 ypos 50 at j901_demo_pulse
+                text _("PARE-FEU : SÉQUENCE À REPRODUIRE") style "hk_label" size 21 color "#CF8CFF" xalign .5 ypos 347
+
+    vbox:
+        xalign .5
+        ypos 635
+        xsize 1430
+        spacing 12
+        if page == 0:
+            text _("Tu contrôles le signal bleu. Utilise ZQSD, les flèches ou clique sur une case de la même ligne. Espace permet une propulsion de trois cases.") style "hk_body" size 27 text_align .5 xalign .5
+            text _("Atteins le noyau vert avant la fin des 60 secondes. Le chronomètre ne démarre qu'après ce tutoriel.") style "hk_body" size 24 text_align .5 xalign .5
+        elif page == 1:
+            text _("L'accélérateur propulse de deux cases supplémentaires. Le sens unique interdit le passage à contresens.") style "hk_body" size 27 text_align .5 xalign .5
+            text _("Le piège immobilise environ trois secondes le premier signal qui le déclenche, y compris la sentinelle. Il ne fonctionne qu'une fois.") style "hk_body" size 24 text_align .5 xalign .5
+        else:
+            text _("La sentinelle rouge patrouille et accélère si elle te détecte. Trois interceptions entraînent l'échec.") style "hk_body" size 27 text_align .5 xalign .5
+            text _("Un pare-feu impose une séquence de touches et bloque la sentinelle jusqu'à son ouverture. Une balise donne une information, mais si la sentinelle la pirate, elle révèle ta position.") style "hk_body" size 24 text_align .5 xalign .5
+
+    hbox:
+        xalign .5
+        ypos 905
+        spacing 28
+        textbutton _("PRÉCÉDENT") style "hk_button" xysize (300, 68) sensitive (page > 0) action SetScreenVariable("page", max(0, page-1))
+        text ("%d / 3" % (page+1)) style "hk_label" size 24 yalign .5
+        if page < 2:
+            textbutton _("SUIVANT") style "hk_button" xysize (300, 68) action SetScreenVariable("page", page+1)
+        else:
+            textbutton _("LANCER L'INFILTRATION") style "hk_button" xysize (440, 68) action Return(True)
+    add "hk_scanlines" alpha .35
+    add "hk_vignette"
+    add "hk_bezel"
+
+
 # ------------------------------------------------------------
 # Partie
 # ------------------------------------------------------------
@@ -1762,7 +1871,7 @@ screen j901_hack_retry():
 label j901_play_hack:
     $ hack_assist = False
     $ hack_reset(J901_HACK_CIRCUIT, assist=False)
-    call screen j901_hack_howto
+    call screen j901_hack_tutorial
     $ hack_ambient_start()
 
 label j901_hack_retry_loop:
