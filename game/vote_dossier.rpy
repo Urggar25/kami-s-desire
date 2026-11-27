@@ -129,7 +129,7 @@ init python:
             "desc": "La tentative de médiation de Noam a échoué. Sael ne peut se fier à des promesses vagues, et Ryn interprète les hésitations comme une nouvelle indifférence aux morts.",
             "source": "DÉBAT RYN / SAEL — RÉFUTATION ÉCHOUÉE"},
         "p3_declaration": {"cat": "information", "title": "Déclaration préalable",
-            "desc": "Lieu, date, objet et identité des organisateurs devraient être transmis avant toute réunion.",
+            "desc": "La proposition prévoit une déclaration préalable des rassemblements de plus de vingt personnes. Les modalités exactes restent à préciser.",
             "source": "ANNONCE DE KAMI"},
         "p3_familles": {"cat": "soutien", "title": "Communautés et familles",
             "desc": "Les regroupements autorisés permettraient aux proches séparés de se retrouver et de s'organiser.",
@@ -141,7 +141,7 @@ init python:
             "desc": "Autoriser les futurs groupes ne régularise pas forcément ceux qui existent déjà.",
             "source": "NYRA"},
         "p4_intimite": {"cat": "soutien", "title": "Droit à l'intimité",
-            "desc": "Les brouilleurs empêchent une surveillance constante dans les espaces privés.",
+            "desc": "Les brouilleurs protègent les conversations privées en limitant leur enregistrement et leur diffusion.",
             "source": "MARA"},
         "p4_preuves": {"cat": "prudence", "title": "Preuves neutralisées",
             "desc": "Si chacun brouille les enregistrements, certains événements deviennent impossibles à prouver.",
@@ -244,7 +244,7 @@ init python:
             changed = True
         if changed:
             renpy.save_persistent()
-            kd_vote_argument_notice(aid)
+            kd_argument_enqueue("vote", aid)
             renpy.restart_interaction()
             return True
         return False

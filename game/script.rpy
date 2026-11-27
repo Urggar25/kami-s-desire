@@ -406,7 +406,8 @@ init python:
     ImageReference = renpy.display.image.ImageReference
 
     def add_argument(name):
-        if name not in store.arguments:
+        is_new = name not in store.arguments
+        if is_new:
             store.arguments.append(name)
         # Persistance globale : l'argument reste débloqué pour toutes les
         # parties futures, y compris après un recommencement complet.
@@ -415,6 +416,12 @@ init python:
         if name not in persistent.unlocked_arguments:
             persistent.unlocked_arguments.append(name)
             renpy.save_persistent()
+        if is_new:
+            aid = next((k for k, entry in DOSSIER_ARGS.items() if entry["title"] == name), None)
+            if aid is not None:
+                unlock_dossier_arg(aid)
+            else:
+                kd_argument_enqueue("legacy", name)
 
     def restore_unlocked_arguments():
         """Réinjecte dans la sauvegarde courante tous les arguments déjà

@@ -163,6 +163,8 @@ label _9_0_1_CONCLAVE_ANNONCE:
     pause 0.5
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
     kami "Autoriser les regroupements de plus de vingt personnes, idéalement avec déclaration préalable."
+    $ unlock_dossier_chapter(3)
+    $ unlock_dossier_arg("p3_declaration")
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Je vous rappelle le Commandement IV : les rassemblements non déclarés de plus de vingt individus sont interdits."
     kami "Si vous adoptez l'amendement à l'unanimité, la nouvelle règle s'appliquera immédiatement. Sinon, rien ne change."

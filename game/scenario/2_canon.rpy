@@ -1223,8 +1223,8 @@ init 3 python:
             persistent.unlocked_dossier_args.append(arg_id)
         if arg_id not in store.j2_vote_arguments:
             store.j2_vote_arguments.append(arg_id)
-        if "unlock_dossier_arg" in globals():
-            unlock_dossier_arg(arg_id)
+        # Le dossier est l'unique point de notification et de déblocage visuel.
+        unlock_dossier_arg(arg_id)
         renpy.save_persistent()
         chapter1_check_complete_dossier()
         renpy.restart_interaction()
@@ -1254,144 +1254,12 @@ init 3 python:
         return False
 
 
-# La zone de dépôt est déclarée AVANT la carte dans le draggroup.
-# Ainsi la carte reste visible au premier plan quand les deux se chevauchent.
-transform day2_folder_idle_glow:
-    alpha 0.14
-    ease 0.85 alpha 0.43
-    ease 0.85 alpha 0.14
-    repeat
-
-transform day2_argument_success_fly:
-    xpos 290 ypos 380 zoom 1.0 alpha 1.0
-    pause 0.08
-    easein 0.42 xpos 1155 ypos 423 zoom 0.30
-    ease 0.14 alpha 0.0
-
-transform day2_argument_success_label:
-    alpha 0.0
-    pause 0.61
-    ease 0.20 alpha 1.0
-
-# Une carte réutilisée telle quelle pour le drag et l'animation finale.
-screen day2_argument_visual(arg):
-    fixed:
-        xysize (490, 275)
-        add Solid("#00000066") xpos 9 ypos 10 xsize 478 ysize 264
-        add Solid("#102637") xpos 0 ypos 0 xsize 480 ysize 265
-        add Solid("#70DFFF") xpos 0 ypos 0 xsize 480 ysize 3
-        add Solid("#70DFFF") xpos 0 ypos 0 xsize 3 ysize 265
-        add Solid("#70DFFF") xpos 477 ypos 0 xsize 3 ysize 265
-        add Solid("#70DFFF") xpos 0 ypos 262 xsize 480 ysize 3
-        add Solid("#1B4258") xpos 18 ypos 17 xsize 444 ysize 44
-        text "ARGUMENT":
-            xpos 32 ypos 25
-            size 21 color "#9FEAFF"
-            font "fonts/Rajdhani-SemiBold.ttf"
-            kerning 2
-        text kd_tr(arg["title"]):
-            xpos 30 ypos 85
-            xsize 419 ysize 124
-            size 36 color "#F3FAFF"
-            font "fonts/Rajdhani-SemiBold.ttf"
-        add Solid("#31566B") xpos 30 ypos 222 xsize 417 ysize 1
-        text "DOSSIER DU VOTE":
-            xpos 30 ypos 233
-            size 19 color "#87B7CA"
-            font "fonts/Rajdhani-SemiBold.ttf"
-
-# Réceptacle : un seul grand dossier, sans double panneau emboîté.
-screen day2_argument_folder_visual():
-    fixed:
-        xysize (650, 350)
-        add Solid("#14374733") xpos 17 ypos 30 xsize 610 ysize 274 at day2_folder_idle_glow
-        add Transform("gui/day3/argument_briefcase_open.png", xysize=(630, 320), fit="contain"):
-            xpos 10 ypos 0
-        text "DÉPOSER ICI":
-            xpos 0 ypos 313 xsize 650
-            text_align 0.5
-            size 23 color "#A3EFFF"
-            font "fonts/Rajdhani-SemiBold.ttf"
-            kerning 2
-
+# Compatibilité : les anciens écrans de dépôt ne sont plus des interactions.
 screen vote_argument_briefcase(arg_id, argument_data, card_drag_name, drop_drag_name, drop_handler):
-    modal True
-    zorder 180
-    $ arg = argument_data
+    timer .01 action [Function(day2_vote_add_argument, arg_id), Return(True)]
 
-    add Solid("#020710EF")
-    frame:
-        xpos 275 ypos 166 xsize 1370 ysize 94
-        padding (26, 17)
-        background Solid("#071522F1")
-        vbox:
-            spacing 5
-            text "KAMI.CORE  //  DOSSIER DU VOTE":
-                size 16 color "#64B9D2"
-                kerning 2 font "fonts/Rajdhani-SemiBold.ttf"
-            text "Classe cet argument dans ton dossier de vote.":
-                size 29 color "#E7F6FF"
-                font "fonts/Rajdhani-SemiBold.ttf"
-
-    text "ARGUMENT DÉCOUVERT":
-        xpos 290 ypos 326
-        size 21 color "#84CDE4"
-        kerning 2 font "fonts/Rajdhani-SemiBold.ttf"
-    text "PROCHAIN VOTE":
-        xpos 1065 ypos 326
-        size 21 color "#84CDE4"
-        kerning 2 font "fonts/Rajdhani-SemiBold.ttf"
-
-    add Solid("#4C829B66") xpos 825 ypos 517 xsize 145 ysize 2
-    text "›":
-        xpos 892 ypos 472
-        size 68 color "#8CE7FF"
-        font "fonts/Rajdhani-SemiBold.ttf"
-
-    draggroup:
-        # D'abord la cible, ensuite la carte : empilement corrigé.
-        drag:
-            drag_name drop_drag_name
-            xpos 985 ypos 368
-            xsize 650 ysize 350
-            draggable False
-            droppable True
-            use day2_argument_folder_visual
-
-        drag:
-            drag_name card_drag_name
-            xpos 285 ypos 373
-            xsize 490 ysize 275
-            draggable True
-            droppable False
-            drag_raise True
-            dragged (lambda drags, drop, arg_id=arg_id, drop_handler=drop_handler: drop_handler(drags, drop, arg_id))
-            use day2_argument_visual(arg)
-
-# L'argument se range dans le dossier, puis la confirmation disparaît
-# automatiquement, sans clic de validation supplémentaire.
 screen day2_argument_deposit_success(arg):
-    modal True
-    zorder 185
-    key "game_menu" action NullAction()
-    add Solid("#020710F2")
-    text "KAMI.CORE  //  DOSSIER DU VOTE":
-        xpos 275 ypos 180
-        size 22 color "#8DBDD0"
-        font "fonts/Rajdhani-SemiBold.ttf"
-    fixed:
-        xpos 985 ypos 368
-        xysize (650, 350)
-        use day2_argument_folder_visual
-    fixed at day2_argument_success_fly:
-        xysize (490, 275)
-        use day2_argument_visual(arg)
-    text "ARGUMENT ENREGISTRÉ" at day2_argument_success_label:
-        xalign 0.5 ypos 795
-        size 33 color "#6AE7BA"
-        font "fonts/Rajdhani-SemiBold.ttf"
-        kerning 2
-    timer 1.35 action Return(True)
+    timer .01 action Return(True)
 
 screen day2_quick_vote_notes():
     pass

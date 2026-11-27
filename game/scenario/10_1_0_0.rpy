@@ -157,6 +157,7 @@ label _10_1_0_0_CAFETERIA:
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
     kami "L'autorisation des dispositifs de brouillage."
+    $ unlock_dossier_chapter(4)
 
     "Plusieurs conversations s'arrêtent immédiatement."
 
@@ -431,6 +432,7 @@ label _10_1_0_0_DEBAT_ARRIVEE:
         nyra raison "Attends, Tomas. Personne n'a proposé de retirer les caméras de la rue. On parle du droit d'utiliser un brouilleur."
 
     tomas inquiet "Je sais pas encore. Je dis juste qu'en les autorisant partout, on crée aussi des zones où quelqu'un peut faire n'importe quoi sans laisser de trace."
+    $ unlock_dossier_arg("p4_preuves")
 
     elias "C'est surtout ça qui me gêne."
 
@@ -485,6 +487,7 @@ label _10_1_0_0_DEBAT_ARRIVEE:
     "Elle marque une courte pause avant de regarder successivement Tomas puis Elias."
 
     nyra "Ce que je ne veux pas, c'est qu'on interdise aux gens toute possibilité de parler ou de vivre un moment sans être observés. On peut autoriser les brouilleurs et encadrer leur usage. Si certaines restrictions vous manquent, dites-le maintenant."
+    $ unlock_dossier_arg("p4_intimite")
 
     "Cette fois, Tomas ne répond pas immédiatement. Elias baisse les yeux, réfléchit quelques secondes puis se redresse."
 

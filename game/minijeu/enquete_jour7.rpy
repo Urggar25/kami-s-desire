@@ -53,15 +53,12 @@ label j701_investigation:
     elias "Bon, bah tant pis. J'attendrai la prochaine livraison pour continuer mes travaux. Ça me fait chier, j'avais enfin réussi à remettre les connexions en état."
     noam "Si quelqu'un les a prises pour bricoler, il finira peut-être par les ramener."
     elias "J'espère. Merci d'être venu, en tout cas."
-    $ investigation_add("materiel_technique_manquant", notify=False)
+    $ investigation_add("materiel_technique_manquant")
     $ j701_investigation_turn = len(j701_investigation_found)
     $ hideGroup()
     return
 
-# Each discovery uses the same automatic filing animation as previous votes.
-# No generic notification or duplicate unlock on reloading a collected clue.
+# Toutes les acquisitions utilisent maintenant le pipeline commun.
 label j701_collect_argument(eid):
-    if investigation_add(eid, notify=False):
-        if kd_investigation_argument_notice(eid):
-            $ renpy.pause(2.95, hard=True)
+    $ investigation_add(eid)
     return

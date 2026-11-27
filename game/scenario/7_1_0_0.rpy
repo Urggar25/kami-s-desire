@@ -1163,6 +1163,8 @@ label _7_1_0_SOIR:
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
     kami "Autrement dit : plus de vingt personnes pourront se réunir, à condition d'annoncer à l'avance qui, où, quand et pourquoi."
+    $ unlock_dossier_chapter(3)
+    $ unlock_dossier_arg("p3_declaration")
     kami "Une liberté parfaitement encadrée ! Le compromis préféré de ceux qui veulent ouvrir une porte tout en gardant la clé."
 
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve

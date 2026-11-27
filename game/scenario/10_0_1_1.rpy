@@ -594,6 +594,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     kami "Et ne faites pas ces têtes ! J'ai choisi un sujet plein de promesses. D'intimité. De liberté. Et de délicieux petits secrets !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Au douzième jour, vous voterez sur l'autorisation des dispositifs de brouillage."
+    $ unlock_dossier_chapter(4)
     kami "En cas d'adoption unanime, leur possession, leur fabrication et leur utilisation seront autorisées, dans les limites prévues par les autres Commandements."
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
     kami "Vous voyez ? Je sais être une patronne formidable !"
@@ -610,6 +611,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve
     kami "Très bien observé, Elen ! Je les retirerai, bien sûr. Je refuse de favoriser mes petits chéris."
     mara "Tu parles d'intimité après avoir expliqué que tu veux détruire ceux qui la protègent."
+    $ unlock_dossier_arg("p4_intimite")
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Mara, tu as une manière extraordinairement vulgaire de résumer les choses."
     julian "Tu ne peux pas décider de retirer notre vie privée sur un coup de tête !"
@@ -621,10 +623,13 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     elias "Ça répond pas vraiment à la question !"
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
     kami "Quant aux enregistrements, ils sont indisponibles pendant la période de brouillage. C'est le prix à payer pour une certaine discrétion."
+    $ unlock_dossier_arg("p4_preuves")
     noam inquiet "Donc si quelqu'un entre dans une chambre..."
     scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
     kami "Eh bien, il faut espérer que son occupant n'ait pas oublié de fermer la porte !"
     "Je regarde Kael. Il ne détourne pas les yeux de l'écran."
+    if investigation_has("photo_lea_disparue"):
+        $ unlock_dossier_arg("p4_voleur")
     scene bg_diffusion_colere at adaptive_fullscreen with dissolve
     kami "Le vote aura lieu au jour douze. Vous avez le temps de discuter, de vous disputer et de me décevoir !"
     scene bg_diffusion_amour at adaptive_fullscreen with dissolve

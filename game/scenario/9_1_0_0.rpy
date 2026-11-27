@@ -503,6 +503,8 @@ label _9_1_0_0_CONCLAVE_ARRIVEE:
     scene bg_diffusion_einstein at adaptive_fullscreen with dissolve
 
     kami "Le texte soumis aujourd'hui est simple : autoriser les regroupements de plus de vingt personnes, idéalement après déclaration préalable auprès des autorités locales."
+    $ unlock_dossier_chapter(3)
+    $ unlock_dossier_arg("p3_declaration")
 
     scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
 

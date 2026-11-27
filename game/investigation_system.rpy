@@ -269,7 +269,7 @@ init python:
         store.investigation_evidence[eid] = True
         store.investigation_unlocked = True
         if changed and notify:
-            renpy.notify("DOSSIER D'ENQUÊTE — " + INVESTIGATION_ENTRIES[eid]["title"])
+            kd_argument_enqueue("investigation", eid)
         investigation_refresh_hypotheses()
         return changed
 
@@ -347,7 +347,7 @@ init python:
         path = "images/hud/investigation/evidence/%s.png" % image_id
         if renpy.loadable(path):
             return Image(path)
-        return Solid("#163142")
+        return Image("hud/dossier/ic_box.png")
 
     def _investigation_add_link(first_evidence, second_evidence):
         if first_evidence not in INVESTIGATION_ENTRIES or second_evidence not in INVESTIGATION_ENTRIES:
