@@ -92,7 +92,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     $ cinematic_focus("noam", t=0.40)
     pause 0.80
     $ cinematic_reset(t=0.25)
-    play sound sfx_door
+    play sound "audio/sfx_door.mp3"
     with hpunch
     $ hideGroup()
     $ showGroup([("tomas", "gene", 0.25), ("nyra", "reflexion", 0.50), ("noam", "surpris", 0.75)])
@@ -217,7 +217,7 @@ label _9_0_1_CONCLAVE_ANNONCE:
     nyra stress "Laissez-moi une minute. Le mot « idéalement », là. Est-ce que quelqu'un sait ce que ça veut dire pour les rassemblements non déclarés ?"
     ryn colere "ÇA VEUT DIRE QU'ILS PEUVENT SE RASSEMBLER !"
     elias inquiet "Attends, Ryn, elle demande juste..."
-    ryn "Non ! Il y a des familles entières qui attendent aux frontières !"
+    ryn "Non ! Il y a des familles entières qui attendent aux frontières ! Elles se sont regroupées pour s'entraider. Laissez-les au moins faire ça !"
     $ unlock_dossier_arg("p3_familles")
     lysa neutre "On risque de perdre du temps pour un mot, Nyra. Si on attend trop, Kami va décider à notre place."
     nyra raison "Je veux aussi qu'on vote pour. Mais il y a quelque chose qui ne colle pas."
@@ -251,11 +251,10 @@ label _9_0_1_CONCLAVE_ANNONCE:
     elen inquiet "Et ceux qui ne pourront pas marcher ?"
     noam inquiet "On va essayer de leur faire parvenir l'alerte aussi. C'est tout ce qu'on peut faire pour l'instant."
     call play_stat_dialogue("d9") from _call_stat_dialogue_d9
-    tomas inquiet "J'ai les données de la salle du Canon. Il faut les relier aux tablettes."
-    kael neutre "Passe-moi la tienne."
-    tomas gene "Tu peux juste..."
-    kael reflechit "Pas le temps de faire un cours. On verra les détails après."
-    "Tomas lui donne sa tablette. C'est sans doute la première fois qu'il interrompt volontairement une explication."
+    tomas inquiet "Voilà. Les données de la salle du Canon sont dans ce fichier."
+    kael neutre "Merci. Noam, regarde ici. Il faut ouvrir le passage vers le réseau."
+    elias "Je surveille la connexion. Si elle saute, je te préviens."
+    "Kael me montre le circuit sur sa tablette."
     $ hideGroup()
     call j901_play_hack from _call_j901_play_hack_day9
     $ j901_hack_success = bool(_return)
@@ -405,6 +404,7 @@ label _9_0_1_REPRESENTANTS_GAGNENT_DU_TEMPS:
         call play_noam_interupt
         noam determine "Tu as suspendu les sanctions jusqu'au résultat. Tant que tu ne l'as pas proclamé, des gens peuvent encore se mettre à l'abri."
         nyra raison "Réponds au moins à la question de Julian sur les déclarations. Tout le monde doit savoir comment tu vas appliquer ce texte."
+        "Tomas me montre une zone qui vient de se vider. Quelques groupes ont encore pu s'éloigner."
     else:
         noam inquiet "Je n'arrive pas à lui faire entendre raison."
         nyra reflexion "On a quand même gagné quelques minutes. Tomas, continue de vérifier les déplacements."
@@ -608,6 +608,8 @@ label _9_0_1_FIN_JOURNEE_VOTE_ADOPTE:
     play sound sfx_gresillement
     "Un grondement monte sous nos pieds. Elen se tourne vers les écrans."
     $ _j901_shots = {"excellent": 2, "bon": 3, "moyen": 4, "echec": 5}.get(j901_signal_result_tier, 4)
+    if j901_julian_delay_success:
+        $ _j901_shots = max(2, _j901_shots - 1)
     call j901_canon_volley(_j901_shots) from _call_j901_canon_adopted
     elen peur "Mais... On a voté pour !"
     tomas inquiet "Ceux qui n'ont pas réussi à se mettre en règle avant le résultat..."
@@ -704,6 +706,8 @@ label _9_0_1_FIN_JOURNEE_VOTE_REFUSE:
     call j901_canon_volley(2) from _call_j901_canon_refused_first
     "Je me rattrape au bord de la table. Elen crie derrière moi."
     $ _j901_shots = {"excellent": 2, "bon": 3, "moyen": 4, "echec": 5}.get(j901_signal_result_tier, 4)
+    if j901_julian_delay_success:
+        $ _j901_shots = max(2, _j901_shots - 1)
     call j901_canon_volley(_j901_shots) from _call_j901_canon_refused_rest
     think "Sur Terre, ils devaient encore courir. Certains ont dû entendre notre avertissement. D'autres..."
     "Julian ne dit plus rien. Tomas garde les yeux rivés sur sa tablette."

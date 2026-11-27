@@ -558,13 +558,13 @@ label _10_0_1_1_2_ANNONCE_KAMI:
         ("ryn", "colere", 1.08), ("sael", "mefiant", 1.20),
     ])
     julian taquin "Ah ! Le dernier représentant arrive enfin. Nous envisagions de faire voter une motion pour constater ton absence."
+    mara taquin "Ça lui prendrait au moins trois discours pour le faire."
+    julian surpris "Je pourrais être bref !"
+    lysa blase "Tu n'en as jamais apporté la preuve."
     if j901_julian_discours_done:
         julian "Je tiens à préciser qu'hier, mon intervention a peut-être permis à des milliers de personnes de se disperser."
         lysa blase "Oui, Julian. Tu nous l'as déjà dit."
         julian "Je pensais qu'il convenait de le rappeler à notre collègue."
-    mara taquin "Ça lui prendrait au moins trois discours pour le faire."
-    julian surpris "Je pourrais être bref !"
-    lysa blase "Tu n'en as jamais apporté la preuve."
     noam fatigue "Désolé. J'ai eu un... souci dans le couloir."
     elen inquiet "Tu es tout pâle. Tu veux t'asseoir ?"
     iris inquiet "Il a une mine terrible. Noam, tu as mangé ?"
