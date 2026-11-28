@@ -42,42 +42,33 @@ label KD_ROUTE_J9_TOMAS:
     return
 
 label KD_ROUTE_J10_LYSA:
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
-    "Lysa apparaît au bout du couloir. Son regard s'arrête immédiatement sur mon visage."
-    menu:
-        "Répondre à Lysa.":
-            $ showGroup([("lysa", "blase", 0.35), ("noam", "fatigue", 0.65)])
-            lysa blase "Tu as dormi ou tu as passé la nuit à te battre avec ton oreiller ?"
-            noam "J'ai connu de meilleures nuits."
-            lysa "Ça se voit. T'as une tête à faire peur à Goumi."
-            noam taquin "Merci, ça m'aide beaucoup."
-            lysa neutre "Je plaisante, mais t'as vraiment l'air mal. Il s'est passé quelque chose ?"
-            noam hesitation "J'essaie encore de comprendre."
-            lysa "D'accord. Mange quelque chose au moins, avant de t'écrouler."
-            noam "C'est ce que je comptais faire."
-            $ hideGroup()
-        "Poursuivre vers la cafétéria.":
-            pass
+    $ j10011_lysa_route_seen = True
+    scene couloir_dortoir at adaptive_fullscreen, j10_heat with dissolve
+    $ showGroup([("lysa", "blase", 0.35), ("noam", "fatigue", 0.65)])
+    lysa blase "J'ai pris trois douches à l'eau tiède cette nuit. Trois. J'avais à peine le temps de me sécher que j'étais de nouveau en sueur. C'est étouffant."
+    noam fatigue "J'ai fini par virer le drap. Ça n'a servi à rien."
+    lysa neutre "T'as réussi à dormir au moins ? Moi j'ai abandonné vers cinq heures. J'ai même ouvert la porte de ma chambre, mais il faisait aussi chaud dans le couloir."
+    noam "Tu vas manger ?"
+    lysa "Plus tard. Je vais essayer de trouver un élastique pour mes cheveux, ils me collent à la nuque."
+    noam neutre "Bon courage. Je te garde de l'eau si j'en trouve de la fraîche."
+    lysa sourire "Ah oui, je veux bien. Merci."
+    $ hideGroup()
     return
 
 label KD_ROUTE_J10_JULIAN:
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
-    "Julian est près de l'entrée de la salle commune. Il lève une main pour m'arrêter."
-    menu:
-        "Parler à Julian.":
-            $ showGroup([("julian", "sourire", 0.35), ("noam", "neutre", 0.65)])
-            julian sourire "Avant de rentrer, tu es plutôt pour ou contre ?"
-            noam "Pour ou contre quoi, exactement ?"
-            julian "Le prochain vote. J'essaie de prendre la température avant que Tomas sorte ses dossiers."
-            noam reflexion "J'aimerais surtout entendre les arguments."
-            julian taquin "La réponse préférée des gens qui ne veulent pas se mouiller."
-            noam "Et toi, t'as choisi ?"
-            julian hesitation "Pas vraiment. Mais j'avais envie de savoir si j'étais le seul."
-            noam sourire "On est au moins deux."
-            julian sourire "Parfait. Une coalition historique."
-            $ hideGroup()
-        "Entrer dans la salle commune.":
-            pass
+    $ j10011_julian_route_seen = True
+    scene couloir_cafeteria at adaptive_fullscreen, j10_heat with dissolve
+    $ showGroup([("julian", "sourire", 0.35), ("noam", "fatigue", 0.65)])
+    julian sourire "Noam ! Tu as vu le communiqué de ce matin ? La majorité des campements a été dispersée. Je pense qu'on peut dire que mon intervention d'hier a été utile."
+    noam neutre "On n'a pas de chiffres."
+    julian "Certes, mais si je n'avais pas pris la parole, combien de personnes seraient restées sur place ? Il fallait bien que quelqu'un leur dise de partir. Je ne regrette absolument pas ce que j'ai fait."
+    noam fatigue "Je ne dis pas le contraire. Mais on ne sait pas combien ont réussi à partir."
+    julian hesitation "Non, je sais. J'ai demandé à Nyra de me prévenir dès qu'elle aurait les chiffres. Enfin... j'espère qu'elle en aura."
+    "Julian regarde sa tablette, puis relève la tête."
+    julian sourire "En attendant, si quelqu'un veut me remercier, je ne m'y opposerai pas."
+    noam "J'y penserai. Je vais voir Elias, il essaie de réparer la ventilation."
+    julian "Ah, excellent. Dis-lui qu'il a tout mon soutien."
+    $ hideGroup()
     return
 
 label KD_ROUTE_J11_NYRA:

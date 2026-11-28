@@ -14,6 +14,43 @@
 default j10011_waiting_elias = False
 default j10011_cafeteria_done = False
 default j10011_walk_choice = None
+default j10011_lysa_route_seen = False
+default j10011_julian_route_seen = False
+
+# Effets locaux au J10, appliqués aux décors et non au texte.
+transform j10_heat:
+    blur 1.4
+    matrixcolor TintMatrix("#fff6e9")
+    block:
+        linear 2.8 blur 2.5
+        linear 3.4 blur 1.4
+        repeat
+
+transform j10_heat_horror:
+    blur 3.0
+    matrixcolor BrightnessMatrix(-0.17)
+    block:
+        pause 1.7
+        linear 0.20 matrixcolor BrightnessMatrix(-0.34)
+        linear 0.40 matrixcolor BrightnessMatrix(-0.17)
+        pause 2.8
+        repeat
+
+transform j10_silhouette_zoom:
+    subpixel True
+    xalign 0.5
+    yalign 0.5
+    zoom 1.0
+    blur 3.0
+    matrixcolor BrightnessMatrix(-0.12)
+    ease 0.85 zoom 1.18 blur 4.5
+
+transform j10_malaise:
+    blur 2.0
+    linear 2.2 blur 8.0
+    linear 1.8 blur 15.0
+    linear 0.18 blur 38.0
+    linear 0.30 matrixcolor BrightnessMatrix(-0.35)
 
 default j10011_relays_checked = []
 default j10011_relay_order = []
@@ -31,6 +68,8 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     scene black
     $ current_day = 10
     $ j10011_cafeteria_done = False
+    $ j10011_lysa_route_seen = False
+    $ j10011_julian_route_seen = False
     $ j10011_waiting_elias = False
     $ j10011_relays_checked = []
     $ j10011_relay_order = []
@@ -47,7 +86,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
 
     "Je rêve du Conclave. Les sièges sont vides, les pupitres sont allumés et quelqu'un me demande encore de voter alors que le canon tire déjà."
     "Je me réveille en voulant répondre, avec la bouche sèche et le drap collé au dos."
-    scene bg_chambre at adaptive_fullscreen with dissolve
+    scene bg_chambre at adaptive_fullscreen, j10_heat with dissolve
     noam fatigue "Mais il fait combien, là-dedans... ?"
     "La pièce est étouffante. Je repousse la couverture du pied et tends la main vers la bouche d'aération, sans sentir le moindre courant d'air."
     noam desaccord "Super. Deux jours sans Kami, une nuit avec le canon... et maintenant on nous fait cuire."
@@ -60,7 +99,7 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     "J'enfile ma veste, la retire aussitôt à cause de la chaleur, puis la reprends par habitude. Je dois avoir l'air malin."
     stop music fadeout 1.0
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_dortoir") from _call_MAYBE_PLAY_SCRIPTED_DOOR_25
-    scene couloir_dortoir at adaptive_fullscreen with dissolve
+    scene couloir_dortoir at adaptive_fullscreen, j10_heat with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
     "Le couloir est presque aussi chaud que la chambre. Une silhouette disparaît au coin du mur avant que je puisse reconnaître qui que ce soit."
     noam neutre "Hé !"
@@ -80,113 +119,63 @@ label _10_0_1_1_REVEIL_CHAMBRE:
     $ conclave_lock = False
     $ dortoir_lock = False
     think "Je vais à la cafétéria. Si quelqu'un a des nouvelles de Limen, c'est là que je les trouverai."
-    call KD_ROUTE_J10_LYSA from _call_optional_kd_route_j10_lysa
+    $ current_scene_active = "_10_0_1_1_ROUTE_CAFETERIA"
+    $ corridor_current = "dortoir"
+    $ exploration_libre_destination_room = "cafeteria"
+    $ exploration_libre_next_label = "_10_0_1_1_CAFETERIA_ELIAS"
     jump START_EXPLORATION_LIBRE_MAP
 
 
 label _10_0_1_1_CAFETERIA_ELIAS:
     $ j10011_waiting_elias = False
+    $ current_scene_active = None
+    $ j10011_cafeteria_done = True
     $ free_time_active = False
     $ exploration_libre_active = False
     $ exploration_libre_allowed_rooms = None
     call MAYBE_PLAY_SCRIPTED_DOOR("cafeteria", "bg_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_26
-    scene bg_cafeteria at adaptive_fullscreen with dissolve
+    scene bg_cafeteria at adaptive_fullscreen, j10_heat with dissolve
     play music "music/bgm_introspective_atmosphere.mp3" fadein 1.2
     $ showGroup([
         ("noam", "inquiet"), ("elias", "fatigue"),
         ("mara", "stress"), ("ryn", "colere"), ("nyra", "reflechit"),
     ])
-    mara agace "NON. T'as pas le droit de faire ça."
-    elias fatigue "Je ne fais RIEN !"
-    mara colere "Tu sépares les morceaux de pain pour manger la mie et laisser la croûte ! C'est quoi le projet ?"
-    elias reflechit "Manger la partie qui ressemble encore à du pain ?"
-    ryn colere "Vous pouvez fermer vos gueules deux secondes ?"
-    "La remarque claque plus fort que nécessaire. Elias laisse tomber sa croûte sur le plateau."
-    mara stress "Tu crois qu'on fait ça pour t'emmerder ?"
-    ryn colere "Je crois surtout que vous arrivez à parler de pain après hier."
-    nyra neutre "Ryn, laisse Elias manger. Si tu veux qu'on parle d'hier, on peut le faire."
-    ryn colere "J'AI PAS DIT ÇA !"
-    "J'hésite sur le pas de la porte. Hier encore, une dispute pareille aurait fini en blague."
-    noam hesitation "Euh... Salut ?"
-    elias fatigue "Noam ! Voilà. Un témoin. Tu manges la croûte de ce truc, toi ?"
-    mara agace "Ne l'encourage pas !"
-    noam fatigue "J'ai surtout l'impression que ce pain a déjà servi de matériau de construction."
-    elias sourire "MERCI."
-    ryn fatigue "..."
-    "Elias ricane, mais ça ne dure pas. Sur l'écran d'information, les mêmes phrases défilent depuis mon arrivée."
-    noam reflexion "Il y a des nouvelles ?"
-    nyra reflechit "Il y a un communiqué. Écoute : « La majorité des campements a été dispersée avant la reprise des sanctions. »"
-    noam inquiet "Et le reste ?"
-    nyra neutre "Ils ne donnent aucun chiffre. J'ai cherché un détail par région, il n'y a rien."
-    ryn colere "Donc une phrase pour nous dire de nous féliciter."
-    elias inquiet "Ça veut peut-être dire qu'une majorité s'est sauvée."
-    ryn colere "OU ÇA VEUT DIRE QU'ILS SONT MORTS !"
+    mara agace "Elias, pousse un peu ton plateau. J'ai besoin de place."
+    elias fatigue "Attends, je fais tomber des miettes partout."
+    mara neutre "Bah laisse, je vais prendre l'autre chaise."
+    "Mara s'installe en face de lui. Elias essaie de retirer un morceau de croûte de son pain sans en mettre sur sa chemise."
+    noam fatigue "Salut. Vous avez trouvé de l'eau fraîche quelque part ?"
+    nyra neutre "Non, même celle du distributeur est tiède. J'ai demandé à Goumi s'il pouvait mettre des bouteilles au frais, mais il n'a pas accès à la réserve."
+    mara stress "Je dors plus. J'ai fini par poser ma serviette humide sur l'oreiller, ça a tenu dix minutes."
+    elias inquiet "C'est pas normal qu'il fasse aussi chaud dans toutes les pièces. Je vais regarder après avoir mangé."
+    ryn colere "MAIS C'EST LE CANON !"
     call kd_vn_reaction("ryn", "colere", "#ff9c55")
-    "Elias se fige. Même Mara ne bouge plus."
-    nyra raison "Ryn, je voudrais autant que toi savoir qui est encore en vie. Mais ce communiqué ne nous le dit pas."
-    ryn colere "T'es sérieuse, là ? Tu vas encore m'expliquer comment lire un écran ?"
-    nyra neutre "Non. Je te dis qu'on a besoin des rapports, pas d'une phrase de Kami. Je vais les chercher."
-    ryn colere "..."
-    mara stress "Ryn, t'as le droit d'être en colère. Mais tu peux pas nous demander de le rester vingt-quatre heures sur vingt-quatre."
-    ryn colere "Je demande rien."
-    mara agace "Ah, d'accord ! C'est juste ton visage qui menace tout le monde !"
-    noam triste "On a essayé de les prévenir."
-    ryn fatigue "Je sais."
-    noam hesitation "On a gagné du temps, au moins."
-    ryn colere "Je SAIS, Noam !"
-    "Il serre le dossier d'une chaise. Pendant un instant, j'ai peur qu'il l'arrache du sol."
-    ryn fatigue "Je le sais. Mais j'ai passé la nuit à me demander qui j'avais vu sur cet écran. Et s'il avait couru assez vite."
-    "Personne ne lui répond. Je m'assieds à côté d'Elias, qui pousse silencieusement une tasse vers moi."
-    noam reflexion "C'est quoi ?"
-    elias fatigue "Du café. Pas renversé, cette fois. Il paraît que ça se boit."
-    noam surpris "T'en as encore trouvé ? Goumi disait qu'il en restait presque plus."
-    elias gene "J'en avais gardé un peu."
-    noam "Où ça ?"
-    elias "Dans ma chambre."
-    noam "T'as une réserve de café dans ta chambre ?"
-    elias "Juste de quoi dépanner. Et je t'en donne, alors me regarde pas comme ça."
-    noam sourire "Je te regarde comment ?"
-    elias fatigue "Comme Kael quand il trouve des vis que j'ai pas rangées."
-    noam taquin "Tu te diversifies."
-    mara taquin "Éloignez-le des machines, il va provoquer une deuxième panne mondiale."
-    elias colere "C'est BON, cette blague !"
-    "Ryn souffle du nez. Ce n'est pas un rire, mais Elias le remarque et lève la tasse comme s'il venait de remporter un prix."
-    nyra reflechit "Je vais au Canon après manger. Tomas a peut-être récupéré le détail des déclarations."
-    ryn neutre "Je viens."
-    nyra raison "D'accord. Mais laisse-moi demander les données à Tomas avant de t'énerver."
-    ryn desaccord "Je menace pas les ordinateurs."
-    mara taquin "Seulement ceux qui te répondent."
-    "Il ne réplique pas. Il fixe son plateau pendant quelques secondes."
-    ryn fatigue "J'ai pas faim."
-    "Ryn part avant que quelqu'un puisse lui demander de rester. Nyra attend qu'il ait franchi la porte, puis récupère sa tablette."
-    nyra neutre "Je vais quand même y aller. Je te dirai si je trouve quelque chose."
-    mara stress "Oui. Merci."
-    "Quand Nyra s'éloigne à son tour, l'espace laissé par leurs chaises paraît immense."
-    elias fatigue "Je crois que j'aurais préféré qu'on se dispute pour de vrai sur le pain."
-    mara neutre "C'était une vraie dispute."
-    elias rire "T'es capable de t'énerver pour de la mie, Mara."
-    mara sourire "Et je t'emmerde avec amour."
-    noam taquin "C'est une déclaration qui restera dans l'histoire du Conclave."
-    "Mara me tire la langue. Elias essaye de sourire, puis baisse les yeux vers ses mains."
-    elias fatigue "Quand j'ai vu « majorité dispersée », ça m'a soulagé. Une seconde. J'ai eu l'impression que c'était fini."
-    noam neutre "Moi aussi."
-    mara stress "Moi aussi. Bon. On va pas commencer à se détester pour avoir respiré un coup."
-    elias fatigue "J'aurais peut-être préféré travailler. Au moins, les vis ne te demandent pas si t'es une bonne personne."
-    mara taquin "Non. Elles se contentent de s'enfuir quand tu les touches."
-    elias rire "C'est vrai."
-    "Il se lève, ramasse son plateau et le repose aussitôt parce qu'il a oublié sa tablette."
-    elias fatigue "Je vais à la maintenance. J'ai un relais qui fait un bruit de merde depuis ce matin."
-    noam reflexion "Un relais ?"
-    elias neutre "La ventilation. Tu trouves pas qu'il fait chaud ?"
-    noam desaccord "J'ai cru que j'allais fondre dans mon lit."
-    elias sourire "Voilà. J'espère que c'est rien. Si le Conclave se met à transpirer, j'ai pas envie d'être celui qu'on appelle pour essuyer les murs."
-    mara rire "C'est bien dommage, j'avais précisément ce rôle en tête pour toi."
-    elias fatigue "Tu vois ? Une raison de plus de partir."
-    "Il quitte la salle. Mara termine son verre sans me regarder."
-    mara stress "T'as une tête épouvantable, toi aussi."
-    noam fatigue "Merci."
-    mara neutre "C'est pas une insulte. Pas aujourd'hui."
-    "Je hoche la tête, sans savoir quoi répondre."
+    ryn colere "Il a pas arrêté de tirer depuis hier ! Vous croyez qu'il fait quoi, exactement ? Il punit les gens qui ont enfreint les Commandements. À chaque fois qu'on entend ce bruit, il y a des gens en bas qui se font tuer !"
+    "Elias repose son pain. Ryn a repoussé sa chaise."
+    nyra raison "Je sais, Ryn. On n'a toujours pas le détail des sanctions. J'ai reçu un communiqué, mais ils disent seulement que la majorité des campements a été dispersée avant la reprise des tirs."
+    ryn colere "Et ceux qui sont restés ? Il y avait des familles entières ! J'ai passé la nuit à attendre que ça s'arrête."
+    noam inquiet "On a essayé de leur donner le temps de partir. Je sais pas ce qu'on aurait pu faire de plus, mais..."
+    ryn fatigue "Je te reproche pas ça, Noam. J'en ai juste marre qu'on soit là à attendre les chiffres."
+    "Personne ne reprend la conversation. Nyra range sa tablette et se lève."
+    nyra neutre "Je vais demander à Tomas s'il a récupéré d'autres données. Je te préviendrai, Ryn."
+    ryn fatigue "Je viens avec toi."
+    mara stress "Prends ta bouteille, au moins."
+    "Ryn la prend et suit Nyra. Elias attend qu'ils soient partis avant de me tendre sa tasse."
+    elias fatigue "Tiens. J'en ai fait un peu trop."
+    noam neutre "C'est du café ? Je croyais qu'il n'y en avait presque plus."
+    elias gene "J'en avais mis de côté dans ma chambre. J'en prends quand je dois bosser tard. Enfin, j'avais pas prévu d'en boire autant ici."
+    mara neutre "Tu m'en avais pas proposé, à moi."
+    elias inquiet "Je savais pas que t'en voulais ! Y en a encore si tu veux."
+    mara sourire "Non, ça va. Garde-le, tu vas en avoir besoin."
+    "Je bois une gorgée. Il est vraiment fort, mais je le termine quand même."
+    elias fatigue "Je vais aller voir le relais de ventilation. Il fait un bruit bizarre depuis ce matin. Si je trouve d'où ça vient, je pourrai peut-être remettre la clim en route."
+    noam reflexion "Je peux passer te voir après ?"
+    elias sourire "Ouais, viens. Par contre, si je suis sous le tableau, fais pas comme hier, attends que j'aie reposé mes outils avant de me parler."
+    "Elias récupère son plateau et part. Mara repousse son verre vers moi."
+    mara stress "Bois aussi de l'eau. T'as vraiment une sale tête."
+    noam fatigue "Ça se voit à ce point ?"
+    mara neutre "Oui."
+    "Je termine le verre avant de me lever."
     $ hideGroup()
     jump _10_0_1_1_MARCHE_APRES_TABLE
 
@@ -195,53 +184,44 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
     $ current_period = "Après-midi"
     stop music fadeout 1.5
     call MAYBE_PLAY_SCRIPTED_DOOR("couloir", "couloir_cafeteria") from _call_MAYBE_PLAY_SCRIPTED_DOOR_29
-    scene couloir_cafeteria at adaptive_fullscreen with dissolve
+    scene couloir_cafeteria at adaptive_fullscreen, j10_heat with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.2
     "Dans le couloir, je tire sur le col de ma chemise. La chaleur s'est aggravée depuis ce matin."
     think "Rester assis à me demander combien de gens sont morts ne va pas me donner la réponse. Et je crois qu'Elias a besoin de parler à quelqu'un, même s'il affirme le contraire."
+    $ current_scene_active = "_10_0_1_1_ROUTE_MAINTENANCE"
+    $ free_time_active = False
+    $ exploration_libre_active = True
+    $ exploration_libre_allowed_rooms = ["maintenance"]
+    $ exploration_libre_seen_rooms = []
+    $ exploration_libre_required_visits = 0
+    $ exploration_libre_title = "Rejoindre la maintenance"
+    $ exploration_libre_destination_room = "maintenance"
+    $ exploration_libre_next_label = "_10_0_1_1_MAINTENANCE_ELIAS"
+    $ corridor_current = "cafeteria"
+    jump START_EXPLORATION_LIBRE_MAP
+
+label _10_0_1_1_MAINTENANCE_ELIAS:
+    $ current_scene_active = None
     call MAYBE_PLAY_SCRIPTED_DOOR("maintenance", "bg_maintenance") from _call_MAYBE_PLAY_SCRIPTED_DOOR_30
-    scene bg_maintenance at adaptive_fullscreen with dissolve
+    scene bg_maintenance at adaptive_fullscreen, j10_heat with dissolve
     $ showGroup([("noam", "fatigue"), ("elias", "fatigue")])
-    "Elias est à genoux devant un coffret ouvert. Il tourne un outil entre ses doigts avec un air si contrarié que j'hésite à lui demander s'il s'est encore disputé avec une vis."
-    elias colere "Ça n'a AUCUN sens !"
-    noam taquin "Bonjour à toi aussi."
-    elias inquiet "Oh. Noam. Désolé."
-    noam reflexion "C'est le relais ?"
-    elias fatigue "Oui. Non. Enfin, j'en sais rien, justement."
-    noam taquin "Excellent diagnostic. C'est rassurant de savoir qu'on a un spécialiste."
-    elias fatigue "Tu veux la version professionnelle ?"
-    noam sourire "Vas-y."
-    elias colere "Ça n'a AUCUN PUTAIN DE SENS."
-    "Je ris malgré moi. Elias aussi, brièvement. Puis un cliquetis résonne dans le mur."
-    noam reflexion "Ça fait souvent ça ?"
-    elias inquiet "C'est la quatrième fois. Et chaque fois que je pense l'avoir localisé, il s'arrête."
-    noam neutre "Il te fuit."
-    elias fatigue "Comme les vis."
-    "Il touche une commande. Une ligne de valeurs se met à défiler sur l'écran."
-    elias reflechit "Regarde. L'alimentation est bonne, le contrôle répond, les vannes sont ouvertes."
-    noam hesitation "Donc on devrait avoir de l'air."
-    elias neutre "Exactement."
-    "Le bruit de ventilation derrière nous s'interrompt si brusquement que j'entends Elias avaler sa salive."
-    noam inquiet "Tu l'as arrêté ?"
-    elias inquiet "Non."
-    "Il pousse la même commande. La diode passe au vert, et aucun souffle ne revient."
-    elias colere "Mais BORDEL !"
-    noam reflexion "C'est à cause du canon ?"
-    elias reflechit "Peut-être. Il a tiré pendant des heures hier. Sauf que si le refroidissement tirait trop sur le système, les relais devraient remonter une alerte."
-    noam neutre "Et ils n'en remontent pas."
-    elias inquiet "Rien. Comme si tout allait merveilleusement bien."
-    "Il ferme les yeux une seconde, se masse les tempes puis se tourne vers moi."
-    elias neutre "Je vais rester ici et suivre l'alimentation principale. Tu peux m'aider ?"
-    noam sourire "J'allais justement me proposer, avant de te voir discuter avec tes outils."
-    elias reflechit "Il y a trois relais secondaires accessibles : archives, gymnase, infirmerie. Va voir leur écran, leur grille, le conduit. Juste observer."
-    noam taquin "Et si je trouve une petite créature qui vit dans la ventilation ?"
-    elias fatigue "Tu lui dis de payer son loyer, et tu reviens."
-    noam rire "D'accord."
-    "Je commence à partir. Il me retient par la manche."
-    elias inquiet "Noam. Si tu vois un truc bizarre, ne démonte rien. Je voudrais éviter qu'on se retrouve aussi sans lumière."
-    noam taquin "Très bien, monsieur « ça n'a aucun sens »."
-    elias colere "JE SUIS SÉRIEUX !"
-    noam neutre "Moi aussi."
+    "Elias est à genoux devant un coffret ouvert. Il pose son tournevis quand il me voit."
+    elias fatigue "Ah, t'es venu. Attends, écoute un peu."
+    "Il ouvre le panneau et se tait. Il n'y a qu'un faible ronronnement."
+    elias reflechit "Tu vois, au début de notre séjour, la ventilation tournait presque en permanence. Depuis hier, elle fonctionne de moins en moins et je comprends pas pourquoi. Même en forçant le débit ici, j'arrive à peine à sentir de l'air."
+    noam reflexion "Ryn pense que c'est à cause du canon."
+    elias neutre "C'est possible. Si le refroidissement du canon prend trop de puissance, ça pourrait expliquer la chaleur. Mais regarde les valeurs : alimentation correcte, vannes ouvertes, débit normal. Il devrait au moins y avoir une alerte si le débit baisse."
+    "Il appuie sur une commande. Le ronronnement s'arrête."
+    noam inquiet "C'est toi qui viens de couper ça ?"
+    elias inquiet "Non. C'est la quatrième fois que ça me le fait. À chaque fois que j'essaie de trouver d'où ça vient, ça repart ou ça s'arrête tout seul."
+    "Il recommence. La diode passe au vert, mais rien ne souffle."
+    elias colere "Putain, mais qu'est-ce que tu veux que je fasse avec ça ?"
+    "Il retire sa main du tableau et s'assoit par terre."
+    noam neutre "Tu veux que je regarde ailleurs ?"
+    elias reflechit "Oui, ce serait bien. Je reste ici pour suivre l'alimentation principale. Il y a trois relais secondaires : aux archives, au gymnase et à l'infirmerie. Regarde l'écran, la grille et le conduit. Ça me dira au moins si les chiffres sont faux partout."
+    noam neutre "D'accord. Je te note ce que je vois."
+    elias inquiet "Et touche pas aux commandes, s'il te plaît. J'aimerais savoir ce qui se passe avant qu'on change quoi que ce soit."
+    noam "Promis."
     $ hideGroup()
     tuto "(Inspecte les trois relais de ventilation. Tu peux les vérifier dans l'ordre de ton choix.)"
     jump _10_0_1_1_ENQUETE_CLIM
@@ -250,7 +230,7 @@ label _10_0_1_1_MARCHE_APRES_TABLE:
 label _10_0_1_1_ENQUETE_CLIM:
     if len(j10011_relays_checked) >= 3:
         jump _10_0_1_1_RETOUR_ELIAS
-    scene couloir_maintenance at adaptive_fullscreen with dissolve
+    scene couloir_maintenance at adaptive_fullscreen, j10_heat with dissolve
     if len(j10011_relays_checked) == 0:
         think "Archives, gymnase, infirmerie. Trois endroits à vérifier. Ça devrait être simple."
     elif len(j10011_relays_checked) == 1:
@@ -269,7 +249,7 @@ label _10_0_1_1_ENQUETE_CLIM:
 
 label _10_0_1_1_RELAIS_ARCHIVES:
     call MAYBE_PLAY_SCRIPTED_DOOR("archive", "bg_archive") from _call_j10011_archive_relay
-    scene bg_archive at adaptive_fullscreen with dissolve
+    scene bg_archive at adaptive_fullscreen, j10_heat with dissolve
     "Les archives sont plus calmes encore que d'habitude. Sans ventilation, je peux entendre le frottement de mes semelles sur le sol."
     "La diode du relais est verte. Rien d'autre ne semble anormal."
     noam neutre "Bon. Elias a dit de regarder trois trucs."
@@ -308,9 +288,9 @@ label _10_0_1_1_RELAIS_ARCHIVES_SUITE:
 
 label _10_0_1_1_RELAIS_GYMNASE:
     call MAYBE_PLAY_SCRIPTED_DOOR("gymnase", "bg_gymnase") from _call_j10011_gym_relay
-    scene bg_gymnase at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen, j10_heat with dissolve
     $ unlock_gallery_image("bg_cg051")
-    scene bg_cg051 at adaptive_fullscreen with dissolve
+    scene bg_cg051 at adaptive_fullscreen, j10_heat with dissolve
     "Je tombe sur Iris au milieu d'un entraînement. Elle enchaîne deux coups contre un sac, pivote et termine par un mouvement si net que je préfère rester à bonne distance."
     noam surpris "Ah ! Pardon. Je savais pas que tu faisais de la boxe."
     iris fatigue "Tu connais encore beaucoup de choses que je ne fais pas ?"
@@ -342,7 +322,7 @@ label _10_0_1_1_RELAIS_GYMNASE:
     noam neutre "Je n'allais pas le faire."
     iris reflechit "Tant mieux."
     "Elle quitte le gymnase. Une fois seul, je réalise à quel point le grondement habituel de la ventilation me manque."
-    scene bg_gymnase at adaptive_fullscreen with dissolve
+    scene bg_gymnase at adaptive_fullscreen, j10_heat with dissolve
     menu:
         "Qu'est-ce que je vérifie d'abord ?"
         "L'écran":
@@ -376,7 +356,7 @@ label _10_0_1_1_RELAIS_GYMNASE_SUITE:
 
 label _10_0_1_1_RELAIS_INFIRMERIE:
     call MAYBE_PLAY_SCRIPTED_DOOR("infirmerie", "infirmerie1") from _call_j10011_infirmary_relay
-    scene infirmerie1 at adaptive_fullscreen with dissolve
+    scene infirmerie1 at adaptive_fullscreen, j10_heat with dissolve
     "L'infirmerie est déserte. Je m'attendais à croiser quelqu'un ; à la place, un bourdonnement électrique vient du couloir intérieur."
     "La diode du relais est fixe. Verte, évidemment."
     noam fatigue "Vous vous êtes tous passé le mot ou quoi ?"
@@ -422,7 +402,7 @@ label _10_0_1_1_RELAIS_INFIRMERIE_SUITE:
 
 
 label _10_0_1_1_RETOUR_ELIAS:
-    scene couloir_infirmerie at adaptive_fullscreen with dissolve
+    scene couloir_infirmerie at adaptive_fullscreen, j10_heat with dissolve
     "Je sors du dernier secteur, les doigts encore chauds après avoir touché les conduits."
     think "Trois relais, trois affichages parfaitement rassurants, et pas un souffle. Elias va pouvoir choisir entre me croire et étrangler un écran."
     "J'essaie de me rappeler par quel couloir rejoindre la maintenance. Je connais pourtant ce chemin."
@@ -432,48 +412,41 @@ label _10_0_1_1_RETOUR_ELIAS:
 
 
 label _10_0_1_1_DOPPELGANGER:
-    scene couloir_infirmerie at adaptive_fullscreen with dissolve
+    scene couloir_infirmerie at adaptive_fullscreen, j10_heat with dissolve
     stop music fadeout 0.5
-    "Je ralentis, sans savoir exactement pourquoi. Une partie du couloir me semble différente, mais dès que j'essaie de trouver laquelle, tout paraît reprendre sa place."
-    think "Qu'est-ce que..."
-    scene bg_cg030 at adaptive_fullscreen
-    show bg_cg030 at slow_zoom_creep, breathe_dark
-    with dread_pix
+    show couloir_infirmerie at adaptive_fullscreen, j10_heat_horror
+    window hide
+    pause 1.0
+    "La lumière baisse dans le couloir. Je m'arrête et tends l'oreille. Même la ventilation s'est tue."
+    "Il y a quelqu'un, là-bas."
+    scene bg_cg030 at adaptive_fullscreen, j10_silhouette_zoom
+    with Dissolve(0.18)
     $ unlock_gallery_image("bg_cg030")
     $ investigation_add("silhouette_couloirs")
-    "Je fixe le même point trop longtemps. Il y a quelque chose que je devrais reconnaître, quelque chose de tellement évident que mon regard refuse de passer ailleurs."
-    think "Non. Attends."
-    scene bg_cg030_1 at adaptive_fullscreen
-    show bg_cg030_1 at slow_zoom_in
-    show bg_cg030 at afterimage
-    with blink
-    "Je cligne des yeux. La sueur me coule le long du cou, pourtant je viens de sentir un froid insupportable entre les omoplates."
-    think "Je..."
-    "J'essaie de reculer. Je ne sais plus si j'ai bougé."
-    scene couloir_infirmerie at adaptive_fullscreen
-    show couloir_infirmerie at unease_drift
-    with creep_diss
-    "Le couloir est vide."
-    "Je reste planté là, une main serrée sur le mur, incapable de comprendre ce qui m'a fait m'arrêter."
-    think "C'était quoi, ça ?"
-    "J'ouvre la bouche pour appeler quelqu'un. Aucun son ne sort."
+    window hide
+    pause 0.95
+    scene bg_cg030_1 at adaptive_fullscreen, j10_heat_horror
+    with Dissolve(0.06)
+    pause 0.22
+    scene couloir_infirmerie at adaptive_fullscreen, j10_heat_horror
+    with None
+    "Je cligne des yeux. Il n'y a plus personne."
+    "J'essaie d'avancer pour voir derrière le mur, mais un bruit métallique éclate derrière moi."
     play sound "audio/sfx_metal_clank.mp3"
-    "Un choc métallique résonne derrière moi." with vpunch
-    scene bg_cg030 at adaptive_fullscreen
-    show flash_white at hard_flash
-    with glitch_diss
-    scene couloir_infirmerie at adaptive_fullscreen, lean_left
+    with vpunch
+    scene bg_cg030 at adaptive_fullscreen, j10_heat_horror
+    with None
+    window hide
+    pause 0.14
+    scene couloir_infirmerie at adaptive_fullscreen, j10_heat_horror, lean_left
     with hpunch
-    "Je me retourne si brusquement que ma main glisse sur la paroi."
-    "Rien. Pas même un bruit de pas."
-    noam inquiet "..."
-    "Je voudrais repartir immédiatement, mais le chemin jusqu'à la maintenance me paraît soudain étrangement difficile à remettre en ordre."
-    think "Je venais de l'infirmerie. Avant, il y avait..."
-    "Je regarde ma tablette. Les trois relais sont cochés. Je les ai bien inspectés."
-    think "Pourquoi ai-je eu besoin de vérifier ça ?"
-    "La lumière du plafond grésille une fois. Je me surprends à retenir mon souffle en attendant qu'elle recommence."
-    "Elle ne recommence pas."
-    think "Elias. Je dois retourner voir Elias."
+    "Je me retourne. Rien. J'ai une main sur le mur et je n'arrive pas à la lâcher."
+    noam inquiet "Il y a quelqu'un ?"
+    window hide
+    pause 1.1
+    "La lumière baisse de nouveau. J'attends des pas, une voix, n'importe quoi."
+    "Je regarde ma tablette. Les trois relais sont cochés. J'ai bien terminé."
+    think "Il faut que je retourne voir Elias."
     jump _10_0_1_1_2_ANNONCE_KAMI
 
 
@@ -481,44 +454,35 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     play sound sfx_announce
     show screen kami_broadcast_ui
     pause 0.6
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    scene bg_diffusion_zen at adaptive_fullscreen, j10_heat with dissolve
     play music "music/bgm_world_decline.mp3" fadein 1.5
-    kami "ALLOOOORS ! Comment vont mes petits représentants ?"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "J'ai l'impression que certains découvrent les joies du sauna. Vous auriez pu me prévenir, j'aurais apporté des serviettes !"
-    noam fatigue "Pas maintenant..."
-    scene bg_diffusion_meteo at adaptive_fullscreen with dissolve
-    kami "Bulletin météo de votre station préférée : très chaud, très sec, avec un risque élevé d'odeurs corporelles désagréables !"
-    kami "À cause des tirs d'hier, les systèmes de refroidissement du Canon travaillent un tout petit peu plus que prévu."
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Conséquence : quelques difficultés de climatisation. Rien de bien dramatique. À moins que vous considériez la transpiration comme une tragédie nationale."
-    think "Les relais. Elias va vouloir savoir ce qu'elle a dit."
-    noam inquiet "Kami ! Les écrans affichent que tout fonctionne !"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Noam, tu veux déposer une réclamation ? Je t'informe que le service clientèle est fermé pour cause de chaleur."
-    noam colere "Pourquoi les trois relais indiquent-ils un flux normal ?"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Oh là là... Les questions techniques, dès le réveil ! Vous êtes d'un ennui."
-    "Je serre ma tablette. Elle ne répond pas. Encore."
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
-    kami "Évitez simplement la salle du Canon. Je tiens à mes petits invités, et vous m'avez déjà donné assez de travail !"
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Mais je vous pardonne ! D'ailleurs, j'ai quelque chose de bien plus intéressant que vos petits ventilateurs."
-    scene bg_diffusion_champagne at adaptive_fullscreen with dissolve
-    kami "DIX JOURS ! Cela fait dix jours que vous profitez de mon hospitalité !"
-    kami "Un tiers de votre merveilleux séjour. Et presque tout le monde est encore capable de se plaindre ! Quel succès !"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Ah, au fait, les Limenois d'hier... Certains ont réussi à se disperser. Vous devriez être heureux, non ?"
-    noam inquiet "Combien ?"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
-    kami "Nous n'allons pas recommencer ce débat. Il est TER-MI-NÉ."
-    "J'attends une autre phrase, un chiffre, n'importe quoi. Au lieu de cela, son sourire change."
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
-    kami "Je vous attends tous au Conclave ! Nous allons découvrir votre prochain sujet de vote !"
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
-    kami "Et pas de retard, hein ! J'ai eu ma dose de démocratie hier."
+    kami "Alors, vous supportez bien la chaleur ?"
+    scene bg_diffusion_meteo at adaptive_fullscreen, j10_heat with dissolve
+    kami "Le Canon est très sollicité depuis hier. Son refroidissement mobilise une partie des ressources de la station. Vous allez donc avoir un peu chaud."
+    $ bc_show("noam", "inquiet", px=-70, py=-50, pz=0.85)
+    noam inquiet "Les relais indiquent pourtant un débit normal. Pourquoi ?"
+    $ bc_hide()
+    scene bg_diffusion_zen at adaptive_fullscreen, j10_heat with dissolve
+    kami "Noam, il est déjà bien avancé dans l'après-midi et tu voudrais que je te fasse un cours de maintenance ? Non."
+    scene bg_diffusion_colere at adaptive_fullscreen, j10_heat with dissolve
+    kami "Évitez simplement la salle du Canon. J'ai encore du travail à faire."
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
+    kami "Alors oui, certains ont cru que les Commandements pouvaient être bafoués. Quelle idée de dire publiquement qu'ils ne s'appliquaient plus..."
+    $ bc_show("noam", "inquiet", px=-70, py=-50, pz=0.85)
+    noam inquiet "Mais ils ne savaient pas que tu allais revenir !"
+    $ bc_hide()
+    kami "Et qui leur a donné cette idée, Noam ? Vous avez pu sauver des gens, mais tout ça, c'est aussi de votre faute, vous savez !"
+    scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
+    kami "Vous devriez être contents. Il y en a qui ont réussi à rentrer chez eux avant que je les sanctionne."
+    $ bc_show("noam", "colere", px=-70, py=-50, pz=0.85)
+    noam colere "Combien de personnes sont mortes ?"
+    $ bc_hide()
+    scene bg_diffusion_champagne at adaptive_fullscreen, j10_heat with dissolve
+    kami "Dix jours aujourd'hui ! Déjà un tiers de votre séjour. Venez au Conclave, je vais vous présenter le prochain vote."
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
+    kami "Tout le monde. Et ne traînez pas."
     hide screen kami_broadcast_ui
-    scene couloir_infirmerie at adaptive_fullscreen with dissolve
+    scene couloir_infirmerie at adaptive_fullscreen, j10_heat with dissolve
     $ showGroup([("noam", "reflexion"), ("sael", "mefiant")])
     sael inquiet "Noam ?"
     noam surpris "AH !"
@@ -548,7 +512,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     think "Comment sait-elle que je devais voir Elias ? Il m'en a peut-être parlé au matin. Ce n'est pas le moment de lui demander."
     $ hideGroup()
     call MAYBE_PLAY_SCRIPTED_DOOR("conclave", "bg_conclave") from _call_MAYBE_PLAY_SCRIPTED_DOOR_34
-    scene bg_conclave at adaptive_fullscreen with dissolve
+    scene bg_conclave at adaptive_fullscreen, j10_heat with dissolve
     $ showGroup([
         ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
         ("noam", "reflexion", 0.13), ("lysa", "inquiet", 0.25),
@@ -572,9 +536,10 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     iris reflechit "Bu de l'eau ?"
     noam neutre "Oui, maman."
     iris colere "Ne commence pas !"
-    mara taquin "Ça y est, deux infirmières pour le prix d'une."
-    sael determine "Iris n'est pas infirmière."
-    iris colere "Et je n'ai pas demandé à l'être !"
+    mara taquin "Si vous cherchez une troisième infirmière, je peux m'occuper de vous. Je vous préviens, j'ai jamais fait de piqûre."
+    tomas gene "..."
+    sael determine "Iris n'est pas infirmière. Et je préfère que tu ne touches pas aux seringues."
+    iris colere "Mais arrêtez de parler de ça ! Noam, assieds-toi."
     elen sourire "Vous pouvez éviter de vous chamailler pendant que Noam va mal ?"
     noam desaccord "Je vais BIEN !"
     "Ma voix est plus forte que prévu. Lysa me regarde avec un air que je lui ai déjà vu quand elle ne croit absolument pas ce qu'on lui raconte."
@@ -586,60 +551,78 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     noam reflexion "Non. Juste une valeur qui a sauté, je crois. Et..."
     elias reflechit "Et quoi ?"
     "Je regarde l'entrée de la salle, puis reviens à Elias."
-    noam hesitation "Je t'expliquerai après."
-    elias fatigue "Tu sais que c'est la phrase la moins rassurante du monde ?"
-    noam neutre "Je sais."
+    noam hesitation "Dans le couloir de l'infirmerie, j'ai vu quelqu'un qui..."
     play sound sfx_announce
+    $ hideGroup()
     show screen kami_broadcast_ui
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
-    kami "Tout le monde ! Formidable ! Je commençais à croire que les couloirs vous avaient avalés."
+    scene bg_diffusion_zen at adaptive_fullscreen, j10_heat with dissolve
+    kami "Bien ! Vous êtes tous là, on commence. Noam, tu discuterais avec Elias plus tard."
     "Un frisson me traverse, malgré la chaleur."
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
     kami "Et ne faites pas ces têtes ! J'ai choisi un sujet plein de promesses. D'intimité. De liberté. Et de délicieux petits secrets !"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    scene bg_diffusion_professeur at adaptive_fullscreen, j10_heat with dissolve
     kami "Au douzième jour, vous voterez sur l'autorisation des dispositifs de brouillage."
     $ unlock_dossier_chapter(4)
+    $ unlock_dossier_prop("p4_vote_brouilleurs")
+    $ dossier_current_chapter = 4
     kami "En cas d'adoption unanime, leur possession, leur fabrication et leur utilisation seront autorisées, dans les limites prévues par les autres Commandements."
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    call screen vote_dossier(standalone=True) 
+    scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
     kami "Vous voyez ? Je sais être une patronne formidable !"
+    $ bc_show("ryn", "neutre", px=-70, py=-50, pz=0.85)
     ryn "Et si on refuse ?"
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_colere at adaptive_fullscreen, j10_heat with dissolve
     kami "Alors les zones qui utiliseront encore des brouilleurs seront DÉTRUITES par le Canon !"
     "Personne ne réagit tout de suite."
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
     kami "Quoi ? Je suis censée vous expliquer qu'une interdiction ne sert à rien si elle n'est pas sanctionnée ?"
+    $ bc_show("nyra", "neutre", px=-70, py=-50, pz=0.85)
     nyra "Attends, Kami. Ça concerne aussi les installations qui ont déjà un brouilleur ?"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_professeur at adaptive_fullscreen, j10_heat with dissolve
     kami "Évidemment. Vous n'allez tout de même pas faire deux poids, deux mesures."
+    $ bc_show("elen", "neutre", px=-70, py=-50, pz=0.85)
     elen "Mais il y a des brouilleurs dans nos chambres !"
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
     kami "Très bien observé, Elen ! Je les retirerai, bien sûr. Je refuse de favoriser mes petits chéris."
+    $ bc_show("mara", "neutre", px=-70, py=-50, pz=0.85)
     mara "Tu parles d'intimité après avoir expliqué que tu veux détruire ceux qui la protègent."
+    $ bc_hide()
     $ unlock_dossier_arg("p4_intimite")
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
     kami "Mara, tu as une manière extraordinairement vulgaire de résumer les choses."
+    $ bc_show("julian", "neutre", px=-70, py=-50, pz=0.85)
     julian "Tu ne peux pas décider de retirer notre vie privée sur un coup de tête !"
-    scene bg_diffusion_zen at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_zen at adaptive_fullscreen, j10_heat with dissolve
     kami "Vos brouilleurs perturbent mes capteurs audio et vidéo. Tant qu'ils fonctionnent, je ne peux ni vous entendre ni vous observer dans les zones qu'ils couvrent."
+    $ bc_show("iris", "neutre", px=-70, py=-50, pz=0.85)
     iris "Et les enregistrements ? Tu peux les récupérer ?"
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
     kami "Pas pendant le brouillage, Iris. Je ne reçois pas vos conversations en direct."
+    $ bc_show("elias", "neutre", px=-70, py=-50, pz=0.85)
     elias "Donc si quelqu'un entre dans une chambre, tu ne le vois pas non plus ?"
-    scene bg_diffusion_professeur at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_professeur at adaptive_fullscreen, j10_heat with dissolve
     kami "C'est exactement le problème. Les enregistrements sont indisponibles pendant la période de brouillage."
     $ unlock_dossier_arg("p4_preuves")
+    $ bc_show("noam", "inquiet", px=-70, py=-50, pz=0.85)
     noam inquiet "Donc si quelqu'un entre dans une chambre..."
-    scene bg_diffusion_taquin at adaptive_fullscreen with dissolve
+    $ bc_hide()
+    scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
     kami "Eh bien, il faut espérer que son occupant n'ait pas oublié de fermer la porte !"
     "Je regarde Kael. Il ne détourne pas les yeux de l'écran."
     if investigation_has("photo_lea_disparue"):
         $ unlock_dossier_arg("p4_voleur")
-    scene bg_diffusion_colere at adaptive_fullscreen with dissolve
+    scene bg_diffusion_colere at adaptive_fullscreen, j10_heat with dissolve
     kami "Le vote aura lieu au jour douze. Vous avez le temps de discuter, de vous disputer et de me décevoir !"
-    scene bg_diffusion_amour at adaptive_fullscreen with dissolve
+    scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
     kami "Profitez-en. Le temps passe si vite quand on s'amuse !"
     hide screen kami_broadcast_ui
-    scene bg_conclave at adaptive_fullscreen with dissolve
+    scene bg_conclave at adaptive_fullscreen, j10_heat with dissolve
     $ showGroup([
         ("elias", "fatigue", -0.11), ("mara", "stress", 0.01),
         ("noam", "reflexion", 0.13), ("lysa", "inquiet", 0.25),
@@ -756,6 +739,7 @@ label _10_0_1_1_APRES_ALIBIS:
     elias inquiet "Il avait quoi ?"
     sael reflechit "Il regardait devant lui comme si quelqu'un lui parlait."
     noam desaccord "Personne ne me parlait !"
+    show bg_conclave at adaptive_fullscreen, j10_malaise
     "La voix de Sael s'arrête. J'attends la suite, mais les secondes passent."
     noam hesitation "Pourquoi vous me regardez comme ça ?"
     lysa inquiet "Noam..."
@@ -768,6 +752,9 @@ label _10_0_1_1_APRES_ALIBIS:
     noam fatigue "Je suis déjà..."
     "Je baisse les yeux. Je suis debout, les doigts crispés sur le dossier de ma chaise."
     "Je ne me souviens pas de m'être levé."
+    show bg_conclave at adaptive_fullscreen:
+        blur 38.0
+        matrixcolor BrightnessMatrix(-0.32)
     $ blink()
     elias panique "Hé ! Noam, regarde-moi !"
     "Je veux lui demander de reculer. Je n'arrive pas à trouver le mot."

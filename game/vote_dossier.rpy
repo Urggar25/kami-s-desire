@@ -322,14 +322,14 @@ transform dossier_tint(c):
 # =============================================================================
 # ÉCRAN PRINCIPAL
 # =============================================================================
-screen vote_dossier():
+screen vote_dossier(standalone=False):
     # Interface intégrée à la vitre inclinée de la tablette, comme tablet_profiles.
     modal True
     zorder 220
 
     default sel_chapter = dossier_default_chapter()
     default sel_prop = dossier_prop_first_of_chapter(dossier_default_chapter())
-    $ back_to_tablet = [Hide("vote_dossier"), Show("tablet_home"), With(Dissolve(0.25))]
+    $ back_to_tablet = Return() if standalone else [Hide("vote_dossier"), Show("tablet_home"), With(Dissolve(0.25))]
     $ restore_unlocked_arguments()
     if "day2_sync_argument_titles" in globals():
         $ day2_sync_argument_titles()

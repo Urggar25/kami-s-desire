@@ -228,7 +228,10 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
     $ corridor_title = CORRIDOR_LABELS[shown_corridor]
 
     add Solid("#000")
-    add corridor_background(shown_corridor) at cover_screen
+    if current_day == 10 and current_scene_active in ("_10_0_1_1_ROUTE_CAFETERIA", "_10_0_1_1_ROUTE_MAINTENANCE"):
+        add corridor_background(shown_corridor) at cover_screen, j10_heat
+    else:
+        add corridor_background(shown_corridor) at cover_screen
 
     for target_type, target_key, texture_name, target_text in CORRIDOR_INTERACTIONS[shown_corridor]:
         $ target_enabled = corridor_target_enabled(shown_corridor, target_type, target_key)
@@ -269,6 +272,29 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
             hovered SetVariable("corridor_ui_target", "Elen")
             unhovered SetVariable("corridor_ui_target", None)
             action Return("KD_ROUTE_J9_ELEN")
+
+    # J10 : les représentants sont cliquables, mais les portes restent accessibles.
+    if shown_corridor == "dortoir" and current_scene_active == "_10_0_1_1_ROUTE_CAFETERIA" and not j10011_lysa_route_seen:
+        imagebutton:
+            idle Transform(character_image("lysa", "blase"), zoom=1.0)
+            hover Transform(character_image("lysa", "neutre"), zoom=1.0)
+            focus_mask True
+            xalign 0.52
+            yalign 1.0
+            hovered SetVariable("corridor_ui_target", "Parler à Lysa")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("KD_ROUTE_J10_LYSA")
+
+    if shown_corridor == "cafeteria" and current_scene_active == "_10_0_1_1_ROUTE_MAINTENANCE" and not j10011_julian_route_seen:
+        imagebutton:
+            idle Transform(character_image("julian", "sourire"), zoom=1.0)
+            hover Transform(character_image("julian", "neutre"), zoom=1.0)
+            focus_mask True
+            xalign 0.52
+            yalign 1.0
+            hovered SetVariable("corridor_ui_target", "Parler à Julian")
+            unhovered SetVariable("corridor_ui_target", None)
+            action Return("KD_ROUTE_J10_JULIAN")
 
     # Rencontre du jour 4 réellement facultative : le joueur clique sur Nyra
     # avant d'entrer en cafétéria, comme les rencontres du jour 2 et du jour 3.
