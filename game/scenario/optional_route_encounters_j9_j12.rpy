@@ -45,13 +45,23 @@ label KD_ROUTE_J10_LYSA:
     $ j10011_lysa_route_seen = True
     scene couloir_dortoir at adaptive_fullscreen, j10_heat with dissolve
     $ showGroup([("lysa", "blase", 0.35), ("noam", "fatigue", 0.65)])
-    lysa blase "J'ai pris trois douches à l'eau tiède cette nuit. Trois. J'avais à peine le temps de me sécher que j'étais de nouveau en sueur. C'est étouffant."
-    noam fatigue "J'ai fini par virer le drap. Ça n'a servi à rien."
-    lysa neutre "T'as réussi à dormir au moins ? Moi j'ai abandonné vers cinq heures. J'ai même ouvert la porte de ma chambre, mais il faisait aussi chaud dans le couloir."
-    noam "Tu vas manger ?"
-    lysa "Plus tard. Je vais essayer de trouver un élastique pour mes cheveux, ils me collent à la nuque."
-    noam neutre "Bon courage. Je te garde de l'eau si j'en trouve de la fraîche."
-    lysa sourire "Ah oui, je veux bien. Merci."
+    "Lysa est arrêtée près d'une bouche d'aération. Elle a relevé ses cheveux d'une main et tend l'autre sous la grille."
+    noam neutre "Salut. Tu sens quelque chose ?"
+    lysa blase "Non. Je pensais qu'il y aurait au moins un peu d'air dans le couloir, mais c'est pareil partout."
+    noam fatigue "Dans ma chambre c'est horrible. J'ai dormi sans couverture et j'ai quand même réussi à tremper mon oreiller."
+    lysa fatigue "Ah, toi aussi ? Ça me rassure. Je commençais à me demander si c'était moi qui faisais de la fièvre."
+    "Elle lâche ses cheveux et s'essuie le front du revers de la main."
+    lysa blase "J'ai même fini par retourner sous la douche trois fois cette nuit. À l'eau tiède, parce que j'arrivais pas à supporter l'eau froide en sortant du lit. Ça faisait du bien sur le moment, mais dix minutes après j'étais de nouveau en sueur. C'est étouffant."
+    noam fatigue "T'as dû passer plus de temps dans ta salle de bain que dans ton lit."
+    lysa neutre "À peu près, oui. Vers cinq heures j'ai arrêté d'essayer de dormir. J'ai ouvert ma porte pour faire un courant d'air, sauf que l'air du couloir était aussi chaud que celui de la chambre."
+    noam reflexion "Tu crois qu'on peut régler la clim quelque part ? J'ai cherché sur l'écran de ma chambre, j'ai rien trouvé."
+    lysa blase "J'ai regardé aussi. J'aurais au moins aimé pouvoir baisser la température de deux ou trois degrés. Même ma bouteille d'eau était tiède quand je me suis levée."
+    noam fatigue "Ça va être sympa, le petit-déjeuner."
+    lysa neutre "Si tu trouves des bouteilles fraîches, préviens-moi. J'ai pas très faim pour l'instant, j'ai surtout soif."
+    "Elle essaie d'attacher ses cheveux, puis abandonne faute d'élastique."
+    lysa fatigue "Je vais retourner en chercher un dans ma chambre. J'en ai forcément un quelque part."
+    noam neutre "Je passe à la cafétéria. Je te garde une bouteille si j'en trouve."
+    lysa sourire "Merci. Et bois aussi, hein. T'as vraiment pas une bonne tête."
     $ hideGroup()
     return
 

@@ -574,7 +574,12 @@ image sas2 = DynamicDisplayable(automatic_scene_image_dynamic, "images/backgroun
 image stockage = DynamicDisplayable(automatic_scene_image_dynamic, "images/background/scene/stockage.png")
 
 screen room_scene_background(room_name, navigation=True):
-    add room_scene_displayable(room_name) at cover_screen
+    # Tous les PNC qui utilisent ce fond commun, y compris le temps libre.
+    # Le texte, les masques de clic et les bandes de navigation restent nets.
+    if current_day == 10:
+        add room_scene_displayable(room_name) at cover_screen, j10_heat
+    else:
+        add room_scene_displayable(room_name) at cover_screen
 
     # Les bandes de navigation sont volontairement dessinees en dernier,
     # depuis room_scene_interactions, pour rester cliquables au-dessus

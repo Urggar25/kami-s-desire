@@ -228,7 +228,7 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
     $ corridor_title = CORRIDOR_LABELS[shown_corridor]
 
     add Solid("#000")
-    if current_day == 10 and current_scene_active in ("_10_0_1_1_ROUTE_CAFETERIA", "_10_0_1_1_ROUTE_MAINTENANCE"):
+    if current_day == 10:
         add corridor_background(shown_corridor) at cover_screen, j10_heat
     else:
         add corridor_background(shown_corridor) at cover_screen
@@ -243,10 +243,11 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
             # Les calques de couloir couvrent parfois une grande partie du décor.
             # Les teinter lorsqu'ils sont désactivés crée alors des bandes visibles.
             insensitive interaction_path
-            focus_mask True
+            # Le shader ne modifie pas la géométrie des zones cliquables.
+            focus_mask interaction_path
             xpos 0
             ypos 0
-            at cover_screen
+            at ([cover_screen, j10_heat] if current_day == 10 else [cover_screen])
             sensitive target_enabled
             hovered SetVariable("corridor_ui_target", target_text if target_enabled else "Accès indisponible")
             unhovered SetVariable("corridor_ui_target", None)
@@ -569,7 +570,7 @@ label PLAY_DOOR_OPEN(next_background=None):
     window hide
 
     if next_background is not None:
-        if current_day == 10 and (current_scene_active in ("_10_0_1_1_ROUTE_CAFETERIA", "_10_0_1_1_ROUTE_MAINTENANCE") or j10011_cafeteria_done):
+        if current_day == 10:
             scene expression next_background as door_destination_bg at adaptive_fullscreen, j10_heat
         else:
             scene expression next_background as door_destination_bg at adaptive_fullscreen

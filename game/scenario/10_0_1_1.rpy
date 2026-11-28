@@ -17,33 +17,8 @@ default j10011_walk_choice = None
 default j10011_lysa_route_seen = False
 default j10011_julian_route_seen = False
 
-# Effets locaux au J10, appliqués aux décors et non au texte.
-transform j10_heat:
-    blur 1.4
-    matrixcolor TintMatrix("#fff6e9")
-    block:
-        linear 2.8 blur 2.5
-        linear 3.4 blur 1.4
-        repeat
-
-transform j10_heat_horror:
-    blur 3.0
-    matrixcolor BrightnessMatrix(-0.17)
-    block:
-        pause 1.7
-        linear 0.20 matrixcolor BrightnessMatrix(-0.34)
-        linear 0.40 matrixcolor BrightnessMatrix(-0.17)
-        pause 2.8
-        repeat
-
-transform j10_silhouette_zoom:
-    subpixel True
-    xalign 0.5
-    yalign 0.5
-    zoom 1.0
-    blur 3.0
-    matrixcolor BrightnessMatrix(-0.12)
-    ease 0.85 zoom 1.18 blur 4.5
+# Le mirage thermique et les cadrages sont déclarés dans
+# motion_design/kd_j10_heat.rpy et partagés avec les écrans interactifs.
 
 transform j10_malaise:
     blur 2.0
@@ -403,50 +378,64 @@ label _10_0_1_1_RELAIS_INFIRMERIE_SUITE:
 
 label _10_0_1_1_RETOUR_ELIAS:
     scene couloir_infirmerie at adaptive_fullscreen, j10_heat with dissolve
-    "Je sors du dernier secteur, les doigts encore chauds après avoir touché les conduits."
-    think "Trois relais, trois affichages parfaitement rassurants, et pas un souffle. Elias va pouvoir choisir entre me croire et étrangler un écran."
-    "J'essaie de me rappeler par quel couloir rejoindre la maintenance. Je connais pourtant ce chemin."
-    noam reflexion "À droite, puis..."
-    "Quelque chose change au fond du couloir."
+    "J'ai fini. Je vérifie sur ma tablette que j'ai bien noté les trois relevés avant de retourner à la maintenance."
+    "En arrivant au croisement, j'entends un petit claquement derrière la cloison. Ça ressemble au bruit que j'ai entendu près des relais."
+    "Je range ma tablette et m'approche du mur."
     jump _10_0_1_1_DOPPELGANGER
 
 
+# Horreur d'anticipation : garder le même éclairage et la même géographie.
+# Les deux CG sont montrées une seule fois. Le silence puis l'absence
+# de réponse sont la menace ; le bruit final ne révèle pas l'identité.
 label _10_0_1_1_DOPPELGANGER:
-    scene couloir_infirmerie at adaptive_fullscreen, j10_heat with dissolve
-    stop music fadeout 0.5
-    show couloir_infirmerie at adaptive_fullscreen, j10_heat_horror
+    stop music fadeout 2.0
+    show couloir_infirmerie at adaptive_fullscreen, j10_heat, j10_corridor_watch
     window hide
-    pause 1.0
-    "La lumière baisse dans le couloir. Je m'arrête et tends l'oreille. Même la ventilation s'est tue."
-    "Il y a quelqu'un, là-bas."
-    scene bg_cg030 at adaptive_fullscreen, j10_silhouette_zoom
-    with Dissolve(0.18)
+    pause 1.4
+    window auto
+    "J'attends que ça recommence. Rien. Je continue mon chemin."
+    "Au moment de passer le croisement, je crois apercevoir quelqu'un du coin de l'œil."
+    window hide
+    pause 0.8
+    scene bg_cg030 at adaptive_fullscreen, j10_heat, j10_silhouette_zoom
+    with Dissolve(0.35)
+    pause 1.6
+    window auto
+    noam neutre "Salut... ?"
+    window hide
+    pause 1.3
+    window auto
+    "J'attends une réponse. Je n'arrive pas à distinguer son visage."
+    think "Pourquoi il ne répond pas ?"
     $ unlock_gallery_image("bg_cg030")
     $ investigation_add("silhouette_couloirs")
     window hide
-    pause 0.95
+    pause 0.8
+    # Un seul changement rapide, après que le joueur a pu observer le plan.
     scene bg_cg030_1 at adaptive_fullscreen, j10_heat_horror
-    with Dissolve(0.06)
-    pause 0.22
+    with None
+    pause 0.65
+    window auto
+    "Attends..."
+    window hide
+    pause 0.45
     scene couloir_infirmerie at adaptive_fullscreen, j10_heat_horror
     with None
-    "Je cligne des yeux. Il n'y a plus personne."
-    "J'essaie d'avancer pour voir derrière le mur, mais un bruit métallique éclate derrière moi."
+    pause 1.2
+    window auto
+    "Il n'y a plus personne. Je fais quelques pas en avant, puis je m'arrête."
+    noam inquiet "Hé !"
+    window hide
+    pause 1.0
     play sound "audio/sfx_metal_clank.mp3"
-    with vpunch
-    scene bg_cg030 at adaptive_fullscreen, j10_heat_horror
-    with None
-    window hide
-    pause 0.14
-    scene couloir_infirmerie at adaptive_fullscreen, j10_heat_horror, lean_left
-    with hpunch
-    "Je me retourne. Rien. J'ai une main sur le mur et je n'arrive pas à la lâcher."
-    noam inquiet "Il y a quelqu'un ?"
-    window hide
-    pause 1.1
-    "La lumière baisse de nouveau. J'attends des pas, une voix, n'importe quoi."
-    "Je regarde ma tablette. Les trois relais sont cochés. J'ai bien terminé."
-    think "Il faut que je retourne voir Elias."
+    pause 0.25
+    show couloir_infirmerie at adaptive_fullscreen, j10_heat_horror, j10_corridor_turn
+    pause 0.8
+    window auto
+    "Le bruit vient de derrière moi. Je me retourne, mais le couloir est vide de ce côté aussi."
+    "Je reste un moment sans bouger. Je sors ma tablette de ma poche."
+    "J'ouvre mes relevés. Les trois sont là. Je ne sais même pas pourquoi je vérifie."
+    think "Elias. Je retourne voir Elias."
     jump _10_0_1_1_2_ANNONCE_KAMI
 
 
@@ -740,7 +729,7 @@ label _10_0_1_1_APRES_ALIBIS:
     elias inquiet "Il avait quoi ?"
     sael reflechit "Il regardait devant lui comme si quelqu'un lui parlait."
     noam desaccord "Personne ne me parlait !"
-    show bg_conclave at adaptive_fullscreen, j10_malaise
+    show bg_conclave at adaptive_fullscreen, j10_heat, j10_malaise
     "La voix de Sael s'arrête. J'attends la suite, mais les secondes passent."
     noam hesitation "Pourquoi vous me regardez comme ça ?"
     lysa inquiet "Noam..."
