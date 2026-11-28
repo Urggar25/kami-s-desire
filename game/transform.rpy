@@ -484,6 +484,9 @@ screen day_transition(day_label):
 default broadcast_char = None
 default broadcast_expr = "neutre"
 default broadcast_on = False
+# Sauvegarde temporaire des portraits automatiques : les mises en scène
+# explicites avec bc_show/bc_hide restent prioritaires.
+default kd_auto_broadcast_state = None
 
 # Les modèles de personnages partagent un canevas proche de 1024x1536 et
 # incluent déjà leur échelle dans images.rpy. Ce cadrage commun évite donc
@@ -549,38 +552,39 @@ screen kd_kami_broadcast_closing():
     zorder 230
     add Solid("#000000") at kd_kami_black_close
 
-screen kami_broadcast_ui():
+screen kami_broadcast_ui(portrait_only=False):
     zorder 200
 
-    # Recouvre *réellement* le décor de diffusion avant de le révéler en 1 s.
-    add Solid("#000000") at kd_kami_black_reveal
+    if not portrait_only:
+        # Recouvre *réellement* le décor de diffusion avant de le révéler en 1 s.
+        add Solid("#000000") at kd_kami_black_reveal
 
-    text "ÉTABLISSEMENT DE LA CONNEXION...":
-        xpos 0.64
-        ypos 0.075
-        size 21
-        color "#DEF5FF"
-        outlines [(2, "#05131acc", 0, 0)]
-        at kd_kami_boot_label
+        text "ÉTABLISSEMENT DE LA CONNEXION...":
+            xpos 0.64
+            ypos 0.075
+            size 21
+            color "#DEF5FF"
+            outlines [(2, "#05131acc", 0, 0)]
+            at kd_kami_boot_label
 
-    fixed:
-        xalign 0.97
-        yalign 0.045
-        xsize 245
-        ysize 42
-        at kd_kami_hud_appear
+        fixed:
+            xalign 0.97
+            yalign 0.045
+            xsize 245
+            ysize 42
+            at kd_kami_hud_appear
 
-        add Solid("#061520ce")
-        add Solid("#6CDCF5") xpos 9 ypos 10 xsize 5 ysize 22
-        add Solid("#0DECC1") xpos 23 ypos 15 xsize 12 ysize 12 at kd_kami_live_pulse
-        text "KAMI // EN DIRECT":
-            xpos 45
-            ypos 9
-            size 19
-            color "#D0F4FF"
-            outlines [(1, "#07121f", 0, 0)]
+            add Solid("#061520ce")
+            add Solid("#6CDCF5") xpos 9 ypos 10 xsize 5 ysize 22
+            add Solid("#0DECC1") xpos 23 ypos 15 xsize 12 ysize 12 at kd_kami_live_pulse
+            text "KAMI // EN DIRECT":
+                xpos 45
+                ypos 9
+                size 19
+                color "#D0F4FF"
+                outlines [(1, "#07121f", 0, 0)]
 
-    add Solid("#45c8e040") xpos 0.12 ypos 0.946 xsize 0.76 ysize 2 at kd_kami_hud_appear
+        add Solid("#45c8e040") xpos 0.12 ypos 0.946 xsize 0.76 ysize 2 at kd_kami_hud_appear
 
     # Tout l'UI Kami n'apparaît QUE s'il y a un personnage en diffusion
     if broadcast_char is not None:
@@ -617,6 +621,12 @@ screen kami_broadcast_ui():
                 ypos (bh - 40)
                 at Transform(rotate=tilt, anchor=(0.0, 1.0))
 
+
+# Le portrait reste disponible même dans les anciennes diffusions qui
+# n'ouvrent pas explicitement l'interface d'annonce.
+screen kd_auto_broadcast_ui():
+    zorder 200
+    use kami_broadcast_ui(portrait_only=True)
 
 # À appeler après avoir affiché la première bg_diffusion.
 # Le son d'annonce doit être joué AVANT, comme dans les scripts existants.
@@ -696,6 +706,50 @@ init python:
         store.broadcast_on = False
         store.broadcast_char = None
         renpy.restart_interaction()
+
+    def kd_auto_broadcast_begin(tag):
+        # Détection de l'image réellement affichée, sur toutes les routes
+        # (y compris les scripts du DLC), sans modifier les scripts traduits.
+        if tag not in ("noam", "lysa", "elias", "mara", "julian", "iris",
+                       "tomas", "elen", "kael", "nyra", "ryn", "sael"):
+            return
+        if not any(name.startswith("bg_diffusion_")
+                   for layer in ("master", "bgcam")
+                   for name in renpy.get_showing_tags(layer=layer)):
+            return
+        if store.kd_auto_broadcast_state is not None:
+            kd_auto_broadcast_end(store.kd_auto_broadcast_state[0])
+        has_ui = renpy.get_screen("kami_broadcast_ui") is not None
+        if has_ui and store.broadcast_char == tag:
+            # Un bc_show explicite a déjà posé le portrait : ne pas l'altérer.
+            return
+        state = (tag, store.broadcast_char, store.broadcast_expr,
+                 store.broadcast_on, store.broadcast_px, store.broadcast_py,
+                 store.broadcast_pz, not has_ui)
+        store.kd_auto_broadcast_state = state
+        if store.broadcast_char == tag:
+            expr = store.broadcast_expr
+        else:
+            attrs = getattr(renpy, "get_say_attributes", lambda: ())() or ()
+            expr = next(iter(attrs), "neutre")
+        bc_show(tag, expr)
+        if not has_ui:
+            renpy.show_screen("kd_auto_broadcast_ui")
+
+    def kd_auto_broadcast_end(tag):
+        state = store.kd_auto_broadcast_state
+        if state is None or state[0] != tag:
+            return
+        store.kd_auto_broadcast_state = None
+        if state[7]:
+            renpy.hide_screen("kd_auto_broadcast_ui")
+        bc_hide()
+        store.broadcast_char = state[1]
+        store.broadcast_expr = state[2]
+        store.broadcast_on = state[3]
+        store.broadcast_px = state[4]
+        store.broadcast_py = state[5]
+        store.broadcast_pz = state[6]
 
 label reset:
     $ broadcast_px = -130

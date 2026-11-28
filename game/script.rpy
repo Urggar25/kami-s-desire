@@ -834,7 +834,10 @@ init python:
         def _cb(event, interact=True, **kwargs):
             _stage_cb(event, interact=interact, **kwargs)
             if event == "begin" and interact:
+                kd_auto_broadcast_begin(tag)
                 kd_play_queued_character_motion(tag)
+            elif event == "end" and interact:
+                kd_auto_broadcast_end(tag)
 
         return _cb
 

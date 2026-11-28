@@ -525,7 +525,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     mara taquin "Ça lui prendrait au moins trois discours pour le faire."
     julian surpris "Je pourrais être bref !"
     lysa blase "Tu n'en as jamais apporté la preuve."
-    if j901_julian_discours_done:
+    if j901_julian_discours_done and not j10011_julian_route_seen:
         julian "Je tiens à préciser qu'hier, mon intervention a peut-être permis à des milliers de personnes de se disperser."
         lysa blase "Oui, Julian. Tu nous l'as déjà dit."
         julian "Je pensais qu'il convenait de le rappeler à notre collègue."
@@ -537,6 +537,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     noam neutre "Oui, maman."
     iris colere "Ne commence pas !"
     mara taquin "Si vous cherchez une troisième infirmière, je peux m'occuper de vous. Je vous préviens, j'ai jamais fait de piqûre."
+    "Tomas devient tout rouge."
     tomas gene "..."
     sael determine "Iris n'est pas infirmière. Et je préfère que tu ne touches pas aux seringues."
     iris colere "Mais arrêtez de parler de ça ! Noam, assieds-toi."
@@ -556,7 +557,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     $ hideGroup()
     show screen kami_broadcast_ui
     scene bg_diffusion_zen at adaptive_fullscreen, j10_heat with dissolve
-    kami "Bien ! Vous êtes tous là, on commence. Noam, tu discuterais avec Elias plus tard."
+    kami "Bien ! Vous êtes tous là, on commence. Noam, tu discuteras avec Elias plus tard."
     "Un frisson me traverse, malgré la chaleur."
     scene bg_diffusion_taquin at adaptive_fullscreen, j10_heat with dissolve
     kami "Et ne faites pas ces têtes ! J'ai choisi un sujet plein de promesses. D'intimité. De liberté. Et de délicieux petits secrets !"
@@ -566,7 +567,7 @@ label _10_0_1_1_2_ANNONCE_KAMI:
     $ unlock_dossier_prop("p4_vote_brouilleurs")
     $ dossier_current_chapter = 4
     kami "En cas d'adoption unanime, leur possession, leur fabrication et leur utilisation seront autorisées, dans les limites prévues par les autres Commandements."
-    call screen vote_dossier(standalone=True) 
+    call screen vote_dossier(standalone=True)
     scene bg_diffusion_amour at adaptive_fullscreen, j10_heat with dissolve
     kami "Vous voyez ? Je sais être une patronne formidable !"
     $ bc_show("ryn", "neutre", px=-70, py=-50, pz=0.85)

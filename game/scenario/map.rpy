@@ -569,7 +569,10 @@ label PLAY_DOOR_OPEN(next_background=None):
     window hide
 
     if next_background is not None:
-        scene expression next_background as door_destination_bg at adaptive_fullscreen
+        if current_day == 10 and (current_scene_active in ("_10_0_1_1_ROUTE_CAFETERIA", "_10_0_1_1_ROUTE_MAINTENANCE") or j10011_cafeteria_done):
+            scene expression next_background as door_destination_bg at adaptive_fullscreen, j10_heat
+        else:
+            scene expression next_background as door_destination_bg at adaptive_fullscreen
     else:
         scene black
 
