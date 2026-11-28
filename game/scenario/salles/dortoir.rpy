@@ -66,13 +66,16 @@ screen pnc_dortoir():
     $ corridor_door_path = "images/background/interact/dortoir/porte_couloir_dortoir.png"
 
     add Solid("#000")
-    add "images/background/scene/bg_dortoir.png" at cover_screen
+    if current_day == 10:
+        add "images/background/scene/bg_dortoir.png" at cover_screen, j10_heat
+    else:
+        add "images/background/scene/bg_dortoir.png" at cover_screen
 
     # La porte appartient visuellement au décor, pas au premier plan.
     if corridor_door_hovered:
-        add room_interaction_layer(corridor_door_path, "dortoir", "hover")
+        add room_interaction_layer(corridor_door_path, "dortoir", "hover") at (j10_heat if current_day == 10 else Transform())
     else:
-        add room_interaction_layer(corridor_door_path, "dortoir", "art")
+        add room_interaction_layer(corridor_door_path, "dortoir", "art") at (j10_heat if current_day == 10 else Transform())
 
     if social_free_time_active():
         $ chambre_door_path = "images/background/interact/dortoir/porte.png"

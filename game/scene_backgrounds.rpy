@@ -613,6 +613,7 @@ screen room_scene_interactions(room_name, label_overrides=None):
                 idle room_interaction_null()
                 hover room_interaction_hover_with_overlays(path, room_name)
                 focus_mask room_interaction_layer(path, room_name, "art")
+                at (j10_heat if current_day == 10 else Transform())
                 xpos 0
                 ypos 0
                 action Jump(target_label)

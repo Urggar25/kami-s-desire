@@ -244,7 +244,7 @@ screen conclave_corridor(corridor_key=None, ambient_encounter=None):
             # Les teinter lorsqu'ils sont désactivés crée alors des bandes visibles.
             insensitive interaction_path
             # Le shader ne modifie pas la géométrie des zones cliquables.
-            focus_mask interaction_path
+            focus_mask (interaction_path if current_day == 10 else True)
             xpos 0
             ypos 0
             at ([cover_screen, j10_heat] if current_day == 10 else [cover_screen])
